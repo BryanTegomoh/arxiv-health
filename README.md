@@ -4,7 +4,7 @@
 
 AI-powered system that fetches the latest medical, healthcare, biosecurity, and health-related AI research from arXiv, uses AI to verify relevance, generates comprehensive summaries, and publishes everything to a beautiful searchable website.
 
-[View Live Site](https://yourusername.github.io/arxiv-health/) | [Report Issue](https://github.com/yourusername/arxiv-health/issues)
+[View Live Site](https://bryantegomoh.github.io/arxiv-health/) | [Report Issue](https://github.com/BryanTegomoh/arxiv-health/issues)
 
 ## Features
 
@@ -48,7 +48,7 @@ AI-powered system that fetches the latest medical, healthcare, biosecurity, and 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/arxiv-health.git
+git clone https://github.com/BryanTegomoh/arxiv-health.git
 cd arxiv-health
 ```
 
@@ -190,7 +190,7 @@ git commit -m "Update papers"
 git push
 ```
 
-Your site will be live at: `https://yourusername.github.io/arxiv-health/`
+Your site will be live at: `https://bryantegomoh.github.io/arxiv-health/`
 
 ## Project Structure
 
@@ -327,8 +327,8 @@ MIT License - feel free to use for any purpose
 
 ## Support
 
-- [Open an issue](https://github.com/yourusername/arxiv-health/issues)
-- [Discussions](https://github.com/yourusername/arxiv-health/discussions)
+- [Open an issue](https://github.com/BryanTegomoh/arxiv-health/issues)
+- [Discussions](https://github.com/BryanTegomoh/arxiv-health/discussions)
 
 ## Roadmap
 
