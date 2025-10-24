@@ -34,8 +34,20 @@ MAX_RESULTS_PER_RUN = int(os.getenv("MAX_RESULTS_PER_RUN", "50"))
 DAYS_TO_LOOK_BACK = int(os.getenv("DAYS_TO_LOOK_BACK", "7"))
 
 # Website Configuration
-SITE_TITLE = os.getenv("SITE_TITLE", "arXiv Health & Medicine Monitor")
-SITE_DESCRIPTION = os.getenv("SITE_DESCRIPTION", "AI-curated medical and health research papers from arXiv")
+SITE_TITLE = os.getenv("SITE_TITLE", "Health AI Hub")
+SITE_DESCRIPTION = os.getenv("SITE_DESCRIPTION", "AI-powered medical research discovery | Latest health AI papers from arXiv, curated daily")
+SITE_TAGLINE = os.getenv("SITE_TAGLINE", "Your daily dose of cutting-edge health AI research")
+
+# Social Media
+TWITTER_HANDLE = os.getenv("TWITTER_HANDLE", "@ArXiv_Health")
+SUBSTACK_URL = os.getenv("SUBSTACK_URL", "https://bryantegomoh.substack.com")
+CONTACT_EMAIL = os.getenv("CONTACT_EMAIL", "bryan@arxiv-health.org")
+
+# Feature Flags
+ENABLE_DARK_MODE = os.getenv("ENABLE_DARK_MODE", "true").lower() == "true"
+ENABLE_BOOKMARKS = os.getenv("ENABLE_BOOKMARKS", "true").lower() == "true"
+ENABLE_TRENDING = os.getenv("ENABLE_TRENDING", "true").lower() == "true"
+ENABLE_CHAT_ASSISTANT = os.getenv("ENABLE_CHAT_ASSISTANT", "true").lower() == "true"
 
 # Medical/Health Keywords for arXiv search
 HEALTH_KEYWORDS = [

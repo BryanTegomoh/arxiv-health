@@ -334,8 +334,9 @@ class WebsiteGenerator:
 /* arXiv Health Monitor - Styles */
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #7c3aed;
+    --primary-color: #14b8a6;
+    --secondary-color: #06b6d4;
+    --accent-color: #10b981;
     --success-color: #059669;
     --bg-color: #f8fafc;
     --card-bg: #ffffff;
@@ -344,6 +345,20 @@ class WebsiteGenerator:
     --border-color: #e2e8f0;
     --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+    --primary-color: #14b8a6;
+    --secondary-color: #06b6d4;
+    --accent-color: #10b981;
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
 }
 
 * {
