@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging - Health AI Hub</title>
+    <meta name="description" content="BTB3D (Better Tokens for Better 3D) introduces a novel causal convolutional encoder-decoder that unifies 2D/3D training to generate compact, frequency-aware vol">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Better Tokens for Better 3D: Advancing Vision-Language Modeling in 3D Medical Imaging</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.20639v1" target="_blank">2510.20639v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-23
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Ibrahim Ethem Hamamci, Sezgin Er, Suprosanna Shit, Hadrien Reynaud, Dong Yang, Pengfei Guo, Marc Edgar, Daguang Xu, Bernhard Kainz, Bjoern Menze
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.20639v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.20639v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">BTB3D (Better Tokens for Better 3D) introduces a novel causal convolutional encoder-decoder that unifies 2D/3D training to generate compact, frequency-aware volumetric tokens from high-resolution medical images. This approach significantly improves state-of-the-art performance in both automated report generation and text-to-CT synthesis by addressing the limitations of slice-wise tokenization and vision-language misalignment. The paper demonstrates that precise three-dimensional tokenization is crucial for scalable vision-language modeling in 3D medical imaging.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine by improving the accuracy and efficiency of automated diagnostic tools for 3D medical images. It enables more reliable automated medical report generation and the creation of high-fidelity synthetic CT scans, which can enhance medical education, research, and AI model training while addressing data privacy concerns.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI applications developed and improved by this research include: 1) **Automated Medical Report Generation**: Generating detailed clinical reports directly from 3D CT scans, which can assist radiologists, reduce their workload, and standardize reporting. 2) **Text-to-3D Medical Image Synthesis**: Creating realistic and anatomically consistent 3D CT scans from textual descriptions. This can be valuable for data augmentation in AI model training, medical education, surgical planning simulations, and research on specific pathologies.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Novel Architecture for 3D Medical Imaging:** BTB3D introduces a causal convolutional encoder-decoder that unifies 2D and 3D training and inference, specifically designed for high-resolution, long-sequence medical volumes.</li>
+                    
+                    <li>**Compact, Frequency-Aware Volumetric Tokens:** The model generates precise three-dimensional tokens, overcoming the limitations of slice-wise tokenization which often blurs fine anatomy and reduces diagnostic performance.</li>
+                    
+                    <li>**Three-Stage Progressive Training Curriculum:** BTB3D employs a multi-stage training process (local reconstruction, overlapping-window tiling, long-context decoder refinement) enabling it to learn from short slice excerpts and generalize to scans exceeding 300 slices without additional memory overhead.</li>
+                    
+                    <li>**State-of-the-Art in Report Generation:** Achieves significant improvements in automated medical report generation, increasing clinical F1 by 40% and improving BLEU scores compared to existing models like CT2Rep, CT-CHAT, and Merlin.</li>
+                    
+                    <li>**State-of-the-Art in Text-to-CT Synthesis:** Sets new benchmarks for text-to-CT synthesis, reducing Frechet Inception Distance (FID) by 75% and halving Frechet Video Distance (FVD) compared to GenerateCT and MedSyn, producing anatomically consistent 512*512*241 volumes.</li>
+                    
+                    <li>**Addresses Vision-Language Misalignment:** The approach directly tackles the issue of vision encoders being misaligned with clinical language, a common struggle in current contrastive pretraining methods for 3D medical imaging.</li>
+                    
+                    <li>**Emphasis on Tokenization Precision:** The research concludes that precise three-dimensional tokenization is more essential for scalable vision-language modeling in 3D medical imaging than simply utilizing larger language backbones.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>BTB3D is a causal convolutional encoder-decoder designed to unify 2D and 3D training and inference. It generates compact, frequency-aware volumetric tokens. Its training curriculum consists of three stages: (i) local reconstruction for fine-grained feature learning, (ii) overlapping-window tiling to process larger contextual regions, and (iii) long-context decoder refinement, allowing the model to generalize from short slice excerpts to full-length scans (>300 slices) efficiently.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>BTB3D achieved state-of-the-art results on two key tasks: For report generation, it improved BLEU scores and increased clinical F1 by 40% over existing models. For text-to-CT synthesis, it reduced FID by 75% and halved FVD compared to previous methods, generating anatomically consistent 512*512*241 CT volumes. These findings demonstrate that precise 3D tokenization is critical for scalable vision-language modeling in 3D medical imaging.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The enhanced accuracy in automated medical report generation can significantly streamline radiologist workflows, improve reporting consistency, and potentially expedite diagnosis. The ability to synthesize high-quality, anatomically consistent 3D CT scans from text descriptions provides a powerful tool for medical training, data augmentation for AI development (addressing data scarcity and privacy), and simulating diverse pathological conditions for research purposes, ultimately leading to better clinical outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the BTB3D model itself. It focuses on the limitations of prior approaches that BTB3D aims to overcome.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract. However, the work implies future research could focus on applying this precise 3D tokenization to other medical imaging modalities, exploring different downstream tasks, or further optimizing the token generation process.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Artificial Intelligence in Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">3D medical imaging</span>
+                    
+                    <span class="tag tag-keyword">vision-language modeling</span>
+                    
+                    <span class="tag tag-keyword">CT scans</span>
+                    
+                    <span class="tag tag-keyword">volumetric tokens</span>
+                    
+                    <span class="tag tag-keyword">report generation</span>
+                    
+                    <span class="tag tag-keyword">text-to-CT synthesis</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">radiology AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Recent progress in vision-language modeling for 3D medical imaging has been
+fueled by large-scale computed tomography (CT) corpora with paired free-text
+reports, stronger architectures, and powerful pretrained models. This has
+enabled applications such as automated report generation and text-conditioned
+3D image synthesis. Yet, current approaches struggle with high-resolution,
+long-sequence volumes: contrastive pretraining often yields vision encoders
+that are misaligned with clinical language, and slice-wise tokenization blurs
+fine anatomy, reducing diagnostic performance on downstream tasks. We introduce
+BTB3D (Better Tokens for Better 3D), a causal convolutional encoder-decoder
+that unifies 2D and 3D training and inference while producing compact,
+frequency-aware volumetric tokens. A three-stage training curriculum enables
+(i) local reconstruction, (ii) overlapping-window tiling, and (iii)
+long-context decoder refinement, during which the model learns from short slice
+excerpts yet generalizes to scans exceeding 300 slices without additional
+memory overhead. BTB3D sets a new state-of-the-art on two key tasks: it
+improves BLEU scores and increases clinical F1 by 40% over CT2Rep, CT-CHAT, and
+Merlin for report generation; and it reduces FID by 75% and halves FVD compared
+to GenerateCT and MedSyn for text-to-CT synthesis, producing anatomically
+consistent 512*512*241 volumes. These results confirm that precise
+three-dimensional tokenization, rather than larger language backbones alone, is
+essential for scalable vision-language modeling in 3D medical imaging. The
+codebase is available at: https://github.com/ibrahimethemhamamci/BTB3D</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>NeurIPS 2025</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -56,56 +56,144 @@ class WebsiteGenerator:
 
     def _generate_index_page(self, papers: List[Dict], stats: Dict):
         """Generate main index page"""
+        # Calculate trending papers and total citations
+        trending_papers = self._get_trending_papers(papers)
+        total_citations = sum(paper.get('citation_count', 0) for paper in papers)
+
         template = Template("""<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site_title }}</title>
     <meta name="description" content="{{ site_description }}">
+    <meta name="keywords" content="medical AI, health AI, arXiv, research papers, machine learning, healthcare">
+    <meta name="author" content="Health AI Hub">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ site_title }}">
+    <meta property="og:description" content="{{ site_description }}">
+    <meta property="og:url" content="https://arxiv-health.org">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ twitter_handle }}">
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Dark Mode Toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-toggle-light">🌙</span>
+        <span class="theme-toggle-dark">☀️</span>
+    </button>
+
     <header>
         <div class="container">
-            <h1>{{ site_title }}</h1>
-            <p class="tagline">{{ site_description }}</p>
+            <div class="header-content">
+                <div>
+                    <h1>{{ site_title }}</h1>
+                    <p class="tagline">{{ tagline }}</p>
+                </div>
+                <div class="header-actions">
+                    <a href="{{ substack_url }}" target="_blank" class="btn btn-cta">
+                        📧 Subscribe to Newsletter
+                    </a>
+                    <a href="https://twitter.com/{{ twitter_handle[1:] }}" target="_blank" class="btn btn-secondary">
+                        𝕏 Follow {{ twitter_handle }}
+                    </a>
+                </div>
+            </div>
             <div class="stats">
-                <span class="stat-item">📚 {{ stats.total_papers }} papers</span>
-                <span class="stat-item">🏥 {{ stats.domains|length }} medical domains</span>
-                <span class="stat-item">📅 Updated: {{ last_updated }}</span>
+                <div class="stat-item">
+                    <div class="stat-number">{{ stats.total_papers }}</div>
+                    <div class="stat-label">Papers Curated</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">{{ stats.domains|length }}</div>
+                    <div class="stat-label">Medical Domains</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">{{ total_citations }}</div>
+                    <div class="stat-label">Total Citations</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Daily</div>
+                    <div class="stat-label">Updates</div>
+                </div>
             </div>
         </div>
     </header>
 
     <nav class="container">
-        <div class="search-box">
-            <input type="text" id="search" placeholder="Search papers by title, keywords, or domain...">
-        </div>
-        <div class="filters">
-            <label>Sort by:</label>
-            <select id="sort-select">
-                <option value="date">Newest First</option>
-                <option value="relevance">Relevance Score</option>
-                <option value="title">Title A-Z</option>
-            </select>
-            <label>Filter by domain:</label>
-            <select id="domain-filter">
-                <option value="">All Domains</option>
-                {% for domain, count in stats.top_domains %}
-                <option value="{{ domain }}">{{ domain|title }} ({{ count }})</option>
-                {% endfor %}
-            </select>
+        <div class="nav-tools">
+            <div class="search-box">
+                <input type="text" id="search" placeholder="🔍 Search papers by title, author, keywords, or domain...">
+            </div>
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Sort by:</label>
+                    <select id="sort-select">
+                        <option value="date">Newest First</option>
+                        <option value="relevance">Relevance Score</option>
+                        <option value="citations">Most Cited</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Domain:</label>
+                    <select id="domain-filter">
+                        <option value="">All Domains</option>
+                        {% for domain, count in stats.top_domains %}
+                        <option value="{{ domain }}">{{ domain|title }} ({{ count }})</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Author:</label>
+                    <input type="text" id="author-filter" placeholder="Filter by author">
+                </div>
+                <button id="show-bookmarks" class="btn btn-outline">
+                    🔖 My Bookmarks (<span id="bookmark-count">0</span>)
+                </button>
+            </div>
         </div>
     </nav>
+
+    {% if trending_papers %}
+    <section class="container trending-section">
+        <h2>🔥 Trending This Week</h2>
+        <div class="trending-grid">
+            {% for paper in trending_papers[:3] %}
+            <div class="trending-card">
+                <div class="trending-badge">Trending #{{ loop.index }}</div>
+                <h3><a href="papers/{{ paper.arxiv_id|replace('/', '_') }}.html">{{ paper.title }}</a></h3>
+                <p class="trending-meta">
+                    ⭐ {{ "%.2f"|format(paper.relevance_score) }} |
+                    📖 {{ paper.citation_count or 0 }} citations |
+                    🔥 Score: {{ paper.trending_score }}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
 
     <main class="container">
         <div class="papers-grid" id="papers-container">
             {% for paper in papers %}
-            <article class="paper-card" data-domains="{{ paper.medical_domains|join(',') }}" data-keywords="{{ paper.keywords|join(',') }}">
+            <article class="paper-card"
+                     data-arxiv-id="{{ paper.arxiv_id }}"
+                     data-domains="{{ paper.medical_domains|join(',') }}"
+                     data-keywords="{{ paper.keywords|join(',') }}"
+                     data-authors="{{ paper.authors|join(',') }}">
+
+                <button class="bookmark-btn" data-paper-id="{{ paper.arxiv_id }}" aria-label="Bookmark this paper">
+                    <span class="bookmark-icon">🔖</span>
+                </button>
+
                 <div class="paper-header">
                     <h2 class="paper-title">
                         <a href="papers/{{ paper.arxiv_id|replace('/', '_') }}.html">{{ paper.title }}</a>
@@ -113,6 +201,9 @@ class WebsiteGenerator:
                     <div class="paper-meta">
                         <span class="date">📅 {{ paper.published[:10] }}</span>
                         <span class="relevance">⭐ {{ "%.2f"|format(paper.relevance_score) }}</span>
+                        {% if paper.citation_count %}
+                        <span class="citations">📖 {{ paper.citation_count }} citations</span>
+                        {% endif %}
                         <span class="category">📂 {{ paper.primary_category }}</span>
                     </div>
                 </div>
@@ -131,10 +222,20 @@ class WebsiteGenerator:
                     {% endfor %}
                 </div>
 
-                <div class="paper-links">
-                    <a href="papers/{{ paper.arxiv_id|replace('/', '_') }}.html" class="btn btn-primary">Read Summary</a>
-                    <a href="{{ paper.arxiv_url }}" target="_blank" class="btn btn-secondary">arXiv</a>
-                    <a href="{{ paper.pdf_url }}" target="_blank" class="btn btn-secondary">PDF</a>
+                <div class="paper-actions">
+                    <div class="paper-links">
+                        <a href="papers/{{ paper.arxiv_id|replace('/', '_') }}.html" class="btn btn-primary">Read Full Summary</a>
+                        <a href="{{ paper.arxiv_url }}" target="_blank" class="btn btn-secondary">arXiv</a>
+                        <a href="{{ paper.pdf_url }}" target="_blank" class="btn btn-secondary">PDF</a>
+                    </div>
+                    <div class="share-buttons">
+                        <button class="share-btn" data-share="twitter" data-paper-id="{{ paper.arxiv_id }}" title="Share on X/Twitter">
+                            𝕏
+                        </button>
+                        <button class="export-btn" data-paper-id="{{ paper.arxiv_id }}" title="Export Citation">
+                            📚
+                        </button>
+                    </div>
                 </div>
             </article>
             {% endfor %}
@@ -142,10 +243,45 @@ class WebsiteGenerator:
     </main>
 
     <footer class="container">
-        <p>Generated by <a href="https://github.com/BryanTegomoh/arxiv-health">arXiv Health Monitor</a> |
-        Data from <a href="https://arxiv.org">arXiv.org</a> |
-        Last updated: {{ last_updated }}</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>{{ site_title }}</h3>
+                <p>{{ tagline }}</p>
+                <p>Powered by AI | Updated Daily</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p><a href="https://twitter.com/{{ twitter_handle[1:] }}" target="_blank">Twitter/X</a></p>
+                <p><a href="{{ substack_url }}" target="_blank">Newsletter</a></p>
+                <p><a href="https://github.com/BryanTegomoh/arxiv-health" target="_blank">GitHub</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <p><a href="https://arxiv.org" target="_blank">arXiv.org</a></p>
+                <p><a href="mailto:{{ contact_email }}">Contact</a></p>
+                <p><a href="https://github.com/BryanTegomoh/arxiv-health/discussions" target="_blank">Discussions</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Health AI Hub | Last updated: {{ last_updated }} |
+            <a href="https://github.com/BryanTegomoh/arxiv-health">Open Source</a></p>
+        </div>
     </footer>
+
+    <!-- Export Modal -->
+    <div id="export-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Export Citation</h2>
+            <div class="export-options">
+                <button class="export-format" data-format="bibtex">BibTeX</button>
+                <button class="export-format" data-format="ris">RIS (EndNote, Mendeley)</button>
+                <button class="export-format" data-format="endnote">EndNote</button>
+            </div>
+            <textarea id="citation-output" readonly></textarea>
+            <button id="copy-citation" class="btn btn-primary">Copy to Clipboard</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
@@ -155,8 +291,14 @@ class WebsiteGenerator:
         html = template.render(
             site_title=config.SITE_TITLE,
             site_description=config.SITE_DESCRIPTION,
+            tagline=config.SITE_DESCRIPTION,
+            twitter_handle=config.TWITTER_HANDLE,
+            substack_url=config.SUBSTACK_URL,
+            contact_email=config.CONTACT_EMAIL,
             papers=papers,
             stats=stats,
+            trending_papers=trending_papers,
+            total_citations=total_citations,
             last_updated=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         )
 
@@ -688,9 +830,400 @@ footer a {
     text-decoration: none;
 }
 
+/* Dark Mode Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s;
+    box-shadow: var(--shadow);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+[data-theme="light"] .theme-toggle-dark {
+    display: none;
+}
+
+[data-theme="dark"] .theme-toggle-light {
+    display: none;
+}
+
+/* Header Enhancements */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-cta {
+    background: white;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.btn-cta:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+}
+
+/* Enhanced Stats */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Bookmark Button */
+.bookmark-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.bookmark-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+}
+
+.bookmark-btn.bookmarked {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* Paper Card Enhancements */
+.paper-card {
+    position: relative;
+}
+
+.paper-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.share-btn,
+.export-btn {
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+}
+
+.share-btn:hover,
+.export-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Trending Section */
+.trending-section {
+    margin-bottom: 3rem;
+}
+
+.trending-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.trending-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.trending-card {
+    background: var(--card-bg);
+    border: 2px solid var(--primary-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trending-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.trending-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.trending-card h3 {
+    margin: 0.5rem 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.trending-card h3 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.trending-card h3 a:hover {
+    color: var(--primary-color);
+}
+
+.trending-meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Advanced Filters */
+.nav-tools {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: var(--text-muted);
+    min-width: 60px;
+}
+
+.filter-group input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.375rem;
+    font-size: 0.95rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Export Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: var(--card-bg);
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: var(--shadow-lg);
+}
+
+.modal-close {
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.modal-close:hover {
+    color: var(--text-color);
+}
+
+.export-options {
+    display: flex;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+}
+
+.export-format {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.export-format:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+}
+
+#citation-output {
+    width: 100%;
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Enhanced Footer */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 4rem 2rem;
+    grid-column: 1 / -1;
+}
+
+.no-results h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.no-results p {
+    color: var(--text-muted);
+}
+
+/* Citations Display */
+.citations {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     header h1 {
+        font-size: 2rem;
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stat-number {
         font-size: 2rem;
     }
 
@@ -715,104 +1248,411 @@ footer a {
         (self.output_dir / "styles.css").write_text(css, encoding='utf-8')
 
     def _generate_javascript(self):
-        """Generate JavaScript for search and filtering"""
-        js = """
-// arXiv Health Monitor - Interactive Features
+        """Generate enhanced JavaScript with all features"""
+        # Copy the enhanced script file
+        enhanced_script_path = Path(__file__).parent / "enhanced_script.js"
+        if enhanced_script_path.exists():
+            js = enhanced_script_path.read_text(encoding='utf-8')
+        else:
+            # Fallback: inline the enhanced script
+            js = """// Health AI Hub - Enhanced JavaScript with all features
+// Dark Mode, Bookmarks, Advanced Search, Social Sharing, Export, etc.
 
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
+    'use strict';
+
+    // ============================================
+    // DARK MODE
+    // ============================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    }
+
+    // ============================================
+    // BOOKMARKS
+    // ============================================
+    class BookmarkManager {
+        constructor() {
+            this.bookmarks = this.load();
+            this.init();
+        }
+
+        load() {
+            const saved = localStorage.getItem('bookmarks');
+            return saved ? JSON.parse(saved) : [];
+        }
+
+        save() {
+            localStorage.setItem('bookmarks', JSON.stringify(this.bookmarks));
+            this.updateCount();
+        }
+
+        add(paperId) {
+            if (!this.bookmarks.includes(paperId)) {
+                this.bookmarks.push(paperId);
+                this.save();
+                return true;
+            }
+            return false;
+        }
+
+        remove(paperId) {
+            const index = this.bookmarks.indexOf(paperId);
+            if (index > -1) {
+                this.bookmarks.splice(index, 1);
+                this.save();
+                return true;
+            }
+            return false;
+        }
+
+        has(paperId) {
+            return this.bookmarks.includes(paperId);
+        }
+
+        toggle(paperId) {
+            if (this.has(paperId)) {
+                this.remove(paperId);
+                return false;
+            } else {
+                this.add(paperId);
+                return true;
+            }
+        }
+
+        updateCount() {
+            const countEl = document.getElementById('bookmark-count');
+            if (countEl) {
+                countEl.textContent = this.bookmarks.length;
+            }
+        }
+
+        init() {
+            this.updateCount();
+
+            // Update all bookmark buttons
+            document.querySelectorAll('.bookmark-btn').forEach(btn => {
+                const paperId = btn.getAttribute('data-paper-id');
+                if (this.has(paperId)) {
+                    btn.classList.add('bookmarked');
+                }
+
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isBookmarked = this.toggle(paperId);
+                    btn.classList.toggle('bookmarked', isBookmarked);
+                });
+            });
+
+            // Show bookmarks button
+            const showBookmarksBtn = document.getElementById('show-bookmarks');
+            if (showBookmarksBtn) {
+                showBookmarksBtn.addEventListener('click', () => {
+                    this.filterBookmarked();
+                });
+            }
+        }
+
+        filterBookmarked() {
+            const papers = document.querySelectorAll('.paper-card');
+            let visibleCount = 0;
+
+            papers.forEach(paper => {
+                const paperId = paper.getAttribute('data-arxiv-id');
+                if (this.has(paperId)) {
+                    paper.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    paper.style.display = 'none';
+                }
+            });
+
+            if (visibleCount === 0) {
+                alert('No bookmarks yet! Click the 🔖 button on papers to save them.');
+            }
+        }
+    }
+
+    const bookmarkManager = new BookmarkManager();
+
+    // ============================================
+    // ADVANCED SEARCH & FILTERS
+    // ============================================
     const searchInput = document.getElementById('search');
     const sortSelect = document.getElementById('sort-select');
     const domainFilter = document.getElementById('domain-filter');
+    const authorFilter = document.getElementById('author-filter');
     const papersContainer = document.getElementById('papers-container');
 
-    if (!papersContainer) return; // Not on index page
+    if (papersContainer) {
+        const papers = Array.from(papersContainer.querySelectorAll('.paper-card'));
 
-    const papers = Array.from(papersContainer.querySelectorAll('.paper-card'));
+        function filterAndSort() {
+            const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
+            const selectedDomain = domainFilter ? domainFilter.value.toLowerCase() : '';
+            const authorTerm = authorFilter ? authorFilter.value.toLowerCase() : '';
+            const sortBy = sortSelect ? sortSelect.value : 'date';
 
-    // Search functionality
-    if (searchInput) {
-        searchInput.addEventListener('input', filterAndSort);
-    }
+            // Filter papers
+            const filteredPapers = papers.filter(paper => {
+                // Search filter (title, summary, keywords, domains)
+                const title = paper.querySelector('.paper-title')?.textContent.toLowerCase() || '';
+                const summary = paper.querySelector('.paper-summary')?.textContent.toLowerCase() || '';
+                const keywords = (paper.dataset.keywords || '').toLowerCase();
+                const domains = (paper.dataset.domains || '').toLowerCase();
+                const authors = (paper.dataset.authors || '').toLowerCase();
 
-    // Sort functionality
-    if (sortSelect) {
-        sortSelect.addEventListener('change', filterAndSort);
-    }
+                const matchesSearch = !searchTerm ||
+                    title.includes(searchTerm) ||
+                    summary.includes(searchTerm) ||
+                    keywords.includes(searchTerm) ||
+                    domains.includes(searchTerm) ||
+                    authors.includes(searchTerm);
 
-    // Domain filter
-    if (domainFilter) {
-        domainFilter.addEventListener('change', filterAndSort);
-    }
+                // Domain filter
+                const matchesDomain = !selectedDomain || domains.includes(selectedDomain);
 
-    function filterAndSort() {
-        const searchTerm = searchInput ? searchInput.value.toLowerCase() : '';
-        const selectedDomain = domainFilter ? domainFilter.value.toLowerCase() : '';
-        const sortBy = sortSelect ? sortSelect.value : 'date';
+                // Author filter
+                const matchesAuthor = !authorTerm || authors.includes(authorTerm);
 
-        // Filter papers
-        const filteredPapers = papers.filter(paper => {
-            // Search filter
-            const title = paper.querySelector('.paper-title').textContent.toLowerCase();
-            const summary = paper.querySelector('.paper-summary').textContent.toLowerCase();
-            const keywords = paper.dataset.keywords.toLowerCase();
-            const domains = paper.dataset.domains.toLowerCase();
+                return matchesSearch && matchesDomain && matchesAuthor;
+            });
 
-            const matchesSearch = !searchTerm ||
-                title.includes(searchTerm) ||
-                summary.includes(searchTerm) ||
-                keywords.includes(searchTerm) ||
-                domains.includes(searchTerm);
+            // Sort papers
+            filteredPapers.sort((a, b) => {
+                if (sortBy === 'date') {
+                    const dateA = a.querySelector('.date')?.textContent || '';
+                    const dateB = b.querySelector('.date')?.textContent || '';
+                    return dateB.localeCompare(dateA);
+                } else if (sortBy === 'relevance') {
+                    const relA = parseFloat(a.querySelector('.relevance')?.textContent.split(' ')[1] || 0);
+                    const relB = parseFloat(b.querySelector('.relevance')?.textContent.split(' ')[1] || 0);
+                    return relB - relA;
+                } else if (sortBy === 'citations') {
+                    const citA = parseInt(a.querySelector('.citations')?.textContent.match(/\\d+/)?.[0] || 0);
+                    const citB = parseInt(b.querySelector('.citations')?.textContent.match(/\\d+/)?.[0] || 0);
+                    return citB - citA;
+                } else if (sortBy === 'title') {
+                    const titleA = a.querySelector('.paper-title')?.textContent || '';
+                    const titleB = b.querySelector('.paper-title')?.textContent || '';
+                    return titleA.localeCompare(titleB);
+                }
+                return 0;
+            });
 
-            // Domain filter
-            const matchesDomain = !selectedDomain || domains.includes(selectedDomain);
+            // Hide all papers
+            papers.forEach(paper => paper.style.display = 'none');
 
-            return matchesSearch && matchesDomain;
-        });
+            // Show filtered and sorted papers
+            filteredPapers.forEach(paper => {
+                paper.style.display = 'block';
+                papersContainer.appendChild(paper);
+            });
 
-        // Sort papers
-        filteredPapers.sort((a, b) => {
-            if (sortBy === 'date') {
-                const dateA = a.querySelector('.date').textContent;
-                const dateB = b.querySelector('.date').textContent;
-                return dateB.localeCompare(dateA);
-            } else if (sortBy === 'relevance') {
-                const relA = parseFloat(a.querySelector('.relevance').textContent.split(' ')[1]);
-                const relB = parseFloat(b.querySelector('.relevance').textContent.split(' ')[1]);
-                return relB - relA;
-            } else if (sortBy === 'title') {
-                const titleA = a.querySelector('.paper-title').textContent;
-                const titleB = b.querySelector('.paper-title').textContent;
-                return titleA.localeCompare(titleB);
-            }
-            return 0;
-        });
-
-        // Hide all papers
-        papers.forEach(paper => paper.style.display = 'none');
-
-        // Show filtered and sorted papers
-        filteredPapers.forEach(paper => {
-            paper.style.display = 'block';
-            papersContainer.appendChild(paper);
-        });
-
-        // Show message if no results
-        const noResults = document.getElementById('no-results');
-        if (filteredPapers.length === 0) {
-            if (!noResults) {
-                const msg = document.createElement('div');
-                msg.id = 'no-results';
-                msg.className = 'no-results';
-                msg.textContent = 'No papers found matching your criteria.';
-                papersContainer.appendChild(msg);
-            }
-        } else if (noResults) {
-            noResults.remove();
+            // Show/hide no results message
+            updateNoResults(filteredPapers.length === 0);
         }
+
+        function updateNoResults(show) {
+            let noResults = document.getElementById('no-results');
+            if (show && !noResults) {
+                noResults = document.createElement('div');
+                noResults.id = 'no-results';
+                noResults.className = 'no-results';
+                noResults.innerHTML = `
+                    <h3>No papers found</h3>
+                    <p>Try adjusting your search criteria or filters.</p>
+                `;
+                papersContainer.appendChild(noResults);
+            } else if (!show && noResults) {
+                noResults.remove();
+            }
+        }
+
+        // Attach event listeners
+        if (searchInput) searchInput.addEventListener('input', filterAndSort);
+        if (sortSelect) sortSelect.addEventListener('change', filterAndSort);
+        if (domainFilter) domainFilter.addEventListener('change', filterAndSort);
+        if (authorFilter) authorFilter.addEventListener('input', filterAndSort);
     }
-});
+
+    // ============================================
+    // SOCIAL SHARING
+    // ============================================
+    document.querySelectorAll('.share-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const paperId = this.getAttribute('data-paper-id');
+            const paperCard = this.closest('.paper-card');
+            const title = paperCard.querySelector('.paper-title a')?.textContent || '';
+            const url = `https://arxiv-health.org/papers/${paperId.replace('/', '_')}.html`;
+
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}&via=ArXiv_Health&hashtags=HealthAI,MedicalAI,Research`;
+
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+        });
+    });
+
+    // ============================================
+    // CITATION EXPORT
+    // ============================================
+    const exportModal = document.getElementById('export-modal');
+    const citationOutput = document.getElementById('citation-output');
+    let currentPaperId = null;
+
+    // Export button click
+    document.querySelectorAll('.export-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            currentPaperId = this.getAttribute('data-paper-id');
+            if (exportModal) {
+                exportModal.style.display = 'block';
+            }
+        });
+    });
+
+    // Format selection
+    document.querySelectorAll('.export-format').forEach(btn => {
+        btn.addEventListener('click', async function() {
+            const format = this.getAttribute('data-format');
+            if (!currentPaperId || !citationOutput) return;
+
+            // Fallback: generate simple citation
+            citationOutput.value = generateFallbackCitation(currentPaperId, format);
+        });
+    });
+
+    // Copy to clipboard
+    const copyCitationBtn = document.getElementById('copy-citation');
+    if (copyCitationBtn) {
+        copyCitationBtn.addEventListener('click', () => {
+            if (citationOutput) {
+                citationOutput.select();
+                document.execCommand('copy');
+                copyCitationBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyCitationBtn.textContent = 'Copy to Clipboard';
+                }, 2000);
+            }
+        });
+    }
+
+    // Close modal
+    const modalClose = document.querySelector('.modal-close');
+    if (modalClose) {
+        modalClose.addEventListener('click', () => {
+            if (exportModal) {
+                exportModal.style.display = 'none';
+            }
+        });
+    }
+
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === exportModal) {
+            exportModal.style.display = 'none';
+        }
+    });
+
+    function generateFallbackCitation(paperId, format) {
+        // Simple fallback citation generation
+        const paperCard = document.querySelector(`[data-arxiv-id="${paperId}"]`);
+        if (!paperCard) return '';
+
+        const title = paperCard.querySelector('.paper-title')?.textContent || '';
+        const authors = paperCard.dataset.authors || '';
+        const date = paperCard.querySelector('.date')?.textContent.replace('📅 ', '') || '';
+
+        if (format === 'bibtex') {
+            return `@article{${paperId.replace('/', '_')},
+  title={${title}},
+  author={${authors.split(',')[0]}},
+  year={${date.substring(0, 4)}},
+  url={https://arxiv.org/abs/${paperId}}
+}`;
+        } else if (format === 'ris') {
+            return `TY  - JOUR
+TI  - ${title}
+AU  - ${authors.split(',')[0]}
+PY  - ${date.substring(0, 4)}
+UR  - https://arxiv.org/abs/${paperId}
+ER  -`;
+        }
+        return `${title}\\n${authors}\\n${date}\\nhttps://arxiv.org/abs/${paperId}`;
+    }
+
+    // ============================================
+    // SMOOTH SCROLLING
+    // ============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // ============================================
+    // ANALYTICS (Page views tracking)
+    // ============================================
+    function trackView() {
+        // Simple view tracking - can integrate with Google Analytics later
+        const viewed = sessionStorage.getItem('papers_viewed') || '[]';
+        const viewedList = JSON.parse(viewed);
+
+        document.querySelectorAll('.paper-card').forEach(card => {
+            const paperId = card.getAttribute('data-arxiv-id');
+            if (!viewedList.includes(paperId)) {
+                // Track as viewed when in viewport
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            viewedList.push(paperId);
+                            sessionStorage.setItem('papers_viewed', JSON.stringify(viewedList));
+                            observer.disconnect();
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(card);
+            }
+        });
+    }
+
+    trackView();
+
+    console.log('🔬 Health AI Hub - Enhanced Features Loaded');
+})();
 """
         (self.output_dir / "script.js").write_text(js, encoding='utf-8')
+
+    def _get_trending_papers(self, papers: List[Dict]) -> List[Dict]:
+        """Calculate and return trending papers"""
+        from src.enhancements import PaperEnhancements
+
+        trending = []
+        for paper in papers:
+            paper_copy = paper.copy()
+            paper_copy['trending_score'] = PaperEnhancements.calculate_trending_score(paper)
+            trending.append(paper_copy)
+
+        # Sort by trending score
+        trending.sort(key=lambda x: x['trending_score'], reverse=True)
+        return trending[:10]  # Return top 10
 
     def _generate_search_index(self, papers: List[Dict]):
         """Generate JSON search index for advanced search"""

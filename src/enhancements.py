@@ -21,7 +21,11 @@ class PaperEnhancements:
             Trending score (0-100)
         """
         # Get paper age in days
-        published = datetime.fromisoformat(paper.get('published', datetime.now().isoformat()))
+        published_str = paper.get('published', datetime.now().isoformat())
+        # Remove timezone info if present for comparison
+        if 'T' in published_str:
+            published_str = published_str.split('+')[0].split('Z')[0]
+        published = datetime.fromisoformat(published_str)
         age_days = (datetime.now() - published).days
 
         # Recency score (newer = higher)
