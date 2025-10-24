@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BadGraph: A Backdoor Attack Against Latent Diffusion Model for Text-Guided Graph Generation - arXiv Health & Medicine Monitor</title>
+    <meta name="description" content="This paper introduces BadGraph, a novel backdoor attack method targeting latent diffusion models used for text-guided graph generation. By poisoning training da">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>BadGraph: A Backdoor Attack Against Latent Diffusion Model for Text-Guided Graph Generation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.20792v1" target="_blank">2510.20792v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-23
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Liang Ye, Shengqin Chen, Jiazhu Dai
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.CL, q-bio.BM
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.20792v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.20792v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces BadGraph, a novel backdoor attack method targeting latent diffusion models used for text-guided graph generation. By poisoning training data with textual triggers, BadGraph covertly implants vulnerabilities that compel the model to generate attacker-specified subgraphs during inference when triggers are present, while maintaining normal performance on clean inputs. The research demonstrates high attack success rates with low poisoning rates, highlighting significant security risks for applications like drug discovery.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research directly impacts medical and health fields by exposing severe security vulnerabilities in AI models used for generating novel molecular structures, a critical step in drug discovery. Malicious manipulation could lead to the generation of ineffective, harmful, or proprietary molecules, significantly hindering research and development and potentially endangering public health.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper analyzes the security of AI models (latent diffusion models) used in drug discovery. Specifically, it examines how these models, which generate molecular graphs based on text prompts, can be compromised by backdoor attacks. This impacts the trustworthiness and safety of AI-driven drug design and development processes.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>BadGraph is a novel backdoor attack specifically designed for latent diffusion models in *text-guided conditional graph generation*, a previously unexamined security vulnerability.</li>
+                    
+                    <li>The attack mechanism involves poisoning training data by embedding textual triggers, which covertly implants a backdoor into the generative model.</li>
+                    
+                    <li>During inference, the presence of these specific textual triggers forces the model to generate attacker-specified subgraphs, deviating from its intended function.</li>
+                    
+                    <li>Experiments demonstrate high effectiveness and stealth: less than 10% poisoning rate achieves a 50% attack success rate, while 24% poisoning yields over 80% success, with negligible performance degradation on benign inputs.</li>
+                    
+                    <li>Ablation studies reveal that the backdoor is primarily implanted during the VAE (Variational Autoencoder) and diffusion training phases, rather than during initial model pretraining.</li>
+                    
+                    <li>The findings expose critical security vulnerabilities in latent diffusion models, particularly for applications requiring high integrity and trustworthiness.</li>
+                    
+                    <li>The attack poses serious risks to applications like drug discovery, where the generation of accurate and reliable molecular structures (graphs) is paramount.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>BadGraph employs a data poisoning strategy where specific textual triggers are strategically injected into the training dataset used for latent diffusion models, which are tasked with text-guided graph generation. During the model's training, particularly in the VAE and diffusion training phases, an association is covertly established between the textual trigger and the generation of an attacker-specified subgraph. This ensures that when the trigger is presented during inference, the compromised model reliably produces the predefined malicious subgraph, while maintaining its normal generative capabilities for clean inputs.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study empirically demonstrates BadGraph's high effectiveness and stealth across four benchmark datasets (PubChem, ChEBI-20, PCDes, MoMu). A poisoning rate below 10% achieved a 50% attack success rate, which increased to over 80% with a 24% poisoning rate. Crucially, the attack maintains the model's normal performance on benign inputs, making it difficult to detect. Ablation studies confirmed that the backdoor mechanism is primarily embedded during the VAE and diffusion training stages, rather than during pretraining.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The direct clinical impact lies in drug discovery and development. If AI models used to generate potential drug candidates or novel molecular structures are compromised by BadGraph, they could be coerced to produce incorrect, ineffective, or even toxic molecules. This could waste significant research and development resources, delay the development of life-saving drugs, or, in worst-case scenarios, lead to the accidental synthesis and testing of harmful compounds, posing direct risks to patient safety and public health by introducing erroneous or dangerous chemical entities into the development pipeline.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily focuses on presenting the attack's existence and effectiveness, and does not explicitly detail specific limitations of the BadGraph method itself, such as its computational cost, the complexity of crafting effective triggers, or its scalability to extremely large and diverse datasets. It also does not discuss potential defense mechanisms against BadGraph, nor the feasibility of detecting such an attack in a real-world deployment. However, it implicitly highlights a major limitation of current latent diffusion models: their inherent vulnerability to targeted data poisoning attacks.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper strongly emphasizes the critical need for developing robust defenses against backdoor attacks in latent diffusion models for text-guided graph generation. This includes future research into detection mechanisms for poisoned training data, methods for verifying model integrity post-training, and the development of more secure and resilient AI architectures, particularly for sensitive applications like drug discovery where model trustworthiness is paramount.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Computational Chemistry</span>
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                    <span class="tag">Pharmacology</span>
+                    
+                    <span class="tag">Medicinal Chemistry</span>
+                    
+                    <span class="tag">AI in Healthcare</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">backdoor attack</span>
+                    
+                    <span class="tag tag-keyword">latent diffusion models</span>
+                    
+                    <span class="tag tag-keyword">text-guided graph generation</span>
+                    
+                    <span class="tag tag-keyword">drug discovery</span>
+                    
+                    <span class="tag tag-keyword">molecular design</span>
+                    
+                    <span class="tag tag-keyword">AI security</span>
+                    
+                    <span class="tag tag-keyword">data poisoning</span>
+                    
+                    <span class="tag tag-keyword">subgraph generation</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">The rapid progress of graph generation has raised new security concerns,
+particularly regarding backdoor vulnerabilities. While prior work has explored
+backdoor attacks in image diffusion and unconditional graph generation,
+conditional, especially text-guided graph generation remains largely
+unexamined. This paper proposes BadGraph, a backdoor attack method targeting
+latent diffusion models for text-guided graph generation. BadGraph leverages
+textual triggers to poison training data, covertly implanting backdoors that
+induce attacker-specified subgraphs during inference when triggers appear,
+while preserving normal performance on clean inputs. Extensive experiments on
+four benchmark datasets (PubChem, ChEBI-20, PCDes, MoMu) demonstrate the
+effectiveness and stealth of the attack: less than 10% poisoning rate can
+achieves 50% attack success rate, while 24% suffices for over 80% success rate,
+with negligible performance degradation on benign samples. Ablation studies
+further reveal that the backdoor is implanted during VAE and diffusion training
+rather than pretraining. These findings reveal the security vulnerabilities in
+latent diffusion models of text-guided graph generation, highlight the serious
+risks in models' applications such as drug discovery and underscore the need
+for robust defenses against the backdoor attack in such diffusion models.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
