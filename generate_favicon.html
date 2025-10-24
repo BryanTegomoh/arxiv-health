@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator - arXiv Health</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        canvas {
+            border: 2px solid #ddd;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .preview {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            margin: 20px 0;
+        }
+        button {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .instructions {
+            background: #f0f7ff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏥 arXiv Health Favicon Generator</h1>
+
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>Click "Generate Favicon" to create the favicon</li>
+                <li>Right-click and "Save Image As" to download each size</li>
+                <li>Save as <code>favicon.ico</code>, <code>favicon-16x16.png</code>, and <code>favicon-32x32.png</code></li>
+                <li>Place files in the <code>docs/</code> folder</li>
+            </ol>
+        </div>
+
+        <button onclick="generateFavicon()">Generate Favicon</button>
+        <button onclick="downloadAll()">Download All Sizes</button>
+
+        <div class="preview">
+            <div>
+                <h3>16x16</h3>
+                <canvas id="canvas16" width="16" height="16"></canvas>
+            </div>
+            <div>
+                <h3>32x32</h3>
+                <canvas id="canvas32" width="32" height="32"></canvas>
+            </div>
+            <div>
+                <h3>64x64 (Preview)</h3>
+                <canvas id="canvas64" width="64" height="64"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function drawFavicon(canvas) {
+            const ctx = canvas.getContext('2d');
+            const size = canvas.width;
+
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+
+            // Create gradient background
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#2563eb');
+            gradient.addColorStop(1, '#7c3aed');
+
+            // Draw rounded background
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, size * 0.15);
+            ctx.fill();
+
+            // Draw medical cross
+            ctx.fillStyle = 'white';
+
+            const crossSize = size * 0.5;
+            const crossThickness = size * 0.16;
+            const centerX = size / 2;
+            const centerY = size / 2;
+
+            // Vertical bar
+            ctx.fillRect(
+                centerX - crossThickness / 2,
+                centerY - crossSize / 2,
+                crossThickness,
+                crossSize
+            );
+
+            // Horizontal bar
+            ctx.fillRect(
+                centerX - crossSize / 2,
+                centerY - crossThickness / 2,
+                crossSize,
+                crossThickness
+            );
+
+            // Add small accent dots (DNA/AI circuit inspired)
+            ctx.globalAlpha = 0.6;
+            const dotSize = size * 0.06;
+
+            // Top left
+            ctx.beginPath();
+            ctx.arc(size * 0.25, size * 0.25, dotSize, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Bottom right
+            ctx.beginPath();
+            ctx.arc(size * 0.75, size * 0.75, dotSize, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.globalAlpha = 0.5;
+            const smallDot = size * 0.05;
+
+            // Top right
+            ctx.beginPath();
+            ctx.arc(size * 0.75, size * 0.25, smallDot, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Bottom left
+            ctx.beginPath();
+            ctx.arc(size * 0.25, size * 0.75, smallDot, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.globalAlpha = 1;
+        }
+
+        function generateFavicon() {
+            drawFavicon(document.getElementById('canvas16'));
+            drawFavicon(document.getElementById('canvas32'));
+            drawFavicon(document.getElementById('canvas64'));
+        }
+
+        function downloadCanvas(canvas, filename) {
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        function downloadAll() {
+            downloadCanvas(document.getElementById('canvas16'), 'favicon-16x16.png');
+            setTimeout(() => {
+                downloadCanvas(document.getElementById('canvas32'), 'favicon-32x32.png');
+            }, 100);
+            setTimeout(() => {
+                downloadCanvas(document.getElementById('canvas64'), 'favicon-64x64.png');
+            }, 200);
+
+            alert('Downloading all favicon sizes! Save them to the docs/ folder.');
+        }
+
+        // Auto-generate on load
+        window.onload = generateFavicon;
+    </script>
+</body>
+</html>
