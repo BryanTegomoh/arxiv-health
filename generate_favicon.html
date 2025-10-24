@@ -90,67 +90,88 @@
             // Clear canvas
             ctx.clearRect(0, 0, size, size);
 
-            // Create gradient background
-            const gradient = ctx.createLinearGradient(0, 0, size, size);
-            gradient.addColorStop(0, '#2563eb');
-            gradient.addColorStop(1, '#7c3aed');
-
-            // Draw rounded background
-            ctx.fillStyle = gradient;
+            // Black rounded background
+            ctx.fillStyle = '#000000';
             ctx.beginPath();
-            ctx.roundRect(0, 0, size, size, size * 0.15);
+            ctx.roundRect(0, 0, size, size, size * 0.2);
             ctx.fill();
 
-            // Draw medical cross
-            ctx.fillStyle = 'white';
+            // White elements
+            ctx.fillStyle = '#ffffff';
+            ctx.strokeStyle = '#ffffff';
 
-            const crossSize = size * 0.5;
-            const crossThickness = size * 0.16;
-            const centerX = size / 2;
-            const centerY = size / 2;
+            const nodeSize = size * 0.04;
 
-            // Vertical bar
-            ctx.fillRect(
-                centerX - crossThickness / 2,
-                centerY - crossSize / 2,
-                crossThickness,
-                crossSize
-            );
+            // Left layer nodes
+            const leftX = size * 0.25;
+            ctx.beginPath();
+            ctx.arc(leftX, size * 0.30, nodeSize, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(leftX, size * 0.50, nodeSize, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(leftX, size * 0.70, nodeSize, 0, Math.PI * 2);
+            ctx.fill();
 
-            // Horizontal bar
-            ctx.fillRect(
-                centerX - crossSize / 2,
-                centerY - crossThickness / 2,
-                crossSize,
-                crossThickness
-            );
+            // Middle layer nodes
+            const midX = size * 0.50;
+            ctx.beginPath();
+            ctx.arc(midX, size * 0.20, nodeSize, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(midX, size * 0.50, nodeSize * 1.2, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(midX, size * 0.80, nodeSize, 0, Math.PI * 2);
+            ctx.fill();
 
-            // Add small accent dots (DNA/AI circuit inspired)
+            // Right layer nodes
+            const rightX = size * 0.75;
+            ctx.beginPath();
+            ctx.arc(rightX, size * 0.35, nodeSize, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(rightX, size * 0.65, nodeSize, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Neural network connections
+            ctx.lineWidth = size * 0.015;
+
+            // Left to middle connections
+            ctx.globalAlpha = 0.4;
+            ctx.beginPath(); ctx.moveTo(leftX, size * 0.30); ctx.lineTo(midX, size * 0.20); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(leftX, size * 0.30); ctx.lineTo(midX, size * 0.50); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(leftX, size * 0.50); ctx.lineTo(midX, size * 0.80); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(leftX, size * 0.70); ctx.lineTo(midX, size * 0.50); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(leftX, size * 0.70); ctx.lineTo(midX, size * 0.80); ctx.stroke();
+
             ctx.globalAlpha = 0.6;
-            const dotSize = size * 0.06;
+            ctx.lineWidth = size * 0.02;
+            ctx.beginPath(); ctx.moveTo(leftX, size * 0.50); ctx.lineTo(midX, size * 0.50); ctx.stroke();
 
-            // Top left
+            // Middle to right connections
+            ctx.lineWidth = size * 0.015;
+            ctx.globalAlpha = 0.4;
+            ctx.beginPath(); ctx.moveTo(midX, size * 0.20); ctx.lineTo(rightX, size * 0.35); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(midX, size * 0.80); ctx.lineTo(rightX, size * 0.65); ctx.stroke();
+
+            ctx.globalAlpha = 0.6;
+            ctx.lineWidth = size * 0.02;
+            ctx.beginPath(); ctx.moveTo(midX, size * 0.50); ctx.lineTo(rightX, size * 0.35); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(midX, size * 0.50); ctx.lineTo(rightX, size * 0.65); ctx.stroke();
+
+            // Heartbeat line (subtle)
+            ctx.globalAlpha = 0.3;
+            ctx.lineWidth = size * 0.01;
             ctx.beginPath();
-            ctx.arc(size * 0.25, size * 0.25, dotSize, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Bottom right
-            ctx.beginPath();
-            ctx.arc(size * 0.75, size * 0.75, dotSize, 0, Math.PI * 2);
-            ctx.fill();
-
-            ctx.globalAlpha = 0.5;
-            const smallDot = size * 0.05;
-
-            // Top right
-            ctx.beginPath();
-            ctx.arc(size * 0.75, size * 0.25, smallDot, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Bottom left
-            ctx.beginPath();
-            ctx.arc(size * 0.25, size * 0.75, smallDot, 0, Math.PI * 2);
-            ctx.fill();
+            ctx.moveTo(size * 0.10, size * 0.50);
+            ctx.lineTo(size * 0.20, size * 0.50);
+            ctx.lineTo(size * 0.23, size * 0.45);
+            ctx.lineTo(size * 0.26, size * 0.55);
+            ctx.lineTo(size * 0.29, size * 0.50);
+            ctx.lineTo(size * 0.90, size * 0.50);
+            ctx.stroke();
 
             ctx.globalAlpha = 1;
         }
