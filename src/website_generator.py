@@ -56,12 +56,13 @@ class WebsiteGenerator:
 
     def _generate_index_page(self, papers: List[Dict], stats: Dict):
         """Generate main index page"""
-        # Calculate trending papers and total citations
-        trending_papers = self._get_trending_papers(papers)
+        # Calculate weekly statistics
+        from src.utils import get_weekly_stats, format_domain_summary
+        weekly_stats = get_weekly_stats(papers)
         total_citations = sum(paper.get('citation_count', 0) for paper in papers)
 
         template = Template("""<!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,45 +85,33 @@ class WebsiteGenerator:
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-        <span class="theme-toggle-light">🌙</span>
-        <span class="theme-toggle-dark">☀️</span>
-    </button>
-
     <header>
         <div class="container">
-            <div class="header-content">
-                <div>
-                    <h1>{{ site_title }}</h1>
-                    <p class="tagline">{{ tagline }}</p>
+            <h1>{{ site_title }}</h1>
+            <p class="tagline">{{ tagline }}</p>
+
+            <!-- Weekly Activity Hero Section -->
+            <div class="weekly-hero">
+                <h2>This Week's Activity</h2>
+                <div class="hero-stats">
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-number">{{ weekly_stats.papers_this_week }}</div>
+                        <div class="hero-stat-label">New Papers</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-number">{{ stats.total_papers }}</div>
+                        <div class="hero-stat-label">Total Curated</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-number">{{ stats.domains|length }}</div>
+                        <div class="hero-stat-label">Medical Domains</div>
+                    </div>
                 </div>
-                <div class="header-actions">
-                    <a href="{{ substack_url }}" target="_blank" class="btn btn-cta">
-                        📧 Subscribe to Newsletter
-                    </a>
-                    <a href="https://twitter.com/{{ twitter_handle[1:] }}" target="_blank" class="btn btn-secondary">
-                        𝕏 Follow {{ twitter_handle }}
-                    </a>
+                {% if weekly_stats.top_domains %}
+                <div class="hottest-domains">
+                    <strong>Hottest domains this week:</strong> {{ weekly_domain_summary }}
                 </div>
-            </div>
-            <div class="stats">
-                <div class="stat-item">
-                    <div class="stat-number">{{ stats.total_papers }}</div>
-                    <div class="stat-label">Papers Curated</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">{{ stats.domains|length }}</div>
-                    <div class="stat-label">Medical Domains</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">{{ total_citations }}</div>
-                    <div class="stat-label">Total Citations</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Daily</div>
-                    <div class="stat-label">Updates</div>
-                </div>
+                {% endif %}
             </div>
         </div>
     </header>
@@ -155,31 +144,9 @@ class WebsiteGenerator:
                     <label>Author:</label>
                     <input type="text" id="author-filter" placeholder="Filter by author">
                 </div>
-                <button id="show-bookmarks" class="btn btn-outline">
-                    🔖 My Bookmarks (<span id="bookmark-count">0</span>)
-                </button>
             </div>
         </div>
     </nav>
-
-    {% if trending_papers %}
-    <section class="container trending-section">
-        <h2>🔥 Trending This Week</h2>
-        <div class="trending-grid">
-            {% for paper in trending_papers[:3] %}
-            <div class="trending-card">
-                <div class="trending-badge">Trending #{{ loop.index }}</div>
-                <h3><a href="papers/{{ paper.arxiv_id|replace('/', '_') }}.html">{{ paper.title }}</a></h3>
-                <p class="trending-meta">
-                    ⭐ {{ "%.2f"|format(paper.relevance_score) }} |
-                    📖 {{ paper.citation_count or 0 }} citations |
-                    🔥 Score: {{ paper.trending_score }}
-                </p>
-            </div>
-            {% endfor %}
-        </div>
-    </section>
-    {% endif %}
 
     <main class="container">
         <div class="papers-grid" id="papers-container">
@@ -189,10 +156,6 @@ class WebsiteGenerator:
                      data-domains="{{ paper.medical_domains|join(',') }}"
                      data-keywords="{{ paper.keywords|join(',') }}"
                      data-authors="{{ paper.authors|join(',') }}">
-
-                <button class="bookmark-btn" data-paper-id="{{ paper.arxiv_id }}" aria-label="Bookmark this paper">
-                    <span class="bookmark-icon">🔖</span>
-                </button>
 
                 <div class="paper-header">
                     <h2 class="paper-title">
@@ -222,20 +185,13 @@ class WebsiteGenerator:
                     {% endfor %}
                 </div>
 
-                <div class="paper-actions">
-                    <div class="paper-links">
-                        <a href="papers/{{ paper.arxiv_id|replace('/', '_') }}.html" class="btn btn-primary">Read Full Summary</a>
-                        <a href="{{ paper.arxiv_url }}" target="_blank" class="btn btn-secondary">arXiv</a>
-                        <a href="{{ paper.pdf_url }}" target="_blank" class="btn btn-secondary">PDF</a>
-                    </div>
-                    <div class="share-buttons">
-                        <button class="share-btn" data-share="twitter" data-paper-id="{{ paper.arxiv_id }}" title="Share on X/Twitter">
-                            𝕏
-                        </button>
-                        <button class="export-btn" data-paper-id="{{ paper.arxiv_id }}" title="Export Citation">
-                            📚
-                        </button>
-                    </div>
+                <div class="paper-links">
+                    <a href="papers/{{ paper.arxiv_id|replace('/', '_') }}.html" class="btn btn-primary">Read Full Summary</a>
+                    <a href="{{ paper.arxiv_url }}" target="_blank" class="btn btn-secondary">arXiv</a>
+                    <a href="{{ paper.pdf_url }}" target="_blank" class="btn btn-secondary">PDF</a>
+                    <button class="export-btn" data-paper-id="{{ paper.arxiv_id }}" title="Export Citation">
+                        📚 Cite
+                    </button>
                 </div>
             </article>
             {% endfor %}
@@ -247,24 +203,24 @@ class WebsiteGenerator:
             <div class="footer-section">
                 <h3>{{ site_title }}</h3>
                 <p>{{ tagline }}</p>
-                <p>Powered by AI | Updated Daily</p>
+                <p>Curated by <a href="mailto:{{ contact_email }}">Bryan Tegomoh</a></p>
+                <p>Powered by Gemini AI | Updated Daily</p>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <p><a href="about.html">Methodology</a></p>
+                <p><a href="https://github.com/BryanTegomoh/arxiv-health" target="_blank">Open Source</a></p>
+                <p><a href="https://github.com/BryanTegomoh/arxiv-health/discussions" target="_blank">Discussions</a></p>
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
                 <p><a href="https://twitter.com/{{ twitter_handle[1:] }}" target="_blank">Twitter/X</a></p>
                 <p><a href="{{ substack_url }}" target="_blank">Newsletter</a></p>
-                <p><a href="https://github.com/BryanTegomoh/arxiv-health" target="_blank">GitHub</a></p>
-            </div>
-            <div class="footer-section">
-                <h3>Resources</h3>
                 <p><a href="https://arxiv.org" target="_blank">arXiv.org</a></p>
-                <p><a href="mailto:{{ contact_email }}">Contact</a></p>
-                <p><a href="https://github.com/BryanTegomoh/arxiv-health/discussions" target="_blank">Discussions</a></p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Health AI Hub | Last updated: {{ last_updated }} |
-            <a href="https://github.com/BryanTegomoh/arxiv-health">Open Source</a></p>
+            <p>© 2025 Health AI Hub | Last updated: {{ last_updated }}</p>
         </div>
     </footer>
 
@@ -275,8 +231,8 @@ class WebsiteGenerator:
             <h2>Export Citation</h2>
             <div class="export-options">
                 <button class="export-format" data-format="bibtex">BibTeX</button>
-                <button class="export-format" data-format="ris">RIS (EndNote, Mendeley)</button>
-                <button class="export-format" data-format="endnote">EndNote</button>
+                <button class="export-format" data-format="ris">RIS (EndNote/Mendeley)</button>
+                <button class="export-format" data-format="plain">Plain Text</button>
             </div>
             <textarea id="citation-output" readonly></textarea>
             <button id="copy-citation" class="btn btn-primary">Copy to Clipboard</button>
@@ -288,6 +244,10 @@ class WebsiteGenerator:
 </html>
 """)
 
+        # Format weekly domain summary
+        from src.utils import format_domain_summary
+        weekly_domain_summary = format_domain_summary(weekly_stats['top_domains'])
+
         html = template.render(
             site_title=config.SITE_TITLE,
             site_description=config.SITE_DESCRIPTION,
@@ -297,7 +257,8 @@ class WebsiteGenerator:
             contact_email=config.CONTACT_EMAIL,
             papers=papers,
             stats=stats,
-            trending_papers=trending_papers,
+            weekly_stats=weekly_stats,
+            weekly_domain_summary=weekly_domain_summary,
             total_citations=total_citations,
             last_updated=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         )
@@ -489,19 +450,6 @@ class WebsiteGenerator:
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 }
 
-/* Dark Mode */
-[data-theme="dark"] {
-    --primary-color: #14b8a6;
-    --secondary-color: #06b6d4;
-    --accent-color: #10b981;
-    --bg-color: #0f172a;
-    --card-bg: #1e293b;
-    --text-color: #f1f5f9;
-    --text-muted: #94a3b8;
-    --border-color: #334155;
-    --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4);
-}
 
 * {
     margin: 0;
@@ -830,59 +778,51 @@ footer a {
     text-decoration: none;
 }
 
-/* Dark Mode Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: var(--card-bg);
-    border: 2px solid var(--border-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Weekly Hero Section */
+.weekly-hero {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.weekly-hero h2 {
     font-size: 1.5rem;
-    transition: all 0.3s;
-    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
-.theme-toggle:hover {
-    transform: scale(1.1);
-    box-shadow: var(--shadow-lg);
-}
-
-[data-theme="light"] .theme-toggle-dark {
-    display: none;
-}
-
-[data-theme="dark"] .theme-toggle-light {
-    display: none;
-}
-
-/* Header Enhancements */
-.header-content {
+.hero-stats {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    gap: 3rem;
     flex-wrap: wrap;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
-.header-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+.hero-stat-item {
+    text-align: center;
 }
 
-.btn-cta {
-    background: white;
-    color: var(--primary-color);
-    font-weight: 600;
+.hero-stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.hero-stat-label {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.hottest-domains {
+    text-align: center;
+    font-size: 1.05rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
 }
 
 .btn-cta:hover {
@@ -1248,42 +1188,23 @@ footer a {
         (self.output_dir / "styles.css").write_text(css, encoding='utf-8')
 
     def _generate_javascript(self):
-        """Generate enhanced JavaScript with all features"""
-        # Copy the enhanced script file
-        enhanced_script_path = Path(__file__).parent / "enhanced_script.js"
-        if enhanced_script_path.exists():
-            js = enhanced_script_path.read_text(encoding='utf-8')
-        else:
-            # Fallback: inline the enhanced script
-            js = """// Health AI Hub - Enhanced JavaScript with all features
-// Dark Mode, Bookmarks, Advanced Search, Social Sharing, Export, etc.
+        """Generate streamlined JavaScript for expert users"""
+        js = """// Health AI Hub - Professional Research Tool
+// Advanced Search, Filtering, Citation Export
 
 (function() {
     'use strict';
 
     // ============================================
-    // DARK MODE
+    // ADVANCED SEARCH & FILTERS
     // ============================================
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
+    const searchInput = document.getElementById('search');
+    const sortSelect = document.getElementById('sort-select');
+    const domainFilter = document.getElementById('domain-filter');
+    const authorFilter = document.getElementById('author-filter');
+    const papersContainer = document.getElementById('papers-container');
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    }
-
-    // ============================================
-    // BOOKMARKS
-    // ============================================
-    class BookmarkManager {
+    if (papersContainer) {
         constructor() {
             this.bookmarks = this.load();
             this.init();

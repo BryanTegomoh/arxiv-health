@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Methodology - Health AI Hub</title>
+    <meta name="description" content="Learn about our methodology for curating medical AI research papers from arXiv">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>About Health AI Hub</h1>
+            <p class="tagline">Our Methodology & Mission</p>
+        </div>
+    </header>
+
+    <nav class="container">
+        <a href="index.html" class="btn btn-secondary">← Back to Papers</a>
+    </nav>
+
+    <main class="container">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <section style="margin-bottom: 3rem;">
+                <h2>Our Mission</h2>
+                <p>Health AI Hub curates and summarizes the latest medical and health-related artificial intelligence research from arXiv, making cutting-edge findings accessible to researchers, clinicians, and healthcare professionals.</p>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2>Collection Methodology</h2>
+
+                <h3>1. Paper Discovery</h3>
+                <p>We automatically query arXiv daily for papers matching medical and health-related keywords across multiple categories including:</p>
+                <ul>
+                    <li><strong>cs.LG</strong> - Machine Learning</li>
+                    <li><strong>cs.CV</strong> - Computer Vision (medical imaging)</li>
+                    <li><strong>cs.AI</strong> - Artificial Intelligence</li>
+                    <li><strong>q-bio</strong> - Quantitative Biology</li>
+                    <li><strong>physics.med-ph</strong> - Medical Physics</li>
+                    <li><strong>stat.ML</strong> - Machine Learning Statistics</li>
+                </ul>
+
+                <h3>2. Relevance Filtering</h3>
+                <p>Each discovered paper is analyzed by AI to determine its medical and health relevance. Papers are scored on a 0-1 scale based on:</p>
+                <ul>
+                    <li>Direct medical applications</li>
+                    <li>Health-related datasets or experiments</li>
+                    <li>Clinical relevance and potential impact</li>
+                    <li>Intersection with healthcare technology</li>
+                </ul>
+                <p>Only papers scoring above our relevance threshold are included in the curation.</p>
+
+                <h3>3. AI Summarization</h3>
+                <p>Curated papers are processed through <strong>Google Gemini 2.5-flash</strong>, our primary AI provider, to generate:</p>
+                <ul>
+                    <li>Concise executive summaries (1-2 paragraphs)</li>
+                    <li>Key findings and methodologies</li>
+                    <li>Medical relevance analysis</li>
+                    <li>Potential healthcare applications</li>
+                    <li>Relevant medical domains (e.g., Oncology, Radiology, Public Health)</li>
+                    <li>Extracted keywords for discoverability</li>
+                </ul>
+                <p>We also support alternative AI providers (OpenAI GPT-4, Anthropic Claude, xAI Grok) for redundancy.</p>
+
+                <h3>4. Domain Classification</h3>
+                <p>Papers are automatically categorized into medical specialty domains to help specialists find relevant research:</p>
+                <ul>
+                    <li>Oncology</li>
+                    <li>Radiology & Diagnostic Imaging</li>
+                    <li>Drug Discovery & Pharmacology</li>
+                    <li>Clinical Informatics</li>
+                    <li>Public Health & Epidemiology</li>
+                    <li>Pathology</li>
+                    <li>Genomics & Personalized Medicine</li>
+                    <li>...and 60+ more specialized domains</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2>Data Storage & Updates</h2>
+                <p>All curated papers are stored in a JSON-based database with metadata including:</p>
+                <ul>
+                    <li>arXiv ID, title, authors, abstract</li>
+                    <li>Publication date and categories</li>
+                    <li>AI-generated summary and analysis</li>
+                    <li>Medical domains and keywords</li>
+                    <li>Relevance score</li>
+                    <li>Citation data (when available via Semantic Scholar API)</li>
+                </ul>
+                <p><strong>Update Frequency:</strong> The system runs daily via GitHub Actions, automatically discovering and processing new papers.</p>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2>Quality Assurance</h2>
+                <ul>
+                    <li><strong>Automated Validation:</strong> Papers must pass relevance thresholds and domain matching</li>
+                    <li><strong>Source Verification:</strong> All papers link directly to authoritative arXiv sources</li>
+                    <li><strong>AI Provider Fallback:</strong> Multiple AI providers ensure continuous operation</li>
+                    <li><strong>Human Oversight:</strong> Regular review of filtering criteria and summary quality</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2>Technology Stack</h2>
+                <ul>
+                    <li><strong>arXiv API:</strong> Official arXiv API for paper discovery</li>
+                    <li><strong>AI Providers:</strong> Gemini 2.5-flash (primary), GPT-4, Claude, Grok</li>
+                    <li><strong>Database:</strong> TinyDB (JSON-based, version-controlled)</li>
+                    <li><strong>Static Site Generation:</strong> Python + Jinja2 templates</li>
+                    <li><strong>Hosting:</strong> GitHub Pages with custom domain</li>
+                    <li><strong>Automation:</strong> GitHub Actions for daily updates</li>
+                </ul>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2>About the Curator</h2>
+                <p><strong>Bryan Tegomoh</strong> is the creator and maintainer of Health AI Hub. This project combines expertise in AI/ML, healthcare informatics, and software engineering to bridge the gap between cutting-edge research and practical medical applications.</p>
+                <p><strong>Contact:</strong> <a href="mailto:bryan@arxiv-health.org">bryan@arxiv-health.org</a></p>
+                <p><strong>Twitter/X:</strong> <a href="https://twitter.com/ArXiv_Health" target="_blank">@ArXiv_Health</a></p>
+                <p><strong>Newsletter:</strong> <a href="https://bryantegomoh.substack.com" target="_blank">Subscribe on Substack</a></p>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2>Open Source</h2>
+                <p>Health AI Hub is fully open source and available on GitHub. Contributions, suggestions, and discussions are welcome!</p>
+                <p><strong>Repository:</strong> <a href="https://github.com/BryanTegomoh/arxiv-health" target="_blank">github.com/BryanTegomoh/arxiv-health</a></p>
+                <p><strong>License:</strong> MIT License</p>
+            </section>
+
+            <section style="margin-bottom: 3rem;">
+                <h2>Disclaimer</h2>
+                <p><em>Health AI Hub provides research summaries for informational and educational purposes only. Content is AI-generated and may contain errors. Always consult original papers and qualified healthcare professionals for medical decisions. This site is not affiliated with arXiv.org.</em></p>
+            </section>
+        </div>
+    </main>
+
+    <footer class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Health AI Hub</h3>
+                <p>AI-powered medical research discovery</p>
+                <p>Powered by Gemini AI | Updated Daily</p>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <p><a href="about.html">Methodology</a></p>
+                <p><a href="https://github.com/BryanTegomoh/arxiv-health" target="_blank">Open Source</a></p>
+                <p><a href="https://github.com/BryanTegomoh/arxiv-health/discussions" target="_blank">Discussions</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p><a href="https://twitter.com/ArXiv_Health" target="_blank">Twitter/X</a></p>
+                <p><a href="https://bryantegomoh.substack.com" target="_blank">Newsletter</a></p>
+                <p><a href="mailto:bryan@arxiv-health.org">Contact</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Health AI Hub</p>
+        </div>
+    </footer>
+</body>
+</html>

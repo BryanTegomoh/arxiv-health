@@ -1,32 +1,19 @@
-// Health AI Hub - Enhanced JavaScript with all features
-// Dark Mode, Bookmarks, Advanced Search, Social Sharing, Export, etc.
+// Health AI Hub - Professional Research Tool
+// Advanced Search, Filtering, Citation Export
 
 (function() {
     'use strict';
 
     // ============================================
-    // DARK MODE
+    // ADVANCED SEARCH & FILTERS
     // ============================================
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
+    const searchInput = document.getElementById('search');
+    const sortSelect = document.getElementById('sort-select');
+    const domainFilter = document.getElementById('domain-filter');
+    const authorFilter = document.getElementById('author-filter');
+    const papersContainer = document.getElementById('papers-container');
 
-    // Load saved theme
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-    }
-
-    // ============================================
-    // BOOKMARKS
-    // ============================================
-    class BookmarkManager {
+    if (papersContainer) {
         constructor() {
             this.bookmarks = this.load();
             this.init();
@@ -184,8 +171,8 @@
                     const relB = parseFloat(b.querySelector('.relevance')?.textContent.split(' ')[1] || 0);
                     return relB - relA;
                 } else if (sortBy === 'citations') {
-                    const citA = parseInt(a.querySelector('.citations')?.textContent.match(/\\d+/)?.[0] || 0);
-                    const citB = parseInt(b.querySelector('.citations')?.textContent.match(/\\d+/)?.[0] || 0);
+                    const citA = parseInt(a.querySelector('.citations')?.textContent.match(/\d+/)?.[0] || 0);
+                    const citB = parseInt(b.querySelector('.citations')?.textContent.match(/\d+/)?.[0] || 0);
                     return citB - citA;
                 } else if (sortBy === 'title') {
                     const titleA = a.querySelector('.paper-title')?.textContent || '';
@@ -272,19 +259,8 @@
             const format = this.getAttribute('data-format');
             if (!currentPaperId || !citationOutput) return;
 
-            // Fetch citation data
-            try {
-                const response = await fetch(`/api/citation/${currentPaperId}/${format}`);
-                if (response.ok) {
-                    const citation = await response.text();
-                    citationOutput.value = citation;
-                } else {
-                    // Fallback: generate simple citation
-                    citationOutput.value = generateFallbackCitation(currentPaperId, format);
-                }
-            } catch (error) {
-                citationOutput.value = generateFallbackCitation(currentPaperId, format);
-            }
+            // Fallback: generate simple citation
+            citationOutput.value = generateFallbackCitation(currentPaperId, format);
         });
     });
 
@@ -344,7 +320,7 @@ PY  - ${date.substring(0, 4)}
 UR  - https://arxiv.org/abs/${paperId}
 ER  -`;
         }
-        return `${title}\\n${authors}\\n${date}\\nhttps://arxiv.org/abs/${paperId}`;
+        return `${title}\n${authors}\n${date}\nhttps://arxiv.org/abs/${paperId}`;
     }
 
     // ============================================
