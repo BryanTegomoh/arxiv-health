@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FairGRPO: Fair Reinforcement Learning for Equitable Clinical Reasoning - Health AI Hub</title>
+    <meta name="description" content="This paper introduces FairGRPO, a hierarchical reinforcement learning approach designed to mitigate performance disparities of medical AI across diverse demogra">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>FairGRPO: Fair Reinforcement Learning for Equitable Clinical Reasoning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.19893v1" target="_blank">2510.19893v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-22
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Shiqi Dai, Wei Dai, Jiaee Cheong, Paul Pu Liang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.19893v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.19893v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces FairGRPO, a hierarchical reinforcement learning approach designed to mitigate performance disparities of medical AI across diverse demographic groups, which often suffer harm from biased systems. FairGRPO employs adaptive importance weighting and unsupervised clustering for latent group discovery, demonstrating significant reductions in predictive parity (27.2%) and improvements in F1 score (12.49%) across various clinical diagnostic tasks, culminating in the release of FairMedGemma-4B, a fairness-aware clinical VLLM.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Addressing demographic performance disparities in medical AI is crucial for ensuring equitable healthcare access and preventing misdiagnosis or delayed care for underrepresented populations, directly impacting patient safety, trust in AI, and ethical deployment of advanced clinical tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The primary AI application is the development of fair and equitable medical AI diagnostic systems. Specifically, it focuses on creating Vision-Language Large Language Models (VLLMs) that can perform clinical reasoning and diagnosis by integrating diverse medical data (e.g., imaging like X-rays, CT scans, mammograms, ultrasound, dermoscopy). The goal is to ensure these AI systems provide accurate and unbiased diagnoses across different demographic groups, thereby mitigating performance disparities and promoting healthcare equity.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Medical AI systems, despite their diagnostic capabilities, consistently exhibit performance disparities across demographic groups, causing real-world harm to underrepresented populations.</li>
+                    
+                    <li>FairGRPO (Fairness-aware Group Relative Policy Optimization) is proposed as a hierarchical reinforcement learning approach to promote equitable learning across heterogeneous clinical populations.</li>
+                    
+                    <li>The method utilizes adaptive importance weighting of advantages, dynamically adjusted based on group representation, task difficulty, and data source.</li>
+                    
+                    <li>To address the common challenge of missing demographic labels in clinical data, FairGRPO integrates unsupervised clustering to automatically discover latent demographic groups.</li>
+                    
+                    <li>Comprehensive experiments across 7 clinical diagnostic datasets spanning 5 modalities (X-ray, CT scan, dermoscopy, mammography, ultrasound) show a 27.2% reduction in predictive parity and a 12.49% improvement in F1 score against baselines.</li>
+                    
+                    <li>Training dynamics analysis reveals that FairGRPO progressively improves fairness throughout optimization, unlike baseline RL methods which exhibit deteriorating fairness.</li>
+                    
+                    <li>Based on FairGRPO, the authors released FairMedGemma-4B, a fairness-aware clinical Visual Large Language Model (VLLM) that achieves state-of-the-art performance with significantly reduced disparities across demographic groups.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>FairGRPO is a hierarchical reinforcement learning framework that promotes equitable learning. Its core mechanism involves adaptively weighting the advantages during policy optimization, with weights determined by three factors: the demographic group's representation within the dataset, the inherent difficulty of the diagnostic task for that specific group, and the data source. To overcome the prevalent issue of missing explicit demographic labels in clinical datasets, FairGRPO integrates unsupervised clustering, which automatically discovers and categorizes latent demographic groups for targeted bias mitigation.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>FairGRPO significantly reduces predictive parity by 27.2% across demographic groups when compared to all vanilla and bias-mitigated RL baselines. Concurrently, it improves the overall F1 score by 12.49%. Training dynamics analysis revealed that FairGRPO progressively enhances fairness throughout the optimization process, a notable advantage over baseline RL methods where fairness tends to degrade. The resulting FairMedGemma-4B, a fairness-aware clinical VLLM, achieves state-of-the-art diagnostic performance while demonstrating significantly reduced demographic disparities.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The proposed FairGRPO method and the resulting FairMedGemma-4B model have the potential to deliver more equitable and reliable clinical decision support. By mitigating AI bias and improving diagnostic accuracy across diverse patient populations, it can lead to fewer diagnostic errors, especially for underrepresented groups, thus improving patient outcomes and fostering greater trust in AI-driven healthcare technologies. This directly supports the goal of providing more inclusive and high-quality medical care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the proposed method or its experimental evaluation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions beyond the immediate contribution of FairGRPO and FairMedGemma-4B.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology (X-ray, CT scan, Mammography, Ultrasound)</span>
+                    
+                    <span class="tag">Dermatology (Dermoscopy)</span>
+                    
+                    <span class="tag">General Clinical Diagnostics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Fairness-aware AI</span>
+                    
+                    <span class="tag tag-keyword">Reinforcement Learning</span>
+                    
+                    <span class="tag tag-keyword">Clinical Reasoning</span>
+                    
+                    <span class="tag tag-keyword">Medical AI Bias</span>
+                    
+                    <span class="tag tag-keyword">Multimodal Learning</span>
+                    
+                    <span class="tag tag-keyword">Equitable Healthcare</span>
+                    
+                    <span class="tag tag-keyword">Predictive Parity</span>
+                    
+                    <span class="tag tag-keyword">Demographic Disparity</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical artificial intelligence systems have achieved remarkable diagnostic
+capabilities, yet they consistently exhibit performance disparities across
+demographic groups, causing real-world harm to underrepresented populations.
+While recent multimodal reasoning foundation models have advanced clinical
+diagnosis through integrated analysis of diverse medical data, reasoning
+trainings via reinforcement learning inherit and often amplify biases present
+in training datasets dominated by majority populations. We introduce
+Fairness-aware Group Relative Policy Optimization (FairGRPO), a hierarchical
+reinforcement learning approach that promotes equitable learning across
+heterogeneous clinical populations. FairGRPO employs adaptive importance
+weighting of advantages based on representation, task difficulty, and data
+source. To address the common issue of missing demographic labels in the
+clinical domain, we further employ unsupervised clustering, which automatically
+discovers latent demographic groups when labels are unavailable. Through
+comprehensive experiments across 7 clinical diagnostic datasets spanning 5
+clinical modalities across X-ray, CT scan, dermoscropy, mammography and
+ultrasound, we demonstrate that FairGRPO reduces predictive parity by 27.2%
+against all vanilla and bias mitigated RL baselines, while improving F1 score
+by 12.49%. Furthermore, training dynamics analysis reveals that FairGRPO
+progressively improves fairness throughout optimization, while baseline RL
+methods exhibit deteriorating fairness as training progresses. Based on
+FairGRPO, we release FairMedGemma-4B, a fairness-aware clinical VLLM that
+achieves state-of-the-art performance while demonstrating significantly reduced
+disparities across demographic groups.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Accepted as Oral on NeurIPS 2025 GenAI4Health Workshop</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

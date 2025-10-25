@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning - Health AI Hub</title>
+    <meta name="description" content="This paper diagnoses prototype collapse in self-supervised learning (SSL) as a direct consequence of joint encoder-prototype optimization, which encourages redu">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Why Prototypes Collapse: Diagnosing and Preventing Partial Collapse in Prototypical Self-Supervised Learning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.20108v1" target="_blank">2510.20108v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-23
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Gabriel Y. Arteaga, Marius Aasan, Rwiddhi Chakraborty, Martine Hjelkrem-Tan, Thalles Silva, Michael Kampffmeyer, Adín Ramírez Rivera
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.65 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.20108v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.20108v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper diagnoses prototype collapse in self-supervised learning (SSL) as a direct consequence of joint encoder-prototype optimization, which encourages redundant representations. It introduces a fully decoupled training strategy where prototypes are modeled as a Gaussian mixture updated via an online EM-style procedure, independent of the encoder's loss. This method effectively eliminates prototype collapse without regularization, yielding diverse prototypes and stronger downstream performance, which is critical for robust medical AI.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>In medical imaging and bioinformatics, self-supervised learning is crucial for extracting meaningful features from vast, often unlabeled datasets. Preventing prototype collapse ensures that foundational AI models learn a diverse array of clinically relevant patterns, leading to more accurate, robust, and generalizable diagnostic, prognostic, or predictive tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research contributes to the core methodology of AI in health by enabling more robust and effective self-supervised learning models. Specifically, it can lead to improved AI applications for: 
+1. **Medical Image Analysis:** Better pre-training of AI models for tasks like disease classification, tumor detection, segmentation, and anomaly detection from vast datasets of unlabeled medical images (e.g., X-rays, CT scans, MRIs, pathology slides). 
+2. **Bioinformatics:** Learning richer and more diverse representations from biological sequences (DNA, RNA, proteins) or other omics data, which can then be used for tasks like disease prediction, drug target identification, or functional annotation. 
+3. **Reduced Reliance on Labeled Data:** By making SSL more effective, it reduces the need for extensive manual labeling by medical experts, accelerating the development and deployment of new medical AI tools.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Prototypical self-supervised learning methods are consistently plagued by partial prototype collapse, where multiple prototypes converge to nearly identical representations.</li>
+                    
+                    <li>This collapse undermines the primary goal of providing diverse and informative targets, hindering encoders from learning rich and discriminative feature representations.</li>
+                    
+                    <li>The root cause is empirically traced to the joint optimization of encoders and prototypes, which facilitates a form of shortcut learning by promoting redundant representations early in training.</li>
+                    
+                    <li>The proposed solution is a fully decoupled training strategy that learns prototypes and encoders under entirely separate objectives.</li>
+                    
+                    <li>Prototypes are explicitly modeled as a Gaussian mixture and updated using an online Expectation-Maximization (EM)-style procedure, operating independently of the encoder's loss function.</li>
+                    
+                    <li>This principled decoupling successfully eliminates prototype collapse without requiring any explicit ad-hoc regularization.</li>
+                    
+                    <li>The method consistently yields diverse prototypes and demonstrates stronger performance on downstream tasks, indicating improved representation quality.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core methodology involves a novel 'fully decoupled training strategy.' Instead of co-optimizing encoders and prototypes, prototypes are modeled as a Gaussian mixture and updated iteratively using an online Expectation-Maximization (EM)-style algorithm, entirely independently from the encoder's loss function. This separation ensures that prototype evolution is driven by diversity and statistical modeling rather than encoder loss minimization, preventing shortcut learning.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary finding is that prototype collapse in self-supervised learning stems from the joint optimization of encoders and prototypes, which encourages the prototypes to converge to redundant representations. The proposed decoupled training strategy, by modeling prototypes as an independently updated Gaussian mixture, effectively eliminates this collapse, leading to consistently diverse prototypes and ultimately stronger performance on downstream tasks.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>By enabling the creation of more robust, diverse, and informative feature representations from large, unlabeled medical datasets, this research can significantly enhance the performance and reliability of AI models in clinical settings. This could lead to more accurate automated diagnoses in radiology and pathology, better risk stratification from patient data, or improved insights from genomic and proteomic analyses, ultimately supporting more effective personalized medicine and clinical decision-making.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the proposed decoupled training strategy itself, focusing instead on diagnosing and solving the inherent limitations of prior joint optimization methods that lead to prototype collapse.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Although not explicitly mentioned in the abstract, potential future directions could include exploring the generalizability of this decoupled strategy across a wider range of medical data modalities (e.g., electronic health records, time-series data), investigating theoretical guarantees for the decoupling approach, or optimizing the online EM-style procedure for specific computational constraints in medical environments.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Digital Pathology</span>
+                    
+                    <span class="tag">Medical Image Analysis</span>
+                    
+                    <span class="tag">Computational Biology</span>
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                    <span class="tag">Clinical Decision Support Systems</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">self-supervised learning</span>
+                    
+                    <span class="tag tag-keyword">prototype collapse</span>
+                    
+                    <span class="tag tag-keyword">representation learning</span>
+                    
+                    <span class="tag tag-keyword">decoupled training</span>
+                    
+                    <span class="tag tag-keyword">Gaussian mixture model</span>
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">feature extraction</span>
+                    
+                    <span class="tag tag-keyword">AI in healthcare</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Prototypical self-supervised learning methods consistently suffer from
+partial prototype collapse, where multiple prototypes converge to nearly
+identical representations. This undermines their central purpose -- providing
+diverse and informative targets to guide encoders toward rich representations
+-- and has led practitioners to over-parameterize prototype sets or add ad-hoc
+regularizers, which mitigate symptoms rather than address the root cause. We
+empirically trace the collapse to the joint optimization of encoders and
+prototypes, which encourages a type of shortcut learning: early in training
+prototypes drift toward redundant representations that minimize loss without
+necessarily enhancing representation diversity. To break the joint
+optimization, we introduce a fully decoupled training strategy that learns
+prototypes and encoders under separate objectives. Concretely, we model
+prototypes as a Gaussian mixture updated with an online EM-style procedure,
+independent of the encoder's loss. This simple yet principled decoupling
+eliminates prototype collapse without explicit regularization and yields
+consistently diverse prototypes and stronger downstream performance.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
