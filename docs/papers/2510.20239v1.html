@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tri-Modal Severity Fused Diagnosis across Depression and Post-traumatic Stress Disorders - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a unified tri-modal framework that synchronizes and fuses interview text, audio, and facial signals to diagnose and assess graded severity">
+    <meta name="description" content="This paper introduces a unified tri-modal framework for severity-aware, cross-disorder diagnosis of depression (5 classes) and PTSD (3 classes) by fusing interv">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -37,7 +37,7 @@
                     <strong>Categories:</strong> cs.CL, cs.AI
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
                 </div>
             </div>
 
@@ -48,18 +48,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a unified tri-modal framework that synchronizes and fuses interview text, audio, and facial signals to diagnose and assess graded severity for co-occurring depression (PHQ-8, 5 classes) and PTSD (3 classes). The severity-aware approach outperforms unimodal baselines, enhances diagnostic utility and robustness, and provides explainable feature attributions, offering clinician decision support.</p>
+                <p class="summary-text">This paper introduces a unified tri-modal framework for severity-aware, cross-disorder diagnosis of depression (5 classes) and PTSD (3 classes) by fusing interview text, audio, and facial signals. Utilizing advanced features like transformer embeddings and action units, the approach employs a calibrated late fusion classifier to output graded severities and feature-level attributions. The fused model demonstrates superior robustness and utility over unimodal baselines, particularly for PTSD, offering enhanced decision support for clinicians.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant as it advances automated diagnosis for complex mental health conditions, providing severity-aware, cross-disorder estimates and explainable insights. This can lead to more accurate, nuanced, and personalized clinical decision support for patients experiencing co-occurring depression and PTSD.</p>
+                <p>This research is highly relevant to mental healthcare by addressing the complex co-occurrence of depression and PTSD. It offers an objective, severity-aware, and interpretable automated diagnostic tool, which can significantly aid clinicians in precise assessment, tailored treatment planning, and monitoring of mental health conditions.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This research describes an AI system that processes multi-modal data (interview text, audio, facial signals) to generate graded severity estimates and diagnoses for depression and PTSD. It is designed to function as a clinical decision support tool, offering automated assessment and explanations to assist clinicians in diagnosing and managing these mental health conditions.</p>
+                <p>The AI application is a 'tri-modal affective severity framework' that fuses interview text, audio, and facial signals to automatically output graded severities for diagnosing depression (PHQ-8; 5 classes) and PTSD (3 classes). It aims to provide a severity-aware, cross-disorder diagnostic estimate with feature-level attributions, serving as a 'clinician in the loop support' system for affective clinical decision making in mental health.</p>
             </section>
             
 
@@ -67,19 +67,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the challenge of automated diagnosis for co-occurring depression and PTSD, moving beyond binary, disorder-specific assessments to graded severity estimates.</li>
+                    <li>**Tri-modal Fusion Framework:** Develops a unified system integrating interview text (transformer embeddings), audio (log Mel statistics with deltas), and facial signals (action units, gaze, head/pose descriptors).</li>
                     
-                    <li>Proposes a unified tri-modal affective severity framework integrating interview text (transformer embeddings), audio (log Mel statistics with deltas), and facial signals (action units, gaze, head, pose descriptors).</li>
+                    <li>**Severity-Aware Cross-Disorder Diagnosis:** Aims to provide graded severity estimates for both depression (PHQ-8; 5 classes) and PTSD (3 classes) concurrently, moving beyond binary and disorder-specific assessments.</li>
                     
-                    <li>Features are standardized and fused via a calibrated late fusion classifier, yielding per-disorder probabilities and feature-level attributions for explainability.</li>
+                    <li>**Calibrated Late Fusion & Attributions:** Standardized features are fused using a calibrated late fusion classifier, yielding per-disorder probabilities and crucial feature-level attributions for interpretability.</li>
                     
-                    <li>Evaluated on DAIC-derived corpora using stratified cross-validation, the fused model significantly outperforms unimodal and ablation baselines in overall utility and robustness, especially under noisy or missing modalities.</li>
+                    <li>**Enhanced Robustness and Utility:** The fused model, validated via stratified cross-validation on DAIC-derived corpora, outperforms unimodal/ablation baselines, improving decision curve utility and robustness under noisy or missing modalities.</li>
                     
-                    <li>For PTSD specifically, the fusion approach reduces regression error and improves class concordance, reliably identifying extreme severity classes.</li>
+                    <li>**Disorder-Specific Feature Importance:** Ablation studies show that text contributes most to depression severity, while audio and facial cues are critical for PTSD severity assessment.</li>
                     
-                    <li>Ablation studies and attributions reveal text as the primary contributor to depression severity, while audio and facial cues are critical for PTSD assessment.</li>
+                    <li>**Reliable Identification of Extreme Severities:** Errors primarily cluster between adjacent severity classes, indicating that extreme (e.g., severe or no-disorder) classes are identified reliably.</li>
                     
-                    <li>The framework offers reproducible evaluation and supports clinicians with explainable decision-making in affective clinical assessment.</li>
+                    <li>**Clinician Decision Support:** The approach is designed to offer reproducible evaluation and clinician-in-the-loop support for affective clinical decision making through interpretable attributions and graded severities.</li>
                     
                 </ul>
             </section>
@@ -87,31 +87,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study employs a unified tri-modal affective severity framework that synchronizes and fuses features extracted from interview text (sentence-level transformer embeddings), audio (log Mel statistics with deltas), and facial signals (action units, gaze, head, and pose descriptors). Standardized features are then combined using a calibrated late fusion classifier to output graded severities (5 classes for PHQ-8 depression, 3 classes for PTSD), along with per-disorder probabilities and feature-level attributions. Evaluation is conducted using stratified cross-validation on DAIC-derived corpora.</p>
+                    <p>The study proposes a unified tri-modal affective severity framework. It extracts features from interview text using sentence-level transformer embeddings, from audio using log Mel statistics with deltas, and from facial signals using action units, gaze, head, and pose descriptors. These standardized features are synchronized and fused via a calibrated late fusion classifier. The model outputs graded severities for depression (PHQ-8; 5 classes) and PTSD (3 classes), along with feature-level attributions. Evaluation is performed using stratified cross-validation on DAIC-derived corpora, comparing the fused model against unimodal and ablation baselines.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The fused model outperforms unimodal and ablation baselines, matching the strongest unimodal baseline on accuracy and weighted F1, while significantly improving decision curve utility and robustness under noisy or missing modalities. For PTSD, fusion specifically reduces regression error and improves class concordance, with extreme severity classes identified reliably. Errors predominantly cluster between adjacent severity levels. Ablation studies indicate text contributes most to depression severity, whereas audio and facial cues are critical for PTSD.</p>
+                    <p>The tri-modal fused model significantly outperforms unimodal and ablation baselines, demonstrating improved decision curve utility and robustness when modalities are noisy or missing. For PTSD specifically, fusion reduces regression error and improves class concordance. The model reliably identifies extreme severity classes, with errors predominantly occurring between adjacent severities. Ablation studies reveal that text contributes most to depression severity, while audio and facial cues are critical for PTSD. The generated feature attributions align well with established linguistic and behavioral markers of the disorders.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The approach offers reproducible and explainable diagnostic support for clinicians, enabling more precise and severity-aware assessment of co-occurring depression and PTSD. This can improve the efficiency and accuracy of clinical decision-making, facilitate personalized treatment planning, and enhance patient management by providing clear insights into the contribution of different behavioral and linguistic markers.</p>
+                <p>This approach has the potential to significantly improve the accuracy and efficiency of diagnosing co-occurring depression and PTSD by providing objective, graded severity estimates. The interpretable feature-level attributions can empower clinicians with deeper insights into patient symptomatology, facilitating more precise and personalized treatment strategies. Its robustness to missing data makes it suitable for real-world clinical settings, potentially supporting remote mental health assessments and enabling 'clinician in the loop' decision-making for more effective and accessible patient care.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the proposed method. However, the evaluation is based on "DAIC derived corpora," which might imply a limitation in generalizability to broader patient populations or different clinical contexts. The finding that "errors cluster between adjacent severities" suggests that fine-grained distinctions between very similar severity levels might still be challenging for the model, although extreme classes are identified reliably.</p>
+                <p>Not explicitly mentioned in the abstract.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly propose future research directions. It highlights the immediate application of offering "clinician in the loop support for affective clinical decision making" as a key output and impact of the research.</p>
+                <p>Not explicitly mentioned as future research directions in the abstract, but the framework is positioned to offer 'clinician in the loop support for affective clinical decision making', implying further integration and validation within actual clinical workflows.</p>
             </section>
             
 
@@ -121,11 +121,11 @@
                     
                     <span class="tag">Psychiatry</span>
                     
-                    <span class="tag">Clinical Psychology</span>
-                    
                     <span class="tag">Mental Health</span>
                     
-                    <span class="tag">Affective Disorders</span>
+                    <span class="tag">Clinical Psychology</span>
+                    
+                    <span class="tag">Telemedicine</span>
                     
                 </div>
             </section>
@@ -138,17 +138,17 @@
                     
                     <span class="tag tag-keyword">PTSD</span>
                     
-                    <span class="tag tag-keyword">Multimodal Fusion</span>
+                    <span class="tag tag-keyword">Multi-modal fusion</span>
                     
-                    <span class="tag tag-keyword">Severity Assessment</span>
+                    <span class="tag tag-keyword">Severity assessment</span>
                     
-                    <span class="tag tag-keyword">Explainable AI</span>
+                    <span class="tag tag-keyword">Machine learning</span>
                     
-                    <span class="tag tag-keyword">Affective Computing</span>
+                    <span class="tag tag-keyword">Affective computing</span>
                     
-                    <span class="tag tag-keyword">Mental Health Diagnosis</span>
+                    <span class="tag tag-keyword">Clinical decision support</span>
                     
-                    <span class="tag tag-keyword">Clinical Decision Support</span>
+                    <span class="tag tag-keyword">Transformer embeddings</span>
                     
                 </div>
             </section>
