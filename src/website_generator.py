@@ -87,8 +87,13 @@ class WebsiteGenerator:
 <body>
     <header>
         <div class="container">
-            <h1>{{ site_title }}</h1>
-            <p class="tagline">{{ tagline }}</p>
+            <div class="header-top">
+                <div class="header-title">
+                    <h1><a href="index.html" class="home-link">{{ site_title }}</a></h1>
+                    <p class="tagline">{{ tagline }}</p>
+                </div>
+                <a href="index.html" class="home-btn">🏠 Home</a>
+            </div>
 
             <!-- Weekly Activity Hero Section -->
             <div class="weekly-hero">
@@ -282,9 +287,10 @@ class WebsiteGenerator:
 <body>
     <header>
         <div class="container">
-            <nav class="breadcrumb">
+            <div class="breadcrumb">
                 <a href="../index.html">← Back to all papers</a>
-            </nav>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
         </div>
     </header>
 
@@ -501,6 +507,67 @@ header h1 {
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     font-size: 0.95rem;
+}
+
+/* Header Top with Home Button */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.header-title {
+    flex: 1;
+}
+
+.home-link {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.home-link:hover {
+    opacity: 0.8;
+}
+
+.home-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.2s;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.home-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Breadcrumb with Home Button */
+.breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.breadcrumb a:hover {
+    opacity: 0.8;
 }
 
 /* Navigation */
