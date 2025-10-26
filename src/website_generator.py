@@ -215,7 +215,7 @@ class WebsiteGenerator:
                 <h3>About</h3>
                 <p><a href="about.html">Methodology</a></p>
                 <p><a href="https://github.com/BryanTegomoh/arxiv-health" target="_blank">Open Source</a></p>
-                <p><a href="https://github.com/BryanTegomoh/arxiv-health/discussions" target="_blank">Discussions</a></p>
+                <p><a href="https://github.com/BryanTegomoh/arxiv-health/issues" target="_blank">Discussions</a></p>
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
