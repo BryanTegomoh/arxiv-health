@@ -4,7 +4,13 @@
 
 AI-powered system that fetches the latest medical, healthcare, biosecurity, and health-related AI research from arXiv, uses AI to verify relevance, generates comprehensive summaries, and publishes everything to a beautiful searchable website.
 
-[View Live Site](https://bryantegomoh.github.io/arxiv-health/) | [Report Issue](https://github.com/BryanTegomoh/arxiv-health/issues)
+[🌐 View Live Site](https://arxiv-health.org) | [📖 Quick Start Guide](QUICKSTART.md) | [💬 Discussions](https://github.com/BryanTegomoh/arxiv-health/discussions) | [🐛 Report Issue](https://github.com/BryanTegomoh/arxiv-health/issues)
+
+---
+
+## 🚀 New Here? Start with the [Quick Start Guide →](QUICKSTART.md)
+
+The [QUICKSTART.md](QUICKSTART.md) has simple step-by-step instructions for running the site. This README contains detailed documentation.
 
 ## Features
 
