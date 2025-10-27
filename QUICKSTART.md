@@ -23,7 +23,7 @@ cd "c:\Users\bryan\OneDrive\Documents\xAI - Medicine\arxiv-health"
 Make sure your `.env` file has your API key:
 ```bash
 # The file should contain:
-GEMINI_API_KEY=AIzaSyA8t_dvU5Yc3cfE2xb2_N1ytCxlpI2Fcf0
+GEMINI_API_KEY=your_api_key_here
 AI_PROVIDER=gemini
 ```
 
