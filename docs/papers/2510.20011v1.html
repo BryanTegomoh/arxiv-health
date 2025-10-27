@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Improving Predictive Confidence in Medical Imaging via Online Label Smoothing - Health AI Hub</title>
-    <meta name="description" content="This paper introduces Online Label Smoothing (OLS), a dynamic method to improve predictive confidence and accuracy in medical image classification by adjusting ">
+    <meta name="description" content="This paper introduces Online Label Smoothing (OLS) to mitigate overconfident predictions in deep learning models for medical image classification. OLS dynamical">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -13,9 +13,10 @@
 <body>
     <header>
         <div class="container">
-            <nav class="breadcrumb">
+            <div class="breadcrumb">
                 <a href="../index.html">← Back to all papers</a>
-            </nav>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
         </div>
     </header>
 
@@ -37,7 +38,7 @@
                     <strong>Categories:</strong> cs.CV, cs.LG
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
                 </div>
             </div>
 
@@ -48,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces Online Label Smoothing (OLS), a dynamic method to improve predictive confidence and accuracy in medical image classification by adjusting soft labels based on the model's own prediction patterns during training. OLS consistently enhances Top-1 and Top-5 accuracy, fosters better feature representation, and improves calibration across various architectures on the RadImageNet dataset, making AI systems more trustworthy in healthcare.</p>
+                <p class="summary-text">This paper introduces Online Label Smoothing (OLS) to mitigate overconfident predictions in deep learning models for medical image classification. OLS dynamically adjusts soft labels throughout training based on the model's own prediction patterns, leading to improved classification accuracy, enhanced calibration, and more robust feature representations.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Overconfident AI predictions in critical medical imaging can lead to diagnostic errors and undermine clinician trust. This research directly addresses this by enhancing predictive accuracy and calibration, making AI tools safer, more reliable, and ultimately more valuable for patient care in medical diagnostics.</p>
+                <p>Improving predictive confidence and calibration in medical imaging AI is paramount for clinical safety and accurate diagnosis, as overconfident or erroneous model outputs can directly impact patient care and lead to misinformed clinical decisions.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is to enhance the reliability, accuracy, and trustworthiness of deep learning models used for medical image classification and diagnosis. By improving predictive confidence and calibration, it aims to make AI systems more dependable tools for clinicians in diagnostic support, potentially leading to better patient outcomes and safer healthcare decisions.</p>
+                <p>The AI application is to improve the accuracy, calibration, and trustworthiness of deep learning models used for analyzing medical images. This would lead to more reliable AI systems for tasks such as automated diagnosis, abnormality detection, or disease progression monitoring in clinical settings, thereby enhancing patient care and operational efficiency in healthcare.</p>
             </section>
             
 
@@ -67,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Deep learning models often produce overconfident predictions in medical imaging, undermining reliability in critical healthcare settings.</li>
+                    <li>Deep learning models, while highly accurate in medical imaging, often suffer from overconfidence, undermining their reliability in critical healthcare settings.</li>
                     
-                    <li>Online Label Smoothing (OLS) is proposed as a dynamic training approach that adjusts soft labels continuously based on the model's evolving prediction patterns.</li>
+                    <li>Traditional label smoothing (LS) is limited as it treats all non-target classes equally, failing to capture inter-class relationships.</li>
                     
-                    <li>OLS was evaluated on the large-scale RadImageNet dataset using three widely used architectures: ResNet-50, MobileNetV2, and VGG-19.</li>
+                    <li>Online Label Smoothing (OLS) is proposed as a dynamic approach that adjusts soft labels throughout training, adapting based on the model's evolving prediction patterns.</li>
                     
-                    <li>The method consistently improved both Top-1 and Top-5 classification accuracy compared to standard hard labels, conventional label smoothing, and teacher-free knowledge distillation.</li>
+                    <li>The effectiveness of OLS was evaluated on the large-scale RadImageNet dataset using three widely used CNN architectures: ResNet-50, MobileNetV2, and VGG-19.</li>
                     
-                    <li>Beyond accuracy gains, OLS led to more compact and well-separated feature embeddings, indicating enhanced representation learning.</li>
+                    <li>OLS consistently improved both Top-1 and Top-5 classification accuracy compared to standard hard labels, conventional label smoothing, and teacher-free knowledge distillation.</li>
                     
-                    <li>The findings suggest that OLS not only strengthens predictive performance but also significantly improves model calibration, crucial for trustworthy AI.</li>
+                    <li>Beyond accuracy, OLS also led to the generation of more compact and well-separated feature embeddings, indicating superior representation learning capabilities.</li>
                     
-                    <li>This approach offers a practical and effective solution for developing reliable AI systems for diagnostic assistance in medical imaging.</li>
+                    <li>These findings collectively demonstrate that OLS not only strengthens predictive performance but also significantly enhances model calibration, fostering more trustworthy AI systems in medical imaging.</li>
                     
                 </ul>
             </section>
@@ -87,18 +88,18 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study explores Online Label Smoothing (OLS), a dynamic approach that adjusts soft labels throughout training based on the deep learning model's own prediction patterns, contrasting with static conventional label smoothing. This method was evaluated on the large-scale RadImageNet dataset, utilizing three prominent Convolutional Neural Network architectures: ResNet-50, MobileNetV2, and VGG-19. Performance was measured using Top-1 and Top-5 classification accuracy and qualitative analysis of feature embeddings, with comparisons against hard labels, conventional label smoothing, and teacher-free knowledge distillation.</p>
+                    <p>The study implemented Online Label Smoothing (OLS), a dynamic method for adjusting soft labels during the training of deep learning models. This approach was evaluated on the RadImageNet dataset, utilizing three prominent convolutional neural network architectures: ResNet-50, MobileNetV2, and VGG-19. Performance was benchmarked against hard labels, conventional label smoothing, and teacher-free knowledge distillation, with evaluation focusing on Top-1 and Top-5 classification accuracy, as well as the quality of feature embeddings.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>OLS consistently improved both Top-1 and Top-5 classification accuracy across all evaluated architectures (ResNet-50, MobileNetV2, VGG-19) on the RadImageNet dataset. It outperformed hard labels, conventional label smoothing, and teacher-free knowledge distillation. Furthermore, OLS resulted in more compact and well-separated feature embeddings, indicating superior representation learning. These findings collectively demonstrate enhanced predictive performance and improved model calibration.</p>
+                    <p>OLS consistently achieved superior Top-1 and Top-5 classification accuracy across all tested architectures compared to baseline methods. It also resulted in more compact and well-separated feature embeddings, signifying improved representation learning, and demonstrably enhanced model calibration by reducing overconfidence in predictions.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>By significantly improving predictive accuracy and confidence (calibration) in medical image classification, OLS can lead to more robust and reliable AI-powered diagnostic tools. This enhanced trustworthiness can reduce diagnostic errors, support clinicians in making more precise and confident decisions, and accelerate the adoption of AI in critical healthcare workflows, ultimately leading to better patient outcomes and more efficient healthcare delivery.</p>
+                <p>By enhancing both the accuracy and reliability (calibration) of AI models in medical imaging, OLS has the potential to foster more trustworthy diagnostic tools. This could lead to more confident and precise clinical decisions by radiologists and other healthcare professionals, ultimately improving patient outcomes and reducing the risks associated with uncertain or overconfident AI-driven diagnoses.</p>
             </section>
 
             
@@ -119,13 +120,13 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
+                    <span class="tag">Medical Imaging</span>
+                    
                     <span class="tag">Radiology</span>
                     
-                    <span class="tag">Diagnostic Imaging</span>
+                    <span class="tag">Diagnostic AI</span>
                     
-                    <span class="tag">Medical Image Analysis</span>
-                    
-                    <span class="tag">Computer-Aided Diagnosis</span>
+                    <span class="tag">Clinical Decision Support</span>
                     
                 </div>
             </section>
@@ -140,13 +141,13 @@
                     
                     <span class="tag tag-keyword">Deep Learning</span>
                     
-                    <span class="tag tag-keyword">Predictive Confidence</span>
+                    <span class="tag tag-keyword">Model Calibration</span>
                     
-                    <span class="tag tag-keyword">Calibration</span>
+                    <span class="tag tag-keyword">Overconfidence</span>
                     
                     <span class="tag tag-keyword">RadImageNet</span>
                     
-                    <span class="tag tag-keyword">Image Classification</span>
+                    <span class="tag tag-keyword">Trustworthy AI</span>
                     
                     <span class="tag tag-keyword">Convolutional Neural Networks</span>
                     

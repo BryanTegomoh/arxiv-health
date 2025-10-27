@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShapeX: Shapelet-Driven Post Hoc Explanations for Time Series Classification Models - Health AI Hub</title>
-    <meta name="description" content="ShapeX is an innovative framework addressing the limitations of existing post-hoc time series explanation methods by focusing on shapelet-driven segments rather">
+    <meta name="description" content="ShapeX introduces a novel post-hoc explanation framework for time series classification models, addressing the limitations of existing methods that overlook the">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -13,9 +13,10 @@
 <body>
     <header>
         <div class="container">
-            <nav class="breadcrumb">
+            <div class="breadcrumb">
                 <a href="../index.html">← Back to all papers</a>
-            </nav>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
         </div>
     </header>
 
@@ -48,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">ShapeX is an innovative framework addressing the limitations of existing post-hoc time series explanation methods by focusing on shapelet-driven segments rather than individual timesteps. It leverages the Shapelet Describe-and-Detect (SDD) framework and Shapley values to identify salient subsequences, providing explanations that reveal causal relationships instead of mere correlations. Experimental results confirm ShapeX's superior performance in precision and causal fidelity compared to current approaches.</p>
+                <p class="summary-text">ShapeX introduces a novel post-hoc explanation framework for time series classification models, addressing the limitations of existing methods that overlook the fundamental role of key shapelets. By segmenting time series into shapelet-driven components and applying Shapley values, ShapeX provides explanations that reveal causal relationships rather than mere correlations. Experimental results validate its superior performance in identifying relevant subsequences with enhanced precision and causal fidelity on both synthetic and real-world datasets.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>In high-stakes medical applications, transparent and trustworthy explanations for time series classification models are critical for diagnosis, prognosis, and treatment decisions. ShapeX provides a more causally-aware and precise explanation, which can build clinician trust and facilitate the adoption of AI in clinical settings.</p>
+                <p>In high-stakes medical applications, understanding *why* a time series model (e.g., for disease diagnosis from ECG or EEG) makes a particular prediction is crucial for clinician trust, adoption, and patient safety. ShapeX's ability to provide causally faithful explanations based on identifiable physiological patterns (shapelets) directly supports clinical validation and responsible AI deployment in healthcare.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>ShapeX can be applied to enhance the explainability of AI models that classify time-series medical data (e.g., ECGs for arrhythmia detection, EEGs for seizure prediction, continuous glucose monitoring for diabetes management, vital signs for predicting adverse events). By identifying specific 'shapelets' (key subsequences) in a patient's data and attributing causality, it can help clinicians understand the rationale behind an AI's diagnosis, prognosis, or intervention recommendation, thereby increasing trust and facilitating more informed clinical decisions.</p>
+                <p>This research provides a framework (ShapeX) for developing explainable AI (XAI) models specifically for time series data in healthcare. It would enable medical professionals to understand why a machine learning model made a particular prediction regarding a patient's condition based on their time-series physiological data, thereby enhancing trust, facilitating clinical adoption, and potentially leading to more accurate and reliable medical interventions. This is crucial for medical AI applications that involve pattern recognition in patient data over time.</p>
             </section>
             
 
@@ -67,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Existing post-hoc time series explanation (PHTSE) methods predominantly use timestep-level feature attribution, overlooking the fundamental role of key shapelets in classification outcomes.</li>
+                    <li>Existing post-hoc time series explanation (PHTSE) methods primarily focus on timestep-level feature attribution, failing to recognize that classification outcomes are predominantly driven by key subsequences (shapelets).</li>
                     
-                    <li>ShapeX introduces a novel framework that segments time series into meaningful shapelet-driven segments for explanation.</li>
+                    <li>ShapeX is an innovative framework that segments time series into meaningful, shapelet-driven segments and employs Shapley values to assess their saliency for classification explanations.</li>
                     
-                    <li>It employs Shapley values to quantitatively assess the saliency and contribution of these shapelet-driven segments to the classification decision.</li>
+                    <li>The core of ShapeX is the Shapelet Describe-and-Detect (SDD) framework, designed to effectively learn a diverse and essential set of shapelets for classification tasks.</li>
                     
-                    <li>At its core, ShapeX utilizes the Shapelet Describe-and-Detect (SDD) framework, which effectively learns a diverse set of shapelets essential for classification.</li>
+                    <li>ShapeX is demonstrated to produce explanations that uncover causal relationships, distinguishing itself from correlation-based methods due to the inherent atomicity properties of shapelets.</li>
                     
-                    <li>ShapeX is designed to reveal causal relationships in explanations, attributed to the atomicity properties of shapelets, rather than just correlations.</li>
+                    <li>Experimental evaluations on both synthetic and real-world datasets show that ShapeX outperforms existing explanation methods.</li>
                     
-                    <li>Experimental evaluations on both synthetic and real-world datasets demonstrate ShapeX's superiority over existing methods in identifying the most relevant subsequences.</li>
+                    <li>The framework significantly enhances the precision and causal fidelity of time series explanations by more accurately identifying the most relevant subsequences.</li>
                     
-                    <li>The framework significantly enhances both the precision and, crucially, the causal fidelity of time series explanations.</li>
+                    <li>The research underscores the critical need for transparent and trustworthy explanations in high-stakes applications such as healthcare and finance.</li>
                     
                 </ul>
             </section>
@@ -87,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>ShapeX operates by first segmenting time series into meaningful 'shapelet-driven segments'. This segmentation is facilitated by the 'Shapelet Describe-and-Detect (SDD) framework', which learns a diverse set of shapelets crucial for the underlying classification task. Subsequently, ShapeX employs 'Shapley values' to assess and quantify the saliency and contribution of these identified shapelet-driven segments to the model's classification outcome. This approach provides explanations at a semantically richer subsequence level, aiming to reveal causal relationships.</p>
+                    <p>ShapeX operates by first segmenting time series into 'shapelet-driven segments.' This segmentation relies on the Shapelet Describe-and-Detect (SDD) framework, which is responsible for learning a diverse set of shapelets essential for the underlying classification task. Subsequently, Shapley values are employed to quantify the saliency or contribution of these identified shapelet-driven segments to the final classification outcome, thereby generating explanations that reveal causal relationships due to the atomicity of shapelets.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The key findings indicate that ShapeX significantly outperforms existing post-hoc time series explanation methods. It demonstrates superior capabilities in accurately identifying the most relevant subsequences within time series data. Importantly, ShapeX substantially enhances both the precision and, critically, the causal fidelity of the generated time series explanations, as validated through extensive experiments on diverse synthetic and real-world datasets.</p>
+                    <p>ShapeX consistently outperforms existing time series explanation methods by significantly enhancing both the precision and causal fidelity of explanations. It achieves this by accurately identifying the most relevant subsequences (shapelets) that truly drive classification decisions, rather than relying on less interpretable, timestep-level attributions. This leads to more reliable and interpretable insights into model behavior.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>ShapeX has the potential to profoundly impact clinical practice by providing more interpretable and trustworthy AI models for medical time series data. Clinicians could gain deeper insights into *why* a model made a specific prediction (e.g., detecting early signs of sepsis from vital signs or diagnosing an arrhythmia from an ECG), enabling more confident clinical decision-making, improved patient safety, and potentially uncovering novel disease biomarkers. This enhanced transparency is crucial for the regulatory approval and widespread adoption of AI in healthcare.</p>
+                <p>ShapeX has the potential to profoundly impact the deployment and trustworthiness of AI in clinical settings. By offering clear, causally-linked explanations of model predictions based on specific physiological patterns (shapelets), clinicians can better understand, validate, and confidently integrate AI tools into diagnostic and prognostic workflows. This increased transparency can lead to improved clinical decision-making, earlier interventions, enhanced patient safety, and accelerated regulatory approval and adoption of AI technologies in healthcare.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations of the ShapeX framework or the experimental study.</p>
+                <p>The abstract does not explicitly state any limitations of the ShapeX framework itself. It primarily highlights the limitations of *existing* post-hoc time series explanation methods, which ShapeX aims to overcome.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention specific future research directions for ShapeX.</p>
+                <p>The abstract does not explicitly mention any specific future research directions for the ShapeX framework.</p>
             </section>
             
 
@@ -119,19 +120,17 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Cardiology</span>
+                    <span class="tag">Cardiology (ECG/PPG analysis)</span>
                     
-                    <span class="tag">Neurology</span>
+                    <span class="tag">Neurology (EEG analysis, seizure detection)</span>
                     
                     <span class="tag">Critical Care Monitoring</span>
                     
                     <span class="tag">Remote Patient Monitoring</span>
                     
-                    <span class="tag">Diabetology (glucose monitoring)</span>
+                    <span class="tag">Disease Progression Modeling</span>
                     
-                    <span class="tag">Oncology (biomarker analysis)</span>
-                    
-                    <span class="tag">Digital Health Diagnostics</span>
+                    <span class="tag">Diabetic Retinopathy Detection</span>
                     
                 </div>
             </section>
@@ -140,21 +139,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Time Series Classification</span>
+                    <span class="tag tag-keyword">Time series classification</span>
                     
-                    <span class="tag tag-keyword">Explainable AI (XAI)</span>
+                    <span class="tag tag-keyword">Post hoc explanations</span>
                     
                     <span class="tag tag-keyword">Shapelets</span>
                     
-                    <span class="tag tag-keyword">Post Hoc Explanations</span>
+                    <span class="tag tag-keyword">Shapley values</span>
                     
-                    <span class="tag tag-keyword">Shapley Values</span>
+                    <span class="tag tag-keyword">Explainable AI (XAI)</span>
                     
-                    <span class="tag tag-keyword">Causal Fidelity</span>
+                    <span class="tag tag-keyword">Causality</span>
+                    
+                    <span class="tag tag-keyword">Feature attribution</span>
                     
                     <span class="tag tag-keyword">Healthcare AI</span>
-                    
-                    <span class="tag tag-keyword">Feature Attribution</span>
                     
                 </div>
             </section>
