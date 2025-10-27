@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisiting Social Welfare in Bandits: UCB is (Nearly) All You Need - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a simplified and more robust approach to minimize Nash regret and its generalized form, $p$-mean regret, in stochastic multi-armed bandits">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Revisiting Social Welfare in Bandits: UCB is (Nearly) All You Need</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.21312v1" target="_blank">2510.21312v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-24
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Dhruv Sarkar, Nishant Pandey, Sayak Ray Chowdhury
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.21312v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.21312v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a simplified and more robust approach to minimize Nash regret and its generalized form, $p$-mean regret, in stochastic multi-armed bandits, metrics designed to ensure fairness in reward distribution. It demonstrates that a standard Upper Confidence Bound (UCB) algorithm, preceded by a uniform exploration phase, achieves near-optimal performance under significantly weaker assumptions, offering a broadly applicable solution for fairness-aware decision-making.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medical and health fields, particularly in the design of adaptive clinical trials or treatment allocation strategies, where ensuring fairness in outcomes across diverse patient populations is a critical ethical and practical consideration, going beyond merely maximizing average efficacy.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research improves the theoretical underpinnings and algorithmic design for Multi-Armed Bandit (MAB) algorithms, a form of reinforcement learning (AI). When applied in health, these improved MABs can be used for more ethical and fair adaptive clinical trials, where AI-driven algorithms dynamically allocate patients to different treatments to optimize outcomes while ensuring fairness in reward distribution among patient groups. This contributes to the development of robust and ethically sound AI systems for medical decision-making.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Traditional multi-armed bandit (MAB) regret metrics primarily focus on average accumulated rewards, often overlooking fairness in reward distribution among agents or populations (e.g., patients).</li>
+                    
+                    <li>Nash regret (geometric mean of accumulated rewards) and $p$-mean regret are presented as fairness-aware metrics, aligning with Nash social welfare principles.</li>
+                    
+                    <li>Existing algorithms for minimizing Nash regret rely on strong assumptions (e.g., multiplicative concentration, bounded non-negative rewards) and are not suitable for common reward distributions like Gaussian.</li>
+                    
+                    <li>The authors propose an algorithm combining an initial uniform exploration phase with a standard UCB algorithm.</li>
+                    
+                    <li>This simple UCB-based approach achieves near-optimal Nash regret and generalizes to $p$-mean regret uniformly across all $p$ values.</li>
+                    
+                    <li>Crucially, the proposed method only requires additive Hoeffding bounds and naturally extends to sub-Gaussian rewards, making it far more general and applicable than prior specialized algorithms.</li>
+                    
+                    <li>The work demonstrates superior regret bounds and broader applicability compared to previous methods, which made highly restrictive assumptions and achieved suboptimal results.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology is theoretical computer science research focusing on algorithm design and analysis. It involves modifying and analyzing the performance of a standard Upper Confidence Bound (UCB) algorithm within the stochastic multi-armed bandit framework. The authors provide mathematical proofs for regret bounds, utilizing additive Hoeffding bounds, and generalize their findings to the broader class of $p$-mean regret.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The key finding is that a relatively simple and standard UCB algorithm, when appropriately initialized with uniform exploration, is nearly sufficient to achieve optimal regret bounds for fairness-centric metrics like Nash regret and $p$-mean regret. This approach is robust, applicable to a wider range of reward distributions (sub-Gaussian), and operates under weaker assumptions than previous specialized algorithms, thus making fairness-aware decision-making more practical in multi-armed bandit settings.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This work has the potential to significantly impact the design of future clinical trials and adaptive healthcare interventions. By providing a mathematically sound and broadly applicable method for incorporating fairness into treatment assignment algorithms, it can lead to more ethically responsible and patient-centric adaptive trials where equitable outcomes for all participant groups are prioritized alongside overall efficacy. This could improve trust in clinical research and ensure more just distribution of experimental treatments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of *this* specific work. However, as a theoretical computer science paper, its immediate practical deployment in clinical settings would require further empirical validation, development of specific implementations, and consideration of real-world complexities not captured in theoretical bandit models (e.g., patient adherence, varying follow-up times). The 'nearly optimal' nature implies a marginal gap to absolute optimality.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly stated in the abstract, potential future directions could include empirical validation of the proposed algorithm in realistic simulated clinical trial environments, extending the framework to more complex bandit variants (e.g., contextual bandits with fairness constraints), and exploring the integration of $p$-mean regret with other practical and ethical considerations in adaptive healthcare decision-making.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Trials</span>
+                    
+                    <span class="tag">Adaptive Treatment Strategies</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Medical Ethics</span>
+                    
+                    <span class="tag">Public Health Resource Allocation</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Multi-armed bandits</span>
+                    
+                    <span class="tag tag-keyword">Nash regret</span>
+                    
+                    <span class="tag tag-keyword">Fairness</span>
+                    
+                    <span class="tag tag-keyword">UCB</span>
+                    
+                    <span class="tag tag-keyword">p-mean regret</span>
+                    
+                    <span class="tag tag-keyword">Sub-Gaussian rewards</span>
+                    
+                    <span class="tag tag-keyword">Adaptive clinical trials</span>
+                    
+                    <span class="tag tag-keyword">Social welfare</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Regret in stochastic multi-armed bandits traditionally measures the
+difference between the highest reward and either the arithmetic mean of
+accumulated rewards or the final reward. These conventional metrics often fail
+to address fairness among agents receiving rewards, particularly in settings
+where rewards are distributed across a population, such as patients in clinical
+trials. To address this, a recent body of work has introduced Nash regret,
+which evaluates performance via the geometric mean of accumulated rewards,
+aligning with the Nash social welfare function known for satisfying fairness
+axioms.
+  To minimize Nash regret, existing approaches require specialized algorithm
+designs and strong assumptions, such as multiplicative concentration
+inequalities and bounded, non-negative rewards, making them unsuitable for even
+Gaussian reward distributions. We demonstrate that an initial uniform
+exploration phase followed by a standard Upper Confidence Bound (UCB) algorithm
+achieves near-optimal Nash regret, while relying only on additive Hoeffding
+bounds, and naturally extending to sub-Gaussian rewards. Furthermore, we
+generalize the algorithm to a broad class of fairness metrics called the
+$p$-mean regret, proving (nearly) optimal regret bounds uniformly across all
+$p$ values. This is in contrast to prior work, which made extremely restrictive
+assumptions on the bandit instances and even then achieved suboptimal regret
+bounds.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

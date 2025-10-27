@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimating Treatment Effects in Networks using Domain Adversarial Training - Health AI Hub</title>
+    <meta name="description" content="This paper introduces HINet, a novel method that combines Graph Neural Networks (GNNs) with Domain Adversarial Training (DAT) to accurately estimate heterogeneo">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Estimating Treatment Effects in Networks using Domain Adversarial Training</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.21457v1" target="_blank">2510.21457v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-24
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Daan Caljon, Jente Van Belle, Wouter Verbeke
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.21457v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.21457v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces HINet, a novel method that combines Graph Neural Networks (GNNs) with Domain Adversarial Training (DAT) to accurately estimate heterogeneous treatment effects in network settings. HINet addresses two critical challenges: the often-unrealistic assumption of known exposure mappings, and the newly identified problem of network-level covariate shift arising from homophily and treatment assignment interactions. The approach demonstrates effectiveness on synthetic and semi-synthetic network datasets, providing robust treatment effect estimates under complex interference patterns.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine and public health as many interventions and disease dynamics occur within interconnected networks (e.g., social networks influencing health behaviors, disease transmission networks, drug interaction networks). Accurately estimating treatment effects in such settings, accounting for direct and indirect influences, is crucial for designing effective public health policies, targeted clinical interventions, and understanding disease propagation.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research provides a foundational machine learning method that could power AI applications in health to: 1) More accurately estimate the causal impact of medical interventions (e.g., drugs, vaccines, behavioral therapies) in real-world populations where individuals influence each other. 2) Develop robust predictive models for health outcomes that account for complex social or biological networks and can generalize across different patient populations or clinical settings (mitigating covariate shift). 3) Optimize public health strategies by better understanding how interventions propagate through communities. 4) Inform personalized medicine by considering the patient's network context (e.g., family, social connections, comorbidity networks).</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Estimating heterogeneous treatment effects in networks is complicated by 'interference,' where one's outcome is influenced by the treatment status of others.</li>
+                    
+                    <li>Existing causal machine learning methods typically assume a known 'exposure mapping,' which simplifies how interference occurs, but is often unrealistic in practice.</li>
+                    
+                    <li>The authors identify and explicitly study 'network-level covariate shift,' a new challenge arising from the interaction of homophily (tendency for similar instances to connect) and the treatment assignment mechanism, which can bias treatment effect estimates.</li>
+                    
+                    <li>HINet integrates Graph Neural Networks (GNNs) to model complex network dependencies and interference effects.</li>
+                    
+                    <li>It employs Domain Adversarial Training (DAT) to mitigate the impact of network-level covariate shift by learning representations invariant to the treatment assignment mechanism.</li>
+                    
+                    <li>The proposed method allows for treatment effect estimation without requiring prior knowledge of the exposure mapping, enhancing its applicability in real-world scenarios.</li>
+                    
+                    <li>Empirical evaluations on synthetic and semi-synthetic network datasets confirm HINet's effectiveness in accurately estimating treatment effects and mitigating covariate shift.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>HINet combines Graph Neural Networks (GNNs) with Domain Adversarial Training (DAT). GNNs are utilized to capture the complex relational structure of the network and model interference effects, learning representations that encode both individual features and neighborhood information. DAT is then applied to these representations to create a 'domain-invariant' feature space, effectively mitigating network-level covariate shift induced by treatment assignment and homophily, thereby enabling robust and unbiased estimation of treatment effects.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>HINet effectively estimates heterogeneous treatment effects in network settings, demonstrating robust performance even when the precise exposure mapping (how others' treatments affect an individual) is unknown. It successfully mitigates the impact of network-level covariate shift, a previously unaddressed challenge that can significantly bias causal estimates. Extensive empirical validation on synthetic and semi-synthetic datasets confirms the superior accuracy and effectiveness of the proposed approach.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This methodology can significantly improve the design and evaluation of health interventions, particularly in public health, by more accurately predicting the overall impact of treatments or campaigns that propagate through social or epidemiological networks. It enables better assessment of policies like vaccination drives or health education programs, by accounting for peer influence. Furthermore, it could refine drug efficacy assessments or adverse event prediction in patient cohorts where individuals' health outcomes are interdependent, leading to more targeted and effective clinical strategies.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract specifies that the extensive empirical evaluation was conducted on 'synthetic and semi-synthetic network datasets.' This implies that the method's performance and scalability have not yet been fully demonstrated on complex, large-scale real-world medical or health datasets, which often present higher levels of noise, confounding factors, and data sparsity.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly stated in the abstract, typical future research directions for such a method would likely include: validation and application to diverse, large-scale real-world clinical and public health datasets; investigation into the method's scalability to extremely large and dynamic networks; and exploration of extensions to handle more complex or longitudinal forms of interference and treatment assignments over time.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Public Health</span>
+                    
+                    <span class="tag">Epidemiology</span>
+                    
+                    <span class="tag">Social Medicine</span>
+                    
+                    <span class="tag">Pharmacovigilance</span>
+                    
+                    <span class="tag">Health Policy</span>
+                    
+                    <span class="tag">Precision Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Causal Inference</span>
+                    
+                    <span class="tag tag-keyword">Treatment Effects</span>
+                    
+                    <span class="tag tag-keyword">Network Analysis</span>
+                    
+                    <span class="tag tag-keyword">Graph Neural Networks</span>
+                    
+                    <span class="tag tag-keyword">Domain Adversarial Training</span>
+                    
+                    <span class="tag tag-keyword">Interference</span>
+                    
+                    <span class="tag tag-keyword">Covariate Shift</span>
+                    
+                    <span class="tag tag-keyword">Homophily</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Estimating heterogeneous treatment effects in network settings is complicated
+by interference, meaning that the outcome of an instance can be influenced by
+the treatment status of others. Existing causal machine learning approaches
+usually assume a known exposure mapping that summarizes how the outcome of a
+given instance is influenced by others' treatment, a simplification that is
+often unrealistic. Furthermore, the interaction between homophily -- the
+tendency of similar instances to connect -- and the treatment assignment
+mechanism can induce a network-level covariate shift that may lead to
+inaccurate treatment effect estimates, a phenomenon that has not yet been
+explicitly studied. To address these challenges, we propose HINet, a novel
+method that integrates graph neural networks with domain adversarial training.
+This combination allows estimating treatment effects under unknown exposure
+mappings while mitigating the impact of (network-level) covariate shift. An
+extensive empirical evaluation on synthetic and semi-synthetic network datasets
+demonstrates the effectiveness of our approach.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
