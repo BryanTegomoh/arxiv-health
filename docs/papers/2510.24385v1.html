@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When are radiology reports useful for training medical image classifiers? - Health AI Hub</title>
+    <meta name="description" content="This paper systematically investigates how radiology reports, rich with expert annotations, can be leveraged during machine learning model training to improve i">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>When are radiology reports useful for training medical image classifiers?</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.24385v1" target="_blank">2510.24385v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-28
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Herman Bergström, Zhongqi Yue, Fredrik D. Johansson
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.24385v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.24385v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper systematically investigates how radiology reports, rich with expert annotations, can be leveraged during machine learning model training to improve image-only classification for medical tasks. It analyzes report usage during both pre-training and fine-tuning across diagnostic and prognostic tasks, revealing that report utility depends on label-text association and demonstrating the significant, often dominant, impact of fine-tuning with reports.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research directly addresses how to more effectively build accurate and robust medical image classifiers by integrating readily available radiology reports, potentially leading to improved diagnostic and prognostic predictions in clinical settings without requiring manual report interpretation for every prediction.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper investigates how to optimally use radiology reports (clinical text data) to train and improve the performance of machine learning models designed for medical image classification. This directly applies to developing more accurate and robust AI tools for medical diagnosis, predicting patient outcomes (prognosis), and assisting healthcare professionals in interpreting medical images, ultimately enhancing clinical decision-making and patient care.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The study systematically evaluates the utility of radiology reports for training medical image classifiers, addressing prior work limitations focused mainly on pre-trained image representations.</li>
+                    
+                    <li>It comprehensively examines the impact of leveraging reports during both the pre-training and fine-tuning phases of model development.</li>
+                    
+                    <li>Performance is assessed across a spectrum of downstream tasks, including diagnostic labels (often well-represented in text) and prognostic tasks like 12-month readmission (potentially weakly associated with text).</li>
+                    
+                    <li>The effectiveness of report integration is also studied under varying training set sizes.</li>
+                    
+                    <li>Findings indicate that pre-training with reports is beneficial when the downstream label is well-represented in the text, but explicit image-text alignment during pre-training can be detrimental when this association is weak.</li>
+                    
+                    <li>Fine-tuning with reports consistently leads to significant performance improvements, often having a larger impact than the chosen pre-training method in certain settings.</li>
+                    
+                    <li>The research provides actionable insights into when and how to utilize privileged text data and highlights existing gaps in current medical image AI research.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The authors conducted a systematic empirical study evaluating the impact of leveraging radiology reports during two distinct phases of machine learning model training: pre-training (including explicit image-text alignment techniques) and fine-tuning. Experiments were performed on diverse downstream tasks, encompassing both diagnostic labels (with strong text association) and prognostic tasks (e.g., 12-month readmission, potentially with weak text association). The study also investigated the influence of varying training set sizes on the observed effects.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>1. Leveraging radiology reports during model pre-training is beneficial for downstream classification tasks where the target label is explicitly or implicitly well-represented within the report text; however, pre-training through explicit image-text alignment can be detrimental in settings where the label has a weak association with the text content. 2. Fine-tuning medical image classifiers with access to radiology reports consistently leads to significant performance improvements, and in some experimental settings, its impact was greater than that of the pre-training method employed.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>These findings provide crucial guidance for developers of AI tools in medicine, informing when and how to optimally integrate textual radiology report data into image-based diagnostic and prognostic models. This can lead to more accurate, efficient, and clinically useful AI applications, potentially reducing development costs and accelerating the deployment of reliable AI in healthcare by maximizing the utility of existing clinical data.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state specific limitations of *this particular study*. However, it does note that the findings highlight "gaps in current research," suggesting areas where broader understanding and methodologies are still needed regarding leveraging privileged text data in medical imaging.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper implicitly suggests future research by highlighting "gaps in current research." This implies directions such as exploring more robust image-text alignment strategies for labels weakly associated with text, developing novel pre-training methods that are consistently beneficial across diverse task types, and further investigating the complex interplay between report utility, training set size, and specific clinical task characteristics.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Healthcare AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">radiology reports</span>
+                    
+                    <span class="tag tag-keyword">medical image classification</span>
+                    
+                    <span class="tag tag-keyword">machine learning</span>
+                    
+                    <span class="tag tag-keyword">pre-training</span>
+                    
+                    <span class="tag tag-keyword">fine-tuning</span>
+                    
+                    <span class="tag tag-keyword">image-text alignment</span>
+                    
+                    <span class="tag tag-keyword">diagnostic tasks</span>
+                    
+                    <span class="tag tag-keyword">prognostic tasks</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical images used to train machine learning models are often accompanied by
+radiology reports containing rich expert annotations. However, relying on these
+reports as inputs for clinical prediction requires the timely manual work of a
+trained radiologist. This raises a natural question: when can radiology reports
+be leveraged during training to improve image-only classification? Prior works
+are limited to evaluating pre-trained image representations by fine-tuning them
+to predict diagnostic labels, often extracted from reports, ignoring tasks with
+labels that are weakly associated with the text. To address this gap, we
+conduct a systematic study of how radiology reports can be used during both
+pre-training and fine-tuning, across diagnostic and prognostic tasks (e.g.,
+12-month readmission), and under varying training set sizes. Our findings
+reveal that: (1) Leveraging reports during pre-training is beneficial for
+downstream classification tasks where the label is well-represented in the
+text; however, pre-training through explicit image-text alignment can be
+detrimental in settings where it's not; (2) Fine-tuning with reports can lead
+to significant improvements and even have a larger impact than the pre-training
+method in certain settings. These results provide actionable insights into when
+and how to leverage privileged text data to train medical image classifiers
+while highlighting gaps in current research.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

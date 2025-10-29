@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Towards actionable hypotension prediction -- predicting catecholamine therapy initiation in the intensive care unit - Health AI Hub</title>
+    <meta name="description" content="This research develops an XGBoost machine learning model to predict the initiation of catecholamine therapy in critically ill ICU patients, offering a more clin">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Towards actionable hypotension prediction -- predicting catecholamine therapy initiation in the intensive care unit</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.24287v1" target="_blank">2510.24287v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-28
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Richard Koebe, Noah Saibel, Juan Miguel Lopez Alcaraz, Simon Schäfer, Nils Strodthoff
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> eess.SP, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.24287v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.24287v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This research develops an XGBoost machine learning model to predict the initiation of catecholamine therapy in critically ill ICU patients, offering a more clinically actionable target than traditional fixed MAP threshold predictions. Utilizing the MIMIC-III database, the model achieved a high AUROC of 0.822, significantly outperforming a MAP < 65 mmHg baseline, by integrating MAP dynamics, treatment context, and patient characteristics to provide proactive decision support. This approach marks a shift towards predictive tools that align with actual clinical decision-making for hypotension management.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research addresses a critical need in intensive care by providing an intelligent system to predict the complex clinical decision of initiating catecholamine therapy, moving beyond simple physiological thresholds. It has the potential to guide clinicians towards more timely and personalized interventions for hypotension, thereby minimizing risks associated with both undertreatment (e.g., organ damage) and overtreatment (e.g., adverse drug effects) in critically ill patients.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper describes the development of an AI-powered predictive model (using XGBoost) designed to forecast the need for catecholamine therapy initiation in ICU patients experiencing hypotension. This model serves as an actionable clinical decision support tool, aiming to assist healthcare providers in making timely and appropriate treatment escalation decisions, thereby improving patient outcomes and optimizing resource utilization in critical care settings. It shifts the focus from simple threshold-based alarms to a more nuanced, context-aware prediction of clinical intervention.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Novel Prediction Target**: The study redefined the prediction target from fixed Mean Arterial Pressure (MAP) thresholds to the *initiation of catecholamine therapy* (vasoactive or inotropic agents), which directly reflects a critical clinical decision in ICU settings.</li>
+                    
+                    <li>**Machine Learning Model & Data**: An Extreme Gradient Boosting (XGBoost) model was trained on the MIMIC-III database to predict this binary event within a 15-minute prediction window.</li>
+                    
+                    <li>**Comprehensive Feature Set**: Input features included statistical descriptors from a two-hour sliding MAP context window, patient demographics, biometrics, comorbidities, and ongoing treatments.</li>
+                    
+                    <li>**Superior Performance**: The model achieved a strong Area Under the Receiver Operating Characteristic (AUROC) of 0.822 (95% CI: 0.813-0.830), substantially outperforming a conventional hypotension baseline (MAP < 65 mmHg) which yielded an AUROC of 0.686.</li>
+                    
+                    <li>**Model Interpretability**: SHapley Additive exPlanations (SHAP) analysis revealed that recent MAP values, MAP trends, and ongoing treatments (e.g., sedatives, electrolytes) were the most dominant predictors for catecholamine initiation.</li>
+                    
+                    <li>**Subgroup Analysis**: Performance varied across patient subgroups, showing higher efficacy in males, younger patients (<53 years), those with higher BMI (>32), and patients without comorbidities or concurrent medications.</li>
+                    
+                    <li>**Actionable Decision Support**: The proposed system aims to shift clinical focus from threshold-based alarms to providing actionable decision support for the timely and appropriate escalation of therapy in hypotensive patients.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study utilized the MIMIC-III database to train an Extreme Gradient Boosting (XGBoost) model. The prediction target was defined as the binary event of catecholamine therapy initiation within a 15-minute prediction window. Input features included statistical descriptors (e.g., mean, standard deviation) derived from a two-hour sliding Mean Arterial Pressure (MAP) context window, supplemented by patient demographics, biometrics, comorbidities, and ongoing treatments. Model interpretation was performed using SHapley Additive exPlanations (SHAP) values.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The XGBoost model demonstrated robust predictive capability for catecholamine initiation, achieving an AUROC of 0.822, which significantly surpassed a standard MAP < 65 mmHg threshold baseline (AUROC 0.686). SHAP analysis identified recent MAP values, MAP trends (e.g., rate of change), and current treatment regimens (e.g., sedatives, electrolytes) as the most influential predictors. Subgroup analyses revealed performance heterogeneity, with the model performing better in male, younger (<53 years), higher BMI (>32), and healthier (no comorbidities or concurrent medications) patient populations.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides a framework for a more sophisticated, actionable clinical decision support system in the ICU. By predicting the need for catecholamine initiation, it can empower clinicians to proactively intervene, potentially reducing the incidence of severe hypotension and its associated complications, while also avoiding unnecessary or premature initiation of powerful vasopressors. This shift from reactive alarms to predictive, context-aware guidance could lead to optimized patient management and improved clinical outcomes in critical care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While not explicitly stated as limitations in the abstract, the future work suggestions imply that the current model could benefit from richer temporal and physiological contextual features. The varying performance across subgroups also suggests that the model's generalizability or robustness might be less consistent in certain patient populations (e.g., older patients, those with multiple comorbidities).</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future work should aim to enrich the temporal and physiological context of the input data, extend the label definitions to encompass a broader spectrum of therapy escalation events, and conduct comprehensive benchmarking against existing hypotension prediction systems to validate and improve the model's clinical utility.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Critical Care Medicine</span>
+                    
+                    <span class="tag">Intensive Care Medicine</span>
+                    
+                    <span class="tag">Cardiovascular Medicine</span>
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">hypotension</span>
+                    
+                    <span class="tag tag-keyword">catecholamine therapy</span>
+                    
+                    <span class="tag tag-keyword">intensive care unit</span>
+                    
+                    <span class="tag tag-keyword">machine learning</span>
+                    
+                    <span class="tag tag-keyword">XGBoost</span>
+                    
+                    <span class="tag tag-keyword">MIMIC-III</span>
+                    
+                    <span class="tag tag-keyword">actionable prediction</span>
+                    
+                    <span class="tag tag-keyword">SHAP</span>
+                    
+                    <span class="tag tag-keyword">decision support</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Hypotension in critically ill ICU patients is common and life-threatening.
+Escalation to catecholamine therapy marks a key management step, with both
+undertreatment and overtreatment posing risks. Most machine learning (ML)
+models predict hypotension using fixed MAP thresholds or MAP forecasting,
+overlooking the clinical decision behind treatment escalation. Predicting
+catecholamine initiation, the start of vasoactive or inotropic agent
+administration offers a more clinically actionable target reflecting real
+decision-making. Using the MIMIC-III database, we modeled catecholamine
+initiation as a binary event within a 15-minute prediction window. Input
+features included statistical descriptors from a two-hour sliding MAP context
+window, along with demographics, biometrics, comorbidities, and ongoing
+treatments. An Extreme Gradient Boosting (XGBoost) model was trained and
+interpreted via SHapley Additive exPlanations (SHAP). The model achieved an
+AUROC of 0.822 (0.813-0.830), outperforming the hypotension baseline (MAP < 65,
+AUROC 0.686 [0.675-0.699]). SHAP analysis highlighted recent MAP values, MAP
+trends, and ongoing treatments (e.g., sedatives, electrolytes) as dominant
+predictors. Subgroup analysis showed higher performance in males, younger
+patients (<53 years), those with higher BMI (>32), and patients without
+comorbidities or concurrent medications. Predicting catecholamine initiation
+based on MAP dynamics, treatment context, and patient characteristics supports
+the critical decision of when to escalate therapy, shifting focus from
+threshold-based alarms to actionable decision support. This approach is
+feasible across a broad ICU cohort under natural event imbalance. Future work
+should enrich temporal and physiological context, extend label definitions to
+include therapy escalation, and benchmark against existing hypotension
+prediction systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>27 pages, 8 figures, source code under
+  https://github.com/AI4HealthUOL/actionable-hypotension</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
