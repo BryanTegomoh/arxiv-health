@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evolving Diagnostic Agents in a Virtual Clinical Environment - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a novel framework for training large language models (LLMs) as interactive diagnostic agents using reinforcement learning, enabling them t">
+    <meta name="description" content="This paper introduces DiagAgent, a novel large language model trained with reinforcement learning in DiagGym, a virtual clinical environment that simulates mult">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a novel framework for training large language models (LLMs) as interactive diagnostic agents using reinforcement learning, enabling them to manage multi-turn diagnostic processes and adaptively select examinations. Leveraging a virtual clinical environment (DiagGym) and a new benchmark (DiagBench), the developed DiagAgent significantly outperforms state-of-the-art LLMs in diagnostic accuracy and the quality of examination recommendations. The findings highlight that learning diagnostic policies through interactive exploration and outcome-based feedback confers superior, clinically meaningful diagnostic management abilities compared to passive training approaches.</p>
+                <p class="summary-text">This paper introduces DiagAgent, a novel large language model trained with reinforcement learning in DiagGym, a virtual clinical environment that simulates multi-turn diagnostic processes using electronic health records. DiagAgent learns to adaptively select examinations and commit to final diagnoses, demonstrating significant performance improvements over state-of-the-art LLMs in diagnostic accuracy and examination recommendation efficiency across various diagnostic settings. The research highlights that interactive learning in clinical environments confers dynamic and clinically meaningful diagnostic management abilities unattainable through passive training alone.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to medicine as it pioneers the development of AI agents capable of engaging in dynamic, multi-turn diagnostic reasoning, potentially enhancing diagnostic accuracy, optimizing clinical resource utilization through adaptive test selection, and improving overall patient management in healthcare settings.</p>
+                <p>This research is highly relevant to medicine by proposing an AI framework that can learn to navigate complex diagnostic pathways dynamically, potentially improving the efficiency and accuracy of clinical decision-making, reducing unnecessary examinations, and providing advanced decision support to clinicians in challenging diagnostic scenarios.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is the development and training of large language models (LLMs) to function as highly accurate and adaptive diagnostic agents. These agents can manage complex, multi-turn diagnostic processes, recommend appropriate medical examinations based on patient history, and arrive at diagnoses. This aims to enhance diagnostic accuracy, efficiency, and consistency in healthcare, potentially assisting clinicians or serving as a robust training tool in virtual clinical environments.</p>
+                <p>The paper describes the development of an AI-powered 'diagnostic agent' (DiagAgent) using reinforcement learning. This AI aims to assist in the medical diagnostic process by interpreting patient information, recommending examinations, and suggesting final diagnoses within a simulated clinical environment. It represents an advanced application of AI for clinical decision support and potentially for medical training.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>**DiagGym**: A virtual clinical environment, trained with electronic health records (EHRs), simulates patient responses and examination outcomes to provide a realistic setting for diagnostic agent training and evaluation.</li>
+                    <li>**Reinforcement Learning for Diagnostics**: DiagAgent is trained via end-to-end, multi-turn reinforcement learning (RL) to learn diagnostic policies, a novel approach compared to static instruction-tuned models.</li>
                     
-                    <li>**DiagAgent**: An LLM trained via end-to-end, multi-turn reinforcement learning (RL) to learn adaptive diagnostic policies that optimize both the information yield from examinations and final diagnostic accuracy.</li>
+                    <li>**Virtual Clinical Environment (DiagGym)**: A diagnostics world model trained on electronic health records (EHRs) is presented, serving as an interactive simulator that emits realistic examination outcomes conditioned on patient history and recommended examinations.</li>
                     
-                    <li>**DiagBench**: A new diagnostic benchmark comprising 750 cases with physician-validated examination recommendations and 99 cases meticulously annotated with 973 physician-written rubrics for evaluating the diagnostic process quality.</li>
+                    <li>**Comprehensive Diagnostic Benchmark (DiagBench)**: A new benchmark is introduced, comprising 750 cases with physician-validated examination recommendations and 99 cases annotated with 973 physician-written rubrics for process evaluation.</li>
                     
-                    <li>**Interactive Learning Paradigm**: The framework departs from static, instruction-tuned models by acquiring diagnostic strategies through interactive exploration and outcome-based feedback, fostering dynamic clinical reasoning.</li>
+                    <li>**Superior Diagnostic Accuracy**: DiagAgent significantly outperforms 10 state-of-the-art LLMs (including DeepSeek-v3 and GPT-4o) and prompt-engineered agents, achieving up to 15.12% higher diagnostic accuracy in end-to-end settings.</li>
                     
-                    <li>**Superior Diagnostic Accuracy**: DiagAgent demonstrated a 9.34% higher diagnostic accuracy in single-turn settings and a 15.12% increase in end-to-end settings, outperforming 10 state-of-the-art LLMs (including DeepSeek-v3, GPT-4o) and prompt-engineered agents.</li>
+                    <li>**Enhanced Examination Recommendation Efficiency**: The model demonstrates substantial improvements in examination recommendation hit ratio (44.03% increase in single-turn) and F1 score (23.09% boost in end-to-end settings), indicating better resource utilization.</li>
                     
-                    <li>**Enhanced Examination Recommendation**: The agent achieved a 44.03% improvement in examination recommendation hit ratio in single-turn scenarios and a 23.09% boost in F1 score in end-to-end settings.</li>
+                    <li>**Clinically Meaningful Process Evaluation**: DiagAgent surpasses the next-best model, Claude-sonnet-4, by 7.1% in weighted rubric score, validating the quality and clinical appropriateness of its diagnostic process.</li>
                     
-                    <li>**Clinically Meaningful Process**: In rubric-based evaluation, DiagAgent surpassed the next-best model (Claude-sonnet-4) by 7.1% in weighted rubric score, indicating a more clinically appropriate and structured diagnostic approach.</li>
+                    <li>**Dynamic Diagnostic Management**: The findings suggest that interactive learning in simulated clinical environments enables LLMs to acquire dynamic and context-aware diagnostic management abilities crucial for real-world medical practice.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The methodology involves training Large Language Models (LLMs), termed "DiagAgent," using an end-to-end, multi-turn reinforcement learning (RL) approach. This training occurs within a simulated environment called "DiagGym," which functions as a virtual clinical world model trained on electronic health records (EHRs) to generate realistic examination outcomes based on patient history and recommended tests. The agents learn diagnostic policies by iteratively selecting examinations and receiving outcome-based feedback. Performance is evaluated using a new benchmark, "DiagBench," which includes physician-validated examination recommendations and physician-written rubrics for assessing the quality of the diagnostic process.</p>
+                    <p>The methodology centers on training large language models (LLMs), referred to as DiagAgent, using an end-to-end, multi-turn reinforcement learning (RL) approach. This training is conducted within a simulated virtual clinical environment called DiagGym, which is a "diagnostics world model" built upon electronic health records (EHRs) to generate realistic examination outcomes. DiagAgent's diagnostic policies are optimized for both information yield and diagnostic accuracy. Performance is rigorously evaluated using DiagBench, a multi-faceted benchmark that includes physician-validated examination recommendations and physician-written rubrics for assessing the diagnostic process.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>DiagAgent consistently demonstrated superior performance across diverse diagnostic settings. It significantly outperformed 10 state-of-the-art LLMs (e.g., DeepSeek-v3, GPT-4o) and two prompt-engineered agents. Specifically, in single-turn settings, DiagAgent achieved a 9.34% higher diagnostic accuracy and a 44.03% improvement in examination recommendation hit ratio. In end-to-end multi-turn settings, it delivered a 15.12% increase in diagnostic accuracy and a 23.09% boost in examination recommendation F1 score. Furthermore, in rubric-based evaluations of the diagnostic process, DiagAgent surpassed the next-best model (Claude-sonnet-4) by 7.1% in weighted rubric score, indicating higher quality clinical reasoning.</p>
+                    <p>DiagAgent achieved superior performance across diverse diagnostic settings. In single-turn scenarios, it demonstrated 9.34% higher diagnostic accuracy and a 44.03% improvement in examination recommendation hit ratio. For end-to-end diagnostic processes, it delivered a 15.12% increase in diagnostic accuracy and a 23.09% boost in examination recommendation F1 score. Notably, in rubric-based evaluations, DiagAgent outperformed the next-best model, Claude-sonnet-4, by 7.1% in weighted rubric score, indicating a more clinically sound diagnostic process. These results collectively highlight that learning through interactive clinical environments grants LLMs dynamic and clinically meaningful diagnostic management abilities beyond passively trained models.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research could significantly impact clinical practice by providing AI-powered diagnostic assistants capable of dynamic, adaptive, and multi-turn interaction with patient data. Such agents could enhance diagnostic precision, reduce unnecessary medical examinations and associated costs, streamline diagnostic pathways, and ultimately empower clinicians with more effective tools for managing complex patient cases and improving overall healthcare outcomes.</p>
+                <p>This work has significant potential to impact clinical practice by developing highly capable AI agents that can assist clinicians in navigating complex diagnostic pathways. Such agents could enhance diagnostic accuracy, reduce diagnostic errors, and optimize healthcare resource utilization by recommending only truly necessary examinations. They could also serve as advanced, realistic training tools for medical students and residents, offering interactive diagnostic scenarios. Ultimately, this could lead to more efficient, patient-centered, and cost-effective healthcare delivery by augmenting human diagnostic capabilities.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations of the presented framework or its evaluation. Implicitly, like all virtual environments, the fidelity of DiagGym to real-world clinical complexity and the generalizability of an agent trained purely on simulated data to actual patient encounters remain considerations.</p>
+                <p>The abstract does not explicitly state any limitations of the proposed framework, its training methodology, or its evaluation.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention future research directions. However, the successful development of DiagAgent in a virtual environment suggests potential for exploring its application in more specialized medical domains, integrating real-time patient data streams, or studying its impact in real-world clinical decision support systems.</p>
+                <p>The abstract does not explicitly mention future research directions.</p>
             </section>
             
 
@@ -120,15 +120,13 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">General Medicine</span>
+                    <span class="tag">General Diagnostics</span>
                     
-                    <span class="tag">Clinical Decision Support</span>
+                    <span class="tag">Clinical Decision Support Systems</span>
                     
-                    <span class="tag">Diagnostic Imaging</span>
+                    <span class="tag">Medical Education (for training simulations)</span>
                     
-                    <span class="tag">Primary Care</span>
-                    
-                    <span class="tag">Emergency Medicine</span>
+                    <span class="tag">Precision Medicine (for tailored diagnostic pathways)</span>
                     
                 </div>
             </section>
@@ -149,7 +147,9 @@
                     
                     <span class="tag tag-keyword">Electronic Health Records</span>
                     
-                    <span class="tag tag-keyword">Adaptive Examination</span>
+                    <span class="tag tag-keyword">Adaptive Examination Selection</span>
+                    
+                    <span class="tag tag-keyword">Clinical Decision Support</span>
                     
                 </div>
             </section>

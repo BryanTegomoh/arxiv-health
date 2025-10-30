@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning based Analysis for Radiomics Features Robustness in Real-World Deployment Scenarios - Health AI Hub</title>
+    <meta name="description" content="This study systematically investigates the robustness of radiomics-based machine learning models against distribution shifts caused by variations in MRI protoco">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Machine Learning based Analysis for Radiomics Features Robustness in Real-World Deployment Scenarios</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.25026v1" target="_blank">2510.25026v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-28
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Sarmad Ahmad Khan, Simon Bernatz, Zahra Moslehi, Florian Buettner
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.25026v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.25026v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This study systematically investigates the robustness of radiomics-based machine learning models against distribution shifts caused by variations in MRI protocols, segmentation, and inter-observer variability. Using a fruit phantom, it demonstrates that models trained on protocol-invariant features maintain high performance, while dataset augmentation significantly improves uncertainty calibration. The findings establish a framework for developing robust radiomics models for real-world clinical deployment.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Radiomics-based machine learning models hold significant promise for clinical decision support, but their adoption is hindered by lack of robustness to variations in real-world imaging. This research provides a crucial methodology and insights for developing more reliable and generalizable radiomics models, enabling their safer and more effective translation into routine clinical practice for improved diagnostics and prognostics.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application focuses on developing robust machine learning models for analyzing radiomics features extracted from medical images (specifically MRI). These models aim to provide reliable predictive power for clinical decision support, even when faced with real-world variations in imaging protocols, patient positioning, or segmentation. This improves the trustworthiness and applicability of AI in diagnostic and prognostic tasks within healthcare settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Radiomics models are vulnerable to distribution shifts stemming from variations in imaging protocols, patient positioning, and segmentation strategies.</li>
+                    
+                    <li>A controlled phantom study, using 16 fruits imaged across five MRI sequences (T2-HASTE, T2-TSE, T2-MAP, T1-TSE, T2-FLAIR), was employed to simulate distribution shifts, alongside segmentation and inter-observer variability.</li>
+                    
+                    <li>XGBoost classifiers were trained using two feature sets: 8 consistent, robust (protocol-invariant) features versus all sequence-specific features.</li>
+                    
+                    <li>Models built on protocol-invariant features maintained F1-scores >0.85 across distribution shifts, whereas models using all features experienced a 40% performance degradation under protocol changes.</li>
+                    
+                    <li>Dataset augmentation substantially improved the quality of uncertainty estimates and reduced the Expected Calibration Error (ECE) by 35% without sacrificing predictive accuracy.</li>
+                    
+                    <li>Temperature scaling provided minimal calibration benefits, confirming the inherent reliability of XGBoost's uncertainty estimates.</li>
+                    
+                    <li>The study proposes that protocol-aware feature selection combined with controlled phantom studies can effectively predict and mitigate model behavior under real-world distribution shifts, offering a framework for robust model development.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study utilized a phantom comprising 16 fruits to systematically evaluate distribution shifts. Data was acquired using five distinct MRI sequences (T2-HASTE, T2-TSE, T2-MAP, T1-TSE, T2-FLAIR) to simulate protocol variations. Additional distribution shifts were introduced through varied segmentation strategies (full, partial, rotated) and inter-observer variability. XGBoost classifiers were trained and evaluated on two sets of radiomics features: 8 consistent, protocol-invariant features and all sequence-specific features. Model performance was assessed using F1-scores under both in-domain and out-of-domain conditions. The quality of uncertainty estimates was evaluated using metrics like Expected Calibration Error (ECE), and methods such as dataset augmentation and temperature scaling were applied to improve calibration.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Models trained on 8 protocol-invariant radiomics features demonstrated superior robustness, maintaining F1-scores >0.85 across various distribution shifts. In contrast, models using all features experienced a significant 40% performance degradation under protocol changes. Dataset augmentation substantially improved the quality of uncertainty estimates and reduced the Expected Calibration Error (ECE) by 35%, crucially without sacrificing predictive accuracy. XGBoost classifiers showed inherent reliability in calibration, as temperature scaling provided only minimal additional calibration benefits. The research concludes that protocol-aware feature selection and controlled phantom studies are effective strategies for predicting and mitigating model behavior under real-world distribution shifts.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides a foundational framework and practical guidelines for developing more robust and reliable radiomics-based machine learning models for clinical use. By highlighting the importance of protocol-aware feature selection and controlled phantom studies, it empowers researchers and clinicians to create AI tools that are less susceptible to variations in imaging acquisition and processing, thereby enhancing diagnostic accuracy, improving treatment planning, and fostering greater trust in AI-driven clinical decision support systems in diverse healthcare settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, it is inherent that a phantom study, while offering controlled conditions, may not fully replicate the complex biological variability and pathologies encountered in human clinical data.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The study's primary contribution is providing a framework for developing robust radiomics models resilient to real-world protocol variations. Future directions involve applying and validating this framework using diverse clinical datasets, potentially extending to other imaging modalities and clinical applications, and further exploring methods for adaptive learning and continuous calibration in dynamic clinical environments.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Clinical Decision Support Systems</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Radiomics</span>
+                    
+                    <span class="tag tag-keyword">Machine Learning</span>
+                    
+                    <span class="tag tag-keyword">Robustness</span>
+                    
+                    <span class="tag tag-keyword">Distribution Shift</span>
+                    
+                    <span class="tag tag-keyword">MRI</span>
+                    
+                    <span class="tag tag-keyword">XGBoost</span>
+                    
+                    <span class="tag tag-keyword">Feature Selection</span>
+                    
+                    <span class="tag tag-keyword">Uncertainty Quantification</span>
+                    
+                    <span class="tag tag-keyword">Phantom Study</span>
+                    
+                    <span class="tag tag-keyword">Calibration</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Radiomics-based machine learning models show promise for clinical decision
+support but are vulnerable to distribution shifts caused by variations in
+imaging protocols, positioning, and segmentation. This study systematically
+investigates the robustness of radiomics-based machine learning models under
+distribution shifts across five MRI sequences. We evaluated how different
+acquisition protocols and segmentation strategies affect model reliability in
+terms of predictive power and uncertainty-awareness. Using a phantom of 16
+fruits, we evaluated distribution shifts through: (1) protocol variations
+across T2-HASTE, T2-TSE, T2-MAP, T1-TSE, and T2-FLAIR sequences; (2)
+segmentation variations (full, partial, rotated); and (3) inter-observer
+variability. We trained XGBoost classifiers on 8 consistent robust features
+versus sequence-specific features, testing model performance under in-domain
+and out-of-domain conditions. Results demonstrate that models trained on
+protocol-invariant features maintain F1-scores >0.85 across distribution
+shifts, while models using all features showed 40% performance degradation
+under protocol changes. Dataset augmentation substantially improved the quality
+of uncertainty estimates and reduced the expected calibration error (ECE) by
+35% without sacrificing accuracy. Temperature scaling provided minimal
+calibration benefits, confirming XGBoost's inherent reliability. Our findings
+reveal that protocol-aware feature selection and controlled phantom studies
+effectively predict model behavior under distribution shifts, providing a
+framework for developing robust radiomics models resilient to real-world
+protocol variations.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stroke Lesion Segmentation in Clinical Workflows: A Modular, Lightweight, and Deployment-Ready Tool - Health AI Hub</title>
-    <meta name="description" content="This paper introduces StrokeSeg, a modular and lightweight framework designed to transform high-performing research-grade deep learning models for stroke lesion">
+    <meta name="description" content="This paper introduces StrokeSeg, a modular, lightweight, and deployment-ready software framework designed to translate high-performing deep learning stroke lesi">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CV
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces StrokeSeg, a modular and lightweight framework designed to transform high-performing research-grade deep learning models for stroke lesion segmentation into clinically deployable applications. It addresses the deployment challenges of existing frameworks by decoupling components, utilizing efficient runtimes and quantization, and demonstrating equivalent performance to original PyTorch pipelines while offering portability and user-friendly interfaces.</p>
+                <p class="summary-text">This paper introduces StrokeSeg, a modular, lightweight, and deployment-ready software framework designed to translate high-performing deep learning stroke lesion segmentation models, typically challenging to integrate clinically, into practical applications. By decoupling preprocessing, inference, and postprocessing, and leveraging ONNX Runtime with Float16 quantization, StrokeSeg reduces model size by 50% while maintaining equivalent segmentation performance to original PyTorch pipelines.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This tool is crucial for translating advanced AI research in medical imaging into practical clinical applications, enabling faster, more standardized, and accessible stroke lesion analysis directly within healthcare workflows, which can aid in diagnosis, treatment planning, and outcome assessment.</p>
+                <p>StrokeSeg significantly streamlines the integration of advanced AI for stroke lesion analysis into clinical workflows, enabling faster, more consistent, and quantitative assessment of stroke lesions, which is critical for diagnosis, prognosis, and treatment planning.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is the automated segmentation of stroke lesions from medical images (e.g., MRI or CT scans) using deep learning. This tool facilitates the integration of advanced AI models into clinical workflows to assist in diagnosis, monitoring, treatment planning, or research for stroke patients by providing a portable and clinically usable method for lesion analysis.</p>
+                <p>The AI application is the development of *StrokeSeg*, a modular and lightweight deep learning framework designed to perform state-of-the-art segmentation of stroke lesions from medical images. Its purpose is to bridge the gap between AI research and clinical practice, providing a practical, deployment-ready tool for healthcare professionals to assist in the diagnosis, monitoring, or treatment planning of stroke patients by accurately delineating lesions.</p>
             </section>
             
 
@@ -68,19 +68,17 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the challenge of deploying state-of-the-art deep learning models (like nnU-Net) for brain lesion segmentation in clinical settings due to their heavy dependencies and monolithic design.</li>
+                    <li>Addresses the clinical deployment challenge of state-of-the-art deep learning models for brain lesion segmentation, which are often monolithic and dependency-heavy.</li>
                     
-                    <li>Introduces StrokeSeg, a modular framework that decouples preprocessing, inference, and postprocessing steps for enhanced flexibility and deployment.</li>
+                    <li>Introduces StrokeSeg, a modular framework with decoupled preprocessing (Anima toolbox, BIDS-compliant), inference (ONNX Runtime), and postprocessing components.</li>
                     
-                    <li>Utilizes the Anima toolbox for BIDS-compliant preprocessing and ONNX Runtime with Float16 quantization for inference, significantly reducing model size by approximately 50%.</li>
+                    <li>Employs Float16 quantization during inference, resulting in an approximate 50% reduction in model size without significant performance degradation.</li>
                     
-                    <li>Provides both graphical (GUI) and command-line interfaces (CLI) to cater to diverse user preferences and integration needs within clinical workflows.</li>
+                    <li>Provides both graphical (GUI) and command-line interfaces (CLI) for user accessibility, distributed as Python scripts and a standalone Windows executable.</li>
                     
-                    <li>Distributed as Python scripts and a standalone Windows executable, facilitating easy installation and use in various clinical environments.</li>
+                    <li>Validated on a held-out dataset of 300 sub-acute and chronic stroke subjects, demonstrating segmentation performance equivalent to the original PyTorch pipeline (Dice difference < 10^-3).</li>
                     
-                    <li>Demonstrates segmentation performance equivalent to the original PyTorch pipeline on a held-out set of 300 sub-acute and chronic stroke subjects (Dice difference < 10^-3).</li>
-                    
-                    <li>Validates the feasibility of transforming high-performing research models into portable, lightweight, and clinically usable tools without sacrificing accuracy.</li>
+                    <li>Successfully transforms research-grade deep learning pipelines into portable, clinically usable tools, bridging the gap between AI research and practical application.</li>
                     
                 </ul>
             </section>
@@ -88,31 +86,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The methodology involves a modular design where preprocessing, inference, and postprocessing are decoupled. Preprocessing is handled by the Anima toolbox, producing BIDS-compliant outputs. Inference leverages ONNX Runtime with Float16 quantization to reduce model size by 50%. The tool provides both graphical and command-line interfaces and is distributed as Python scripts and a standalone Windows executable. Performance was validated by comparing against the original PyTorch pipeline on 300 stroke subjects.</p>
+                    <p>The authors developed StrokeSeg as a software framework, architecting it with decoupled preprocessing (using the Anima toolbox for BIDS-compliant outputs), inference (using ONNX Runtime with Float16 quantization), and postprocessing modules. The framework offers both GUI and CLI options and is distributed as Python scripts and a Windows executable. Performance was rigorously evaluated by comparing StrokeSeg's segmentation results against the original PyTorch pipeline on a held-out test set of 300 sub-acute and chronic stroke subjects.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The StrokeSeg framework achieved segmentation performance equivalent to the original PyTorch research pipeline, with a Dice difference of less than 10^-3, on a diverse dataset of 300 sub-acute and chronic stroke subjects. It also successfully reduced model size by approximately 50% through Float16 quantization while maintaining accuracy, demonstrating that high-performing research models can be made lightweight and clinically deployable.</p>
+                    <p>StrokeSeg achieved segmentation performance equivalent to the original PyTorch pipeline, with a Dice difference of less than 10^-3 on the validation set. It successfully reduced model size by approximately 50% through Float16 quantization, demonstrating that high-performing research-grade deep learning models can be effectively transformed into lightweight, portable, and clinically deployable tools without compromising accuracy.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>StrokeSeg's clinical impact lies in providing a readily deployable, lightweight, and user-friendly tool for automated stroke lesion segmentation, directly integrating state-of-the-art AI into clinical workflows. This can standardize lesion quantification, reduce manual effort, improve the efficiency of stroke assessment, aid in therapeutic decision-making (e.g., rehabilitation planning), and facilitate longitudinal monitoring of stroke patients, even in resource-constrained environments.</p>
+                <p>This tool enables clinical practitioners and researchers to more easily adopt and integrate state-of-the-art deep learning models for stroke lesion segmentation into their routine workflows. Its lightweight and deployment-ready nature facilitates faster analysis, aids in quantitative assessment for clinical decision-making, and can support large-scale neuroimaging studies by providing consistent and automated lesion quantification.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the StrokeSeg tool itself, beyond implicitly addressing the limitations of *other* research-grade deep learning frameworks regarding deployment. The evaluation was on sub-acute and chronic stroke, implying acute stroke might require further validation.</p>
+                <p>The abstract does not explicitly state specific limitations of StrokeSeg itself, but rather highlights solving the limitations of existing deep learning models regarding clinical deployment.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention future research directions. However, potential directions could involve extending the framework to segment other types of brain lesions, integrating it directly into PACS/RIS systems, or evaluating its performance in real-time acute stroke settings.</p>
+                <p>Future directions are not explicitly mentioned in the abstract, but implied extensions could include applying this modular approach to other types of brain lesions or diseases, further optimizing for different hardware environments, or integrating into larger clinical PACS/RIS systems.</p>
             </section>
             
 
@@ -122,13 +120,13 @@
                     
                     <span class="tag">Neurology</span>
                     
-                    <span class="tag">Neuroradiology</span>
-                    
-                    <span class="tag">Stroke Medicine</span>
-                    
-                    <span class="tag">Medical Informatics</span>
+                    <span class="tag">Radiology</span>
                     
                     <span class="tag">Neuroimaging</span>
+                    
+                    <span class="tag">Stroke research</span>
+                    
+                    <span class="tag">Medical informatics</span>
                     
                 </div>
             </section>
@@ -137,21 +135,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Stroke Segmentation</span>
+                    <span class="tag tag-keyword">Stroke lesion segmentation</span>
                     
-                    <span class="tag tag-keyword">Deep Learning</span>
+                    <span class="tag tag-keyword">Deep learning</span>
                     
-                    <span class="tag tag-keyword">Clinical Deployment</span>
+                    <span class="tag tag-keyword">Clinical deployment</span>
                     
                     <span class="tag tag-keyword">ONNX Runtime</span>
                     
-                    <span class="tag tag-keyword">Float16 Quantization</span>
+                    <span class="tag tag-keyword">Float16 quantization</span>
                     
-                    <span class="tag tag-keyword">Medical Imaging</span>
+                    <span class="tag tag-keyword">Modular framework</span>
                     
-                    <span class="tag tag-keyword">Brain Lesion</span>
+                    <span class="tag tag-keyword">Neuroimaging</span>
                     
-                    <span class="tag tag-keyword">Workflow Integration</span>
+                    <span class="tag tag-keyword">Medical software</span>
                     
                 </div>
             </section>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filtering instances and rejecting predictions to obtain reliable models in healthcare - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a novel two-step data-centric approach to enhance the reliability of Machine Learning (ML) models, particularly in high-stakes domains lik">
+    <meta name="description" content="This research proposes a novel two-step data-centric approach to enhance the reliability of Machine Learning (ML) models, particularly for high-stakes healthcar">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a novel two-step data-centric approach to enhance the reliability of Machine Learning (ML) models, particularly in high-stakes domains like healthcare, by addressing prediction uncertainty. The method involves filtering problematic instances during training using Instance Hardness (IH) and implementing a confidence-based rejection mechanism during inference. Evaluated on real-world healthcare datasets, the approach significantly improves model reliability by retaining only high-confidence predictions while balancing predictive performance and rejection rates.</p>
+                <p class="summary-text">This research proposes a novel two-step data-centric approach to enhance the reliability of Machine Learning (ML) models, particularly for high-stakes healthcare applications. It combines Instance Hardness (IH) filtering during training to improve data quality with a confidence-based rejection mechanism during inference to ensure only reliable predictions are retained, demonstrating improved model reliability on real-world healthcare datasets.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Reliable ML predictions are paramount in healthcare for accurate diagnosis, treatment planning, and risk assessment. This work directly addresses the critical issue of uncertainty in ML models, offering a robust method to ensure that clinical decisions supported by AI are based on highly confident and trustworthy predictions, thereby enhancing patient safety and care quality.</p>
+                <p>This work addresses the critical need for reliable and trustworthy predictions from ML models in high-stakes healthcare settings, where incorrect or low-confidence outputs can have severe consequences for patient care and safety. By ensuring predictions are only made when confidence is high and by improving the quality of training data, it enhances the safety and clinical utility of AI tools.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The research focuses on improving the reliability and trustworthiness of Machine Learning models specifically for deployment in healthcare settings. This involves filtering problematic data instances and rejecting low-confidence predictions to ensure that AI systems used in medicine provide more dependable outputs, which is crucial for patient safety and effective clinical decision-making. It aims to make AI applications in healthcare safer and more robust.</p>
+                <p>This paper addresses a critical challenge in the deployment of AI/ML models in healthcare: ensuring the reliability and trustworthiness of predictions. By proposing methods to filter problematic data and reject low-confidence predictions, it aims to enhance the safety and utility of AI systems used for tasks such as diagnosis, prognosis, and treatment planning, thereby facilitating their responsible adoption in clinical practice.</p>
             </section>
             
 
@@ -68,21 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>ML models in healthcare often provide low-confidence predictions without accounting for uncertainty, posing reliability risks.</li>
+                    <li>Introduces a novel two-step data-centric methodology to improve ML model reliability by enhancing data quality and filtering low-confidence predictions.</li>
                     
-                    <li>A two-step data-centric approach is proposed: Instance Hardness (IH) for filtering problematic training instances and a confidence-based rejection mechanism for inference.</li>
+                    <li>Step 1: Leverages Instance Hardness (IH) to identify and filter out 'problematic instances' from the training dataset, thereby refining data quality.</li>
                     
-                    <li>IH filtering refines the training dataset, improving data quality and model learning.</li>
+                    <li>Step 2: Implements a confidence-based rejection mechanism during the inference phase, ensuring that only predictions exceeding a certain confidence threshold are retained and utilized.</li>
                     
-                    <li>Confidence-based rejection ensures only reliable, high-confidence predictions are retained during deployment.</li>
+                    <li>Evaluated on three distinct real-world healthcare datasets, demonstrating its effectiveness in significantly improving model reliability.</li>
                     
-                    <li>The approach was evaluated using three real-world healthcare datasets, demonstrating improved model reliability.</li>
+                    <li>The approach successfully balances predictive performance with a controlled rejection rate, ensuring useful model output while minimizing unreliable predictions.</li>
                     
-                    <li>It effectively balances enhanced predictive performance with a controlled rejection rate, preserving a large proportion of instances.</li>
+                    <li>The proposed method was compared against alternative baseline criteria – influence values for filtering and uncertainty for rejection – highlighting its efficiency and superior performance.</li>
                     
-                    <li>Baselines using influence values for filtering and uncertainty for rejection were used for comparative evaluation, highlighting the efficiency of the proposed method.</li>
-                    
-                    <li>Provides a practical solution for deploying more trustworthy ML systems in safety-critical applications.</li>
+                    <li>The integration of IH filtering with confidence-based rejection was shown to effectively enhance model performance while preserving a large proportion of the original data instances, making it practical for deployment.</li>
                     
                 </ul>
             </section>
@@ -90,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The proposed methodology is a two-step data-centric approach. The first step utilizes Instance Hardness (IH) values to identify and filter 'problematic' or hard-to-learn instances from the training dataset, thereby enhancing data quality and model training. The second step introduces a confidence-based rejection mechanism applied during the inference phase, where predictions below a certain confidence threshold are rejected, ensuring only highly reliable predictions are presented. The approach was evaluated on three real-world healthcare datasets and compared against baselines that used influence values for filtering and uncertainty quantification for rejection.</p>
+                    <p>The methodology involves a two-step data-centric approach. First, during the training phase, Instance Hardness (IH) is employed as a criterion to identify and filter out 'problematic instances' from the training dataset, thereby refining the data quality and enhancing model learning. Second, during the inference phase, a confidence-based rejection mechanism is applied. This mechanism assesses the confidence of each prediction and only retains those that meet a pre-defined confidence threshold, rejecting low-confidence predictions. The approach was evaluated on three real-world healthcare datasets and compared against baseline methods utilizing influence values for filtering and uncertainty for rejection.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The study found that integrating Instance Hardness (IH) filtering with confidence-based prediction rejection significantly enhances the overall reliability and performance of ML models in healthcare. This method effectively balances improved predictive performance with a controlled rejection rate, ensuring that a large proportion of instances are still utilized for predictions. The proposed approach was demonstrated to be effective and efficient compared to alternative baseline criteria.</p>
+                    <p>The integration of Instance Hardness (IH) filtering with confidence-based prediction rejection significantly enhances the reliability and overall performance of Machine Learning models in healthcare. This combined approach effectively improves data quality and ensures that only high-confidence predictions are presented, successfully balancing predictive performance with a manageable rejection rate while preserving a substantial portion of the dataset. The proposed method demonstrated superior efficiency compared to alternative filtering and rejection criteria.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research provides a crucial practical method for the safer and more reliable deployment of Machine Learning systems in clinical settings. By proactively filtering problematic data and rejecting low-confidence predictions, clinicians can have greater trust in AI-driven decision support tools, reducing the risk of errors from uncertain predictions. This can lead to more accurate diagnoses, optimized treatment pathways, and ultimately, improved patient outcomes, accelerating the adoption of AI in critical healthcare workflows.</p>
+                <p>This approach offers a practical and robust method for deploying ML systems in safety-critical clinical applications. By providing clinicians with only high-confidence predictions and ensuring the underlying models are trained on higher quality, less ambiguous data, it significantly reduces the risk of erroneous medical decisions. This can improve trust in AI-powered diagnostic, prognostic, and clinical decision support tools, leading to safer and more effective patient care by minimizing the propagation of unreliable model outputs.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state specific limitations of the proposed method or its evaluation. Potential limitations, not stated in the abstract, could include the computational cost of IH calculation, the generalizability of optimal confidence thresholds across diverse healthcare tasks, or the impact of rejected instances on specific clinical workflows.</p>
+                <p>The abstract does not explicitly state any specific limitations of the proposed method itself, but rather highlights the limitations of existing ML models (failing to account for uncertainty) which their method aims to address.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly state future research directions. Potential future work, not stated in the abstract, could involve exploring dynamic confidence thresholds, applying the approach to a wider range of high-stakes medical AI tasks (e.g., medical imaging, genomics), or investigating the ethical implications and user acceptance of prediction rejection in clinical practice.</p>
+                <p>The abstract does not explicitly mention future research directions.</p>
             </section>
             
 
@@ -122,15 +120,13 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
+                    <span class="tag">Diagnostics</span>
+                    
+                    <span class="tag">Prognostics</span>
+                    
                     <span class="tag">Clinical Decision Support</span>
                     
-                    <span class="tag">Diagnostic Imaging</span>
-                    
-                    <span class="tag">Personalized Medicine</span>
-                    
-                    <span class="tag">Predictive Analytics (e.g., disease risk, treatment response)</span>
-                    
-                    <span class="tag">Patient Monitoring</span>
+                    <span class="tag">Risk Stratification</span>
                     
                 </div>
             </section>
@@ -141,19 +137,19 @@
                     
                     <span class="tag tag-keyword">Machine Learning</span>
                     
-                    <span class="tag tag-keyword">Healthcare AI</span>
+                    <span class="tag tag-keyword">Healthcare</span>
                     
                     <span class="tag tag-keyword">Model Reliability</span>
                     
-                    <span class="tag tag-keyword">Uncertainty Quantification</span>
-                    
                     <span class="tag tag-keyword">Instance Hardness</span>
                     
-                    <span class="tag tag-keyword">Prediction Rejection</span>
+                    <span class="tag tag-keyword">Confidence-based Rejection</span>
                     
                     <span class="tag tag-keyword">Data Quality</span>
                     
-                    <span class="tag tag-keyword">Safety-Critical Applications</span>
+                    <span class="tag tag-keyword">Uncertainty Quantification</span>
+                    
+                    <span class="tag tag-keyword">Safety-critical Systems</span>
                     
                 </div>
             </section>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive EEG-based stroke diagnosis with a GRU-TCN classifier and deep Q-learning thresholding - Health AI Hub</title>
+    <meta name="description" content="This paper introduces an adaptive multitask EEG-based classifier for rapid stroke diagnosis, utilizing a GRU-TCN neural network to predict stroke type, laterali">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Adaptive EEG-based stroke diagnosis with a GRU-TCN classifier and deep Q-learning thresholding</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.24889v1" target="_blank">2510.24889v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-28
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Shakeel Abdulkareem, Bora Yimenicioglu, Andrea Yang, Khartik Uppalapati, Aneesh Gudipati, Zhaoyang Fan
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.24889v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.24889v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces an adaptive multitask EEG-based classifier for rapid stroke diagnosis, utilizing a GRU-TCN neural network to predict stroke type, lateralization, and severity from EEG signals. A key innovation is the integration of a deep Q-network (DQN) that adaptively tunes decision thresholds in real-time, significantly improving stroke-type diagnostic accuracy. The system aims to provide accurate, bedside-deployable tools for early stroke triage.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant for improving acute stroke care by offering a potentially rapid, non-invasive, and highly accurate bedside diagnostic tool. Faster and more precise initial diagnosis can significantly impact treatment decisions, such as thrombolysis or thrombectomy, which are time-sensitive.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is an adaptive EEG-based diagnostic system for stroke. It employs a recurrent-convolutional neural network (GRU-TCN) to analyze EEG signals and classify stroke type, hemispheric lateralization, and severity. A deep Q-network (DQN) is then used to dynamically adapt decision thresholds in real time, optimizing the diagnostic system's performance for clinically relevant sensitivity-specificity trade-offs, aiming for rapid and accurate bedside stroke triage.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the need for accurate, rapid, and bedside-deployable stroke diagnosis using EEG, which is currently underused at first contact.</li>
+                    
+                    <li>Proposes an adaptive multitask EEG classifier pipeline: 32-channel EEG signals are converted to Welch Power Spectral Density (PSD) features.</li>
+                    
+                    <li>A Recurrent-Convolutional Network (GRU-TCN) is employed for simultaneous prediction of stroke type (healthy, ischemic, hemorrhagic), hemispheric lateralization, and severity.</li>
+                    
+                    <li>A Deep Q-Network (DQN) is integrated to dynamically tune decision thresholds, enabling adaptation to real-time clinical preferences for sensitivity-specificity trade-offs.</li>
+                    
+                    <li>Evaluated on the UCLH Stroke EIT/EEG dataset (44 recordings; 26 acute stroke, 10 controls), with robustness testing on an independent ZJU4H low-density EEG cohort.</li>
+                    
+                    <li>The baseline GRU-TCN achieved high performance: 89.3% accuracy (F1 92.8%) for stroke type, 96.9% accuracy (F1 95.9%) for severity, and 96.7% accuracy (F1 97.4%) for lateralization.</li>
+                    
+                    <li>DQN threshold adaptation significantly boosted stroke-type accuracy to 98.0% (F1 97.7%), demonstrating the value of real-time operating point adjustment.</li>
+                    
+                    <li>Analyses adhered to STARD 2015 guidance, using radiology/clinical diagnosis as the reference standard and patient-wise evaluation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves a sequential process: First, 32-channel EEG raw signals are preprocessed and converted into power spectral density (PSD) features using Welch's method. These features are then fed into a hybrid deep learning model, a GRU-TCN (Gated Recurrent Unit - Temporal Convolutional Network), which acts as a multitask classifier to simultaneously predict stroke type (healthy, ischemic, hemorrhagic), hemispheric lateralization, and severity. Crucially, a Deep Q-Network (DQN) is implemented to perform real-time adaptive thresholding, allowing the decision boundaries of the classifier to be dynamically tuned for optimal sensitivity-specificity trade-offs based on clinical context. The system was validated using a patient-wise split of the UCLH Stroke EIT/EEG dataset and tested for robustness on an independent ZJU4H low-density EEG cohort, adhering to STARD 2015 guidelines.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The baseline GRU-TCN achieved an accuracy of 89.3% (F1 92.8%) for stroke type, 96.9% (F1 95.9%) for severity, and 96.7% (F1 97.4%) for lateralization. With the integration of DQN for adaptive thresholding, the stroke-type accuracy significantly increased to 98.0% (F1 97.7%). The system also demonstrated robustness when tested on an independent, low-density EEG cohort. The adaptive thresholding capability allows for tailoring diagnostic operating points to clinically preferred sensitivity-specificity trade-offs, supported by integrated scalp-map and spectral visualizations for interpretability.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The proposed adaptive EEG-based diagnostic system holds significant clinical promise for improving rapid stroke triage, particularly in pre-hospital or emergency department settings where immediate access to advanced imaging (CT/MRI) might be limited. Its ability to accurately classify stroke type, lateralization, and severity at the bedside could expedite critical treatment decisions (e.g., distinguishing ischemic stroke for thrombolysis from hemorrhagic stroke where it's contraindicated), potentially reducing time-to-treatment and improving patient outcomes. The adaptive thresholding also allows clinicians to adjust the diagnostic sensitivity/specificity based on specific clinical scenarios or risk tolerance.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The primary limitation noted is the relatively small size of the main validation dataset (UCLH Stroke EIT/EEG dataset with 44 recordings, comprising about 26 acute stroke patients and 10 controls), which might limit the generalizability of the findings and the robustness of the deep learning model's training. While robustness was tested on an independent dataset (ZJU4H), the specific characteristics and size of this cohort are not fully detailed in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract. However, implied future directions could include larger-scale prospective clinical trials for broader validation, investigation into diverse patient populations, optimization for even lower-density EEG setups for greater portability, and integration into existing clinical decision support systems.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Emergency Medicine</span>
+                    
+                    <span class="tag">Diagnostic Imaging (indirectly)</span>
+                    
+                    <span class="tag">Critical Care</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">EEG</span>
+                    
+                    <span class="tag tag-keyword">Stroke Diagnosis</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">GRU-TCN</span>
+                    
+                    <span class="tag tag-keyword">Deep Q-Network</span>
+                    
+                    <span class="tag tag-keyword">Adaptive Thresholding</span>
+                    
+                    <span class="tag tag-keyword">Machine Learning</span>
+                    
+                    <span class="tag tag-keyword">Triage</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Rapid triage of suspected stroke needs accurate, bedside-deployable tools;
+EEG is promising but underused at first contact. We present an adaptive
+multitask EEG classifier that converts 32-channel signals to power spectral
+density features (Welch), uses a recurrent-convolutional network (GRU-TCN) to
+predict stroke type (healthy, ischemic, hemorrhagic), hemispheric
+lateralization, and severity, and applies a deep Q-network (DQN) to tune
+decision thresholds in real time. Using a patient-wise split of the UCLH Stroke
+EIT/EEG data set (44 recordings; about 26 acute stroke, 10 controls), the
+primary outcome was stroke-type performance; secondary outcomes were severity
+and lateralization. The baseline GRU-TCN reached 89.3% accuracy (F1 92.8%) for
+stroke type, about 96.9% (F1 95.9%) for severity, and about 96.7% (F1 97.4%)
+for lateralization. With DQN threshold adaptation, stroke-type accuracy
+increased to about 98.0% (F1 97.7%). We also tested robustness on an
+independent, low-density EEG cohort (ZJU4H) and report paired patient-level
+statistics. Analyses follow STARD 2015 guidance for diagnostic accuracy studies
+(index test: GRU-TCN+DQN; reference standard: radiology/clinical diagnosis;
+patient-wise evaluation). Adaptive thresholding shifts the operating point to
+clinically preferred sensitivity-specificity trade-offs, while integrated
+scalp-map and spectral visualizations support interpretability.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>10 pages, 6 figures. Equal contribution: Shakeel Abdulkareem and Bora
+  Yimenicioglu. Compiled with pdfLaTeX (wlscirep class)</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

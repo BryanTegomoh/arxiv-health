@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Data Reveals Generalization Gaps in Correlated Multiple Instance Learning - Health AI Hub</title>
+    <meta name="description" content="This paper investigates the limitations of Multiple Instance Learning (MIL) in medical imaging tasks where instances (e.g., image patches or slices) are context">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Synthetic Data Reveals Generalization Gaps in Correlated Multiple Instance Learning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.25759v1" target="_blank">2510.25759v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-29
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Ethan Harvey, Dennis Johan Loevlie, Michael C. Hughes
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.25759v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.25759v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper investigates the limitations of Multiple Instance Learning (MIL) in medical imaging tasks where instances (e.g., image patches or slices) are contextually correlated. By designing a synthetic classification task with a known optimal Bayes estimator, the authors demonstrate that both conventional and newer correlated MIL methods exhibit significant generalization gaps, struggling to leverage essential contextual relationships even with extensive training data.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>MIL is foundational for classifying high-resolution medical images (histopathology, radiology). The identified generalization gaps due to ignored contextual relationships can lead to suboptimal diagnostic accuracy and missed pathologies in real-world clinical applications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>Improving the accuracy and generalization of AI models, specifically Multiple Instance Learning (MIL) methods, used for image classification in medical imaging. This includes tasks like automated disease detection, tumor identification from biopsy slides (2D patches), or anomaly detection in volumetric scans (3D slices) like MRI or CT.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Traditional MIL approaches treat instances independently, overlooking crucial contextual relationships between adjacent patches or slices in medical images.</li>
+                    
+                    <li>A novel synthetic classification task was designed where accounting for adjacent instance features is critical for accurate prediction.</li>
+                    
+                    <li>The optimal Bayes estimator for this synthetic task is available in closed-form, serving as a theoretical upper bound for performance.</li>
+                    
+                    <li>Off-the-shelf MIL methods show significant limitations and generalization gaps when compared to the optimal Bayes estimator on this task.</li>
+                    
+                    <li>Even advanced 'correlated MIL' methods fail to generalize as well as theoretically possible, struggling to fully exploit contextual information despite being trained on tens of thousands of instances.</li>
+                    
+                    <li>The study quantifies the sub-optimal performance of current MIL techniques, highlighting a fundamental challenge in integrating relational information.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The researchers designed a synthetic classification task specifically structured such that instance correlation (adjacency) is critical for accurate prediction. They derived the closed-form optimal Bayes estimator for this task to establish a theoretical performance ceiling. Subsequently, they empirically evaluated the performance of various off-the-shelf conventional MIL methods and newer 'correlated MIL' techniques against this Bayes estimator, quantifying their generalization capabilities when trained on large datasets.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study revealed a significant generalization gap in both conventional and newer correlated MIL methods. These models consistently perform below the optimal Bayes estimator on tasks where contextual instance relationships are crucial, indicating an inherent struggle to effectively incorporate and leverage such information, even with extensive training data (tens of thousands of instances).</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The findings suggest that current MIL-based diagnostic systems in medical imaging might be operating suboptimally by overlooking vital contextual cues in high-resolution scans. This could lead to misinterpretations, reduced diagnostic precision, or the failure to detect subtle abnormalities that rely on the interplay of adjacent regions, ultimately impacting patient care and treatment decisions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The primary limitation identified is that even newer correlated MIL methods still struggle to generalize effectively, failing to match the performance of the theoretical optimal Bayes estimator. This points to a fundamental limitation in the current architectural designs of MIL models to intrinsically capture and utilize complex contextual dependencies effectively, even with large-scale training data.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper implicitly suggests a need for developing novel MIL architectures and training paradigms that are inherently better at modeling and leveraging contextual relationships between instances. Future research should focus on designing methods that can close the identified generalization gaps, potentially through advanced graph neural networks, attention mechanisms, or other relational inductive biases specifically tailored for correlated instance learning in medical image analysis.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Digital Pathology</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Histopathology</span>
+                    
+                    <span class="tag">Medical Image Analysis</span>
+                    
+                    <span class="tag">Computational Microscopy</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Multiple Instance Learning</span>
+                    
+                    <span class="tag tag-keyword">Correlated Instances</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Generalization Gap</span>
+                    
+                    <span class="tag tag-keyword">Synthetic Data</span>
+                    
+                    <span class="tag tag-keyword">Bayes Estimator</span>
+                    
+                    <span class="tag tag-keyword">Contextual Learning</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Multiple instance learning (MIL) is often used in medical imaging to classify
+high-resolution 2D images by processing patches or classify 3D volumes by
+processing slices. However, conventional MIL approaches treat instances
+separately, ignoring contextual relationships such as the appearance of nearby
+patches or slices that can be essential in real applications. We design a
+synthetic classification task where accounting for adjacent instance features
+is crucial for accurate prediction. We demonstrate the limitations of
+off-the-shelf MIL approaches by quantifying their performance compared to the
+optimal Bayes estimator for this task, which is available in closed-form. We
+empirically show that newer correlated MIL methods still struggle to generalize
+as well as possible when trained from scratch on tens of thousands of
+instances.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
