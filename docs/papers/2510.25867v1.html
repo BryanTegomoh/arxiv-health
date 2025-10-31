@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedVLSynther: Synthesizing High-Quality Visual Question Answering from Medical Documents with Generator-Verifier LMMs - Health AI Hub</title>
+    <meta name="description" content="MedVLSynther is a novel rubric-guided generator-verifier framework designed to synthesize high-quality multiple-choice Visual Question Answering (VQA) data for ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>MedVLSynther: Synthesizing High-Quality Visual Question Answering from Medical Documents with Generator-Verifier LMMs</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.25867v1" target="_blank">2510.25867v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-29
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Xiaoke Huang, Ningsen Wang, Hui Liu, Xianfeng Tang, Yuyin Zhou
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.25867v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.25867v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">MedVLSynther is a novel rubric-guided generator-verifier framework designed to synthesize high-quality multiple-choice Visual Question Answering (VQA) data for the medical domain from open biomedical literature. This addresses the critical lack of large, openly usable, high-quality medical VQA corpora, significantly improving the performance of open-weight Large Multimodal Models (LMMs) on various medical VQA benchmarks.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This work is highly relevant to medicine by directly addressing the bottleneck of data scarcity, enabling the development of more accurate and robust Large Multimodal Models for medical Visual Question Answering. Improved LMMs can significantly enhance diagnostic reasoning, medical education, and information retrieval by offering precise interpretations of complex medical images in conjunction with textual context.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development and improvement of Large Multimodal Models (LMMs) for medical visual question answering. These LMMs would be capable of interpreting medical images (e.g., X-rays, CT scans, MRI, pathology slides) in conjunction with textual information to answer complex medical questions. Potential applications include aiding clinicians in diagnosis and treatment planning, supporting medical education, and assisting researchers in extracting insights from medical literature and images.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical scarcity of large, openly usable, high-quality medical VQA training data for LMMs.</li>
+                    
+                    <li>Introduces MedVLSynther, a rubric-guided generator-verifier LMM framework that synthesizes VQA items from figures, captions, and in-text references in open biomedical literature (e.g., PubMed Central).</li>
+                    
+                    <li>The generator produces self-contained VQA stems and mutually exclusive options under a machine-checkable JSON schema, while a multi-stage verifier LMM rigorously enforces quality gates (e.g., self-containment, clinical validity, image-text consistency) and penalizes common failure modes.</li>
+                    
+                    <li>Created MedSynVQA, a dataset comprising 13,087 audited questions derived from 14,803 images, spanning 13 imaging modalities and 28 anatomical regions.</li>
+                    
+                    <li>Training open-weight LMMs (3B and 7B parameters) with MedSynVQA using reinforcement learning significantly improves accuracy across six medical VQA benchmarks, achieving averages of 55.85% (3B) and 58.15% (7B), with peak performance of 77.57% on VQA-RAD and 67.76% on PathVQA, outperforming strong medical LMMs.</li>
+                    
+                    <li>Ablation studies confirm the necessity of both the generation and verification components and demonstrate that more verified data consistently leads to better performance.</li>
+                    
+                    <li>The framework is auditable, reproducible, and privacy-preserving, operating entirely on open literature and open-weight models, providing a scalable path for medical VQA training data.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>MedVLSynther employs a rubric-guided generator-verifier LMM framework. A generator LMM synthesizes multiple-choice VQA items (self-contained stems and parallel, mutually exclusive options) from open biomedical literature, specifically conditioning on figures, captions, and in-text references, adhering to a machine-checkable JSON schema. A multi-stage verifier LMM then evaluates these generated questions, enforcing essential gates such as self-containment, single correct answer, clinical validity, and image-text consistency, while awarding positive points and penalizing common failure modes. The accepted, high-quality VQA data (MedSynVQA) is subsequently used to train open-weight LMMs via reinforcement learning, leveraging verifiable rewards to optimize performance on medical VQA tasks.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The MedVLSynther pipeline successfully produced MedSynVQA, a robust dataset of 13,087 audited medical VQA questions across 14,803 images, covering 13 diverse imaging modalities and 28 anatomical regions from PubMed Central. Training open-weight LMMs (3B and 7B parameters) with this synthetic data through reinforcement learning yielded substantial performance improvements, achieving average accuracies of 55.85% (3B) and 58.15% (7B) across six medical VQA benchmarks. Notably, it attained up to 77.57% accuracy on VQA-RAD and 67.76% on PathVQA, outperforming existing strong medical LMMs. Ablation studies confirmed the indispensable roles of both the generation and verification components, and that increasing the volume of verified data consistently enhanced model accuracy. A targeted contamination analysis also confirmed no leakage from evaluation suites.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides a scalable, auditable, and reproducible method for generating high-quality medical VQA training data, which is critically important for advancing AI applications in clinical practice. Enhanced medical LMMs can significantly improve diagnostic accuracy by offering more precise and context-aware answers to image-related clinical queries, enriching medical education with comprehensive VQA resources, and streamlining research by enabling more efficient and reliable analysis of medical literature and images. The system's transparency and privacy-preserving nature further contribute to its potential for trusted adoption in healthcare environments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract implies that the generation process requires a sophisticated multi-stage verifier to enforce strict quality gates and penalize failure modes, suggesting that initial raw generations may not consistently meet high standards, necessitating rigorous filtering. While the system operates on 'open biomedical literature,' the inherent quality, completeness, and potential biases of these source documents from PubMed Central could implicitly influence the diversity and complexity of the synthesizable questions.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper highlights that MedVLSynther offers an 'auditable, reproducible, and privacy-preserving path to scalable medical VQA training data,' suggesting future work could focus on further scaling up data generation, exploring the application of this framework to other challenging multimodal medical AI tasks, and refining the generator and verifier LMMs to potentially reduce the need for extensive post-generation auditing or improve efficiency.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Anatomy</span>
+                    
+                    <span class="tag">Clinical Diagnosis</span>
+                    
+                    <span class="tag">Medical Education</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Large Multimodal Models</span>
+                    
+                    <span class="tag tag-keyword">Medical VQA</span>
+                    
+                    <span class="tag tag-keyword">Data Synthesis</span>
+                    
+                    <span class="tag tag-keyword">Generator-Verifier</span>
+                    
+                    <span class="tag tag-keyword">Reinforcement Learning</span>
+                    
+                    <span class="tag tag-keyword">PubMed Central</span>
+                    
+                    <span class="tag tag-keyword">Imaging Modalities</span>
+                    
+                    <span class="tag tag-keyword">Clinical Validity</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Large Multimodal Models (LMMs) are increasingly capable of answering medical
+questions that require joint reasoning over images and text, yet training
+general medical VQA systems is impeded by the lack of large, openly usable,
+high-quality corpora. We present MedVLSynther, a rubric-guided
+generator-verifier framework that synthesizes high-quality multiple-choice VQA
+items directly from open biomedical literature by conditioning on figures,
+captions, and in-text references. The generator produces self-contained stems
+and parallel, mutually exclusive options under a machine-checkable JSON schema;
+a multi-stage verifier enforces essential gates (self-containment, single
+correct answer, clinical validity, image-text consistency), awards fine-grained
+positive points, and penalizes common failure modes before acceptance. Applying
+this pipeline to PubMed Central yields MedSynVQA: 13,087 audited questions over
+14,803 images spanning 13 imaging modalities and 28 anatomical regions.
+Training open-weight LMMs with reinforcement learning using verifiable rewards
+improves accuracy across six medical VQA benchmarks, achieving averages of
+55.85 (3B) and 58.15 (7B), with up to 77.57 on VQA-RAD and 67.76 on PathVQA,
+outperforming strong medical LMMs. A Ablations verify that both generation and
+verification are necessary and that more verified data consistently helps, and
+a targeted contamination analysis detects no leakage from evaluation suites. By
+operating entirely on open literature and open-weight models, MedVLSynther
+offers an auditable, reproducible, and privacy-preserving path to scalable
+medical VQA training data.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Project page, code, data, and models:
+  https://ucsc-vlaa.github.io/MedVLSynther/</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Multi-agent Large Language Model Framework to Automatically Assess Performance of a Clinical AI Triage Tool - Health AI Hub</title>
+    <meta name="description" content="This study demonstrates that an ensemble of multiple Large Language Model (LLM) agents can reliably and consistently assess the performance of a clinical AI tri">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>A Multi-agent Large Language Model Framework to Automatically Assess Performance of a Clinical AI Triage Tool</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.26498v1" target="_blank">2510.26498v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-30
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Adam E. Flanders, Yifan Peng, Luciano Prevedello, Robyn Ball, Errol Colak, Prahlad Menon, George Shih, Hui-Ming Lin, Paras Lakhani
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.26498v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.26498v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This study demonstrates that an ensemble of multiple Large Language Model (LLM) agents can reliably and consistently assess the performance of a clinical AI triage tool, specifically an intracranial hemorrhage (ICH) detection tool. The research found that LLM ensembles provided a more robust retrospective evaluation and ground truth generation method compared to using a single LLM, leveraging radiology reports from a large cohort of head CT exams.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research offers a scalable and potentially automated methodology for the continuous validation and quality assurance of clinical AI tools in healthcare. By leveraging LLM ensembles to generate ground truth from radiology reports, it can reduce the resource-intensive burden of manual review, accelerating the safe and effective integration of AI into clinical workflows and improving patient care through validated technologies.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper presents an AI application (a multi-agent LLM framework) designed to automatically and reliably evaluate the performance of *other* clinical AI tools, specifically demonstrated for an intracranial hemorrhage (ICH) detection AI triage tool using clinical radiology reports. This framework acts as a meta-AI tool for validating and assessing medical AI applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The study aimed to determine if an ensemble of LLMs could more reliably assess a pixel-based AI triage tool's performance than a single LLM.</li>
+                    
+                    <li>29,766 non-contrast CT head exams and their radiology reports from 14 hospitals were processed by a commercial ICH AI detection tool.</li>
+                    
+                    <li>An ensemble of eight open-source LLMs and a HIPAA-compliant GPT-4o analyzed radiology reports using a multi-shot prompt to assess for ICH presence, with 1,726 examples manually reviewed for partial ground truth.</li>
+                    
+                    <li>Individual LLMs like Llama3.3:70b and GPT-4o showed strong performance (AUC=0.78), with Llama3.3:70b achieving the highest F1 score (0.81), recall (0.85), and MCC (0.57).</li>
+                    
+                    <li>LLM ensembles (Full-9, Top-3, Consensus) demonstrated higher Matthews Correlation Coefficient (MCC) scores (e.g., Full-9 Ensemble MCC=0.571) compared to GPT-4o alone (MCC=0.522) for rating the triage tool.</li>
+                    
+                    <li>No statistically significant differences were observed between the performance of the Top-3, Full-9, and Consensus ensembles (p > 0.05).</li>
+                    
+                    <li>The conclusion highlights the utility of LLM ensembles in providing a more consistent and reliable method for retrospective evaluation and ground truth generation for clinical AI tools.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study involved processing 29,766 non-contrast CT head exams and their radiology reports from 14 hospitals using a commercial intracranial hemorrhage (ICH) AI detection tool. To establish a ground truth for evaluating the AI tool's performance, radiology reports were analyzed by an ensemble of eight open-source LLMs (including Llama3.3:70b) and a HIPAA-compliant internal GPT-4o using a single multi-shot prompt designed to assess for ICH presence. A subset of 1,726 examples was manually reviewed for comparison. The performance of individual LLMs and three ideal consensus LLM ensembles (Full-9, Top-3, Consensus) was then compared to GPT-4o using metrics such as AUC, Average Precision, F1 score, Recall, Precision, Specificity, and Matthews Correlation Coefficient (MCC).</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The LLM llama3.3:70b demonstrated the highest individual performance across several metrics, achieving an F1 score of 0.81, recall of 0.85, precision of 0.78, specificity of 0.72, and MCC of 0.57. Both llama3.3:70b and GPT-4o achieved the highest AUC of 0.78 and high average precision (0.75-0.76). Critically, LLM ensembles consistently outperformed a single GPT-4o in rating the triage tool's performance, with the Full-9 Ensemble yielding the highest MCC of 0.571 (95% CI: 0.552-0.591), superior to GPT-4o's 0.522. No statistically significant differences were observed between the Top-3, Full-9, and Consensus ensembles (p > 0.05).</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides a robust, scalable, and potentially automated framework for the retrospective validation and ongoing performance assessment of clinical AI tools, such as AI-powered triage for ICH. By reducing the reliance on extensive manual chart review for ground truth generation, it can significantly expedite the development, deployment, and quality assurance processes for AI in clinical practice. This has the potential to enhance the reliability and trustworthiness of AI-assisted diagnostics, improve patient safety, and accelerate the adoption of beneficial AI technologies in medical settings, particularly where expert human review is time-consuming or costly.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, potential inherent limitations could include: the reliance on retrospective radiology reports, which may not capture all imaging nuances; the generalizability of these findings to other clinical AI applications beyond ICH detection; and the manual review subset being a fraction of the total dataset for establishing ground truth.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future directions. However, based on the findings, future research could explore: extending this multi-agent LLM framework to assess other clinical AI tools across various medical specialties; investigating the integration of such LLM-based assessment directly into real-time AI monitoring systems; optimizing the composition and size of LLM ensembles for specific clinical tasks; and evaluating the economic and computational efficiency of using open-source LLM ensembles versus proprietary models for AI validation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Artificial Intelligence in Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Large Language Models</span>
+                    
+                    <span class="tag tag-keyword">LLM ensemble</span>
+                    
+                    <span class="tag tag-keyword">Clinical AI</span>
+                    
+                    <span class="tag tag-keyword">AI triage</span>
+                    
+                    <span class="tag tag-keyword">Intracranial Hemorrhage</span>
+                    
+                    <span class="tag tag-keyword">CT head</span>
+                    
+                    <span class="tag tag-keyword">Radiology</span>
+                    
+                    <span class="tag tag-keyword">Performance assessment</span>
+                    
+                    <span class="tag tag-keyword">Ground truth</span>
+                    
+                    <span class="tag tag-keyword">Medical informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Purpose: The purpose of this study was to determine if an ensemble of
+multiple LLM agents could be used collectively to provide a more reliable
+assessment of a pixel-based AI triage tool than a single LLM.
+  Methods: 29,766 non-contrast CT head exams from fourteen hospitals were
+processed by a commercial intracranial hemorrhage (ICH) AI detection tool.
+Radiology reports were analyzed by an ensemble of eight open-source LLM models
+and a HIPAA compliant internal version of GPT-4o using a single multi-shot
+prompt that assessed for presence of ICH. 1,726 examples were manually
+reviewed. Performance characteristics of the eight open-source models and
+consensus were compared to GPT-4o. Three ideal consensus LLM ensembles were
+tested for rating the performance of the triage tool.
+  Results: The cohort consisted of 29,766 head CTs exam-report pairs. The
+highest AUC performance was achieved with llama3.3:70b and GPT-4o (AUC= 0.78).
+The average precision was highest for Llama3.3:70b and GPT-4o (AP=0.75 & 0.76).
+Llama3.3:70b had the highest F1 score (0.81) and recall (0.85), greater
+precision (0.78), specificity (0.72), and MCC (0.57). Using MCC (95% CI) the
+ideal combination of LLMs were: Full-9 Ensemble 0.571 (0.552-0.591), Top-3
+Ensemble 0.558 (0.537-0.579), Consensus 0.556 (0.539-0.574), and GPT4o 0.522
+(0.500-0.543). No statistically significant differences were observed between
+Top-3, Full-9, and Consensus (p > 0.05).
+  Conclusion: An ensemble of medium to large sized open-source LLMs provides a
+more consistent and reliable method to derive a ground truth retrospective
+evaluation of a clinical AI triage tool over a single LLM alone.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>29 pages, 3 figures, 4 tables</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

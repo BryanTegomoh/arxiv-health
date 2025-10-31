@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Causal Discovery with Interventional Constraints - Health AI Hub</title>
+    <meta name="description" content="This paper introduces "interventional constraints," a novel concept in causal discovery that integrates high-level causal knowledge as inequality constraints on">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Linear Causal Discovery with Interventional Constraints</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.26342v1" target="_blank">2510.26342v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-30
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Zhigao Guo, Feng Dong
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.26342v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.26342v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces "interventional constraints," a novel concept in causal discovery that integrates high-level causal knowledge as inequality constraints on total causal effects between variables. Unlike existing methods that enforce structural paths, this approach ensures learned linear causal models accurately reflect known directions and magnitudes of influence, preventing incorrect conclusions (e.g., PIP3 activating Akt vs. inhibiting Akt). This integration demonstrably improves model accuracy, enhances explainability, and facilitates the discovery of new, otherwise costly, causal relationships in real-world biological networks.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This method provides a powerful tool for deciphering complex biological networks with higher accuracy and biological plausibility, which is crucial for identifying disease mechanisms, discovering new drug targets, and designing more effective and safer treatments. By ensuring models align with established biological knowledge, it increases confidence in predicted causal pathways relevant to health.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research contributes to medical AI by developing more accurate and reliable causal discovery methods. These methods can be applied to biological and medical data to better understand disease pathways, identify potential drug targets, predict treatment effects, and discover new biomarkers, ultimately aiding in the development of new treatments and health interventions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Problem Addressed**: Existing causal discovery methods allow enforcing structural constraints (e.g., a causal path from A to B) but often fail to ensure the correct *direction or type* of causal effect (e.g., learning 'PIP3 inhibits Akt' instead of 'PIP3 activates Akt' despite known biology).</li>
+                    
+                    <li>**Novel Concept**: Introduction of "interventional constraints," which encode high-level causal knowledge in the form of inequality constraints on the *total causal effects* between variable pairs.</li>
+                    
+                    <li>**Distinction from Interventional Data**: Interventional constraints fundamentally differ from interventional data, as they do not require direct perturbations but rather leverage existing domain knowledge about causal influences.</li>
+                    
+                    <li>**Formalization and Methodology**: The authors propose a specific metric to quantify total causal effects for linear causal models and formulate the problem as a constrained optimization task.</li>
+                    
+                    <li>**Solution Approach**: A novel two-stage constrained optimization method is developed to solve the formulated problem, ensuring the learned causal models adhere to the specified interventional constraints.</li>
+                    
+                    <li>**Demonstrated Benefits**: Evaluation on real-world datasets (e.g., Sachs dataset) shows that incorporating these constraints significantly improves model accuracy and ensures consistency with established biological findings.</li>
+                    
+                    <li>**Facilitated Discovery and Explainability**: The approach makes models more explainable by aligning them with known causal influences and facilitates the discovery of new causal relationships that would otherwise be costly or difficult to identify experimentally.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves proposing "interventional constraints" as inequality constraints on the total causal effects between variable pairs within linear causal models. A specific metric is introduced to quantify these total causal effects. The problem is then formalized as a constrained optimization task, which is solved using a novel two-stage constrained optimization method designed to integrate this high-level prior causal knowledge into the discovery process. The approach is evaluated using real-world datasets.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The integration of interventional constraints significantly improves the accuracy of learned causal models and ensures their consistency with established scientific findings. This approach makes causal models more explainable by explicitly incorporating known causal influences and effectively facilitates the discovery of novel causal relationships that would otherwise be costly to identify through traditional experimental means.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly impact clinical practice and drug development by enabling the creation of more accurate and biologically plausible models of disease pathways and drug mechanisms. This can lead to the identification of more precise drug targets, better prediction of treatment responses, and the design of more rational and personalized therapeutic strategies, ultimately accelerating the discovery of new interventions and diagnostics.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract explicitly states the method applies to "linear causal models," suggesting a limitation in its direct applicability to systems with inherently non-linear causal relationships. The reliance on inequality constraints might not be optimal for situations where exact causal effect values or equality constraints are known. The computational complexity of the two-stage constrained optimization method could also be a consideration for very large biological networks.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly stated in the abstract, future research could explore extending this concept to non-linear causal models, investigating the integration of different types of constraints (e.g., exact equality constraints), evaluating its robustness to noisy or incomplete prior knowledge, and developing more computationally efficient optimization algorithms for larger-scale, high-dimensional biological systems.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Systems Biology</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Disease Mechanism Elucidation</span>
+                    
+                    <span class="tag">Pharmacogenomics</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Causal Discovery</span>
+                    
+                    <span class="tag tag-keyword">Interventional Constraints</span>
+                    
+                    <span class="tag tag-keyword">Total Causal Effects</span>
+                    
+                    <span class="tag tag-keyword">Linear Causal Models</span>
+                    
+                    <span class="tag tag-keyword">Constrained Optimization</span>
+                    
+                    <span class="tag tag-keyword">Biological Networks</span>
+                    
+                    <span class="tag tag-keyword">Systems Biology</span>
+                    
+                    <span class="tag tag-keyword">Treatment Design</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Incorporating causal knowledge and mechanisms is essential for refining
+causal models and improving downstream tasks such as designing new treatments.
+In this paper, we introduce a novel concept in causal discovery, termed
+interventional constraints, which differs fundamentally from interventional
+data. While interventional data require direct perturbations of variables,
+interventional constraints encode high-level causal knowledge in the form of
+inequality constraints on causal effects. For instance, in the Sachs dataset
+(Sachs et al.\ 2005), Akt has been shown to be activated by PIP3, meaning PIP3
+exerts a positive causal effect on Akt. Existing causal discovery methods allow
+enforcing structural constraints (for example, requiring a causal path from
+PIP3 to Akt), but they may still produce incorrect causal conclusions such as
+learning that "PIP3 inhibits Akt". Interventional constraints bridge this gap
+by explicitly constraining the total causal effect between variable pairs,
+ensuring learned models respect known causal influences. To formalize
+interventional constraints, we propose a metric to quantify total causal
+effects for linear causal models and formulate the problem as a constrained
+optimization task, solved using a two-stage constrained optimization method. We
+evaluate our approach on real-world datasets and demonstrate that integrating
+interventional constraints not only improves model accuracy and ensures
+consistency with established findings, making models more explainable, but also
+facilitates the discovery of new causal relationships that would otherwise be
+costly to identify.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-guided Latent Diffusion Model? - Health AI Hub</title>
+    <meta name="description" content="This paper introduces GLYPH-SR, a novel vision-language-guided latent diffusion framework designed to address the critical limitation of existing image super-re">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>GLYPH-SR: Can We Achieve Both High-Quality Image Super-Resolution and High-Fidelity Text Recovery via VLM-guided Latent Diffusion Model?</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.26339v1" target="_blank">2510.26339v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-30
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Mingyu Sung, Seungjae Ham, Kangwoo Kim, Yeokyoung Yoon, Sangseok Yun, Il-Min Kim, Jae-Mo Kang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.70 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.26339v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.26339v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces GLYPH-SR, a novel vision-language-guided latent diffusion framework designed to address the critical limitation of existing image super-resolution (SR) methods in accurately recovering scene-text while maintaining overall image quality. By integrating an OCR-guided Text-SR Fusion ControlNet and a dynamic ping-pong scheduler, GLYPH-SR significantly improves text legibility, achieving up to a +15.18 percentage point increase in OCR F1 scores, without compromising visual realism.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>The ability to accurately super-resolve images with embedded text is profoundly relevant in medicine for enhancing the clarity and legibility of critical information in various contexts. This includes improving readability of annotations on diagnostic images, text on medical device screens, information on lab reports, and details within scanned electronic health records, thereby reducing interpretation errors and improving data extraction for clinical decision-making and automated systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research provides a foundational improvement for AI systems in healthcare that rely on processing visual data containing text. Examples include: AI-powered systems for automated medication dispensing and verification (reading drug labels), inventory management in pharmacies/hospitals (reading product labels), automated monitoring of medical equipment (reading displays/labels), and enhancing image quality for diagnostic aids where text is embedded in the scene (e.g., annotations, equipment readouts). It would also be relevant for AI applications in biosecurity for identifying and interpreting textual information in surveillance or evidence images related to biological threats or hazardous materials.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the pervasive issue where Super-Resolution (SR) models, optimized for general perceptual metrics, fail to accurately recover scene-text, leading to failures in Optical Character Recognition (OCR) and downstream tasks.</li>
+                    
+                    <li>Introduces GLYPH-SR, a vision-language-guided latent diffusion framework specifically engineered to optimize for both high-quality image SR and high-fidelity text recovery simultaneously.</li>
+                    
+                    <li>Employs a novel Text-SR Fusion ControlNet (TS-ControlNet) that leverages OCR data as guidance, enabling targeted restoration of character-level details.</li>
+                    
+                    <li>Utilizes a unique 'ping-pong scheduler' which dynamically alternates between text-centric and scene-centric guidance during the diffusion process, ensuring balanced optimization.</li>
+                    
+                    <li>The specialized components (TS-ControlNet and scheduler) are trained on a synthetic corpus, allowing for targeted text restoration without altering the pre-trained main SR branch.</li>
+                    
+                    <li>Achieves substantial improvements in text legibility, with OCR F1 scores increasing by up to +15.18 percentage points on challenging benchmarks (e.g., SVT x8 with OpenOCR) compared to diffusion/GAN baselines.</li>
+                    
+                    <li>Successfully maintains competitive performance across established learned perceptual quality metrics (MANIQA, CLIP-IQA, MUSIQ), demonstrating that text enhancement is achieved without sacrificing overall visual realism.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>GLYPH-SR operates as a vision-language-guided latent diffusion model. Its core components include a Text-SR Fusion ControlNet (TS-ControlNet), which uses guidance from OCR data to specifically restore text details, and a 'ping-pong scheduler' that dynamically alternates between text- and scene-centric guidance during the image generation process. These specialized components are trained on a synthetic corpus to optimize for text legibility, while the main super-resolution branch of the model is kept frozen to preserve general image quality.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary findings demonstrate that GLYPH-SR significantly boosts text legibility in super-resolved images, achieving up to a +15.18 percentage point improvement in OCR F1 scores on datasets like SVT x8 (using OpenOCR) compared to existing diffusion and GAN-based baselines. Crucially, this enhancement in text recovery does not come at the expense of overall image quality, as GLYPH-SR maintains competitive scores on widely recognized perceptual quality metrics such as MANIQA, CLIP-IQA, and MUSIQ across various benchmarks (SVT, SCUT-CTW1500, CUTE80) and upscaling factors (x4, x8).</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology has the potential to significantly improve the reliability of automated text extraction from medical images and documents, such as patient demographics on scans, findings in pathology slides, dosage instructions on prescriptions, and critical parameters on medical device displays. By ensuring text 'reads right' alongside looking visually correct, it can reduce manual data entry errors, enhance diagnostic accuracy, facilitate faster information retrieval in EHRs, and improve the performance of AI systems in medical image analysis and autonomous surgical tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While not explicitly stated in the abstract, potential limitations could include the reliance on synthetic data for training the text-specific components, which might not fully capture the variability and degradation nuances of real-world medical text. Performance might also vary with highly degraded, unusual fonts, or complex layouts not well-represented in the training corpus. Furthermore, the computational intensity of diffusion models with ControlNets could pose challenges for real-time applications requiring very low latency.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly detail future research directions. However, logical next steps could involve evaluating GLYPH-SR's performance on highly specialized medical datasets with domain-specific text, optimizing the model for real-time clinical deployment, exploring its application in enhancing handwritten clinical notes, and investigating its robustness to extreme degradation or noise common in medical archival imagery.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Imaging (Radiology, Pathology, Ophthalmology)</span>
+                    
+                    <span class="tag">Digital Pathology</span>
+                    
+                    <span class="tag">Electronic Health Records (EHR) Management</span>
+                    
+                    <span class="tag">Medical Device Monitoring and Analytics</span>
+                    
+                    <span class="tag">Laboratory Information Systems (LIS)</span>
+                    
+                    <span class="tag">Telemedicine and Remote Diagnostics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Super-Resolution</span>
+                    
+                    <span class="tag tag-keyword">Scene-Text</span>
+                    
+                    <span class="tag tag-keyword">Text Recovery</span>
+                    
+                    <span class="tag tag-keyword">Vision-Language Model</span>
+                    
+                    <span class="tag tag-keyword">Latent Diffusion</span>
+                    
+                    <span class="tag tag-keyword">Optical Character Recognition (OCR)</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Document Analysis</span>
+                    
+                    <span class="tag tag-keyword">Image Enhancement</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Image super-resolution(SR) is fundamental to many vision system-from
+surveillance and autonomy to document analysis and retail analytics-because
+recovering high-frequency details, especially scene-text, enables reliable
+downstream perception. Scene-text, i.e., text embedded in natural images such
+as signs, product labels, and storefronts, often carries the most actionable
+information; when characters are blurred or hallucinated, optical character
+recognition(OCR) and subsequent decisions fail even if the rest of the image
+appears sharp. Yet previous SR research has often been tuned to distortion
+(PSNR/SSIM) or learned perceptual metrics (LIPIS, MANIQA, CLIP-IQA, MUSIQ) that
+are largely insensitive to character-level errors. Furthermore, studies that do
+address text SR often focus on simplified benchmarks with isolated characters,
+overlooking the challenges of text within complex natural scenes. As a result,
+scene-text is effectively treated as generic texture. For SR to be effective in
+practical deployments, it is therefore essential to explicitly optimize for
+both text legibility and perceptual quality. We present GLYPH-SR, a
+vision-language-guided diffusion framework that aims to achieve both objectives
+jointly. GLYPH-SR utilizes a Text-SR Fusion ControlNet(TS-ControlNet) guided by
+OCR data, and a ping-pong scheduler that alternates between text- and
+scene-centric guidance. To enable targeted text restoration, we train these
+components on a synthetic corpus while keeping the main SR branch frozen.
+Across SVT, SCUT-CTW1500, and CUTE80 at x4, and x8, GLYPH-SR improves OCR F1 by
+up to +15.18 percentage points over diffusion/GAN baseline (SVT x8, OpenOCR)
+while maintaining competitive MANIQA, CLIP-IQA, and MUSIQ. GLYPH-SR is designed
+to satisfy both objectives simultaneously-high readability and high visual
+realism-delivering SR that looks right and reds right.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>11 pages, 6 figures. Includes supplementary material. Under review as
+  a conference paper at ICLR 2026</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
