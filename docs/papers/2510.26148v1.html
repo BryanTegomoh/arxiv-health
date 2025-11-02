@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STAR: A Privacy-Preserving, Energy-Efficient Edge AI Framework for Human Activity Recognition via Wi-Fi CSI in Mobile and Pervasive Computing Environments - Health AI Hub</title>
-    <meta name="description" content="STAR proposes an energy-efficient, privacy-preserving edge-AI framework for Human Activity Recognition (HAR) using Wi-Fi Channel State Information (CSI) in reso">
+    <meta name="description" content="STAR is an edge-AI framework designed for real-time, energy-efficient Human Activity Recognition (HAR) using Wi-Fi Channel State Information (CSI) on low-power ">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.LG
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">STAR proposes an energy-efficient, privacy-preserving edge-AI framework for Human Activity Recognition (HAR) using Wi-Fi Channel State Information (CSI) in resource-constrained environments. It integrates a lightweight GRU-based neural network with adaptive signal processing and hardware co-optimization, achieving high accuracy (93.52% for 7 activities) and real-time performance on embedded devices. This solution offers a practical and scalable approach for applications like healthcare monitoring, overcoming the computational inefficiency and high latency of previous methods.</p>
+                <p class="summary-text">STAR is an edge-AI framework designed for real-time, energy-efficient Human Activity Recognition (HAR) using Wi-Fi Channel State Information (CSI) on low-power embedded devices. It integrates a lightweight Gated Recurrent Unit (GRU)-based neural network, multi-stage signal processing, and hardware-aware co-optimization, achieving high accuracy (93.52% for activities, 99.11% for presence) with significant computational efficiency and privacy preservation.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This framework offers a privacy-preserving, contactless, and energy-efficient method for continuous monitoring of human activity and presence, which is vital for remote healthcare, geriatric care (e.g., fall detection), and smart hospital systems, enabling non-intrusive patient management without compromising personal data.</p>
+                <p>This framework offers a contactless, privacy-preserving, and energy-efficient solution for continuous human activity and presence monitoring, crucial for remote healthcare, elderly care, and rehabilitation in smart home or clinical settings without the need for cameras or wearable devices.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>STAR is an Edge AI framework for real-time, privacy-preserving, and energy-efficient human activity recognition (HAR) using Wi-Fi CSI. This AI application can be used for continuous monitoring in healthcare settings, such as detecting falls in elderly individuals, tracking activity levels for chronic disease management, or observing behavioral patterns in smart homes for health and safety purposes, all while preserving privacy due to its contactless nature.</p>
+                <p>The paper describes an Edge AI framework (STAR) that uses Wi-Fi CSI for real-time, privacy-preserving Human Activity Recognition. This AI application can be directly utilized for health monitoring, such as tracking daily activities of patients or the elderly to detect anomalies, monitor recovery, or identify potential risks like falls, without requiring wearable devices or cameras, thereby enhancing patient comfort and privacy in healthcare settings.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses computational inefficiency, high latency, and limited feasibility of existing Wi-Fi CSI-based HAR on resource-constrained embedded mobile edge environments.</li>
+                    <li>Proposes STAR, a privacy-preserving, energy-efficient Edge AI framework for Human Activity Recognition (HAR) via Wi-Fi CSI.</li>
                     
-                    <li>Proposes STAR, an edge-AI-optimized framework featuring a streamlined Gated Recurrent Unit (GRU)-based recurrent neural network, reducing model parameters by 33% compared to conventional LSTM models to 97.6k.</li>
+                    <li>Utilizes a streamlined GRU-based recurrent neural network architecture, reducing model parameters by 33% compared to conventional LSTM models.</li>
                     
-                    <li>Employs a multi-stage pre-processing pipeline for CSI amplitude data, including median filtering, 8th-order Butterworth low-pass filtering, and Empirical Mode Decomposition (EMD) for robust denoising and spatio-temporal feature extraction.</li>
+                    <li>Employs a multi-stage pre-processing pipeline (median filtering, 8th-order Butterworth low-pass filtering, Empirical Mode Decomposition) for denoising CSI amplitude data and feature extraction.</li>
                     
-                    <li>Implemented on a Rockchip RV1126 processor with an embedded Neural Processing Unit (NPU) and an ESP32-S3-based CSI acquisition module, demonstrating hardware-aware co-optimization.</li>
+                    <li>Implemented on a Rockchip RV1126 processor with an embedded Neural Processing Unit (NPU) and an ESP32-S3-based CSI acquisition module for hardware-optimized deployment.</li>
                     
-                    <li>Achieves a mean recognition accuracy of 93.52% across seven distinct activity classes and 99.11% for human presence detection.</li>
+                    <li>Achieves a mean recognition accuracy of 93.52% across seven activity classes and 99.11% for human presence detection with a compact 97.6k-parameter model.</li>
                     
-                    <li>Delivers significant performance gains with INT8 quantized inference, achieving a processing speed of 33 MHz with just 8% CPU utilization, translating to a sixfold speed improvement over CPU-based execution.</li>
+                    <li>INT8 quantized inference demonstrates a processing speed of 33 MHz with 8% CPU utilization, achieving a sixfold speed improvement over CPU-based execution.</li>
                     
-                    <li>Ensures real-time, privacy-preserving HAR with sub-second response latency and low power consumption, making it suitable for continuous monitoring in sensitive environments like healthcare.</li>
+                    <li>Delivers sub-second response latency and low power consumption, ensuring real-time HAR suitable for mobile and pervasive computing environments like healthcare monitoring.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The STAR framework utilizes a lightweight Gated Recurrent Unit (GRU)-based recurrent neural network architecture for temporal modeling, designed for reduced computational overhead. Prior to neural network processing, raw Wi-Fi CSI amplitude data undergoes a multi-stage pre-processing pipeline: median filtering for initial noise suppression, an 8th-order Butterworth low-pass filter to remove high-frequency noise, and Empirical Mode Decomposition (EMD) for extracting robust spatial-temporal features. The system is deployed on a Rockchip RV1126 processor with an integrated Neural Processing Unit (NPU) for accelerated inference, receiving CSI data from an ESP32-S3-based acquisition module. Hardware-aware co-optimization, including INT8 quantization, is applied to achieve efficient on-device execution.</p>
+                    <p>The STAR framework integrates a lightweight GRU-based recurrent neural network with an adaptive multi-stage signal processing pipeline. This pipeline applies median filtering, 8th-order Butterworth low-pass filtering, and Empirical Mode Decomposition (EMD) to denoise Wi-Fi CSI amplitude data and extract spatial-temporal features. For real-time, on-device deployment, the system is implemented on a Rockchip RV1126 processor with an embedded NPU, connected to an ESP32-S3-based CSI acquisition module, leveraging hardware-aware co-optimization and INT8 quantization for efficient inference.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The system achieves a mean recognition accuracy of 93.52% for seven activity classes and 99.11% for human presence detection. It utilizes a compact 97.6k-parameter model, demonstrating a 33% reduction compared to conventional LSTM models. INT8 quantized inference on the NPU delivers a processing speed of 33 MHz with only 8% CPU utilization, resulting in a sixfold speed improvement over CPU-based execution. The framework ensures sub-second response latency and low power consumption, enabling real-time operation on embedded devices.</p>
+                    <p>The STAR framework achieved a mean recognition accuracy of 93.52% across seven activity classes and 99.11% for human presence detection using a compact 97.6k-parameter model. INT8 quantized inference demonstrated a processing speed of 33 MHz with only 8% CPU utilization, resulting in a sixfold speed improvement over CPU-based execution, alongside sub-second response latency and low power consumption.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>STAR provides a non-intrusive, real-time, and energy-efficient solution for continuous patient monitoring in clinical and home environments. Its privacy-preserving nature makes it highly suitable for sensitive applications like elderly fall detection, tracking patient mobility for rehabilitation assessment, and general activity monitoring in smart homes or assisted living facilities. The low latency and high accuracy can enable timely alerts and interventions, enhancing patient safety and facilitating proactive care management without the need for wearable devices or visually intrusive cameras.</p>
+                <p>STAR provides a practical and scalable solution for continuous, non-invasive monitoring in healthcare. It can enable early detection of falls or changes in activity patterns for the elderly, support remote patient monitoring for recovery, and facilitate rehabilitation progress tracking without compromising privacy or requiring intrusive devices. Its energy efficiency and real-time capabilities make it ideal for pervasive deployment in smart healthcare environments.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract primarily emphasizes the strengths and capabilities of the STAR framework while contrasting it with the limitations of existing HAR methods. It does not explicitly detail specific limitations of STAR itself, such as its performance robustness under varying environmental conditions (e.g., multi-person scenarios, signal occlusion), the generalizability of the trained model to new environments, or potential degradation in accuracy for highly nuanced or similar activities.</p>
+                <p>The abstract primarily highlights the strengths of the STAR framework, specifically addressing limitations of *existing methods* (computational inefficiency, high latency, limited feasibility on resource-constrained devices). It does not explicitly state specific limitations of the STAR framework itself, such as potential dependencies on environmental factors, challenges in complex multi-person scenarios, or generalizability to an exhaustive range of human activities.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>While the abstract does not explicitly state future research directions, it frames STAR as a "practical, scalable solution for mobile and pervasive computing environments." This implicitly suggests avenues for future work could include extending its capabilities to multi-person activity recognition, exploring its integration with other physiological sensors for more comprehensive health monitoring, and validating its long-term performance and robustness in diverse real-world clinical and home care settings.</p>
+                <p>The abstract does not explicitly mention future research directions.</p>
             </section>
             
 
@@ -120,15 +120,15 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Geriatric Care</span>
+                    <span class="tag">Geriatrics</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                    <span class="tag">Rehabilitation</span>
                     
                     <span class="tag">Remote Patient Monitoring</span>
                     
-                    <span class="tag">Smart Hospitals</span>
-                    
-                    <span class="tag">Assisted Living Facilities</span>
-                    
-                    <span class="tag">Rehabilitation</span>
+                    <span class="tag">Smart Home Healthcare</span>
                     
                     <span class="tag">Preventive Care</span>
                     
@@ -149,11 +149,11 @@
                     
                     <span class="tag tag-keyword">Energy-Efficient</span>
                     
-                    <span class="tag tag-keyword">GRU</span>
-                    
-                    <span class="tag tag-keyword">Embedded Systems</span>
+                    <span class="tag tag-keyword">Gated Recurrent Unit (GRU)</span>
                     
                     <span class="tag tag-keyword">Healthcare Monitoring</span>
+                    
+                    <span class="tag tag-keyword">Embedded Systems</span>
                     
                 </div>
             </section>

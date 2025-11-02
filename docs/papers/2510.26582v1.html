@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATCH: A Modular Cross-domain Adaptive Template with Hook - Health AI Hub</title>
-    <meta name="description" content="This paper introduces CATCH, a modular, plug-and-play framework designed to improve the generalization of Visual Question Answering (VQA) models, like LLaVA, wh">
+    <meta name="description" content="CATCH is a novel plug-and-play framework designed to overcome the significant performance degradation of Visual Question Answering (VQA) models, such as LLaVA, ">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CV
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces CATCH, a modular, plug-and-play framework designed to improve the generalization of Visual Question Answering (VQA) models, like LLaVA, when applied to out-of-domain scenarios such as medical imaging. CATCH achieves this by decoupling visual and linguistic adaptation through a domain classifier and a dual adapter mechanism (Prompt and Visual Adapters) dynamically injected via a hook interface, critically requiring no retraining of the backbone VQA model. Experimental results demonstrate consistent performance gains across diverse benchmarks, including a significant +2.6 VQA score increase on the MedVQA-RAD dataset, showcasing its scalability for multi-domain VQA deployment.</p>
+                <p class="summary-text">CATCH is a novel plug-and-play framework designed to overcome the significant performance degradation of Visual Question Answering (VQA) models, such as LLaVA, when applied to out-of-domain data like medical imaging. It achieves this by decoupling visual and linguistic adaptation through a lightweight domain classifier and a dual adapter mechanism (Prompt and Visual Adapters), dynamically injected via a hook interface. The framework demonstrates consistent and substantial performance gains across diverse domain-specific VQA benchmarks, notably +2.6 VQA on MedVQA-RAD, without requiring retraining of the backbone VQA model.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to medicine as it directly addresses the challenge of deploying advanced VQA models for analyzing medical images, where current models often fail due to domain shifts. By significantly improving performance on medical imaging datasets like MedVQA-RAD without needing to retrain large foundational models, CATCH enables more accurate and robust AI-driven medical image interpretation and diagnostic assistance.</p>
+                <p>This framework directly addresses the challenge of deploying advanced AI models, specifically VQA, to specialized medical imaging without costly per-domain fine-tuning, enabling more accurate and scalable diagnostic or analytical support in healthcare. It allows powerful general-purpose models to interpret complex medical data effectively.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The CATCH framework aims to make Visual Question Answering (VQA) models more robust and adaptable to medical imaging data. This has direct applications in healthcare by enabling AI systems to accurately interpret medical images (e.g., X-rays, MRI scans), answer specific clinical questions about patient conditions derived from these images, assist in generating diagnostic reports, or support medical education. By improving generalization across diverse domains without extensive re-training, it facilitates the practical deployment of AI in various medical specialties.</p>
+                <p>The research aims to improve the robustness and generalization of Visual Question Answering (VQA) models when applied to medical images, such as radiology scans. By enabling AI models to accurately answer natural language questions about medical images even with domain shifts, it can facilitate applications in medical diagnosis support, clinical decision making, and medical education by providing more reliable and adaptable AI tools for interpreting complex medical visual data.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Traditional VQA models demonstrate significant performance degradation when transferred to out-of-domain scenarios like medical imaging due to large distributional shifts.</li>
+                    <li>VQA models, despite impressive performance on natural images, suffer significant generalization degradation on out-of-domain scenarios like medical imaging due to distributional shifts.</li>
                     
-                    <li>CATCH proposes a novel plug-and-play framework for cross-domain adaptation that enhances VQA model generalization with minimal changes to core architectures.</li>
+                    <li>CATCH (Cross-domain Adaptive Template with Hook) is proposed as a plug-and-play framework for cross-domain adaptation, improving VQA generalization with minimal changes to core architecture.</li>
                     
-                    <li>The framework's core idea is to decouple visual and linguistic adaptation using two lightweight modules: a domain classifier to identify input image type and a dual adapter mechanism.</li>
+                    <li>The core innovation is the decoupling of visual and linguistic adaptation through two lightweight, dynamically injected modules.</li>
                     
-                    <li>The dual adapter mechanism comprises a Prompt Adapter for language modulation and a Visual Adapter for vision feature adjustment, both injected dynamically via a unified hook interface.</li>
+                    <li>A domain classifier identifies the input image type, enabling targeted adaptation.</li>
                     
-                    <li>A key advantage of CATCH is its ability to achieve consistent performance gains across diverse domains without requiring the expensive retraining of the underlying backbone VQA model.</li>
+                    <li>A dual adapter mechanism comprises a Prompt Adapter for linguistic modulation and a Visual Adapter for visual feature adjustment.</li>
                     
-                    <li>Experimental validation included four domain-specific VQA benchmarks, notably yielding a +2.6 VQA score improvement on the MedVQA-RAD dataset.</li>
+                    <li>Both modules are injected via a unified hook interface, critically requiring no retraining of the backbone VQA model, enhancing flexibility and scalability.</li>
                     
-                    <li>CATCH offers a scalable and extensible approach to multi-domain VQA, enabling practical and flexible deployment across various specialized application domains, including healthcare.</li>
+                    <li>Experimental results demonstrate consistent performance improvements across various benchmarks, including a significant +2.6 VQA score increase on the MedVQA-RAD dataset, validating its efficacy in medical applications.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,34 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>CATCH is a plug-and-play framework that incorporates a domain classifier to automatically identify the input image type. It then utilizes a dual adapter mechanism, consisting of a Prompt Adapter for linguistic modulation and a Visual Adapter for adjusting vision features. These two modules are dynamically injected into the VQA backbone via a unified hook interface, facilitating adaptation to new domains without requiring any retraining of the original large language or vision models.</p>
+                    <p>CATCH employs a modular, plug-and-play architecture that decouples visual and linguistic adaptation processes. It integrates a lightweight domain classifier to identify the input image's type. Subsequently, a dual adapter mechanism is utilized, consisting of a Prompt Adapter responsible for language modulation and a Visual Adapter for adjusting vision features. Both these adaptation modules are dynamically injected into the pre-trained VQA backbone via a unified hook interface, critically eliminating the need for retraining the entire backbone model.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>CATCH consistently improves the generalization performance of VQA models across out-of-domain benchmarks. Notably, it achieved a +2.6 VQA score increase on the MedVQA-RAD dataset, demonstrating enhanced accuracy in medical imaging contexts. Furthermore, these performance gains were realized without the need for retraining the computationally expensive backbone VQA models.</p>
+                    <p>The CATCH framework consistently achieved significant performance gains across various domain-specific VQA benchmarks without requiring retraining of the backbone model. Key results include:
+*   An improvement of +2.6 VQA score on the MedVQA-RAD dataset.
+*   An improvement of +2.3 BLEU score on the MathVQA dataset.
+*   An improvement of +3.1 ROUGE score on the ChartQA dataset.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The improved generalization of VQA models to medical imaging, as demonstrated by CATCH's performance on MedVQA-RAD, has the potential for significant clinical impact. It could lead to more reliable AI tools for assisting radiologists in interpreting complex medical images, answering clinical questions directly from imaging data, and providing decision support, thereby potentially enhancing diagnostic accuracy, efficiency, and ultimately, patient outcomes.</p>
+                <p>CATCH has the potential to significantly accelerate the adoption of advanced VQA models in clinical practice. By enabling existing, powerful VQA systems to effectively interpret and reason over diverse medical images (e.g., X-rays, MRI, CT scans) without extensive retraining for each specific medical domain or dataset, it reduces development costs and deployment time. This facilitates the creation of more versatile, adaptable, and accessible AI-powered diagnostic and analytical tools, potentially aiding radiologists and other clinicians in complex image interpretation and question answering tasks, ultimately improving patient care.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Not explicitly mentioned in the abstract.</p>
+                <p>The abstract does not explicitly state any limitations of the CATCH framework.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not explicitly mentioned in the abstract.</p>
+                <p>The abstract does not explicitly suggest future research directions.</p>
             </section>
             
 
@@ -120,13 +123,11 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
+                    <span class="tag">Medical Imaging</span>
+                    
                     <span class="tag">Radiology</span>
                     
-                    <span class="tag">Medical Diagnostics</span>
-                    
-                    <span class="tag">Clinical Decision Support</span>
-                    
-                    <span class="tag">Medical Image Analysis</span>
+                    <span class="tag">Medical Diagnosis (potential for aiding)</span>
                     
                 </div>
             </section>
@@ -135,21 +136,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Visual Question Answering (VQA)</span>
+                    <span class="tag tag-keyword">VQA</span>
                     
                     <span class="tag tag-keyword">Cross-domain Adaptation</span>
                     
                     <span class="tag tag-keyword">Medical Imaging</span>
                     
-                    <span class="tag tag-keyword">Domain Generalization</span>
-                    
                     <span class="tag tag-keyword">Deep Learning</span>
                     
                     <span class="tag tag-keyword">Plug-and-Play</span>
                     
-                    <span class="tag tag-keyword">Large Language Models (LLMs)</span>
+                    <span class="tag tag-keyword">Domain Adaptation</span>
                     
-                    <span class="tag tag-keyword">MedVQA-RAD</span>
+                    <span class="tag tag-keyword">LLMs</span>
+                    
+                    <span class="tag tag-keyword">Hook Interface</span>
                     
                 </div>
             </section>

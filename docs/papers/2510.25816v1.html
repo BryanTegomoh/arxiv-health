@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Long Context: When Semantics Matter More than Tokens - Health AI Hub</title>
-    <meta name="description" content="This paper validates the Clinical Entity Augmented Retrieval (CLEAR) method for semantic question answering over lengthy Electronic Health Records (EHR) clinica">
+    <meta name="description" content="This paper introduces a Clinical Notes QA Evaluation Platform to validate the Clinical Entity Augmented Retrieval (CLEAR) method for semantic question answering">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CL, cs.LG, 68T50, 68T07, I.2.7; H.3.3
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper validates the Clinical Entity Augmented Retrieval (CLEAR) method for semantic question answering over lengthy Electronic Health Records (EHR) clinical notes, which are typically stored as FHIR attachments. CLEAR significantly improves both accuracy (58.3% win rate, 0.878 semantic similarity) and efficiency (78% fewer tokens) compared to large context inference and traditional RAG, especially for very long documents. The study introduces a reusable evaluation platform for clinical QA systems.</p>
+                <p class="summary-text">This paper introduces a Clinical Notes QA Evaluation Platform to validate the Clinical Entity Augmented Retrieval (CLEAR) method for semantic question answering over Electronic Health Records (EHR). It demonstrates that CLEAR significantly improves both efficiency and accuracy, achieving a 58.3% win rate and 78% token reduction compared to traditional methods, especially on long clinical notes.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is crucial for healthcare as it enables more accurate and computationally efficient semantic interrogation of complex, unstructured clinical data within EHRs, directly addressing a major bottleneck in leveraging medical information for clinical decision support, research, and patient care.</p>
+                <p>This research directly addresses the critical challenge of accurately and efficiently extracting precise, semantically rich information from unstructured clinical documentation within Electronic Health Records, which is paramount for clinical decision support, research, and operational optimization in healthcare.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is to enhance the accuracy and efficiency of retrieving and answering questions from complex clinical documentation within Electronic Health Records. This is achieved through entity-aware retrieval and natural language processing techniques, enabling AI systems to better understand and utilize 'nuanced clinical relationships' in medical notes. This could support clinicians in accessing patient information faster, improve data analysis for research, or feed into more advanced clinical decision support systems.</p>
+                <p>The paper describes the development and evaluation of an AI-powered retrieval and question-answering system (CLEAR) designed to efficiently and accurately extract information from complex clinical documentation within Electronic Health Records. This application aims to improve access to nuanced clinical relationships and information for healthcare professionals, potentially enhancing clinical decision-making and research by overcoming limitations of traditional long-context NLP methods.</p>
             </section>
             
 
@@ -68,19 +68,21 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Electronic Health Records (EHR) documentation, stored as base64 encoded attachments in FHIR DocumentReference resources, presents significant challenges for semantic question answering (QA).</li>
+                    <li>EHRs store clinical documentation as base64 encoded attachments, posing challenges for semantic question answering where traditional vector methods often miss nuanced clinical relationships.</li>
                     
-                    <li>Traditional vector database methods for retrieval often fail to capture nuanced clinical relationships, prompting the need for more sophisticated approaches.</li>
+                    <li>The Clinical Entity Augmented Retrieval (CLEAR) method, using entity-aware retrieval, was evaluated for its performance in semantic question answering.</li>
                     
-                    <li>The Clinical Entity Augmented Retrieval (CLEAR) method, which employs entity-aware retrieval, demonstrated an F1 score of 0.90 (vs. 0.86 for embedding-based retrieval) and used over 70% fewer tokens in prior work (Lopez et al. 2025).</li>
+                    <li>A novel Clinical Notes QA Evaluation Platform was developed to validate CLEAR against zero-shot large context inference and traditional chunk-based Retrieval Augmented Generation (RAG).</li>
                     
-                    <li>A novel Clinical Notes QA Evaluation Platform was developed to rigorously validate CLEAR against zero-shot large context inference and traditional chunk-based Retrieval Augmented Generation (RAG).</li>
+                    <li>The platform was tested on a realistic dataset of 12 clinical notes, varying in length from 10,000 to 65,000 tokens.</li>
                     
-                    <li>The evaluation platform was tested on 12 realistic clinical notes ranging from 10,000 to 65,000 tokens, representing typical EHR content.</li>
+                    <li>CLEAR achieved a 58.3% win rate against comparison methods and an average semantic similarity of 0.878.</li>
                     
-                    <li>CLEAR achieved a 58.3% win rate, an average semantic similarity of 0.878, and utilized 78% fewer tokens compared to wide context processing.</li>
+                    <li>It demonstrated significant computational efficiency, using 78% fewer tokens than wide context processing.</li>
                     
-                    <li>Significant performance gains were observed on longer notes, with CLEAR achieving a 75% win rate for documents exceeding 65,000 tokens, confirming the benefits of entity-aware retrieval for efficiency and accuracy.</li>
+                    <li>The method showed substantial performance gains on longer notes, achieving a 75% win rate for documents exceeding 65,000 tokens.</li>
+                    
+                    <li>The findings confirm that entity-aware retrieval enhances both computational efficiency and semantic accuracy in clinical natural language processing.</li>
                     
                 </ul>
             </section>
@@ -88,31 +90,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study developed a 'Clinical Notes QA Evaluation Platform' to compare the Clinical Entity Augmented Retrieval (CLEAR) method against two baselines: zero-shot large context inference and traditional chunk-based Retrieval Augmented Generation (RAG). The platform was tested on 12 real-world clinical notes from EHRs, varying in length from 10,000 to 65,000 tokens. Performance was measured using win rate, average semantic similarity, and token usage reduction.</p>
+                    <p>The study involved developing a 'Clinical Notes QA Evaluation Platform' specifically designed to validate the CLEAR method. This platform benchmarked CLEAR's performance against two established methods: zero-shot large context inference and traditional chunk-based Retrieval Augmented Generation (RAG). The evaluation dataset comprised 12 realistic clinical notes sourced from EHRs, with lengths ranging from 10,000 to 65,000 tokens, simulating real-world clinical documentation complexity.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>CLEAR achieved a 58.3% win rate and an average semantic similarity of 0.878 against competing methods. It demonstrated substantial efficiency gains by using 78% fewer tokens than wide context processing. The most significant performance improvements were observed for very long clinical documents, where CLEAR achieved a 75% win rate for notes exceeding 65,000 tokens, validating that entity-aware retrieval boosts both accuracy and efficiency in clinical NLP.</p>
+                    <p>CLEAR achieved a 58.3% win rate against comparison methods and demonstrated an average semantic similarity of 0.878. A critical finding was its efficiency, utilizing 78% fewer tokens compared to wide context processing. The most significant performance gains were observed with very long clinical notes, where CLEAR achieved a 75% win rate for documents exceeding 65,000 tokens, highlighting its scalability and robustness for complex, lengthy clinical narratives.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This method has the potential to significantly enhance the utility of EHRs by providing clinicians and researchers with faster, more accurate answers to complex semantic questions from extensive patient records. It can improve clinical decision-making, facilitate patient safety initiatives, accelerate clinical research by making data more accessible, and reduce the computational burden and cost associated with processing large volumes of clinical text, making advanced NLP solutions more scalable in healthcare.</p>
+                <p>This work facilitates more accurate and computationally efficient semantic question answering over the vast and complex unstructured clinical data in EHRs. It can significantly improve clinical decision support systems by providing faster and more precise information retrieval, accelerate medical research by enabling rapid insight extraction from patient records, and reduce operational costs associated with processing large volumes of clinical text, ultimately enhancing patient care and healthcare system efficiency.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations of the CLEAR method or the evaluation framework itself. However, implicit considerations might include the generalizability from the 12 clinical notes used for testing.</p>
+                <p>The abstract does not explicitly state any limitations of the presented work or the CLEAR method itself. However, it implicitly highlights the shortcomings of 'zero shot large context inference' and 'traditional chunk based retrieval augmented generation' as the methods that CLEAR demonstrably outperforms.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract highlights that the developed evaluation framework 'provides a reusable and transparent benchmark for assessing clinical question answering systems where semantic precision and computational efficiency are critical,' implying its utility for future comparative studies of other clinical NLP methods. No specific future research directions for CLEAR's own development are explicitly mentioned.</p>
+                <p>While not explicitly detailing future research, the paper positions its newly developed Clinical Notes QA Evaluation Platform as a 'reusable and transparent benchmark' for assessing future clinical question answering systems, implying its role in guiding ongoing development and comparisons in the field.</p>
             </section>
             
 
@@ -122,13 +124,13 @@
                     
                     <span class="tag">Clinical Informatics</span>
                     
-                    <span class="tag">Health Data Science</span>
+                    <span class="tag">Medical Documentation</span>
                     
-                    <span class="tag">Medical Record Management</span>
+                    <span class="tag">Healthcare Analytics</span>
                     
-                    <span class="tag">Artificial Intelligence in Healthcare</span>
+                    <span class="tag">EHR Systems</span>
                     
-                    <span class="tag">Clinical Decision Support Systems</span>
+                    <span class="tag">Clinical Decision Support</span>
                     
                 </div>
             </section>
@@ -137,21 +139,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Clinical NLP</span>
-                    
                     <span class="tag tag-keyword">Electronic Health Records</span>
+                    
+                    <span class="tag tag-keyword">Clinical Natural Language Processing</span>
+                    
+                    <span class="tag tag-keyword">Question Answering</span>
+                    
+                    <span class="tag tag-keyword">Entity Aware Retrieval</span>
+                    
+                    <span class="tag tag-keyword">Semantic Search</span>
                     
                     <span class="tag tag-keyword">FHIR</span>
                     
-                    <span class="tag tag-keyword">Semantic Question Answering</span>
-                    
-                    <span class="tag tag-keyword">Entity-Aware Retrieval</span>
+                    <span class="tag tag-keyword">Computational Efficiency</span>
                     
                     <span class="tag tag-keyword">Large Language Models</span>
-                    
-                    <span class="tag tag-keyword">Retrieval Augmented Generation</span>
-                    
-                    <span class="tag tag-keyword">Clinical Documentation</span>
                     
                 </div>
             </section>
