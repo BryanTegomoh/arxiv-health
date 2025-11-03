@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InertialAR: Autoregressive 3D Molecule Generation with Inertial Frames - Health AI Hub</title>
+    <meta name="description" content="InertialAR introduces a transformer-based autoregressive model for 3D molecule generation, addressing challenges of canonical tokenization and hybrid atom-based">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>InertialAR: Autoregressive 3D Molecule Generation with Inertial Frames</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.27497v1" target="_blank">2510.27497v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-31
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Haorui Li, Weitao Du, Yuqiang Li, Hongyu Guo, Shengchao Liu
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.27497v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.27497v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">InertialAR introduces a transformer-based autoregressive model for 3D molecule generation, addressing challenges of canonical tokenization and hybrid atom-based tokens by utilizing inertial frames and geometric positional encoding. It employs a hierarchical approach to predict atom types and 3D coordinates, achieving state-of-the-art performance in both unconditional and controllable molecule generation, particularly for targeted chemical functionality.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine and health by providing a powerful computational tool for the de novo design of novel drug-like molecules. Its capability for controllable generation with targeted chemical functionality can significantly accelerate the identification and optimization of therapeutic candidates.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI model (InertialAR) is designed to generate novel 3D molecular structures with specific, targeted chemical functionalities. This directly enables and accelerates the computational design of potential drug candidates, lead compounds, or other biologically active molecules for treating diseases, diagnosing conditions, or developing new biomedical tools.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Addressing Fundamental Challenges:** InertialAR tackles the two core issues in 3D molecule generation with transformers: canonical 1D tokenization invariant to SE(3) transformations and atom index permutations, and modeling hybrid atom-based tokens (discrete types with continuous 3D coordinates).</li>
+                    
+                    <li>**Canonical Tokenization via Inertial Frames:** The model devises a novel tokenization strategy that aligns molecules to their inertial frames and reorders atoms, ensuring invariance to both rigid body transformations (SE(3)) and atom index permutations.</li>
+                    
+                    <li>**Geometrically Aware Architecture:** The attention mechanism is enhanced with geometric rotary positional encoding (GeoRoPE), providing it with crucial geometric awareness to effectively model the 3D spatial relationships of atoms.</li>
+                    
+                    <li>**Hierarchical Autoregressive Generation:** InertialAR uses a two-step autoregressive paradigm: first predicting the discrete atom type, and subsequently predicting its continuous 3D coordinates using Diffusion loss.</li>
+                    
+                    <li>**State-of-the-Art Unconditional Performance:** It achieves state-of-the-art performance on 7 out of 10 evaluation metrics for unconditional molecule generation across widely used datasets like QM9, GEOM-Drugs, and B3LYP.</li>
+                    
+                    <li>**Superior Controllable Generation:** The model significantly outperforms strong baselines in controllable generation, attaining state-of-the-art results across all 5 metrics when generating molecules with targeted chemical functionality.</li>
+                    
+                    <li>**Enabling Molecular Design for Drug Discovery:** The ability to controllably generate molecules with desired properties provides a powerful tool for accelerating computational drug discovery and materials science by rapidly proposing novel compounds.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>InertialAR is a Transformer-based autoregressive model that employs a canonical tokenization by aligning molecules to their inertial frames and reordering atoms for SE(3) and permutation invariance. Its attention mechanism incorporates Geometric Rotary Positional Encoding (GeoRoPE). Molecule generation is hierarchical, predicting discrete atom types followed by continuous 3D coordinates via Diffusion loss.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>InertialAR achieved state-of-the-art performance on 7 of 10 evaluation metrics for unconditional molecule generation across QM9, GEOM-Drugs, and B3LYP datasets. For controllable generation targeting specific chemical functionalities, it significantly outperformed strong baselines, attaining state-of-the-art results across all 5 metrics.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The enhanced capability to accurately and controllably generate novel 3D molecules with specific chemical properties can revolutionize early-stage drug discovery. This allows researchers to more efficiently design and virtually screen potential drug candidates, leading to faster identification of lead compounds, optimization of drug efficacy, and ultimately, the development of new and improved therapeutic agents for various diseases.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations or caveats of the InertialAR model.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions. However, the successful demonstration of controllable generation for targeted chemical functionality implicitly points towards further exploration of property-guided molecular design and optimization.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Medicinal Chemistry</span>
+                    
+                    <span class="tag">Pharmacology</span>
+                    
+                    <span class="tag">Computational Biology</span>
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">3D Molecule Generation</span>
+                    
+                    <span class="tag tag-keyword">Autoregressive Models</span>
+                    
+                    <span class="tag tag-keyword">Transformer</span>
+                    
+                    <span class="tag tag-keyword">Inertial Frames</span>
+                    
+                    <span class="tag tag-keyword">Geometric Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Drug Discovery</span>
+                    
+                    <span class="tag tag-keyword">Controllable Generation</span>
+                    
+                    <span class="tag tag-keyword">Molecular Design</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Transformer-based autoregressive models have emerged as a unifying paradigm
+across modalities such as text and images, but their extension to 3D molecule
+generation remains underexplored. The gap stems from two fundamental
+challenges: (1) tokenizing molecules into a canonical 1D sequence of tokens
+that is invariant to both SE(3) transformations and atom index permutations,
+and (2) designing an architecture capable of modeling hybrid atom-based tokens
+that couple discrete atom types with continuous 3D coordinates. To address
+these challenges, we introduce InertialAR. InertialAR devises a canonical
+tokenization that aligns molecules to their inertial frames and reorders atoms
+to ensure SE(3) and permutation invariance. Moreover, InertialAR equips the
+attention mechanism with geometric awareness via geometric rotary positional
+encoding (GeoRoPE). In addition, it utilizes a hierarchical autoregressive
+paradigm to predict the next atom-based token, predicting the atom type first
+and then its 3D coordinates via Diffusion loss. Experimentally, InertialAR
+achieves state-of-the-art performance on 7 of the 10 evaluation metrics for
+unconditional molecule generation across QM9, GEOM-Drugs, and B3LYP. Moreover,
+it significantly outperforms strong baselines in controllable generation for
+targeted chemical functionality, attaining state-of-the-art results across all
+5 metrics.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

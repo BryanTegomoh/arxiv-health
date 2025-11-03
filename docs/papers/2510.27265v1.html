@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T3: Test-Time Model Merging in VLMs for Zero-Shot Medical Imaging Analysis - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Test-Time Task adaptive merging (T^3), a novel, backpropagation-free framework for Vision-Language Models (VLMs) in medical imaging that d">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>T3: Test-Time Model Merging in VLMs for Zero-Shot Medical Imaging Analysis</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2510.27265v1" target="_blank">2510.27265v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-10-31
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Raza Imam, Hu Wang, Dwarikanath Mahapatra, Mohammad Yaqub
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2510.27265v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2510.27265v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Test-Time Task adaptive merging (T^3), a novel, backpropagation-free framework for Vision-Language Models (VLMs) in medical imaging that dynamically merges a robust generalist model with a precise expert model. T^3 computes per-sample interpolation coefficients using Jensen-Shannon divergence between model output distributions, addressing the challenge of maintaining accuracy across diverse medical modalities and under modality shift. An efficient batch-wise extension, T^3_B, is also proposed to reduce computational costs.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for reliable and accurate medical imaging analysis as it tackles the fundamental challenge of deploying robust AI models that can generalize across varied clinical tasks and modalities while maintaining high precision for specific conditions, directly improving diagnostic capabilities and clinical workflow efficiency.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research aims to enhance the robustness and accuracy of Vision-Language Models (VLMs) for zero-shot medical imaging analysis. This directly contributes to AI-driven applications in healthcare such as automated or assisted diagnosis from medical scans, interpretation of complex medical images, and improving the reliability of AI tools deployed in diverse clinical settings, potentially leading to better patient care and more efficient healthcare delivery.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical duality in medical imaging VLMs: generalist models offer robustness but lack modality-specific characteristics, while expert models are accurate in-distribution but fail under modality shift.</li>
+                    
+                    <li>Proposes Test-Time Task adaptive merging (T^3), a backpropagation-free method that computes per-sample interpolation coefficients dynamically.</li>
+                    
+                    <li>T^3 leverages Jensen-Shannon divergence between the output distributions of two models (generalist and expert) to determine the merging weight for each sample.</li>
+                    
+                    <li>The dynamic merging allows T^3 to preserve local precision when models agree and defer to generalist robustness when encountering modality drift.</li>
+                    
+                    <li>Introduces T^3_B, a batch-wise extension of T^3, to overcome the inference costs of per-sample merging by computing a single merging coefficient across a batch of samples.</li>
+                    
+                    <li>Presents a rigorous cross-evaluation protocol for medical model merging, spanning in-domain, base-to-novel, and corruption scenarios across four diverse modalities.</li>
+                    
+                    <li>Empirically achieves new state-of-the-art in Top-1 accuracy and significant error reduction, outperforming strong baselines while maintaining computational efficiency.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core methodology involves Test-Time Task adaptive merging (T^3), which is a backpropagation-free approach. For each input sample, T^3 dynamically calculates an interpolation coefficient between a generalist and an expert VLM. This coefficient is derived from the Jensen-Shannon divergence between the two models' output probability distributions, allowing for adaptive weighting. To mitigate the inference costs associated with per-sample computation, a batch-wise extension, T^3_B, is proposed, which computes a single merging coefficient for an entire batch of samples. A comprehensive cross-evaluation protocol was established for rigorous testing.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>T^3 achieves new state-of-the-art results in Top-1 accuracy and error reduction compared to existing strong baselines. It demonstrates superior performance across in-domain, base-to-novel, and corruption scenarios on diverse medical modalities, all while maintaining computational efficiency. This empirical success validates T^3's ability to dynamically adapt and deliver consistent gains in challenging medical imaging tasks.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>By enabling adaptive and robust VLM performance across diverse medical modalities and under modality shifts, T^3 paves the way for more reliable and accurate AI deployment in clinical settings. This can lead to improved diagnostic precision, reduced diagnostic errors, and more efficient clinical workflows, ultimately benefiting patient care by ensuring that AI tools can handle the variability inherent in real-world medical data.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The initial per-sample computation of T^3 introduces inference costs, which are addressed and mitigated by the proposed batch-wise extension, T^3_B. The abstract does not explicitly state other inherent limitations of the T^3/T^3_B framework itself.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper explicitly states that T^3 'paving the way for adaptive MVLM deployment in clinical settings,' implying a direction towards broader clinical integration and real-world application. No specific future research directions for the methodology itself are explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Imaging (various unspecified modalities)</span>
+                    
+                    <span class="tag">Diagnostic Radiology</span>
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Vision-Language Models</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Model Merging</span>
+                    
+                    <span class="tag tag-keyword">Test-Time Adaptation</span>
+                    
+                    <span class="tag tag-keyword">Jensen-Shannon Divergence</span>
+                    
+                    <span class="tag tag-keyword">Zero-Shot Learning</span>
+                    
+                    <span class="tag tag-keyword">Modality Shift</span>
+                    
+                    <span class="tag tag-keyword">Diagnostic Accuracy</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">In medical imaging, vision-language models face a critical duality:
+pretrained networks offer broad robustness but lack subtle, modality-specific
+characteristics, while fine-tuned expert models achieve high in-distribution
+accuracy yet falter under modality shift. Existing model-merging techniques,
+designed for natural-image benchmarks, are simple and efficient but fail to
+deliver consistent gains across diverse medical modalities; their static
+interpolation limits reliability in varied clinical tasks. To address this, we
+introduce Test-Time Task adaptive merging (T^3), a backpropagation-free
+framework that computes per-sample interpolation coefficients via the
+Jensen-Shannon divergence between the two models' output distributions. T^3
+dynamically preserves local precision when models agree and defers to
+generalist robustness under drift. To overcome the inference costs of
+sample-wise merging, we further propose a batch-wise extension, T^3_B, that
+computes a merging coefficient across a batch of samples, dramatically reducing
+computational bottleneck. Recognizing the lack of a standardized
+medical-merging benchmark, we present a rigorous cross-evaluation protocol
+spanning in-domain, base-to-novel, and corruptions across four modalities.
+Empirically, T^3 sets new state-of-the-art in Top-1 accuracy and error
+reduction, outperforming strong baselines while maintaining efficiency, paving
+the way for adaptive MVLM deployment in clinical settings. Our code is
+available at https://github.com/Razaimam45/TCube.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Main: 11 pages, Supplementary: 9 pages 10 tables, 10 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
