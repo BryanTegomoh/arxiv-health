@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CASR-Net: An Image Processing-focused Deep Learning-based Coronary Artery Segmentation and Refinement Network for X-ray Coronary Angiogram - Health AI Hub</title>
-    <meta name="description" content="CASR-Net is a novel deep learning pipeline designed for automated coronary artery segmentation and refinement from X-ray coronary angiograms, specifically addre">
+    <meta name="description" content="CASR-Net is a novel deep learning-based three-stage pipeline developed for accurate and robust coronary artery segmentation and refinement in X-ray angiograms, ">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">CASR-Net is a novel deep learning pipeline designed for automated coronary artery segmentation and refinement from X-ray coronary angiograms, specifically addressing challenges posed by poor image quality and narrow vessel continuity. This three-stage network integrates advanced preprocessing, a UNet-based segmentation model with a DenseNet121 encoder and Self-ONN decoder, and a contour refinement module. The system demonstrates superior performance compared to state-of-the-art models, making it a robust tool for supporting clinical diagnosis and treatment planning for Coronary Artery Disease (CAD).</p>
+                <p class="summary-text">CASR-Net is a novel deep learning-based three-stage pipeline developed for accurate and robust coronary artery segmentation and refinement in X-ray angiograms, specifically designed to address challenges like poor image quality and stenotic vessels. It integrates a unique multichannel preprocessing strategy, a UNet with a DenseNet121 encoder and a Self-ONN based decoder, and a contour refinement module. The model achieved state-of-the-art performance, outperforming existing methods in segmenting both healthy and stenotic arteries, thus offering a valuable clinical tool.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Early and accurate detection of coronary artery disease (CAD), including the identification of stenotic arteries, is critical for reducing patient mortality and guiding effective treatment strategies. This automated segmentation tool can significantly enhance the precision and efficiency of analyzing angiographic images, directly improving clinical diagnostic capabilities.</p>
+                <p>Accurate and automated segmentation of coronary arteries from X-ray angiograms is paramount for the early detection and precise characterization of Coronary Artery Disease (CAD). This technology directly aids clinicians in identifying stenotic regions, improving diagnostic speed, and facilitating better-informed treatment planning, which can significantly reduce morbidity and mortality associated with cardiac abnormalities.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The paper presents CASR-Net, an AI-powered image processing and deep learning model. This model automatically segments and refines coronary arteries from X-ray angiograms, aiming to assist clinicians in the early detection and diagnosis of Coronary Artery Disease (CAD) and to improve patient treatment planning by providing precise anatomical information.</p>
+                <p>The AI system, CASR-Net, is a deep learning-based model designed for automated segmentation and refinement of coronary arteries from X-ray coronary angiograms. This application provides a valuable tool to assist clinicians in the accurate and early identification of cardiac abnormalities, specifically stenotic coronary arteries, thereby improving clinical diagnosis of CAD and facilitating more effective patient treatment planning.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>CASR-Net is a three-stage deep learning pipeline comprising image preprocessing, segmentation, and refinement, specifically targeting X-ray coronary angiograms.</li>
+                    <li>**Three-stage Architecture:** CASR-Net operates through a pipeline comprising image preprocessing, deep learning-based segmentation, and a final contour refinement module.</li>
                     
-                    <li>A novel multichannel preprocessing strategy combines CLAHE (Contrast Limited Adaptive Histogram Equalization) and an improved Ben Graham method, leading to incremental performance gains (0.31-0.89% increase in DSC, 0.40-1.16% in IoU) compared to individual techniques.</li>
+                    <li>**Novel Multichannel Preprocessing:** A unique strategy combining CLAHE (Contrast Limited Adaptive Histogram Equalization) and an improved Ben Graham method provides significant incremental gains in segmentation metrics (DSC: 0.31-0.89%, IoU: 0.40-1.16%).</li>
                     
-                    <li>The core segmentation network is built on a UNet architecture, featuring a DenseNet121 encoder for robust feature extraction.</li>
+                    <li>**Advanced Segmentation Network:** The core segmentation network is a UNet variant featuring a DenseNet121 encoder and a Self-organized Operational Neural Network (Self-ONN) based decoder, specifically engineered to preserve the continuity of narrow and stenotic vessel branches.</li>
                     
-                    <li>The decoder component of the UNet is based on a Self-organized Operational Neural Network (Self-ONN), which is specifically designed to preserve the continuity of narrow and stenotic vessel branches.</li>
+                    <li>**False Positive Suppression:** A dedicated contour refinement module is implemented as the final stage to further enhance accuracy by suppressing false positive segmentations.</li>
                     
-                    <li>A final contour refinement module is incorporated to effectively suppress false positives in the segmented outputs.</li>
+                    <li>**Robust Evaluation:** The model was rigorously evaluated using 5-fold cross-validation on a combined dataset that includes both healthy and stenotic arteries, ensuring comprehensive assessment.</li>
                     
-                    <li>The model was rigorously evaluated using 5-fold cross-validation on a combined dataset of two public resources, including both healthy and stenotic arteries.</li>
+                    <li>**Superior Performance:** CASR-Net achieved an Intersection over Union (IoU) of 61.43%, a Dice Score Coefficient (DSC) of 76.10%, and a centerline Dice (clDice) of 79.36%, demonstrating superior performance compared to several state-of-the-art models.</li>
                     
-                    <li>CASR-Net achieved an IoU of 61.43%, a DSC of 76.10%, and a clDice of 79.36%, outperforming several state-of-the-art models in coronary artery segmentation.</li>
+                    <li>**Clinical Support Tool:** The robust and automated segmentation capabilities position CASR-Net as a valuable tool to support clinicians in the early diagnosis and treatment planning for Coronary Artery Disease (CAD).</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The CASR-Net employs a three-stage pipeline. The first stage involves a novel multichannel preprocessing technique combining CLAHE and an improved Ben Graham method for image enhancement. The second stage is the primary segmentation network, a UNet-based architecture where the encoder is a DenseNet121 and the decoder is built upon a Self-organized Operational Neural Network (Self-ONN), specifically designed to maintain vessel continuity. The final stage is a contour refinement module aimed at reducing false positives. The model was trained and validated using 5-fold cross-validation on two public datasets containing diverse artery conditions.</p>
+                    <p>CASR-Net utilizes a three-stage deep learning pipeline. The first stage involves a novel multichannel preprocessing strategy combining CLAHE and an improved Ben Graham method to enhance image quality. The second stage is the primary segmentation network, a UNet architecture with a DenseNet121 encoder for robust feature extraction and a Self-ONN based decoder designed to maintain vessel continuity, especially for narrow and stenotic branches. The final stage incorporates a contour refinement module to suppress false positives. The model was trained and validated using 5-fold cross-validation on public datasets containing both healthy and stenotic coronary arteries.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>CASR-Net demonstrated superior performance in coronary artery segmentation, achieving an Intersection over Union (IoU) of 61.43%, a Dice Score Coefficient (DSC) of 76.10%, and a centerline Dice (clDice) of 79.36%, thereby outperforming several existing state-of-the-art models. The integrated multichannel preprocessing strategy yielded tangible improvements, increasing DSC by 0.31-0.89% and IoU by 0.40-1.16%. The network's design, particularly the Self-ONN decoder, proved effective in preserving the continuity of narrow and stenotic vessel branches.</p>
+                    <p>The CASR-Net achieved an IoU of 61.43%, DSC of 76.10%, and clDice of 79.36%, outperforming existing state-of-the-art models. The novel multichannel preprocessing strategy alone provided significant performance gains, increasing DSC by 0.31-0.89% and IoU by 0.40-1.16%. These results confirm CASR-Net's robust ability to accurately segment coronary arteries, including challenging stenotic regions, from X-ray angiograms.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This automated and robust coronary artery segmentation tool has the potential to significantly aid clinicians in the early and accurate diagnosis of Coronary Artery Disease (CAD) by providing high-quality segmentation of coronary arteries from X-ray angiograms. It can streamline the identification of stenotic regions, support more precise treatment planning, and ultimately contribute to improved patient outcomes and reduced mortality associated with CAD.</p>
+                <p>This research provides a powerful automated tool that can significantly enhance the clinical diagnosis and treatment planning for Coronary Artery Disease (CAD). By delivering highly accurate and robust segmentation of coronary arteries from X-ray angiograms, CASR-Net can assist clinicians in rapidly and reliably identifying stenotic regions, thereby enabling earlier interventions, optimizing treatment strategies, and potentially improving patient outcomes and reducing healthcare costs associated with late diagnoses.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations of the CASR-Net model or the study conducted.</p>
+                <p>The abstract does not explicitly state limitations of the CASR-Net method itself. It highlights that 'poor image quality can significantly impede clinical diagnosis,' which CASR-Net is designed to overcome, but does not detail any inherent limitations of the proposed solution.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention any specific future research directions for the CASR-Net or related work.</p>
+                <p>The abstract does not explicitly mention future research directions for CASR-Net.</p>
             </section>
             
 
@@ -122,11 +122,11 @@
                     
                     <span class="tag">Cardiology</span>
                     
-                    <span class="tag">Interventional Radiology</span>
+                    <span class="tag">Diagnostic Radiology</span>
+                    
+                    <span class="tag">Interventional Cardiology</span>
                     
                     <span class="tag">Medical Imaging</span>
-                    
-                    <span class="tag">Diagnostic Imaging</span>
                     
                 </div>
             </section>
@@ -135,21 +135,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">coronary artery segmentation</span>
+                    <span class="tag tag-keyword">Coronary Artery Segmentation</span>
                     
-                    <span class="tag tag-keyword">deep learning</span>
-                    
-                    <span class="tag tag-keyword">X-ray angiogram</span>
-                    
-                    <span class="tag tag-keyword">CAD</span>
+                    <span class="tag tag-keyword">Deep Learning</span>
                     
                     <span class="tag tag-keyword">UNet</span>
                     
-                    <span class="tag tag-keyword">DenseNet</span>
+                    <span class="tag tag-keyword">DenseNet121</span>
                     
                     <span class="tag tag-keyword">Self-ONN</span>
                     
-                    <span class="tag tag-keyword">image processing</span>
+                    <span class="tag tag-keyword">X-ray Angiography</span>
+                    
+                    <span class="tag tag-keyword">Coronary Artery Disease (CAD)</span>
+                    
+                    <span class="tag tag-keyword">Image Preprocessing</span>
                     
                 </div>
             </section>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Versatile and Efficient Medical Image Super-Resolution Via Frequency-Gated Mamba - Health AI Hub</title>
-    <meta name="description" content="FGMamba introduces a novel frequency-aware gated state-space model designed for versatile and efficient medical image super-resolution. It unifies global depend">
+    <meta name="description" content="This paper introduces FGMamba, a novel frequency-aware gated state-space model designed for medical image super-resolution (SR). FGMamba effectively unifies glo">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">FGMamba introduces a novel frequency-aware gated state-space model designed for versatile and efficient medical image super-resolution. It unifies global dependency modeling and fine-detail enhancement into a lightweight architecture, addressing the challenge of capturing both long-range anatomical structures and fine-grained frequency details with low computational overhead. The method achieves superior PSNR/SSIM scores across five diverse medical imaging modalities while maintaining a compact parameter footprint, outperforming existing CNN-based and Transformer-based SOTAs.</p>
+                <p class="summary-text">This paper introduces FGMamba, a novel frequency-aware gated state-space model designed for medical image super-resolution (SR). FGMamba effectively unifies global dependency modeling and fine-detail enhancement through its Gated Attention-enhanced State-Space Module (GASM) and Pyramid Frequency Fusion Module (PFFM). It achieves superior diagnostic image quality (PSNR/SSIM) across five diverse medical imaging modalities with a compact parameter footprint, outperforming existing CNN and Transformer-based state-of-the-art methods.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to medicine by enabling the generation of higher-resolution medical images from lower-quality inputs, which can significantly improve the visibility of subtle pathologies and anatomical structures for more accurate diagnoses. It also contributes to reducing imaging costs and patient scanning times.</p>
+                <p>Medical image super-resolution is crucial for enhancing the clarity and detail of diagnostic images, leading to improved diagnostic accuracy, while simultaneously reducing the financial burden and patient discomfort associated with longer or higher-resolution acquisition times.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The paper presents FGMamba, a novel frequency-aware gated state-space model, as an AI-driven solution for medical image super-resolution. This AI application aims to improve the quality of medical images from various modalities (Ultrasound, OCT, MRI, CT, Endoscopic) to enhance diagnostic accuracy, reduce the cost of image acquisition, and decrease scanning times, directly impacting clinical workflows and patient outcomes.</p>
+                <p>This research develops and applies a novel AI model (frequency-aware gated state-space model called FGMamba) for medical image super-resolution. This application aims to improve the quality of medical images, thereby enhancing diagnostic accuracy for clinicians and potentially reducing the costs and time associated with medical imaging procedures.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Medical image super-resolution (SR) is critical for enhancing diagnostic accuracy, reducing acquisition costs, and decreasing scanning times.</li>
+                    <li>Addresses the challenge of simultaneously modeling long-range anatomical structures and fine-grained frequency details in medical image SR with low computational overhead.</li>
                     
-                    <li>The paper tackles the challenge of efficiently modeling both long-range anatomical structures and fine-grained frequency details in medical images.</li>
+                    <li>Proposes FGMamba, a lightweight frequency-aware gated state-space model, as a novel architecture for medical image super-resolution.</li>
                     
-                    <li>FGMamba, a frequency-aware gated state-space model, is proposed as a lightweight architecture for global dependency modeling and fine-detail enhancement.</li>
+                    <li>Introduces the Gated Attention-enhanced State-Space Module (GASM) which integrates efficient state-space modeling with dual-branch spatial and channel attention mechanisms.</li>
                     
-                    <li>It features two core innovations: a Gated Attention-enhanced State-Space Module (GASM) combining state-space modeling with dual-branch spatial and channel attention.</li>
+                    <li>Incorporates the Pyramid Frequency Fusion Module (PFFM) to capture high-frequency details across multiple resolutions through FFT-guided fusion.</li>
                     
-                    <li>The second innovation is a Pyramid Frequency Fusion Module (PFFM) that captures high-frequency details across multiple resolutions using FFT-guided fusion.</li>
+                    <li>Extensively evaluated across five medical imaging modalities: Ultrasound, OCT, MRI, CT, and Endoscopic imaging.</li>
                     
-                    <li>Extensive evaluations across Ultrasound, OCT, MRI, CT, and Endoscopic modalities demonstrate FGMamba's superior PSNR/SSIM performance.</li>
+                    <li>Achieves superior quantitative performance (PSNR/SSIM) compared to CNN-based and Transformer-based SOTA models.</li>
                     
-                    <li>FGMamba maintains a highly compact parameter footprint (less than 0.75M), significantly outperforming state-of-the-art CNN-based and Transformer-based models in both accuracy and efficiency.</li>
+                    <li>Maintains a highly compact parameter footprint (<0.75M), validating its efficiency and scalability for practical deployment in clinical settings.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The proposed FGMamba model is a frequency-aware gated state-space model. Its architecture comprises two primary modules: 1) the **Gated Attention-enhanced State-Space Module (GASM)**, which integrates efficient state-space modeling with a dual-branch mechanism for spatial and channel attention to capture global dependencies and refine features; and 2) the **Pyramid Frequency Fusion Module (PFFM)**, designed to extract and fuse high-frequency details across multiple resolutions using Fast Fourier Transform (FFT) for guided fusion. This design prioritizes lightweight architecture for computational efficiency.</p>
+                    <p>The proposed FGMamba model is a frequency-aware gated state-space model. It integrates a Gated Attention-enhanced State-Space Module (GASM), which combines state-space modeling for global dependencies with dual-branch spatial and channel attention for feature refinement. Additionally, a Pyramid Frequency Fusion Module (PFFM) is utilized to extract and fuse high-frequency details across various resolutions, guided by Fast Fourier Transform (FFT) analysis.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>FGMamba achieved superior quantitative performance, indicated by higher PSNR and SSIM metrics, compared to existing CNN-based and Transformer-based state-of-the-art super-resolution methods. This robust performance was validated across a diverse set of five medical imaging modalities: Ultrasound, OCT, MRI, CT, and Endoscopic imaging. Notably, FGMamba accomplished these results with a highly compact parameter footprint, demonstrating high computational efficiency with less than 0.75 million parameters.</p>
+                    <p>FGMamba consistently achieves superior PSNR and SSIM scores across five diverse medical imaging modalities (Ultrasound, OCT, MRI, CT, Endoscopic) compared to existing state-of-the-art CNN and Transformer-based SR methods. Furthermore, it does so with a remarkably compact parameter footprint, less than 0.75 million, demonstrating its efficiency and scalability.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The enhanced image quality and computational efficiency of FGMamba hold significant clinical impact. It can lead to more precise and earlier disease detection, improved surgical planning, and better monitoring of treatment responses by providing clearer diagnostic images. The ability to achieve high resolution from lower-resolution inputs can also reduce patient exposure to radiation (e.g., lower dose CT scans), shorten scanning times, and potentially lower healthcare costs associated with medical imaging, making high-quality diagnostics more accessible.</p>
+                <p>This technology has the potential to significantly enhance diagnostic accuracy by providing clearer, higher-resolution medical images from lower-resolution inputs. This can lead to earlier and more precise disease detection, reduce the need for repeat scans, decrease acquisition costs, and shorten patient scanning times, thereby improving overall patient experience and healthcare efficiency.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations or caveats of the proposed method or the study itself. Common potential limitations for such research, not specified here, might include reliance on specific datasets, lack of prospective clinical validation, or generalizability to all possible clinical scenarios or rare pathologies.</p>
+                <p>The abstract does not explicitly state any limitations of the proposed method or study. However, common limitations for such models might include generalization to very rare pathologies or specific artifact types not encountered in training data, or the need for extensive clinical validation in real-world settings.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention future research directions.</p>
+                <p>The abstract does not explicitly suggest future research directions. Potential future work could involve exploring real-time implementation for live imaging, integration with clinical decision support systems, or investigating the model's performance on 3D medical image SR.</p>
             </section>
             
 
@@ -128,7 +128,7 @@
                     
                     <span class="tag">Computed Tomography (CT)</span>
                     
-                    <span class="tag">Endoscopic Imaging</span>
+                    <span class="tag">Endoscopy</span>
                     
                 </div>
             </section>
@@ -137,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Medical Image Super-Resolution</span>
+                    <span class="tag tag-keyword">medical image super-resolution</span>
+                    
+                    <span class="tag tag-keyword">state-space models</span>
                     
                     <span class="tag tag-keyword">Mamba</span>
                     
-                    <span class="tag tag-keyword">State-Space Models</span>
+                    <span class="tag tag-keyword">frequency analysis</span>
                     
-                    <span class="tag tag-keyword">Frequency-Gated</span>
+                    <span class="tag tag-keyword">attention mechanisms</span>
                     
-                    <span class="tag tag-keyword">Deep Learning</span>
+                    <span class="tag tag-keyword">deep learning</span>
                     
-                    <span class="tag tag-keyword">Diagnostic Imaging</span>
+                    <span class="tag tag-keyword">diagnostic imaging</span>
                     
-                    <span class="tag tag-keyword">Image Enhancement</span>
-                    
-                    <span class="tag tag-keyword">Computational Efficiency</span>
+                    <span class="tag tag-keyword">image enhancement</span>
                     
                 </div>
             </section>

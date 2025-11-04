@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PETAR: Localized Findings Generation with Mask-Aware Vision-Language Modeling for PET Automated Reporting - Health AI Hub</title>
-    <meta name="description" content="This paper introduces PETAR-4B, a 3D mask-aware vision-language model designed for automated generation of localized findings in PET/CT radiology reports. It ad">
+    <meta name="description" content="This paper introduces PETAR-4B, a 3D mask-aware vision-language model designed for automated generation of localized findings in PET/CT radiology reports. The a">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces PETAR-4B, a 3D mask-aware vision-language model designed for automated generation of localized findings in PET/CT radiology reports. It addresses the challenge of applying VLMs to complex 3D medical imaging by creating a large-scale dataset of over 11,000 lesion-level descriptions with 3D segmentations and integrating PET, CT, and lesion contours into a unified model, demonstrating significant improvements in report generation quality.</p>
+                <p class="summary-text">This paper introduces PETAR-4B, a 3D mask-aware vision-language model designed for automated generation of localized findings in PET/CT radiology reports. The authors address the limitation of current medical VLMs to 2D imaging by extending them to complex 3D PET/CT data, leveraging a newly created large-scale dataset of over 11,000 lesion descriptions. PETAR-4B integrates PET, CT, and lesion contour information, significantly improving the quality of report generation through comprehensive automated and human evaluations.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This work is highly relevant for medical imaging and diagnostics, as it enables more accurate, consistent, and automated interpretation of complex 3D PET/CT scans, which are critical for diagnosing and monitoring diseases like cancer.</p>
+                <p>This work is highly relevant to medical imaging and radiology as it offers a significant advancement in automating the generation of detailed and localized findings for PET/CT reports, potentially reducing radiologist workload, improving report consistency, and accelerating diagnosis for complex conditions like cancer.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is the automated generation of spatially grounded and clinically coherent radiology reports for PET/CT scans, integrating multimodal medical imaging data (PET, CT) and lesion contours with textual descriptions to assist radiologists in diagnosis and streamline reporting workflows.</p>
+                <p>The AI application is an advanced vision-language model (PETAR-4B) designed to automate and improve the generation of clinical radiology reports from 3D PET/CT scans. It integrates PET, CT, and lesion contours to provide spatially grounded, clinically coherent, and localized findings, thereby assisting radiologists, enhancing diagnostic accuracy, and streamlining the reporting process in healthcare.</p>
             </section>
             
 
@@ -68,19 +68,17 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the limitation of most medical VLMs to 2D imaging, extending them to the complex 3D volumetric data of PET/CT, which features small, dispersed lesions and lengthy reports.</li>
+                    <li>Addresses the gap in medical vision-language models (VLMs) by extending them from 2D to 3D Positron Emission Tomography/Computed Tomography (PET/CT) imaging.</li>
                     
-                    <li>Introduces a novel, large-scale dataset comprising over 11,000 lesion-level descriptions paired with 3D segmentations, derived from more than 5,000 PET/CT exams.</li>
+                    <li>Introduces a novel, large-scale dataset comprising over 11,000 lesion-level descriptions with 3D segmentations, extracted from more than 5,000 PET/CT exams using a hybrid rule-based and LLM pipeline.</li>
                     
-                    <li>The dataset creation leverages an innovative hybrid pipeline combining rule-based methods and Large Language Models (LLMs) for extracting structured information.</li>
+                    <li>Proposes PETAR-4B, a 3D mask-aware VLM specifically designed to integrate PET, CT, and lesion contours for spatially grounded and localized report generation.</li>
                     
-                    <li>Proposes PETAR-4B, a 3D mask-aware vision-language model that integrates multi-modal inputs: PET images, CT images, and 3D lesion contours.</li>
+                    <li>PETAR-4B bridges global contextual reasoning with fine-grained lesion awareness, enabling the production of clinically coherent and detailed findings.</li>
                     
-                    <li>PETAR-4B is designed to provide spatially grounded report generation, effectively bridging global contextual reasoning with fine-grained, lesion-specific awareness.</li>
+                    <li>Demonstrates substantial improvements in PET/CT report generation quality through rigorous automated and human evaluations.</li>
                     
-                    <li>The model produces clinically coherent and localized findings, moving beyond global summaries to detailed, segment-specific descriptions.</li>
-                    
-                    <li>Comprehensive automated and human evaluations validate that PETAR substantially improves the quality of PET/CT report generation, advancing 3D medical vision-language understanding.</li>
+                    <li>Aims to advance 3D medical vision-language understanding and automated reporting capabilities for complex volumetric data.</li>
                     
                 </ul>
             </section>
@@ -88,31 +86,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The methodology involved two core components: 1) **Dataset Construction**: A large-scale dataset was assembled from over 5,000 PET/CT exams, generating >11,000 lesion-level descriptions and corresponding 3D segmentations using a hybrid pipeline combining rule-based methods and Large Language Models (LLMs). 2) **Model Development (PETAR-4B)**: A 3D mask-aware vision-language model was proposed. This model integrates volumetric PET and CT images along with 3D lesion contours as input to generate spatially grounded and localized findings for radiology reports, utilizing both global contextual reasoning and fine-grained lesion awareness.</p>
+                    <p>The methodology involves two main components: 1) **Dataset Creation**: A large-scale dataset with over 11,000 lesion-level descriptions and corresponding 3D segmentations from more than 5,000 PET/CT exams was curated using a hybrid pipeline combining rule-based methods and Large Language Models (LLMs). 2) **Model Development**: PETAR-4B, a 3D mask-aware Vision-Language Model, was developed. This model is designed to integrate volumetric PET and CT images along with 3D lesion contours to generate spatially grounded medical reports. The model's performance was evaluated using both automated metrics and human expert review.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The key findings include the successful creation of a novel, large-scale, and annotated 3D PET/CT dataset through an innovative hybrid rule-based/LLM pipeline. More importantly, PETAR-4B, a 3D mask-aware VLM, demonstrated the ability to effectively integrate multi-modal 3D imaging data (PET, CT, lesion contours) to generate clinically coherent and localized findings. Evaluations, both automated and human, confirmed that PETAR substantially improves the quality of automated PET/CT report generation, significantly advancing the field of 3D medical vision-language understanding.</p>
+                    <p>The PETAR-4B model substantially improves the quality of PET/CT report generation, producing clinically coherent and localized findings. Comprehensive automated and human evaluations consistently demonstrated its superior performance in generating spatially grounded descriptions of lesions compared to existing methods, thereby significantly advancing 3D medical vision-language understanding.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research has significant potential to revolutionize PET/CT reporting by automating the generation of localized and clinically coherent findings. This could reduce the cognitive load and dictation time for radiologists, increase report consistency and standardization, and potentially improve diagnostic accuracy and efficiency in busy clinical settings, particularly for conditions requiring detailed lesion analysis such as oncology. It could also serve as a foundational tool for training, quality control, and large-scale research in medical imaging.</p>
+                <p>The potential clinical impact is significant, including the acceleration of PET/CT reporting, reduction of cognitive burden on radiologists, and improved standardization and consistency of reports. By generating precise, localized findings automatically, PETAR-4B could assist in earlier and more accurate diagnosis, treatment planning, and monitoring of diseases, especially in oncology.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Not explicitly mentioned in the abstract.</p>
+                <p>The abstract does not explicitly state limitations. Potential implicit limitations might include generalizability to diverse scanner protocols, disease types beyond those represented in the training data, and the need for robust validation in real-world clinical workflows.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not explicitly mentioned in the abstract.</p>
+                <p>The abstract does not explicitly state future research directions. Potential future work could involve expanding the dataset to include a wider variety of pathologies and annotations, exploring real-time application in clinical settings, and investigating the integration of longitudinal study data for disease progression analysis.</p>
             </section>
             
 
@@ -120,15 +118,13 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Oncology</span>
+                    <span class="tag">Radiology</span>
                     
-                    <span class="tag">Diagnostic Radiology</span>
+                    <span class="tag">Oncology</span>
                     
                     <span class="tag">Nuclear Medicine</span>
                     
-                    <span class="tag">Medical Imaging Informatics</span>
-                    
-                    <span class="tag">AI in Healthcare</span>
+                    <span class="tag">Diagnostic Imaging</span>
                     
                 </div>
             </section>
@@ -141,17 +137,17 @@
                     
                     <span class="tag tag-keyword">Vision-Language Model</span>
                     
-                    <span class="tag tag-keyword">3D Medical Imaging</span>
+                    <span class="tag tag-keyword">3D Imaging</span>
                     
                     <span class="tag tag-keyword">Automated Reporting</span>
                     
                     <span class="tag tag-keyword">Lesion Segmentation</span>
                     
-                    <span class="tag tag-keyword">Deep Learning</span>
-                    
-                    <span class="tag tag-keyword">Multimodal AI</span>
+                    <span class="tag tag-keyword">Mask-Aware Modeling</span>
                     
                     <span class="tag tag-keyword">Radiology</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
                     
                 </div>
             </section>
