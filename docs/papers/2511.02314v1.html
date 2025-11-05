@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Large-scale automatic carbon ion treatment planning for head and neck cancers via parallel multi-agent reinforcement learning - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel multi-agent reinforcement learning (MARL) framework for the automatic and parallel optimization of 45 treatment planning parameter">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Large-scale automatic carbon ion treatment planning for head and neck cancers via parallel multi-agent reinforcement learning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.02314v1" target="_blank">2511.02314v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Jueye Zhang, Chao Yang, Youfang Lai, Kai-Wen Li, Wenting Yan, Yunzhou Xia, Haimei Zhang, Jingjing Zhou, Gen Yang, Chen Lin, Tian Li, Yibao Zhang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, physics.med-ph
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.02314v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.02314v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel multi-agent reinforcement learning (MARL) framework for the automatic and parallel optimization of 45 treatment planning parameters in intensity-modulated carbon-ion therapy (IMCT) for head and neck cancers (HNC). The method successfully addresses the challenges of complex HNC planning and the limitations of prior deep learning and single-agent RL approaches, producing clinically competitive plans that significantly improve organ-at-risk (OAR) sparing compared to expert manual planning.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to radiation oncology as it addresses the critical need for efficient and high-quality treatment planning for head and neck cancers, where precise dose delivery and OAR sparing are paramount. By automating a complex, labor-intensive process, it can enhance plan consistency, reduce planning time, and potentially lead to better patient outcomes with fewer treatment-related side effects.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of a scalable multi-agent reinforcement learning (MARL) framework for large-scale automatic carbon ion treatment planning. This framework optimizes numerous treatment-planning parameters simultaneously to generate clinically competitive plans for head and neck cancers, specifically aiming to improve dose conformity and significantly enhance OAR sparing.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Head-and-neck cancer (HNC) planning is challenging due to the proximity of critical organs-at-risk (OARs) to complex targets, and IMCT planning is slow and laborious due to RBE modeling and many parameters.</li>
+                    
+                    <li>The proposed solution is a scalable multi-agent RL (MARL) framework designed for the parallel tuning of 45 treatment-planning parameters (TPPs) in IMCT.</li>
+                    
+                    <li>The MARL framework utilizes a centralized-training decentralized-execution (CTDE) QMIX backbone, incorporating Double DQN, Dueling DQN, and recurrent encoding (DRQN) for stable learning in a high-dimensional, non-stationary environment.</li>
+                    
+                    <li>Efficiency is enhanced through the use of compact historical DVH vectors as state inputs, a linear action-to-value transform for uniform parameter adjustments, and an absolute, clinically informed piecewise reward function.</li>
+                    
+                    <li>A synchronous multi-process worker system directly interfaces with the PHOENIX Treatment Planning System (TPS) to enable parallel optimization and accelerate data collection for the RL agents.</li>
+                    
+                    <li>On a HNC dataset (10 training, 10 testing), the method generated plans with a relative plan score ($85.93\pm7.85%$) comparable to or better than expert manual plans ($85.02\pm6.92%$).</li>
+                    
+                    <li>The automated planning significantly improved sparing for five critical OARs, demonstrating statistical significance (p-value < 0.05) over manual planning.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study employs a scalable multi-agent reinforcement learning (MARL) framework with a centralized-training decentralized-execution (CTDE) QMIX backbone. This backbone integrates Double DQN, Dueling DQN, and recurrent encoding (DRQN) to handle high-dimensional, non-stationary environments. The system uses compact historical Dose-Volume Histogram (DVH) vectors as state inputs, maps small discrete actions to uniform parameter adjustments via a linear action-to-value transform, and utilizes a clinically informed piecewise reward function. A synchronous multi-process worker system facilitates parallel optimization and data collection by directly interacting with the PHOENIX Treatment Planning System (TPS).</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The MARL framework successfully tuned 45 treatment planning parameters simultaneously, producing IMCT plans for HNC that were comparable to or superior to expert manual plans (relative plan score: RL $85.93\pm7.85%$ vs Manual $85.02\pm6.92%$). Most notably, the automated approach achieved significant improvements (p-value < 0.05) in sparing five critical organs-at-risk, demonstrating its capability to enhance treatment quality.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This automated planning system has the potential to significantly streamline and standardize the complex process of IMCT planning for HNC, reducing the reliance on extensive expert experience and manual tuning. By consistently generating high-quality plans with superior OAR sparing, it can lead to reduced treatment toxicities, improved functional outcomes for patients (e.g., swallowing, speech), and an overall enhanced quality of life after cancer treatment, while also improving the accessibility and consistency of advanced carbon-ion therapy.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The study was evaluated on a relatively small dataset (10 training and 10 testing cases for HNC), which might limit the generalizability of the findings to a broader and more diverse patient population or different anatomical sites/cancer types. The abstract does not specify the generalizability to other TPS platforms beyond PHOENIX.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiation Oncology</span>
+                    
+                    <span class="tag">Medical Physics</span>
+                    
+                    <span class="tag">Head and Neck Surgery</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">carbon-ion therapy</span>
+                    
+                    <span class="tag tag-keyword">head and neck cancer</span>
+                    
+                    <span class="tag tag-keyword">treatment planning</span>
+                    
+                    <span class="tag tag-keyword">reinforcement learning</span>
+                    
+                    <span class="tag tag-keyword">multi-agent reinforcement learning</span>
+                    
+                    <span class="tag tag-keyword">OAR sparing</span>
+                    
+                    <span class="tag tag-keyword">intensity-modulated</span>
+                    
+                    <span class="tag tag-keyword">medical physics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Head-and-neck cancer (HNC) planning is difficult because multiple critical
+organs-at-risk (OARs) are close to complex targets. Intensity-modulated
+carbon-ion therapy (IMCT) offers superior dose conformity and OAR sparing but
+remains slow due to relative biological effectiveness (RBE) modeling, leading
+to laborious, experience-based, and often suboptimal tuning of many
+treatment-planning parameters (TPPs). Recent deep learning (DL) methods are
+limited by data bias and plan feasibility, while reinforcement learning (RL)
+struggles to efficiently explore the exponentially large TPP search space. We
+propose a scalable multi-agent RL (MARL) framework for parallel tuning of 45
+TPPs in IMCT. It uses a centralized-training decentralized-execution (CTDE)
+QMIX backbone with Double DQN, Dueling DQN, and recurrent encoding (DRQN) for
+stable learning in a high-dimensional, non-stationary environment. To enhance
+efficiency, we (1) use compact historical DVH vectors as state inputs, (2)
+apply a linear action-to-value transform mapping small discrete actions to
+uniform parameter adjustments, and (3) design an absolute, clinically informed
+piecewise reward aligned with plan scores. A synchronous multi-process worker
+system interfaces with the PHOENIX TPS for parallel optimization and
+accelerated data collection. On a head-and-neck dataset (10 training, 10
+testing), the method tuned 45 parameters simultaneously and produced plans
+comparable to or better than expert manual ones (relative plan score: RL
+$85.93\pm7.85%$ vs Manual $85.02\pm6.92%$), with significant (p-value $<$ 0.05)
+improvements for five OARs. The framework efficiently explores high-dimensional
+TPP spaces and generates clinically competitive IMCT plans through direct TPS
+interaction, notably improving OAR sparing.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

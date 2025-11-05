@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STAR-VAE: Latent Variable Transformers for Scalable and Controllable Molecular Generation - Health AI Hub</title>
+    <meta name="description" content="STAR-VAE is a novel Transformer-based Variational AutoEncoder designed for scalable and controllable molecular generation, trained on 79 million drug-like molec">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>STAR-VAE: Latent Variable Transformers for Scalable and Controllable Molecular Generation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.02769v1" target="_blank">2511.02769v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Bum Chul Kwon, Ben Shapira, Moshiko Raboh, Shreyans Sethi, Shruti Murarka, Joseph A Morrone, Jianying Hu, Parthasarathy Suryanarayanan
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI, q-bio.BM
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.02769v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.02769v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">STAR-VAE is a novel Transformer-based Variational AutoEncoder designed for scalable and controllable molecular generation, trained on 79 million drug-like molecules using SELFIES to ensure chemical validity. It introduces a principled conditional latent-variable formulation and efficient LoRA finetuning, achieving competitive performance on benchmarks and demonstrating property-guided generation of molecules with improved predicted binding affinity.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This technology directly accelerates early-stage drug discovery by enabling the rapid, targeted generation of novel drug-like molecules with desired properties, which can significantly reduce the time and cost associated with identifying promising therapeutic candidates.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI model (STAR-VAE) is designed to autonomously generate novel molecular structures with specific, desired chemical and biological properties (e.g., strong binding affinity to a target protein, favorable physicochemical properties). This application significantly accelerates the early stages of drug discovery by efficiently exploring the vast chemical space to identify potential drug candidates, thereby reducing the time and cost associated with developing new medicines.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>STAR-VAE is a Selfies-encoded, Transformer-based, AutoRegressive Variational Auto Encoder (VAE), ensuring syntactically valid molecular outputs.</li>
+                    
+                    <li>It was trained on a massive dataset of 79 million drug-like molecules from PubChem, highlighting its scalability.</li>
+                    
+                    <li>A principled conditional latent-variable formulation enables property-guided generation, where a property predictor supplies a conditioning signal consistently across the latent prior, inference network, and decoder.</li>
+                    
+                    <li>The model incorporates efficient finetuning through Low-Rank Adapters (LoRA) in both its Transformer encoder and decoder, facilitating rapid adaptation with limited experimental data.</li>
+                    
+                    <li>Achieves competitive or superior performance on general molecular generation benchmarks such as GuacaMol and MOSES.</li>
+                    
+                    <li>Latent-space analyses reveal smooth, semantically structured representations, crucial for both broad unconditional exploration and targeted property-aware generation.</li>
+                    
+                    <li>On Tartarus benchmarks, the conditional model successfully shifts generated molecule distributions toward stronger predicted binding scores, demonstrating effective control over desired properties relevant to drug efficacy.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>STAR-VAE is a latent-variable framework utilizing a Transformer encoder and an autoregressive Transformer decoder. It uses SELFIES (Simplified Molecular Input Line Entry System for Easier Synthesis) as input representations to guarantee chemical validity and was trained on 79 million PubChem drug-like molecules. Conditional generation is implemented by applying a property predictor's signal consistently to the latent prior, the inference network, and the decoder. Parameter-efficient finetuning is achieved using Low-Rank Adapters (LoRA) integrated into both the encoder and decoder.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>STAR-VAE matches or exceeds baselines on general molecular generation benchmarks (GuacaMol, MOSES). Latent-space analyses demonstrate smooth and semantically structured representations, supporting both unconditional exploration and property-aware generation. Critically, the conditional model successfully shifts docking-score distributions towards stronger predicted binding on Tartarus benchmarks, indicating its efficacy in property-guided molecular design.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly impact drug development by providing a more efficient method for discovering novel drug candidates. By generating molecules with precisely tailored properties, it could accelerate the pipeline for new therapeutics, potentially leading to faster development of treatments for various diseases and improving drug safety and efficacy profiles.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations or caveats of the STAR-VAE model or its methodology.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions for STAR-VAE.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medicinal Chemistry</span>
+                    
+                    <span class="tag">Pharmacology</span>
+                    
+                    <span class="tag">Drug Design</span>
+                    
+                    <span class="tag">Computational Biology</span>
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">molecular generation</span>
+                    
+                    <span class="tag tag-keyword">drug discovery</span>
+                    
+                    <span class="tag tag-keyword">generative models</span>
+                    
+                    <span class="tag tag-keyword">VAE</span>
+                    
+                    <span class="tag tag-keyword">Transformers</span>
+                    
+                    <span class="tag tag-keyword">SELFIES</span>
+                    
+                    <span class="tag tag-keyword">conditional generation</span>
+                    
+                    <span class="tag tag-keyword">LoRA</span>
+                    
+                    <span class="tag tag-keyword">binding affinity</span>
+                    
+                    <span class="tag tag-keyword">cheminformatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">The chemical space of drug-like molecules is vast, motivating the development
+of generative models that must learn broad chemical distributions, enable
+conditional generation by capturing structure-property representations, and
+provide fast molecular generation. Meeting the objectives depends on modeling
+choices, including the probabilistic modeling approach, the conditional
+generative formulation, the architecture, and the molecular input
+representation. To address the challenges, we present STAR-VAE
+(Selfies-encoded, Transformer-based, AutoRegressive Variational Auto Encoder),
+a scalable latent-variable framework with a Transformer encoder and an
+autoregressive Transformer decoder. It is trained on 79 million drug-like
+molecules from PubChem, using SELFIES to guarantee syntactic validity. The
+latent-variable formulation enables conditional generation: a property
+predictor supplies a conditioning signal that is applied consistently to the
+latent prior, the inference network, and the decoder. Our contributions are:
+(i) a Transformer-based latent-variable encoder-decoder model trained on
+SELFIES representations; (ii) a principled conditional latent-variable
+formulation for property-guided generation; and (iii) efficient finetuning with
+low-rank adapters (LoRA) in both encoder and decoder, enabling fast adaptation
+with limited property and activity data. On the GuacaMol and MOSES benchmarks,
+our approach matches or exceeds baselines, and latent-space analyses reveal
+smooth, semantically structured representations that support both unconditional
+exploration and property-aware generation. On the Tartarus benchmarks, the
+conditional model shifts docking-score distributions toward stronger predicted
+binding. These results suggest that a modernized, scale-appropriate VAE remains
+competitive for molecular generation when paired with principled conditioning
+and parameter-efficient finetuning.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>16 pages, 3 figures, 2 tables</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

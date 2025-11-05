@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoFlow: Causal Generative Flows for Interventional and Counterfactual Time-Series Prediction - Health AI Hub</title>
+    <meta name="description" content="DoFlow introduces a flow-based generative model that integrates causal reasoning into time-series forecasting, enabling accurate observational predictions, inte">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>DoFlow: Causal Generative Flows for Interventional and Counterfactual Time-Series Prediction</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.02137v1" target="_blank">2511.02137v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Dongze Wu, Feng Qiu, Yao Xie
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> stat.ML, cs.LG, stat.ME
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.02137v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.02137v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">DoFlow introduces a flow-based generative model that integrates causal reasoning into time-series forecasting, enabling accurate observational predictions, interventional forecasting, and counterfactual analysis by leveraging continuous normalizing flows over a causal DAG. Beyond prediction, it provides explicit trajectory likelihoods for principled anomaly detection, demonstrating robust performance on synthetic, hydropower, and real-world cancer treatment time series data.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine by enabling a deeper understanding of dynamic physiological processes and treatment effects, moving beyond mere correlation to causal inference. It allows for predicting patient outcomes under specific interventions (e.g., drug dosages) and exploring 'what-if' counterfactual scenarios (e.g., alternative treatments), crucial for personalized medicine and optimal clinical decision-making.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>DoFlow can be applied in health to forecast disease progression, predict patient responses to different treatment interventions ('what if we change the dosage?'), analyze counterfactual scenarios ('what would have happened if the patient received a different treatment?'), and detect anomalies in patient health time-series data (e.g., early signs of relapse, adverse drug reactions, or sudden changes in physiological parameters like vital signs in an ICU setting). Specifically for cancer treatment, it could model the causal effects of various therapies on tumor markers or patient outcomes over time.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>DoFlow is a flow-based generative model structured over a causal Directed Acyclic Graph (DAG) for time-series prediction.</li>
+                    
+                    <li>It utilizes Continuous Normalizing Flows (CNFs) for both encoding observed data and decoding future trajectories, facilitating coherent observational, interventional, and counterfactual predictions.</li>
+                    
+                    <li>The model provides explicit likelihoods for future time-series trajectories, enabling principled anomaly detection capabilities.</li>
+                    
+                    <li>Theoretical support for counterfactual recovery is provided, albeit under certain specified assumptions.</li>
+                    
+                    <li>Evaluations were conducted on synthetic datasets (with various causal DAGs), a real-world hydropower system, and critical real-world cancer treatment time series.</li>
+                    
+                    <li>DoFlow achieves accurate system-wide observational forecasting and successfully enables causal forecasting for interventional and counterfactual queries.</li>
+                    
+                    <li>The model effectively detects anomalies in time-series data, showcasing its utility beyond pure prediction.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>DoFlow employs a flow-based generative model defined on a causal DAG, where latent variables evolve according to a learned dynamics. It leverages Continuous Normalizing Flows (CNFs) to transform simple base distributions into complex data distributions, facilitating the natural encoding and decoding of time-series data. This allows for the generation of observational predictions, as well as predictions under specific interventions (do-operators) and counterfactual queries by manipulating the latent space and flow structure.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The key findings demonstrate that DoFlow achieves accurate system-wide observational forecasting across diverse datasets. Critically, it successfully enables causal forecasting for interventional and counterfactual queries, providing reliable predictions for scenarios where specific variables are manipulated or alternative histories are considered. Furthermore, its ability to compute explicit likelihoods of future trajectories translates into effective anomaly detection.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>Clinically, DoFlow could empower physicians with advanced tools for personalized medicine. It could predict individual patient responses to different treatment regimens (interventions), optimize treatment protocols by simulating various options, and help understand why a patient's outcome differed from an expected path (counterfactuals). This capability is vital for proactive management of diseases, minimizing adverse effects, and improving patient care by providing causal insights into complex biological systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract notes that the supporting counterfactual recovery result is achieved 'under certain assumptions.' This implies that the robustness and validity of DoFlow's counterfactual predictions are conditional on these underlying assumptions holding true, which might be a limiting factor in highly complex or poorly characterized real-world clinical environments where all causal relationships and exogenous confounders are not perfectly known or modeled.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>This work contributes to the broader goal of unifying causal reasoning and generative modeling for complex dynamical systems. Future research could focus on extending DoFlow's capabilities to even more intricate causal structures, integrating diverse data modalities, or exploring its application in real-time adaptive clinical decision-making systems, further bridging the gap between theoretical causal inference and practical generative modeling in healthcare.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Intensive Care Medicine</span>
+                    
+                    <span class="tag">Chronic Disease Management</span>
+                    
+                    <span class="tag">Pharmacogenomics</span>
+                    
+                    <span class="tag">Treatment Optimization</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Causal Inference</span>
+                    
+                    <span class="tag tag-keyword">Time-Series Forecasting</span>
+                    
+                    <span class="tag tag-keyword">Generative Models</span>
+                    
+                    <span class="tag tag-keyword">Continuous Normalizing Flows</span>
+                    
+                    <span class="tag tag-keyword">Interventional Prediction</span>
+                    
+                    <span class="tag tag-keyword">Counterfactuals</span>
+                    
+                    <span class="tag tag-keyword">Anomaly Detection</span>
+                    
+                    <span class="tag tag-keyword">Dynamic Systems</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Time-series forecasting increasingly demands not only accurate observational
+predictions but also causal forecasting under interventional and counterfactual
+queries in multivariate systems. We present DoFlow, a flow based generative
+model defined over a causal DAG that delivers coherent observational and
+interventional predictions, as well as counterfactuals through the natural
+encoding and decoding mechanism of continuous normalizing flows (CNFs). We also
+provide a supporting counterfactual recovery result under certain assumptions.
+Beyond forecasting, DoFlow provides explicit likelihoods of future
+trajectories, enabling principled anomaly detection. Experiments on synthetic
+datasets with various causal DAG and real world hydropower and cancer treatment
+time series show that DoFlow achieves accurate system-wide observational
+forecasting, enables causal forecasting over interventional and counterfactual
+queries, and effectively detects anomalies. This work contributes to the
+broader goal of unifying causal reasoning and generative modeling for complex
+dynamical systems.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
