@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subsampled Randomized Fourier GaLore for Adapting Foundation Models in Depth-Driven Liver Landmark Segmentation - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a depth-guided liver landmark segmentation framework for laparoscopic surgery, integrating semantic RGB and geometric depth features using">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Subsampled Randomized Fourier GaLore for Adapting Foundation Models in Depth-Driven Liver Landmark Segmentation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.03163v1" target="_blank">2511.03163v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-05
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Yun-Chen Lin, Jiayuan Huang, Hanyuan Zhang, Sergi Kavtaradze, Matthew J. Clarkson, Mobarak I. Hoque
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.03163v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.03163v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a depth-guided liver landmark segmentation framework for laparoscopic surgery, integrating semantic RGB and geometric depth features using SAM2 and DA2 encoders. A novel low-rank gradient projection method, SRFT-GaLore, is proposed for efficient fine-tuning of SAM2's high-dimensional attention layers, leveraging Subsampled Randomized Fourier Transform. The method achieves significant performance improvements and strong cross-dataset generalization on both public L3D and a newly constructed Laparoscopic Liver Surgical Dataset (LLSD).</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Precise intraoperative localization of liver landmarks is fundamental for computer-assisted interventions in laparoscopic liver surgery, enhancing surgical accuracy, planning, and safety by overcoming limitations of 2D video depth perception.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of a real-time, depth-guided segmentation system for anatomical landmarks in laparoscopic liver surgery. This system uses advanced vision foundation models and a novel efficient fine-tuning method to improve the accuracy and robustness of identifying critical structures, thereby enhancing computer-assisted interventions and potentially improving surgical outcomes by compensating for limited depth perception in 2D video feeds.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical challenge of accurate liver landmark localization in laparoscopic surgery, which is hindered by limited depth perception in 2D video streams.</li>
+                    
+                    <li>Proposes a dual-encoder architecture integrating RGB features from SAM2 and depth-aware features from DA2 to leverage both semantic and geometric cues.</li>
+                    
+                    <li>Introduces SRFT-GaLore, a novel low-rank gradient projection method that replaces computationally expensive SVD with a Subsampled Randomized Fourier Transform for efficient fine-tuning of SAM2's attention layers.</li>
+                    
+                    <li>Employs a cross-attention fusion module to effectively integrate the features extracted from the RGB and depth encoders.</li>
+                    
+                    <li>Constructs a new Laparoscopic Liver Surgical Dataset (LLSD) to serve as an external validation benchmark for assessing cross-dataset generalization.</li>
+                    
+                    <li>Achieves a 4.85% improvement in Dice Similarity Coefficient and an 11.78-point reduction in Average Symmetric Surface Distance on the public L3D dataset compared to the D2GPLand baseline.</li>
+                    
+                    <li>Demonstrates strong cross-dataset robustness and adaptability by maintaining competitive performance and significantly outperforming SAM-based baselines on the LLSD dataset.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed framework utilizes a dual-encoder setup, with the Segment Anything Model V2 (SAM2) encoder for RGB feature extraction and the Depth Anything V2 (DA2) encoder for depth-aware feature extraction. To efficiently adapt SAM2, SRFT-GaLore is introduced, a low-rank gradient projection method employing a Subsampled Randomized Fourier Transform instead of SVD for fine-tuning high-dimensional attention layers. A cross-attention fusion module then integrates these semantic RGB and geometric depth cues. Model generalization was assessed on the public L3D dataset and a newly constructed Laparoscopic Liver Surgical Dataset (LLSD).</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The method achieved a 4.85% improvement in Dice Similarity Coefficient and an 11.78-point reduction in Average Symmetric Surface Distance on the L3D dataset when compared to D2GPLand. On the LLSD dataset, the model maintained competitive performance, significantly outperforming SAM-based baselines, demonstrating robust cross-dataset generalization and adaptability to unseen surgical environments.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology can provide scalable and precise real-time liver landmark segmentation during laparoscopic liver surgery, potentially improving surgical accuracy, guidance, and patient safety by enhancing depth perception and anatomical localization in challenging, depth-constrained environments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">General Surgery</span>
+                    
+                    <span class="tag">Hepatic Surgery</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Computer-Assisted Surgery</span>
+                    
+                    <span class="tag">Interventional Radiology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Liver landmark segmentation</span>
+                    
+                    <span class="tag tag-keyword">Laparoscopic surgery</span>
+                    
+                    <span class="tag tag-keyword">Foundation models</span>
+                    
+                    <span class="tag tag-keyword">SAM2</span>
+                    
+                    <span class="tag tag-keyword">Depth-guided</span>
+                    
+                    <span class="tag tag-keyword">SRFT-GaLore</span>
+                    
+                    <span class="tag tag-keyword">Medical imaging</span>
+                    
+                    <span class="tag tag-keyword">Computer-assisted intervention</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate detection and delineation of anatomical structures in medical
+imaging are critical for computer-assisted interventions, particularly in
+laparoscopic liver surgery where 2D video streams limit depth perception and
+complicate landmark localization. While recent works have leveraged monocular
+depth cues for enhanced landmark detection, challenges remain in fusing RGB and
+depth features and in efficiently adapting large-scale vision models to
+surgical domains. We propose a depth-guided liver landmark segmentation
+framework integrating semantic and geometric cues via vision foundation
+encoders. We employ Segment Anything Model V2 (SAM2) encoder to extract RGB
+features and Depth Anything V2 (DA2) encoder to extract depth-aware features.
+To efficiently adapt SAM2, we introduce SRFT-GaLore, a novel low-rank gradient
+projection method that replaces the computationally expensive SVD with a
+Subsampled Randomized Fourier Transform (SRFT). This enables efficient
+fine-tuning of high-dimensional attention layers without sacrificing
+representational power. A cross-attention fusion module further integrates RGB
+and depth cues. To assess cross-dataset generalization, we also construct a new
+Laparoscopic Liver Surgical Dataset (LLSD) as an external validation benchmark.
+On the public L3D dataset, our method achieves a 4.85% improvement in Dice
+Similarity Coefficient and a 11.78-point reduction in Average Symmetric Surface
+Distance compared to the D2GPLand. To further assess generalization capability,
+we evaluate our model on LLSD dataset. Our model maintains competitive
+performance and significantly outperforms SAM-based baselines, demonstrating
+strong cross-dataset robustness and adaptability to unseen surgical
+environments. These results demonstrate that our SRFT-GaLore-enhanced
+dual-encoder framework enables scalable and precise segmentation under
+real-time, depth-constrained surgical settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>12 pages</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
