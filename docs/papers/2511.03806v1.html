@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FusionDP: Foundation Model-Assisted Differentially Private Learning for Partially Sensitive Features - Health AI Hub</title>
+    <meta name="description" content="FusionDP is a novel two-step framework designed to improve model utility while preserving feature-level differential privacy, especially when only a subset of f">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>FusionDP: Foundation Model-Assisted Differentially Private Learning for Partially Sensitive Features</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.03806v1" target="_blank">2511.03806v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-05
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Linghui Zeng, Ruixuan Liu, Atiquer Rahman Sarkar, Xiaoqian Jiang, Joyce C. Ho, Li Xiong
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.03806v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.03806v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">FusionDP is a novel two-step framework designed to improve model utility while preserving feature-level differential privacy, especially when only a subset of features is sensitive. It leverages large foundation models to impute sensitive features, then applies a modified DP-SGD algorithm to train models on both original and imputed data, demonstrating significant performance gains in medical tasks like sepsis prediction and clinical note classification.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine as it offers a practical solution for building robust and accurate AI models using sensitive patient data (e.g., demographics, specific health attributes) without compromising individual privacy. By enhancing the utility of privacy-preserving models, FusionDP can accelerate the development and adoption of AI tools in healthcare for tasks like risk prediction and diagnosis, while adhering to ethical and regulatory privacy standards.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>FusionDP is an AI application designed to enhance the utility of machine learning models in healthcare while preserving the privacy of sensitive patient features. Specifically, it enables the development of more accurate AI models for tasks like sepsis prediction and clinical note classification by effectively handling partially sensitive features (e.g., demographics) from medical datasets (like ICU data from MIMIC-III and PhysioNet) using foundation model-assisted imputation and differential privacy.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Traditional DP-SGD often injects excessive noise and degrades utility when applied to datasets where only a subset of features (e.g., age, gender) is sensitive, as opposed to entire samples.</li>
+                    
+                    <li>FusionDP introduces a two-step framework to address this, aiming to enhance model utility under feature-level differential privacy by treating sensitive features differently.</li>
+                    
+                    <li>The first step involves leveraging large foundation models to impute sensitive features based on non-sensitive features, providing high-quality prior estimates without direct access to true sensitive values during the primary model training.</li>
+                    
+                    <li>The second step employs a modified DP-SGD algorithm that trains the target model using both the original non-sensitive features and the foundation model-imputed sensitive features, formally preserving the privacy of the original sensitive features.</li>
+                    
+                    <li>The framework was evaluated on two distinct medical modalities: a sepsis prediction task using tabular data from PhysioNet and a clinical note classification task using data from MIMIC-III.</li>
+                    
+                    <li>FusionDP consistently achieved significantly improved model performance (utility) compared to privacy-preserving baselines, while rigorously maintaining feature-level privacy guarantees.</li>
+                    
+                    <li>The research highlights the potential of integrating foundation model-driven imputation as a powerful mechanism to enhance the privacy-utility trade-off for diverse data types in privacy-preserving machine learning.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>FusionDP utilizes a two-step process: (1) **Foundation Model-Assisted Imputation**: Large pre-trained foundation models are employed to generate estimates of sensitive features, using only the non-sensitive features as input. These imputed values act as high-quality, privacy-preserving proxies for the true sensitive data. (2) **Modified Differentially Private SGD Training**: A specifically adapted differentially private stochastic gradient descent (DP-SGD) algorithm is then used to train the main machine learning model. This algorithm integrates both the original non-sensitive features and the imputed sensitive features, ensuring formal differential privacy guarantees specifically for the original sensitive features during the training process.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>FusionDP demonstrably and significantly enhances the utility (model performance) of machine learning models under feature-level differential privacy. This improvement is observed across both tabular (sepsis prediction) and textual (clinical note classification) medical data, outperforming existing privacy-preserving baselines while rigorously upholding privacy for sensitive features.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>FusionDP has the potential to significantly impact clinical practice by enabling the deployment of more accurate and reliable AI models for critical tasks such as early sepsis prediction, patient risk stratification, and automated analysis of clinical narratives. By effectively balancing data utility with patient privacy, it can facilitate the responsible use of vast amounts of sensitive electronic health record data, leading to improved clinical decision support, better patient outcomes, and advancements in personalized medicine, without compromising patient confidentiality.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the FusionDP framework. Potential considerations not detailed in the abstract might include the computational resources required for fine-tuning or leveraging large foundation models for imputation, the generalizability of imputation quality across diverse and rare patient populations, or the specific privacy guarantees associated with the pre-training of the foundation models themselves.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions. However, potential future work could include exploring the application of FusionDP to a wider range of medical data modalities and tasks, investigating the impact of different foundation model architectures and pre-training strategies on imputation quality and privacy-utility trade-offs, and developing theoretical bounds or guarantees for the privacy properties introduced by the foundation model imputation step.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Intensive Care Unit (ICU)</span>
+                    
+                    <span class="tag">Sepsis Management</span>
+                    
+                    <span class="tag">Clinical Informatics</span>
+                    
+                    <span class="tag">Electronic Health Records (EHR) Analysis</span>
+                    
+                    <span class="tag">Medical Natural Language Processing</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Differential Privacy</span>
+                    
+                    <span class="tag tag-keyword">Foundation Models</span>
+                    
+                    <span class="tag tag-keyword">Feature-Level Privacy</span>
+                    
+                    <span class="tag tag-keyword">Sepsis Prediction</span>
+                    
+                    <span class="tag tag-keyword">Clinical Notes</span>
+                    
+                    <span class="tag tag-keyword">Privacy-Preserving Machine Learning</span>
+                    
+                    <span class="tag tag-keyword">Data Imputation</span>
+                    
+                    <span class="tag tag-keyword">Healthcare AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Ensuring the privacy of sensitive training data is crucial in
+privacy-preserving machine learning. However, in practical scenarios, privacy
+protection may be required for only a subset of features. For instance, in ICU
+data, demographic attributes like age and gender pose higher privacy risks due
+to their re-identification potential, whereas raw lab results are generally
+less sensitive. Traditional DP-SGD enforces privacy protection on all features
+in one sample, leading to excessive noise injection and significant utility
+degradation. We propose FusionDP, a two-step framework that enhances model
+utility under feature-level differential privacy. First, FusionDP leverages
+large foundation models to impute sensitive features given non-sensitive
+features, treating them as external priors that provide high-quality estimates
+of sensitive attributes without accessing the true values during model
+training. Second, we introduce a modified DP-SGD algorithm that trains models
+on both original and imputed features while formally preserving the privacy of
+the original sensitive features. We evaluate FusionDP on two modalities: a
+sepsis prediction task on tabular data from PhysioNet and a clinical note
+classification task from MIMIC-III. By comparing against privacy-preserving
+baselines, our results show that FusionDP significantly improves model
+performance while maintaining rigorous feature-level privacy, demonstrating the
+potential of foundation model-driven imputation to enhance the privacy-utility
+trade-off for various modalities.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

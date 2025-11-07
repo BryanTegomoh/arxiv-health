@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climbing the label tree: Hierarchy-preserving contrastive learning for medical imaging - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel hierarchy-preserving contrastive learning framework for medical imaging, which leverages the inherent taxonomic structure of medic">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Climbing the label tree: Hierarchy-preserving contrastive learning for medical imaging</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.03771v1" target="_blank">2511.03771v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-05
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Alif Elham Khan
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> q-bio.QM, cs.AI, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.03771v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.03771v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel hierarchy-preserving contrastive learning framework for medical imaging, which leverages the inherent taxonomic structure of medical labels (e.g., organ-tissue-subtype) that standard self-supervised learning often overlooks. By incorporating two plug-in objectives, Hierarchy-Weighted Contrastive (HWC) and Level-Aware Margin (LAM), the method consistently improves representation quality over strong baselines, better respects label taxonomies, and enhances both performance and interpretability in hierarchy-rich medical domains like breast histopathology.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Medical diagnoses and classifications are inherently hierarchical, ranging from broad categories to specific subtypes. This research provides a method to embed this critical taxonomic knowledge directly into AI models, leading to more accurate, robust, and interpretable diagnostic aids that better reflect clinical reasoning and disease progression.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is to enhance the performance and interpretability of machine learning models for medical image analysis. By leveraging hierarchical label structures inherent in medical data (e.g., organ-tissue-subtype), this research aims to develop more accurate and clinically useful AI tools for tasks such as automated diagnosis, classification, and prognosis from medical images like histopathology slides.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Standard self-supervised learning (SSL) in medical imaging often ignores the crucial hierarchical structure of labels (e.g., organ, tissue, subtype).</li>
+                    
+                    <li>The proposed framework makes the label taxonomy a primary training signal and evaluation target, aiming for more clinically relevant representations.</li>
+                    
+                    <li>Two plug-in objectives are introduced: Hierarchy-Weighted Contrastive (HWC), which scales positive/negative pair strengths based on shared ancestors to promote within-parent coherence; and Level-Aware Margin (LAM), a prototype margin that separates ancestor groups across different hierarchical levels.</li>
+                    
+                    <li>The approach is geometry-agnostic, applicable to both Euclidean and hyperbolic embedding spaces without requiring architectural changes to neural networks.</li>
+                    
+                    <li>Evaluation employs specialized hierarchy-faithfulness metrics (HF1, H-Acc, parent-distance violation rate) in addition to conventional top-1 accuracy.</li>
+                    
+                    <li>The proposed objectives consistently improve representation quality and taxonomic adherence across several benchmarks, including breast histopathology, outperforming strong SSL baselines.</li>
+                    
+                    <li>Ablation studies confirm that HWC and LAM are individually effective, even without hyperbolic curvature, and their combination yields the most taxonomy-aligned representations, providing a general recipe for interpretable medical image learning.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves a hierarchy-preserving contrastive learning framework. It integrates two novel plug-in objectives: Hierarchy-Weighted Contrastive (HWC), which modifies contrastive loss by scaling positive/negative pair strengths according to the number of shared ancestors, and Level-Aware Margin (LAM), a prototype-based margin objective to enforce separation of ancestor groups across hierarchical levels. This framework is compatible with existing self-supervised learning architectures and can be applied to both Euclidean and hyperbolic embedding spaces. Model performance is assessed using both standard top-1 accuracy and specialized hierarchy-aware metrics such as HF1, H-Acc, and parent-distance violation rate.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study found that the Hierarchy-Weighted Contrastive (HWC) and Level-Aware Margin (LAM) objectives consistently improve the quality of learned representations over strong self-supervised learning baselines. These objectives successfully make the representations more faithful to the underlying label taxonomy, as evidenced by better performance on hierarchy-specific metrics. Furthermore, both HWC and LAM are effective individually, even without hyperbolic embeddings, and their combined application results in the most robust and taxonomy-aligned representations for medical images.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework has the potential to significantly improve the accuracy and clinical utility of AI-powered diagnostic tools in medical imaging. By explicitly learning the hierarchical relationships in medical labels, AI models can provide more nuanced and contextually rich predictions, aiding clinicians in differential diagnoses, refining disease staging, and potentially identifying subtle sub-types that are critical for personalized treatment planning. This approach can also increase trust in AI outputs by making them more interpretable and aligned with established medical taxonomies.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">breast histopathology</span>
+                    
+                    <span class="tag">pathology</span>
+                    
+                    <span class="tag">general medical imaging diagnostics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">self-supervised learning</span>
+                    
+                    <span class="tag tag-keyword">contrastive learning</span>
+                    
+                    <span class="tag tag-keyword">label hierarchy</span>
+                    
+                    <span class="tag tag-keyword">taxonomy</span>
+                    
+                    <span class="tag tag-keyword">representation learning</span>
+                    
+                    <span class="tag tag-keyword">histopathology</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical image labels are often organized by taxonomies (e.g., organ - tissue
+- subtype), yet standard self-supervised learning (SSL) ignores this structure.
+We present a hierarchy-preserving contrastive framework that makes the label
+tree a first-class training signal and an evaluation target. Our approach
+introduces two plug-in objectives: Hierarchy-Weighted Contrastive (HWC), which
+scales positive/negative pair strengths by shared ancestors to promote
+within-parent coherence, and Level-Aware Margin (LAM), a prototype margin that
+separates ancestor groups across levels. The formulation is geometry-agnostic
+and applies to Euclidean and hyperbolic embeddings without architectural
+changes. Across several benchmarks, including breast histopathology, the
+proposed objectives consistently improve representation quality over strong SSL
+baselines while better respecting the taxonomy. We evaluate with metrics
+tailored to hierarchy faithfulness: HF1 (hierarchical F1), H-Acc
+(tree-distance-weighted accuracy), and parent-distance violation rate. We also
+report top-1 accuracy for completeness. Ablations show that HWC and LAM are
+effective even without curvature, and combining them yields the most
+taxonomy-aligned representations. Taken together, these results provide a
+simple, general recipe for learning medical image representations that respect
+the label tree and advance both performance and interpretability in
+hierarchy-rich domains.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
