@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Probabilistic Textual Time Series Depression Detection - Health AI Hub</title>
-    <meta name="description" content="This paper introduces PTTSD (Probabilistic Textual Time Series Depression Detection), a novel framework for predicting PHQ-8 depression severity scores from utt">
+    <meta name="description" content="This paper introduces PTTSD, a novel Probabilistic Textual Time Series Depression Detection framework that predicts PHQ-8 scores from clinical interview utteran">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CL
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces PTTSD (Probabilistic Textual Time Series Depression Detection), a novel framework for predicting PHQ-8 depression severity scores from utterance-level clinical interview text. PTTSD innovatively models uncertainty over time, offering well-calibrated prediction intervals in addition to point estimates. It achieves state-of-the-art performance among text-only systems on E-DAIC and DAIC-WOZ datasets, demonstrating high interpretability and clinical relevance of its uncertainty-aware forecasting.</p>
+                <p class="summary-text">This paper introduces PTTSD, a novel Probabilistic Textual Time Series Depression Detection framework that predicts PHQ-8 scores from clinical interview utterances while explicitly modeling temporal uncertainty. Leveraging advanced deep learning architectures with probabilistic output heads, PTTSD achieves state-of-the-art performance among text-only systems and provides well-calibrated prediction intervals, enhancing clinical decision support.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to mental health as it provides a more nuanced and reliable approach to assessing depression severity. By quantifying uncertainty and integrating temporal dynamics, it offers clinicians richer, actionable insights for diagnosis, treatment planning, and patient monitoring, moving beyond simple point estimates.</p>
+                <p>This research provides a more robust and interpretable tool for predicting depression severity, offering clinicians crucial uncertainty estimates and temporal insights from patient interviews. This can significantly improve the accuracy of diagnosis, monitoring, and personalized treatment planning in mental health care.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is an NLP and time series framework (PTTSD) designed to predict depression severity (PHQ-8 scores) from textual data derived from clinical interviews. It aims to provide uncertainty-aware forecasts to support clinical decision-making for mental health professionals.</p>
+                <p>The AI application is the development of a probabilistic textual time series model (PTTSD) to detect and predict the severity of depression from spoken or written clinical interviews. This AI system could serve as a clinical decision support tool to assist healthcare professionals in assessing mental health conditions, monitoring patient progress, and aiding in early intervention for depression.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>**Problem Addressed**: Addresses the critical need for uncertainty estimates and temporal modeling in depression severity prediction to enhance clinical decision support, which is often lacking in existing models.</li>
+                    <li>PTTSD is designed to predict PHQ-8 depression severity scores directly from utterance-level clinical interview transcripts.</li>
                     
-                    <li>**Proposed Framework (PTTSD)**: Introduces a Probabilistic Textual Time Series Depression Detection framework that predicts PHQ-8 scores from utterance-level clinical interview transcripts, explicitly modeling uncertainty over time.</li>
+                    <li>The framework explicitly models uncertainty over time, addressing a critical gap in existing depression detection models.</li>
                     
-                    <li>**Methodology**: PTTSD incorporates sequence-to-sequence and sequence-to-one deep learning variants, combining bidirectional LSTMs, self-attention mechanisms, and residual connections. It utilizes probabilistic Gaussian or Student-t output heads, trained via negative log-likelihood, to quantify prediction uncertainty.</li>
+                    <li>It incorporates advanced deep learning components, including bidirectional LSTMs, self-attention, and residual connections, with probabilistic Gaussian or Student-t output heads.</li>
                     
-                    <li>**State-of-the-Art Performance**: Achieves leading performance among text-only systems on standard datasets (E-DAIC and DAIC-WOZ), exemplified by competitive Mean Absolute Error (MAE) values (e.g., 3.85 on E-DAIC, 3.55 on DAIC).</li>
+                    <li>PTTSD is trained using negative log-likelihood, allowing it to generate not just point estimates but also prediction intervals for depression severity.</li>
                     
-                    <li>**Uncertainty Quantification**: A core contribution is the generation of well-calibrated prediction intervals, providing robust uncertainty estimates alongside severity predictions, which is vital for clinical interpretation.</li>
+                    <li>Evaluated on E-DAIC and DAIC-WOZ datasets, PTTSD achieved state-of-the-art performance for text-only systems (e.g., MAE = 3.85 on E-DAIC, 3.55 on DAIC).</li>
                     
-                    <li>**Validation and Generality**: Ablation studies confirm the significant contributions of self-attention and the probabilistic modeling approach. Comparisons with MentalBERT further establish the framework's generality and robustness.</li>
+                    <li>The model produces well-calibrated prediction intervals, which are crucial for reliable clinical interpretation and decision-making.</li>
                     
-                    <li>**Clinical Interpretability**: A detailed three-part calibration analysis and qualitative case studies highlight the practical interpretability and clinical relevance of integrating uncertainty into depression severity forecasting.</li>
+                    <li>Ablation studies confirmed the significant contributions of both the self-attention mechanism and the probabilistic modeling approach to the framework's effectiveness.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>PTTSD is a deep learning framework built on bidirectional LSTMs, self-attention mechanisms, and residual connections, available in sequence-to-sequence and sequence-to-one variants. It employs probabilistic Gaussian or Student-t output heads to model uncertainty and is trained using negative log-likelihood. Evaluation was conducted on E-DAIC and DAIC-WOZ datasets, supported by ablation studies and comparisons with MentalBERT for robustness and generality.</p>
+                    <p>PTTSD is a deep learning framework offered in sequence-to-sequence and sequence-to-one variants. It processes utterance-level clinical interview text using bidirectional Long Short-Term Memory (LSTM) networks to capture temporal context, augmented with self-attention mechanisms for weighting important linguistic features and residual connections for stable training. The core innovation lies in its probabilistic output heads (Gaussian or Student-t distributions), which predict both the mean and variance of PHQ-8 scores, trained via negative log-likelihood to enable robust uncertainty quantification over time.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>PTTSD achieved state-of-the-art performance in PHQ-8 score prediction for text-only systems (MAE of 3.85 on E-DAIC, 3.55 on DAIC). It successfully produced well-calibrated prediction intervals, effectively quantifying uncertainty over time. Ablation studies confirmed the value of attention and probabilistic modeling, while comparisons with MentalBERT established the model's generality. The interpretability and clinical relevance of uncertainty-aware forecasting were further demonstrated through calibration analysis and qualitative case studies.</p>
+                    <p>The PTTSD framework achieved state-of-the-art performance among text-only depression detection systems, demonstrating MAE scores of 3.85 on the E-DAIC dataset and 3.55 on DAIC-WOZ. It successfully produces well-calibrated prediction intervals, directly addressing the need for uncertainty quantification in clinical predictions. Ablation studies confirmed the essential contributions of both self-attention and the probabilistic modeling approach, validating these design choices for improved accuracy and reliability.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>PTTSD has the potential to significantly enhance clinical decision-making in mental health by providing clinicians with more informative and reliable depression severity assessments. The inclusion of uncertainty estimates can guide more precise interventions, improve risk stratification, and facilitate personalized care pathways, potentially improving patient outcomes and allowing for earlier, more targeted support in settings like tele-mental health.</p>
+                <p>This research has substantial clinical impact by offering a robust, interpretable, and uncertainty-aware method for predicting depression severity. By providing well-calibrated prediction intervals alongside severity scores, PTTSD can aid clinicians in making more informed decisions regarding patient assessment, treatment monitoring, and risk stratification. The ability to track changes and quantify confidence over time from interview text supports more personalized and evidence-based mental healthcare interventions.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations or caveats of the proposed framework.</p>
+                <p>The abstract highlights that existing models often lack uncertainty estimates and temporal modeling, which PTTSD aims to overcome. However, it does not explicitly state specific limitations of the PTTSD framework itself.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly suggest future research directions.</p>
+                <p>The abstract does not explicitly mention future research directions for PTTSD.</p>
             </section>
             
 
@@ -126,9 +126,9 @@
                     
                     <span class="tag">Clinical Psychology</span>
                     
-                    <span class="tag">Digital Therapeutics</span>
+                    <span class="tag">Digital Health</span>
                     
-                    <span class="tag">Telemedicine</span>
+                    <span class="tag">Behavioral Health</span>
                     
                 </div>
             </section>
@@ -137,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Depression Detection</span>
+                    <span class="tag tag-keyword">Depression detection</span>
                     
-                    <span class="tag tag-keyword">PHQ-8 Scores</span>
+                    <span class="tag tag-keyword">PHQ-8</span>
                     
                     <span class="tag tag-keyword">Natural Language Processing</span>
                     
-                    <span class="tag tag-keyword">Time Series Analysis</span>
+                    <span class="tag tag-keyword">Deep Learning</span>
                     
                     <span class="tag tag-keyword">Probabilistic Modeling</span>
                     
+                    <span class="tag tag-keyword">Time Series Analysis</span>
+                    
+                    <span class="tag tag-keyword">Clinical Interviews</span>
+                    
                     <span class="tag tag-keyword">Uncertainty Quantification</span>
-                    
-                    <span class="tag tag-keyword">Clinical Decision Support</span>
-                    
-                    <span class="tag tag-keyword">Deep Learning</span>
                     
                 </div>
             </section>

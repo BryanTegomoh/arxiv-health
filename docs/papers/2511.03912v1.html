@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I Detect What I Don't Know: Incremental Anomaly Learning with Stochastic Weight Averaging-Gaussian for Oracle-Free Medical Imaging - Health AI Hub</title>
-    <meta name="description" content="This paper introduces an unsupervised, oracle-free incremental learning framework for unknown anomaly detection in medical imaging, addressing the challenge of ">
+    <meta name="description" content="This paper introduces an unsupervised, oracle-free framework for incremental anomaly learning in medical imaging, designed to identify unknown anomalies despite">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces an unsupervised, oracle-free incremental learning framework for unknown anomaly detection in medical imaging, addressing the challenge of scarce labeled anomalies. The method iteratively expands a trusted set of normal samples by combining lightweight adapter updates with a dual probabilistic uncertainty-gated admission mechanism, utilizing a frozen pretrained backbone and a compact coreset for efficient k-NN scoring. This approach significantly improves anomaly detection performance across various medical imaging datasets, including COVID-CXR, Pneumonia CXR, and Brain MRI, by continually refining the notion of normality without relying on anomaly labels.</p>
+                <p class="summary-text">This paper introduces an unsupervised, oracle-free framework for incremental anomaly learning in medical imaging, designed to identify unknown anomalies despite scarce labeled data. It achieves this by iteratively expanding a trusted set of normal samples through lightweight adapter updates and a robust dual probabilistic gating mechanism, significantly improving anomaly detection performance across various medical imaging tasks.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This framework offers a critical advancement for medical diagnosis by enabling the automated detection of rare, novel, or unknown anomalies without requiring prior labeled examples. It can significantly improve diagnostic accuracy, reduce expert workload, and facilitate early detection of emerging diseases or subtle conditions in clinical settings where labeled anomaly data is scarce or impossible to obtain.</p>
+                <p>This framework directly addresses a critical bottleneck in medical AI: the prohibitive cost and scarcity of anomaly labels for rare diseases or novel conditions. By enabling robust and unsupervised detection of unknown anomalies, it has the potential to significantly enhance early disease diagnosis, reduce diagnostic errors, and optimize clinical workflows in resource-constrained healthcare environments.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is an unsupervised, incremental anomaly detection system for medical images. It aims to assist healthcare professionals by automatically identifying deviations from normal patterns in X-rays (e.g., for COVID-19 or pneumonia) and MRIs (e.g., for brain anomalies), without requiring extensive labeled anomaly data. This can improve diagnostic efficiency, reduce reliance on costly expert supervision, and potentially lead to earlier or more accurate detection of diseases, particularly in settings with limited resources or for rare conditions.</p>
+                <p>This AI system provides an unsupervised, oracle-free method for detecting anomalies in medical images, such as chest X-rays (for COVID-19, Pneumonia) and brain MRIs. Its application is to assist healthcare professionals by automatically identifying potentially pathological findings, even when labeled anomaly data is scarce. This can lead to earlier detection, improved diagnostic accuracy, and more efficient screening processes in various medical specialties.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the fundamental challenge of unknown anomaly detection in medical imaging due to scarce labels and high supervision costs.</li>
+                    <li>**Oracle-Free Incremental Learning:** The framework learns to define "normality" incrementally from unlabeled medical images, starting with a small verified seed of normal samples, without requiring any anomaly labels for training.</li>
                     
-                    <li>Proposes an unsupervised, oracle-free framework that incrementally expands a trusted set of normal samples without requiring any anomaly labels.</li>
+                    <li>**Lightweight Adapter-Based Domain Adaptation:** A frozen, pretrained vision backbone is augmented with tiny convolutional adapters, enabling rapid and computationally efficient domain adaptation to specific medical imaging modalities.</li>
                     
-                    <li>Utilizes a frozen pretrained vision backbone augmented with tiny convolutional adapters for rapid, computationally efficient domain adaptation.</li>
+                    <li>**Efficient k-NN Anomaly Scoring:** Extracted image embeddings are stored in a compact coreset, facilitating efficient k-nearest neighbor (k-NN) based scoring for anomaly detection.</li>
                     
-                    <li>Employs dual probabilistic gates for safe incremental expansion: samples are admitted only if their distance to the existing coreset is within a calibrated z-score threshold and their SWAG-based epistemic uncertainty is below a seed-calibrated bound.</li>
+                    <li>**Dual Probabilistic Safety Gates:** Incremental expansion of the normal memory is strictly governed by two safety mechanisms: a calibrated z-score threshold for sample distance to the existing coreset, and a seed-calibrated bound on Stochastic Weight Averaging-Gaussian (SWAG)-based epistemic uncertainty.</li>
                     
-                    <li>Stores extracted embeddings in a compact coreset, enabling efficient k-nearest neighbor (k-NN) anomaly scoring.</li>
+                    <li>**Drift Prevention without Replay/Generative Models:** This dual gating mechanism effectively prevents model drift and the false inclusion of anomalous samples, crucially without relying on computationally intensive generative reconstruction methods or replay buffers.</li>
                     
-                    <li>Demonstrates substantial performance gains: COVID-CXR ROC-AUC improves from 0.9489 to 0.9982 (F1: 0.8048 to 0.9746); Pneumonia CXR ROC-AUC rises from 0.6834 to 0.8968; and Brain MRI ND-5 ROC-AUC increases from 0.6041 to 0.7269 (PR-AUC from 0.7539 to 0.8211).</li>
+                    <li>**Significant Performance Improvements:** The method demonstrates substantial gains, with ROC-AUC improving from 0.9489 to 0.9982 on COVID-CXR, 0.6834 to 0.8968 on Pneumonia CXR, and 0.6041 to 0.7269 on Brain MRI ND-5.</li>
                     
-                    <li>The mechanism prevents model drift and false inclusions without relying on generative reconstruction or replay buffers.</li>
+                    <li>**Applicability in Label-Scarce Settings:** The framework is highly efficient and effective for real-world medical imaging applications characterized by extreme scarcity of labeled anomalies and high expert supervision costs.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The proposed method is an unsupervised, incremental anomaly learning framework. It starts with a small, verified seed of normal images. The core process alternates between lightweight updates to tiny convolutional adapters (attached to a frozen pretrained vision backbone) and uncertainty-gated sample admission. Extracted embeddings from these adapted models are stored in a compact coreset. Safety during incremental expansion is enforced by dual probabilistic gates: a sample is admitted into the normal memory only if its distance to the existing coreset is within a calibrated z-score threshold, and its Stochastic Weight Averaging-Gaussian (SWAG)-based epistemic uncertainty remains below a seed-calibrated bound. Anomaly scoring is performed efficiently using k-nearest neighbors (k-NN) on the coreset embeddings.</p>
+                    <p>The proposed method is an unsupervised, oracle-free incremental learning framework. It initializes with a small, verified seed of normal medical images. A frozen, pretrained vision backbone is augmented with tiny convolutional adapters, which are updated during learning. Extracted embeddings are stored in a compact coreset for efficient k-NN anomaly scoring. For incremental expansion, new unlabeled samples are admitted into the normal memory only if they pass two probabilistic safety gates: their distance to the existing coreset is within a calibrated z-score threshold, and their epistemic uncertainty (estimated via Stochastic Weight Averaging-Gaussian, SWAG) remains below a seed-calibrated bound. This iterative process refines the notion of normality.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The system consistently refines its understanding of normality as unlabeled data are processed. It achieved substantial performance improvements across diverse medical imaging tasks: ROC-AUC on COVID-CXR improved from 0.9489 to 0.9982 (F1: 0.8048 to 0.9746); on Pneumonia CXR, ROC-AUC rose from 0.6834 to 0.8968; and on Brain MRI ND-5, ROC-AUC increased from 0.6041 to 0.7269 and PR-AUC from 0.7539 to 0.8211. These results underscore the framework's effectiveness and efficiency in real-world, label-scarce medical imaging scenarios.</p>
+                    <p>The system consistently refined its understanding of normality, leading to substantial performance gains. On COVID-CXR, ROC-AUC improved from 0.9489 to 0.9982 (with F1 improving from 0.8048 to 0.9746). For Pneumonia CXR, ROC-AUC rose from 0.6834 to 0.8968. On Brain MRI ND-5, ROC-AUC increased from 0.6041 to 0.7269, and PR-AUC from 0.7539 to 0.8211.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This framework has significant potential for clinical application, enabling medical imaging systems to continuously learn and adapt to new presentations of 'normality' in an unsupervised manner. This capability facilitates the earlier detection of unknown pathologies, rare diseases, or emerging conditions (like new strains of viruses) that lack specific training data. It can reduce the diagnostic burden on expert radiologists, provide decision support in resource-limited settings, and accelerate the identification of critical anomalies, ultimately improving patient outcomes.</p>
+                <p>This framework offers a practical solution for automating anomaly detection in medical imaging, particularly for rare conditions or when labeled anomaly data is sparse. It could enable more efficient screening, helping clinicians to quickly identify and prioritize abnormal cases for expert review, thereby potentially leading to earlier diagnoses, more timely interventions, and improved patient outcomes, especially in settings with limited access to specialized radiologists.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations. However, potential considerations for such a system might include: the robustness of the initial 'verified seed of normal images' and its impact on the learning trajectory; the sensitivity and generalizability of the calibrated z-score thresholds and SWAG uncertainty bounds across diverse patient populations and imaging modalities; and the computational overhead associated with SWAG, even if adapter updates are lightweight.</p>
+                <p>The abstract does not explicitly state specific limitations of the proposed framework. However, typical challenges for such methods could include sensitivity to the quality and representativeness of the initial normal seed, and the generalizability of calibrated thresholds across highly diverse patient populations or imaging protocols.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention future research directions.</p>
+                <p>The abstract does not explicitly mention future research directions. Potential avenues could involve exploring the framework's robustness across a wider range of medical imaging modalities, investigating methods for dynamic threshold calibration, or integrating it into a real-time clinical decision support system.</p>
             </section>
             
 
@@ -130,10 +130,6 @@
                     
                     <span class="tag">Brain MRI</span>
                     
-                    <span class="tag">COVID-19</span>
-                    
-                    <span class="tag">Pneumonia</span>
-                    
                 </div>
             </section>
 
@@ -141,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Incremental Learning</span>
-                    
                     <span class="tag tag-keyword">Anomaly Detection</span>
                     
                     <span class="tag tag-keyword">Medical Imaging</span>
                     
-                    <span class="tag tag-keyword">Unsupervised Learning</span>
+                    <span class="tag tag-keyword">Incremental Learning</span>
                     
-                    <span class="tag tag-keyword">Epistemic Uncertainty</span>
+                    <span class="tag tag-keyword">Unsupervised Learning</span>
                     
                     <span class="tag tag-keyword">Stochastic Weight Averaging-Gaussian (SWAG)</span>
                     
+                    <span class="tag tag-keyword">Convolutional Adapters</span>
+                    
                     <span class="tag tag-keyword">Oracle-Free</span>
                     
-                    <span class="tag tag-keyword">K-Nearest Neighbor (k-NN)</span>
+                    <span class="tag tag-keyword">Label Scarcity</span>
                     
                 </div>
             </section>
