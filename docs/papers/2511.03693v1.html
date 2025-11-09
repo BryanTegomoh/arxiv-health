@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Colorectal Cancer Histopathological Grading using Multi-Scale Federated Learning - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a privacy-preserving federated learning framework for colorectal cancer (CRC) histopathological grading. It leverages a dual-stream ResNet">
+    <meta name="description" content="This paper introduces a privacy-preserving federated learning framework for automated colorectal cancer (CRC) histopathological grading, overcoming challenges l">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> stat.ML, cs.LG
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a privacy-preserving federated learning framework for colorectal cancer (CRC) histopathological grading. It leverages a dual-stream ResNetRS50 architecture for multi-scale feature learning and FedProx for stable distributed training, achieving 83.5% overall accuracy and significantly improving Grade III tumor identification with an 87.5% recall, thus enhancing prognostic accuracy while adhering to data privacy regulations.</p>
+                <p class="summary-text">This paper introduces a privacy-preserving federated learning framework for automated colorectal cancer (CRC) histopathological grading, overcoming challenges like inter-observer variability and data privacy constraints. By integrating multi-scale feature learning with a dual-stream deep learning architecture, the system achieves high accuracy, particularly for aggressive Grade III tumors, and outperforms comparable centralized models.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate and consistent colorectal cancer grading is vital for patient prognosis and treatment planning. This work provides a privacy-preserving AI solution that can reduce diagnostic variability and enable collaborative model training across institutions without compromising sensitive patient data, leading to more reliable diagnoses.</p>
+                <p>Accurate and consistent colorectal cancer grading is a critical prognostic factor, directly influencing treatment decisions and patient outcomes. This research provides a method to develop highly performant AI models using sensitive multi-institutional histopathological data while fully preserving patient privacy, directly addressing a major bottleneck in collaborative medical AI development and improving diagnostic reliability.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is a privacy-preserving federated learning system using a multi-scale deep learning model (ResNetRS50) for the automated and accurate histopathological grading of colorectal cancer. This system is designed to analyze digital pathology images from multiple hospitals without sharing raw patient data, thereby enhancing diagnostic consistency, improving prognostic assessment for CRC patients, and facilitating the secure deployment of AI in clinical digital pathology workflows.</p>
+                <p>The AI application is a scalable, privacy-preserving federated learning framework that uses a dual-stream ResNetRS50 backbone for multi-scale feature learning. It is designed to automatically grade colorectal cancer from histopathological images, improving diagnostic accuracy and consistency while overcoming data privacy and sharing constraints across multiple hospitals. This enables the development of clinical AI tools for digital pathology.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses critical issues in CRC grading: inter-observer variability and privacy constraints for multi-institutional data sharing in AI model training.</li>
+                    <li>Addresses critical issues in CRC grading: inter-observer variability among pathologists and privacy constraints hindering multi-institutional data sharing for AI model training.</li>
                     
-                    <li>Proposes a scalable, privacy-preserving federated learning (FL) framework for CRC histopathological grading.</li>
+                    <li>Proposes a scalable, privacy-preserving federated learning (FL) framework for automated CRC histopathological grading.</li>
                     
-                    <li>Employs a dual-stream ResNetRS50 backbone to concurrently capture fine-grained nuclear detail and broader tissue-level context (multi-scale analysis).</li>
+                    <li>Employs a dual-stream ResNetRS50 deep learning backbone to concurrently capture fine-grained nuclear details and broader tissue-level context (multi-scale feature learning).</li>
                     
-                    <li>Integrates FedProx into the FL system to mitigate client drift, ensuring robustness across heterogeneous data distributions from multiple hospitals.</li>
+                    <li>Integrates the architecture into a robust FL system stabilized using FedProx to mitigate client drift across heterogeneous data distributions from multiple hospitals.</li>
                     
-                    <li>Achieves an overall accuracy of 83.5% on the CRC-HGD dataset, outperforming a comparable centralized model (81.6%).</li>
+                    <li>Achieves an overall accuracy of 83.5% on the CRC-HGD dataset, significantly outperforming a comparable centralized model's 81.6%.</li>
                     
-                    <li>Demonstrates high recall (87.5%) for aggressive Grade III tumors, a key clinical priority to prevent dangerous false negatives.</li>
+                    <li>Demonstrates high clinical priority by achieving an 87.5% recall for identifying the most aggressive Grade III tumors, crucial for preventing dangerous false negatives.</li>
                     
-                    <li>Performance further improves with higher magnification, reaching 88.0% accuracy at 40x, validating the multi-scale approach and generalization benefits.</li>
+                    <li>Performance further improves with higher magnification, reaching 88.0% accuracy at 40x, validating the benefits of multi-scale analysis.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The authors developed a federated learning (FL) framework using a dual-stream ResNetRS50 backbone to extract multi-scale features, capturing both fine nuclear details and broader tissue context. This deep learning architecture is integrated into a robust FL system stabilized with FedProx to mitigate client drift across heterogeneous data from different institutions. The framework's performance was evaluated using the CRC-HGD dataset.</p>
+                    <p>The study proposes a federated learning (FL) framework for distributed training of a CRC histopathological grading model. It leverages a dual-stream ResNetRS50 backbone to enable multi-scale feature learning, simultaneously capturing both fine-grained cellular details and broader tissue architecture. The FL system incorporates FedProx stabilization to counteract client drift caused by heterogeneous data distributions across participating institutions. The framework's performance was rigorously evaluated on the CRC-HGD dataset and benchmarked against a centrally trained model.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The FL framework achieved an overall accuracy of 83.5%, outperforming a centralized model (81.6%). Critically, it demonstrated a high recall of 87.5% for aggressive Grade III tumors, addressing a major clinical need. Performance improved to 88.0% accuracy at 40x magnification, validating that the federated multi-scale approach enhances model performance, generalization, and preserves patient privacy.</p>
+                    <p>The proposed federated multi-scale approach achieved an overall accuracy of 83.5%, notably outperforming a comparable centralized model which scored 81.6%. A critical finding for clinical application is the high recall of 87.5% for identifying aggressive Grade III tumors, a key metric for preventing underdiagnosis of severe cases. Performance was also found to improve with higher magnification levels, reaching 88.0% accuracy at 40x, underscoring the value of multi-scale analysis.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research provides a foundational step towards deployable, privacy-aware AI tools in digital pathology, enabling more consistent and accurate CRC prognostication. By mitigating inter-observer variability and facilitating multi-institutional collaboration under strict privacy regulations, it can directly inform treatment decisions, reduce diagnostic errors, and ultimately improve patient outcomes. The modular pipeline, including built-in preprocessing and error handling, contributes to its practical readiness for clinical integration.</p>
+                <p>This research provides a pathway for deploying more accurate, consistent, and privacy-aware automated histopathological grading of colorectal cancer, directly addressing the limitations of subjective human grading and data privacy. Its high recall for aggressive Grade III tumors can significantly reduce dangerous false negatives, leading to earlier and more appropriate interventions for patients. The federated learning paradigm enables collaborative AI development among hospitals without centralizing sensitive patient data, accelerating the integration of advanced AI into routine digital pathology workflows.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the proposed framework, but rather highlights the challenges it successfully addresses (inter-observer variability and data privacy constraints). Implicitly, as a 'foundational step,' further extensive validation in diverse real-world clinical settings and comprehensive evaluations of deployment complexities would be necessary.</p>
+                <p>The abstract does not explicitly state limitations of the proposed federated learning system itself. However, it frames the problem by highlighting existing challenges such as inter-observer variability in grading and the privacy constraints of multi-institutional data sharing as significant impediments that their proposed system aims to overcome.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The paper suggests that the proposed system establishes a foundational step toward deployable, privacy-aware clinical AI for digital pathology. Future work would likely involve further steps towards full clinical deployment, broader validation across more diverse datasets and clinical environments, and continuous refinement of the modular pipeline for real-world integration and robustness.</p>
+                <p>The authors suggest that the proposed modular pipeline, with its built-in preprocessing, checkpointing, and error handling, establishes a foundational step toward deployable, privacy-aware clinical AI for digital pathology. This implies future research directions focused on real-world clinical deployment, further validation in diverse and larger patient cohorts, and integration into existing pathology laboratory information systems.</p>
             </section>
             
 
@@ -126,10 +126,6 @@
                     
                     <span class="tag">Gastroenterology</span>
                     
-                    <span class="tag">Medical Imaging</span>
-                    
-                    <span class="tag">Digital Health</span>
-                    
                 </div>
             </section>
 
@@ -137,21 +133,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Federated Learning</span>
-                    
                     <span class="tag tag-keyword">Colorectal Cancer</span>
                     
                     <span class="tag tag-keyword">Histopathological Grading</span>
                     
-                    <span class="tag tag-keyword">Deep Learning</span>
+                    <span class="tag tag-keyword">Federated Learning</span>
                     
-                    <span class="tag tag-keyword">Multi-Scale Analysis</span>
+                    <span class="tag tag-keyword">Multi-scale Analysis</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
                     
                     <span class="tag tag-keyword">Digital Pathology</span>
                     
-                    <span class="tag tag-keyword">Privacy-Preserving AI</span>
-                    
                     <span class="tag tag-keyword">Prognosis</span>
+                    
+                    <span class="tag tag-keyword">Privacy Preservation</span>
                     
                 </div>
             </section>
