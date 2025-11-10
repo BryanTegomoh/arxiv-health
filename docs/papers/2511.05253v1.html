@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic segmentation of colorectal liver metastases for ultrasound-based navigated resection - Health AI Hub</title>
+    <meta name="description" content="This paper presents an automated 3D U-Net model, trained via the nnU-Net framework, for real-time segmentation of colorectal liver metastases (CRLM) from intrao">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Automatic segmentation of colorectal liver metastases for ultrasound-based navigated resection</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.05253v1" target="_blank">2511.05253v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-07
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Tiziano Natali, Karin A. Olthof, Niels F. M. Kok, Koert F. D. Kuhlmann, Theo J. M. Ruers, Matteo Fusaglia
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, eess.IV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.05253v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.05253v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper presents an automated 3D U-Net model, trained via the nnU-Net framework, for real-time segmentation of colorectal liver metastases (CRLM) from intraoperative ultrasound (iUS) volumes. The model, particularly when trained on cropped regions around tumors, significantly outperforms a full-volume approach, achieving clinically acceptable accuracy (median DSC=0.74, HDist=17.1mm) approximately four times faster (~1 minute) than semi-automatic methods. This technology aims to enhance precision and efficiency in ultrasound-based surgical navigation for hepatic resections.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate intraoperative identification and delineation of colorectal liver metastases are paramount for achieving negative resection margins during hepatic surgery, directly influencing patient prognosis and recurrence rates. This automated segmentation tool addresses current limitations of iUS, offering a more precise, efficient, and less operator-dependent method to guide surgeons, potentially improving surgical outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the automatic 3D segmentation of colorectal liver metastases (CRLM) in intraoperative ultrasound (iUS) images using a 3D U-Net model. This AI-powered tool provides real-time, precise tumor boundary detection with minimal operator input, directly assisting surgeons during hepatic surgery. It enhances ultrasound-based navigation, aiming to improve the accuracy of tumor removal, ensure negative resection margins, reduce procedure time, and ultimately improve patient outcomes in cancer treatment.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Accurate intraoperative delineation of CRLM using iUS is challenging due to low contrast, noise, and operator dependency, leading to difficulties in achieving negative resection margins.</li>
+                    
+                    <li>A 3D U-Net architecture, implemented through the nnU-Net framework, was developed and trained on 85 tracked 3D iUS volumes from CRLM patients.</li>
+                    
+                    <li>Two model variants were compared: one trained on full iUS volumes and another on cropped regions around the tumors; the cropped-volume model significantly outperformed the full-volume model (AUC-ROC = 0.898 vs 0.718).</li>
+                    
+                    <li>The cropped-volume model achieved a median Dice Similarity Coefficient (DSC) of 0.74, recall of 0.79, and Hausdorff Distance (HDist.) of 17.1 mm, demonstrating accuracy comparable to semi-automatic methods.</li>
+                    
+                    <li>The automated segmentation process was approximately four times faster than semi-automatic methods, with an execution time of about 1 minute.</li>
+                    
+                    <li>The workflow was integrated into 3D Slicer for real-time intraoperative use, and prospective testing confirmed robust, consistent, and clinically acceptable performance for surgical guidance.</li>
+                    
+                    <li>This method enables efficient, registration-free ultrasound-based navigation, significantly reducing manual workload and procedure time while approaching expert-level accuracy.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study utilized 85 tracked 3D intraoperative ultrasound (iUS) volumes from 85 CRLM patients to train and evaluate a 3D U-Net model implemented within the nnU-Net framework. Two distinct training approaches were compared: one using full iUS volumes and another focusing on cropped regions around the identified tumors. Segmentation accuracy was rigorously evaluated using metrics such as Dice Similarity Coefficient (DSC), Hausdorff Distance (HDist.), and Relative Volume Difference (RVD) on both retrospective and prospective datasets. The entire workflow was integrated into 3D Slicer to facilitate real-time intraoperative application and testing.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The cropped-volume 3D U-Net model demonstrated significantly superior performance compared to its full-volume counterpart, with an AUC-ROC of 0.898 versus 0.718. This optimized model achieved a median Dice Similarity Coefficient (DSC) of 0.74, a recall of 0.79, and a Hausdorff Distance (HDist.) of 17.1 mm. Crucially, it provided segmentation results comparable to semi-automatic methods but with a substantial speed improvement, executing approximately four times faster (around 1 minute). Prospective intraoperative testing further validated its robust, consistent, and clinically acceptable accuracy for real-time surgical guidance.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This automatic 3D segmentation method directly enhances the precision and efficiency of ultrasound-based navigated resections for colorectal liver metastases. By providing reliable, near real-time tumor delineation with minimal operator input, it can significantly reduce manual workload, decrease procedure time, and potentially improve the accuracy of achieving negative resection margins. This could lead to better surgical outcomes, lower recurrence rates, and a more streamlined surgical workflow for patients undergoing hepatic surgery.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the study.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Surgical Oncology</span>
+                    
+                    <span class="tag">Hepatobiliary Surgery</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Computer-Assisted Surgery</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Colorectal liver metastases</span>
+                    
+                    <span class="tag tag-keyword">CRLM</span>
+                    
+                    <span class="tag tag-keyword">Intraoperative ultrasound</span>
+                    
+                    <span class="tag tag-keyword">iUS</span>
+                    
+                    <span class="tag tag-keyword">3D U-Net</span>
+                    
+                    <span class="tag tag-keyword">nnU-Net</span>
+                    
+                    <span class="tag tag-keyword">Medical image segmentation</span>
+                    
+                    <span class="tag tag-keyword">Surgical navigation</span>
+                    
+                    <span class="tag tag-keyword">Deep learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Introduction: Accurate intraoperative delineation of colorectal liver
+metastases (CRLM) is crucial for achieving negative resection margins but
+remains challenging using intraoperative ultrasound (iUS) due to low contrast,
+noise, and operator dependency. Automated segmentation could enhance precision
+and efficiency in ultrasound-based navigation workflows.
+  Methods: Eighty-five tracked 3D iUS volumes from 85 CRLM patients were used
+to train and evaluate a 3D U-Net implemented via the nnU-Net framework. Two
+variants were compared: one trained on full iUS volumes and another on cropped
+regions around tumors. Segmentation accuracy was assessed using Dice Similarity
+Coefficient (DSC), Hausdorff Distance (HDist.), and Relative Volume Difference
+(RVD) on retrospective and prospective datasets. The workflow was integrated
+into 3D Slicer for real-time intraoperative use.
+  Results: The cropped-volume model significantly outperformed the full-volume
+model across all metrics (AUC-ROC = 0.898 vs 0.718). It achieved median DSC =
+0.74, recall = 0.79, and HDist. = 17.1 mm comparable to semi-automatic
+segmentation but with ~4x faster execution (~ 1 min). Prospective
+intraoperative testing confirmed robust and consistent performance, with
+clinically acceptable accuracy for real-time surgical guidance.
+  Conclusion: Automatic 3D segmentation of CRLM in iUS using a cropped 3D U-Net
+provides reliable, near real-time results with minimal operator input. The
+method enables efficient, registration-free ultrasound-based navigation for
+hepatic surgery, approaching expert-level accuracy while substantially reducing
+manual workload and procedure time.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

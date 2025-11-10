@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training and Testing with Multiple Splits: A Central Limit Theorem for Split-Sample Estimators - Health AI Hub</title>
+    <meta name="description" content="This paper addresses the challenges of split-sample inference in predictive modeling, particularly the issues of data underutilization and variability across di">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Training and Testing with Multiple Splits: A Central Limit Theorem for Split-Sample Estimators</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.04957v1" target="_blank">2511.04957v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-07
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Bruno Fava
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> econ.EM, math.ST, stat.ML, stat.TH
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.80 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.04957v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.04957v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper addresses the challenges of split-sample inference in predictive modeling, particularly the issues of data underutilization and variability across different data splits. It introduces a novel inference approach based on averaging across multiple splits, backed by a new Central Limit Theorem that accounts for statistical dependence arising from observation reuse. The method improves reproducibility, utilizes more data, and demonstrates increased statistical power, especially for complex comparisons like evaluating two models.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This methodology is highly relevant to medical research and healthcare analytics, where predictive models are used for diagnosis, prognosis, and treatment effect estimation. It offers a robust statistical framework for validating and comparing machine learning models in clinical settings, ensuring more reliable and reproducible results from limited patient data.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research provides robust statistical methods to improve the validity, power, and reproducibility of AI models in healthcare. Specifically, it enables more reliable comparison of different medical AI models (e.g., for diagnosis, risk prediction, or image analysis), allowing for more confident selection of superior models. It also enhances the ability to identify heterogeneous treatment effects in clinical trials, a cornerstone of personalized medicine where AI can help tailor treatments to specific patient subgroups. By addressing statistical dependence and improving confidence interval validity, it strengthens the foundational methodology for medical AI development and evaluation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the drawbacks of traditional split-sampling by improving data utilization for training and testing, and enhancing reproducibility of estimates across different data splits.</li>
+                    
+                    <li>Proposes an inference approach that averages estimates from multiple splits, utilizing more data for training and the entire sample for testing.</li>
+                    
+                    <li>Develops a new Central Limit Theorem (CLT) for a broad class of split-sample estimators, explicitly accounting for the statistical dependence introduced by reusing observations across splits, without restricting model complexity or convergence rates.</li>
+                    
+                    <li>Identifies that while standard normal approximation-based confidence intervals are valid for many applications, they may undercover in critical cases, such as comparing the performance between two models.</li>
+                    
+                    <li>Introduces a novel, dependence-aware inference approach specifically designed for cases where standard normal approximations fail, ensuring valid statistical inference.</li>
+                    
+                    <li>Provides a measure for assessing the reproducibility of p-values obtained from split-sample estimators.</li>
+                    
+                    <li>Demonstrates empirically that the new inference approach, particularly with repeated cross-fitting, achieves significantly higher statistical power than previous alternatives, often enabling the detection of statistically significant effects that would otherwise be missed.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core methodology involves averaging estimates obtained from multiple, distinct random splits of a dataset for training and testing. It mathematically accounts for the resulting statistical dependence among these averaged estimates by proving a new Central Limit Theorem. When the standard normal approximation fails (e.g., for model comparison), a new, explicit dependence-aware inference approach is developed. This is often implemented using repeated cross-fitting.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>A new Central Limit Theorem validates inference for split-sample estimators averaged across multiple splits, accommodating observation reuse without strict model assumptions. While normal approximation-based confidence intervals are valid for many direct split-sample estimations, they critically undercover when comparing two models or complex performance metrics. A novel inference approach explicitly corrects for dependence across splits, yielding valid confidence intervals and improved statistical power in challenging comparison scenarios. The proposed method, especially with repeated cross-fitting, significantly enhances statistical power, allowing for the detection of subtle but important effects that previous methods might miss.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research can lead to more reliable and powerful statistical inference in clinical studies that employ machine learning, such as predicting disease progression, identifying patient subgroups benefiting from specific treatments (HTE), or comparing the efficacy of different diagnostic algorithms. It allows clinicians and researchers to make more confident decisions based on predictive models, potentially accelerating the translation of robust research findings into clinical practice. For instance, it could more reliably confirm which of two AI diagnostic tools performs significantly better in a clinical context.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract explicitly notes that while confidence intervals based on the normal approximation are valid for many applications, they may critically undercover in important cases of interest, such as comparing the performance between two models. This necessitates the use of the more complex, dependence-aware inference approach for such scenarios.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical trials</span>
+                    
+                    <span class="tag">personalized medicine</span>
+                    
+                    <span class="tag">public health epidemiology</span>
+                    
+                    <span class="tag">diagnostic imaging</span>
+                    
+                    <span class="tag">bioinformatics</span>
+                    
+                    <span class="tag">pharmacogenomics</span>
+                    
+                    <span class="tag">disease prediction</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Split-sample inference</span>
+                    
+                    <span class="tag tag-keyword">predictive modeling</span>
+                    
+                    <span class="tag tag-keyword">Central Limit Theorem</span>
+                    
+                    <span class="tag tag-keyword">statistical dependence</span>
+                    
+                    <span class="tag tag-keyword">reproducibility</span>
+                    
+                    <span class="tag tag-keyword">machine learning</span>
+                    
+                    <span class="tag tag-keyword">heterogeneous treatment effects</span>
+                    
+                    <span class="tag tag-keyword">model comparison</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">As predictive algorithms grow in popularity, using the same dataset to both
+train and test a new model has become routine across research, policy, and
+industry. Sample-splitting attains valid inference on model properties by using
+separate subsamples to estimate the model and to evaluate it. However, this
+approach has two drawbacks, since each task uses only part of the data, and
+different splits can lead to widely different estimates. Averaging across
+multiple splits, I develop an inference approach that uses more data for
+training, uses the entire sample for testing, and improves reproducibility. I
+address the statistical dependence from reusing observations across splits by
+proving a new central limit theorem for a large class of split-sample
+estimators under arguably mild and general conditions. Importantly, I make no
+restrictions on model complexity or convergence rates. I show that confidence
+intervals based on the normal approximation are valid for many applications,
+but may undercover in important cases of interest, such as comparing the
+performance between two models. I develop a new inference approach for such
+cases, explicitly accounting for the dependence across splits. Moreover, I
+provide a measure of reproducibility for p-values obtained from split-sample
+estimators. Finally, I apply my results to two important problems in
+development and public economics: predicting poverty and learning heterogeneous
+treatment effects in randomized experiments. I show that my inference approach
+with repeated cross-fitting achieves better power than previous alternatives,
+often enough to find statistical significance that would otherwise be missed.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

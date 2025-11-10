@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Referring Image Segmentation via Next-Token Mask Prediction - Health AI Hub</title>
+    <meta name="description" content="NTP-MRISeg introduces a novel framework for Medical Referring Image Segmentation (MRIS) by reformulating it as an autoregressive next-token prediction task over">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Medical Referring Image Segmentation via Next-Token Mask Prediction</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.05044v1" target="_blank">2511.05044v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-07
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Xinyu Chen, Yiran Wang, Gaoyang Pang, Jiafu Hao, Chentao Yue, Luping Zhou, Yonghui Li
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.05044v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.05044v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">NTP-MRISeg introduces a novel framework for Medical Referring Image Segmentation (MRIS) by reformulating it as an autoregressive next-token prediction task over a unified multimodal sequence of image, text, and mask representations. This approach significantly streamlines model design, enables end-to-end training leveraging pretrained tokenizers, and achieves new state-of-the-art performance on challenging medical datasets. The framework incorporates advanced strategies to address common issues like exposure bias, long-tail token distributions, and fine-grained edge prediction.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate Medical Referring Image Segmentation is vital for precise diagnosis, staging, and treatment planning across various medical conditions, as it enables the automated identification and delineation of specific anatomical structures or pathological regions based on clinical descriptions. This method's improved accuracy and streamlined design promise more efficient and reliable clinical workflows, potentially leading to earlier and more effective patient interventions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research develops an AI system (NTP-MRISeg) that can accurately segment specific regions within medical images based on a clinician's or radiologist's natural language description. This application can significantly enhance diagnostic accuracy and efficiency, aid in treatment planning (e.g., radiation therapy, surgery), quantify disease progression, and monitor treatment response by providing precise, context-aware segmentation of lesions, organs, or other regions of interest.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>MRIS is reformulated as an autoregressive next-token prediction task, treating tokenized image, text, and mask representations as a single unified multimodal sequence.</li>
+                    
+                    <li>The proposed NTP-MRISeg framework eliminates the need for complex multimodal fusion designs or external segmentation models, leading to a streamlined and end-to-end trainable architecture.</li>
+                    
+                    <li>It leverages pretrained tokenizers from existing large-scale multimodal models, enhancing generalization capabilities and adaptability to diverse medical imaging scenarios.</li>
+                    
+                    <li>A Next-k Token Prediction (NkTP) scheme is introduced to mitigate exposure bias and reduce cumulative prediction errors inherent in autoregressive generation.</li>
+                    
+                    <li>Token-level Contrastive Learning (TCL) is employed to improve boundary sensitivity and effectively address the challenges posed by long-tail token distributions in medical images.</li>
+                    
+                    <li>A memory-based Hard Error Token (HET) optimization strategy focuses training efforts on tokens that are consistently difficult to predict, thereby enhancing overall model robustness.</li>
+                    
+                    <li>NTP-MRISeg achieves new state-of-the-art performance on the QaTa-COV19 and MosMedData+ datasets, demonstrating its effectiveness and superiority over traditional MRIS pipelines.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core methodology involves reformulating Medical Referring Image Segmentation as an autoregressive next-token prediction task. This is achieved by tokenizing and unifying multimodal data, including image patches, natural language descriptions, and segmentation masks, into a single sequence. A transformer-based architecture then predicts the subsequent token in this sequence. To enhance performance and address specific challenges, three novel strategies are integrated: (1) Next-k Token Prediction (NkTP) to improve prediction stability, (2) Token-level Contrastive Learning (TCL) to refine boundary sensitivity and manage token distribution imbalances, and (3) a memory-based Hard Error Token (HET) optimization to prioritize learning from difficult-to-predict tokens.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The NTP-MRISeg framework successfully simplifies the complexity of traditional MRIS approaches by offering a streamlined, end-to-end autoregressive solution. It demonstrates superior segmentation accuracy, establishing new state-of-the-art performance benchmarks on the QaTa-COV19 and MosMedData+ datasets, indicating its robustness and effectiveness in segmenting target regions in medical images.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The enhanced accuracy and efficiency of NTP-MRISeg have the potential for significant clinical impact by providing clinicians with more precise and reliable automated tools for medical image analysis. This can aid in critical tasks such as delineating tumors for radiation therapy planning, segmenting organs at risk, quantifying disease burden, and assisting in surgical guidance, thereby improving diagnostic confidence, treatment efficacy, and patient outcomes while potentially reducing manual workload.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While the paper's strategies aim to address them, inherent challenges within the autoregressive formulation include exposure bias leading to cumulative prediction errors, the impact of long-tail token distributions on segmentation quality, and the difficulty in accurately capturing fine-grained lesion edges. The model's performance relies on the effectiveness of the pretrained tokenizers and the quality of the multimodal data sequence generation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Although not explicitly stated in the abstract, future research could explore extending NTP-MRISeg to a wider array of medical imaging modalities and diverse pathologies, investigate its performance in real-time clinical deployment scenarios, and assess its robustness and generalizability in few-shot or zero-shot learning settings for rare diseases.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Oncology (for lesion segmentation)</span>
+                    
+                    <span class="tag">Pulmonology (e.g., COVID-19 related lung imaging)</span>
+                    
+                    <span class="tag">Infectious Diseases</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Medical Referring Image Segmentation</span>
+                    
+                    <span class="tag tag-keyword">MRIS</span>
+                    
+                    <span class="tag tag-keyword">Autoregressive Models</span>
+                    
+                    <span class="tag tag-keyword">Next-Token Prediction</span>
+                    
+                    <span class="tag tag-keyword">Multimodal Learning</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Image Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Natural Language Processing</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical Referring Image Segmentation (MRIS) involves segmenting target
+regions in medical images based on natural language descriptions. While
+achieving promising results, recent approaches usually involve complex design
+of multimodal fusion or multi-stage decoders. In this work, we propose
+NTP-MRISeg, a novel framework that reformulates MRIS as an autoregressive
+next-token prediction task over a unified multimodal sequence of tokenized
+image, text, and mask representations. This formulation streamlines model
+design by eliminating the need for modality-specific fusion and external
+segmentation models, supports a unified architecture for end-to-end training.
+It also enables the use of pretrained tokenizers from emerging large-scale
+multimodal models, enhancing generalization and adaptability. More importantly,
+to address challenges under this formulation-such as exposure bias, long-tail
+token distributions, and fine-grained lesion edges-we propose three novel
+strategies: (1) a Next-k Token Prediction (NkTP) scheme to reduce cumulative
+prediction errors, (2) Token-level Contrastive Learning (TCL) to enhance
+boundary sensitivity and mitigate long-tail distribution effects, and (3) a
+memory-based Hard Error Token (HET) optimization strategy that emphasizes
+difficult tokens during training. Extensive experiments on the QaTa-COV19 and
+MosMedData+ datasets demonstrate that NTP-MRISeg achieves new state-of-the-art
+performance, offering a streamlined and effective alternative to traditional
+MRIS pipelines.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>This work has been submitted to the IEEE Transactions on Medical
+  Imaging for possible publication</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

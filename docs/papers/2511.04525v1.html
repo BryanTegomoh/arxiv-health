@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning from Single Timestamps: Complexity Estimation in Laparoscopic Cholecystectomy - Health AI Hub</title>
-    <meta name="description" content="STC-Net is a novel AI framework that automates surgical complexity estimation in Laparoscopic Cholecystectomy using the Parkland Grading Scale (PGS) directly fr">
+    <meta name="description" content="This paper introduces STC-Net, a novel deep learning framework for automated surgical complexity estimation in Laparoscopic Cholecystectomy (LC) using the Parkl">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">STC-Net is a novel AI framework that automates surgical complexity estimation in Laparoscopic Cholecystectomy using the Parkland Grading Scale (PGS) directly from full surgical videos. It employs weak temporal supervision to jointly localize and grade inflammation severity, achieving over 62% accuracy and F1-score and outperforming non-localized baselines by over 10% on a large dataset. This approach offers a scalable solution for post-operative analysis and surgical training.</p>
+                <p class="summary-text">This paper introduces STC-Net, a novel deep learning framework for automated surgical complexity estimation in Laparoscopic Cholecystectomy (LC) using the Parkland Grading Scale (PGS). Operating directly on full surgical videos with weak temporal supervision, STC-Net jointly performs temporal localization and grading, achieving 62.11% accuracy and 61.42% F1-score, significantly outperforming non-localized baselines.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate and automated assessment of surgical complexity in Laparoscopic Cholecystectomy is crucial for predicting operative times, reducing the risk of postoperative complications, and enhancing overall patient safety through improved surgical planning and risk stratification.</p>
+                <p>Accurate, automated assessment of surgical complexity in Laparoscopic Cholecystectomy is crucial for pre-operative planning, risk stratification, and optimizing surgical outcomes by reducing operative times and mitigating post-operative complications related to severe inflammation.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>An AI-powered computer vision system (STC-Net) that automatically estimates surgical complexity in Laparoscopic Cholecystectomy from full surgical videos, using the Parkland Grading Scale. This AI application is designed to aid in post-operative analysis and enhance surgical training by providing objective, automated assessment of inflammation severity.</p>
+                <p>The paper describes the development of STC-Net, an AI framework for automated, real-time or post-operative estimation of surgical complexity from full laparoscopic videos. This AI application aims to improve surgical planning, provide objective risk stratification, enhance surgical training by offering automated feedback and assessment, and assist in post-operative analysis for quality improvement and research.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Introduces STC-Net, a novel framework for automated surgical complexity estimation in Laparoscopic Cholecystectomy (LC) based on the Parkland Grading Scale (PGS).</li>
+                    <li>Addresses the challenge of automating surgical complexity assessment in Laparoscopic Cholecystectomy (LC) using the clinically validated Parkland Grading Scale (PGS) from full, uncurated surgical videos.</li>
                     
-                    <li>Designed to operate directly on full, uncurated surgical videos, distinguishing it from prior methods limited to static images or manually trimmed clips.</li>
+                    <li>Introduces STC-Net (SingleTimestamp-based Complexity estimation), a novel framework designed to operate under weak temporal supervision, distinguishing it from prior methods limited to static images or manually trimmed clips.</li>
                     
-                    <li>Utilizes weak temporal supervision, performing joint temporal localization and grading through a dedicated localization, window proposal, and grading module.</li>
+                    <li>STC-Net jointly performs temporal localization of relevant video segments and subsequent PGS-based inflammation severity grading through a modular architecture: localization, window proposal, and grading.</li>
                     
-                    <li>Incorporates a novel loss formulation that combines hard and soft localization objectives with background-aware grading supervision for robust learning.</li>
+                    <li>A novel loss formulation is employed, combining hard and soft localization objectives with background-aware grading supervision to enhance model learning.</li>
                     
-                    <li>Evaluated on a private dataset comprising 1,859 LC videos, a significant scale for surgical video analysis.</li>
+                    <li>Evaluated on a private dataset of 1,859 LC videos, STC-Net achieved an accuracy of 62.11% and an F1-score of 61.42% for complexity estimation.</li>
                     
-                    <li>Achieved an accuracy of 62.11% and an F1-score of 61.42% for PGS-based complexity estimation.</li>
+                    <li>The framework demonstrated superior performance, outperforming non-localized baseline methods by over 10% in both accuracy and F1-score, thereby validating the effectiveness of weak supervision and temporal localization.</li>
                     
-                    <li>Demonstrated substantial outperformance of over 10% in both accuracy and F1-score compared to non-localized baseline methods, highlighting the effectiveness of its localization strategy.</li>
+                    <li>The findings suggest STC-Net is a scalable and effective approach for automated complexity estimation, holding promise for enhancing post-operative analysis and surgical training.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study developed STC-Net, a deep learning framework designed to process full surgical videos for complexity estimation via the Parkland Grading Scale. It features a multi-module architecture that jointly performs temporal localization of relevant events, proposes precise temporal windows, and applies the complexity grade. A novel loss function was introduced, combining hard and soft localization objectives with background-aware grading supervision, enabling the system to learn effectively from weak temporal annotations.</p>
+                    <p>STC-Net is a novel deep learning framework designed for SingleTimestamp-based Complexity estimation in LC via the Parkland Grading Scale (PGS) under weak temporal supervision. It processes full surgical videos by jointly performing temporal localization of relevant segments and complexity grading. The architecture consists of a localization module, a window proposal module, and a grading module. A novel loss formulation integrates hard and soft localization objectives with background-aware grading supervision. The system was developed and evaluated using a private dataset comprising 1,859 LC surgical videos.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>STC-Net achieved a classification accuracy of 62.11% and an F1-score of 61.42% for PGS-based complexity estimation on a dataset of 1,859 LC videos. This performance represents a significant improvement, outperforming non-localized baseline methods by over 10% in both accuracy and F1-score, thereby validating the efficacy of weak temporal supervision and the integrated localization-grading approach for surgical complexity assessment from full videos.</p>
+                    <p>STC-Net achieved an accuracy of 62.11% and an F1-score of 61.42% on the 1,859 LC video dataset for PGS-based complexity estimation. This performance significantly surpassed non-localized baseline methods by over 10% in both accuracy and F1-score, demonstrating the efficacy of its weak supervision and temporal localization approach for surgical complexity assessment.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This automated system offers a scalable and objective tool for post-operative analysis of surgical videos, which can aid in standardizing complexity assessment, evaluating surgeon performance, and identifying areas for skill development. It holds significant promise for enhancing surgical training programs by providing quantitative feedback and potentially informing pre-operative planning or intraoperative decision-making by offering an objective measure of inflammation severity.</p>
+                <p>This automated system has the potential to significantly enhance clinical practice by providing an objective and scalable method for assessing inflammation severity in LC. It can aid in pre-operative risk assessment, improve surgical planning, optimize resource allocation, and support surgical training by identifying challenging cases. This ultimately contributes to reducing operative times and decreasing the incidence of postoperative complications for patients.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The evaluation was conducted on a private dataset, which may limit the direct generalizability of the reported performance to diverse clinical settings or other patient populations. While weak temporal supervision is a methodological strength for scalability, it intrinsically provides less detailed ground truth than strong supervision, which might set an upper bound on achievable accuracy.</p>
+                <p>The abstract does not explicitly state any limitations of the STC-Net framework or its evaluation.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The STC-Net framework is promising for integration into existing post-operative surgical analysis pipelines and could serve as a valuable objective assessment tool within advanced surgical training programs. Future research could focus on validating the system on larger, multi-center datasets to enhance generalizability and exploring its potential for real-time intraoperative applications.</p>
+                <p>The paper suggests that STC-Net is promising for practical applications in post-operative analysis and surgical training, indicating future work could involve deployment and integration into clinical workflows and educational platforms.</p>
             </section>
             
 
@@ -124,11 +124,11 @@
                     
                     <span class="tag">Laparoscopic Surgery</span>
                     
-                    <span class="tag">Surgical Education</span>
+                    <span class="tag">Surgical Training</span>
                     
-                    <span class="tag">Risk Stratification</span>
+                    <span class="tag">Medical Imaging</span>
                     
-                    <span class="tag">Surgical Informatics</span>
+                    <span class="tag">AI in Healthcare</span>
                     
                 </div>
             </section>
@@ -147,11 +147,11 @@
                     
                     <span class="tag tag-keyword">Weak Supervision</span>
                     
-                    <span class="tag tag-keyword">Video Analysis</span>
-                    
                     <span class="tag tag-keyword">Temporal Localization</span>
                     
-                    <span class="tag tag-keyword">Computer Vision</span>
+                    <span class="tag tag-keyword">Surgical Video Analysis</span>
+                    
+                    <span class="tag tag-keyword">Artificial Intelligence in Surgery</span>
                     
                 </div>
             </section>

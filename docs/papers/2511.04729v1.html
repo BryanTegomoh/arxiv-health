@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge-based anomaly detection for identifying network-induced shape artifacts - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel knowledge-based anomaly detection method to identify network-induced shape artifacts in synthetic medical images, crucial for ensu">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Knowledge-based anomaly detection for identifying network-induced shape artifacts</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.04729v1" target="_blank">2511.04729v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-06
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Rucha Deshpande, Tahsin Rahman, Miguel Lago, Adarsh Subbaswamy, Jana G. Delfino, Ghada Zamzmi, Elim Thompson, Aldo Badano, Seyed Kahaki
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.04729v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.04729v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel knowledge-based anomaly detection method to identify network-induced shape artifacts in synthetic medical images, crucial for ensuring data quality in AI model training. It utilizes a two-stage framework involving a specialized feature extractor analyzing angle gradients along anatomical boundaries and an isolation forest anomaly detector. The method demonstrates high effectiveness and agreement with human experts on synthetic mammography datasets, advancing the responsible use of synthetic data in medical AI.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Ensuring the anatomical fidelity and quality of synthetic medical images is paramount for developing robust and clinically reliable AI models, especially in critical diagnostic areas. This method provides a vital tool to validate synthetic data, preventing the propagation of subtle but potentially misleading artifacts into AI systems used for patient care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research develops a knowledge-based anomaly detection method to ensure the quality and clinical utility of synthetic medical image datasets (specifically mammography). This is critical for the responsible development and deployment of AI models in healthcare, as these synthetic datasets are used to train AI for diagnosis and analysis. By detecting and addressing 'network-induced shape artifacts,' the method helps prevent AI models from learning from flawed data, which could compromise their performance and safety in clinical settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical challenge of identifying artifacts and unrealistic features in synthetic medical data, which can compromise machine learning model performance and clinical utility.</li>
+                    
+                    <li>Proposes a novel two-stage knowledge-based anomaly detection framework specifically tailored for network-induced shape artifacts in synthetic images.</li>
+                    
+                    <li>The first stage introduces a unique feature extractor that constructs a specialized feature space by analyzing the per-image distribution of angle gradients along anatomical boundaries.</li>
+                    
+                    <li>The second stage employs an isolation forest algorithm as the anomaly detector, leveraging the features extracted in the first stage.</li>
+                    
+                    <li>Evaluated on two synthetic mammography datasets (CSAW-syn and VMLO-syn), achieving high AUC values of 0.97 and 0.91, demonstrating successful concentration of artifacts in the most anomalous partitions.</li>
+                    
+                    <li>A reader study involving three imaging scientists confirmed strong agreement (mean 66-68%) between the method's identified anomalous images and human expert flags, significantly higher than for less anomalous partitions.</li>
+                    
+                    <li>This method empowers developers to evaluate synthetic images against known anatomical constraints, facilitating targeted improvements in the quality and realism of synthetic datasets for medical AI training.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed method is a two-stage knowledge-based anomaly detection framework. Stage one involves a novel feature extractor that generates a specialized feature space by analyzing the per-image distribution of angle gradients along anatomical boundaries. Stage two then applies an isolation forest algorithm to this feature space to identify images containing network-induced shape artifacts as anomalies.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The method effectively identifies network-induced shape artifacts, achieving AUC values of 0.97 (CSAW-syn) and 0.91 (VMLO-syn) for concentrating artifacts in the 1st percentile. A reader study with imaging scientists showed mean agreement rates of 66% (CSAW-syn) and 68% (VMLO-syn) for the most anomalous partition, which was approximately 1.5-2 times higher than the least anomalous partition. Kendall-Tau correlations of 0.45 and 0.43 further indicated reasonable agreement between algorithmic and human rankings.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This method offers a critical quality assurance tool for synthetic medical data, enabling developers to identify and rectify anatomically unrealistic features before using the data to train clinical AI models. By improving the quality of synthetic datasets, it contributes to the development of more accurate, reliable, and trustworthy AI diagnostic systems, ultimately enhancing patient safety and diagnostic precision in clinical settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While effective, the abstract implicitly notes the "challenging nature of subtle artifact detection," suggesting that identifying all nuances of artifacts can be difficult. The human reader agreement rates, although strong, are not perfect, reflecting this inherent challenge in subtle anomaly detection.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper positions this method as a step towards the responsible use of synthetic data, allowing developers to evaluate images against anatomical constraints and pinpoint specific issues. This implies future work in using this tool for iterative refinement of synthetic data generation models, leading to higher-quality datasets and more robust clinical AI applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Breast Imaging</span>
+                    
+                    <span class="tag">Medical Artificial Intelligence</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Synthetic data</span>
+                    
+                    <span class="tag tag-keyword">Anomaly detection</span>
+                    
+                    <span class="tag tag-keyword">Shape artifacts</span>
+                    
+                    <span class="tag tag-keyword">Medical imaging</span>
+                    
+                    <span class="tag tag-keyword">Mammography</span>
+                    
+                    <span class="tag tag-keyword">Deep learning</span>
+                    
+                    <span class="tag tag-keyword">Image quality</span>
+                    
+                    <span class="tag tag-keyword">AI explainability</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Synthetic data provides a promising approach to address data scarcity for
+training machine learning models; however, adoption without proper quality
+assessments may introduce artifacts, distortions, and unrealistic features that
+compromise model performance and clinical utility. This work introduces a novel
+knowledge-based anomaly detection method for detecting network-induced shape
+artifacts in synthetic images. The introduced method utilizes a two-stage
+framework comprising (i) a novel feature extractor that constructs a
+specialized feature space by analyzing the per-image distribution of angle
+gradients along anatomical boundaries, and (ii) an isolation forest-based
+anomaly detector. We demonstrate the effectiveness of the method for
+identifying network-induced shape artifacts in two synthetic mammography
+datasets from models trained on CSAW-M and VinDr-Mammo patient datasets
+respectively. Quantitative evaluation shows that the method successfully
+concentrates artifacts in the most anomalous partition (1st percentile), with
+AUC values of 0.97 (CSAW-syn) and 0.91 (VMLO-syn). In addition, a reader study
+involving three imaging scientists confirmed that images identified by the
+method as containing network-induced shape artifacts were also flagged by human
+readers with mean agreement rates of 66% (CSAW-syn) and 68% (VMLO-syn) for the
+most anomalous partition, approximately 1.5-2 times higher than the least
+anomalous partition. Kendall-Tau correlations between algorithmic and human
+rankings were 0.45 and 0.43 for the two datasets, indicating reasonable
+agreement despite the challenging nature of subtle artifact detection. This
+method is a step forward in the responsible use of synthetic data, as it allows
+developers to evaluate synthetic images for known anatomic constraints and
+pinpoint and address specific issues to improve the overall quality of a
+synthetic dataset.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>15 pages, 11 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
