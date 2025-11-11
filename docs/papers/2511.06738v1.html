@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights - Health AI Hub</title>
+    <meta name="description" content="This paper presents the most comprehensive expert evaluation of Retrieval-Augmented Generation (RAG) in medicine, involving 18 medical experts and over 80,000 a">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Rethinking Retrieval-Augmented Generation for Medicine: A Large-Scale, Systematic Expert Evaluation and Practical Insights</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.06738v1" target="_blank">2511.06738v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-10
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Hyunjae Kim, Jiwoong Sohn, Aidan Gilson, Nicholas Cochran-Caggiano, Serina Applebaum, Heeju Jin, Seihee Park, Yujin Park, Jiyeong Park, Seoyoung Choi, Brittany Alexandra Herrera Contreras, Thomas Huang, Jaehoon Yun, Ethan F. Wei, Roy Jiang, Leah Colucci, Eric Lai, Amisha Dave, Tuo Guo, Maxwell B. Singer, Yonghoe Koo, Ron A. Adelman, James Zou, Andrew Taylor, Arman Cohan, Hua Xu, Qingyu Chen
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.06738v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.06738v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper presents the most comprehensive expert evaluation of Retrieval-Augmented Generation (RAG) in medicine, involving 18 medical experts and over 80,000 annotations. Contrary to expectations, standard RAG often degraded performance for medical queries, highlighting critical failure points in evidence retrieval and selection. However, the study also demonstrates that simple, targeted strategies like evidence filtering and query reformulation can substantially mitigate these issues, leading to significant performance improvements.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for the safe and effective integration of LLMs into healthcare, as it directly addresses the critical need for verifiable, evidence-grounded, and factual medical information. Demonstrating that standard RAG can *degrade* performance underscores the danger of uncritical deployment and highlights where targeted improvements are needed to build truly reliable clinical decision support and information retrieval systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research evaluates and aims to improve Retrieval-Augmented Generation (RAG) systems used with Large Language Models (LLMs) to enhance their reliability, factuality, and evidence-grounded reasoning specifically for medical applications. This includes tasks such as answering patient-specific queries, supporting medical education, and assisting with clinical information retrieval and synthesis within healthcare settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>A large-scale expert evaluation involved 18 medical experts, 80,502 annotations, 800 model outputs (GPT-4o, Llama-3.1-8B), and 200 real-world patient/USMLE-style queries.</li>
+                    
+                    <li>The RAG pipeline was systematically decomposed into three components: evidence retrieval, evidence selection, and response generation, each assessed for specific metrics.</li>
+                    
+                    <li>Standard RAG frequently degraded performance, with factuality dropping by up to 6% and completeness by up to 5% compared to non-RAG variants.</li>
+                    
+                    <li>Key failure points were identified: only 22% of top-16 retrieved passages were relevant, and evidence selection exhibited weak performance (precision 41-43%, recall 27-49%).</li>
+                    
+                    <li>Retrieval and evidence selection were pinpointed as the primary contributors to the overall performance drop observed with RAG.</li>
+                    
+                    <li>Simple yet effective strategies, such as evidence filtering and query reformulation, significantly improved performance, boosting scores on MedMCQA by up to 12% and MedXpertQA by up to 8.2%.</li>
+                    
+                    <li>The findings emphasize the need for a re-examination of RAG's role in medicine, advocating for stage-aware evaluation and deliberate system design for reliable medical LLM applications.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study employed a large-scale, systematic expert evaluation. Eighteen medical experts contributed 80,502 annotations on 800 model outputs from GPT-4o and Llama-3.1-8B. The models processed 200 real-world patient and USMLE-style medical queries. The RAG pipeline was meticulously decomposed into three stages—evidence retrieval (assessing passage relevance), evidence selection (assessing accuracy of evidence usage), and response generation (assessing factuality and completeness)—each evaluated independently by experts.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Standard RAG often *degraded* LLM performance in medicine, with factuality and completeness dropping by up to 6% and 5% respectively compared to non-RAG. Only 22% of the top-16 retrieved passages were relevant. Evidence selection exhibited low precision (41-43%) and recall (27-49%). The primary failure points were identified as retrieval and evidence selection. However, simple interventions like evidence filtering and query reformulation significantly improved performance on benchmark datasets (MedMCQA by up to 12%, MedXpertQA by up to 8.2%).</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The findings have a direct clinical impact by cautioning against the naive application of RAG in medical LLMs, which could lead to inaccurate or incomplete information. It emphasizes the need for robust, meticulously designed RAG systems that prioritize high-quality retrieval and accurate evidence selection. This work will guide the development of more reliable and trustworthy AI tools for clinicians, ensuring that LLMs provide genuinely evidence-based support rather than introducing errors, ultimately improving patient safety and quality of care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract points out the limitations *of standard RAG*, specifically its poor performance in evidence retrieval (low relevance) and evidence selection (low precision/recall), leading to degradation in factuality and completeness of generated responses. It implies that these inherent weaknesses in current RAG implementations, rather than the study's design itself, are the primary constraints in achieving reliable medical LLM applications.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper calls for a re-examination of RAG's role in medicine and highlights the critical importance of 'stage-aware evaluation' to identify and address weaknesses at each step of the RAG pipeline. It also suggests focusing on 'deliberate system design' to build more robust and reliable medical LLM applications, potentially through integrating strategies like advanced evidence filtering and query reformulation into core RAG architectures.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Question Answering</span>
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Medical Education (USMLE-style queries)</span>
+                    
+                    <span class="tag">Patient Information Queries</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Retrieval-Augmented Generation</span>
+                    
+                    <span class="tag tag-keyword">RAG</span>
+                    
+                    <span class="tag tag-keyword">Large Language Models</span>
+                    
+                    <span class="tag tag-keyword">LLMs</span>
+                    
+                    <span class="tag tag-keyword">Medical AI</span>
+                    
+                    <span class="tag tag-keyword">Expert Evaluation</span>
+                    
+                    <span class="tag tag-keyword">Factuality</span>
+                    
+                    <span class="tag tag-keyword">Evidence-based Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Large language models (LLMs) are transforming the landscape of medicine, yet
+two fundamental challenges persist: keeping up with rapidly evolving medical
+knowledge and providing verifiable, evidence-grounded reasoning.
+Retrieval-augmented generation (RAG) has been widely adopted to address these
+limitations by supplementing model outputs with retrieved evidence. However,
+whether RAG reliably achieves these goals remains unclear. Here, we present the
+most comprehensive expert evaluation of RAG in medicine to date. Eighteen
+medical experts contributed a total of 80,502 annotations, assessing 800 model
+outputs generated by GPT-4o and Llama-3.1-8B across 200 real-world patient and
+USMLE-style queries. We systematically decomposed the RAG pipeline into three
+components: (i) evidence retrieval (relevance of retrieved passages), (ii)
+evidence selection (accuracy of evidence usage), and (iii) response generation
+(factuality and completeness of outputs). Contrary to expectation, standard RAG
+often degraded performance: only 22% of top-16 passages were relevant, evidence
+selection remained weak (precision 41-43%, recall 27-49%), and factuality and
+completeness dropped by up to 6% and 5%, respectively, compared with non-RAG
+variants. Retrieval and evidence selection remain key failure points for the
+model, contributing to the overall performance drop. We further show that
+simple yet effective strategies, including evidence filtering and query
+reformulation, substantially mitigate these issues, improving performance on
+MedMCQA and MedXpertQA by up to 12% and 8.2%, respectively. These findings call
+for re-examining RAG's role in medicine and highlight the importance of
+stage-aware evaluation and deliberate system design for reliable medical LLM
+applications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>34 pages, 6 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

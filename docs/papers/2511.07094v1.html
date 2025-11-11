@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-Adaptive Low-Dose CT Reconstruction - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel task-adaptive deep learning framework for low-dose CT reconstruction, addressing the prevalent issue where existing methods achiev">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Task-Adaptive Low-Dose CT Reconstruction</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.07094v1" target="_blank">2511.07094v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-10
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Necati Sefercioglu, Mehmet Ozan Unal, Metin Ertas, Isa Yildirim
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> eess.IV, cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.07094v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="http://arxiv.org/pdf/2511.07094v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel task-adaptive deep learning framework for low-dose CT reconstruction, addressing the prevalent issue where existing methods achieve high standard image quality metrics but fail to preserve critical diagnostic anatomical details. By incorporating a frozen pre-trained task network as a regularization term in the reconstruction loss, the proposed method effectively guides the reconstruction process to maintain diagnostic quality relevant to specific clinical tasks. This approach significantly outperforms traditional and joint-training methods, approaching full-dose performance on segmentation tasks.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant as it addresses a critical limitation of low-dose CT by ensuring that diagnostically crucial information, such as tumor margins, is preserved while reducing patient radiation exposure. This significantly enhances the clinical utility of low-dose CT for various diagnostic tasks.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is deep learning for low-dose CT reconstruction, specifically designed with a task-adaptive framework to optimize reconstructed images for downstream diagnostic tasks (e.g., liver and liver tumor segmentation). This aims to enable accurate diagnosis from CT scans with significantly reduced radiation dose, thereby improving patient safety and contributing to better healthcare outcomes and clinical practice.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Deep learning-based low-dose CT (LDCT) reconstruction frequently fails to preserve critical anatomical details necessary for diagnostic tasks, despite high PSNR/SSIM scores.</li>
+                    
+                    <li>The proposed framework introduces a novel task-adaptive reconstruction method that leverages a *frozen pre-trained task network* as a regularization term within the reconstruction loss function.</li>
+                    
+                    <li>Unlike existing joint-training approaches that optimize both reconstruction and task networks simultaneously and risk divergence, this method uses the pre-trained task model to *guide* reconstruction, thus ensuring diagnostic quality.</li>
+                    
+                    <li>The framework was validated on a liver and liver tumor segmentation task, demonstrating superior performance.</li>
+                    
+                    <li>Task-adaptive models achieved Dice scores up to 0.707, substantially outperforming joint-training methods (0.331 Dice) and traditional reconstruction (0.626 Dice), and approaching full-dose scan performance (0.874 Dice).</li>
+                    
+                    <li>The framework is designed for widespread adoption, as it can be integrated into any existing deep learning-based reconstruction model through simple loss function modification.</li>
+                    
+                    <li>This research aims to bridge the gap between high technical image quality and preserved diagnostic utility in low-dose CT imaging.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology centers on a deep learning-based low-dose CT reconstruction framework. The core innovation is the modification of the reconstruction loss function to incorporate a regularization term. This regularization term is derived from the output of a *frozen* (non-trainable during reconstruction training) pre-trained task-specific neural network (e.g., a segmentation network). This allows the reconstruction process to be guided by the requirements of a specific diagnostic task, ensuring that task-relevant features are preserved, rather than relying solely on general image quality metrics.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The task-adaptive low-dose CT reconstruction models achieved Dice scores up to 0.707 for liver and liver tumor segmentation. This performance significantly surpassed that of joint-training approaches (0.331 Dice) and traditional reconstruction methods (0.626 Dice). Critically, these results approached the Dice score performance of full-dose scans (0.874), demonstrating that diagnostic accuracy can be maintained even at lower radiation doses.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework has substantial potential clinical impact by enabling safer CT examinations through reduced radiation doses without compromising diagnostic accuracy for critical tasks like tumor detection and staging. Its ease of integration into existing deep learning reconstruction models can accelerate its adoption in clinical practice, making low-dose CT a more reliable and widely applicable tool across various diagnostic scenarios, ultimately benefiting patient care by minimizing radiation risks while preserving diagnostic confidence.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the *proposed* framework. It primarily highlights the fundamental limitation of *existing* deep learning reconstruction methods in preserving diagnostic details. An implicit limitation might involve the dependency on the availability and performance of a well-trained, task-specific network for each clinical application.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly outlined as 'future directions,' the paper's emphasis on the framework's broad applicability and potential for 'widespread adoption for task-adaptive optimization in clinical practice' suggests that future work would involve further validation across a wider range of clinical tasks and anatomical regions, integration into clinical workflows, and potentially exploration of its benefits in real-world clinical settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Medical Image Analysis</span>
+                    
+                    <span class="tag">Radiation Oncology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Low-dose CT</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Image Reconstruction</span>
+                    
+                    <span class="tag tag-keyword">Task-Adaptive</span>
+                    
+                    <span class="tag tag-keyword">Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Regularization</span>
+                    
+                    <span class="tag tag-keyword">Diagnostic Quality</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Deep learning-based low-dose computed tomography reconstruction methods
+already achieve high performance on standard image quality metrics like peak
+signal-to-noise ratio and structural similarity index measure. Yet, they
+frequently fail to preserve the critical anatomical details needed for
+diagnostic tasks. This fundamental limitation hinders their clinical
+applicability despite their high metric scores. We propose a novel
+task-adaptive reconstruction framework that addresses this gap by incorporating
+a frozen pre-trained task network as a regularization term in the
+reconstruction loss function. Unlike existing joint-training approaches that
+simultaneously optimize both reconstruction and task networks, and risk
+diverging from satisfactory reconstructions, our method leverages a pre-trained
+task model to guide reconstruction training while still maintaining diagnostic
+quality. We validate our framework on a liver and liver tumor segmentation
+task. Our task-adaptive models achieve Dice scores up to 0.707, approaching the
+performance of full-dose scans (0.874), and substantially outperforming
+joint-training approaches (0.331) and traditional reconstruction methods
+(0.626). Critically, our framework can be integrated into any existing deep
+learning-based reconstruction model through simple loss function modification,
+enabling widespread adoption for task-adaptive optimization in clinical
+practice. Our codes are available at:
+https://github.com/itu-biai/task_adaptive_ct</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
