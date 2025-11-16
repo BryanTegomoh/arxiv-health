@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimistic Reinforcement Learning with Quantile Objectives - Health AI Hub</title>
+    <meta name="description" content="This paper introduces UCB-QRL, an optimistic Reinforcement Learning algorithm designed to optimize the $\tau$-quantile of cumulative reward in finite-horizon Ma">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Optimistic Reinforcement Learning with Quantile Objectives</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.09652v1" target="_blank">2511.09652v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-12
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Mohammad Alipour-Vaezi, Huaiyang Zhong, Kwok-Leung Tsui, Sajad Khodadadian
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.09652v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.09652v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces UCB-QRL, an optimistic Reinforcement Learning algorithm designed to optimize the $\tau$-quantile of cumulative reward in finite-horizon Markov Decision Processes (MDPs). Addressing the classical RL's lack of risk sensitivity, UCB-QRL iteratively estimates transition probabilities and optimizes the quantile value function within a confidence ball. The algorithm provides a high-probability regret bound, making it suitable for risk-averse applications like healthcare and finance.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>In healthcare, patient outcomes can vary significantly, and the consequences of poor decisions can be severe. This research is critical because it enables RL agents to make decisions not just based on average expected outcomes, but with an explicit focus on managing risk, minimizing adverse events, or ensuring a high probability of successful treatment, which is essential for patient safety and trust.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research provides a foundational algorithmic framework for developing risk-sensitive AI agents in healthcare. For instance, an AI system recommending treatment protocols could utilize this approach to prioritize patient safety and minimize adverse outcomes by optimizing for a specific quantile (e.g., the 10th percentile) of patient health rather than just the average. This ensures that even in a worst-case scenario (within a defined probability), patient outcomes are above a certain threshold, which is crucial for high-stakes medical decisions. It enables the design of AI that explicitly accounts for and manages risk in applications like drug titration, surgical planning, or resource allocation in emergency care.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Classical Reinforcement Learning (RL) typically optimizes for expected cumulative reward, failing to account for risk sensitivity crucial in domains like healthcare.</li>
+                    
+                    <li>The paper proposes UCB-QRL, an optimistic learning algorithm that explicitly optimizes for a specific $\tau$-quantile of the cumulative reward distribution.</li>
+                    
+                    <li>UCB-QRL operates in finite-horizon Markov Decision Processes (MDPs) in an episodic setting.</li>
+                    
+                    <li>The algorithm is iterative: it first estimates the underlying transition probabilities and then optimizes the quantile value function over a confidence ball around this estimate, incorporating optimism under uncertainty.</li>
+                    
+                    <li>It achieves a high-probability regret bound of $\mathcal O\left((2/\kappa)^{H+1}H\sqrt{SATH\log(2SATH/\delta)}\right)$, where $\kappa$ is a problem-dependent constant capturing the sensitivity of the MDP's quantile value.</li>
+                    
+                    <li>This approach provides a robust framework for decision-making where minimizing worst-case outcomes (e.g., adverse events) or maximizing a certain percentile of success is paramount.</li>
+                    
+                    <li>The problem-dependent constant $\kappa$ highlights the intrinsic difficulty or sensitivity of the underlying MDP with respect to its quantile value.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>UCB-QRL is an iterative, model-based Reinforcement Learning algorithm. In each iteration, it first estimates the underlying transition probability function of the finite-horizon MDP based on observed data. Subsequently, it constructs a confidence ball around this estimated transition probability. The algorithm then optimistically optimizes the $\tau$-quantile value function within this confidence ball, effectively balancing exploration (through the confidence ball) and exploitation (optimizing the quantile objective). This 'optimism in the face of uncertainty' approach helps ensure robust performance.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary finding is the derivation of a high-probability regret bound for UCB-QRL in the episodic setting. The bound is $\mathcal O\left((2/\kappa)^{H+1}H\sqrt{SATH\log(2SATH/\delta)}\right)$, indicating that the algorithm's performance, in terms of cumulative reward loss compared to an optimal policy, scales polynomially with the number of states ($S$), actions ($A$), episodes ($T$), and horizon length ($H$). The crucial factor $(2/\kappa)^{H+1}$ highlights the exponential dependence on the horizon and inverse dependence on $\kappa$, a problem-dependent constant representing the sensitivity of the MDP's quantile value. A smaller $\kappa$ (higher sensitivity) leads to a larger regret, indicating a more challenging problem.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research could significantly enhance the reliability and safety of AI-driven clinical decision support systems. By optimizing for quantiles, clinicians could deploy RL agents that prioritize minimizing the risk of adverse events (e.g., optimizing for the 5th percentile of outcomes to ensure minimal negative impact) or ensuring a high probability of treatment success (e.g., optimizing for the 95th percentile of positive outcomes). This move beyond average-case optimization allows for more patient-centric and risk-aware personalized treatment strategies, potentially reducing medical errors and improving overall patient care in scenarios with high stakes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of UCB-QRL. However, common considerations for such theoretical algorithms in practical medical settings include: the practical estimation or determination of the problem-dependent constant $\kappa$; the computational complexity of optimizing over confidence balls, especially in very large state/action spaces or for long horizons; and the potential challenge of translating theoretical regret bounds into real-world clinical performance guarantees. The finite-horizon and episodic assumptions might also limit applicability to continuous or life-long treatment scenarios without adaptation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly discussed in the provided abstract, but potential future directions stemming from this work could include extending UCB-QRL to continuous state/action spaces, exploring different forms of risk-sensitive objectives beyond quantiles, investigating methods for more robust estimation of $\kappa$ or similar problem-dependent constants, and empirical evaluation in complex medical simulation environments to validate theoretical bounds and assess practical performance.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Critical Care Management</span>
+                    
+                    <span class="tag">Drug Dosing Optimization</span>
+                    
+                    <span class="tag">Treatment Protocol Design</span>
+                    
+                    <span class="tag">Disease Management</span>
+                    
+                    <span class="tag">Medical Robotics (e.g., surgery with safety constraints)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Reinforcement Learning</span>
+                    
+                    <span class="tag tag-keyword">Risk Sensitivity</span>
+                    
+                    <span class="tag tag-keyword">Quantile Optimization</span>
+                    
+                    <span class="tag tag-keyword">Markov Decision Processes</span>
+                    
+                    <span class="tag tag-keyword">Optimistic Learning</span>
+                    
+                    <span class="tag tag-keyword">Regret Bound</span>
+                    
+                    <span class="tag tag-keyword">Healthcare AI</span>
+                    
+                    <span class="tag tag-keyword">Clinical Decision Support</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Reinforcement Learning (RL) has achieved tremendous success in recent years. However, the classical foundations of RL do not account for the risk sensitivity of the objective function, which is critical in various fields, including healthcare and finance. A popular approach to incorporate risk sensitivity is to optimize a specific quantile of the cumulative reward distribution. In this paper, we develop UCB-QRL, an optimistic learning algorithm for the $τ$-quantile objective in finite-horizon Markov decision processes (MDPs). UCB-QRL is an iterative algorithm in which, at each iteration, we first estimate the underlying transition probability and then optimize the quantile value function over a confidence ball around this estimate. We show that UCB-QRL yields a high-probability regret bound $\mathcal O\left((2/κ)^{H+1}H\sqrt{SATH\log(2SATH/δ)}\right)$ in the episodic setting with $S$ states, $A$ actions, $T$ episodes, and $H$ horizons. Here, $κ>0$ is a problem-dependent constant that captures the sensitivity of the underlying MDP's quantile value.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

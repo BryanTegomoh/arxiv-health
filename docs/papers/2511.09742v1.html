@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feature Quality and Adaptability of Medical Foundation Models: A Comparative Evaluation for Radiographic Classification and Segmentation - Health AI Hub</title>
+    <meta name="description" content="This paper comparatively evaluates eight medical and general-domain Foundation Models (FMs) for chest X-ray analysis, revealing that domain-specific pre-trainin">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Feature Quality and Adaptability of Medical Foundation Models: A Comparative Evaluation for Radiographic Classification and Segmentation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.09742v1" target="_blank">2511.09742v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-12
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Frank Li, Theo Dapamede, Mohammadreza Chavoshi, Young Seok Jeon, Bardia Khosravi, Abdulhameed Dere, Beatrice Brown-Mulry, Rohan Satya Isaac, Aawez Mansuri, Chiratidzo Sanyika, Janice Newsome, Saptarshi Purkayastha, Imon Banerjee, Hari Trivedi, Judy Gichoya
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.09742v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.09742v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper comparatively evaluates eight medical and general-domain Foundation Models (FMs) for chest X-ray analysis, revealing that domain-specific pre-training yields superior initial feature quality. However, the study highlights that FM utility is highly task-dependent, excelling in global classification but critically failing in localizing subtle pathologies like pneumothorax without extensive fine-tuning, where traditional supervised models remain highly competitive.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research provides crucial insights for selecting and developing optimal AI models for medical imaging, particularly in radiology, by clarifying when and how Foundation Models can be effectively applied versus when traditional supervised approaches or extensive fine-tuning are still necessary for patient care tasks like subtle disease detection.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application explored is the use of Foundation Models for automated analysis of medical images (chest X-rays) to assist in the classification and segmentation of diseases like pneumothorax and cardiomegaly, thereby enhancing diagnostic accuracy and efficiency in medical imaging interpretation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Eight vision encoders from medical and general-domain FMs were evaluated on chest X-ray (CXR) for classification (pneumothorax, cardiomegaly) and segmentation (pneumothorax, cardiac boundary) using linear probing and fine-tuning.</li>
+                    
+                    <li>Medical domain-specific pre-training significantly improves initial feature quality, with medical FMs consistently outperforming general-domain models in linear probing.</li>
+                    
+                    <li>Feature utility is highly task-dependent; pre-trained embeddings are strong for global classification and segmenting salient anatomy (e.g., heart), but poor for complex, subtle pathology segmentation (e.g., pneumothorax) without substantial fine-tuning.</li>
+                    
+                    <li>A critical gap exists in FM capabilities for localizing subtle diseases, as FMs tend to exploit confounding shortcuts (e.g., chest tubes for pneumothorax) for classification, which prove inadequate for precise segmentation.</li>
+                    
+                    <li>Text-image alignment is not a prerequisite for top performance; image-only (RAD-DINO) and label-supervised (Ark+) FMs were among the best performers.</li>
+                    
+                    <li>A supervised, end-to-end baseline model demonstrated strong competitiveness, matching or exceeding the best FMs on segmentation tasks.</li>
+                    
+                    <li>The findings emphasize that while medical pre-training is beneficial, architectural choices (e.g., multi-scale) are critical, and pre-trained features are not universally effective, especially for complex localization tasks.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study performed a comparative evaluation of vision encoders from eight medical and general-domain Foundation Models on chest X-ray data. Benchmarking involved two classification tasks (pneumothorax, cardiomegaly) and two segmentation tasks (pneumothorax, cardiac boundary). Performance was assessed using both linear probing (to gauge initial feature quality) and fine-tuning. Subgroup analysis was conducted to investigate shortcut learning strategies employed by FMs.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Medical domain-specific pre-training confers a significant advantage in initial feature quality. However, FM feature utility is highly task-dependent, performing well for global classification and salient anatomy segmentation, but poorly for subtle pathology segmentation without substantial fine-tuning. FMs demonstrate a tendency to use confounding shortcuts for classification that fail for precise segmentation. Notably, image-only and label-supervised FMs can achieve top performance, and a supervised end-to-end baseline proved highly competitive, particularly for segmentation tasks.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>These findings directly inform the clinical adoption and development of AI in radiology. They suggest that FMs, while promising, should be approached with caution for tasks requiring precise localization of subtle pathologies. Clinicians and developers must understand that 'off-the-shelf' FM embeddings may not suffice for all diagnostic challenges and that task-specific fine-tuning or robust supervised models remain critical for sensitive clinical applications, particularly where shortcut learning could lead to misdiagnosis.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The study reveals critical limitations inherent to current Foundation Models for medical imaging, specifically their poor performance in segmenting complex, subtle pathologies without significant fine-tuning, and their reliance on confounding shortcuts for classification. This indicates a gap in their ability to robustly localize subtle disease features for precise clinical utility.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research should focus on developing FM architectures that are specifically designed to improve localization of subtle and complex pathologies, potentially through multi-scale feature learning or pre-training strategies less prone to shortcut learning. Further investigation into optimal pre-training paradigms beyond text-image alignment is also warranted, given the strong performance of image-only and label-supervised models.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Medical AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Foundation Models</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Chest X-ray</span>
+                    
+                    <span class="tag tag-keyword">Radiology</span>
+                    
+                    <span class="tag tag-keyword">Classification</span>
+                    
+                    <span class="tag tag-keyword">Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Pre-training</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Foundation models (FMs) promise to generalize medical imaging, but their effectiveness varies. It remains unclear how pre-training domain (medical vs. general), paradigm (e.g., text-guided), and architecture influence embedding quality, hindering the selection of optimal encoders for specific radiology tasks. To address this, we evaluate vision encoders from eight medical and general-domain FMs for chest X-ray analysis. We benchmark classification (pneumothorax, cardiomegaly) and segmentation (pneumothorax, cardiac boundary) using linear probing and fine-tuning. Our results show that domain-specific pre-training provides a significant advantage; medical FMs consistently outperformed general-domain models in linear probing, establishing superior initial feature quality. However, feature utility is highly task-dependent. Pre-trained embeddings were strong for global classification and segmenting salient anatomy (e.g., heart). In contrast, for segmenting complex, subtle pathologies (e.g., pneumothorax), all FMs performed poorly without significant fine-tuning, revealing a critical gap in localizing subtle disease. Subgroup analysis showed FMs use confounding shortcuts (e.g., chest tubes for pneumothorax) for classification, a strategy that fails for precise segmentation. We also found that expensive text-image alignment is not a prerequisite; image-only (RAD-DINO) and label-supervised (Ark+) FMs were among top performers. Notably, a supervised, end-to-end baseline remained highly competitive, matching or exceeding the best FMs on segmentation tasks. These findings show that while medical pre-training is beneficial, architectural choices (e.g., multi-scale) are critical, and pre-trained features are not universally effective, especially for complex localization tasks where supervised models remain a strong alternative.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>7 figures, 3 tables</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

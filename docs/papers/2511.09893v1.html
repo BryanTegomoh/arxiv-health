@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regional Attention-Enhanced Swin Transformer for Clinically Relevant Medical Image Captioning - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a Swin-BART encoder-decoder system with a novel lightweight regional attention module for automated medical image captioning. The system a">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Regional Attention-Enhanced Swin Transformer for Clinically Relevant Medical Image Captioning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.09893v1" target="_blank">2511.09893v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-13
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Zubia Naz, Farhan Asghar, Muhammad Ishfaq Hussain, Yahya Hadadi, Muhammad Aasim Rafique, Wookjin Choi, Moongu Jeon
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.09893v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.09893v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a Swin-BART encoder-decoder system with a novel lightweight regional attention module for automated medical image captioning. The system amplifies diagnostically salient image regions before cross-attention, achieving state-of-the-art semantic fidelity on the ROCO dataset. It generates accurate, clinically phrased captions with transparent regional attributions, intended for safe research use with human oversight.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Automated medical image captioning directly supports radiological reporting workflows by translating complex images into structured diagnostic narratives, potentially improving efficiency and consistency. The emphasis on clinically relevant and interpretable captions fosters trust, which is critical for the adoption of AI tools in medical decision-making.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>An AI system that automatically generates descriptive and diagnostic narratives for various medical images (CT, MRI, X-ray). This application supports radiologists and clinicians by streamlining reporting workflows and assisting in diagnosis, serving as a 'human in the loop' tool for enhanced efficiency and accuracy in healthcare.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>A Swin-BART encoder-decoder architecture is proposed for medical image captioning, leveraging Swin Transformer as the visual encoder and BART as the text decoder.</li>
+                    
+                    <li>A novel lightweight regional attention module is integrated to enhance diagnostically salient regions of medical images prior to the standard cross-attention mechanism.</li>
+                    
+                    <li>The model achieves state-of-the-art semantic fidelity on the ROCO dataset, significantly outperforming baselines like ResNet-CNN and BLIP2-OPT in ROUGE (0.603 vs 0.356/0.255) and BERTScore (0.807 vs 0.623/0.645).</li>
+                    
+                    <li>The system maintains compactness, interpretability, and provides transparent regional attributions visualized through qualitative heatmaps, showing which image regions drive specific parts of the description.</li>
+                    
+                    <li>Comprehensive evaluations include ablation studies on regional attention and token-count, per-modality analysis across CT, MRI, and X-ray images, and paired significance tests.</li>
+                    
+                    <li>Decoding utilizes beam search with optimized parameters (beam size=4, length penalty=1.1, no_repeat_ngram_size=3, max length=128) to produce high-quality narratives.</li>
+                    
+                    <li>The generated captions are accurate and clinically phrased, supporting research applications where a human expert remains in the loop for validation and oversight.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves a Swin-BART encoder-decoder system. The Swin Transformer acts as the image encoder, extracting visual features, while a BART model functions as the text decoder, generating captions. A lightweight regional attention module is introduced before the cross-attention layers to prioritize and amplify diagnostically salient image regions. The model was trained and evaluated on the ROCO dataset. Decoding employs beam search with specific parameters (beam size=4, length penalty=1.1, no_repeat_ngram_size=3, max length=128). Performance was assessed using various NLG metrics (ROUGE, BERTScore, BLEU, CIDEr, METEOR) and through ablation studies, per-modality analysis (CT, MRI, X-ray), and significance tests.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The proposed model achieved state-of-the-art semantic fidelity, evidenced by a ROUGE score of 0.603 and a BERTScore of 0.807, significantly outperforming baseline models (e.g., ROUGE 0.356/0.255, BERTScore 0.623/0.645 for baselines). It also showed competitive performance across BLEU, CIDEr, and METEOR. Ablation studies confirmed the effectiveness of the regional attention module. The model demonstrated robust performance across different medical modalities and provided interpretable regional attributions via heatmaps, visualizing the source regions for generated descriptions.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research contributes a robust tool that can generate accurate, clinically phrased diagnostic narratives from medical images, directly supporting radiologists in their reporting tasks. The interpretability features, such as regional heatmaps, can build clinician trust by showing the specific image areas influencing the generated text. This enables safer integration into clinical workflows, augmenting human capabilities and potentially improving efficiency and consistency in medical diagnostics, especially with a human 'in the loop' for review and validation.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While not explicitly stated as a limitation, the abstract notes the system's suitability for "safe research use with a human in the loop," implying that it is not yet fully autonomous for direct clinical decision-making and requires human oversight, suggesting a current practical limitation for unassisted clinical deployment.</p>
+            </section>
+            
+
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Medical Artificial Intelligence</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Medical Image Captioning</span>
+                    
+                    <span class="tag tag-keyword">Swin Transformer</span>
+                    
+                    <span class="tag tag-keyword">BART</span>
+                    
+                    <span class="tag tag-keyword">Regional Attention</span>
+                    
+                    <span class="tag tag-keyword">Radiology</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Interpretability</span>
+                    
+                    <span class="tag tag-keyword">Diagnostic Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Automated medical image captioning translates complex radiological images into diagnostic narratives that can support reporting workflows. We present a Swin-BART encoder-decoder system with a lightweight regional attention module that amplifies diagnostically salient regions before cross-attention. Trained and evaluated on ROCO, our model achieves state-of-the-art semantic fidelity while remaining compact and interpretable. We report results as mean$\pm$std over three seeds and include $95\%$ confidence intervals. Compared with baselines, our approach improves ROUGE (proposed 0.603, ResNet-CNN 0.356, BLIP2-OPT 0.255) and BERTScore (proposed 0.807, BLIP2-OPT 0.645, ResNet-CNN 0.623), with competitive BLEU, CIDEr, and METEOR. We further provide ablations (regional attention on/off and token-count sweep), per-modality analysis (CT/MRI/X-ray), paired significance tests, and qualitative heatmaps that visualize the regions driving each description. Decoding uses beam search (beam size $=4$), length penalty $=1.1$, $no\_repeat\_ngram\_size$ $=3$, and max length $=128$. The proposed design yields accurate, clinically phrased captions and transparent regional attributions, supporting safe research use with a human in the loop.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

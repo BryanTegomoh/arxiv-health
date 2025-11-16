@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BronchOpt : Vision-Based Pose Optimization with Fine-Tuned Foundation Models for Accurate Bronchoscopy Navigation - Health AI Hub</title>
+    <meta name="description" content="This paper introduces BronchOpt, a vision-based pose optimization framework designed for accurate intra-operative bronchoscope tip localization, addressing chal">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>BronchOpt : Vision-Based Pose Optimization with Fine-Tuned Foundation Models for Accurate Bronchoscopy Navigation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.09443v1" target="_blank">2511.09443v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-12
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Hongchao Shu, Roger D. Soberanis-Mukul, Jiru Xu, Hao Ding, Morgan Ringel, Mali Shen, Saif Iftekar Sayed, Hedyeh Rafii-Tari, Mathias Unberath
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.09443v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.09443v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces BronchOpt, a vision-based pose optimization framework designed for accurate intra-operative bronchoscope tip localization, addressing challenges like respiratory motion and anatomical variability. It employs a fine-tuned, domain-invariant encoder and differentiable rendering for frame-wise 2D-3D registration between real endoscopic views and pre-operative CT scans. The framework, trained on a novel synthetic benchmark dataset, achieves precise localization (2.65 mm, 0.19 rad error on synthetic data) and demonstrates strong cross-domain generalization to real patient data.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate intra-operative bronchoscope localization is paramount for precise biopsy, targeted therapy, and complex interventional procedures in the lungs. This technology significantly improves the precision of these medical interventions, potentially enhancing diagnostic yields, treatment efficacy, and patient safety by minimizing procedural errors and complications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application involves using computer vision and fine-tuned foundation models for real-time, accurate 2D-3D registration to guide bronchoscopy procedures. This improves the localization of the bronchoscope tip relative to patient anatomy, enhancing the precision and safety of diagnosis and treatment delivery within the lungs. It falls under AI for medical image guidance and surgical/interventional navigation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Problem Addressed:** Current bronchoscope tip localization is challenging due to respiratory motion, anatomical variability, and CT-to-body divergence, leading to misalignment and generalization failures in existing vision-based methods.</li>
+                    
+                    <li>**Proposed Framework (BronchOpt):** A robust vision-based pose optimization framework for frame-wise 2D-3D registration, aligning intra-operative endoscopic views with pre-operative CT anatomy.</li>
+                    
+                    <li>**Core Technical Components:** Utilizes a fine-tuned modality- and domain-invariant encoder for direct similarity computation between real endoscopic RGB frames and CT-rendered depth maps, alongside a differentiable rendering module for iterative camera pose refinement based on depth consistency.</li>
+                    
+                    <li>**Novel Synthetic Benchmark Dataset:** Introduction of the first public synthetic benchmark dataset for bronchoscopy navigation, enabling standardized and reproducible evaluation by addressing the scarcity of paired CT-endoscopy data.</li>
+                    
+                    <li>**Training and Performance:** The model, trained exclusively on synthetic data distinct from the benchmark, achieves an average translational error of 2.65 mm and a rotational error of 0.19 rad on the synthetic benchmark.</li>
+                    
+                    <li>**Cross-Domain Generalization:** Qualitative results on real patient data confirm strong cross-domain generalization, demonstrating consistent frame-wise 2D-3D alignment without requiring domain-specific adaptation.</li>
+                    
+                    <li>**Foundation for Progress:** The proposed framework and new benchmark establish a robust and reproducible foundation for future advancements in vision-based bronchoscopy navigation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The BronchOpt framework employs a vision-based pose optimization approach for 2D-3D registration. It leverages a fine-tuned deep learning encoder, specifically designed to be modality- and domain-invariant, to compute similarity metrics between real endoscopic RGB frames and synthetic depth maps rendered from pre-operative CT scans. A differentiable rendering module then iteratively refines the bronchoscope's camera pose by minimizing depth inconsistencies. The entire system is trained exclusively on a novel, publicly available synthetic benchmark dataset, which provides paired CT-endoscopy data for supervised learning.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The framework successfully achieved accurate bronchoscope localization, exhibiting an average translational error of 2.65 mm and a rotational error of 0.19 rad when evaluated on a synthetic benchmark dataset. Crucially, it demonstrated strong qualitative cross-domain generalization capabilities, maintaining consistent frame-wise 2D-3D alignment on real patient data without needing domain-specific adjustments. The introduction of the first public synthetic benchmark dataset for bronchoscopy navigation is also a key finding, enabling standardized evaluation.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology has the potential to significantly enhance the precision and safety of bronchoscopic procedures, such as lung cancer biopsies, fiducial marker placement, and targeted ablations. By providing highly accurate, real-time localization of the bronchoscope tip, it can lead to improved diagnostic accuracy, more effective therapeutic interventions, and a reduction in procedure-related complications, ultimately improving patient outcomes and potentially expanding the scope of treatable conditions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While qualitative results on real patient data are strong, the primary quantitative evaluation of the model's performance is conducted on a synthetic benchmark. A comprehensive, large-scale quantitative validation on diverse real patient datasets with robust ground truth remains a necessary future step. The inherent lack of real paired CT-endoscopy data, which necessitated the synthetic dataset, also presents a limitation for direct real-world training and validation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper suggests that the newly introduced synthetic benchmark dataset provides a foundational platform for standardized progress in vision-based bronchoscopy navigation, encouraging further research and development in this area. Future work will likely involve more extensive quantitative validation of the framework on diverse real patient cohorts and exploring its integration into real-time clinical navigation systems for practical application.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Pulmonology</span>
+                    
+                    <span class="tag">Interventional Radiology</span>
+                    
+                    <span class="tag">Thoracic Surgery</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Bronchoscopy</span>
+                    
+                    <span class="tag tag-keyword">Navigation</span>
+                    
+                    <span class="tag tag-keyword">Pose Optimization</span>
+                    
+                    <span class="tag tag-keyword">2D-3D Registration</span>
+                    
+                    <span class="tag tag-keyword">Vision-Based</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Synthetic Data</span>
+                    
+                    <span class="tag tag-keyword">Medical Robotics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate intra-operative localization of the bronchoscope tip relative to patient anatomy remains challenging due to respiratory motion, anatomical variability, and CT-to-body divergence that cause deformation and misalignment between intra-operative views and pre-operative CT. Existing vision-based methods often fail to generalize across domains and patients, leading to residual alignment errors. This work establishes a generalizable foundation for bronchoscopy navigation through a robust vision-based framework and a new synthetic benchmark dataset that enables standardized and reproducible evaluation. We propose a vision-based pose optimization framework for frame-wise 2D-3D registration between intra-operative endoscopic views and pre-operative CT anatomy. A fine-tuned modality- and domain-invariant encoder enables direct similarity computation between real endoscopic RGB frames and CT-rendered depth maps, while a differentiable rendering module iteratively refines camera poses through depth consistency. To enhance reproducibility, we introduce the first public synthetic benchmark dataset for bronchoscopy navigation, addressing the lack of paired CT-endoscopy data. Trained exclusively on synthetic data distinct from the benchmark, our model achieves an average translational error of 2.65 mm and a rotational error of 0.19 rad, demonstrating accurate and stable localization. Qualitative results on real patient data further confirm strong cross-domain generalization, achieving consistent frame-wise 2D-3D alignment without domain-specific adaptation. Overall, the proposed framework achieves robust, domain-invariant localization through iterative vision-based optimization, while the new benchmark provides a foundation for standardized progress in vision-based bronchoscopy navigation.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

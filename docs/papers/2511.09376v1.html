@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm - Health AI Hub</title>
+    <meta name="description" content="WOODELF is a novel SHAP algorithm that unifies decision trees, game theory, and Boolean logic to significantly accelerate the computation of feature contributio">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>From Decision Trees to Boolean Logic: A Fast and Unified SHAP Algorithm</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.09376v1" target="_blank">2511.09376v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-12
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Alexander Nadel, Ron Wettenstein
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.09376v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.09376v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">WOODELF is a novel SHAP algorithm that unifies decision trees, game theory, and Boolean logic to significantly accelerate the computation of feature contributions for machine learning models. It constructs a pseudo-Boolean formula for each prediction instance, enabling linear-time Background SHAP calculation and demonstrating up to 165x speedups on GPUs over existing methods, making large-scale model interpretability practical. This design also allows for the computation of other game-theoretic values like interaction effects.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This algorithm significantly accelerates the computation of SHAP values, which are critical for interpreting complex machine learning models used in medicine. Faster interpretability allows clinicians and researchers to more quickly understand why a model makes a specific prediction, fostering trust, validating model fairness, and identifying key patient characteristics influencing diagnoses or treatment outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research provides a significantly faster and unified algorithm for SHAP, an interpretability method for decision tree ensembles. In healthcare, this enhances the transparency and trustworthiness of AI models used for tasks such as disease risk prediction, diagnostic support, personalized treatment recommendations, and identifying key factors in patient outcomes. Improved interpretability, especially with greater efficiency for large datasets, is crucial for clinical adoption, regulatory approval, and deriving actionable insights from medical AI.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>SHAP (SHapley Additive exPlanations) is a crucial tool for interpreting predictions from decision tree ensembles, widely used in various domains including medicine.</li>
+                    
+                    <li>The WOODELF algorithm integrates decision trees, game theory, and Boolean logic into a unified framework for SHAP value computation.</li>
+                    
+                    <li>For each individual prediction (referred to as a 'consumer'), WOODELF constructs a unique pseudo-Boolean formula that encapsulates feature values, the decision tree ensemble structure, and the entire background dataset.</li>
+                    
+                    <li>This novel representation allows WOODELF to compute Background SHAP values efficiently in linear time.</li>
+                    
+                    <li>Beyond Background SHAP, WOODELF is capable of computing Path-Dependent SHAP, Shapley interaction values, Banzhaf values, and Banzhaf interaction values.</li>
+                    
+                    <li>The algorithm is implemented using standard Python scientific libraries (NumPy, SciPy, CuPy) for efficient execution on both CPU and GPU hardware without requiring custom C++ or CUDA code, ensuring seamless integration and scalability.</li>
+                    
+                    <li>It demonstrated significant performance gains, achieving a 16x speedup on CPU (162 seconds vs. 44 minutes) and an impressive 165x speedup on GPU (16 seconds vs. 44 minutes) compared to the best existing methods on a large dataset (3M rows, 5M background samples, 127 features).</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>WOODELF's core methodology involves constructing a pseudo-Boolean formula for each individual prediction instance, which encodes the instance's feature values, the full structure of the decision tree ensemble, and the entire background dataset. This formulation then allows for the calculation of Background SHAP values in linear time. The implementation relies on optimized numerical libraries (NumPy and SciPy for CPU, CuPy for GPU) to ensure high performance and seamless integration without requiring specialized low-level coding.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>WOODELF successfully unifies decision trees, game theory, and Boolean logic for SHAP computation, achieving linear-time computation for Background SHAP values. It demonstrated unprecedented speedups: 16x on CPU (reducing 44 minutes to 162 seconds) and 165x on GPU (reducing 44 minutes to 16 seconds) for computing all Background SHAP values on a large dataset. The algorithm's design also supports the calculation of a broader range of game-theoretic values, including Path-Dependent SHAP and various interaction values.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The substantial speed improvements offered by WOODELF directly translate into enhanced capabilities for clinical applications. It enables the interpretation of large-scale clinical prediction models in near real-time, facilitating faster decision-making in critical care settings, accelerating research on large patient cohorts, and allowing for comprehensive model auditing required for regulatory approval of AI in healthcare. This can lead to more robust, transparent, and trustworthy AI tools in medicine.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the WOODELF algorithm or its current implementation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Diagnostic Support</span>
+                    
+                    <span class="tag">Prognostic Prediction</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Treatment Outcome Prediction</span>
+                    
+                    <span class="tag">Risk Stratification</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">SHAP</span>
+                    
+                    <span class="tag tag-keyword">Interpretability</span>
+                    
+                    <span class="tag tag-keyword">Decision Trees</span>
+                    
+                    <span class="tag tag-keyword">Machine Learning</span>
+                    
+                    <span class="tag tag-keyword">Game Theory</span>
+                    
+                    <span class="tag tag-keyword">Boolean Logic</span>
+                    
+                    <span class="tag tag-keyword">GPU Acceleration</span>
+                    
+                    <span class="tag tag-keyword">Feature Importance</span>
+                    
+                    <span class="tag tag-keyword">Clinical Prediction Models</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">SHapley Additive exPlanations (SHAP) is a key tool for interpreting decision tree ensembles by assigning contribution values to features. It is widely used in finance, advertising, medicine, and other domains. Two main approaches to SHAP calculation exist: Path-Dependent SHAP, which leverages the tree structure for efficiency, and Background SHAP, which uses a background dataset to estimate feature distributions.
+  We introduce WOODELF, a SHAP algorithm that integrates decision trees, game theory, and Boolean logic into a unified framework. For each consumer, WOODELF constructs a pseudo-Boolean formula that captures their feature values, the structure of the decision tree ensemble, and the entire background dataset. It then leverages this representation to compute Background SHAP in linear time. WOODELF can also compute Path-Dependent SHAP, Shapley interaction values, Banzhaf values, and Banzhaf interaction values.
+  WOODELF is designed to run efficiently on CPU and GPU hardware alike. Available via the WOODELF Python package, it is implemented using NumPy, SciPy, and CuPy without relying on custom C++ or CUDA code. This design enables fast performance and seamless integration into existing frameworks, supporting large-scale computation of SHAP and other game-theoretic values in practice.
+  For example, on a dataset with 3,000,000 rows, 5,000,000 background samples, and 127 features, WOODELF computed all Background Shapley values in 162 seconds on CPU and 16 seconds on GPU - compared to 44 minutes required by the best method on any hardware platform, representing 16x and 165x speedups, respectively.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Accepted to AAAI 2026</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
