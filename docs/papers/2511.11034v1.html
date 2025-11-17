@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrossMed: A Multimodal Cross-Task Benchmark for Compositional Generalization in Medical Imaging - Health AI Hub</title>
+    <meta name="description" content="This paper introduces CrossMed, a novel benchmark designed to evaluate the compositional generalization capabilities of multimodal large language models (LLMs) ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>CrossMed: A Multimodal Cross-Task Benchmark for Compositional Generalization in Medical Imaging</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.11034v1" target="_blank">2511.11034v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-14
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Pooja Singh, Siddhant Ujjain, Tapan Kumar Gandhi, Sandeep Kumar
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.11034v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.11034v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces CrossMed, a novel benchmark designed to evaluate the compositional generalization capabilities of multimodal large language models (LLMs) in medical imaging. By reformulating four public datasets into a unified visual question answering (VQA) format based on a Modality-Anatomy-Task (MAT) schema, the authors demonstrate that while LLMs perform well on related tasks, their performance significantly declines under unrelated or zero-overlap conditions, highlighting the challenge of compositional generalization in medicine. The benchmark also reveals unique cross-task transfer abilities and superior compositional generalization of LLMs compared to traditional models.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for advancing general-purpose medical AI by creating a standardized method to evaluate how well cutting-edge multimodal LLMs can generalize across diverse and novel medical imaging scenarios. This capability is fundamental for their reliable and safe deployment in clinical settings, where unseen combinations of data and tasks are common.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research aims to develop more robust, generalizable, and accurate AI models (specifically multimodal LLMs) for medical image analysis across different modalities (X-ray, MRI, CT), anatomies, and tasks (classification, segmentation). Such AI applications can significantly enhance diagnostic capabilities, assist clinicians in interpreting complex medical images, improve efficiency in healthcare workflows, and ultimately contribute to better patient outcomes by providing advanced AI-powered tools for medical decision-making.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**CrossMed Benchmark Introduction:** A novel benchmark is proposed to rigorously evaluate compositional generalization (CG) in medical multimodal LLMs, utilizing a structured Modality-Anatomy-Task (MAT) schema.</li>
+                    
+                    <li>**Unified VQA Format:** Four diverse public medical imaging datasets (CheXpert, SIIM-ACR, BraTS 2020, MosMedData), covering X-ray, MRI, and CT modalities and various classification/segmentation tasks, were reformulated into 20,200 multiple-choice VQA instances.</li>
+                    
+                    <li>**Evaluation of Multimodal LLMs:** Two prominent open-source multimodal LLMs, LLaVA-Vicuna-7B and Qwen2-VL-7B, were assessed on the benchmark's difficulty.</li>
+                    
+                    <li>**Challenging Generalization Settings:** Models were evaluated on 'Related', 'Unrelated', and a stringent 'zero-overlap' MAT splits, where test data shared no common Modality, Anatomy, or Task with the training set.</li>
+                    
+                    <li>**Significant Performance Drop:** While models achieved high performance (83.2% classification accuracy, 0.75 segmentation cIoU) on Related splits, performance drastically decreased under Unrelated and zero-overlap conditions, underscoring the benchmark's difficulty and current LLM limitations.</li>
+                    
+                    <li>**Demonstrated Cross-Task Transfer:** A notable finding was a 7% cIoU improvement in segmentation performance even when LLMs were trained exclusively on classification data, showcasing valuable cross-task learning capabilities.</li>
+                    
+                    <li>**Superiority in Compositional Generalization:** Multimodal LLMs uniquely excelled at compositional generalization compared to traditional models (ResNet-50 and U-Net), although traditional models also showed modest gains from the MAT framework.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The authors developed CrossMed by reformulating four distinct public medical imaging datasets (CheXpert, SIIM-ACR, BraTS 2020, MosMedData) into a unified visual question answering (VQA) format, resulting in 20,200 multiple-choice QA instances. This transformation was structured around a Modality-Anatomy-Task (MAT) schema. They evaluated two open-source multimodal LLMs (LLaVA-Vicuna-7B and Qwen2-VL-7B) on this benchmark across varying generalization conditions: 'Related', 'Unrelated', and a 'zero-overlap' setting where test data lacked any common MAT component with the training data. For comparative analysis, traditional models like ResNet-50 and U-Net were also assessed.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Multimodal LLMs demonstrated strong performance on 'Related' MAT splits, achieving 83.2% classification accuracy and 0.75 segmentation cIoU. However, their performance significantly declined under 'Unrelated' and 'zero-overlap' conditions, highlighting the substantial challenge of compositional generalization. A key discovery was the exhibition of cross-task transfer, where segmentation performance improved by 7% cIoU even when models were trained exclusively on classification data. Furthermore, multimodal LLMs were shown to uniquely excel at compositional generalization compared to traditional deep learning models, which showed only modest improvements.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The CrossMed benchmark and its findings are vital for the development of more robust, adaptable, and clinically relevant AI tools. By rigorously testing compositional generalization, it pushes the boundaries for AI systems to perform reliably on novel, previously unseen combinations of medical images, anatomies, and clinical questions. This could lead to AI assistants that require less specialized training for each unique diagnostic task, accelerating the integration of general-purpose medical AI into clinical workflows, improving diagnostic efficiency, and potentially reducing errors across a broader spectrum of medical scenarios.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract implicitly points to a key limitation in the current state of multimodal LLMs: their significant performance drop under 'Unrelated' and 'zero-overlap' conditions demonstrates that achieving true compositional generalization in complex medical contexts remains a substantial challenge, despite their overall strengths and cross-task transfer capabilities. The difficulty of the benchmark itself serves as a current limitation for existing models.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper positions CrossMed as a 'rigorous testbed for evaluating zero-shot, cross-task, and modality-agnostic generalization in medical vision-language models.' This strongly implies that future research should focus on developing advanced multimodal LLM architectures and training methodologies capable of overcoming the observed performance degradation in 'Unrelated' and 'zero-overlap' scenarios, thereby further enhancing zero-shot and cross-task generalization capabilities for broader clinical applicability.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Chest Imaging</span>
+                    
+                    <span class="tag">Brain Imaging</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Pulmonology</span>
+                    
+                    <span class="tag">AI in Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">multimodal LLMs</span>
+                    
+                    <span class="tag tag-keyword">compositional generalization</span>
+                    
+                    <span class="tag tag-keyword">visual question answering</span>
+                    
+                    <span class="tag tag-keyword">benchmark</span>
+                    
+                    <span class="tag tag-keyword">cross-task transfer</span>
+                    
+                    <span class="tag tag-keyword">zero-shot learning</span>
+                    
+                    <span class="tag tag-keyword">vision-language models</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Recent advances in multimodal large language models have enabled unified processing of visual and textual inputs, offering promising applications in general-purpose medical AI. However, their ability to generalize compositionally across unseen combinations of imaging modality, anatomy, and task type remains underexplored. We introduce CrossMed, a benchmark designed to evaluate compositional generalization (CG) in medical multimodal LLMs using a structured Modality-Anatomy-Task (MAT) schema. CrossMed reformulates four public datasets, CheXpert (X-ray classification), SIIM-ACR (X-ray segmentation), BraTS 2020 (MRI classification and segmentation), and MosMedData (CT classification) into a unified visual question answering (VQA) format, resulting in 20,200 multiple-choice QA instances. We evaluate two open-source multimodal LLMs, LLaVA-Vicuna-7B and Qwen2-VL-7B, on both Related and Unrelated MAT splits, as well as a zero-overlap setting where test triplets share no Modality, Anatomy, or Task with the training data. Models trained on Related splits achieve 83.2 percent classification accuracy and 0.75 segmentation cIoU, while performance drops significantly under Unrelated and zero-overlap conditions, demonstrating the benchmark difficulty. We also show cross-task transfer, where segmentation performance improves by 7 percent cIoU even when trained using classification-only data. Traditional models (ResNet-50 and U-Net) show modest gains, confirming the broad utility of the MAT framework, while multimodal LLMs uniquely excel at compositional generalization. CrossMed provides a rigorous testbed for evaluating zero-shot, cross-task, and modality-agnostic generalization in medical vision-language models.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

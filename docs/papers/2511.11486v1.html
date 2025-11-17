@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal Posterior Sampling-based Uncertainty in PD-L1 Segmentation from H&E Images - Health AI Hub</title>
+    <meta name="description" content="This paper introduces nnUNet-B, a Bayesian segmentation framework that leverages Multimodal Posterior Sampling (MPS) within nnUNet-v2 to directly infer PD-L1 ex">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Multimodal Posterior Sampling-based Uncertainty in PD-L1 Segmentation from H&E Images</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.11486v1" target="_blank">2511.11486v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-14
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Roman Kinakh, Gonzalo R. Ríos-Muñoz, Arrate Muñoz-Barrutia
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, q-bio.QM
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.11486v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.11486v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces nnUNet-B, a Bayesian segmentation framework that leverages Multimodal Posterior Sampling (MPS) within nnUNet-v2 to directly infer PD-L1 expression from H&E-stained histology images. It achieves competitive segmentation performance while also providing pixel-wise epistemic uncertainty estimates that correlate with segmentation errors, aiming to deliver a more scalable and interpretable biomarker assessment for immunotherapy.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate and efficient PD-L1 expression assessment is critical for guiding immunotherapy in cancer patients. This method offers a resource-friendly alternative to traditional immunohistochemistry (IHC), potentially accelerating and broadening access to vital biomarker information directly from routine H&E slides.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of a Bayesian deep learning model (nnUNet-B) for automated, uncertainty-aware segmentation and prediction of PD-L1 expression directly from H&E histopathology images. This AI system aims to serve as a diagnostic aid to streamline and enhance the assessment of a crucial biomarker for personalized cancer treatment decisions, particularly in guiding immunotherapy. By providing pixel-wise uncertainty maps, it enhances the interpretability and trustworthiness of AI predictions in a clinical setting, potentially making biomarker assessment more scalable and accessible.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the resource-intensive nature of current IHC-based PD-L1 assessment by proposing a method using readily available H&E images.</li>
+                    
+                    <li>Introduces nnUNet-B, a Bayesian segmentation framework built on nnUNet-v2, which employs Multimodal Posterior Sampling (MPS).</li>
+                    
+                    <li>MPS approximates the model's posterior distribution by sampling diverse checkpoints saved during cyclic training.</li>
+                    
+                    <li>The framework provides both accurate PD-L1 segmentation (mean Dice 0.805, mean IoU 0.709) and pixel-wise epistemic uncertainty maps, quantified by entropy and standard deviation.</li>
+                    
+                    <li>Uncertainty estimates demonstrate a strong correlation with segmentation errors, offering valuable interpretability into model confidence.</li>
+                    
+                    <li>Evaluated on lung squamous cell carcinoma, the method achieves competitive performance against established baselines.</li>
+                    
+                    <li>While uncertainty calibration is noted as imperfect, the approach represents a promising step towards scalable and interpretable biomarker assessment in clinical workflows.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed method, nnUNet-B, is a Bayesian segmentation framework built upon the nnUNet-v2 architecture. It utilizes Multimodal Posterior Sampling (MPS), where the network undergoes cyclic training, and diverse model checkpoints are saved at various points. These sampled checkpoints are then used to approximate the posterior distribution over model parameters, allowing for the generation of both a segmentation mask and pixel-wise epistemic uncertainty estimates (calculated via entropy and standard deviation across predictions from the sampled models). The approach was evaluated on a dataset of lung squamous cell carcinoma.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The nnUNet-B framework achieved competitive PD-L1 segmentation performance, with a mean Dice Score of 0.805 and a mean IoU of 0.709. Crucially, it successfully generated pixel-wise uncertainty maps, and these uncertainty estimates showed a strong correlation with actual segmentation errors, indicating their potential utility in identifying unreliable predictions. However, the calibration of these uncertainty estimates was noted as imperfect.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This approach has the potential to significantly streamline PD-L1 assessment in clinical workflows by eliminating the need for separate, resource-intensive IHC staining, replacing it with analysis of readily available H&E slides. By providing both accurate predictions and interpretable uncertainty maps, it could enable more scalable, faster, and cost-effective immunotherapy guidance, improving access to personalized treatment decisions and enhancing confidence in AI-driven diagnostics.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The primary limitation noted is that the calibration of the uncertainty estimates remains imperfect, meaning the model's expressed confidence may not precisely align with the true probability of correctness.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research should focus on improving the calibration of uncertainty estimates to enhance their reliability for clinical decision-making. Further validation across a broader range of cancer types and larger, diverse datasets would also be crucial to establish the generalizability and robustness of the method for widespread clinical adoption.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Immunotherapy</span>
+                    
+                    <span class="tag">Precision Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">PD-L1</span>
+                    
+                    <span class="tag tag-keyword">H&E images</span>
+                    
+                    <span class="tag tag-keyword">segmentation</span>
+                    
+                    <span class="tag tag-keyword">immunotherapy</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">uncertainty estimation</span>
+                    
+                    <span class="tag tag-keyword">Bayesian neural networks</span>
+                    
+                    <span class="tag tag-keyword">computational pathology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate assessment of PD-L1 expression is critical for guiding immunotherapy, yet current immunohistochemistry (IHC) based methods are resource-intensive. We present nnUNet-B: a Bayesian segmentation framework that infers PD-L1 expression directly from H&E-stained histology images using Multimodal Posterior Sampling (MPS). Built upon nnUNet-v2, our method samples diverse model checkpoints during cyclic training to approximate the posterior, enabling both accurate segmentation and epistemic uncertainty estimation via entropy and standard deviation. Evaluated on a dataset of lung squamous cell carcinoma, our approach achieves competitive performance against established baselines with mean Dice Score and mean IoU of 0.805 and 0.709, respectively, while providing pixel-wise uncertainty maps. Uncertainty estimates show strong correlation with segmentation error, though calibration remains imperfect. These results suggest that uncertainty-aware H&E-based PD-L1 prediction is a promising step toward scalable, interpretable biomarker assessment in clinical workflows.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Preprint (pre-review). Accepted for publication in Lecture Notes in Bioinformatics (Springer, 2025). The final authenticated version will be available on SpringerLink once published</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

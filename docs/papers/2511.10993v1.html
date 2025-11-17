@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLUE: Controllable Latent space of Unprompted Embeddings for Diversity Management in Text-to-Image Synthesis - Health AI Hub</title>
+    <meta name="description" content="CLUE (Controllable Latent space of Unprompted Embeddings) is a novel generative model framework designed to produce diverse and stable images from limited datas">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>CLUE: Controllable Latent space of Unprompted Embeddings for Diversity Management in Text-to-Image Synthesis</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.10993v1" target="_blank">2511.10993v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-14
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Keunwoo Park, Jihye Chae, Joong Ho Ahn, Jihoon Kweon
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.10993v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.10993v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">CLUE (Controllable Latent space of Unprompted Embeddings) is a novel generative model framework designed to produce diverse and stable images from limited datasets, particularly for specialized medical fields. By integrating a Style Encoder into a modified Stable Diffusion architecture, CLUE achieves prompt-independent control over style embeddings, significantly improving image generation quality and the performance of classifiers trained on synthetic medical data.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine by providing a robust solution for generating high-quality, diverse synthetic medical images from scarce datasets. This capability is vital for overcoming data limitations in specialized medical fields, enabling the training of more effective and generalizable AI diagnostic and analytical tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>CLUE's application involves generating diverse and stable synthetic medical images (e.g., for otitis media) to augment limited real-world medical datasets. This enables the training of more robust and accurate AI classifiers for diagnosis and analysis of medical conditions, particularly in scenarios where data collection is challenging or sensitive.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical challenge of generating diverse yet stable images in specialized medical fields characterized by limited and specific datasets, where conventional text-to-image methods fall short.</li>
+                    
+                    <li>CLUE is a generative model framework that enables diverse and stable image generation using fixed-format prompts, crucially without requiring any additional training data beyond the initial domain-specific dataset.</li>
+                    
+                    <li>Based on the Stable Diffusion architecture, CLUE introduces a Style Encoder that processes both images and prompts to create 'style embeddings'.</li>
+                    
+                    <li>These style embeddings are fed into a novel second attention layer within the U-Net architecture, enhancing generative control.</li>
+                    
+                    <li>The model utilizes Kullback-Leibler (KL) divergence to ensure that the latent space provides a continuous, prompt-independent representation of image features within Gaussian regions, facilitating diversity and control.</li>
+                    
+                    <li>Demonstrated significant performance improvements on an otitis media dataset, reducing FID from 46.81 to 9.30 and increasing recall from 49.60% to 70.29%.</li>
+                    
+                    <li>Proved to be an effective data augmentation method, with a classifier trained on 1000% synthetic-only data achieving an F1 score of 83.21% (vs. 73.83%), and a combined synthetic-real dataset reaching 94.76%, outperforming real-only training.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>CLUE is built on the Stable Diffusion architecture, augmented with a 'Style Encoder' that processes images and prompts to produce style embeddings. These embeddings are then integrated into a new, second attention layer of the U-Net. The model employs Kullback-Leibler divergence to ensure continuous, prompt-independent representation of image features in the latent space within Gaussian regions. Performance was evaluated on an otitis media dataset using metrics like FID (Fréchet Inception Distance) and recall, and by training classifiers on synthetic-only and combined real-synthetic datasets, including testing on an external dataset.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>CLUE reduced FID to 9.30 (from 46.81) and improved recall to 70.29% (from 49.60%) on the otitis media dataset. A classifier trained solely on CLUE-generated synthetic data (1000% scale) achieved an F1 score of 83.21% (vs. 73.83% for baseline synthetic data). Combining CLUE's synthetic data with equal amounts of real data yielded an F1 score of 94.76%, surpassing real-only training. On an external dataset, synthetic-only training achieved an F1 score of 76.77% (vs. 60.61%), and the combined approach reached 85.78%.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>CLUE has significant potential to revolutionize medical AI development by addressing the critical challenge of data scarcity in specialized clinical domains. By enabling the creation of diverse and high-quality synthetic medical images, it can facilitate the training of more robust, accurate, and generalizable AI models for diagnosis and analysis, especially for rare diseases or conditions with limited data availability. This can accelerate the adoption of AI in clinical practice, reduce data collection burdens, and ultimately improve patient care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily highlights the limitations of existing text-to-image methods in data-scarce medical fields, which CLUE aims to overcome. It does not explicitly state specific limitations of the CLUE model itself, but its effectiveness is demonstrated on a single medical condition (otitis media) and might need validation across a broader range of medical imaging modalities and pathologies.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">otitis media</span>
+                    
+                    <span class="tag">general medical imaging</span>
+                    
+                    <span class="tag">specialized medical fields</span>
+                    
+                    <span class="tag">diagnostics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">generative model</span>
+                    
+                    <span class="tag tag-keyword">text-to-image synthesis</span>
+                    
+                    <span class="tag tag-keyword">data augmentation</span>
+                    
+                    <span class="tag tag-keyword">Stable Diffusion</span>
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">otitis media</span>
+                    
+                    <span class="tag tag-keyword">latent space</span>
+                    
+                    <span class="tag tag-keyword">diversity management</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Text-to-image synthesis models require the ability to generate diverse images while maintaining stability. To overcome this challenge, a number of methods have been proposed, including the collection of prompt-image datasets and the integration of additional data modalities during training. Although these methods have shown promising results in general domains, they face limitations when applied to specialized fields such as medicine, where only limited types and insufficient amounts of data are available. We present CLUE (Controllable Latent space of Unprompted Embeddings), a generative model framework that achieves diverse generation while maintaining stability through fixed-format prompts without requiring any additional data. Based on the Stable Diffusion architecture, CLUE employs a Style Encoder that processes images and prompts to generate style embeddings, which are subsequently fed into a new second attention layer of the U-Net architecture. Through Kullback-Leibler divergence, the latent space achieves continuous representation of image features within Gaussian regions, independent of prompts. Performance was assessed on otitis media dataset. CLUE reduced FID to 9.30 (vs. 46.81) and improved recall to 70.29% (vs. 49.60%). A classifier trained on synthetic-only data at 1000% scale achieved an F1 score of 83.21% (vs. 73.83%). Combining synthetic data with equal amounts of real data achieved an F1 score of 94.76%, higher than when using only real data. On an external dataset, synthetic-only training achieved an F1 score of 76.77% (vs. 60.61%) at 1000% scale. The combined approach achieved an F1 score of 85.78%, higher than when using only the internal dataset. These results demonstrate that CLUE enables diverse yet stable image generation from limited datasets and serves as an effective data augmentation method for domain-specific applications.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
