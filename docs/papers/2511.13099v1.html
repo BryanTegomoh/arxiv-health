@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MergeSlide: Continual Model Merging and Task-to-Class Prompt-Aligned Inference for Lifelong Learning on Whole Slide Images - Health AI Hub</title>
+    <meta name="description" content="MergeSlide introduces a novel framework for lifelong learning on Whole Slide Images (WSIs) by treating it as a model merging problem leveraging a vision-languag">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>MergeSlide: Continual Model Merging and Task-to-Class Prompt-Aligned Inference for Lifelong Learning on Whole Slide Images</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.13099v1" target="_blank">2511.13099v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-17
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Doanh C. Bui, Ba Hung Ngo, Hoai Luan Pham, Khang Nguyen, Maï K. Nguyen, Yasuhiko Nakashima
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.13099v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.13099v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">MergeSlide introduces a novel framework for lifelong learning on Whole Slide Images (WSIs) by treating it as a model merging problem leveraging a vision-language pathology foundation model. It enables continuous integration of new cancer-related tasks through class-aware prompts, brief fine-tuning, and an orthogonal merging strategy, while employing a unique Task-to-Class Prompt-aligned (TCP) inference for class-incremental settings. The framework significantly outperforms existing continual learning and zero-shot baselines on TCGA datasets, effectively mitigating catastrophic forgetting.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to digital pathology and oncology, enabling AI models to continually adapt to new cancer types or diagnostic criteria from WSIs without extensive retraining. This significantly reduces the resource burden and accelerates the development and deployment of robust, up-to-date AI-powered diagnostic tools in clinical settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research develops an AI system for lifelong learning on whole slide images (WSIs) to incrementally learn and diagnose various cancer types. It aims to reduce computational resources and effort for processing gigabyte-scale medical images, thereby aiding pathologists in more efficient and accurate cancer diagnosis and classification. It falls under medical image analysis and AI-assisted diagnostics.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical challenge of lifelong learning on gigabyte-scale Whole Slide Images (WSIs) for cancer-related tasks, aiming to reduce computational resources and effort.</li>
+                    
+                    <li>Introduces MergeSlide, a framework that leverages a vision-language pathology foundation model and treats lifelong learning as a model merging problem.</li>
+                    
+                    <li>New tasks are integrated by defining them with class-aware prompts, fine-tuning an MLP-free backbone for a few epochs, and then merging into a unified model using an orthogonal continual merging strategy.</li>
+                    
+                    <li>The orthogonal merging strategy is designed to preserve performance on previous tasks and mitigate catastrophic forgetting, a common issue in continual learning.</li>
+                    
+                    <li>Proposes Task-to-Class Prompt-aligned (TCP) inference for the class-incremental learning (CLASS-IL) setting, where task identity is unknown; TCP first identifies the most relevant task using task-level prompts before applying corresponding class-aware prompts for prediction.</li>
+                    
+                    <li>Evaluated on a stream of six TCGA datasets, MergeSlide demonstrates superior performance compared to both rehearsal-based continual learning and vision-language zero-shot baselines.</li>
+                    
+                    <li>The code and data are made publicly available, fostering reproducibility and further research in this domain.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>MergeSlide functions by framing lifelong learning as a model merging process built upon a vision-language pathology foundation model. When a new cancer-related task becomes available, it undergoes a three-step integration: 1) The task is explicitly defined using class-aware prompts. 2) The foundation model's backbone is fine-tuned for a limited number of epochs, utilizing an MLP-free architecture to retain generalization. 3) The fine-tuned model for the new task is merged into a pre-existing unified model via an orthogonal continual merging strategy, specifically designed to prevent performance degradation and mitigate catastrophic forgetting of previously learned tasks. For inference in a class-incremental learning (CLASS-IL) scenario where the specific task for an input WSI is unknown, the Task-to-Class Prompt-aligned (TCP) inference strategy is employed. TCP first uses task-level prompts to identify the most relevant task from the model's learned repertoire, then applies the corresponding class-aware prompts of that identified task to generate the final predictions. The framework was evaluated experimentally on a sequential stream of six TCGA datasets.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>['MergeSlide consistently outperforms both established rehearsal-based continual learning methods and vision-language zero-shot baselines when tested on a stream of six TCGA datasets for cancer-related WSI tasks.', 'The proposed orthogonal continual merging strategy is effective in preserving the performance on previously learned tasks while successfully mitigating catastrophic forgetting, a critical challenge in lifelong learning systems.', 'The Task-to-Class Prompt-aligned (TCP) inference mechanism provides robust and accurate predictions in the challenging class-incremental learning setting, where the specific task identity of an incoming WSI is unknown during inference.', 'The framework demonstrates an efficient approach to lifelong learning for WSIs, reducing the need for extensive retraining and associated resources.']</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>MergeSlide has the potential to significantly improve the efficiency and adaptability of AI models in clinical digital pathology. By enabling models to continually learn new cancer types or adapt to evolving diagnostic criteria without complete retraining, it will reduce the computational and human resources required for model maintenance. This facilitates faster integration of new medical knowledge into AI-powered diagnostic tools, leading to more up-to-date and robust diagnostic support for pathologists, ultimately enhancing diagnostic accuracy and patient care in oncology.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>['The abstract does not provide specific quantitative performance metrics (e.g., AUC, F1-score) to detail the extent of improvement over baseline methods, only stating that it "outperforms."', 'The evaluation is primarily focused on cancer-related tasks within TCGA datasets; the generalizability of MergeSlide to other types of WSI analysis tasks (e.g., prognosis, segmentation) or different histopathological domains is not explicitly discussed.', 'The computational overhead and scalability characteristics of the "orthogonal continual merging strategy" beyond six datasets are not fully detailed, although the method is described as simple and effective.', "The framework's performance is intrinsically linked to the quality and pre-training of the underlying vision-language pathology foundation model utilized."]</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Digital Pathology</span>
+                    
+                    <span class="tag">Computational Pathology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Lifelong Learning</span>
+                    
+                    <span class="tag tag-keyword">Whole Slide Images</span>
+                    
+                    <span class="tag tag-keyword">WSI</span>
+                    
+                    <span class="tag tag-keyword">Model Merging</span>
+                    
+                    <span class="tag tag-keyword">Continual Learning</span>
+                    
+                    <span class="tag tag-keyword">Vision-Language Models</span>
+                    
+                    <span class="tag tag-keyword">Pathology</span>
+                    
+                    <span class="tag tag-keyword">Cancer</span>
+                    
+                    <span class="tag tag-keyword">Prompt Learning</span>
+                    
+                    <span class="tag tag-keyword">Catastrophic Forgetting</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Lifelong learning on Whole Slide Images (WSIs) aims to train or fine-tune a unified model sequentially on cancer-related tasks, reducing the resources and effort required for data transfer and processing, especially given the gigabyte-scale size of WSIs. In this paper, we introduce MergeSlide, a simple yet effective framework that treats lifelong learning as a model merging problem by leveraging a vision-language pathology foundation model. When a new task arrives, it is: 1) defined with class-aware prompts, 2) fine-tuned for a few epochs using an MLP-free backbone, and 3) merged into a unified model using an orthogonal continual merging strategy that preserves performance and mitigates catastrophic forgetting. For inference under the class-incremental learning (CLASS-IL) setting, where task identity is unknown, we introduce Task-to-Class Prompt-aligned (TCP) inference. Specifically, TCP first identifies the most relevant task using task-level prompts and then applies the corresponding class-aware prompts to generate predictions. To evaluate MergeSlide, we conduct experiments on a stream of six TCGA datasets. The results show that MergeSlide outperforms both rehearsal-based continual learning and vision-language zero-shot baselines. Code and data are available at https://github.com/caodoanh2001/MergeSlide.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>WACV2026 Accepted</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet - Health AI Hub</title>
+    <meta name="description" content="BrainNormalizer introduces an anatomy-informed diffusion framework that reconstructs pseudo-healthy MRIs directly from tumorous brain scans. By conditioning a C">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>BrainNormalizer: Anatomy-Informed Pseudo-Healthy Brain Reconstruction from Tumor MRI via Edge-Guided ControlNet</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.12853v1" target="_blank">2511.12853v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-17
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Min Gu Kwak, Yeonju Lee, Hairong Wang, Jing Li
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> eess.IV, cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.12853v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.12853v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">BrainNormalizer introduces an anatomy-informed diffusion framework that reconstructs pseudo-healthy MRIs directly from tumorous brain scans. By conditioning a ControlNet model on boundary cues derived from the patient's own contralateral anatomy, it provides a subject-specific reference of the brain without tumor-induced deformation, which is crucial for precise diagnosis and treatment planning.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This technology provides an essential, currently unobtainable, subject-specific reference of how a patient's brain would appear without tumor deformation. This counterfactual view can significantly improve the accuracy of diagnosis, precision of treatment planning (e.g., radiation therapy, surgical resection margins), and surgical navigation by offering a crucial baseline anatomical state.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>BrainNormalizer is an AI application that leverages advanced generative AI techniques (diffusion models and ControlNet) to synthesize anatomically plausible pseudo-healthy MRI scans from existing tumor-affected brain MRIs. This AI capability provides clinicians with a subject-specific counterfactual reference of what the brain would look like without tumor-induced deformation, directly supporting more accurate diagnosis, optimized treatment planning (e.g., radiation therapy, chemotherapy), and safer surgical navigation in patients with brain tumors.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Novel Reconstruction Task:** Addresses the critical clinical need for a subject-specific "pseudo-healthy" brain reference from tumorous MRI scans, which is otherwise unobtainable due to tumor-induced anatomical deformation.</li>
+                    
+                    <li>**Anatomy-Informed Diffusion Framework:** Utilizes an edge-guided ControlNet architecture, built upon a pretrained diffusion model, to generate pseudo-healthy MRIs by leveraging the subject's intrinsic anatomical boundaries.</li>
+                    
+                    <li>**Boundary-Guided Conditioning:** Employs boundary cues (edge maps), specifically mirrored contralateral edge maps during inference, to guide the generative process, ensuring anatomically plausible reconstruction without requiring paired non-tumorous and tumorous scans.</li>
+                    
+                    <li>**Two-Stage Training Strategy:** Involves initial inpainting-based fine-tuning of a pretrained diffusion model on tumorous and non-tumorous scans, followed by training a dedicated edge-map-guided ControlNet branch to inject fine-grained anatomical contours into the frozen decoder.</li>
+                    
+                    <li>**Deliberate Misalignment at Inference:** Implements a unique inference strategy that pairs tumorous input MRIs with non-tumorous prompts and mirrored contralateral edge maps, effectively exploiting hemispheric correspondence for robust and anatomically coherent reconstruction.</li>
+                    
+                    <li>**Strong Performance on BraTS2020:** Achieves strong quantitative performance and qualitatively produces anatomically plausible reconstructions in tumor-affected regions, successfully restoring normal tissue organization while retaining overall structural coherence.</li>
+                    
+                    <li>**Enables Counterfactual Modeling:** The framework facilitates new research directions in counterfactual modeling and detailed analysis of tumor-induced deformation, providing a baseline for studying pathology effects.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>BrainNormalizer is an anatomy-informed diffusion framework utilizing an edge-guided ControlNet. Its two-stage training strategy involves first fine-tuning a pretrained diffusion model via inpainting on tumorous and non-tumorous scans. Second, an edge-map-guided ControlNet branch is trained to inject fine-grained anatomical contours into the frozen decoder. During inference, it employs a "deliberate misalignment" strategy, pairing tumorous MRI inputs with non-tumorous prompts and mirrored contralateral edge maps to guide the generation of a pseudo-healthy brain.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The model demonstrated strong quantitative performance on the BraTS2020 dataset. Qualitatively, it produced anatomically plausible reconstructions within tumor-affected regions, effectively restoring normal tissue organization while successfully preserving the overall structural coherence of the brain.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework can provide clinically reliable subject-specific anatomical references, invaluable for precise tumor localization, advanced treatment planning (e.g., accurate dose calculation for radiotherapy, delineation of surgical resection margins), and improved surgical navigation. It also offers a robust tool for quantifying and analyzing the extent of tumor-induced deformation, aiding in understanding disease progression and potentially informing prognosis.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, as an AI-generated "pseudo-healthy" reconstruction, it inherently represents a computational model's best estimate rather than a true biological state. Its generalization to highly atypical or extremely large tumors, or specific rare tumor types with unique deformation patterns, would require further validation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper explicitly highlights supporting new research directions in "counterfactual modeling" and "tumor-induced deformation analysis." This suggests potential for integrating the reconstructed pseudo-healthy brains into biomechanical modeling, advanced image analysis for detecting subtle tumor-induced changes, and developing more personalized treatment strategies based on individual deformation patterns.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neuro-oncology</span>
+                    
+                    <span class="tag">Neurosurgery</span>
+                    
+                    <span class="tag">Diagnostic Radiology</span>
+                    
+                    <span class="tag">Radiation Oncology</span>
+                    
+                    <span class="tag">Medical Imaging Informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Brain Tumors</span>
+                    
+                    <span class="tag tag-keyword">Pseudo-Healthy Reconstruction</span>
+                    
+                    <span class="tag tag-keyword">Diffusion Models</span>
+                    
+                    <span class="tag tag-keyword">ControlNet</span>
+                    
+                    <span class="tag tag-keyword">Medical Image Synthesis</span>
+                    
+                    <span class="tag tag-keyword">Anatomical Deformation</span>
+                    
+                    <span class="tag tag-keyword">MRI</span>
+                    
+                    <span class="tag tag-keyword">Treatment Planning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Brain tumors are among the most clinically significant neurological diseases and remain a major cause of morbidity and mortality due to their aggressive growth and structural heterogeneity. As tumors expand, they induce substantial anatomical deformation that disrupts both local tissue organization and global brain architecture, complicating diagnosis, treatment planning, and surgical navigation. Yet a subject-specific reference of how the brain would appear without tumor-induced changes is fundamentally unobtainable in clinical practice. We present BrainNormalizer, an anatomy-informed diffusion framework that reconstructs pseudo-healthy MRIs directly from tumorous scans by conditioning the generative process on boundary cues extracted from the subject's own anatomy. This boundary-guided conditioning enables anatomically plausible pseudo-healthy reconstruction without requiring paired non-tumorous and tumorous scans. BrainNormalizer employs a two-stage training strategy. The pretrained diffusion model is first adapted through inpainting-based fine-tuning on tumorous and non-tumorous scans. Next, an edge-map-guided ControlNet branch is trained to inject fine-grained anatomical contours into the frozen decoder while preserving learned priors. During inference, a deliberate misalignment strategy pairs tumorous inputs with non-tumorous prompts and mirrored contralateral edge maps, leveraging hemispheric correspondence to guide reconstruction. On the BraTS2020 dataset, BrainNormalizer achieves strong quantitative performance and qualitatively produces anatomically plausible reconstructions in tumor-affected regions while retaining overall structural coherence. BrainNormalizer provides clinically reliable anatomical references for treatment planning and supports new research directions in counterfactual modeling and tumor-induced deformation analysis.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

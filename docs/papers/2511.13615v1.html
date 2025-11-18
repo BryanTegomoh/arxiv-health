@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tissue Aware Nuclei Detection and Classification Model for Histopathology Images - Health AI Hub</title>
+    <meta name="description" content="Tissue-Aware Nuclei Detection (TAND) is a novel deep learning framework designed for joint nuclei detection and classification in histopathology images, address">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Tissue Aware Nuclei Detection and Classification Model for Histopathology Images</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.13615v1" target="_blank">2511.13615v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-17
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Kesi Xu, Eleni Chiou, Ali Varamesh, Laura Acqualagna, Nasir Rajpoot
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.13615v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.13615v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">Tissue-Aware Nuclei Detection (TAND) is a novel deep learning framework designed for joint nuclei detection and classification in histopathology images, addressing limitations of extensive expert annotations and insufficient tissue context. It integrates a ConvNeXt encoder-decoder with a frozen Virchow-2 tissue segmentation branch, leveraging semantic tissue probabilities via a multi-scale Spatial Feature-wise Linear Modulation (Spatial-FiLM) to condition per-cell classification using only point-level supervision. TAND achieves state-of-the-art performance on the PUMA benchmark, particularly improving classification of tissue-dependent cell types, and offers a practical approach to reduce annotation burden.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate and automated nuclei detection and classification are fundamental for diagnosing and staging numerous diseases, especially cancers, from histopathology images. This research's ability to achieve high accuracy with significantly reduced manual annotation burden directly accelerates the development and deployment of robust AI tools, making advanced computational pathology more accessible and scalable for clinical use.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is an automated or AI-assisted diagnostic tool for analyzing histopathology images. It aims to accurately detect and classify cell nuclei within tissue samples, which is crucial for disease diagnosis (e.g., cancer staging, grading, and prognosis). By improving the efficiency and accuracy of this process and reducing annotation burden, it can assist pathologists in making faster and more reliable diagnoses.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>TAND addresses key challenges in computational pathology: the reliance on detailed expert annotations and the insufficient use of tissue context for nuclei detection and classification.</li>
+                    
+                    <li>It proposes a novel framework for joint nuclei detection and classification using point-level supervision, significantly reducing the need for laborious pixel-level mask annotations.</li>
+                    
+                    <li>The model architecture couples a ConvNeXt-based encoder-decoder with a frozen Virchow-2 tissue segmentation branch, which provides learned semantic tissue probabilities.</li>
+                    
+                    <li>A novel multi-scale Spatial Feature-wise Linear Modulation (Spatial-FiLM) mechanism is introduced to selectively modulate the per-cell classification stream based on the extracted tissue probabilities.</li>
+                    
+                    <li>TAND achieves state-of-the-art performance on the PUMA benchmark, surpassing both tissue-agnostic baselines and existing mask-supervised methods.</li>
+                    
+                    <li>The framework demonstrates remarkable improvements in the classification accuracy of tissue-dependent cell types, such as epithelium, endothelium, and stroma, by effectively incorporating contextual tissue information.</li>
+                    
+                    <li>This is presented as the first method to condition per-cell classification on learned tissue masks, offering a practical pathway to reduce expert annotation burden in digital pathology workflows.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>TAND utilizes a ConvNeXt-based encoder-decoder as its primary architecture for nuclei detection and classification. It integrates a secondary, *frozen* Virchow-2 tissue segmentation branch to derive semantic tissue probabilities. These probabilities are then fed into a novel *multi-scale Spatial Feature-wise Linear Modulation (Spatial-FiLM)* module, which selectively conditions or modulates the feature maps within the classification stream. The entire framework is trained with *point-level supervision* for nuclei, minimizing annotation overhead compared to traditional pixel-level mask supervision.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>TAND achieved state-of-the-art performance on the PUMA benchmark, outperforming both methods that ignore tissue context and those requiring full mask-level annotations. A critical finding is the significant improvement in classifying tissue-dependent cell types (e.g., epithelium, endothelium, stroma), directly attributable to the model's novel integration of learned tissue context. This demonstrates the superior efficacy of tissue-aware classification and the potential for robust models with less annotation.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This approach has substantial clinical impact by potentially streamlining the development of AI diagnostic tools. By reducing the expert annotation burden required to train models, it can accelerate the adoption of computational pathology in clinical settings, making diagnostics faster and more consistent. Improved accuracy in classifying cell types within their tissue context could lead to more precise disease staging, better prognostic predictions, and more targeted therapeutic strategies for patients, especially in oncology.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations or caveats of the TAND model.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper implicitly suggests a future direction by highlighting TAND as a "practical pathway to reduce annotation burden." This implies future research could focus on further leveraging such frameworks to develop highly accurate models with even less supervision, potentially exploring active learning or semi-supervised methods across a broader spectrum of tissue types and disease pathologies.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Histology</span>
+                    
+                    <span class="tag">Digital Pathology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Computational Pathology</span>
+                    
+                    <span class="tag tag-keyword">Nuclei Detection</span>
+                    
+                    <span class="tag tag-keyword">Nuclei Classification</span>
+                    
+                    <span class="tag tag-keyword">Tissue Context</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Point-level Supervision</span>
+                    
+                    <span class="tag tag-keyword">Histopathology</span>
+                    
+                    <span class="tag tag-keyword">Spatial-FiLM</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate nuclei detection and classification are fundamental to computational pathology, yet existing approaches are hindered by reliance on detailed expert annotations and insufficient use of tissue context. We present Tissue-Aware Nuclei Detection (TAND), a novel framework achieving joint nuclei detection and classification using point-level supervision enhanced by tissue mask conditioning. TAND couples a ConvNeXt-based encoder-decoder with a frozen Virchow-2 tissue segmentation branch, where semantic tissue probabilities selectively modulate the classification stream through a novel multi-scale Spatial Feature-wise Linear Modulation (Spatial-FiLM). On the PUMA benchmark, TAND achieves state-of-the-art performance, surpassing both tissue-agnostic baselines and mask-supervised methods. Notably, our approach demonstrates remarkable improvements in tissue-dependent cell types such as epithelium, endothelium, and stroma. To the best of our knowledge, this is the first method to condition per-cell classification on learned tissue masks, offering a practical pathway to reduce annotation burden.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>5 pages, 3 figures. Under review</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

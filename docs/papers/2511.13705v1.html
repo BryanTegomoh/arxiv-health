@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rare Genomic Subtype Discovery from RNA-seq via Autoencoder Embeddings and Stability-Aware Clustering - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel unsupervised learning approach combining autoencoder-based dimensionality reduction with stability-aware clustering to identify ra">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Rare Genomic Subtype Discovery from RNA-seq via Autoencoder Embeddings and Stability-Aware Clustering</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.13705v1" target="_blank">2511.13705v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-17
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Alaa Mezghiche
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, q-bio.GN
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.13705v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.13705v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel unsupervised learning approach combining autoencoder-based dimensionality reduction with stability-aware clustering to identify rare but reproducible genomic subtypes from RNA-seq data. Applied to Kidney Renal Clear Cell Carcinoma (KIRC), the method successfully discovered a rare (6.85% of patients), highly stable (Jaccard = 0.787) subtype, C0, characterized by coherent differentially expressed gene markers.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Identifying rare, reproducible genomic subtypes is crucial for advancing precision medicine by enabling the discovery of specific patient populations that may benefit from targeted therapies or require distinct prognostic monitoring, ultimately leading to more effective and personalized cancer treatments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application involves using autoencoder-based representation and stability-aware clustering (unsupervised machine learning) on high-dimensional RNA-seq gene expression data to identify novel molecular subtypes of cancer. This enables the discovery of patient subgroups with distinct genomic profiles, which can inform targeted therapies, improve disease classification, and enhance prognostic models in oncology. The identified 'coherent markers' could serve as AI-derived diagnostic or prognostic biomarkers.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The study addresses the challenge of discovering rare, reproducible molecular subtypes from high-dimensional RNA-seq data beyond standard labels.</li>
+                    
+                    <li>A pan-cancer analysis served as a negative control, demonstrating that clustering across multiple cancer types is predominantly driven by tissue of origin (Cramer's V = 0.887).</li>
+                    
+                    <li>The core methodology involves training a feed-forward autoencoder to create a 128-dimensional latent representation, followed by k-means clustering for k=2-10.</li>
+                    
+                    <li>A critical component is the stability-aware clustering criterion: identifying rare (<10% of patients) and stable (Jaccard >= 0.60 across 20 seeds with Hungarian alignment) clusters.</li>
+                    
+                    <li>Within the KIRC dataset (n=146), the method identified a solution at k=5, yielding a rare subtype (C0) comprising 6.85% of patients with high stability (Jaccard = 0.787).</li>
+                    
+                    <li>Differential expression analysis (Welch's t-test, Benjamini-Hochberg FDR) confirmed that this rare KIRC subtype possesses a set of coherent, distinguishing genetic markers.</li>
+                    
+                    <li>The research emphasizes that a targeted, stability-aware approach within a specific cancer type is crucial for discovering meaningful patient subgroups, as opposed to broad pan-cancer analyses.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involved selecting the top 2,000 highly variable genes from RNA-seq data, standardizing them, and then training a feed-forward autoencoder to reduce dimensionality to a 128-dimensional latent space. K-means clustering was applied in this latent space for k values from 2 to 10. Cluster discovery was guided by a pre-specified rule: a cluster must be rare (<10% of samples) and stable (Jaccard index >= 0.60 across 20 independent runs with Hungarian alignment). Finally, cluster-vs-rest differential gene expression was performed using Welch's t-test with Benjamini-Hochberg FDR correction.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study's key findings include that pan-cancer RNA-seq clustering is largely dominated by tissue of origin (Cramer's V = 0.887), rendering it unsuitable for subtle subtype discovery. More significantly, by focusing on KIRC and employing a stability-aware clustering approach, a rare (6.85% of patients) and highly stable (Jaccard = 0.787) genomic subtype, C0, was successfully identified at k=5. This rare subtype was further confirmed to have distinct and coherent differentially expressed gene markers.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The discovery of rare, reproducible genomic subtypes, such as the KIRC C0 subtype, has significant clinical potential. It could lead to the identification of novel diagnostic biomarkers for early detection, the development of highly specific therapeutic targets for personalized medicine, and improved prognostic stratification for patients who might otherwise be grouped into broader, less informative categories. This can pave the way for tailored treatment regimens, minimizing ineffective therapies and adverse side effects.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily highlights that unsupervised pan-cancer RNA-seq clustering is largely dominated by tissue of origin, thereby justifying the necessity for a targeted, within-cancer approach to discover meaningful patient subtypes. It does not explicitly state limitations of the developed autoencoder-embedding and stability-aware clustering method itself, but rather frames the initial pan-cancer finding as a 'negative control' that necessitated their reframing of the problem.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Genomics</span>
+                    
+                    <span class="tag">Computational Biology</span>
+                    
+                    <span class="tag">Precision Medicine</span>
+                    
+                    <span class="tag">Urology (Kidney Cancer)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">RNA-seq</span>
+                    
+                    <span class="tag tag-keyword">Autoencoder</span>
+                    
+                    <span class="tag tag-keyword">Clustering</span>
+                    
+                    <span class="tag tag-keyword">Genomic Subtypes</span>
+                    
+                    <span class="tag tag-keyword">Cancer</span>
+                    
+                    <span class="tag tag-keyword">KIRC</span>
+                    
+                    <span class="tag tag-keyword">Stability Analysis</span>
+                    
+                    <span class="tag tag-keyword">Precision Medicine</span>
+                    
+                    <span class="tag tag-keyword">Differential Expression</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Unsupervised learning on high-dimensional RNA-seq data can reveal molecular subtypes beyond standard labels. We combine an autoencoder-based representation with clustering and stability analysis to search for rare but reproducible genomic subtypes. On the UCI "Gene Expression Cancer RNA-Seq" dataset (801 samples, 20,531 genes; BRCA, COAD, KIRC, LUAD, PRAD), a pan-cancer analysis shows clusters aligning almost perfectly with tissue of origin (Cramer's V = 0.887), serving as a negative control. We therefore reframe the problem within KIRC (n = 146): we select the top 2,000 highly variable genes, standardize them, train a feed-forward autoencoder (128-dimensional latent space), and run k-means for k = 2-10. While global indices favor small k, scanning k with a pre-specified discovery rule (rare < 10 percent and stable with Jaccard >= 0.60 across 20 seeds after Hungarian alignment) yields a simple solution at k = 5 (silhouette = 0.129, DBI = 2.045) with a rare cluster C0 (6.85 percent of patients) that is highly stable (Jaccard = 0.787). Cluster-vs-rest differential expression (Welch's t-test, Benjamini-Hochberg FDR) identifies coherent markers. Overall, pan-cancer clustering is dominated by tissue of origin, whereas a stability-aware within-cancer approach reveals a rare, reproducible KIRC subtype.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>16 pages</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
