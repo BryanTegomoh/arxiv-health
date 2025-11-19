@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synthetic Clinical Notes for Rare ICD Codes: A Data-Centric Framework for Long-Tail Medical Coding - Health AI Hub</title>
+    <meta name="description" content="This paper addresses the significant challenge of the long-tail distribution in automatic ICD coding from clinical text, where thousands of rare diagnostic code">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Synthetic Clinical Notes for Rare ICD Codes: A Data-Centric Framework for Long-Tail Medical Coding</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.14112v1" target="_blank">2511.14112v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-18
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Truong Vo, Weiyi Wu, Kaize Ding
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.14112v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.14112v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper addresses the significant challenge of the long-tail distribution in automatic ICD coding from clinical text, where thousands of rare diagnostic codes are underrepresented. It proposes a data-centric framework that generates 90,000 high-quality synthetic discharge summaries to mitigate this data imbalance. The approach leads to modest but crucial improvements in macro-F1 for rare codes while maintaining strong micro-F1, outperforming prior state-of-the-art models and enhancing equity in long-tail ICD code prediction.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate automatic ICD coding is vital for proper medical billing, epidemiological studies, and healthcare resource allocation. Improving the prediction for rare codes ensures comprehensive and equitable representation of all diagnoses, leading to more precise patient data and better-informed clinical and administrative decisions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the automated generation of accurate International Classification of Diseases (ICD) codes from clinical text (e.g., discharge summaries). Specifically, it applies AI to overcome data scarcity issues for rare medical conditions by generating high-quality synthetic clinical notes. This enhances the equity and performance of AI models (transformer-based models like PLM-ICD and GKI-ICD) in predicting a comprehensive range of medical codes, thus improving automated diagnostic coding, clinical decision support, and medical data analysis.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The core problem addressed is the extreme long-tail distribution of ICD codes in medical datasets like MIMIC-III, leading to low macro-F1 scores for rare and zero-shot codes.</li>
+                    
+                    <li>A data-centric framework is introduced to generate high-quality synthetic discharge summaries to augment existing datasets and improve balance.</li>
+                    
+                    <li>Synthetic data generation leverages real-world co-occurrence patterns, ICD descriptions, synonyms, taxonomy, and content from similar clinical notes to construct realistic multi-label code sets anchored on rare codes.</li>
+                    
+                    <li>The framework successfully generated 90,000 synthetic notes covering 7,902 ICD codes, substantially expanding the training data distribution.</li>
+                    
+                    <li>State-of-the-art transformer-based models (PLM-ICD, GKI-ICD) were fine-tuned on both original and extended datasets to evaluate the impact of the synthetic data.</li>
+                    
+                    <li>Experimental results show a modest improvement in macro-F1 scores, which specifically benefits rare codes, while maintaining strong micro-F1 scores, demonstrating superior performance over prior SOTA.</li>
+                    
+                    <li>Despite the computational cost, the study concludes that carefully crafted synthetic data can significantly enhance equity in long-tail ICD code prediction, ensuring better representation for less common diagnoses.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed data-centric framework generates synthetic discharge summaries by first creating structured prompts. These prompts are designed around rare ICD codes and enriched using real-world co-occurrence patterns of ICD codes, detailed ICD descriptions, medical synonyms, taxonomic relationships within the ICD hierarchy, and content extracted from similar existing clinical notes. Using these prompts, 90,000 synthetic notes covering 7,902 ICD codes were generated to expand the training distribution. Subsequently, two state-of-the-art transformer-based models, PLM-ICD and GKI-ICD, were fine-tuned on this augmented dataset (original + synthetic notes).</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study found that integrating synthetic clinical notes generated by the framework leads to a modest but significant improvement in macro-F1 scores, particularly enhancing performance on rare ICD codes. Concurrently, the approach successfully maintained strong micro-F1 scores, indicating robust overall performance. The models trained on the augmented dataset consistently outperformed prior state-of-the-art methods in automatic ICD coding, demonstrating the effectiveness of carefully crafted synthetic data in addressing the long-tail problem.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly improve the accuracy and completeness of automated ICD coding systems, particularly for patients with less common or rare conditions. This translates to more accurate medical records, streamlined billing processes, improved epidemiological surveillance of rare diseases, and more efficient healthcare resource allocation. By enhancing the 'equity' of code prediction, it ensures that all conditions, regardless of their prevalence, are accurately documented, reducing the burden on human coders and leading to more reliable health data.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract notes that the gain in macro-F1, while beneficial, may seem 'marginal relative to the computational cost' associated with generating the extensive synthetic data and training advanced transformer models.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Coding</span>
+                    
+                    <span class="tag">Health Informatics</span>
+                    
+                    <span class="tag">Clinical Documentation Improvement</span>
+                    
+                    <span class="tag">Medical Billing</span>
+                    
+                    <span class="tag">Public Health/Epidemiology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">ICD coding</span>
+                    
+                    <span class="tag tag-keyword">Medical NLP</span>
+                    
+                    <span class="tag tag-keyword">Synthetic data</span>
+                    
+                    <span class="tag tag-keyword">Long-tail distribution</span>
+                    
+                    <span class="tag tag-keyword">Clinical notes</span>
+                    
+                    <span class="tag tag-keyword">Transformer models</span>
+                    
+                    <span class="tag tag-keyword">Diagnostic codes</span>
+                    
+                    <span class="tag tag-keyword">Data-centric AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Automatic ICD coding from clinical text is a critical task in medical NLP but remains hindered by the extreme long-tail distribution of diagnostic codes. Thousands of rare and zero-shot ICD codes are severely underrepresented in datasets like MIMIC-III, leading to low macro-F1 scores. In this work, we propose a data-centric framework that generates high-quality synthetic discharge summaries to mitigate this imbalance. Our method constructs realistic multi-label code sets anchored on rare codes by leveraging real-world co-occurrence patterns, ICD descriptions, synonyms, taxonomy, and similar clinical notes. Using these structured prompts, we generate 90,000 synthetic notes covering 7,902 ICD codes, significantly expanding the training distribution. We fine-tune two state-of-the-art transformer-based models, PLM-ICD and GKI-ICD, on both the original and extended datasets. Experiments show that our approach modestly improves macro-F1 while maintaining strong micro-F1, outperforming prior SOTA. While the gain may seem marginal relative to the computational cost, our results demonstrate that carefully crafted synthetic data can enhance equity in long-tail ICD code prediction.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>4 page-short paper</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

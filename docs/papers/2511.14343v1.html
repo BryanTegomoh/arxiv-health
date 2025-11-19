@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silhouette-to-Contour Registration: Aligning Intraoral Scan Models with Cephalometric Radiographs - Health AI Hub</title>
+    <meta name="description" content="This paper introduces DentalSCR, a novel contour-guided framework for robust and accurate 3D-2D alignment of intraoral scan models with lateral cephalometric ra">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Silhouette-to-Contour Registration: Aligning Intraoral Scan Models with Cephalometric Radiographs</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.14343v1" target="_blank">2511.14343v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-18
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Yiyi Miao, Taoyu Wu, Ji Jiang, Tong Chen, Zhe Tang, Zhengyong Jiang, Angelos Stefanidis, Limin Yu, Jionglong Su
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.14343v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.14343v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces DentalSCR, a novel contour-guided framework for robust and accurate 3D-2D alignment of intraoral scan models with lateral cephalometric radiographs. By establishing a unified anatomical coordinate system and employing a surface-based DRR generation with subsequent Chamfer distance optimization, DentalSCR overcomes challenges of conventional methods, achieving high-fidelity alignment with reduced landmark errors, particularly for posterior teeth, and superior performance compared to baselines.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate 3D-2D alignment is critical for precise orthodontic diagnosis and treatment planning, enabling clinicians to integrate detailed 3D dental models with 2D radiographic skeletal and soft tissue information, leading to more personalized and effective patient care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research contributes to medical AI by developing an advanced computer vision framework (DentalSCR) for robust 3D-2D image registration in a clinical setting. This application aims to improve the accuracy and reliability of integrating different medical imaging modalities (intraoral scans and cephalometric radiographs) for better orthodontic diagnosis and treatment planning, potentially leading to more automated and precise analytical tools for dental professionals.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses limitations of conventional intensity-driven registration methods for 3D-2D alignment in orthodontics due to cephalogram artifacts like projective magnification, geometric distortion, and low-contrast dental crowns.</li>
+                    
+                    <li>Proposes DentalSCR, a pose-stable, contour-guided framework that utilizes a U-Midline Dental Axis (UMDA) to establish a unified cross-arch anatomical coordinate system, stabilizing initialization and standardizing projection geometry.</li>
+                    
+                    <li>Generates radiograph-like projections (DRRs) from 3D intraoral scans using a surface-based formulation with coronal-axis perspective and Gaussian splatting, designed to preserve clinical magnification and emphasize external silhouettes.</li>
+                    
+                    <li>Formulates registration as a 2D similarity transform optimized via a symmetric bidirectional Chamfer distance under a hierarchical coarse-to-fine schedule, enabling both large capture range and subpixel-level contour agreement.</li>
+                    
+                    <li>Evaluated on 34 expert-annotated clinical cases, demonstrating substantial reductions in landmark error, particularly at posterior teeth, and tighter dispersion on the lower jaw compared to baselines.</li>
+                    
+                    <li>Achieves low Chamfer and controlled Hausdorff distances at the curve level, indicating high-fidelity contour agreement between the projected 3D model and the 2D cephalogram.</li>
+                    
+                    <li>Outperforms conventional appearance-based baselines, providing robust, clinically inspectable 3D-2D alignment suitable for real-world cephalograms.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>DentalSCR employs a multi-stage, contour-guided registration approach. It first constructs a U-Midline Dental Axis (UMDA) to establish a consistent anatomical coordinate system for initialization stabilization and projection standardization. Next, it generates radiograph-like projections from the 3D intraoral scan models using a surface-based Digital Reconstructed Radiograph (DRR) formulation, incorporating a coronal-axis perspective and Gaussian splatting to emulate clinical magnification and highlight external silhouettes. Finally, registration is performed as a 2D similarity transform, optimized using a symmetric bidirectional Chamfer distance under a hierarchical coarse-to-fine scheme to achieve both large capture range and subpixel contour agreement.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study found that DentalSCR significantly reduces landmark errors, particularly in posterior teeth, and exhibits tighter dispersion on the lower jaw compared to conventional methods. It achieved low Chamfer and controlled Hausdorff distances at the curve level, indicating precise contour matching. The system demonstrated robust performance on real-world cephalograms, delivering high-fidelity and clinically inspectable 3D-2D alignments, effectively performing better than established baselines.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology has the potential to significantly enhance orthodontic diagnosis and treatment planning by providing clinicians with a more reliable and accurate method for integrating 3D dental models with 2D cephalometric data. This improved alignment can lead to better understanding of craniofacial relationships, more precise treatment simulations, and ultimately, more predictable and effective patient outcomes in orthodontics.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Orthodontics</span>
+                    
+                    <span class="tag">Dentistry</span>
+                    
+                    <span class="tag">Maxillofacial Surgery</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">3D-2D registration</span>
+                    
+                    <span class="tag tag-keyword">intraoral scan</span>
+                    
+                    <span class="tag tag-keyword">cephalometric radiograph</span>
+                    
+                    <span class="tag tag-keyword">silhouette-to-contour</span>
+                    
+                    <span class="tag tag-keyword">Chamfer distance</span>
+                    
+                    <span class="tag tag-keyword">orthodontics</span>
+                    
+                    <span class="tag tag-keyword">dental imaging</span>
+                    
+                    <span class="tag tag-keyword">DRR</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Reliable 3D-2D alignment between intraoral scan (IOS) models and lateral cephalometric radiographs is critical for orthodontic diagnosis, yet conventional intensity-driven registration methods struggle under real clinical conditions, where cephalograms exhibit projective magnification, geometric distortion, low-contrast dental crowns, and acquisition-dependent variation. These factors hinder the stability of appearance-based similarity metrics and often lead to convergence failures or anatomically implausible alignments. To address these limitations, we propose DentalSCR, a pose-stable, contour-guided framework for accurate and interpretable silhouette-to-contour registration. Our method first constructs a U-Midline Dental Axis (UMDA) to establish a unified cross-arch anatomical coordinate system, thereby stabilizing initialization and standardizing projection geometry across cases. Using this reference frame, we generate radiograph-like projections via a surface-based DRR formulation with coronal-axis perspective and Gaussian splatting, which preserves clinical source-object-detector magnification and emphasizes external silhouettes. Registration is then formulated as a 2D similarity transform optimized with a symmetric bidirectional Chamfer distance under a hierarchical coarse-to-fine schedule, enabling both large capture range and subpixel-level contour agreement. We evaluate DentalSCR on 34 expert-annotated clinical cases. Experimental results demonstrate substantial reductions in landmark error-particularly at posterior teeth-tighter dispersion on the lower jaw, and low Chamfer and controlled Hausdorff distances at the curve level. These findings indicate that DentalSCR robustly handles real-world cephalograms and delivers high-fidelity, clinically inspectable 3D--2D alignment, outperforming conventional baselines.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

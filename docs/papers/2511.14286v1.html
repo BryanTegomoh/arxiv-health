@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuralBoneReg: A Novel Self-Supervised Method for Robust and Accurate Multi-Modal Bone Surface Registration - Health AI Hub</title>
+    <meta name="description" content="This paper introduces NeuralBoneReg, a novel self-supervised, surface-based framework for robust and accurate multi-modal bone surface registration in computer-">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>NeuralBoneReg: A Novel Self-Supervised Method for Robust and Accurate Multi-Modal Bone Surface Registration</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.14286v1" target="_blank">2511.14286v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-18
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Luohong Wu, Matthias Seibold, Nicola A. Cavalcanti, Yunke Ao, Roman Flepp, Aidana Massalimova, Lilian Calvet, Philipp Fürnstahl
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.14286v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.14286v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces NeuralBoneReg, a novel self-supervised, surface-based framework for robust and accurate multi-modal bone surface registration in computer- and robot-assisted orthopedic surgery (CAOS). By leveraging 3D point clouds and implicit neural representations, the method achieves precise cross-registration between preoperative and intraoperative data despite significant modality heterogeneity, matching or surpassing state-of-the-art supervised approaches. The framework demonstrates strong generalizability across diverse anatomies and imaging modalities, enhancing the accuracy of surgical plan transfer.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate cross-registration between preoperative imaging and intraoperative data is fundamental for transferring patient-specific surgical plans and implant trajectories in computer- and robot-assisted orthopedic surgery. This research addresses a critical need for robust, automatic, and modality-agnostic methods to ensure precise execution of surgical procedures, minimizing errors and improving patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper describes 'NeuralBoneReg', a self-supervised neural network framework that uses 3D point clouds for robust and accurate multi-modal bone surface registration. This AI application directly supports surgical planning and intraoperative guidance in computer- and robot-assisted orthopedic surgery by precisely aligning pre-surgical plans (derived from medical imaging) with the patient's anatomy during an operation, crucial for correct implant placement and surgical execution.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>NeuralBoneReg addresses the critical challenge of multi-modal bone surface registration in CAOS, which is complicated by substantial modality heterogeneity between preoperative and intraoperative imaging.</li>
+                    
+                    <li>It proposes a self-supervised, surface-based framework that uses 3D point clouds as a modality-agnostic representation for bone surface registration, eliminating the need for inter-subject training data required by supervised methods.</li>
+                    
+                    <li>The architecture comprises an implicit neural unsigned distance field (UDF) to learn the preoperative bone model and an MLP-based registration module for both global initialization and local refinement through transformation hypothesis generation.</li>
+                    
+                    <li>The method was evaluated on three multi-modal datasets: UltraBones100k (CT-ultrasound, fibula/tibia), SpineDepth (CT-RGB-D, spinal vertebrae), and a newly introduced UltraBones-Hip (CT-ultrasound, femur/pelvis).</li>
+                    
+                    <li>NeuralBoneReg achieved robust and accurate performance, matching or surpassing existing methods with mean RRE/RTE of 1.68°/1.86 mm on UltraBones100k, 1.88°/1.89 mm on UltraBones-Hip, and 3.79°/2.45 mm on SpineDepth.</li>
+                    
+                    <li>The results demonstrate strong generalizability across different anatomies (fibula, tibia, femur, pelvis, vertebrae) and imaging modalities (CT, ultrasound, RGB-D).</li>
+                    
+                    <li>The self-supervised nature simplifies training data acquisition and potentially improves adaptability to diverse clinical scenarios without extensive manual annotation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>NeuralBoneReg is a self-supervised, surface-based framework operating on 3D point clouds. It consists of two main modules: an implicit neural unsigned distance field (UDF) that learns a continuous representation of the preoperative bone model, and an MLP-based registration module. This registration module performs both global initialization and local refinement by generating a series of transformation hypotheses to align the intraoperative point cloud with the learned neural UDF. The self-supervised approach means it does not require inter-subject training data, relying on intrinsic properties of the data for learning transformations.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>NeuralBoneReg successfully matches or surpasses state-of-the-art supervised methods in multi-modal bone surface registration. Key quantitative findings include mean Rotational Registration Error (RRE) / Translational Registration Error (RTE) values of 1.68°/1.86 mm on UltraBones100k, 1.88°/1.89 mm on UltraBones-Hip, and 3.79°/2.45 mm on SpineDepth. These results demonstrate the method's strong generalizability across various anatomies (fibula, tibia, femur, pelvis, spinal vertebrae) and diverse imaging modalities (CT, ultrasound, RGB-D), confirming its robustness and accuracy.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The development of NeuralBoneReg provides a highly robust and accurate solution for cross-modal alignment in computer- and robot-assisted orthopedic surgery. By improving the precision of transferring patient-specific surgical plans and implant trajectories from preoperative imaging to the intraoperative setting, it can significantly reduce surgical errors, enhance the safety and efficacy of procedures, and potentially lead to better functional outcomes for patients undergoing complex bone surgeries. Its self-supervised nature also reduces the burden of acquiring extensive labeled training data, making it more practical for clinical deployment.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the proposed method.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Orthopedic Surgery</span>
+                    
+                    <span class="tag">Spinal Surgery</span>
+                    
+                    <span class="tag">Interventional Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Surgical Robotics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Bone Surface Registration</span>
+                    
+                    <span class="tag tag-keyword">Multi-Modal Imaging</span>
+                    
+                    <span class="tag tag-keyword">Self-Supervised Learning</span>
+                    
+                    <span class="tag tag-keyword">Implicit Neural Representations</span>
+                    
+                    <span class="tag tag-keyword">Computer-Assisted Orthopedic Surgery</span>
+                    
+                    <span class="tag tag-keyword">Point Cloud Registration</span>
+                    
+                    <span class="tag tag-keyword">Unsigned Distance Field</span>
+                    
+                    <span class="tag tag-keyword">Robotics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">In computer- and robot-assisted orthopedic surgery (CAOS), patient-specific surgical plans derived from preoperative imaging define target locations and implant trajectories. During surgery, these plans must be accurately transferred, relying on precise cross-registration between preoperative and intraoperative data. However, substantial modality heterogeneity across imaging modalities makes this registration challenging and error-prone. Robust, automatic, and modality-agnostic bone surface registration is therefore clinically important. We propose NeuralBoneReg, a self-supervised, surface-based framework that registers bone surfaces using 3D point clouds as a modality-agnostic representation. NeuralBoneReg includes two modules: an implicit neural unsigned distance field (UDF) that learns the preoperative bone model, and an MLP-based registration module that performs global initialization and local refinement by generating transformation hypotheses to align the intraoperative point cloud with the neural UDF. Unlike SOTA supervised methods, NeuralBoneReg operates in a self-supervised manner, without requiring inter-subject training data. We evaluated NeuralBoneReg against baseline methods on two publicly available multi-modal datasets: a CT-ultrasound dataset of the fibula and tibia (UltraBones100k) and a CT-RGB-D dataset of spinal vertebrae (SpineDepth). The evaluation also includes a newly introduced CT--ultrasound dataset of cadaveric subjects containing femur and pelvis (UltraBones-Hip), which will be made publicly available. NeuralBoneReg matches or surpasses existing methods across all datasets, achieving mean RRE/RTE of 1.68°/1.86 mm on UltraBones100k, 1.88°/1.89 mm on UltraBones-Hip, and 3.79°/2.45 mm on SpineDepth. These results demonstrate strong generalizability across anatomies and modalities, providing robust and accurate cross-modal alignment for CAOS.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

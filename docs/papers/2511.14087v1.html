@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GCA-ResUNet:Image segmentation in medical images using grouped coordinate attention - Health AI Hub</title>
+    <meta name="description" content="This paper introduces GCA-ResUNet, a novel and efficient convolutional neural network for medical image segmentation. It integrates Grouped Coordinate Attention">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>GCA-ResUNet:Image segmentation in medical images using grouped coordinate attention</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.14087v1" target="_blank">2511.14087v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-18
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Jun Ding, Shang Gao
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.14087v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.14087v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces GCA-ResUNet, a novel and efficient convolutional neural network for medical image segmentation. It integrates Grouped Coordinate Attention (GCA) into ResNet-50 residual blocks to effectively capture long-range dependencies across channels and spatial locations, addressing limitations of traditional U-Net architectures and computational burdens of Transformers. GCA-ResUNet achieves high accuracy, evidenced by Dice scores of 86.11% on Synapse and 92.64% on ACDC datasets, outperforming state-of-the-art baselines with minimal computational overhead.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Medical image segmentation is foundational for computer-aided diagnosis and therapy, directly supporting clinical tasks like disease diagnosis, precise preoperative planning, and accurate monitoring of disease progression over time. Enhancing its accuracy and efficiency directly translates to improved patient care and clinical workflows.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is to develop high-accuracy and resource-efficient medical image segmentation models. These models assist healthcare professionals by providing precise automated segmentation of anatomical structures or pathologies from medical scans (e.g., CT, MRI), thereby supporting computer-aided diagnosis, guiding surgical planning, and enabling quantitative assessment for disease monitoring.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Problem Addressed**: Traditional U-Net architectures struggle with capturing long-range dependencies, while Transformer-based methods, though effective for global context, are computationally expensive and data-hungry.</li>
+                    
+                    <li>**Proposed Solution**: GCA-ResUNet integrates Grouped Coordinate Attention (GCA) into ResNet-50 residual blocks within a U-Net style encoder-decoder framework.</li>
+                    
+                    <li>**GCA Mechanism**: GCA employs grouped coordinate modeling to jointly encode global dependencies across both channel and spatial dimensions, enhancing feature representation and boundary delineation.</li>
+                    
+                    <li>**Computational Efficiency**: GCA is designed to add minimal parameter and FLOP overhead compared to self-attention mechanisms, leading to fast inference and favorable computational efficiency.</li>
+                    
+                    <li>**Performance on Synapse**: Achieved a Dice score of 86.11% on the Synapse multi-organ segmentation dataset, demonstrating robust performance for abdominal CT imaging.</li>
+                    
+                    <li>**Performance on ACDC**: Achieved a Dice score of 92.64% on the ACDC (Automated Cardiac Diagnosis Challenge) dataset, indicating high accuracy for cardiac MRI segmentation.</li>
+                    
+                    <li>**State-of-the-Art Comparison**: GCA-ResUNet surpasses several existing state-of-the-art baselines across both evaluated datasets.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed GCA-ResUNet is an encoder-decoder network architecturally inspired by U-Net. It incorporates ResNet-50 as its backbone for robust feature extraction within the encoder. The core innovation is the integration of Grouped Coordinate Attention (GCA) modules within these ResNet-50 residual blocks. GCA facilitates global dependency modeling by grouping channels and coordinates, jointly encoding spatial and channel-wise relationships, thereby strengthening feature representation and improving boundary delineation with minimal computational overhead compared to traditional self-attention.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>GCA-ResUNet achieved a Dice score of 86.11% on the Synapse multi-organ CT segmentation dataset and 92.64% on the ACDC cardiac MRI segmentation dataset. These results not only indicate high segmentation accuracy but also surpass several state-of-the-art baselines while maintaining computational efficiency and fast inference times.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This method has the potential to significantly improve the accuracy and speed of medical image analysis in clinical settings. More precise segmentation can lead to more accurate diagnoses, better-informed surgical planning, and more reliable disease monitoring, ultimately aiding clinicians in making better decisions and optimizing patient outcomes, especially in time-sensitive situations due to its fast inference.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the GCA-ResUNet model itself, focusing instead on addressing the limitations of prior U-Net and Transformer-based approaches. It implies that GCA-ResUNet provides a balance between performance and computational cost without explicit trade-offs mentioned for its own architecture.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly suggest future research directions for this specific work. However, by stating that GCA "offers a practical way to enhance convolutional architectures with global modeling capability," it implicitly suggests broader applicability of GCA to other CNN tasks and architectures beyond medical image segmentation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Cardiology</span>
+                    
+                    <span class="tag">Oncology (for tumor segmentation in planning/monitoring)</span>
+                    
+                    <span class="tag">General Diagnosis</span>
+                    
+                    <span class="tag">Surgical Planning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">medical image segmentation</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">U-Net</span>
+                    
+                    <span class="tag tag-keyword">attention mechanisms</span>
+                    
+                    <span class="tag tag-keyword">Grouped Coordinate Attention (GCA)</span>
+                    
+                    <span class="tag tag-keyword">ResNet-50</span>
+                    
+                    <span class="tag tag-keyword">computer-aided diagnosis</span>
+                    
+                    <span class="tag tag-keyword">CT imaging</span>
+                    
+                    <span class="tag tag-keyword">MRI imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical image segmentation underpins computer-aided diagnosis and therapy by supporting clinical diagnosis, preoperative planning, and disease monitoring. While U-Net style convolutional neural networks perform well due to their encoder-decoder structures with skip connections, they struggle to capture long-range dependencies. Transformer-based variants address global context but often require heavy computation and large training datasets. This paper proposes GCA-ResUNet, an efficient segmentation network that integrates Grouped Coordinate Attention (GCA) into ResNet-50 residual blocks. GCA uses grouped coordinate modeling to jointly encode global dependencies across channels and spatial locations, strengthening feature representation and boundary delineation while adding minimal parameter and FLOP overhead compared with self-attention. On the Synapse dataset, GCA-ResUNet achieves a Dice score of 86.11%, and on the ACDC dataset, it reaches 92.64%, surpassing several state-of-the-art baselines while maintaining fast inference and favorable computational efficiency. These results indicate that GCA offers a practical way to enhance convolutional architectures with global modeling capability, enabling high-accuracy and resource-efficient medical image segmentation.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
