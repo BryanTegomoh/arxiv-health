@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrainRotViT: Transformer-ResNet Hybrid for Explainable Modeling of Brain Aging from 3D sMRI - Health AI Hub</title>
+    <meta name="description" content="This paper introduces BrainRotViT, a novel hybrid Transformer-ResNet architecture for highly accurate and explainable brain age estimation from 3D structural MR">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>BrainRotViT: Transformer-ResNet Hybrid for Explainable Modeling of Brain Aging from 3D sMRI</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.15188v1" target="_blank">2511.15188v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-19
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Wasif Jalal, Md Nafiu Rahman, M. Sohel Rahman
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.15188v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.15188v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces BrainRotViT, a novel hybrid Transformer-ResNet architecture for highly accurate and explainable brain age estimation from 3D structural MRI. The model achieves state-of-the-art performance and strong generalization, revealing significant associations between brain age gap and neurodegenerative/neurodevelopmental conditions, while providing interpretability through attention maps. It bridges the gap between CNN and transformer approaches for robust brain age prediction.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate and explainable brain age estimation serves as a powerful biomarker for studying aging, early detection, and monitoring of neurodegenerative diseases (like Alzheimer's) and neurodevelopmental disorders (like ASD), aiding in personalized prognoses and intervention strategies.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of an interpretable, generalizable, and efficient deep learning model (BrainRotViT) for accurate brain age estimation from structural MRI. This serves as a computational biomarker for detecting and monitoring aging processes and neurodegenerative diseases (like Alzheimer's) and neurodevelopmental disorders (like ASD). Its interpretability, via attention maps, allows clinicians to understand which brain regions contribute to the prediction, potentially aiding in diagnosis, prognosis, and personalized treatment strategies in healthcare settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Proposes BrainRotViT, a hybrid architecture combining a Vision Transformer (ViT) encoder and a residual CNN regressor for brain age estimation from 3D sMRI.</li>
+                    
+                    <li>The ViT encoder is initially trained on an auxiliary age and sex classification task using 2D sagittal slices, then frozen to generate slice-level embedding vectors.</li>
+                    
+                    <li>These embedding vectors form a 2D matrix fed into a residual CNN regressor, which incorporates subject sex in the final layer to predict continuous brain age.</li>
+                    
+                    <li>Achieved a Mean Absolute Error (MAE) of 3.34 years (Pearson r=0.98, Spearman ρ=0.97, R^2=0.95) on validation across 11 diverse MRI datasets from over 130 acquisition sites.</li>
+                    
+                    <li>Demonstrated strong generalization across 4 independent cohorts, with MAEs ranging from 3.77 to 5.04 years, outperforming baseline and state-of-the-art models.</li>
+                    
+                    <li>Brain age gap analyses showed significant associations with Alzheimer's disease, cognitive impairment, and autism spectrum disorder.</li>
+                    
+                    <li>Model attention maps provided interpretability, highlighting key aging-associated brain regions, including the cerebellar vermis, precentral/postcentral gyri, temporal lobes, and medial superior frontal gyrus.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The BrainRotViT model employs a two-stage hybrid architecture. First, a Vision Transformer (ViT) encoder is pre-trained on an auxiliary task of age and sex classification, using 2D sagittal slices extracted from 3D sMRI volumes. After pre-training, this ViT encoder is frozen and used to generate a 2D matrix of embedding vectors by processing all sagittal slices of a subject's sMRI. This embedding matrix is then fed into a residual Convolutional Neural Network (CNN) regressor. Subject sex information is incorporated at the final fully-connected layer of the CNN to predict the continuous brain age. The model was evaluated on 11 MRI datasets and independently validated on 4 external cohorts.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The BrainRotViT model achieved a highly accurate brain age estimation with an MAE of 3.34 years on validation data, demonstrating excellent correlation (Pearson r=0.98, Spearman ρ=0.97) and explained variance (R^2=0.95). It also exhibited strong generalization, yielding MAEs between 3.77 and 5.04 years on four independent cohorts. Importantly, analyses of the brain age gap (predicted minus actual age) revealed significant associations with Alzheimer's disease, cognitive impairment, and autism spectrum disorder. Furthermore, attention maps provided interpretable insights, pinpointing specific brain regions implicated in aging, including the cerebellar vermis, precentral and postcentral gyri, temporal lobes, and medial superior frontal gyrus.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This method offers a robust, interpretable, and generalizable tool for clinicians and researchers. It could lead to earlier and more accurate identification of individuals at risk for, or affected by, various neurodegenerative conditions and neurodevelopmental disorders by providing a reliable brain age biomarker. The explainable attention maps can inform clinical understanding of disease progression and identify potential therapeutic targets, ultimately facilitating more personalized diagnoses and interventions in neurological and psychiatric care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily focuses on the strengths and advantages of the proposed BrainRotViT model. It does not explicitly state specific limitations or drawbacks of this particular method, but rather highlights how BrainRotViT addresses limitations of previous approaches (e.g., manual feature engineering, limited receptive fields, overfitting in CNNs, or high computational cost/large data requirements for pure transformers).</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The authors suggest that this framework opens "new avenues for aging and neurodegeneration research." This implies future work could involve applying this interpretable brain age biomarker to longitudinal studies, investigating its utility in other neurological or psychiatric disorders, or exploring its role in assessing treatment efficacy or predicting individual trajectories of cognitive decline.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Geriatrics</span>
+                    
+                    <span class="tag">Psychiatry</span>
+                    
+                    <span class="tag">Neuroimaging</span>
+                    
+                    <span class="tag">Alzheimer's Disease</span>
+                    
+                    <span class="tag">Cognitive Impairment</span>
+                    
+                    <span class="tag">Autism Spectrum Disorder</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Brain Age Estimation</span>
+                    
+                    <span class="tag tag-keyword">Structural MRI</span>
+                    
+                    <span class="tag tag-keyword">Vision Transformer</span>
+                    
+                    <span class="tag tag-keyword">Residual CNN</span>
+                    
+                    <span class="tag tag-keyword">Neurodegeneration</span>
+                    
+                    <span class="tag tag-keyword">Alzheimer's Disease</span>
+                    
+                    <span class="tag tag-keyword">Explainable AI</span>
+                    
+                    <span class="tag tag-keyword">Biomarker</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate brain age estimation from structural MRI is a valuable biomarker for studying aging and neurodegeneration. Traditional regression and CNN-based methods face limitations such as manual feature engineering, limited receptive fields, and overfitting on heterogeneous data. Pure transformer models, while effective, require large datasets and high computational cost. We propose Brain ResNet over trained Vision Transformer (BrainRotViT), a hybrid architecture that combines the global context modeling of vision transformers (ViT) with the local refinement of residual CNNs. A ViT encoder is first trained on an auxiliary age and sex classification task to learn slice-level features. The frozen encoder is then applied to all sagittal slices to generate a 2D matrix of embedding vectors, which is fed into a residual CNN regressor that incorporates subject sex at the final fully-connected layer to estimate continuous brain age. Our method achieves an MAE of 3.34 years (Pearson $r=0.98$, Spearman $ρ=0.97$, $R^2=0.95$) on validation across 11 MRI datasets encompassing more than 130 acquisition sites, outperforming baseline and state-of-the-art models. It also generalizes well across 4 independent cohorts with MAEs between 3.77 and 5.04 years. Analyses on the brain age gap (the difference between the predicted age and actual age) show that aging patterns are associated with Alzheimer's disease, cognitive impairment, and autism spectrum disorder. Model attention maps highlight aging-associated regions of the brain, notably the cerebellar vermis, precentral and postcentral gyri, temporal lobes, and medial superior frontal gyrus. Our results demonstrate that this method provides an efficient, interpretable, and generalizable framework for brain-age prediction, bridging the gap between CNN- and transformer-based approaches while opening new avenues for aging and neurodegeneration research.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generating Natural-Language Surgical Feedback: From Structured Representation to Domain-Grounded Evaluation - Health AI Hub</title>
+    <meta name="description" content="This paper presents a novel structure-aware pipeline to automate natural-language surgical feedback generation, crucial for trainee skill development. By levera">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Generating Natural-Language Surgical Feedback: From Structured Representation to Domain-Grounded Evaluation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.15159v1" target="_blank">2511.15159v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-19
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Firdavs Nasriddinov, Rafal Kocielnik, Anima Anandkumar, Andrew J. Hung
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI, cs.CL, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.15159v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.15159v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper presents a novel structure-aware pipeline to automate natural-language surgical feedback generation, crucial for trainee skill development. By leveraging Instrument-Action-Target (IAT) triplets mined from real surgical transcripts to condition GPT-4o, the system significantly improves feedback fidelity and clinical relevance compared to generating feedback from video alone.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to surgical education by addressing the need for scalable, consistent, and high-quality intraoperative feedback, which is pivotal for accelerating trainee skill acquisition and performance improvement, ultimately enhancing patient safety.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of a system that generates natural-language, trainer-style feedback for surgical trainees. It uses computer vision to analyze surgical video (identifying Instrument-Action-Target triplets) and natural language generation (leveraging GPT-4o) to provide guidance. This aims to make surgical training more timely, accessible, and consistent, directly impacting medical education and the development of surgical expertise.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>A structure-aware pipeline was developed to learn a surgical action ontology, specifically Instrument-Action-Target (IAT) triplets, from 33 real trainer-to-trainee surgical transcripts.</li>
+                    
+                    <li>IAT triplets were mined from human feedback text and clustered into normalized categories to create a clinically relevant structured representation of surgical actions.</li>
+                    
+                    <li>A video-to-IAT model was fine-tuned, incorporating surgical procedure and task contexts, along with fine-grained temporal instrument motion, resulting in consistent AUC gains (Instrument: 0.74, Action: 0.63, Tissue: 0.79).</li>
+                    
+                    <li>IAT triplet representations were effectively used to guide GPT-4o in generating clinically grounded, trainer-style feedback, demonstrating a crucial step in translating structured data to natural language.</li>
+                    
+                    <li>IAT conditioning significantly improved feedback text generation, increasing the average fidelity score from 2.17 (video alone) to 2.44 (+12.4%) on a 1-5 rubric where 3 is admissible and 5 is a perfect match.</li>
+                    
+                    <li>The share of 'admissible' feedback generations (score >= 3) doubled from 21% to 42% with IAT conditioning, indicating a higher proportion of safe and relevant guidance.</li>
+                    
+                    <li>Traditional text-similarity metrics also showed substantial improvements, with a 15-31% decrease in word error rate and a 9-64% increase in ROUGE scores, validating the quality of the generated text.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involved three main steps: 1) Mining and normalizing Instrument-Action-Target (IAT) triplets from human trainer-to-trainee feedback transcripts to form a surgical action ontology. 2) Fine-tuning a video-to-IAT recognition model, enhanced by injecting surgical procedure/task contexts and utilizing fine-grained temporal instrument motion. 3) Leveraging these IAT triplet representations to condition and guide a large language model (GPT-4o) for generating natural-language surgical feedback. Evaluation was performed on IAT recognition (AUC) and feedback text generation (human-rated fidelity rubric and text-similarity metrics).</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The video-to-IAT recognition model achieved AUCs of 0.74 for Instrument, 0.63 for Action, and 0.79 for Tissue after context injection and temporal tracking. For feedback generation, IAT conditioning improved the average fidelity score by 12.4% (from 2.17 to 2.44 out of 5) and doubled the share of admissible generations (score >= 3) from 21% to 42%. Significant improvements were also observed in text-similarity metrics, with a 15-31% reduction in word error rate and a 9-64% increase in ROUGE scores.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The system offers the potential for timely, accessible, and consistent high-quality surgical feedback at scale, supporting auditable use in surgical training by providing clinician-verifiable rationales. This can lead to more efficient and effective skill acquisition for surgical trainees, standardizing training quality and potentially improving patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While the improvements are significant, the absolute fidelity score of 2.44 (on a 1-5 scale where 5 is a perfect match) indicates that the generated feedback is not yet fully equivalent to human trainer quality, suggesting room for further enhancement towards more nuanced and complex feedback. The study is based on 33 surgeries, which, while valuable, may represent a specific set of procedures or trainers.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly detailed in the abstract, but implied by the reported results, future research could focus on further refining the fidelity of the generated feedback to more closely match human trainers, expanding the IAT ontology to cover a wider range of surgical procedures and complexities, and exploring real-world deployment and long-term impact studies on trainee performance.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Surgical Training</span>
+                    
+                    <span class="tag">Medical Education</span>
+                    
+                    <span class="tag">Minimally Invasive Surgery (implied by instrument tracking)</span>
+                    
+                    <span class="tag">Performance Assessment</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">surgical training</span>
+                    
+                    <span class="tag tag-keyword">natural language generation</span>
+                    
+                    <span class="tag tag-keyword">surgical feedback</span>
+                    
+                    <span class="tag tag-keyword">Instrument-Action-Target (IAT)</span>
+                    
+                    <span class="tag tag-keyword">GPT-4o</span>
+                    
+                    <span class="tag tag-keyword">video analysis</span>
+                    
+                    <span class="tag tag-keyword">medical education</span>
+                    
+                    <span class="tag tag-keyword">AI in medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">High-quality intraoperative feedback from a surgical trainer is pivotal for improving trainee performance and long-term skill acquisition. Automating natural, trainer-style feedback promises timely, accessible, and consistent guidance at scale but requires models that understand clinically relevant representations. We present a structure-aware pipeline that learns a surgical action ontology from real trainer-to-trainee transcripts (33 surgeries) and uses it to condition feedback generation. We contribute by (1) mining Instrument-Action-Target (IAT) triplets from real-world feedback text and clustering surface forms into normalized categories, (2) fine-tuning a video-to-IAT model that leverages the surgical procedure and task contexts as well as fine-grained temporal instrument motion, and (3) demonstrating how to effectively use IAT triplet representations to guide GPT-4o in generating clinically grounded, trainer-style feedback. We show that, on Task 1: Video-to-IAT recognition, our context injection and temporal tracking deliver consistent AUC gains (Instrument: 0.67 to 0.74; Action: 0.60 to 0.63; Tissue: 0.74 to 0.79). For Task 2: feedback text generation (rated on a 1-5 fidelity rubric where 1 = opposite/unsafe, 3 = admissible, and 5 = perfect match to a human trainer), GPT-4o from video alone scores 2.17, while IAT conditioning reaches 2.44 (+12.4%), doubling the share of admissible generations with score >= 3 from 21% to 42%. Traditional text-similarity metrics also improve: word error rate decreases by 15-31% and ROUGE (phrase/substring overlap) increases by 9-64%. Grounding generation in explicit IAT structure improves fidelity and yields clinician-verifiable rationales, supporting auditable use in surgical training.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Accepted as proceedings paper for ML4H 2025</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

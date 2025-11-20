@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D-Guided Scalable Flow Matching for Generating Volumetric Tissue Spatial Transcriptomics from Serial Histology - Health AI Hub</title>
-    <meta name="description" content="HoloTea is a novel 3D-aware flow-matching framework designed to generate volumetric tissue spatial transcriptomics by imputing spot-level gene expression from s">
+    <meta name="description" content="HoloTea is a novel 3D-aware flow-matching framework that accurately infers spot-level gene expression to generate volumetric tissue spatial transcriptomics from">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CV
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">HoloTea is a novel 3D-aware flow-matching framework designed to generate volumetric tissue spatial transcriptomics by imputing spot-level gene expression from serial H&E histology. It leverages information from adjacent sections using a ControlNet and a 3D-consistent prior, overcoming limitations of existing 2D and 3D methods to achieve scalable and accurate 3D expression profiles. This approach significantly improves 3D expression accuracy and generalization across diverse tissue types and resolutions.</p>
+                <p class="summary-text">HoloTea is a novel 3D-aware flow-matching framework that accurately infers spot-level gene expression to generate volumetric tissue spatial transcriptomics from serial H&E histology. It overcomes limitations of existing methods by explicitly using cross-section information through a ControlNet and a 3D-consistent prior, demonstrating improved accuracy and generalization across diverse tissue types and resolutions.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to medicine as it enables the creation of detailed, scalable, and accurate 3D maps of gene expression within tissues from standard histology slides, which is crucial for a comprehensive understanding of human biology, disease progression, and therapeutic responses.</p>
+                <p>This technology is critical for understanding human biology and disease by providing detailed 3D maps of gene expression within tissues, enabling a holistic view of cellular organization and molecular changes relevant to pathology and therapeutics.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>HoloTea is an AI (flow-matching framework with ControlNet) application that imputes spot-level gene expression from H&E histology images. This enables the creation of 3D virtual tissues with detailed molecular information, which can be used to accelerate biomarker discovery, improve disease understanding, and potentially aid in diagnostic or prognostic predictions by integrating genomic and morphological data in a 3D context.</p>
+                <p>HoloTea is an AI-driven framework that generates 3D volumetric tissue spatial transcriptomics profiles from serial histology images. This application enables a more holistic understanding of tissue organization and gene expression in 3D, which is crucial for insights into human biology and disease. It has direct implications for accelerating biomarker discovery, improving disease diagnosis and prognosis, and facilitating drug target identification by providing a detailed, multi-omic view of tissue structure and function.</p>
             </section>
             
 
@@ -68,17 +68,17 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>HoloTea is a 3D-aware flow-matching framework that imputes spot-level gene expression from H&E histology, explicitly using contextual information from adjacent sections.</li>
+                    <li>HoloTea is a 3D-aware flow-matching framework designed to impute spot-level gene expression from H&E histology, addressing the limitations of 2D methods that ignore 3D structure and existing 3D-aware methods that lack generativity and scalability.</li>
                     
-                    <li>It retrieves morphologically corresponding spots on neighboring slides in a shared feature space and fuses this cross-section context into a lightweight ControlNet to ensure anatomical continuity.</li>
+                    <li>A core innovation is the retrieval of morphologically corresponding spots on neighboring slides in a shared feature space, fusing this cross-section context into a lightweight ControlNet to ensure anatomical continuity during generation.</li>
                     
-                    <li>A novel 3D-consistent prior for flow matching is introduced, combining a learned zero-inflated negative binomial (ZINB) prior with a spatial-empirical prior constructed from neighboring sections, specifically designed to capture the count nature of gene expression data.</li>
+                    <li>The framework introduces a 3D-consistent prior for flow matching, which combines a learned zero-inflated negative binomial (ZINB) prior with a spatial-empirical prior constructed from neighboring sections, specifically tailored to capture the count nature of gene expression data.</li>
                     
-                    <li>The framework incorporates a global attention block that enables 3D H&E scaling linearly with the number of spots, facilitating training and inference on large-scale 3D spatial transcriptomics datasets.</li>
+                    <li>HoloTea incorporates a global attention block that enables its 3D H&E scaling linearly with the number of spots, making the framework scalable for training and inference on large volumetric spatial transcriptomics datasets.</li>
                     
-                    <li>HoloTea consistently demonstrated improved 3D expression accuracy and generalization across three different spatial transcriptomics datasets spanning various tissue types and resolutions, outperforming conventional 2D and existing 3D baseline methods.</li>
+                    <li>The method consistently achieves improved 3D expression accuracy and generalization compared to both 2D and other 3D baseline approaches across three distinct spatial transcriptomics datasets spanning different tissue types and resolutions.</li>
                     
-                    <li>The scalability and robustness of HoloTea facilitate the creation of accurate 3D virtual tissues, offering a holistic understanding of tissue organization and disease mechanisms.</li>
+                    <li>This technology provides a robust and scalable solution for creating accurate 3D virtual tissues, offering a holistic understanding of tissue organization and advancing biological and disease research.</li>
                     
                 </ul>
             </section>
@@ -86,31 +86,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>HoloTea employs a 3D-aware flow-matching framework to infer gene expression. It uses a shared feature space to identify and retrieve morphologically corresponding spots between adjacent H&E sections. This cross-section context is then integrated into a lightweight ControlNet for conditioning, ensuring anatomical continuity. To model the count nature of gene expression data, it incorporates a 3D-consistent prior combining a learned Zero-Inflated Negative Binomial (ZINB) prior with a spatial-empirical prior derived from neighboring sections. Scalability for large 3D datasets is achieved through a global attention block that linearly scales with the number of spots.</p>
+                    <p>HoloTea utilizes a 3D-aware flow-matching framework that imputes spot-level gene expression. It identifies morphologically corresponding spots across serial H&E sections in a shared feature space. This cross-section contextual information is then fused into a lightweight ControlNet to guide the generative process and maintain anatomical continuity. To accurately model count data, it employs a 3D-consistent prior, combining a learned Zero-Inflated Negative Binomial (ZINB) prior with a spatial-empirical prior derived from adjacent sections. A global attention block ensures the method scales efficiently with large 3D datasets.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>HoloTea consistently improved 3D expression accuracy and generalization across three diverse spatial transcriptomics datasets, which included different tissue types and resolutions. It demonstrably outperformed both 2D and other 3D baseline methods.</p>
+                    <p>HoloTea consistently demonstrated superior 3D expression accuracy and enhanced generalization capabilities compared to both 2D and existing 3D baseline methods. This performance improvement was validated across diverse spatial transcriptomics datasets, encompassing various tissue types and resolutions.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The ability to generate accurate 3D virtual tissues with detailed gene expression profiles holds significant clinical impact. It can accelerate the discovery of novel biomarkers for diagnosis and prognosis, deepen the understanding of disease mechanisms at a volumetric level, and potentially inform more precise and personalized therapeutic strategies by revealing spatial patterns of gene activity within diseased tissues.</p>
+                <p>The ability to generate accurate 3D virtual tissues with inferred gene expression will significantly accelerate the discovery of novel biomarkers for early disease detection and prognosis. It can deepen the understanding of complex disease pathologies, such as tumor microenvironments or neurodegenerative processes, potentially leading to more targeted diagnostic tools and personalized therapeutic strategies.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The provided abstract does not explicitly state any limitations of the HoloTea framework.</p>
+                <p>The provided abstract does not explicitly state any specific limitations or caveats for the HoloTea method itself. It primarily highlights how HoloTea overcomes limitations present in prior 2D and 3D approaches.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The authors envision HoloTea advancing the creation of accurate 3D virtual tissues, ultimately accelerating biomarker discovery and deepening our understanding of disease, implying future application and development in these areas.</p>
+                <p>The authors envision HoloTea advancing the creation of accurate 3D virtual tissues, which will ultimately accelerate biomarker discovery and deepen the understanding of various diseases. This implies future research will focus on applying HoloTea to broader biological contexts and disease models to uncover novel biological insights.</p>
             </section>
             
 
@@ -118,13 +118,13 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Pathology</span>
-                    
                     <span class="tag">Oncology</span>
                     
-                    <span class="tag">Developmental Biology</span>
+                    <span class="tag">Pathology</span>
                     
                     <span class="tag">Neuroscience</span>
+                    
+                    <span class="tag">Developmental Biology</span>
                     
                     <span class="tag">Immunology</span>
                     
@@ -137,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">3D spatial transcriptomics</span>
+                    <span class="tag tag-keyword">spatial transcriptomics</span>
                     
-                    <span class="tag tag-keyword">volumetric tissue</span>
-                    
-                    <span class="tag tag-keyword">flow matching</span>
-                    
-                    <span class="tag tag-keyword">H&E histology</span>
+                    <span class="tag tag-keyword">3D reconstruction</span>
                     
                     <span class="tag tag-keyword">gene expression</span>
                     
-                    <span class="tag tag-keyword">ControlNet</span>
+                    <span class="tag tag-keyword">histology</span>
                     
-                    <span class="tag tag-keyword">ZINB prior</span>
+                    <span class="tag tag-keyword">flow matching</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
                     
                     <span class="tag tag-keyword">biomarker discovery</span>
+                    
+                    <span class="tag tag-keyword">tissue organization</span>
                     
                 </div>
             </section>

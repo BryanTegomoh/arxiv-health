@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlling False Positives in Image Segmentation via Conformal Prediction - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel post-hoc framework for medical image segmentation that uses conformal prediction to construct confidence masks with distribution-f">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Controlling False Positives in Image Segmentation via Conformal Prediction</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.15406v1" target="_blank">2511.15406v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-19
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Luca Mossina, Corentin Friedrich
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.15406v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.15406v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel post-hoc framework for medical image segmentation that uses conformal prediction to construct confidence masks with distribution-free, image-level control of false-positive predictions. It provides explicit statistical guarantees on the proportion of false positives, enabling reliable and risk-aware segmentation without requiring retraining of the underlying deep learning model, as demonstrated on a polyp-segmentation benchmark.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Reliable semantic segmentation is crucial for accurate clinical decision-making, but deep learning models often lack explicit guarantees on their errors, especially false positives. This framework addresses the critical issue of over-segmentation, which can lead to misdiagnosis, unnecessary biopsies, or inappropriate treatment planning, by providing statistically guaranteed control over false positives, thus enhancing patient safety and diagnostic accuracy.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper presents a framework to improve the reliability and safety of AI-powered semantic segmentation models used in medical imaging. Specifically, it offers a method to construct confidence masks that control false-positive predictions with statistical guarantees, which is vital for clinical decision-making, such as in polyp detection where over-segmentation or false positives can lead to unnecessary procedures or misdiagnosis. This enhances the trustworthiness and practical applicability of AI in diagnostic processes.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>A post-hoc, model-agnostic framework is proposed to control false positives in semantic segmentation, applicable to any pretrained model.</li>
+                    
+                    <li>It generates confidence masks with distribution-free, image-level statistical guarantees on the proportion of false positives.</li>
+                    
+                    <li>The method defines a nested family of shrunken masks (via increasing score threshold or morphological erosion) and selects a single 'shrink parameter' using conformal prediction.</li>
+                    
+                    <li>A labeled calibration set is used to determine the shrink parameter, ensuring that for new, exchangeable images, false positives in the confidence mask stay below a user-specified tolerance with high probability.</li>
+                    
+                    <li>The framework requires no retraining of the base segmentation model, making it computationally efficient and adaptable.</li>
+                    
+                    <li>It provides finite-sample statistical guarantees, making it robust and reliable even with limited data, regardless of the underlying predictor's architecture.</li>
+                    
+                    <li>Experiments on a polyp-segmentation benchmark demonstrate target-level empirical validity, confirming its effectiveness in a practical medical context.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed methodology is a post-hoc framework that operates independently of the pretrained segmentation model. It constructs a nested series of shrunken masks from the initial segmentation output by either increasing the prediction score threshold or applying morphological erosion. A separate, labeled calibration dataset is then used in conjunction with conformal prediction to select a single optimal 'shrink parameter.' This selection process is designed to ensure that the proportion of false positive pixels within the final confidence mask remains below a pre-defined user tolerance for new images that are statistically exchangeable with the calibration data, all with a specified high probability. The approach is model-agnostic and does not necessitate any retraining of the original segmentation network.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study's primary finding is the successful demonstration of 'target-level empirical validity' on a polyp-segmentation benchmark. This indicates that the proposed conformal prediction framework effectively controls the rate of false positive predictions in segmented images, ensuring it stays below a user-specified tolerance in real-world scenarios. This confirms the practical utility and statistical soundness of generating risk-aware confidence masks for medical segmentation tasks.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework has significant potential to transform the integration of AI in clinical practice by making deep learning segmentation models more trustworthy and accountable. By providing explicit, image-level statistical guarantees on controlling false positives, it mitigates the risks associated with over-segmentation, which can lead to misinterpretations, unnecessary follow-up procedures, or patient anxiety. Clinicians can use AI-generated segmentations with increased confidence, allowing for more precise diagnosis, safer surgical planning, and more targeted interventions, especially in fields like endoscopy where polyp over-segmentation can have immediate clinical consequences.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The primary limitation noted (implicitly) in the abstract is the assumption of 'new images that are exchangeable with the calibration data.' This implies that the statistical guarantees hold under the condition that future data distributions do not significantly shift from the calibration data, which can be a challenge in dynamic clinical environments. No other explicit limitations are detailed in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly detailed in the abstract. However, potential future directions could include evaluating the framework's robustness to various forms of distribution shift in real-world clinical datasets, extending the control mechanisms to incorporate other error types such as false negatives, or exploring its application across a broader range of medical imaging modalities and complex anatomical structures.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Gastroenterology (endoscopy)</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Pathology (microscopy analysis)</span>
+                    
+                    <span class="tag">Surgery (pre-operative planning)</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Conformal prediction</span>
+                    
+                    <span class="tag tag-keyword">semantic segmentation</span>
+                    
+                    <span class="tag tag-keyword">false positives</span>
+                    
+                    <span class="tag tag-keyword">confidence masks</span>
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">risk-aware AI</span>
+                    
+                    <span class="tag tag-keyword">polyp segmentation</span>
+                    
+                    <span class="tag tag-keyword">statistical guarantees</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Reliable semantic segmentation is essential for clinical decision making, yet deep models rarely provide explicit statistical guarantees on their errors. We introduce a simple post-hoc framework that constructs confidence masks with distribution-free, image-level control of false-positive predictions. Given any pretrained segmentation model, we define a nested family of shrunken masks obtained either by increasing the score threshold or by applying morphological erosion. A labeled calibration set is used to select a single shrink parameter via conformal prediction, ensuring that, for new images that are exchangeable with the calibration data, the proportion of false positives retained in the confidence mask stays below a user-specified tolerance with high probability. The method is model-agnostic, requires no retraining, and provides finite-sample guarantees regardless of the underlying predictor. Experiments on a polyp-segmentation benchmark demonstrate target-level empirical validity. Our framework enables practical, risk-aware segmentation in settings where over-segmentation can have clinical consequences. Code at https://github.com/deel-ai-papers/conseco.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

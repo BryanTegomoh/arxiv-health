@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fine-tuning Pre-trained Audio Models for COVID-19 Detection: A Technical Report - Health AI Hub</title>
+    <meta name="description" content="This technical report evaluates pre-trained audio models (Audio-MAE, PANNs) for COVID-19 detection, employing strict demographic stratification on Coswara and C">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Fine-tuning Pre-trained Audio Models for COVID-19 Detection: A Technical Report</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.14939v1" target="_blank">2511.14939v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-18
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Daniel Oliveira de Brito, Letícia Gabriella de Souza, Marcelo Matheus Gauy, Marcelo Finger, Arnaldo Candido Junior
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.SD, cs.LG, eess.AS
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.14939v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.14939v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This technical report evaluates pre-trained audio models (Audio-MAE, PANNs) for COVID-19 detection, employing strict demographic stratification on Coswara and COUGHVID datasets. It reveals moderate intra-dataset performance but severe cross-dataset generalization failure, highlighting that demographic leakage inflates performance metrics and balanced dataset sizes are currently insufficient for robust deep learning models.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research underscores critical challenges in developing reliable and generalizable audio-based COVID-19 diagnostic tools. It emphasizes the necessity of rigorous demographic controls and larger, balanced datasets to ensure AI-driven health solutions are clinically robust, fair, and free from biases that could lead to misdiagnosis or exacerbate health inequalities.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper explores the application of fine-tuned pre-trained audio deep learning models for an AI-driven diagnostic or screening tool to detect COVID-19 based on audio signals (e.g., coughs, voice). It specifically highlights challenges crucial for the real-world clinical deployment of such AI systems.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Pre-trained audio models (Audio-MAE, PANN CNN6, CNN10, CNN14) were fine-tuned for COVID-19 detection tasks.</li>
+                    
+                    <li>Evaluation encompassed both intra-dataset performance and cross-dataset generalization on Coswara and COUGHVID datasets.</li>
+                    
+                    <li>A strict demographic stratification by age and gender was implemented to prevent models from exploiting spurious correlations and demographic leakage.</li>
+                    
+                    <li>Intra-dataset results showed moderate performance (Audio-MAE: 0.82 AUC, 0.76 F1 on Coswara; all models: 0.58-0.63 AUC on COUGHVID).</li>
+                    
+                    <li>Cross-dataset evaluation revealed severe generalization failure across all models (AUC 0.43-0.68), with Audio-MAE showing significant performance degradation (F1-score 0.00-0.08).</li>
+                    
+                    <li>Demographic balancing, while reducing apparent performance, proved essential for a more realistic assessment of detection capabilities by eliminating confounding factors.</li>
+                    
+                    <li>The limited dataset sizes after balancing (1,219-2,160 samples) were identified as insufficient for robust training of deep learning models.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study involved fine-tuning pre-trained deep learning audio models (Audio-MAE and PANN architectures: CNN6, CNN10, CNN14). These models were trained and evaluated on two benchmark datasets, Coswara and COUGHVID, using both intra-dataset validation and cross-dataset generalization tests. A key methodological aspect was the implementation of a strict demographic stratification by age and gender to eliminate spurious correlations, which resulted in reduced, but more controlled, dataset sizes (1,219-2,160 samples). Performance was assessed using Area Under the Curve (AUC) and F1-score metrics.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Intra-dataset performance was found to be moderate, with Audio-MAE achieving the highest results on the Coswara dataset (0.82 AUC, 0.76 F1-score), while all models showed limited performance on COUGHVID (AUC 0.58-0.63). A critical finding was the severe generalization failure observed during cross-dataset evaluation, where AUC scores ranged from 0.43-0.68, and Audio-MAE's F1-score plummeted to 0.00-0.08. This demonstrated that demographic balancing, by removing 'demographic leakage', provided a more realistic assessment of model capabilities, albeit with reduced apparent performance. The study concluded that the limited dataset sizes remaining after balancing were insufficient for training robust deep learning models capable of generalizable COVID-19 detection.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The findings have significant clinical implications, indicating that audio-based COVID-19 detection systems developed without rigorous demographic controls may yield artificially inflated performance metrics and fail severely in real-world, diverse populations. For clinical deployment, such systems must demonstrate robust generalization capabilities across varying demographics and environmental conditions, free from biases that could lead to misdiagnosis or inequitable access. This research highlights the need for a fundamental shift towards developing larger, meticulously balanced datasets and more resilient AI models to ensure clinically robust and equitable diagnostic tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The primary limitations identified are: (1) The significantly reduced dataset sizes (1,219-2,160 samples) after strict demographic balancing, which were insufficient for deep learning models that typically require larger training sets. (2) The severe generalization failure observed across datasets, indicating models struggled to learn robust, universally applicable features for COVID-19 detection and likely exploited dataset-specific or demographic spurious correlations.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly outlined as 'future directions', the report strongly implies the necessity for: (1) The development and collection of substantially larger, more diverse, and demographically balanced audio datasets for COVID-19 detection. (2) Research into novel deep learning architectures or training techniques that can effectively learn generalizable features from potentially smaller, high-quality, balanced datasets. (3) A deeper investigation into intrinsic acoustic biomarkers truly indicative of COVID-19, independent of confounding demographic factors, to guide more robust model development.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Infectious Diseases</span>
+                    
+                    <span class="tag">Public Health</span>
+                    
+                    <span class="tag">Respiratory Medicine</span>
+                    
+                    <span class="tag">Diagnostic Artificial Intelligence</span>
+                    
+                    <span class="tag">Biomedical Engineering</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">COVID-19 detection</span>
+                    
+                    <span class="tag tag-keyword">audio models</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">fine-tuning</span>
+                    
+                    <span class="tag tag-keyword">generalization failure</span>
+                    
+                    <span class="tag tag-keyword">demographic bias</span>
+                    
+                    <span class="tag tag-keyword">AI in medicine</span>
+                    
+                    <span class="tag tag-keyword">diagnostic tools</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">This technical report investigates the performance of pre-trained audio models on COVID-19 detection tasks using established benchmark datasets. We fine-tuned Audio-MAE and three PANN architectures (CNN6, CNN10, CNN14) on the Coswara and COUGHVID datasets, evaluating both intra-dataset and cross-dataset generalization. We implemented a strict demographic stratification by age and gender to prevent models from exploiting spurious correlations between demographic characteristics and COVID-19 status. Intra-dataset results showed moderate performance, with Audio-MAE achieving the strongest result on Coswara (0.82 AUC, 0.76 F1-score), while all models demonstrated limited performance on Coughvid (AUC 0.58-0.63). Cross-dataset evaluation revealed severe generalization failure across all models (AUC 0.43-0.68), with Audio-MAE showing strong performance degradation (F1-score 0.00-0.08). Our experiments demonstrate that demographic balancing, while reducing apparent model performance, provides more realistic assessment of COVID-19 detection capabilities by eliminating demographic leakage - a confounding factor that inflate performance metrics. Additionally, the limited dataset sizes after balancing (1,219-2,160 samples) proved insufficient for deep learning models that typically require substantially larger training sets. These findings highlight fundamental challenges in developing generalizable audio-based COVID-19 detection systems and underscore the importance of rigorous demographic controls for clinically robust model evaluation.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>11 pages</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RocSync: Millisecond-Accurate Temporal Synchronization for Heterogeneous Camera Systems - Health AI Hub</title>
+    <meta name="description" content="RocSync addresses the critical challenge of spatiotemporal synchronization in heterogeneous multi-camera systems, particularly in unconstrained environments whe">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>RocSync: Millisecond-Accurate Temporal Synchronization for Heterogeneous Camera Systems</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.14948v1" target="_blank">2511.14948v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-18
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Jaro Meyer, Frédéric Giraud, Joschua Wüthrich, Marc Pollefeys, Philipp Fürnstahl, Lilian Calvet
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.14948v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.14948v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">RocSync addresses the critical challenge of spatiotemporal synchronization in heterogeneous multi-camera systems, particularly in unconstrained environments where traditional hardware synchronization is infeasible. It proposes a low-cost, general-purpose method leveraging a custom LED Clock with red and infrared LEDs to achieve millisecond-level temporal alignment, significantly improving downstream computer vision tasks like pose estimation and 3D reconstruction. The system was validated in large-scale surgical recordings, demonstrating superior performance and expanding access to advanced vision-based sensing in clinical settings.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate multi-camera synchronization is paramount for advanced medical applications such as surgical navigation, intraoperative 3D reconstruction, precise motion analysis, and robotic guidance, especially when combining diverse imaging modalities like visible light and infrared in dynamic and often unconstrained clinical environments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The synchronization method enables robust data acquisition for AI-powered computer vision tasks in medicine, such as: AI-driven surgical assistance (e.g., instrument tracking, surgical phase recognition, anomaly detection from multi-view video), AI-based patient pose estimation for rehabilitation assessment or gait analysis, and AI for 3D reconstruction of anatomical structures for surgical planning or prosthetics design. It provides the foundational synchronized data necessary for training and deploying such medical AI models.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the significant challenge of accurate spatiotemporal alignment in heterogeneous camera systems (e.g., professional/consumer, RGB/IR) in unconstrained environments lacking hardware synchronization.</li>
+                    
+                    <li>Introduces RocSync, a low-cost, general-purpose synchronization method utilizing a custom 'LED Clock' that encodes time via red and infrared LEDs.</li>
+                    
+                    <li>Achieves millisecond-level temporal alignment (1.34 ms RMSE against hardware synchronization) by visually decoding the exposure window (start and end times) from recorded frames.</li>
+                    
+                    <li>Supports both visible (RGB) and infrared (IR) modalities, making it versatile for diverse sensor setups.</li>
+                    
+                    <li>Outperforms conventional light-, audio-, and timecode-based synchronization approaches in benchmark tests.</li>
+                    
+                    <li>Directly improves the accuracy and performance of critical downstream computer vision tasks, including multi-view pose estimation and 3D reconstruction.</li>
+                    
+                    <li>Validated successfully in complex, large-scale surgical recordings involving over 25 heterogeneous cameras spanning both IR and RGB modalities.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed method employs a custom-built 'LED Clock' device that emits precisely timed pulses of both red (visible) and infrared light. This encoded time information, specifically the exposure window's start and end times, is captured by all connected cameras, regardless of their modality (RGB or IR). A visual decoding algorithm then processes the recorded frames to extract these precise temporal markers, enabling millisecond-accurate synchronization across the entire heterogeneous camera system.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>RocSync achieved a residual temporal synchronization error of 1.34 ms RMSE when benchmarked against hardware synchronization. The system demonstrated superior performance compared to existing light-, audio-, and timecode-based synchronization methods. Crucially, it directly improved the accuracy and reliability of downstream computer vision tasks such as multi-view pose estimation and 3D reconstruction. Its efficacy was further validated through successful application in large-scale surgical recordings involving a diverse setup of over 25 RGB and IR cameras.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology directly enables more robust and precise vision-based sensing in complex clinical environments, particularly for applications requiring high-accuracy spatial and temporal data. It can significantly enhance intraoperative 3D reconstruction, improve the precision of surgical navigation and robotic assistance systems, and provide more accurate pose estimation for patient monitoring or rehabilitation assessments. By simplifying the synchronization of diverse medical imaging modalities, RocSync facilitates advanced research and clinical deployment in areas like surgical training, motion analysis, and advanced diagnostics, ultimately improving patient care and operational efficiency.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state specific limitations of the RocSync method itself. It primarily focuses on addressing the limitations of existing synchronization methods in heterogeneous and unconstrained environments.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The system's demonstrated success in large-scale surgical recordings suggests a clear path for expanding its use to a broader range of clinical applications, particularly those involving multi-modal and heterogeneous sensor fusion in unconstrained real-world settings. Further research could focus on integrating this synchronization directly into medical imaging devices or exploring its potential for real-time applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Surgery</span>
+                    
+                    <span class="tag">Medical Robotics</span>
+                    
+                    <span class="tag">Image-Guided Surgery</span>
+                    
+                    <span class="tag">Rehabilitation</span>
+                    
+                    <span class="tag">Biomechanics</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">temporal synchronization</span>
+                    
+                    <span class="tag tag-keyword">heterogeneous cameras</span>
+                    
+                    <span class="tag tag-keyword">LED Clock</span>
+                    
+                    <span class="tag tag-keyword">millisecond accuracy</span>
+                    
+                    <span class="tag tag-keyword">multi-view 3D reconstruction</span>
+                    
+                    <span class="tag tag-keyword">pose estimation</span>
+                    
+                    <span class="tag tag-keyword">surgical recording</span>
+                    
+                    <span class="tag tag-keyword">infrared imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate spatiotemporal alignment of multi-view video streams is essential for a wide range of dynamic-scene applications such as multi-view 3D reconstruction, pose estimation, and scene understanding. However, synchronizing multiple cameras remains a significant challenge, especially in heterogeneous setups combining professional and consumer-grade devices, visible and infrared sensors, or systems with and without audio, where common hardware synchronization capabilities are often unavailable. This limitation is particularly evident in real-world environments, where controlled capture conditions are not feasible. In this work, we present a low-cost, general-purpose synchronization method that achieves millisecond-level temporal alignment across diverse camera systems while supporting both visible (RGB) and infrared (IR) modalities. The proposed solution employs a custom-built \textit{LED Clock} that encodes time through red and infrared LEDs, allowing visual decoding of the exposure window (start and end times) from recorded frames for millisecond-level synchronization. We benchmark our method against hardware synchronization and achieve a residual error of 1.34~ms RMSE across multiple recordings. In further experiments, our method outperforms light-, audio-, and timecode-based synchronization approaches and directly improves downstream computer vision tasks, including multi-view pose estimation and 3D reconstruction. Finally, we validate the system in large-scale surgical recordings involving over 25 heterogeneous cameras spanning both IR and RGB modalities. This solution simplifies and streamlines the synchronization pipeline and expands access to advanced vision-based sensing in unconstrained environments, including industrial and clinical applications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>16 pages, 6 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

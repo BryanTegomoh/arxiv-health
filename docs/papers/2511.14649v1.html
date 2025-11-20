@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RepAir: A Framework for Airway Segmentation and Discontinuity Correction in CT - Health AI Hub</title>
-    <meta name="description" content="RepAir is a novel three-stage framework designed for robust 3D airway segmentation from CT scans, specifically addressing the common issue of disconnected compo">
+    <meta name="description" content="RepAir is a novel three-stage framework addressing the critical challenge of disconnected airway segmentations from CT scans, combining an nnU-Net with anatomic">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">RepAir is a novel three-stage framework designed for robust 3D airway segmentation from CT scans, specifically addressing the common issue of disconnected components produced by conventional U-Net-based methods. It combines an nnU-Net for initial segmentation with an anatomically informed topology correction pipeline that uses skeletonization and a 1D convolutional classifier to identify and reconnect true airway branches. Evaluated on datasets spanning healthy to severe pathological airways, RepAir significantly outperforms existing approaches, yielding more complete and anatomically consistent airway trees with high accuracy.</p>
+                <p class="summary-text">RepAir is a novel three-stage framework addressing the critical challenge of disconnected airway segmentations from CT scans, combining an nnU-Net with anatomically informed topology correction. It significantly improves airway tree completeness and consistency compared to existing U-Net methods, demonstrating superior performance on both healthy and pathological datasets. This framework resolves common issues of automated methods, providing more reliable anatomical models for quantitative analysis.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate and complete 3D airway segmentation is indispensable for quantitative analysis of lung conditions, enabling precise extraction of biomarkers critical for diagnosing, monitoring disease progression, and personalizing treatment strategies in various respiratory pathologies.</p>
+                <p>Accurate and topologically correct airway segmentation from CT scans is fundamental for reliable quantitative lung analysis, aiding in the diagnosis, staging, and monitoring of various respiratory diseases, and for the extraction of crucial biomarkers that inform prognosis and treatment efficacy.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The research develops an AI framework (RepAir) for automated and robust 3D segmentation of airways from chest CT scans. This application allows for more accurate quantitative analysis of lung structures, extraction of biomarkers, and improved diagnosis and monitoring of various respiratory conditions, including those with severe airway pathology, by providing anatomically consistent airway trees.</p>
+                <p>The AI application involves using deep learning models (nnU-Net and a 1D convolutional classifier) within a framework called RepAir to automatically and robustly segment 3D airways from medical CT scans. This AI-driven segmentation corrects anatomical discontinuities, enabling more accurate quantitative lung analysis and extraction of biomarkers critical for diagnosing and monitoring lung diseases and pathologies.</p>
             </section>
             
 
@@ -68,21 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical problem of disconnected components in automated airway segmentations from CT scans, which hinder reliable quantitative lung analysis.</li>
+                    <li>Automated airway segmentation from chest CT is crucial for quantitative lung analysis, but current U-Net-based methods often produce disconnected components, hindering reliable biomarker extraction.</li>
                     
-                    <li>Introduces RepAir, a three-stage framework combining deep learning with anatomically informed topology correction for robust 3D airway segmentation.</li>
+                    <li>RepAir is a three-stage framework designed for robust 3D airway segmentation, integrating a deep learning approach with anatomically informed topology correction.</li>
                     
-                    <li>Stage 1 involves an nnU-Net-based network generating an initial airway mask.</li>
+                    <li>The first stage employs an nnU-Net-based network to generate an initial 3D airway mask.</li>
                     
-                    <li>Stage 2 employs a skeleton-based algorithm to identify potential discontinuities within the initial mask and propose reconnection candidates.</li>
+                    <li>The second stage utilizes a skeleton-based algorithm to identify potential discontinuities within the initial mask and propose candidate reconnections.</li>
                     
-                    <li>Stage 3 utilizes a 1D convolutional classifier to validate proposed links, distinguishing true anatomical branches from false or obstructed paths.</li>
+                    <li>The third stage incorporates a 1D convolutional classifier to validate these candidate links, distinguishing true anatomical branches from false or obstructed paths.</li>
                     
-                    <li>Evaluated on two diverse datasets: ATM'22 (predominantly healthy subjects) and AeroPath (severe airway pathology), demonstrating broad applicability.</li>
+                    <li>RepAir was rigorously evaluated on two distinct datasets: ATM'22 (predominantly healthy subjects) and AeroPath (subjects with severe airway pathology).</li>
                     
-                    <li>RepAir consistently outperforms existing 3D U-Net-based methods (e.g., Bronchinet, NaviAirway) on both voxel-level and topological metrics.</li>
-                    
-                    <li>Produces significantly more complete and anatomically consistent airway trees while maintaining high segmentation accuracy, crucial for biomarker extraction.</li>
+                    <li>The framework significantly outperforms existing 3D U-Net-based approaches (e.g., Bronchinet, NaviAirway) on both voxel-level and topological metrics, producing more complete and anatomically consistent airway trees.</li>
                     
                 </ul>
             </section>
@@ -90,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>RepAir employs a three-stage pipeline. First, an nnU-Net-based segmentation network generates an initial 3D airway mask from CT scans. Second, a skeleton-based algorithm analyzes this mask to identify potential discontinuities and propose candidate reconnections between disconnected airway segments. Third, a 1D convolutional classifier evaluates these proposed links, classifying them as either true anatomical branches or false/obstructed paths to reconstruct a topologically correct airway tree.</p>
+                    <p>The RepAir framework employs a sequential, three-stage approach. First, an nnU-Net-based deep learning network performs an initial segmentation to generate a 3D airway mask. Second, a skeleton-based algorithm processes this mask to detect and localize disconnected segments, subsequently proposing potential reconnections between them. Third, a 1D convolutional classifier then evaluates each proposed reconnection, classifying it as either a true anatomical airway branch or an erroneous connection/obstructed path, thereby correcting the topology.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>RepAir demonstrably outperforms existing 3D U-Net-based airway segmentation methods, such as Bronchinet and NaviAirway, across both healthy and pathologically severe CT datasets. Its unique topology correction mechanism leads to significantly more complete and anatomically consistent airway trees, while maintaining high segmentation accuracy at the voxel level, effectively resolving the issue of disconnected components prevalent in prior approaches.</p>
+                    <p>RepAir consistently achieved superior performance compared to existing 3D U-Net approaches like Bronchinet and NaviAirway across both healthy (ATM'22) and severely pathological (AeroPath) CT datasets. It demonstrated improvements in both voxel-level segmentation accuracy and, critically, topological metrics, resulting in significantly more complete and anatomically consistent airway trees.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This framework provides a robust and reliable tool for clinicians and researchers to conduct more accurate quantitative lung analysis, particularly for biomarker extraction related to airway diseases. Its ability to produce complete and anatomically consistent airway trees can lead to enhanced diagnostic capabilities, improved prognostic assessments, and more precise guidance for personalized therapies in conditions such as COPD, asthma, and cystic fibrosis.</p>
+                <p>This framework has the potential to dramatically improve the reliability of quantitative lung analysis in clinical settings. By providing highly accurate and complete 3D models of the airway tree, it can enable more precise diagnostic assessment of airway diseases (e.g., COPD, asthma, bronchiectasis), facilitate advanced surgical planning, and enhance the discovery and validation of novel imaging biomarkers, ultimately leading to better personalized medicine for respiratory patients.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any specific limitations of the RepAir framework itself.</p>
+                <p>The provided abstract does not explicitly state any limitations of the RepAir framework.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly state any future research directions.</p>
+                <p>The provided abstract does not explicitly mention future research directions.</p>
             </section>
             
 
@@ -126,9 +124,13 @@
                     
                     <span class="tag">Radiology</span>
                     
-                    <span class="tag">Medical Imaging</span>
-                    
                     <span class="tag">Respiratory Medicine</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Computational Anatomy</span>
+                    
+                    <span class="tag">Thoracic Surgery</span>
                     
                 </div>
             </section>
@@ -141,15 +143,15 @@
                     
                     <span class="tag tag-keyword">CT</span>
                     
+                    <span class="tag tag-keyword">deep learning</span>
+                    
                     <span class="tag tag-keyword">nnU-Net</span>
                     
                     <span class="tag tag-keyword">topology correction</span>
                     
-                    <span class="tag tag-keyword">deep learning</span>
+                    <span class="tag tag-keyword">discontinuity correction</span>
                     
                     <span class="tag tag-keyword">lung analysis</span>
-                    
-                    <span class="tag tag-keyword">discontinuity</span>
                     
                     <span class="tag tag-keyword">biomarker extraction</span>
                     
