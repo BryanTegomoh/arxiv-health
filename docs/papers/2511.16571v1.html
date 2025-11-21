@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boosting Predictive Performance on Tabular Data through Data Augmentation with Latent-Space Flow-Based Diffusion - Health AI Hub</title>
+    <meta name="description" content="This paper introduces novel latent-space, tree-driven diffusion methods (PCAForest, EmbedForest, AttentionForest) for minority oversampling in severely imbalanc">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Boosting Predictive Performance on Tabular Data through Data Augmentation with Latent-Space Flow-Based Diffusion</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.16571v1" target="_blank">2511.16571v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-20
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Md. Tawfique Ihsan, Md. Rakibul Hasan Rafi, Ahmed Shoyeb Raihan, Imtiaz Ahmed, Abdullahil Azeem
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.16571v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.16571v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces novel latent-space, tree-driven diffusion methods (PCAForest, EmbedForest, AttentionForest) for minority oversampling in severely imbalanced tabular data. By using conditional flow matching with gradient-boosted trees as vector-field learners, these methods significantly improve minority recall, particularly with the AttentionForest variant, while maintaining efficiency, calibration, and privacy. This approach offers a robust solution for high-fidelity tabular data augmentation under severe class imbalance, outperforming existing generative oversampling techniques.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant for medicine as it provides a robust method to improve the prediction of rare but critical events in healthcare tabular data, such as diagnosing rare diseases, predicting adverse drug reactions, or identifying high-risk patients, which are often minority classes that current models struggle to identify.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI methods developed (latent-space, tree-driven diffusion for data augmentation) can be applied to create more accurate and robust AI models for healthcare. Specifically, they can improve the ability of AI systems to predict or classify rare but critical medical conditions, identify infrequent adverse events, or detect subtle patterns in highly imbalanced tabular patient data. By generating synthetic data that preserves original data structure and privacy, these methods enable better training of machine learning models for tasks like early disease detection, identifying patients at risk for rare complications, or aiding in drug discovery, especially when real-world medical datasets are limited or imbalanced.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses severe class imbalance common in real-world tabular learning, where rare but important minority classes are crucial for reliable prediction.</li>
+                    
+                    <li>Proposes a family of latent-space, tree-driven diffusion models (PCAForest, EmbedForest, AttentionForest) specifically designed for minority oversampling.</li>
+                    
+                    <li>The core mechanism involves conditional flow matching with gradient-boosted trees (GBTs) acting as the vector-field learner, operating in compact latent spaces.</li>
+                    
+                    <li>AttentionForest, which uses an attention-augmented embedding, achieved the best average minority recall across 11 diverse datasets, including those from healthcare.</li>
+                    
+                    <li>PCAForest (linear PCA embedding) and EmbedForest (learned nonlinear embedding) offer comparable predictive utility with significantly faster generation times, providing favorable accuracy-efficiency trade-offs.</li>
+                    
+                    <li>Privacy, evaluated using nearest-neighbor distance ratio and distance-to-closest-record, was found to be comparable to or better than the ForestDiffusion baseline.</li>
+                    
+                    <li>Ablation studies indicated that smaller embedding dimensions tend to improve minority recall, while aggressive learning rates can negatively impact model stability.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed methodology involves a family of latent-space, tree-driven diffusion models for minority oversampling. These models utilize conditional flow matching with gradient-boosted trees (GBTs) acting as the vector-field learner. They operate in compact latent spaces to preserve tabular structure and reduce computation, employing three variants for embedding: PCAForest (linear PCA), EmbedForest (learned nonlinear embedding), and AttentionForest (attention-augmented embedding). Each method couples a GBT-based flow with a decoder to map the generated latent data back to the original feature space for synthetic sample generation.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>AttentionForest achieved the best average minority recall across 11 datasets, including healthcare, while maintaining competitive precision, calibration, and distributional similarity. PCAForest and EmbedForest provided similar utility with significantly faster generation. Privacy metrics were comparable to or better than the ForestDiffusion baseline. Ablation studies revealed that smaller embedding dimensions improved minority recall, but aggressive learning rates negatively impacted model stability.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This methodology could significantly improve diagnostic accuracy and predictive modeling for rare conditions or critical events in clinical practice. For instance, it could lead to earlier detection of rare diseases, more accurate prediction of adverse outcomes from medical treatments, or better identification of patients who would benefit most from specific interventions, ultimately enhancing patient care and optimizing healthcare resource allocation by improving the signal-to-noise ratio for rare, impactful events.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract notes that aggressive learning rates can harm model stability, suggesting a potential challenge in hyperparameter tuning for achieving robust performance across various datasets. No other explicit limitations of the proposed methods are detailed within the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Healthcare</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Tabular data</span>
+                    
+                    <span class="tag tag-keyword">Data augmentation</span>
+                    
+                    <span class="tag tag-keyword">Class imbalance</span>
+                    
+                    <span class="tag tag-keyword">Minority oversampling</span>
+                    
+                    <span class="tag tag-keyword">Diffusion models</span>
+                    
+                    <span class="tag tag-keyword">Latent space</span>
+                    
+                    <span class="tag tag-keyword">Gradient-boosted trees</span>
+                    
+                    <span class="tag tag-keyword">Conditional flow matching</span>
+                    
+                    <span class="tag tag-keyword">Healthcare</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Severe class imbalance is common in real-world tabular learning, where rare but important minority classes are essential for reliable prediction. Existing generative oversampling methods such as GANs, VAEs, and diffusion models can improve minority-class performance, but they often struggle with tabular heterogeneity, training stability, and privacy concerns. We propose a family of latent-space, tree-driven diffusion methods for minority oversampling that use conditional flow matching with gradient-boosted trees as the vector-field learner. The models operate in compact latent spaces to preserve tabular structure and reduce computation. We introduce three variants: PCAForest, which uses linear PCA embedding; EmbedForest, which uses a learned nonlinear embedding; and AttentionForest, which uses an attention-augmented embedding. Each method couples a GBT-based flow with a decoder back to the original feature space. Across 11 datasets from healthcare, finance, and manufacturing, AttentionForest achieves the best average minority recall while maintaining competitive precision, calibration, and distributional similarity. PCAForest and EmbedForest reach similar utility with much faster generation, offering favorable accuracy-efficiency trade-offs. Privacy evaluated with nearest-neighbor distance ratio and distance-to-closest-record is comparable to or better than the ForestDiffusion baseline. Ablation studies show that smaller embeddings tend to improve minority recall, while aggressive learning rates harm stability. Overall, latent-space, tree-driven diffusion provides an efficient and privacy-aware approach to high-fidelity tabular data augmentation under severe class imbalance.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>35 Pages</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

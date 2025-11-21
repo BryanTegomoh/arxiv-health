@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erase to Retain: Low Rank Adaptation Guided Selective Unlearning in Medical Segmentation Networks - Health AI Hub</title>
+    <meta name="description" content="This paper introduces "Erase to Retain," a novel framework for controllable selective unlearning in medical segmentation networks. It leverages a teacher-studen">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Erase to Retain: Low Rank Adaptation Guided Selective Unlearning in Medical Segmentation Networks</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.16574v1" target="_blank">2511.16574v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-20
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Nirjhor Datta, Md. Golam Rabiul Alam
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.16574v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.16574v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces "Erase to Retain," a novel framework for controllable selective unlearning in medical segmentation networks. It leverages a teacher-student distillation paradigm with Low-Rank Adaptation (LoRA) to enable targeted forgetting of lesion or class-specific representations while preserving global anatomical understanding. The method effectively reduces performance on designated "forget" subsets across segmentation and classification tasks (e.g., ISIC, CHASE) while maintaining or improving performance on "retain" and validation sets, offering a practical solution for privacy compliance and ethical AI in healthcare.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is vital for deploying AI models in healthcare by enabling compliance with strict privacy regulations (e.g., HIPAA, GDPR), facilitating ethical model updates, and adapting models to evolving clinical datasets. It allows for the selective removal of sensitive patient data or specific disease representations without compromising the model's overall utility on general medical knowledge.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application described is machine unlearning for medical segmentation and classification networks. This allows AI models used in healthcare to selectively 'forget' sensitive patient data or specific types of medical knowledge (e.g., about certain lesions) while retaining overall diagnostic utility. This is crucial for ensuring privacy compliance (e.g., GDPR, HIPAA), enabling ethical AI deployment in clinical settings, and adapting models to evolving medical datasets or regulatory requirements without full retraining.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical need for selective unlearning in medical AI for privacy compliance, ethical deployment, and continual dataset revision without full model retraining.</li>
+                    
+                    <li>Proposes "Erase to Retain," a controllable unlearning framework built on a teacher-student distillation paradigm for targeted knowledge removal.</li>
+                    
+                    <li>Utilizes Low-Rank Adaptation (LoRA) modules to constrain subspace updates, enabling the student network to erase specific representations (lesion-specific or class-specific) in low-rank decoder spaces.</li>
+                    
+                    <li>Employs a two-phase unlearning process: a 'strong unlearning' phase where LoRA modules are adversarially optimized to contradict teacher predictions on the forget subset, followed by a 'gentle restoration' phase to recover generalization on retained data via head-only supervised refinement.</li>
+                    
+                    <li>Demonstrates significant reduction in forget-set performance: ISIC segmentation IoU decreased from 0.875 to 0.509, and ISIC classification accuracy dropped from 87.0% to 64.1%.</li>
+                    
+                    <li>Crucially, the method maintains or improves performance on retained and validation data: ISIC segmentation IoU improved from 0.647 to 0.677, and ISIC classification retain accuracy improved from 83.9% to 90.6%.</li>
+                    
+                    <li>Establishes LoRA-based subspace unlearning as a practical, controllable, and reversible approach for responsible AI deployment in medical image analysis, allowing forgetting of sensitive data while preserving performance where it matters most.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The method employs a teacher-student distillation framework where the student network is trained to selectively unlearn. Low-Rank Adaptation (LoRA) modules are integrated into the student's decoder spaces to enable targeted, low-rank subspace updates. The unlearning process consists of two phases: a 'strong unlearning' phase where LoRA modules are adversarially optimized to generate predictions contradicting the teacher's confident predictions on a designated forget subset, enforcing semantic removal; and a 'gentle restoration' phase that recovers generalization on retained data through head-only supervised refinement.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>For ISIC segmentation, the forget-set IoU was significantly reduced from 0.875 to 0.509, while performance on retain and validation splits improved from 0.647 to 0.677 IoU. On the cross-domain CHASE dataset, the method consistently lowered forget-set IoU while preserving utility on retain and validation sets. For ISIC classification, accuracy on the forget subset decreased from 87.0% to 64.1%, with retain accuracy simultaneously improving from 83.9% to 90.6%.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework offers a critical tool for developing responsible and adaptable AI in clinical settings. It enables healthcare providers to comply with privacy regulations (e.g., patient right-to-be-forgotten), correct model biases, or adapt models to updated clinical guidelines without costly and time-consuming full retraining. This facilitates dynamic model governance and fosters greater trust in AI-driven medical tools by ensuring selective data removal without compromising overall diagnostic or analytical capabilities.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state specific limitations of the proposed method. However, potential considerations not detailed could include the computational cost associated with the adversarial optimization phase, the theoretical guarantees of complete unlearning, or the method's generalizability across an even wider array of medical imaging modalities and complex network architectures beyond those tested.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions. Potential avenues for future work could involve exploring the method's scalability to larger and more complex medical datasets, investigating its robustness against various unlearning verification attacks, or extending the LoRA-based unlearning approach to 3D medical imaging and multi-modal data scenarios.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Dermatology (ISIC for skin lesion segmentation/classification)</span>
+                    
+                    <span class="tag">Ophthalmology (CHASE for retinal vessel segmentation)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Medical Unlearning</span>
+                    
+                    <span class="tag tag-keyword">Machine Unlearning</span>
+                    
+                    <span class="tag tag-keyword">Low-Rank Adaptation (LoRA)</span>
+                    
+                    <span class="tag tag-keyword">Medical Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Privacy-Preserving AI</span>
+                    
+                    <span class="tag tag-keyword">Ethical AI</span>
+                    
+                    <span class="tag tag-keyword">Teacher-Student Distillation</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">The ability to selectively remove knowledge from medical segmentation networks is increasingly important for privacy compliance, ethical deployment, and continual dataset revision. We introduce Erase to Retain, a controllable unlearning framework for medical image segmentation that achieves targeted forgetting without full retraining. Our method uses a teacher-student distillation paradigm with Low-Rank Adaptation (LoRA) constrained subspace updates, enabling the student network to erase lesion-specific or class-specific representations in low-rank decoder spaces while preserving global anatomical understanding. During the strong unlearning phase, LoRA modules are adversarially optimized to contradict the teacher's confident predictions on a designated forget subset, enforcing semantic removal. This is followed by a gentle restoration phase that recovers generalization on retained data through head-only supervised refinement.
+  For ISIC segmentation, the student reduces forget-set IoU from 0.875 to 0.509 while maintaining competitive performance on the retain and validation splits (0.647 to 0.677 IoU). On the cross-domain CHASE dataset, Erase to Retain consistently lowers forget-set IoU while preserving utility on retain and validation sets. For ISIC classification, our method decreases accuracy on the forget subset from 87.0 percent to 64.1 percent while improving retain accuracy from 83.9 percent to 90.6 percent.
+  These results demonstrate that LoRA-based subspace unlearning provides a practical pathway toward responsible, controllable, and reversible unlearning in medical image analysis, enabling models to forget sensitive samples or structures while preserving performance where it matters most.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering - Health AI Hub</title>
+    <meta name="description" content="This paper addresses the limitations of conventional single-intent Retrieval-Augmented Generation (RAG) systems in handling complex scientific questions that re">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.16283v1" target="_blank">2511.16283v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-20
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Zhiyuan Li, Haisheng Yu, Guangchuan Guo, Nan Zhou, Jiajun Zhang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.16283v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.16283v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper addresses the limitations of conventional single-intent Retrieval-Augmented Generation (RAG) systems in handling complex scientific questions that require evidence from multiple intents and multi-hop reasoning. It introduces the Multi-Intent Scientific Question Answering (MuISQA) benchmark to evaluate heterogeneous evidence coverage and proposes an intent-aware retrieval framework. This framework leverages LLMs to decompose questions into intent-specific queries, retrieves diverse supporting passages, and aggregates them using Reciprocal Rank Fusion (RRF) to achieve superior retrieval accuracy and evidence coverage.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine and health by enabling more comprehensive and accurate answering of complex clinical and biomedical research questions, such as identifying gene mutations and linking them to related diseases, which often necessitate integrating information from diverse scientific literature and databases.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research develops an AI framework (Multi-Intent Retrieval-Augmented Generation) to more accurately and comprehensively answer complex scientific questions. Applied to health, this system can be used to improve information retrieval and knowledge synthesis for tasks such as identifying genetic predispositions to diseases, researching drug targets, supporting clinical decision-making by linking patient genetic profiles to relevant conditions, or accelerating biomedical discovery by connecting disparate pieces of scientific literature regarding biological mechanisms and diseases.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Conventional RAG systems are single-intent oriented, leading to incomplete evidence coverage for complex scientific questions requiring multiple intents and multi-hop reasoning (e.g., linking gene mutations to diseases).</li>
+                    
+                    <li>The paper introduces the Multi-Intent Scientific Question Answering (MuISQA) benchmark to specifically evaluate RAG systems on their ability to cover heterogeneous evidence across sub-questions.</li>
+                    
+                    <li>A novel intent-aware retrieval framework is proposed that utilizes Large Language Models (LLMs) to hypothesize potential answers and decompose them into distinct intent-specific queries.</li>
+                    
+                    <li>The framework retrieves supporting passages for each identified underlying intent, aiming for comprehensive evidence collection from diverse sources.</li>
+                    
+                    <li>Retrieved fragments are subsequently aggregated and re-ranked using Reciprocal Rank Fusion (RRF) to balance evidence coverage across various intents while reducing redundancy.</li>
+                    
+                    <li>Experiments on both the MuISQA benchmark and other general RAG datasets demonstrate that the proposed method consistently outperforms conventional RAG approaches.</li>
+                    
+                    <li>Significant improvements are observed, particularly in critical metrics such as retrieval accuracy and overall evidence coverage.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed intent-aware retrieval framework employs Large Language Models (LLMs) to first hypothesize potential answers to complex scientific questions. These hypothetical answers are then decomposed into multiple, fine-grained, intent-specific queries. For each of these sub-queries, the system retrieves supporting passages from a knowledge base. Finally, all the retrieved fragments are aggregated and re-ranked using Reciprocal Rank Fusion (RRF) to ensure a balanced and non-redundant coverage of evidence across all identified intents, which then serves as context for answer generation.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The method consistently and significantly outperforms conventional RAG approaches, especially in terms of retrieval accuracy and the completeness of evidence coverage. This demonstrates its superior capability in handling complex, multi-intent scientific questions by effectively gathering and synthesizing heterogeneous evidence.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology holds substantial potential to enhance clinical decision support systems by providing more complete, evidence-backed answers to complex patient-specific questions. It could accelerate biomedical research by more effectively synthesizing information from vast scientific literature, aid in identifying comprehensive evidence for diagnosing complex or rare diseases, and improve personalized treatment planning by linking genetic information to therapeutic outcomes with greater precision and completeness.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state specific limitations of the proposed MuISQA method itself. Implicitly, challenges might include the computational cost associated with LLM inference for intent decomposition, the quality dependence on the initial LLM-hypothesized answers, and the complexity of ensuring balanced coverage across a very large number of highly diverse or potentially conflicting intents.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention specific future research directions for this work.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Genomics</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Disease Etiology</span>
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Biomedical Research</span>
+                    
+                    <span class="tag">Pharmacogenomics</span>
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">retrieval-augmented generation (RAG)</span>
+                    
+                    <span class="tag tag-keyword">scientific question answering</span>
+                    
+                    <span class="tag tag-keyword">multi-intent retrieval</span>
+                    
+                    <span class="tag tag-keyword">large language models (LLMs)</span>
+                    
+                    <span class="tag tag-keyword">intent decomposition</span>
+                    
+                    <span class="tag tag-keyword">reciprocal rank fusion (RRF)</span>
+                    
+                    <span class="tag tag-keyword">evidence coverage</span>
+                    
+                    <span class="tag tag-keyword">biomedical informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Complex scientific questions often entail multiple intents, such as identifying gene mutations and linking them to related diseases. These tasks require evidence from diverse sources and multi-hop reasoning, while conventional retrieval-augmented generation (RAG) systems are usually single-intent oriented, leading to incomplete evidence coverage. To assess this limitation, we introduce the Multi-Intent Scientific Question Answering (MuISQA) benchmark, which is designed to evaluate RAG systems on heterogeneous evidence coverage across sub-questions. In addition, we propose an intent-aware retrieval framework that leverages large language models (LLMs) to hypothesize potential answers, decompose them into intent-specific queries, and retrieve supporting passages for each underlying intent. The retrieved fragments are then aggregated and re-ranked via Reciprocal Rank Fusion (RRF) to balance coverage across diverse intents while reducing redundancy. Experiments on both MuISQA benchmark and other general RAG datasets demonstrate that our method consistently outperforms conventional approaches, particularly in retrieval accuracy and evidence coverage.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>15 pages</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
