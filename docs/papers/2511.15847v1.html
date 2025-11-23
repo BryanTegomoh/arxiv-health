@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transparent Early ICU Mortality Prediction with Clinical Transformer and Per-Case Modality Attribution - Health AI Hub</title>
-    <meta name="description" content="This paper presents a transparent and lightweight multimodal ensemble model for early in-hospital mortality prediction in Intensive Care Unit (ICU) patients, le">
+    <meta name="description" content="This paper presents a transparent and robust multimodal deep learning ensemble for early prediction of in-hospital mortality in intensive care unit (ICU) patien">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper presents a transparent and lightweight multimodal ensemble model for early in-hospital mortality prediction in Intensive Care Unit (ICU) patients, leveraging physiological time-series and unstructured clinical notes from the first 48 hours. By combining a bidirectional LSTM for vitals and a finetuned ClinicalModernBERT for notes with a logistic regression, the system significantly improves predictive performance (AUPRC 0.565, AUROC 0.891) on MIMIC-III while offering crucial per-case modality and feature-level interpretability, alongside robustness to missing data.</p>
+                <p class="summary-text">This paper presents a transparent and robust multimodal deep learning ensemble for early prediction of in-hospital mortality in intensive care unit (ICU) patients. By fusing physiological time-series data and unstructured clinical notes from the first 48 hours, the system achieves improved predictive performance and crucial multilevel interpretability, addressing key barriers to clinical adoption of AI in critical care.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Early and accurate identification of high-risk ICU patients is paramount for initiating life-saving interventions and optimizing the allocation of scarce critical care resources. The model's emphasis on transparency and interpretability is crucial for clinician trust and adoption, enabling data-driven decision-making in sensitive clinical contexts.</p>
+                <p>This research provides a powerful, transparent, and reliable tool for clinicians to identify high-risk ICU patients early, enabling proactive interventions and optimizing resource utilization. The interpretability feature is paramount for clinician trust and responsible integration of AI into high-stakes clinical decision-making, ultimately aiming to improve patient outcomes.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is an early ICU mortality prediction system designed to identify intensive care patients at high risk of in-hospital death. This system leverages multimodal clinical data (vitals, notes) and AI models (transformers, LSTMs) to provide transparent and interpretable risk assessments. Its purpose is to facilitate proactive clinical interventions and optimized resource allocation within intensive care units, improving patient outcomes and operational efficiency.</p>
+                <p>The AI application is an early ICU mortality prediction system. It utilizes a multimodal ensemble of machine learning models (LSTM for vital signs and a finetuned ClinicalModernBERT transformer for clinical notes) to provide transparent and robust risk estimates for in-hospital mortality in intensive care patients. This system is designed to support clinicians in making timely interventions and optimizing resource allocation by identifying high-risk patients, acting as a prognostic tool and a form of clinical decision support.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical need for early and accurate identification of ICU patients at risk of in-hospital mortality to enable timely intervention and efficient resource allocation.</li>
+                    <li>Addresses the critical need for early, transparent, and robust prediction of in-hospital mortality in ICU patients, which is vital for timely intervention and resource allocation.</li>
                     
-                    <li>Proposes a lightweight, transparent multimodal ensemble architecture that fuses physiological time-series measurements with unstructured clinical notes from the initial 48 hours of an ICU stay.</li>
+                    <li>Proposes a lightweight, multimodal late-fusion ensemble combining physiological time-series measurements (vitals) and unstructured clinical notes from the initial 48 hours of an ICU stay.</li>
                     
-                    <li>Utilizes a Bidirectional LSTM model for processing vital sign time-series and a finetuned ClinicalModernBERT transformer for analyzing clinical notes.</li>
+                    <li>The architecture consists of two modality-specific models (a bidirectional LSTM for vitals and a finetuned ClinicalModernBERT transformer for notes), whose predictions are combined by a logistic regression model.</li>
                     
-                    <li>Combines the predictions from the two modality-specific models using a logistic regression in a late-fusion approach, allowing for per-case modality attribution.</li>
+                    <li>Features multilevel interpretability, providing both feature attributions within each modality and direct per-case modality attributions to quantify the influence of vitals and notes on individual predictions.</li>
                     
-                    <li>Achieves improved discriminative performance on the MIMIC-III benchmark, with an AUPRC of 0.565 (vs. 0.526 for the best single model) and an AUROC of 0.891 (vs. 0.876).</li>
+                    <li>Achieved improved discrimination on the MIMIC-III benchmark compared to the best single model (AUPRC 0.565 vs. 0.526; AUROC 0.891 vs. 0.876).</li>
                     
-                    <li>Provides multilevel interpretability through feature attributions within each modality and direct per-case modality attributions, quantifying the influence of vitals and notes on individual predictions.</li>
+                    <li>Demonstrates robustness through a calibrated fallback mechanism when one data modality is missing, and maintains well-calibrated predictions.</li>
                     
-                    <li>Demonstrates robustness through well-calibrated predictions and a calibrated fallback mechanism for scenarios where one of the modalities is missing.</li>
+                    <li>Emphasizes that competitive performance combined with reliable, auditable risk estimates and transparent, predictable operation are crucial for clinical use and adoption.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study employs a late-fusion multimodal ensemble architecture. It integrates predictions from two specialized models: a Bidirectional Long Short-Term Memory (LSTM) network for processing physiological time-series data (vitals) and a finetuned ClinicalModernBERT transformer for analyzing unstructured clinical notes. A logistic regression model then combines the outputs of these two modality-specific models. The system is designed for robustness, featuring a calibrated fallback mechanism when one of the data modalities is unavailable.</p>
+                    <p>The study utilizes a late-fusion multimodal ensemble architecture. It processes physiological time-series measurements (vitals) with a bidirectional Long Short-Term Memory (LSTM) network and unstructured clinical notes with a finetuned ClinicalModernBERT transformer. The predictions from these two modality-specific deep learning models are then combined by a logistic regression model to produce the final mortality risk estimate. The system also incorporates a calibrated fallback mechanism for robustness when one data modality is unavailable.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The multimodal ensemble model achieved superior discriminative performance for early ICU mortality prediction on the MIMIC-III benchmark, with an AUPRC of 0.565 and an AUROC of 0.891, outperforming the best single-modality model. The system consistently maintains well-calibrated predictions and robust operation, including a calibrated fallback for missing data. A key finding is its multilevel interpretability, providing insights into feature contributions within modalities and direct per-case attributions detailing how vitals and notes collectively influence each prediction.</p>
+                    <p>The multimodal ensemble model significantly improved predictive performance on the MIMIC-III benchmark, yielding an AUPRC of 0.565 and an AUROC of 0.891, which are superior to the best single-modality model (AUPRC 0.526; AUROC 0.876). The system maintained well-calibrated predictions and demonstrated robustness through a calibrated fallback mechanism when a modality was missing. A key finding is its provision of multilevel interpretability, offering both feature attributions within modalities and per-case modality attributions to explain risk predictions.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This transparent and robust prediction system holds significant potential for clinical impact by enabling proactive identification of high-risk ICU patients within the crucial first 48 hours. This early warning could facilitate timely clinical interventions, optimize resource allocation, and potentially improve patient outcomes. The model's interpretability can foster greater clinician trust and provide actionable insights into the underlying drivers of risk, thereby supporting more informed and auditable clinical decision-making in critical care settings.</p>
+                <p>This model offers a robust and transparent early warning system for ICU clinicians, facilitating the proactive identification of patients at high risk of in-hospital mortality. This enables timely and targeted clinical interventions, optimizing patient management and efficient allocation of critical resources. The interpretability features are expected to foster clinician trust and aid in shared decision-making, accelerating the adoption of AI-driven tools in critical care settings.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state specific limitations of the proposed multimodal ensemble model. It primarily focuses on addressing the limitations (lack of transparency and robustness) of existing machine learning approaches as its motivation.</p>
+                <p>The abstract does not explicitly state limitations of the proposed system. It focuses on addressing the limitations (lack of transparency and robustness) of existing machine learning approaches and demonstrating the improved performance and interpretability of the presented model.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention future research directions for this work.</p>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
             </section>
             
 
@@ -120,13 +120,15 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
+                    <span class="tag">Critical Care Medicine</span>
+                    
                     <span class="tag">Intensive Care Medicine</span>
                     
-                    <span class="tag">Critical Care</span>
-                    
-                    <span class="tag">Hospital Medicine</span>
-                    
                     <span class="tag">Clinical Informatics</span>
+                    
+                    <span class="tag">Hospital Management</span>
+                    
+                    <span class="tag">Emergency Medicine</span>
                     
                 </div>
             </section>
@@ -135,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">ICU mortality prediction</span>
+                    <span class="tag tag-keyword">Intensive Care Unit</span>
                     
-                    <span class="tag tag-keyword">Multimodal learning</span>
+                    <span class="tag tag-keyword">Mortality Prediction</span>
                     
-                    <span class="tag tag-keyword">Clinical Transformers</span>
+                    <span class="tag tag-keyword">Multimodal AI</span>
                     
-                    <span class="tag tag-keyword">Machine learning interpretability</span>
+                    <span class="tag tag-keyword">Clinical Transformer</span>
                     
-                    <span class="tag tag-keyword">Physiological time-series</span>
+                    <span class="tag tag-keyword">Bidirectional LSTM</span>
                     
-                    <span class="tag tag-keyword">Clinical notes</span>
-                    
-                    <span class="tag tag-keyword">Ensemble models</span>
+                    <span class="tag tag-keyword">Interpretability</span>
                     
                     <span class="tag tag-keyword">MIMIC-III</span>
+                    
+                    <span class="tag tag-keyword">Early Warning Systems</span>
                     
                 </div>
             </section>

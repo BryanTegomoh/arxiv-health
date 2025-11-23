@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi-Stage Residual-Aware Unsupervised Deep Learning Framework for Consistent Ultrasound Strain Elastography - Health AI Hub</title>
-    <meta name="description" content="MUSSE-Net is a novel multi-stage, residual-aware unsupervised deep learning framework designed for consistent and robust Ultrasound Strain Elastography (USE). I">
+    <meta name="description" content="This paper introduces MUSSE-Net, a multi-stage, residual-aware, unsupervised deep learning framework designed to improve the consistency and accuracy of Ultraso">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">MUSSE-Net is a novel multi-stage, residual-aware unsupervised deep learning framework designed for consistent and robust Ultrasound Strain Elastography (USE). It addresses critical challenges such as tissue decorrelation noise and inconsistent strain estimation by employing a multi-stream encoder-decoder network (USSE-Net) with attention mechanisms and a tailored consistency loss, followed by a secondary residual refinement stage, demonstrating superior performance across diverse datasets. The framework significantly enhances lesion contrast and suppresses noise, yielding clinically interpretable strain patterns.</p>
+                <p class="summary-text">This paper introduces MUSSE-Net, a multi-stage, residual-aware, unsupervised deep learning framework designed to improve the consistency and accuracy of Ultrasound Strain Elastography (USE). It addresses limitations in USE such as tissue decorrelation noise, lack of ground truth, and inconsistent strain estimation by leveraging a novel multi-stream encoder-decoder architecture (USSE-Net) with attention mechanisms and a tailored consistency loss. The framework demonstrates state-of-the-art performance on simulation data and produces clinically interpretable strain maps with enhanced contrast and noise suppression on in vivo and clinical datasets.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research significantly enhances the robustness and consistency of Ultrasound Strain Elastography, making it a more reliable non-invasive tool for assessing tissue mechanical properties. Improved strain estimation is crucial for accurate diagnosis and staging of various diseases, particularly in differentiating benign from malignant lesions and characterizing fibrotic changes in organs.</p>
+                <p>Improving Ultrasound Strain Elastography (USE) directly enhances its diagnostic utility by providing more reliable, consistent, and interpretable assessments of tissue mechanical properties. This can lead to earlier and more accurate diagnoses for conditions where tissue stiffness is a key indicator, such as cancer, liver fibrosis, or thyroid nodules, ultimately improving patient outcomes.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI (deep learning framework, MUSSE-Net) is applied to enhance the accuracy, consistency, and interpretability of Ultrasound Strain Elastography (USE) for assessing tissue mechanical properties. This improves the diagnostic quality of ultrasound images, leading to better detection and characterization of pathologies (e.g., lesions) in various clinical settings.</p>
+                <p>The AI framework (MUSSE-Net) is applied to enhance Ultrasound Strain Elastography (USE), a medical imaging technique. It aims to improve the accuracy, consistency, and clinical interpretability of strain maps derived from ultrasound data. This directly aids in the diagnosis and assessment of tissue mechanical properties, which is critical for identifying various pathologies (e.g., tumors, fibrosis), thereby improving diagnostic capabilities in healthcare settings.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>**Problem Addressed**: Aims to overcome limitations in Ultrasound Strain Elastography (USE), including tissue decorrelation noise, scarcity of ground truth data, and inconsistent strain estimation under varying deformation conditions.</li>
+                    <li>**Problem Addressed**: Tackles key limitations of Ultrasound Strain Elastography (USE), including tissue decorrelation noise, scarcity of ground truth data, and inconsistent strain estimation under varying deformation conditions.</li>
                     
-                    <li>**Core Architecture (USSE-Net)**: Proposes USSE-Net, an end-to-end multi-stream encoder-decoder architecture that parallelly processes pre- and post-deformation RF sequences to estimate displacement fields and axial strains.</li>
+                    <li>**MUSSE-Net Framework**: Proposes a residual-aware, multi-stage unsupervised sequential deep learning framework for robust and consistent strain estimation.</li>
                     
-                    <li>**Novel Architectural Components**: Incorporates a Context-Aware Complementary Feature Fusion (CACFF)-based encoder, a Tri-Cross Attention (TCA) bottleneck, and a Cross-Attentive Fusion (CAF)-based sequential decoder to enhance feature processing and fusion.</li>
+                    <li>**USSE-Net Core Architecture**: Introduces USSE-Net, an end-to-end multi-stream encoder-decoder model that processes pre- and post-deformation RF sequences in parallel to estimate displacement fields and axial strains.</li>
                     
-                    <li>**Consistency and Stability**: Leverages a tailored consistency loss within USSE-Net to ensure temporal coherence and strain stability across different deformation levels, crucial for clinical reliability.</li>
+                    <li>**Novel Architectural Components**: Incorporates a Context-Aware Complementary Feature Fusion (CACFF)-based encoder, a Tri-Cross Attention (TCA) bottleneck, and a Cross-Attentive Fusion (CAF)-based sequential decoder.</li>
                     
-                    <li>**Multi-Stage Refinement (MUSSE-Net)**: The full MUSSE-Net framework integrates a secondary residual refinement stage to further enhance the accuracy of strain estimation and suppress residual noise.</li>
+                    <li>**Consistency Loss and Refinement**: Employs a tailored consistency loss to ensure temporal coherence and strain stability across different deformation levels, complemented by a secondary residual refinement stage within MUSSE-Net for enhanced accuracy and noise suppression.</li>
                     
-                    <li>**State-of-the-Art Performance**: Achieves state-of-the-art results on simulation data, with impressive quantitative metrics: target SNR of 24.54, background SNR of 132.76, CNR of 59.81, and elastographic SNR of 9.73.</li>
+                    <li>**Validation and Performance**: Extensively validated on simulation, in vivo, and private clinical datasets, outperforming existing unsupervised approaches with state-of-the-art quantitative metrics (e.g., target SNR 24.54, CNR 59.81) on simulation data.</li>
                     
-                    <li>**Clinical Efficacy**: Demonstrates enhanced lesion-to-background contrast and significant noise suppression on in vivo and private clinical datasets from BUET medical center, producing clinically interpretable strain maps.</li>
+                    <li>**Clinical Interpretability**: Demonstrates enhanced lesion-to-background contrast and significant noise suppression on clinical data (BUET dataset), yielding clinically interpretable strain patterns.</li>
                     
                 </ul>
             </section>
@@ -88,24 +88,24 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The proposed MUSSE-Net is a multi-stage residual-aware unsupervised deep learning framework. Its primary stage involves USSE-Net, an end-to-end multi-stream encoder-decoder that processes pre- and post-deformation RF sequences. USSE-Net features a Context-Aware Complementary Feature Fusion (CACFF) encoder, a Tri-Cross Attention (TCA) bottleneck, and a Cross-Attentive Fusion (CAF) sequential decoder. A tailored consistency loss is integrated to ensure temporal coherence and strain stability. The secondary stage of MUSSE-Net applies a residual refinement module to further improve accuracy and reduce noise. Validation was performed on simulation, in vivo, and a private clinical dataset from BUET.</p>
+                    <p>MUSSE-Net is a residual-aware, multi-stage unsupervised sequential deep learning framework. Its core is USSE-Net, an end-to-end multi-stream encoder-decoder network. USSE-Net parallelly processes pre- and post-deformation RF sequences to estimate displacement fields and axial strains. The encoder utilizes Context-Aware Complementary Feature Fusion (CACFF), the bottleneck incorporates Tri-Cross Attention (TCA), and the decoder is a Cross-Attentive Fusion (CAF)-based sequential design. A tailored consistency loss is integrated to ensure temporal coherence and strain stability across varying deformation levels. The overall MUSSE-Net framework further enhances accuracy and suppresses noise via a secondary residual refinement stage.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>MUSSE-Net significantly outperforms existing unsupervised approaches in Ultrasound Strain Elastography. It achieves state-of-the-art performance on simulation data, demonstrated by a target SNR of 24.54, background SNR of 132.76, CNR of 59.81, and an elastographic SNR of 9.73. On clinical data, the framework produces strain maps with enhanced lesion-to-background contrast and substantial noise suppression, resulting in highly consistent and clinically interpretable strain patterns.</p>
+                    <p>MUSSE-Net achieves state-of-the-art performance, outperforming existing unsupervised approaches. On simulation data, it yielded a target SNR of 24.54, background SNR of 132.76, CNR of 59.81, and elastographic SNR of 9.73. On the BUET clinical dataset, the framework produced strain maps with significantly enhanced lesion-to-background contrast, substantial noise suppression, and clinically interpretable strain patterns.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>By providing robust, consistent, and noise-suppressed strain maps, MUSSE-Net has the potential to significantly improve the diagnostic accuracy of Ultrasound Strain Elastography. This can lead to earlier and more reliable detection of pathological tissue stiffness, aiding in the differentiation of various diseases (e.g., tumors from healthy tissue, assessment of fibrosis), thereby supporting more informed clinical decision-making and patient management.</p>
+                <p>The proposed MUSSE-Net framework has the potential to significantly enhance the clinical utility of Ultrasound Strain Elastography. By providing more consistent, accurate, and noise-suppressed strain maps, it can enable clinicians to make more confident and earlier diagnoses of diseases characterized by altered tissue stiffness, reducing diagnostic ambiguity and potentially improving treatment planning and patient prognosis. The improved lesion-to-background contrast can aid in clearer visualization and delineation of pathological tissues.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the proposed MUSSE-Net framework.</p>
+                <p>The abstract does not explicitly state any limitations or caveats of the proposed MUSSE-Net framework.</p>
             </section>
             
 
@@ -124,13 +124,11 @@
                     
                     <span class="tag">Radiology</span>
                     
-                    <span class="tag">Oncology</span>
+                    <span class="tag">Oncology (for tumor detection/characterization)</span>
                     
-                    <span class="tag">Hepatology</span>
+                    <span class="tag">Hepatology (for fibrosis assessment)</span>
                     
-                    <span class="tag">Cardiology</span>
-                    
-                    <span class="tag">Gastroenterology</span>
+                    <span class="tag">General Pathology (tissue mechanical properties)</span>
                     
                 </div>
             </section>
@@ -139,7 +137,7 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Ultrasound Strain Elastography</span>
+                    <span class="tag tag-keyword">Ultrasound Strain Elastography (USE)</span>
                     
                     <span class="tag tag-keyword">Deep Learning</span>
                     
@@ -147,13 +145,13 @@
                     
                     <span class="tag tag-keyword">Strain Estimation</span>
                     
-                    <span class="tag tag-keyword">Tissue Mechanics</span>
+                    <span class="tag tag-keyword">Tissue Characterization</span>
                     
-                    <span class="tag tag-keyword">Medical Imaging</span>
+                    <span class="tag tag-keyword">Multi-Stage Framework</span>
                     
                     <span class="tag tag-keyword">Residual-Aware</span>
                     
-                    <span class="tag tag-keyword">Encoder-Decoder</span>
+                    <span class="tag tag-keyword">Medical Imaging</span>
                     
                 </div>
             </section>

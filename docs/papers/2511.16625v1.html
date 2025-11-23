@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedBayes-Lite: Bayesian Uncertainty Quantification for Safe Clinical Decision Support - Health AI Hub</title>
-    <meta name="description" content="MedBayes-Lite introduces a lightweight Bayesian enhancement for existing transformer-based clinical language models, designed to provide reliable, uncertainty-a">
+    <meta name="description" content="MedBayes-Lite is a novel, lightweight Bayesian framework designed to enhance existing transformer-based clinical language models by integrating uncertainty quan">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">MedBayes-Lite introduces a lightweight Bayesian enhancement for existing transformer-based clinical language models, designed to provide reliable, uncertainty-aware predictions without significant architectural changes or retraining. By integrating Bayesian embedding calibration, uncertainty-weighted attention, and confidence-guided decision shaping, it effectively quantifies and propagates uncertainty. The framework significantly improves prediction calibration and trustworthiness, reducing overconfidence and preventing diagnostic errors in clinical decision support systems.</p>
+                <p class="summary-text">MedBayes-Lite is a novel, lightweight Bayesian framework designed to enhance existing transformer-based clinical language models by integrating uncertainty quantification without extensive retraining or architectural modifications. It addresses the critical issue of AI overconfidence in ambiguous medical scenarios, providing reliable, uncertainty-aware predictions for safe clinical decision support. The framework significantly improves model calibration, reduces overconfidence, and can prevent a substantial percentage of diagnostic errors by flagging uncertain predictions for human review.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is crucial for enhancing patient safety and improving the reliability of AI in healthcare by ensuring that clinical decision support systems can identify and communicate their uncertainty. By mitigating AI overconfidence, especially in complex or ambiguous medical scenarios, it allows clinicians to make more informed decisions or intervene when the AI's confidence is low, ultimately reducing diagnostic errors and adverse events.</p>
+                <p>This research is paramount for enhancing patient safety and trust in AI-powered clinical decision support systems. By providing explicit, calibrated uncertainty estimates, MedBayes-Lite enables clinicians to make more informed decisions, distinguish between highly confident and ambiguous AI recommendations, and ultimately reduce the risk of diagnostic errors.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>MedBayes-Lite is a medical AI application designed to enhance transformer-based clinical language models. Its primary application is to provide safer and more reliable clinical decision support by quantifying prediction uncertainty. This allows AI systems to flag potentially erroneous or ambiguous diagnoses for human review, thereby reducing diagnostic errors and improving patient safety in healthcare settings.</p>
+                <p>The AI application is to enhance transformer-based clinical language models, which are used for tasks like medical question answering and clinical prediction, by providing reliable, uncertainty-aware predictions. This helps prevent diagnostic errors by flagging uncertain predictions for human review, thereby improving the safety and trustworthiness of AI systems in healthcare.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>MedBayes-Lite enhances existing transformer models with Bayesian uncertainty quantification without retraining or architectural rewiring, keeping parameter overhead under 3%.</li>
+                    <li>Addresses the critical problem of overconfidence in transformer-based clinical language models, especially in ambiguous medical cases where calibrated uncertainty is paramount.</li>
                     
-                    <li>It addresses the critical problem of overconfidence in AI models, especially in ambiguous medical cases, where calibrated uncertainty is essential for safe clinical decision support.</li>
+                    <li>Introduces MedBayes-Lite, a lightweight Bayesian enhancement that integrates uncertainty quantification directly into existing transformer pipelines without retraining, architectural changes, or new trainable layers.</li>
                     
-                    <li>The framework comprises three core components: (i) Bayesian Embedding Calibration using Monte Carlo dropout for epistemic uncertainty, (ii) Uncertainty-Weighted Attention that marginalizes over token reliability, and (iii) Confidence-Guided Decision Shaping for clinical risk minimization.</li>
+                    <li>The framework comprises three core components: (i) Bayesian Embedding Calibration using Monte Carlo dropout for epistemic uncertainty, (ii) Uncertainty-Weighted Attention for marginalizing token reliability, and (iii) Confidence-Guided Decision Shaping for clinical risk minimization.</li>
                     
-                    <li>Evaluated on biomedical QA (MedQA, PubMedQA) and clinical prediction (MIMIC-III) benchmarks, MedBayes-Lite consistently improved calibration and trustworthiness.</li>
+                    <li>It maintains a minimal parameter overhead, reportedly under 3 percent, ensuring efficiency and ease of integration.</li>
                     
-                    <li>It demonstrated a substantial reduction in overconfidence, ranging from 32% to 48% across various benchmarks.</li>
+                    <li>Evaluated on standard biomedical QA and clinical prediction benchmarks (MedQA, PubMedQA, MIMIC-III), MedBayes-Lite consistently improves calibration and trustworthiness.</li>
                     
-                    <li>In simulated clinical settings, the system showed the potential to prevent up to 41% of diagnostic errors by effectively flagging uncertain predictions for human review.</li>
+                    <li>Achieves a significant reduction in overconfidence, ranging from 32 to 48 percent across tested benchmarks.</li>
                     
-                    <li>The methodology aims to enable reliable uncertainty propagation and enhance interpretability in medical AI systems, making them safer and more trustworthy for clinical use.</li>
+                    <li>In simulated clinical settings, the framework demonstrates its ability to prevent up to 41 percent of diagnostic errors by effectively flagging uncertain predictions for human expert review.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>MedBayes-Lite integrates into existing transformer pipelines without retraining or architectural changes, adding minimal parameter overhead. It incorporates three key components: (i) Bayesian Embedding Calibration, which leverages Monte Carlo dropout to estimate epistemic uncertainty in embeddings; (ii) Uncertainty-Weighted Attention, which marginalizes attention weights based on token reliability to propagate uncertainty; and (iii) Confidence-Guided Decision Shaping, a mechanism inspired by clinical risk minimization to adjust predictions based on quantified uncertainty. This combination enables uncertainty quantification and propagation throughout the model's inference process.</p>
+                    <p>MedBayes-Lite is a lightweight, post-hoc Bayesian enhancement for pre-trained transformer models. It integrates (i) Bayesian Embedding Calibration, which employs Monte Carlo dropout on token embeddings to quantify epistemic uncertainty, (ii) Uncertainty-Weighted Attention, designed to marginalize over token reliability within the attention mechanism, and (iii) Confidence-Guided Decision Shaping, a strategy inspired by clinical risk minimization to adjust final predictions based on their associated uncertainty. This framework is applied without requiring retraining of the base transformer model or changes to its architecture, introducing minimal additional parameters.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>MedBayes-Lite consistently improved model calibration and trustworthiness across biomedical QA and clinical prediction tasks. It achieved a significant reduction in overconfidence, ranging from 32% to 48%. In simulated clinical scenarios, the framework demonstrated its ability to prevent up to 41% of diagnostic errors by effectively flagging uncertain predictions, thereby enabling human review and intervention.</p>
+                    <p>The MedBayes-Lite framework consistently improved model calibration and trustworthiness across biomedical QA and clinical prediction benchmarks. It successfully reduced overconfidence in transformer-based predictions by a substantial margin of 32% to 48%. Crucially, in simulated clinical environments, the system demonstrated the potential to prevent up to 41% of diagnostic errors by reliably flagging uncertain predictions for human review, thereby enhancing the safety and interpretability of medical AI systems.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The potential clinical impact is substantial, primarily by increasing the safety and trustworthiness of AI-powered clinical decision support systems. By providing calibrated uncertainty alongside predictions, MedBayes-Lite allows clinicians to differentiate between highly confident and uncertain AI recommendations. This can lead to reduced diagnostic errors, improved patient outcomes, and foster greater clinician trust in AI tools, enabling more responsible integration of AI into routine clinical workflows, especially for complex or ambiguous cases.</p>
+                <p>MedBayes-Lite holds significant potential for real-world clinical application by making AI-driven decision support tools more reliable and actionable. By providing clear uncertainty estimates, it empowers clinicians to better interpret AI recommendations, especially in complex or ambiguous patient cases. This capability can directly lead to fewer diagnostic errors, improved patient safety, and a more efficient allocation of clinical resources, as human experts can focus their attention on cases where AI expresses low confidence.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state specific limitations of the MedBayes-Lite framework, such as computational overhead during inference, applicability to all types of transformer architectures, or performance in real-world, highly diverse clinical environments beyond benchmarks.</p>
+                <p>The abstract does not explicitly state limitations of MedBayes-Lite itself. However, it implicitly highlights the pervasive issue of overconfidence in existing transformer models as the problem it aims to solve. Potential unstated limitations could include computational overhead in real-time, very high-throughput clinical settings (despite being 'lightweight'), or generalizability to clinical tasks and datasets beyond those evaluated.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention future research directions. However, implicit directions could include exploring the framework's performance in real-time clinical settings, adapting it for other medical tasks (e.g., prognosis, treatment planning), investigating its robustness against adversarial attacks, or extending the theoretical understanding of its uncertainty mechanisms.</p>
+                <p>Not explicitly mentioned in the abstract, but potential future directions could include exploring the application of MedBayes-Lite to a broader range of clinical tasks (e.g., treatment planning, prognosis prediction, image analysis), integrating it with multimodal clinical data (e.g., combining text with imaging or lab results), and conducting extensive real-world clinical trials to validate its impact on patient outcomes and clinician workflow in diverse healthcare settings.</p>
             </section>
             
 
@@ -120,15 +120,19 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Clinical Diagnostics</span>
+                    <span class="tag">Clinical Decision Support</span>
                     
-                    <span class="tag">Medical Imaging</span>
+                    <span class="tag">Medical Diagnostics</span>
+                    
+                    <span class="tag">Biomedical Question Answering</span>
+                    
+                    <span class="tag">Healthcare AI</span>
+                    
+                    <span class="tag">Patient Safety</span>
+                    
+                    <span class="tag">Radiology</span>
                     
                     <span class="tag">Pathology</span>
-                    
-                    <span class="tag">Intensive Care (ICU)</span>
-                    
-                    <span class="tag">General Clinical Practice</span>
                     
                 </div>
             </section>
@@ -137,21 +141,23 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Bayesian uncertainty quantification</span>
+                    <span class="tag tag-keyword">Bayesian uncertainty</span>
                     
-                    <span class="tag tag-keyword">Clinical decision support</span>
+                    <span class="tag tag-keyword">clinical decision support</span>
                     
-                    <span class="tag tag-keyword">Transformer models</span>
+                    <span class="tag tag-keyword">transformer models</span>
                     
-                    <span class="tag tag-keyword">Overconfidence</span>
+                    <span class="tag tag-keyword">uncertainty quantification</span>
                     
-                    <span class="tag tag-keyword">Calibration</span>
-                    
-                    <span class="tag tag-keyword">Medical AI</span>
+                    <span class="tag tag-keyword">overconfidence</span>
                     
                     <span class="tag tag-keyword">Monte Carlo dropout</span>
                     
-                    <span class="tag tag-keyword">Diagnostic errors</span>
+                    <span class="tag tag-keyword">medical AI</span>
+                    
+                    <span class="tag tag-keyword">diagnostic errors</span>
+                    
+                    <span class="tag tag-keyword">model calibration</span>
                     
                 </div>
             </section>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MuISQA: Multi-Intent Retrieval-Augmented Generation for Scientific Question Answering - Health AI Hub</title>
-    <meta name="description" content="This paper addresses the limitations of conventional single-intent Retrieval-Augmented Generation (RAG) systems in handling complex scientific questions that re">
+    <meta name="description" content="This paper introduces MuISQA, a new benchmark designed to evaluate Retrieval-Augmented Generation (RAG) systems on complex scientific questions that entail mult">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper addresses the limitations of conventional single-intent Retrieval-Augmented Generation (RAG) systems in handling complex scientific questions that require evidence from multiple intents and multi-hop reasoning. It introduces the Multi-Intent Scientific Question Answering (MuISQA) benchmark to evaluate heterogeneous evidence coverage and proposes an intent-aware retrieval framework. This framework leverages LLMs to decompose questions into intent-specific queries, retrieves diverse supporting passages, and aggregates them using Reciprocal Rank Fusion (RRF) to achieve superior retrieval accuracy and evidence coverage.</p>
+                <p class="summary-text">This paper introduces MuISQA, a new benchmark designed to evaluate Retrieval-Augmented Generation (RAG) systems on complex scientific questions that entail multiple intents and require heterogeneous evidence. To address the limitations of conventional single-intent RAG systems, the authors propose an intent-aware retrieval framework that leverages Large Language Models (LLMs) to decompose questions into intent-specific queries. The framework retrieves supporting evidence for each intent, aggregates, and re-ranks it using Reciprocal Rank Fusion (RRF), demonstrating superior performance in retrieval accuracy and evidence coverage compared to conventional approaches.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to medicine and health by enabling more comprehensive and accurate answering of complex clinical and biomedical research questions, such as identifying gene mutations and linking them to related diseases, which often necessitate integrating information from diverse scientific literature and databases.</p>
+                <p>This research is highly relevant to medicine and health as it directly addresses the challenge of accurately and comprehensively answering complex biomedical questions, such as identifying gene mutations and linking them to specific diseases, which require synthesizing information from diverse and often fragmented sources.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This research develops an AI framework (Multi-Intent Retrieval-Augmented Generation) to more accurately and comprehensively answer complex scientific questions. Applied to health, this system can be used to improve information retrieval and knowledge synthesis for tasks such as identifying genetic predispositions to diseases, researching drug targets, supporting clinical decision-making by linking patient genetic profiles to relevant conditions, or accelerating biomedical discovery by connecting disparate pieces of scientific literature regarding biological mechanisms and diseases.</p>
+                <p>This research contributes to the development of advanced AI systems for scientific question answering in the biomedical domain. Potential applications include assisting researchers in identifying gene-disease relationships, aiding in drug discovery by synthesizing information from diverse sources, supporting clinical decision-making by providing comprehensive evidence for complex cases (e.g., rare genetic disorders), and enhancing knowledge retrieval for medical professionals and patients.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Conventional RAG systems are single-intent oriented, leading to incomplete evidence coverage for complex scientific questions requiring multiple intents and multi-hop reasoning (e.g., linking gene mutations to diseases).</li>
+                    <li>Conventional RAG systems are limited by their single-intent orientation, leading to incomplete evidence coverage for complex scientific questions requiring multi-hop reasoning and diverse sources.</li>
                     
-                    <li>The paper introduces the Multi-Intent Scientific Question Answering (MuISQA) benchmark to specifically evaluate RAG systems on their ability to cover heterogeneous evidence across sub-questions.</li>
+                    <li>The MuISQA benchmark is introduced to specifically evaluate RAG systems' capacity for heterogeneous evidence coverage across sub-questions within multi-intent scientific queries.</li>
                     
-                    <li>A novel intent-aware retrieval framework is proposed that utilizes Large Language Models (LLMs) to hypothesize potential answers and decompose them into distinct intent-specific queries.</li>
+                    <li>An intent-aware retrieval framework is proposed, utilizing LLMs to first hypothesize potential answers and then decompose them into distinct, intent-specific queries.</li>
                     
-                    <li>The framework retrieves supporting passages for each identified underlying intent, aiming for comprehensive evidence collection from diverse sources.</li>
+                    <li>The framework retrieves supporting passages for each underlying intent, ensuring a comprehensive collection of diverse evidence.</li>
                     
-                    <li>Retrieved fragments are subsequently aggregated and re-ranked using Reciprocal Rank Fusion (RRF) to balance evidence coverage across various intents while reducing redundancy.</li>
+                    <li>Retrieved fragments are subsequently aggregated and re-ranked using Reciprocal Rank Fusion (RRF) to optimally balance evidence coverage across different intents while minimizing redundancy.</li>
                     
-                    <li>Experiments on both the MuISQA benchmark and other general RAG datasets demonstrate that the proposed method consistently outperforms conventional RAG approaches.</li>
+                    <li>Experimental results on both the MuISQA benchmark and other general RAG datasets confirm that the proposed method consistently outperforms conventional RAG approaches.</li>
                     
-                    <li>Significant improvements are observed, particularly in critical metrics such as retrieval accuracy and overall evidence coverage.</li>
+                    <li>The improvements are particularly notable in enhanced retrieval accuracy and more comprehensive evidence coverage, addressing a critical need in scientific question answering.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The proposed intent-aware retrieval framework employs Large Language Models (LLMs) to first hypothesize potential answers to complex scientific questions. These hypothetical answers are then decomposed into multiple, fine-grained, intent-specific queries. For each of these sub-queries, the system retrieves supporting passages from a knowledge base. Finally, all the retrieved fragments are aggregated and re-ranked using Reciprocal Rank Fusion (RRF) to ensure a balanced and non-redundant coverage of evidence across all identified intents, which then serves as context for answer generation.</p>
+                    <p>The methodology involves an intent-aware retrieval framework. This framework employs LLMs to first hypothesize potential answers, which are then decomposed into multiple intent-specific queries. For each decomposed intent, supporting passages are retrieved. These retrieved fragments are then aggregated and re-ranked using Reciprocal Rank Fusion (RRF) to achieve balanced coverage across diverse intents and reduce redundancy.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The method consistently and significantly outperforms conventional RAG approaches, especially in terms of retrieval accuracy and the completeness of evidence coverage. This demonstrates its superior capability in handling complex, multi-intent scientific questions by effectively gathering and synthesizing heterogeneous evidence.</p>
+                    <p>The proposed multi-intent retrieval framework consistently and significantly outperforms conventional RAG approaches. This superior performance is evident in both increased retrieval accuracy and markedly improved evidence coverage, particularly for complex scientific questions requiring heterogeneous information, as validated on the MuISQA benchmark and other general RAG datasets.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This technology holds substantial potential to enhance clinical decision support systems by providing more complete, evidence-backed answers to complex patient-specific questions. It could accelerate biomedical research by more effectively synthesizing information from vast scientific literature, aid in identifying comprehensive evidence for diagnosing complex or rare diseases, and improve personalized treatment planning by linking genetic information to therapeutic outcomes with greater precision and completeness.</p>
+                <p>The ability to accurately and comprehensively answer complex, multi-faceted medical questions can significantly impact clinical practice and biomedical research. It can lead to more robust clinical decision support systems, enabling healthcare professionals to quickly access all relevant evidence for complex patient cases (e.g., linking specific genetic profiles to disease prognoses or optimal drug therapies). For researchers, it accelerates the synthesis of vast amounts of scientific literature, fostering new discoveries and advancements in fields like precision medicine by ensuring all related aspects of a query are considered.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state specific limitations of the proposed MuISQA method itself. Implicitly, challenges might include the computational cost associated with LLM inference for intent decomposition, the quality dependence on the initial LLM-hypothesized answers, and the complexity of ensuring balanced coverage across a very large number of highly diverse or potentially conflicting intents.</p>
+                <p>The abstract primarily highlights the limitations of *conventional* Retrieval-Augmented Generation (RAG) systems (i.e., being single-intent oriented and leading to incomplete evidence). It does not explicitly state specific limitations or caveats of the proposed MuISQA framework itself.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention specific future research directions for this work.</p>
+                <p>The abstract does not explicitly state future research directions for the MuISQA framework or the intent-aware retrieval approach.</p>
             </section>
             
 
@@ -122,9 +122,7 @@
                     
                     <span class="tag">Genomics</span>
                     
-                    <span class="tag">Personalized Medicine</span>
-                    
-                    <span class="tag">Disease Etiology</span>
+                    <span class="tag">Precision Medicine</span>
                     
                     <span class="tag">Clinical Decision Support</span>
                     
@@ -132,7 +130,7 @@
                     
                     <span class="tag">Pharmacogenomics</span>
                     
-                    <span class="tag">Bioinformatics</span>
+                    <span class="tag">Disease Diagnostics</span>
                     
                 </div>
             </section>
@@ -141,21 +139,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">retrieval-augmented generation (RAG)</span>
+                    <span class="tag tag-keyword">Multi-intent Question Answering</span>
                     
-                    <span class="tag tag-keyword">scientific question answering</span>
+                    <span class="tag tag-keyword">Retrieval-Augmented Generation (RAG)</span>
                     
-                    <span class="tag tag-keyword">multi-intent retrieval</span>
+                    <span class="tag tag-keyword">Large Language Models (LLMs)</span>
                     
-                    <span class="tag tag-keyword">large language models (LLMs)</span>
+                    <span class="tag tag-keyword">Scientific Question Answering</span>
                     
-                    <span class="tag tag-keyword">intent decomposition</span>
+                    <span class="tag tag-keyword">Evidence Coverage</span>
                     
-                    <span class="tag tag-keyword">reciprocal rank fusion (RRF)</span>
+                    <span class="tag tag-keyword">Reciprocal Rank Fusion (RRF)</span>
                     
-                    <span class="tag tag-keyword">evidence coverage</span>
+                    <span class="tag tag-keyword">Biomedical Information Retrieval</span>
                     
-                    <span class="tag tag-keyword">biomedical informatics</span>
+                    <span class="tag tag-keyword">Precision Medicine</span>
                     
                 </div>
             </section>

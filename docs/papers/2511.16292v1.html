@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Distributed Agent Reasoning Across Independent Systems With Strict Data Locality - Health AI Hub</title>
-    <meta name="description" content="This paper presents a proof-of-concept demonstration for secure, distributed agent reasoning across independent systems in healthcare. It showcases how distinct">
+    <meta name="description" content="This paper presents a proof-of-concept for secure, distributed agent-to-agent communication across independent healthcare systems (Clinic, Insurer, Specialist N">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper presents a proof-of-concept demonstration for secure, distributed agent reasoning across independent systems in healthcare. It showcases how distinct organizations (Clinic, Insurer, Specialist) can cooperate using natural-language messages and local data lookups, without shared identifiers, centralized data, or reconstructing patient identity, thus maintaining strict data locality and privacy.</p>
+                <p class="summary-text">This paper presents a proof-of-concept for secure, distributed agent-to-agent communication across independent healthcare systems (Clinic, Insurer, Specialist Network) using only natural-language messages. It demonstrates feasibility for cooperative reasoning without shared identifiers, structured schemas, or centralized data exchange, ensuring strict data locality and patient privacy via pseudonymised tokens.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research addresses critical challenges in healthcare interoperability and data sharing by proposing a privacy-preserving mechanism. It enables secure, decentralized collaboration between distinct healthcare entities (e.g., clinics, insurers, specialists) for coordinated patient care and decision support without compromising sensitive patient data.</p>
+                <p>This work directly addresses critical challenges in healthcare: enabling secure data exchange and coordinated care among disparate organizations (e.g., clinics, insurers, specialists) while rigorously preserving patient privacy and adhering to strict data locality principles, crucial for compliance and trust.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application involves using distributed multi-agent systems and natural-language communication to enable secure and privacy-preserving cooperation between independent healthcare organizations. This could facilitate automated and intelligent workflows for patient referrals, insurance pre-authorizations, specialist consultations, and information sharing, without centralizing sensitive patient data or compromising identity.</p>
+                <p>This paper presents a medical AI application demonstrating a secure, privacy-preserving multi-agent system for collaboration across different healthcare entities (clinics, insurers, specialists). It uses AI agents for distributed reasoning, facilitating data exchange, evaluating insurance coverage, and providing clinical appropriateness recommendations, all while ensuring strict data locality and patient identity privacy.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>The system enables agent-to-agent communication using only natural-language messages, eliminating the need for shared identifiers, structured schemas, or centralized data exchange.</li>
+                    <li>**Distributed Agent Reasoning**: Prototyped a system enabling intelligent agents from independent organizations to communicate and reason cooperatively.</li>
                     
-                    <li>It employs Orpius as the underlying platform for multi-agent orchestration, tool execution, and privacy-preserving communication among agents.</li>
+                    <li>**Strict Data Locality & Privacy**: Achieved communication without sharing patient identity, structured schemas, or central data exchange, with each agent operating on its local data.</li>
                     
-                    <li>Agents communicate via `OperationRelay` calls, exchanging concise natural-language summaries while operating strictly on their own local, independent datasets (e.g., synthetic clinic records, insurance tables, clinical guidance).</li>
+                    <li>**Natural Language Communication**: Agents communicate exclusively through concise natural-language summaries via 'OperationRelay' calls.</li>
                     
-                    <li>Patient identity is rigorously protected; the Clinic computes an HMAC-based pseudonymous token, and no agent receives or reconstructs actual patient identity.</li>
+                    <li>**Pseudonymisation**: The Clinic agent generates HMAC-based pseudonymous case tokens, preventing recipient agents from reconstructing patient identity.</li>
                     
-                    <li>The prototype demonstrates a collaborative workflow where a Clinic, Insurer, and Specialist agent cooperate to evaluate insurance coverage rules and provide an appropriateness recommendation for a case.</li>
+                    <li>**Multi-Organizational Workflow**: Demonstrated a functional flow involving a Clinic computing a token, an Insurer evaluating coverage and consulting a Specialist agent, and the Specialist providing an appropriateness recommendation.</li>
                     
-                    <li>The work emphasizes architectural patterns, privacy considerations, and communication flows crucial for distributed reasoning in sensitive domains like healthcare.</li>
+                    <li>**Orpius Platform**: Utilized Orpius for multi-agent orchestration, tool execution, and privacy-preserving communication.</li>
                     
-                    <li>The project's scope was intentionally limited to feasibility demonstration, with no clinical validation or evaluation beyond basic functional runs.</li>
+                    <li>**Architectural Patterns**: Highlighted architectural patterns and communication flows for secure, decentralized multi-agent systems in healthcare.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study utilized a proof-of-concept prototype based on the Orpius platform for multi-agent orchestration. It simulated three independent organizational agents (Clinic, Insurer, Specialist Network), each managing its own local synthetic data. Communication occurred through natural-language `OperationRelay` calls, and patient identity was pseudonymised using an HMAC-based token generated by the Clinic. The system's functionality was evaluated through basic functional runs to demonstrate secure, distributed reasoning and data exchange without centralized infrastructure.</p>
+                    <p>The study involved developing a proof-of-concept prototype using the Orpius platform. It simulated a multi-organizational healthcare workflow (Clinic, Insurer, Specialist Network) with synthetic clinic records, insurance tables, and clinical guidance. Communication was facilitated via natural-language 'OperationRelay' calls, and patient privacy was maintained using HMAC-based pseudonymous tokens to prevent identity reconstruction by downstream agents.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The primary finding is the successful demonstration of feasibility for secure, distributed agent reasoning across independent systems with strict data locality. The prototype proved that organizations can cooperate to exchange necessary information (e.g., insurance coverage, specialist recommendations) using natural language and pseudonymous tokens, without sharing raw patient identifiers or requiring a centralized data exchange, thereby preserving patient privacy effectively.</p>
+                    <p>The primary finding is the demonstrated feasibility of distributed agent reasoning across independent systems, maintaining strict data locality and privacy. The prototype successfully showcased how specialized agents can cooperate through natural language summaries and pseudonymised tokens without sharing sensitive patient identifiers or requiring a centralized data hub, thereby highlighting robust architectural patterns for secure, decentralized healthcare interactions.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This approach has the potential to significantly enhance secure data exchange and collaboration in healthcare, enabling more efficient and privacy-compliant workflows for referrals, insurance authorizations, and coordinated care. It could reduce current barriers to data sharing among disparate healthcare providers and payers, leading to improved patient outcomes through better-informed clinical decisions and streamlined administrative processes while adhering to stringent privacy regulations.</p>
+                <p>This prototype offers a potential blueprint for enhancing secure interoperability in healthcare, enabling more efficient and private workflows for tasks like referrals, prior authorizations, and distributed clinical decision support. It could facilitate better-coordinated patient care across different providers and payers while rigorously upholding data privacy and compliance requirements.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The authors explicitly state several limitations: it is a proof-of-concept, not a clinically validated or production-ready system; no clinician review was conducted; and evaluation was limited to basic functional runs, without rigorous clinical assessment.</p>
+                <p>The authors explicitly state that this is a proof-of-concept, not a clinically validated or production-ready system. No clinician review was conducted, and evaluation was limited to basic functional runs, without extensive performance or clinical outcome assessment. The data used was synthetic, not real-world patient data.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The paper concludes by suggesting opportunities for more rigorous evaluation of the prototype and further research into the broader field of decentralised multi-agent systems in healthcare.</p>
+                <p>The paper concludes by outlining opportunities for more rigorous evaluation of the system, including performance and security analyses, and further research into developing and deploying decentralized multi-agent systems within healthcare and other data-sensitive domains.</p>
             </section>
             
 
@@ -120,17 +120,15 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Health informatics</span>
+                    <span class="tag">Health Informatics</span>
                     
-                    <span class="tag">Digital health</span>
+                    <span class="tag">Healthcare Administration</span>
                     
-                    <span class="tag">Interoperability</span>
+                    <span class="tag">Clinical Decision Support</span>
                     
-                    <span class="tag">Patient data management</span>
+                    <span class="tag">Secure Health Data Exchange</span>
                     
-                    <span class="tag">Health insurance</span>
-                    
-                    <span class="tag">Clinical decision support</span>
+                    <span class="tag">Medical Privacy</span>
                     
                 </div>
             </section>
@@ -139,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Distributed agents</span>
+                    <span class="tag tag-keyword">Distributed Agents</span>
                     
-                    <span class="tag tag-keyword">Multi-agent systems</span>
+                    <span class="tag tag-keyword">Multi-Agent Systems</span>
                     
-                    <span class="tag tag-keyword">Data locality</span>
+                    <span class="tag tag-keyword">Data Locality</span>
                     
-                    <span class="tag tag-keyword">Privacy-preserving</span>
+                    <span class="tag tag-keyword">Privacy-Preserving</span>
                     
-                    <span class="tag tag-keyword">Healthcare interoperability</span>
+                    <span class="tag tag-keyword">Natural Language Processing</span>
                     
-                    <span class="tag tag-keyword">Natural language processing</span>
+                    <span class="tag tag-keyword">Healthcare Interoperability</span>
                     
-                    <span class="tag tag-keyword">Secure communication</span>
+                    <span class="tag tag-keyword">Secure Computation</span>
                     
-                    <span class="tag tag-keyword">Pseudonymization</span>
+                    <span class="tag tag-keyword">Pseudonymisation</span>
                     
                 </div>
             </section>
