@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preventing Shortcut Learning in Medical Image Analysis through Intermediate Layer Knowledge Distillation from Specialist Teachers - Health AI Hub</title>
+    <meta name="description" content="This paper addresses the critical issue of shortcut learning in deep learning models for medical image analysis, where models may use irrelevant features leadin">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Preventing Shortcut Learning in Medical Image Analysis through Intermediate Layer Knowledge Distillation from Specialist Teachers</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.17421v1" target="_blank">2511.17421v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-21
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Christopher Boland, Sotirios Tsaftaris, Sonia Dahdouh
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.17421v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.17421v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper addresses the critical issue of shortcut learning in deep learning models for medical image analysis, where models may use irrelevant features leading to poor robustness and potential harm. The authors propose a novel knowledge distillation framework that leverages a specialist teacher network (fine-tuned on a small, task-relevant dataset) to mitigate shortcut learning in a student network trained on a large, biased dataset. Their approach, which targets intermediate network layers, consistently outperforms traditional bias mitigation methods and achieves performance comparable to models trained on bias-free data, even on out-of-distribution datasets.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for medical AI as it directly tackles the problem of deep learning models making diagnoses based on non-clinical, spurious correlations, which can lead to misdiagnosis, lack of trust, and potential patient harm. By improving model robustness and ensuring predictions are based on clinically meaningful features, it enhances the safety, reliability, and trustworthiness of AI in healthcare.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research directly applies to improving the reliability and safety of AI systems used for automated medical image analysis and diagnosis. By preventing shortcut learning and ensuring models focus on clinically meaningful features, it enhances the robustness of AI tools for tasks like detecting lung pathologies from X-rays or identifying skin lesions, thereby supporting more accurate and trustworthy clinical decision-making and preventing potential patient harm.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Deep learning models in medical imaging are prone to 'shortcut learning,' using spurious, irrelevant features instead of clinically meaningful ones, leading to poor robustness.</li>
+                    
+                    <li>The study demonstrates that different types of shortcut features (diffuse vs. localized) manifest distinctly across different network layers.</li>
+                    
+                    <li>A novel knowledge distillation framework is proposed, utilizing a 'specialist teacher' network (fine-tuned on a small subset of task-relevant data) to guide a 'student network' (trained on a large, biased dataset).</li>
+                    
+                    <li>The framework specifically targets intermediate layers for knowledge distillation, which is shown to be more effective at mitigating various shortcut types.</li>
+                    
+                    <li>Extensive experiments were conducted on diverse medical imaging datasets (CheXpert, ISIC 2017, SimBA) and various architectures (ResNet-18, AlexNet, DenseNet-121, 3D CNNs).</li>
+                    
+                    <li>The proposed method consistently achieved significant improvements over Empirical Risk Minimization, augmentation-based bias mitigation, and group-based bias mitigation approaches.</li>
+                    
+                    <li>Results often showed performance comparable to baseline models trained on bias-free data, even demonstrating strong generalization to out-of-distribution test data.</li>
+                    
+                    <li>The approach is practically applicable in real-world medical scenarios where bias annotations are scarce and shortcut features are difficult to identify proactively.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study proposes an Intermediate Layer Knowledge Distillation (ILKD) framework. This involves training a 'specialist teacher' network on a small, carefully curated subset of task-relevant (bias-free) data. This teacher then distills its knowledge to a 'student network' which is trained on a large dataset known to be corrupted with a bias feature. The distillation process specifically targets and leverages signals from intermediate layers of the networks to address different manifestations of shortcut learning. The approach was evaluated using various CNN architectures (ResNet-18, AlexNet, DenseNet-121, 3D CNNs) across CheXpert (chest X-rays), ISIC 2017 (skin lesions), and SimBA datasets, comparing against traditional Empirical Risk Minimization (ERM), augmentation-based, and group-based bias mitigation strategies.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The key findings indicate that shortcut features manifest distinctly across different network layers, allowing for targeted mitigation. The proposed intermediate layer knowledge distillation framework consistently and significantly improves model robustness by mitigating shortcut learning across various datasets and architectures. It achieved performance comparable to models trained on bias-free data, notably even on out-of-distribution test sets. Crucially, the method demonstrates practical utility in scenarios where explicit bias annotations are limited and shortcut features are not easily identifiable.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This work has significant clinical impact by enabling the development of more reliable and trustworthy AI systems for medical diagnosis and analysis. By ensuring models focus on genuine clinical features rather than irrelevant biases (e.g., hospital stamps, image artifacts, demographic proxies), it can lead to more accurate diagnoses, reduced diagnostic errors, and improved patient outcomes. Its applicability in real-world scenarios with limited bias annotations makes it highly practical for deploying AI in diverse healthcare settings, enhancing patient safety and clinician confidence in AI-assisted tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the proposed method itself. It highlights the challenges of bias annotations being limited and shortcut features being difficult to identify a priori, which the proposed method aims to address.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions. However, the demonstrated practical applicability to real-world medical imaging scenarios implies a readiness for broader implementation and validation in clinical settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Dermatology</span>
+                    
+                    <span class="tag">Medical Imaging Diagnostics</span>
+                    
+                    <span class="tag">Artificial Intelligence in Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Shortcut learning</span>
+                    
+                    <span class="tag tag-keyword">Knowledge distillation</span>
+                    
+                    <span class="tag tag-keyword">Medical image analysis</span>
+                    
+                    <span class="tag tag-keyword">Bias mitigation</span>
+                    
+                    <span class="tag tag-keyword">Deep learning robustness</span>
+                    
+                    <span class="tag tag-keyword">Intermediate layers</span>
+                    
+                    <span class="tag tag-keyword">Clinical relevance</span>
+                    
+                    <span class="tag tag-keyword">Out-of-distribution</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Deep learning models are prone to learning shortcut solutions to problems using spuriously correlated yet irrelevant features of their training data. In high-risk applications such as medical image analysis, this phenomenon may prevent models from using clinically meaningful features when making predictions, potentially leading to poor robustness and harm to patients. We demonstrate that different types of shortcuts (those that are diffuse and spread throughout the image, as well as those that are localized to specific areas) manifest distinctly across network layers and can, therefore, be more effectively targeted through mitigation strategies that target the intermediate layers. We propose a novel knowledge distillation framework that leverages a teacher network fine-tuned on a small subset of task-relevant data to mitigate shortcut learning in a student network trained on a large dataset corrupted with a bias feature. Through extensive experiments on CheXpert, ISIC 2017, and SimBA datasets using various architectures (ResNet-18, AlexNet, DenseNet-121, and 3D CNNs), we demonstrate consistent improvements over traditional Empirical Risk Minimization, augmentation-based bias-mitigation, and group-based bias-mitigation approaches. In many cases, we achieve comparable performance with a baseline model trained on bias-free data, even on out-of-distribution test data. Our results demonstrate the practical applicability of our approach to real-world medical imaging scenarios where bias annotations are limited and shortcut features are difficult to identify a priori.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Accepted for publication at the Journal of Machine Learning for Biomedical Imaging (MELBA) https://melba-journal.org/2025:020</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Journal Reference</h2>
+                <p>Machine.Learning.for.Biomedical.Imaging. 3 (2025)</p>
+            </section>
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

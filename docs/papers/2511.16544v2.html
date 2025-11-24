@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding in Patient Facing Dialogue - Health AI Hub</title>
+    <meta name="description" content="This paper challenges the conventional reliance on Word Error Rate (WER) for evaluating Automatic Speech Recognition (ASR) in clinical dialogue, demonstrating i">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>WER is Unaware: Assessing How ASR Errors Distort Clinical Understanding in Patient Facing Dialogue</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.16544v2" target="_blank">2511.16544v2</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-20
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Zachary Ellis, Jared Joselowitz, Yash Deo, Yajie He, Anna Kalygina, Aisling Higham, Mana Rahimzadeh, Yan Jia, Ibrahim Habli, Ernest Lim
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.16544v2" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.16544v2" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper challenges the conventional reliance on Word Error Rate (WER) for evaluating Automatic Speech Recognition (ASR) in clinical dialogue, demonstrating its poor correlation with the actual clinical impact of transcription errors. To address this, the authors introduce and validate an LLM-as-a-Judge framework, optimized using GEPA through DSPy, which accurately replicates expert clinical assessment of ASR error severity, providing a scalable method for safety-focused evaluation.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate clinical documentation is critical for patient safety and effective care. This research provides a crucial tool to ensure that ASR systems, increasingly integrated into healthcare, do not introduce clinically significant errors, thereby preventing misdiagnosis, incorrect treatment, and adverse patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper introduces an 'LLM-as-a-Judge' that is programmatically optimized to assess the clinical impact and safety implications of ASR transcription errors in doctor-patient dialogue. This AI application serves as an automated, scalable framework to evaluate and ensure the accuracy and safety of ASR systems deployed in healthcare settings, directly supporting clinical understanding and patient care.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Standard ASR evaluation in clinical settings, primarily using Word Error Rate (WER), is fundamentally flawed as it fails to capture the clinical impact of transcription errors.</li>
+                    
+                    <li>A gold-standard benchmark was created by having expert clinicians label the clinical impact (No, Minimal, Significant) of ASR discrepancies in two distinct doctor-patient dialogue datasets.</li>
+                    
+                    <li>Analysis revealed that WER and a comprehensive suite of other common ASR metrics correlate poorly with the clinician-assigned risk labels, highlighting a significant evaluation gap.</li>
+                    
+                    <li>An LLM-as-a-Judge (specifically, Gemini-2.5-Pro) was developed and programmatically optimized using GEPA through DSPy to mimic expert clinical assessment.</li>
+                    
+                    <li>The optimized LLM-as-a-Judge achieved human-comparable performance, demonstrating 90% accuracy and a strong Cohen's kappa (κ) of 0.816 in replicating expert clinical judgments.</li>
+                    
+                    <li>This work provides a validated, automated, and scalable framework for evaluating ASR systems based on their clinical safety and fidelity, rather than just textual accuracy, in patient-facing dialogue.</li>
+                    
+                    <li>The poor correlation of WER with clinical impact underscores the need for a paradigm shift in how ASR technologies are assessed for deployment in healthcare.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study involved creating a gold-standard benchmark where expert clinicians manually compared ground-truth patient-doctor dialogues with ASR-generated transcripts, assigning a clinical impact label (No, Minimal, Significant) to any observed discrepancies. Subsequently, the correlation between these labels and various ASR evaluation metrics (including WER) was assessed. Finally, an LLM (Gemini-2.5-Pro) was fine-tuned and optimized using the GEPA method via DSPy to function as an 'LLM-as-a-Judge,' replicating the expert clinical assessment, and its performance was validated against human expert judgments using accuracy and Cohen's kappa.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary finding is that traditional ASR metrics like WER exhibit poor correlation with the actual clinical impact of transcription errors, rendering them inadequate for assessing ASR safety in healthcare. Crucially, an LLM-as-a-Judge, specifically Gemini-2.5-Pro optimized through GEPA/DSPy, achieved a high degree of concordance with human expert clinicians (90% accuracy, κ=0.816), proving its capability to reliably assess the clinical impact of ASR errors.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has significant clinical impact by enabling the development and deployment of ASR systems that are truly safe and reliable for clinical use. It offers an automated, scalable method to evaluate ASR fidelity in terms of patient safety, moving beyond mere textual accuracy. This can lead to more trustworthy electronic health records, reduce the risk of clinical errors due to ASR misinterpretations, and ultimately improve the quality and safety of patient care delivered via technology-assisted dialogue.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly stated in the abstract, but potential limitations could include the generalizability of the findings across diverse clinical specialties, different ASR models, varying patient demographics, or the specific characteristics of the doctor-patient dialogue datasets used.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The primary future direction is the widespread adoption and further refinement of this validated, automated framework for ASR evaluation in clinical settings. This includes applying it to a broader range of ASR technologies and clinical scenarios, integrating it into ASR development pipelines, and potentially using it to drive improvements in ASR models themselves, optimizing them directly for clinical safety rather than just WER.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Documentation</span>
+                    
+                    <span class="tag">Telehealth</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Patient Safety</span>
+                    
+                    <span class="tag">Healthcare Technology Assessment</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">ASR</span>
+                    
+                    <span class="tag tag-keyword">Word Error Rate</span>
+                    
+                    <span class="tag tag-keyword">Clinical Impact</span>
+                    
+                    <span class="tag tag-keyword">LLM-as-a-Judge</span>
+                    
+                    <span class="tag tag-keyword">Patient Safety</span>
+                    
+                    <span class="tag tag-keyword">Clinical Dialogue</span>
+                    
+                    <span class="tag tag-keyword">Medical Informatics</span>
+                    
+                    <span class="tag tag-keyword">Speech Recognition</span>
+                    
+                    <span class="tag tag-keyword">Evaluation Metrics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">As Automatic Speech Recognition (ASR) is increasingly deployed in clinical dialogue, standard evaluations still rely heavily on Word Error Rate (WER). This paper challenges that standard, investigating whether WER or other common metrics correlate with the clinical impact of transcription errors. We establish a gold-standard benchmark by having expert clinicians compare ground-truth utterances to their ASR-generated counterparts, labeling the clinical impact of any discrepancies found in two distinct doctor-patient dialogue datasets. Our analysis reveals that WER and a comprehensive suite of existing metrics correlate poorly with the clinician-assigned risk labels (No, Minimal, or Significant Impact). To bridge this evaluation gap, we introduce an LLM-as-a-Judge, programmatically optimized using GEPA through DSPy to replicate expert clinical assessment. The optimized judge (Gemini-2.5-Pro) achieves human-comparable performance, obtaining 90% accuracy and a strong Cohen's $κ$ of 0.816. This work provides a validated, automated framework for moving ASR evaluation beyond simple textual fidelity to a necessary, scalable assessment of safety in clinical dialogue.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

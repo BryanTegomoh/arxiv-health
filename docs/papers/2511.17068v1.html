@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReBrain: Brain MRI Reconstruction from Sparse CT Slice via Retrieval-Augmented Diffusion - Health AI Hub</title>
+    <meta name="description" content="This paper introduces ReBrain, a novel retrieval-augmented diffusion framework designed to reconstruct full brain MRI volumes from highly sparse CT slices. It a">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>ReBrain: Brain MRI Reconstruction from Sparse CT Slice via Retrieval-Augmented Diffusion</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.17068v1" target="_blank">2511.17068v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-21
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Junming Liu, Yifei Sun, Weihua Cheng, Yujin Kang, Yirong Chen, Ding Wang, Guosun Zeng
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.17068v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.17068v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces ReBrain, a novel retrieval-augmented diffusion framework designed to reconstruct full brain MRI volumes from highly sparse CT slices. It addresses the critical challenge of synthesizing diagnostic-quality MRI when direct MRI scanning is unfeasible, achieving state-of-the-art performance in cross-modal reconstruction under sparse conditions by combining 2D diffusion generation with structural guidance from retrieved similar slices.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for enabling brain disease diagnosis via MRI for patients unable to undergo direct MRI scans due to various constraints, by leveraging often more accessible and sparse CT data. It expands diagnostic capabilities in scenarios where full MRI is not feasible, thus improving patient care and access to neuroimaging.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application described is the use of a retrieval-augmented diffusion framework (ReBrain) to synthesize high-resolution brain MRI volumes from sparse CT slices. This allows for accurate brain disease diagnosis even when full MRI scans are not feasible due to patient constraints or low-dose CT protocols. It specifically leverages diffusion models and retrieval-based guidance to improve the quality and continuity of reconstructed medical images.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical clinical need to synthesize brain MRI from CT scans, particularly challenging when CT data is highly sparse due to low-dose protocols or limited slices.</li>
+                    
+                    <li>Proposes ReBrain, a retrieval-augmented diffusion framework that leverages both generative models and a prior database for reconstruction.</li>
+                    
+                    <li>Employs a Brownian Bridge Diffusion Model (BBDM) to synthesize 2D MRI slices initially from the sparse CT input.</li>
+                    
+                    <li>Incorporates a retrieval mechanism that queries a comprehensive prior database for structurally and pathologically similar CT slices.</li>
+                    
+                    <li>Utilizes a ControlNet branch to integrate these retrieved reference slices, guiding the generation of intermediate MRI slices and ensuring structural continuity.</li>
+                    
+                    <li>Implements a robust mechanism using spherical linear interpolation to provide supplementary guidance in cases of rare retrieval failures, where the database lacks suitable references.</li>
+                    
+                    <li>Achieves state-of-the-art performance in cross-modal reconstruction from sparse CT, validated through extensive experiments on SynthRAD2023 and BraTS datasets.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>ReBrain employs a multi-component approach: A Brownian Bridge Diffusion Model (BBDM) first synthesizes MRI slices along the 2D dimension from limited CT input slices. Concurrently, a fine-tuned retrieval model queries a prior database for structurally and pathologically similar CT slices. These retrieved slices serve as references and are fed into a ControlNet branch, which guides the BBDM's generation of intermediate MRI slices to ensure structural continuity. For rare instances of retrieval failure, spherical linear interpolation is used to provide alternative guidance.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The ReBrain framework achieved state-of-the-art performance in cross-modal brain MRI reconstruction when starting from highly sparse CT scans. Experiments on the SynthRAD2023 and BraTS datasets demonstrated its superior ability to accurately reconstruct full brain MRI volumes under these challenging conditions.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology could significantly benefit patients with contraindications for MRI (e.g., metallic implants, pacemakers), severe claustrophobia, or those in critical care settings where MRI access is limited. It allows for critical neuroimaging diagnostics from readily available CT data, potentially reducing the need for repeat scans, lowering radiation dose with sparse CT protocols, and improving diagnostic workflow in various clinical scenarios.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Limitations are not explicitly mentioned in the provided abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neuroradiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Medical Physics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">MRI reconstruction</span>
+                    
+                    <span class="tag tag-keyword">CT synthesis</span>
+                    
+                    <span class="tag tag-keyword">sparse data</span>
+                    
+                    <span class="tag tag-keyword">diffusion models</span>
+                    
+                    <span class="tag tag-keyword">retrieval-augmented generation</span>
+                    
+                    <span class="tag tag-keyword">brain imaging</span>
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">cross-modal reconstruction</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Magnetic Resonance Imaging (MRI) plays a crucial role in brain disease diagnosis, but it is not always feasible for certain patients due to physical or clinical constraints. Recent studies attempt to synthesize MRI from Computed Tomography (CT) scans; however, low-dose protocols often result in highly sparse CT volumes with poor through-plane resolution, making accurate reconstruction of the full brain MRI volume particularly challenging. To address this, we propose ReBrain, a retrieval-augmented diffusion framework for brain MRI reconstruction. Given any 3D CT scan with limited slices, we first employ a Brownian Bridge Diffusion Model (BBDM) to synthesize MRI slices along the 2D dimension. Simultaneously, we retrieve structurally and pathologically similar CT slices from a comprehensive prior database via a fine-tuned retrieval model. These retrieved slices are used as references, incorporated through a ControlNet branch to guide the generation of intermediate MRI slices and ensure structural continuity. We further account for rare retrieval failures when the database lacks suitable references and apply spherical linear interpolation to provide supplementary guidance. Extensive experiments on SynthRAD2023 and BraTS demonstrate that ReBrain achieves state-of-the-art performance in cross-modal reconstruction under sparse conditions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>16 pages, 12 figures, 7 tables; Accepted by WACV 2026</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

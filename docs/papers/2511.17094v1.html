@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sparse Reasoning is Enough: Biological-Inspired Framework for Video Anomaly Detection with Large Pre-trained Models - Health AI Hub</title>
+    <meta name="description" content="This paper introduces ReCoVAD, a biologically-inspired framework for training-free video anomaly detection (VAD) that leverages large pre-trained models with sp">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Sparse Reasoning is Enough: Biological-Inspired Framework for Video Anomaly Detection with Large Pre-trained Models</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.17094v1" target="_blank">2511.17094v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-21
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> He Huang, Zixuan Hu, Dongxiao Li, Yao Xiao, Ling-Yu Duan
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.75 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.17094v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.17094v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces ReCoVAD, a biologically-inspired framework for training-free video anomaly detection (VAD) that leverages large pre-trained models with sparse reasoning. By mimicking the human nervous system's dual pathways, ReCoVAD selectively processes frames, significantly reducing computational load and latency. It achieves state-of-the-art performance while processing a fraction of the frames compared to existing dense inference methods, demonstrating the sufficiency of sparse reasoning for effective large-model-based VAD.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This framework offers a highly efficient, low-latency, and training-free approach to real-time video anomaly detection, critical for various medical monitoring applications where rapid response is vital. Its sparse reasoning capability can enable more practical deployment in resource-constrained healthcare settings, such as on-device processing for continuous patient surveillance or surgical assistance.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>Improved real-time video anomaly detection can power AI systems for proactive patient safety (e.g., fall detection, agitation alerts, wandering detection), enhance security in medical facilities and biosecurity labs by flagging unusual activity, and assist in monitoring complex medical procedures for deviations or errors, all with significantly reduced computational overhead, making these applications more practical and cost-effective.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>ReCoVAD addresses the high computational cost and latency of dense frame-level inference in VAD by proposing a novel sparse reasoning approach.</li>
+                    
+                    <li>Inspired by the human dual reflex and conscious pathways, the framework employs a two-pathway architecture for selective frame processing.</li>
+                    
+                    <li>The lightweight 'Reflex pathway' uses a CLIP-based module to fuse visual features with prototype prompts, generating decision vectors that query a dynamic memory for fast anomaly detection.</li>
+                    
+                    <li>The 'Conscious pathway' utilizes a medium-scale vision-language model to generate detailed textual event descriptions and refined anomaly scores for novel frames.</li>
+                    
+                    <li>An integrated Large Language Model (LLM) periodically reviews accumulated descriptions from the Conscious pathway to identify unseen anomalies, correct errors, and refine prototype prompts.</li>
+                    
+                    <li>ReCoVAD achieves state-of-the-art training-free performance, leveraging rich prior knowledge and general reasoning capabilities of large pre-trained models.</li>
+                    
+                    <li>Extensive experiments show ReCoVAD processes only 28.55% and 16.04% of frames used by previous methods on UCF-Crime and XD-Violence datasets, respectively, while maintaining high accuracy.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>ReCoVAD employs a dual-pathway architecture inspired by human neurological processes. The 'Reflex pathway' uses a lightweight CLIP-based module to process visual features, fuse them with prototype prompts, and generate decision vectors that rapidly query a dynamic memory of past frames and anomaly scores. The 'Conscious pathway' utilizes a medium-scale vision-language model to generate detailed textual event descriptions and refine anomaly scores for novel frames. This pathway continuously updates memory and prototype prompts, while an integrated Large Language Model periodically reviews accumulated descriptions to identify novel anomalies, correct errors, and refine prototypes, enabling selective, sparse frame processing.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The ReCoVAD framework achieves state-of-the-art training-free performance in video anomaly detection. Its primary finding is that sparse reasoning is sufficient for effective VAD using powerful large pre-trained models. This is quantitatively demonstrated by processing significantly fewer frames (28.55% on UCF-Crime and 16.04% on XD-Violence datasets) compared to previous dense inference methods, leading to substantial reductions in computational cost and latency.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The reduced computational cost, lower latency, and training-free nature of ReCoVAD make it highly impactful for real-time medical applications. It can facilitate efficient anomaly detection in continuous patient surveillance (e.g., fall detection in elderly care, seizure monitoring), assist in surgical environments by flagging unusual events or errors, or enable cost-effective remote health monitoring. This approach has the potential to improve patient safety, streamline clinical workflows, and expand access to advanced monitoring capabilities without requiring extensive data labeling or powerful, expensive computing infrastructure.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the proposed framework.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Patient Monitoring</span>
+                    
+                    <span class="tag">Elderly Care</span>
+                    
+                    <span class="tag">Surgical Assistance</span>
+                    
+                    <span class="tag">Rehabilitation</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                    <span class="tag">Clinical Surveillance</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Video Anomaly Detection</span>
+                    
+                    <span class="tag tag-keyword">Sparse Reasoning</span>
+                    
+                    <span class="tag tag-keyword">Large Pre-trained Models</span>
+                    
+                    <span class="tag tag-keyword">Biological-Inspired AI</span>
+                    
+                    <span class="tag tag-keyword">CLIP</span>
+                    
+                    <span class="tag tag-keyword">Vision-Language Models</span>
+                    
+                    <span class="tag tag-keyword">Real-time Monitoring</span>
+                    
+                    <span class="tag tag-keyword">Computational Efficiency</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Video anomaly detection (VAD) plays a vital role in real-world applications such as security surveillance, autonomous driving, and industrial monitoring. Recent advances in large pre-trained models have opened new opportunities for training-free VAD by leveraging rich prior knowledge and general reasoning capabilities. However, existing studies typically rely on dense frame-level inference, incurring high computational costs and latency. This raises a fundamental question: Is dense reasoning truly necessary when using powerful pre-trained models in VAD systems? To answer this, we propose ReCoVAD, a novel framework inspired by the dual reflex and conscious pathways of the human nervous system, enabling selective frame processing to reduce redundant computation. ReCoVAD consists of two core pathways: (i) a Reflex pathway that uses a lightweight CLIP-based module to fuse visual features with prototype prompts and produce decision vectors, which query a dynamic memory of past frames and anomaly scores for fast response; and (ii) a Conscious pathway that employs a medium-scale vision-language model to generate textual event descriptions and refined anomaly scores for novel frames. It continuously updates the memory and prototype prompts, while an integrated large language model periodically reviews accumulated descriptions to identify unseen anomalies, correct errors, and refine prototypes. Extensive experiments show that ReCoVAD achieves state-of-the-art training-free performance while processing only 28.55\% and 16.04\% of the frames used by previous methods on the UCF-Crime and XD-Violence datasets, demonstrating that sparse reasoning is sufficient for effective large-model-based VAD.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

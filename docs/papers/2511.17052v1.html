@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erase to Retain: Low Rank Adaptation Guided Selective Unlearning in Medical Segmentation Networks - Health AI Hub</title>
-    <meta name="description" content="The ability to selectively remove knowledge from medical segmentation networks is increasingly important for privacy compliance, ethical deployment, and continu">
+    <title>PathAgent: Toward Interpretable Analysis of Whole-slide Pathology Images via Large Language Model-based Agentic Reasoning - Health AI Hub</title>
+    <meta name="description" content="Analyzing whole-slide images (WSIs) requires an iterative, evidence-driven reasoning process that parallels how pathologists dynamically zoom, refocus, and self">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -22,17 +22,17 @@
 
     <main class="container paper-detail">
         <article>
-            <h1>Erase to Retain: Low Rank Adaptation Guided Selective Unlearning in Medical Segmentation Networks</h1>
+            <h1>PathAgent: Toward Interpretable Analysis of Whole-slide Pathology Images via Large Language Model-based Agentic Reasoning</h1>
 
             <div class="paper-metadata">
                 <div class="meta-row">
-                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.16574v1" target="_blank">2511.16574v1</a>
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.17052v1" target="_blank">2511.17052v1</a>
                 </div>
                 <div class="meta-row">
-                    <strong>Published:</strong> 2025-11-20
+                    <strong>Published:</strong> 2025-11-21
                 </div>
                 <div class="meta-row">
-                    <strong>Authors:</strong> Nirjhor Datta, Md. Golam Rabiul Alam
+                    <strong>Authors:</strong> Jingyun Chen, Linghan Cai, Zhikang Wang, Yi Huang, Songhan Jiang, Shenjin Huang, Hongpeng Wang, Yongbing Zhang
                 </div>
                 <div class="meta-row">
                     <strong>Categories:</strong> cs.CV
@@ -43,13 +43,13 @@
             </div>
 
             <div class="action-buttons">
-                <a href="http://arxiv.org/abs/2511.16574v1" target="_blank" class="btn btn-primary">View on arXiv</a>
-                <a href="https://arxiv.org/pdf/2511.16574v1" target="_blank" class="btn btn-primary">Download PDF</a>
+                <a href="http://arxiv.org/abs/2511.17052v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.17052v1" target="_blank" class="btn btn-primary">Download PDF</a>
             </div>
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">The ability to selectively remove knowledge from medical segmentation networks is increasingly important for privacy compliance, ethical deployment, and continual dataset revision. We introduce Erase to Retain, a controllable unlearning framework for medical image segmentation that achieves targeted...</p>
+                <p class="summary-text">Analyzing whole-slide images (WSIs) requires an iterative, evidence-driven reasoning process that parallels how pathologists dynamically zoom, refocus, and self-correct while collecting the evidence. However, existing computational pipelines often lack this explicit reasoning trajectory, resulting i...</p>
             </section>
 
             <section class="paper-section">
@@ -60,7 +60,7 @@
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is machine unlearning for deep learning models used in medical image analysis (segmentation and classification). This method allows medical AI models to selectively forget sensitive patient data, lesion-specific information, or class-specific representations without full retraining, which is crucial for maintaining patient privacy, ensuring ethical AI deployment, and managing evolving medical datasets in healthcare settings.</p>
+                <p>PathAgent is an AI diagnostic assistant designed to analyze whole-slide pathology images using large language models. It emulates the analytical approach of human pathologists, identifying significant micro-regions and morphological cues to provide interpretable, clinically grounded predictions. Its application is to assist pathologists in making more accurate and transparent diagnoses, thereby improving patient care and healthcare efficiency.</p>
             </section>
             
 
@@ -124,11 +124,14 @@
 
             <section class="paper-section">
                 <h2>Abstract</h2>
-                <p class="abstract">The ability to selectively remove knowledge from medical segmentation networks is increasingly important for privacy compliance, ethical deployment, and continual dataset revision. We introduce Erase to Retain, a controllable unlearning framework for medical image segmentation that achieves targeted forgetting without full retraining. Our method uses a teacher-student distillation paradigm with Low-Rank Adaptation (LoRA) constrained subspace updates, enabling the student network to erase lesion-specific or class-specific representations in low-rank decoder spaces while preserving global anatomical understanding. During the strong unlearning phase, LoRA modules are adversarially optimized to contradict the teacher's confident predictions on a designated forget subset, enforcing semantic removal. This is followed by a gentle restoration phase that recovers generalization on retained data through head-only supervised refinement.
-  For ISIC segmentation, the student reduces forget-set IoU from 0.875 to 0.509 while maintaining competitive performance on the retain and validation splits (0.647 to 0.677 IoU). On the cross-domain CHASE dataset, Erase to Retain consistently lowers forget-set IoU while preserving utility on retain and validation sets. For ISIC classification, our method decreases accuracy on the forget subset from 87.0 percent to 64.1 percent while improving retain accuracy from 83.9 percent to 90.6 percent.
-  These results demonstrate that LoRA-based subspace unlearning provides a practical pathway toward responsible, controllable, and reversible unlearning in medical image analysis, enabling models to forget sensitive samples or structures while preserving performance where it matters most.</p>
+                <p class="abstract">Analyzing whole-slide images (WSIs) requires an iterative, evidence-driven reasoning process that parallels how pathologists dynamically zoom, refocus, and self-correct while collecting the evidence. However, existing computational pipelines often lack this explicit reasoning trajectory, resulting in inherently opaque and unjustifiable predictions. To bridge this gap, we present PathAgent, a training-free, large language model (LLM)-based agent framework that emulates the reflective, stepwise analytical approach of human experts. PathAgent can autonomously explore WSI, iteratively and precisely locating significant micro-regions using the Navigator module, extracting morphology visual cues using the Perceptor, and integrating these findings into the continuously evolving natural language trajectories in the Executor. The entire sequence of observations and decisions forms an explicit chain-of-thought, yielding fully interpretable predictions. Evaluated across five challenging datasets, PathAgent exhibits strong zero-shot generalization, surpassing task-specific baselines in both open-ended and constrained visual question-answering tasks. Moreover, a collaborative evaluation with human pathologists confirms PathAgent's promise as a transparent and clinically grounded diagnostic assistant.</p>
             </section>
 
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>11 pages, 6 figures</p>
+            </section>
             
 
             
