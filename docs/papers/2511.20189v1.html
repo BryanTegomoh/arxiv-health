@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Subgroups with Maximum Treatment Effects without Causal Heuristics - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel approach for identifying patient subgroups that exhibit the maximum average treatment effect, a critical challenge in precision me">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Learning Subgroups with Maximum Treatment Effects without Causal Heuristics</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.20189v1" target="_blank">2511.20189v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-25
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Lincen Yang, Zhong Li, Matthijs van Leeuwen, Saber Salehkaleybar
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.20189v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.20189v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel approach for identifying patient subgroups that exhibit the maximum average treatment effect, a critical challenge in precision medicine and other domains. By directly formulating the problem within the Structural Causal Model (SCM) framework and assuming a partition-based data-generating model, the authors demonstrate that optimal subgroup discovery can be recast as a standard supervised learning task. Their method, instantiated with CART and avoiding ad-hoc causal heuristics, significantly outperforms existing baselines in accurately identifying target subgroups on synthetic and semi-synthetic datasets.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to precision medicine as it provides a more robust and accurate computational method for identifying specific patient cohorts most likely to benefit from a particular treatment, facilitating targeted therapies and improving patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research develops an AI/machine learning methodology for learning patient subgroups that exhibit the maximum average treatment effect. This application is crucial for precision medicine, where AI can be used to analyze patient data (genomic, clinical, lifestyle) to identify specific groups that are most likely to respond positively to a particular drug or intervention. This enables targeted therapies, improving efficacy and reducing adverse effects, thereby enhancing clinical decision support systems.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the crucial problem of discovering subgroups with maximum average treatment effect, which is vital for targeted decision-making in precision medicine, public policy, and education.</li>
+                    
+                    <li>Critiques existing methods that either turn subgroup estimation into the harder problem of accurate pointwise conditional treatment effect estimation or rely on ad-hoc 'causal' heuristics lacking rigorous justification.</li>
+                    
+                    <li>Proposes a direct formulation of the problem under the Structural Causal Model (SCM) framework, a perspective largely overlooked in prior work.</li>
+                    
+                    <li>Demonstrates theoretically that, under the assumption of a partition-based data-generating model, optimal subgroup discovery reduces to recovering the underlying data-generating models, thus becoming a standard supervised learning problem (regression or classification).</li>
+                    
+                    <li>This theoretical reduction allows for the adoption of any partition-based supervised learning method; the authors instantiate their approach with CART (Classification and Regression Trees).</li>
+                    
+                    <li>Empirically shows that their proposed method, which inherently avoids the use of ad-hoc causal heuristics, more accurately identifies subgroups with maximum treatment effect compared to a wide range of baselines on synthetic and semi-synthetic datasets.</li>
+                    
+                    <li>The approach simplifies the complex causal inference task into a well-understood supervised learning problem, making it accessible and robust.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The authors reformulate the problem of optimal subgroup discovery within the Structural Causal Model (SCM) framework. They theoretically show that, under the assumption of a partition-based data-generating model, this complex causal inference problem simplifies into a standard supervised learning task (either regression or classification) focused on recovering the data-generating models. They instantiate this general approach using the CART (Classification and Regression Trees) algorithm to learn the subgroups. The method's performance is empirically validated against various baseline approaches on a large collection of synthetic and semi-synthetic datasets.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary finding is that the proposed SCM-based approach, which re-frames subgroup discovery as a standard supervised learning problem and inherently avoids ad-hoc 'causal' heuristics, significantly and more accurately identifies subgroups with maximum treatment effects across diverse synthetic and semi-synthetic datasets, outperforming a wide range of existing baseline methods.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This method has significant potential to enhance clinical decision-making by enabling more precise patient stratification in clinical trials and in real-world settings. It could lead to the development of highly targeted therapies, minimizing ineffective treatments and adverse side effects, thereby improving overall treatment efficacy and patient quality of life in areas like oncology, cardiology, and rare diseases.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract implicitly notes a limitation through its core assumption: the method's theoretical reduction relies on "the assumption of a partition-based model." This implies that its applicability or performance might be constrained in scenarios where the true underlying data-generating process deviates significantly from a partition-based structure.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions. However, potential future work could involve investigating the method's robustness to violations of the partition-based model assumption, extending the framework to more complex data-generating processes, or exploring other advanced partition-based supervised learning algorithms beyond CART.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Precision Medicine</span>
+                    
+                    <span class="tag">Pharmacogenomics</span>
+                    
+                    <span class="tag">Clinical Trial Design</span>
+                    
+                    <span class="tag">Personalized Therapy</span>
+                    
+                    <span class="tag">Public Health Interventions</span>
+                    
+                    <span class="tag">Epidemiology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">causal inference</span>
+                    
+                    <span class="tag tag-keyword">treatment effects</span>
+                    
+                    <span class="tag tag-keyword">subgroup discovery</span>
+                    
+                    <span class="tag tag-keyword">precision medicine</span>
+                    
+                    <span class="tag tag-keyword">structural causal model</span>
+                    
+                    <span class="tag tag-keyword">supervised learning</span>
+                    
+                    <span class="tag tag-keyword">CART</span>
+                    
+                    <span class="tag tag-keyword">targeted therapy</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Discovering subgroups with the maximum average treatment effect is crucial for targeted decision making in domains such as precision medicine, public policy, and education. While most prior work is formulated in the potential outcome framework, the corresponding structural causal model (SCM) for this task has been largely overlooked. In practice, two approaches dominate. The first estimates pointwise conditional treatment effects and then fits a tree on those estimates, effectively turning subgroup estimation into the harder problem of accurate pointwise estimation. The second constructs decision trees or rule sets with ad-hoc 'causal' heuristics, typically without rigorous justification for why a given heuristic may be used or whether such heuristics are necessary at all. We address these issues by studying the problem directly under the SCM framework. Under the assumption of a partition-based model, we show that optimal subgroup discovery reduces to recovering the data-generating models and hence a standard supervised learning problem (regression or classification). This allows us to adopt any partition-based methods to learn the subgroup from data. We instantiate the approach with CART, arguably one of the most widely used tree-based methods, to learn the subgroup with maximum treatment effect. Finally, on a large collection of synthetic and semi-synthetic datasets, we compare our method against a wide range of baselines and find that our approach, which avoids such causal heuristics, more accurately identifies subgroups with maximum treatment effect. Our source code is available at https://github.com/ylincen/causal-subgroup.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>The full version (including the Appendix). Accepted at AAAI 2026</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
