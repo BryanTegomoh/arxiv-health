@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Time-Step Size in Reinforcement Learning for Sepsis Treatment - Health AI Hub</title>
+    <meta name="description" content="This paper empirically investigates the impact of time-step size in reinforcement learning (RL) for sepsis treatment, challenging the conventional 4-hour data a">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Exploring Time-Step Size in Reinforcement Learning for Sepsis Treatment</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.20913v1" target="_blank">2511.20913v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-25
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Yingchuan Sun, Shengpu Tang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.20913v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.20913v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper empirically investigates the impact of time-step size in reinforcement learning (RL) for sepsis treatment, challenging the conventional 4-hour data aggregation. Through controlled experiments comparing 1, 2, 4, and 8-hour time steps, the study demonstrates that finer time-step sizes (1h and 2h) coupled with a static behavior policy yield superior and more stable performance. The work underscores time-step size as a critical design choice in offline RL for healthcare, advocating for the adoption of finer temporal resolutions in sepsis management.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research directly impacts the potential for more effective and personalized sepsis treatment by demonstrating that the temporal resolution of patient data significantly influences the quality of learned treatment policies. Optimizing time-step size could lead to RL models that better capture rapid physiological changes, thus enabling more timely and precise clinical interventions in a critical condition like sepsis.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research focuses on using Reinforcement Learning (an AI technique) to derive optimal treatment policies for sepsis. It specifically addresses a methodological challenge (time-step size in data aggregation) crucial for the practical and effective implementation of AI models in clinical decision-making for managing sepsis patients.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Critiques the conventional 4-hour time-step size in RL for sepsis, citing concerns about distorted patient dynamics and suboptimal policies, aiming to empirically quantify this impact.</li>
+                    
+                    <li>Conducts controlled empirical experiments comparing four time-step sizes (1h, 2h, 4h, 8h) within an identical offline RL pipeline.</li>
+                    
+                    <li>Develops action re-mapping methods for fair policy evaluation across datasets with different time-step granularities and performs cross-Δt model selections under two distinct policy learning setups.</li>
+                    
+                    <li>Quantifies how time-step size influences state representation learning, behavior cloning, policy training, and off-policy evaluation.</li>
+                    
+                    <li>Discovers that performance trends across time-step sizes vary depending on the specific learning setup.</li>
+                    
+                    <li>Identifies that policies learned using finer time-step sizes (1-hour and 2-hour) in conjunction with a static behavior policy achieve the overall best performance and stability.</li>
+                    
+                    <li>Highlights time-step size as a fundamental design choice in offline RL for healthcare, providing empirical support for alternatives beyond the standard 4-hour data aggregation in sepsis.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study employs a controlled, empirical comparison of four time-step sizes (1h, 2h, 4h, 8h) within an identical offline Reinforcement Learning (RL) pipeline. To ensure fair comparison, novel action re-mapping methods were designed for evaluating policies across datasets with varying temporal granularities. Cross-Δt model selections were conducted under two different policy learning setups to comprehensively assess the influence of time-step size on state representation learning, behavior cloning, policy training, and off-policy evaluation.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The performance trends of RL policies in sepsis management vary significantly depending on the time-step size and the specific policy learning setup. Crucially, policies trained using finer time-step sizes (1-hour and 2-hour) achieved superior overall performance and stability, particularly when combined with a static behavior policy. This finding strongly suggests that the conventional 4-hour time-step might be too coarse for optimal sepsis treatment policy learning.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides compelling evidence for clinicians and AI developers to reconsider the default 4-hour data aggregation in RL models for sepsis. Implementing RL policies derived from finer temporal data (e.g., 1 or 2-hour steps) could potentially lead to more accurate and responsive treatment recommendations, thereby improving patient outcomes in sepsis by better capturing dynamic physiological changes and allowing for earlier, more targeted interventions. It paves the way for developing more effective clinical decision support systems in critical care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of this specific study. However, the research focuses on offline RL; its direct generalizability to real-time or online clinical decision support systems in a dynamic ICU setting requires further investigation. The specific details of the 'two policy learning setups' are also not elaborated, which could affect the interpretation of performance trends.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The study implicitly suggests future work in exploring and implementing RL models for sepsis using finer time-step sizes (1h and 2h) beyond the conventional 4-hour setup in clinical practice. Further research could investigate how different policy learning setups interact with varying time-step sizes and validate these findings in larger, more diverse patient cohorts or real-time clinical deployment scenarios.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Critical Care Medicine</span>
+                    
+                    <span class="tag">Sepsis Management</span>
+                    
+                    <span class="tag">Intensive Care Unit (ICU)</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Reinforcement Learning</span>
+                    
+                    <span class="tag tag-keyword">Sepsis Treatment</span>
+                    
+                    <span class="tag tag-keyword">Time-Step Size</span>
+                    
+                    <span class="tag tag-keyword">Offline RL</span>
+                    
+                    <span class="tag tag-keyword">Clinical Decision Support</span>
+                    
+                    <span class="tag tag-keyword">Patient Dynamics</span>
+                    
+                    <span class="tag tag-keyword">Optimal Policy</span>
+                    
+                    <span class="tag tag-keyword">Healthcare AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Existing studies on reinforcement learning (RL) for sepsis management have mostly followed an established problem setup, in which patient data are aggregated into 4-hour time steps. Although concerns have been raised regarding the coarseness of this time-step size, which might distort patient dynamics and lead to suboptimal treatment policies, the extent to which this is a problem in practice remains unexplored. In this work, we conducted empirical experiments for a controlled comparison of four time-step sizes ($Δt\!=\!1,2,4,8$ h) on this domain, following an identical offline RL pipeline. To enable a fair comparison across time-step sizes, we designed action re-mapping methods that allow for evaluation of policies on datasets with different time-step sizes, and conducted cross-$Δt$ model selections under two policy learning setups. Our goal was to quantify how time-step size influences state representation learning, behavior cloning, policy training, and off-policy evaluation. Our results show that performance trends across $Δt$ vary as learning setups change, while policies learned at finer time-step sizes ($Δt = 1$ h and $2$ h) using a static behavior policy achieve the overall best performance and stability. Our work highlights time-step size as a core design choice in offline RL for healthcare and provides evidence supporting alternatives beyond the conventional 4-hour setup.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

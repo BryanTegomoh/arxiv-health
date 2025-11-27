@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy-Preserving Federated Vision Transformer Learning Leveraging Lightweight Homomorphic Encryption in Medical AI - Health AI Hub</title>
+    <meta name="description" content="This paper presents a privacy-preserving federated learning framework that combines Vision Transformers (ViT) with lightweight homomorphic encryption (HE) for s">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Privacy-Preserving Federated Vision Transformer Learning Leveraging Lightweight Homomorphic Encryption in Medical AI</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.20983v1" target="_blank">2511.20983v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-26
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Al Amin, Kamrul Hasan, Liang Hong, Sharif Ullah
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.CR
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.20983v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.20983v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper presents a privacy-preserving federated learning framework that combines Vision Transformers (ViT) with lightweight homomorphic encryption (HE) for secure multi-institutional medical image classification. By encrypting compact ViT CLS tokens instead of full gradients, the approach significantly reduces communication overhead and effectively prevents sensitive patient data reconstruction attacks. It achieves high classification accuracy for lung cancer histopathology while maintaining strong privacy guarantees and enabling encrypted inference.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research provides a crucial technological solution for healthcare institutions to collaboratively develop more accurate and generalizable AI models for diagnosis and prognosis, circumventing strict patient data privacy regulations like HIPAA. It facilitates the leveraging of diverse, decentralized medical datasets to improve diagnostic accuracy, particularly in complex areas like histopathology, without compromising sensitive patient information.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper presents a privacy-preserving federated learning framework that uses Vision Transformers and homomorphic encryption for secure multi-institutional histopathology classification. This allows AI models to be trained on sensitive medical images from multiple healthcare providers without direct data sharing, enabling improved diagnostic accuracy for diseases like lung cancer while maintaining patient data privacy.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical problem of enabling collaborative machine learning in healthcare while adhering to privacy regulations (e.g., HIPAA) and mitigating gradient-based reconstruction attacks.</li>
+                    
+                    <li>Proposes a novel framework utilizing Vision Transformers (ViT) to extract compact 768-dimensional CLS tokens, which are then encrypted using CKKS homomorphic encryption for secure aggregation in a federated learning setup.</li>
+                    
+                    <li>Demonstrates a substantial 30-fold reduction in communication overhead by encrypting CLS tokens (326 KB per aggregation round) compared to encrypting full model gradients.</li>
+                    
+                    <li>Shows that conventional FL gradients are highly vulnerable to model inversion attacks, allowing near-perfect reconstruction of sensitive medical images (PSNR: 52.26 dB, SSIM: 0.999, NMI: 0.741), a vulnerability the proposed method effectively prevents.</li>
+                    
+                    <li>Achieves a global classification accuracy of 96.12% in the unencrypted domain and 90.02% when operating entirely within the encrypted domain for lung cancer histopathology classification.</li>
+                    
+                    <li>Enables encrypted inference directly on ciphertexts, further enhancing end-to-end privacy and security throughout the model's lifecycle.</li>
+                    
+                    <li>Evaluated on a three-client federated setup for lung cancer histopathology, showcasing practical applicability in medical AI.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The framework integrates federated learning with Vision Transformers (ViT) and CKKS homomorphic encryption. Local clients train ViT models on their private histopathology datasets. Instead of transmitting full model gradients, only the compact 768-dimensional CLS tokens (feature representations from the ViT) are extracted, encrypted using CKKS homomorphic encryption, and sent to a central server. The server then performs secure aggregation directly on these encrypted CLS tokens. The approach was evaluated on a three-client federated setup for lung cancer histopathology classification.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Conventional federated learning gradients are highly susceptible to model inversion attacks, enabling near-perfect image reconstruction (PSNR: 52.26 dB, SSIM: 0.999, NMI: 0.741). In contrast, the proposed CLS-protected HE approach effectively prevents such attacks. It achieves a 30-fold communication reduction compared to gradient encryption, requiring only 326 KB of encrypted data transmission per aggregation round. The framework demonstrates a global classification accuracy of 96.12% in the unencrypted domain and 90.02% in the encrypted domain.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework has significant potential to accelerate the development and deployment of robust, privacy-preserving AI tools in clinical settings. By enabling secure collaboration among healthcare providers, it can lead to more accurate AI models for cancer detection and classification from histopathology images, better patient stratification, and improved diagnostic workflows. This could ultimately enhance diagnostic confidence, optimize treatment planning, and contribute to better patient outcomes while ensuring strict data privacy.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly mention limitations of the proposed framework.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Computational Pathology</span>
+                    
+                    <span class="tag">Public Health</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Federated Learning</span>
+                    
+                    <span class="tag tag-keyword">Homomorphic Encryption</span>
+                    
+                    <span class="tag tag-keyword">Vision Transformers</span>
+                    
+                    <span class="tag tag-keyword">Privacy-Preserving AI</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Histopathology</span>
+                    
+                    <span class="tag tag-keyword">HIPAA Compliance</span>
+                    
+                    <span class="tag tag-keyword">Secure Machine Learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Collaborative machine learning across healthcare institutions promises improved diagnostic accuracy by leveraging diverse datasets, yet privacy regulations such as HIPAA prohibit direct patient data sharing. While federated learning (FL) enables decentralized training without raw data exchange, recent studies show that model gradients in conventional FL remain vulnerable to reconstruction attacks, potentially exposing sensitive medical information. This paper presents a privacy-preserving federated learning framework combining Vision Transformers (ViT) with homomorphic encryption (HE) for secure multi-institutional histopathology classification. The approach leverages the ViT CLS token as a compact 768-dimensional feature representation for secure aggregation, encrypting these tokens using CKKS homomorphic encryption before transmission to the server. We demonstrate that encrypting CLS tokens achieves a 30-fold communication reduction compared to gradient encryption while maintaining strong privacy guarantees. Through evaluation on a three-client federated setup for lung cancer histopathology classification, we show that gradients are highly susceptible to model inversion attacks (PSNR: 52.26 dB, SSIM: 0.999, NMI: 0.741), enabling near-perfect image reconstruction. In contrast, the proposed CLS-protected HE approach prevents such attacks while enabling encrypted inference directly on ciphertexts, requiring only 326 KB of encrypted data transmission per aggregation round. The framework achieves 96.12 percent global classification accuracy in the unencrypted domain and 90.02 percent in the encrypted domain.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>7 pages, 4 figures</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Journal Reference</h2>
+                <p>IEEE ICNC2026</p>
+            </section>
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aligning LLMs with Biomedical Knowledge using Balanced Fine-Tuning - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Balanced Fine-Tuning (BFT), an efficient post-training method designed to align Large Language Models (LLMs) with complex biomedical knowl">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Aligning LLMs with Biomedical Knowledge using Balanced Fine-Tuning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.21075v1" target="_blank">2511.21075v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-26
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Zhenchao Tang, Fang Wang, Haohuai He, Jiale Zhou, Tianxu Lv, Jun Zhu, Shouzhi Chen, Minghao Yang, Yu Wang, Jiayang Wu, Yidong Song, Jianhua Yao
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.21075v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.21075v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Balanced Fine-Tuning (BFT), an efficient post-training method designed to align Large Language Models (LLMs) with complex biomedical knowledge from sparse data without external reward signals. BFT utilizes a novel two-layer weighting mechanism, significantly outperforming standard Supervised Fine-Tuning (SFT) in medical and biological reasoning tasks and enabling broad applications of LLMs in life science research. Its ability to internalize fragmented scientific knowledge more effectively makes LLMs more reliable for critical biomedical applications.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine as it significantly improves the ability of LLMs to understand and reason with complex, often fragmented, biomedical information. This advancement can accelerate drug discovery, enhance understanding of disease mechanisms, aid in the development of precision medicine strategies, and improve the accuracy of AI-driven diagnostic and therapeutic support systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of advanced LLMs capable of understanding, reasoning with, and generating insights from complex biomedical knowledge. This enhancement enables LLMs to perform better in medical diagnostics support, accelerate drug discovery processes, predict cellular responses to perturbations, analyze gene interactions, and generally accelerate life science and medical research.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Current LLM alignment methods for biomedical knowledge (SFT, RL) are limited: SFT overfits to surface-level patterns due to sparse data, while RL is impractical due to prohibitive experimental validation costs for reward definition.</li>
+                    
+                    <li>BFT is proposed as an efficient post-training method that learns complex reasoning from sparse biomedical data without relying on external reward signals.</li>
+                    
+                    <li>BFT employs a two-layer weighting mechanism: 1) Token-level scaling of loss via prediction probabilities to stabilize gradients and prevent overfitting; 2) Sample-level weighting using 'minimum group confidence' to adaptively enhance learning from hard samples.</li>
+                    
+                    <li>Experiments demonstrate BFT significantly outperforms SFT, particularly in tasks requiring deep biomedical knowledge acquisition that SFT misses.</li>
+                    
+                    <li>BFT-based LLMs surpass GeneAgent, an accurate agent for biological analysis, in biological process reasoning tasks.</li>
+                    
+                    <li>The text embeddings generated by BFT are directly applicable and effective for critical downstream biomedical tasks, including gene interaction prediction and single-cell perturbation response prediction.</li>
+                    
+                    <li>The overall approach facilitates broader and more accurate applications of LLMs, accelerating life science research and offering new tools for clinical insights.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core methodology is Balanced Fine-Tuning (BFT), an efficient post-training strategy for LLMs. BFT addresses limitations of SFT (overfitting) and RL (impractical rewards) by introducing a two-layer weighting mechanism. The first layer performs token-level loss scaling, adjusting loss based on prediction probabilities to stabilize gradients and prevent overfitting. The second layer applies sample-level weighting using 'minimum group confidence' to adaptively prioritize and enhance learning from challenging or 'hard' samples, thereby improving the internalization of complex reasoning from sparse data without requiring external reward signals.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>BFT significantly outperforms SFT in biomedical tasks, enabling LLMs to acquire crucial medical knowledge that SFT typically misses. In biological tasks, BFT-based LLMs surpass GeneAgent, a specialized biological analysis agent, particularly in biological process reasoning. Furthermore, the text embeddings generated by BFT are shown to be directly applicable and effective for important downstream tasks like gene interaction and single-cell perturbation response prediction, demonstrating a robust capability to facilitate broad applications of LLMs in biomedical research.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The clinical impact of BFT is substantial. By providing LLMs with a deeper and more accurate understanding of biomedical knowledge, it can accelerate drug discovery pipelines, improve the identification of novel therapeutic targets, enhance the precision of disease diagnosis, and optimize personalized treatment strategies. This technology could lead to more robust AI-powered clinical decision support systems, improved prediction of patient responses to therapies, and more efficient analysis of complex genomic and proteomic data, ultimately translating to better patient outcomes and more efficient healthcare innovation.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily highlights the significant limitations of existing approaches (SFT's overfitting to surface-level patterns and RL's impracticality due to prohibitive experimental validation costs for reward definition). It does not explicitly mention specific limitations or caveats of the proposed BFT method itself, implying it effectively addresses the stated challenges.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly detailing future research directions, the abstract concludes that BFT 'facilitates broad applications of LLMs in biomedical research.' This strongly suggests future work could involve applying BFT-aligned LLMs to a wider array of specific biomedical challenges, such as advanced disease modeling, drug repurposing, personalized treatment optimization, and further integration of its generated embeddings into diverse bioinformatics and clinical data analysis pipelines.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Life Sciences</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Genomics</span>
+                    
+                    <span class="tag">Systems Biology</span>
+                    
+                    <span class="tag">Computational Biology</span>
+                    
+                    <span class="tag">Medical Diagnostics</span>
+                    
+                    <span class="tag">Pharmacology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Large Language Models (LLMs)</span>
+                    
+                    <span class="tag tag-keyword">Biomedical Knowledge</span>
+                    
+                    <span class="tag tag-keyword">Balanced Fine-Tuning (BFT)</span>
+                    
+                    <span class="tag tag-keyword">Supervised Fine-Tuning (SFT)</span>
+                    
+                    <span class="tag tag-keyword">Medical Reasoning</span>
+                    
+                    <span class="tag tag-keyword">Biological Reasoning</span>
+                    
+                    <span class="tag tag-keyword">Gene Interaction</span>
+                    
+                    <span class="tag tag-keyword">Single-Cell Perturbation</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Effective post-training is essential to align Large Language Models (LLMs) with specialized biomedical knowledge to accelerate life science research. However, current approaches face significant limitations. First, biomedical reasoning involves intricate mechanisms often represented by sparse textual data. Standard Supervised Fine-Tuning (SFT) tends to overfit to surface-level instruction patterns without effectively internalizing this fragmented scientific knowledge. Second, Reinforcement Learning (RL) is impractical for this domain, as defining meaningful rewards often necessitates prohibitive experimental validation (e.g., wet-lab verification of drug responses), rendering real-time feedback unfeasible. We propose Balanced Fine-Tuning (BFT), an efficient post-training method designed to learn complex reasoning from sparse data without external reward signals. BFT operates through a two-layer weighting mechanism: 1. At the token level, it scales loss via prediction probabilities to stabilize gradients and prevent overfitting; 2. At the sample level, it uses "minimum group confidence" to adaptively enhance the learning of hard samples. Experiments demonstrate that BFT significantly outperforms SFT. In medical tasks, it enables LLMs to acquire knowledge that SFT misses. In biological tasks, BFT-based LLMs surpass GeneAgent (an accurate agent for biology analysis) in biological process reasoning. Moreover, the text embeddings generated by BFT can be directly applied to downstream tasks, such as gene interaction and single-cell perturbation response prediction. These results indicate that BFT facilitates broad applications of LLMs in biomedical research.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
