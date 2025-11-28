@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BUSTR: Breast Ultrasound Text Reporting with a Descriptor-Aware Vision-Language Model - Health AI Hub</title>
-    <meta name="description" content="BUSTR proposes a novel multitask vision-language framework for automated breast ultrasound (BUS) radiology report generation (RRG) that overcomes the critical l">
+    <meta name="description" content="BUSTR proposes a novel multitask vision-language framework for automated breast ultrasound (BUS) report generation that overcomes the limitations of scarce pair">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">BUSTR proposes a novel multitask vision-language framework for automated breast ultrasound (BUS) radiology report generation (RRG) that overcomes the critical limitation of requiring paired image-report datasets. By generating reports from structured descriptors and radiomics features, utilizing a descriptor-aware Swin encoder and a dual-level vision-language alignment loss, BUSTR significantly improves both natural language generation and clinical efficacy metrics, particularly for key diagnostic targets like BI-RADS classification and pathology.</p>
+                <p class="summary-text">BUSTR proposes a novel multitask vision-language framework for automated breast ultrasound (BUS) report generation that overcomes the limitations of scarce paired image-report datasets and large language model hallucinations. It achieves this by generating reports from structured descriptors and radiomics features, learning descriptor-aware visual representations without direct paired supervision, and demonstrating improved natural language generation and crucial clinical efficacy metrics.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant as it addresses a significant challenge in medical artificial intelligence: the automated, accurate, and reliable generation of radiology reports for breast ultrasound. By bypassing the need for extensive paired datasets and improving clinical efficacy, BUSTR has the potential to standardize reporting, reduce radiologist workload, and enhance the consistency and speed of breast cancer diagnosis and management.</p>
+                <p>This research is highly relevant for medical imaging and diagnostics, offering a novel approach to enhance the efficiency, consistency, and diagnostic accuracy of breast ultrasound reporting, potentially aiding earlier and more reliable breast cancer detection.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is an automated system for generating structured and comprehensive radiology reports for breast ultrasound images. This system, BUSTR, uses a vision-language model to interpret ultrasound images and produce textual reports, aiding clinicians in breast cancer diagnosis, improving reporting consistency, and potentially streamlining workflow in healthcare settings by reducing manual reporting time and risks of human error or omissions.</p>
+                <p>The AI application is an automated vision-language model (BUSTR) designed to generate structured and comprehensive radiology reports from breast ultrasound images. It integrates medical descriptors (e.g., BI-RADS, pathology) and radiomics features to improve the accuracy and clinical utility of diagnostic reporting, thereby aiding radiologists and enhancing patient care.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>**Unsupervised Report Generation:** BUSTR uniquely generates BUS reports without requiring large, paired image-report datasets, addressing a major bottleneck in medical RRG development.</li>
+                    <li>Addresses the critical limitations in automated breast ultrasound (BUS) report generation: the scarcity of paired image-report datasets and the risk of hallucinations from large language models (LLMs).</li>
                     
-                    <li>**Descriptor-Aware Architecture:** The framework constructs reports from structured clinical descriptors (e.g., BI-RADS, pathology, histology) and radiomics features, ensuring clinically relevant content generation.</li>
+                    <li>Introduces BUSTR, a multitask vision-language framework capable of generating BUS reports without requiring explicit paired image-report supervision.</li>
                     
-                    <li>**Multi-head Swin Encoder:** A multi-head Swin encoder is employed to learn robust, descriptor-aware visual representations, trained using a multitask loss over dataset-specific descriptor sets.</li>
+                    <li>Reports are constructed from structured descriptors (e.g., BI-RADS, pathology, histology) and radiomics features, rather than directly from free-text reports.</li>
                     
-                    <li>**Dual-Level Alignment Loss:** Vision and language tokens are aligned via a sophisticated dual-level objective function that combines token-level cross-entropy with a cosine-similarity alignment loss between input and output representations.</li>
+                    <li>Employs a multi-head Swin encoder to learn descriptor-aware visual representations, trained with a multitask loss over dataset-specific descriptor sets.</li>
                     
-                    <li>**Robust Evaluation:** The model was comprehensively evaluated on two distinct public BUS datasets, BrEaST and BUS-BRA, demonstrating its adaptability and performance across varying data characteristics.</li>
+                    <li>Utilizes a dual-level objective function combining token-level cross-entropy for textual generation with a cosine-similarity alignment loss for aligning visual and textual token representations.</li>
                     
-                    <li>**Superior Clinical Efficacy:** BUSTR consistently improved standard natural language generation metrics and, critically, clinical efficacy metrics, with notable gains for key diagnostic elements such as BI-RADS category and pathology findings.</li>
+                    <li>Evaluated on two public BUS datasets, BrEaST and BUS-BRA, which vary in size and available descriptor information.</li>
                     
-                    <li>**Addressing Hallucinations:** By relying on structured descriptors rather than purely generative language models, BUSTR inherently mitigates the risk of clinically inaccurate "hallucinations."</li>
+                    <li>Consistently demonstrates improvements in both standard natural language generation (NLG) metrics and clinically relevant efficacy metrics, particularly for key diagnostic targets such as BI-RADS category and pathology findings.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>BUSTR is a multitask vision-language framework that constructs reports from structured descriptors (e.g., BI-RADS, pathology, histology) and radiomics features. It utilizes a multi-head Swin encoder to learn descriptor-aware visual representations, trained with a multitask loss over dataset-specific descriptor sets. Visual and textual tokens are aligned through a dual-level objective function, combining token-level cross-entropy with a cosine-similarity alignment loss between input and output representations. This approach enables report generation without requiring paired image-report supervision.</p>
+                    <p>BUSTR is a multitask vision-language framework that generates reports by first extracting structured descriptors and radiomics features from BUS images. It uses a multi-head Swin encoder to learn visual representations, which are specifically trained to be descriptor-aware through a multitask loss applied over dataset-specific descriptor sets. Report generation is then guided by these representations. A dual-level objective function aligns visual and textual tokens: a token-level cross-entropy loss for text generation and a cosine-similarity alignment loss between input and output representations, crucially operating without direct paired image-report supervision.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>BUSTR consistently demonstrated improvements in both standard natural language generation (NLG) metrics and critical clinical efficacy metrics when evaluated on the BrEaST and BUS-BRA datasets. Significant enhancements were observed specifically for key clinical targets such as BI-RADS category and pathology. These results confirm that the descriptor-aware vision model, trained with a combined token-level and alignment loss, effectively generates accurate and clinically relevant reports without relying on paired image-report data.</p>
+                    <p>The study found that BUSTR consistently improved both standard natural language generation (NLG) metrics and clinical efficacy metrics across two distinct public BUS datasets (BrEaST and BUS-BRA). Significant improvements were particularly noted for critical diagnostic targets such as the BI-RADS category and pathology reports, validating the model's ability to generate clinically relevant and accurate information without relying on paired image-report training data.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This framework has substantial potential to enhance the efficiency and quality of breast ultrasound diagnostics. By automating the generation of comprehensive and accurate reports, it can significantly reduce radiologist workload, decrease reporting times, and improve the consistency of diagnostic conclusions. Its improved performance on critical clinical indicators like BI-RADS classification can lead to more precise risk stratification and timely patient management in breast cancer screening and diagnosis.</p>
+                <p>BUSTR has the potential to significantly reduce radiologist workload by automating and standardizing breast ultrasound reporting, leading to increased reporting consistency and potentially reducing diagnostic errors and inter-reader variability. By providing accurate, descriptor-aware reports, it could accelerate diagnostic pathways for breast cancer and improve the overall quality and efficiency of care in breast imaging departments.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the BUSTR model itself. However, the work inherently addresses critical limitations of prior radiology report generation models, such as their dependence on large and often scarce paired image-report datasets, and the susceptibility of large language models to generating inaccurate or 'hallucinated' information.</p>
+                <p>The abstract does not explicitly state limitations of the BUSTR model itself. However, it addresses two major limitations prevalent in the field of automated radiology report generation: the lack of sufficiently large paired image-report datasets and the risk of hallucination (generating factually incorrect information) associated with general large language models.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not explicitly mentioned in the abstract.</p>
+                <p>The abstract does not explicitly mention future research directions.</p>
             </section>
             
 
@@ -122,13 +122,13 @@
                     
                     <span class="tag">Radiology</span>
                     
-                    <span class="tag">Diagnostic Imaging</span>
+                    <span class="tag">Breast Imaging</span>
                     
                     <span class="tag">Oncology</span>
                     
                     <span class="tag">Pathology</span>
                     
-                    <span class="tag">Breast Imaging</span>
+                    <span class="tag">Medical AI</span>
                     
                 </div>
             </section>
@@ -137,23 +137,23 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Breast Ultrasound</span>
+                    <span class="tag tag-keyword">Breast ultrasound</span>
                     
-                    <span class="tag tag-keyword">Radiology Report Generation</span>
+                    <span class="tag tag-keyword">Radiology report generation</span>
                     
-                    <span class="tag tag-keyword">Vision-Language Model</span>
+                    <span class="tag tag-keyword">Vision-language model</span>
                     
-                    <span class="tag tag-keyword">Descriptor-Aware</span>
+                    <span class="tag tag-keyword">Descriptor-aware</span>
+                    
+                    <span class="tag tag-keyword">Multitask learning</span>
+                    
+                    <span class="tag tag-keyword">Swin encoder</span>
                     
                     <span class="tag tag-keyword">BI-RADS</span>
                     
-                    <span class="tag tag-keyword">Multitask Learning</span>
+                    <span class="tag tag-keyword">Pathology</span>
                     
-                    <span class="tag tag-keyword">Swin Transformer</span>
-                    
-                    <span class="tag tag-keyword">Medical Imaging</span>
-                    
-                    <span class="tag tag-keyword">AI in Radiology</span>
+                    <span class="tag tag-keyword">Medical imaging</span>
                     
                 </div>
             </section>

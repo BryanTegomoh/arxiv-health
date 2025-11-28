@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A statistical framework for comparing epidemic forests - Health AI Hub</title>
-    <meta name="description" content="This paper introduces the first statistical framework for formally comparing different sets of plausible transmission trees, known as 'epidemic forests', a crit">
+    <meta name="description" content="This paper introduces the first statistical framework for robustly comparing epidemic forests, which are collections of plausible transmission trees. The framew">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces the first statistical framework for formally comparing different sets of plausible transmission trees, known as 'epidemic forests', a critical missing tool in outbreak analysis. Using a chi-square test and permutational multivariate analysis of variance (PERMANOVA), the authors demonstrate that PERMANOVA consistently outperforms the chi-square test in sensitivity across various epidemic and forest sizes, providing a robust method implemented in the `mixtree` R package.</p>
+                <p class="summary-text">This paper introduces the first statistical framework for robustly comparing epidemic forests, which are collections of plausible transmission trees. The framework utilizes both a chi-square test and permutational multivariate analysis of variance (PERMANOVA) to assess the statistical significance of differences between these forests. While both methods achieved perfect specificity for larger forests (100+ trees), PERMANOVA consistently demonstrated superior sensitivity across all tested epidemic and forest sizes, making it a more reliable tool for distinguishing transmission dynamics.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This framework provides a much-needed robust statistical tool for validating and comparing the outputs of different transmission inference models, which is essential for accurately characterizing infectious disease outbreaks and informing effective public health interventions.</p>
+                <p>Accurately inferring transmission pathways is fundamental for understanding disease spread and designing effective public health interventions. This framework provides a robust method to compare different models or assumptions about 'who infected whom,' ensuring that epidemiological conclusions drawn from epidemic forests are statistically sound and reliable for guiding medical and public health decisions.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This paper presents a statistical framework implemented in an R package, rather than an AI application in the strict sense of machine learning or deep learning. The methods used (chi-square test, PERMANOVA) are classical statistical tools. While it provides computational tools for public health, it does not fall under 'medical AI' applications.</p>
+                <p>The paper describes a statistical framework, not an AI application. While the insights from comparing epidemic forests could potentially inform AI models for outbreak prediction or intervention strategies, the framework itself is statistical (chi-square test, PERMANOVA) rather than AI-based.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Inferring 'who infected whom' (transmission trees) is crucial for understanding outbreak dynamics but is challenging, leading to the use of 'epidemic forests' (multiple plausible trees).</li>
+                    <li>Addresses the critical gap of lacking a formal statistical test to compare epidemic forests, which arise from various inference methods and assumptions.</li>
                     
-                    <li>Prior to this work, there was no formal statistical test to assess whether differences between epidemic forests (e.g., from different inference methods or assumptions) were significant.</li>
+                    <li>Defines 'epidemic forests' as collections of multiple plausible transmission trees, used when a single definitive transmission tree is not inferable.</li>
                     
-                    <li>The authors propose a novel statistical framework utilizing both a chi-square test and permutational multivariate analysis of variance (PERMANOVA) for this comparison.</li>
+                    <li>Proposes a novel statistical framework employing a chi-square test and permutational multivariate analysis of variance (PERMANOVA) for forest comparison.</li>
                     
-                    <li>Both proposed methods were evaluated for their ability to distinguish simulated epidemic forests generated under different offspring distributions and varying epidemic/forest sizes.</li>
+                    <li>Methods were assessed using simulated epidemic forests generated under different offspring distributions to represent diverse transmission dynamics.</li>
                     
-                    <li>Results showed that both the chi-square test and PERMANOVA achieved perfect specificity for epidemic forests containing 100 or more trees.</li>
+                    <li>Both the chi-square test and PERMANOVA achieved perfect specificity (correctly identifying no difference) for epidemic forests containing 100 or more trees.</li>
                     
-                    <li>PERMANOVA consistently demonstrated superior sensitivity compared to the chi-square test across all tested epidemic and forest sizes.</li>
+                    <li>PERMANOVA consistently outperformed the chi-square test in sensitivity (correctly identifying a difference) across all evaluated epidemic and forest sizes.</li>
                     
-                    <li>The framework is implemented and made available in the R package `mixtree`, offering a practical tool for epidemiologists.</li>
+                    <li>The proposed framework is implemented and made available to researchers via the R package `mixtree`.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study proposes a statistical framework based on a chi-square test and permutational multivariate analysis of variance (PERMANOVA) to compare epidemic forests. These methods were assessed for their specificity and sensitivity by evaluating their ability to distinguish between simulated epidemic forests generated under different offspring distributions, across various epidemic and forest sizes.</p>
+                    <p>The study proposes a statistical framework leveraging two distinct statistical tests: a chi-square test and permutational multivariate analysis of variance (PERMANOVA). These methods were evaluated on their ability to differentiate between simulated epidemic forests. These forests were generated under various 'offspring distributions' to model different transmission patterns, and tested across a range of epidemic and forest sizes. Performance was assessed by measuring the sensitivity (ability to detect true differences) and specificity (ability to correctly identify no difference) of each method.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The study found that both the chi-square test and PERMANOVA achieved perfect specificity for epidemic forests comprising 100 or more trees. Crucially, PERMANOVA consistently outperformed the chi-square test in terms of sensitivity across all epidemic and forest sizes tested, making it the more robust method for distinguishing between different epidemic forests. This work delivers the first statistical framework for such comparisons, implemented in the R package `mixtree`.</p>
+                    <p>The key findings indicate that both the chi-square test and PERMANOVA are highly specific, achieving perfect specificity for epidemic forests comprising 100 or more trees. Critically, PERMANOVA consistently demonstrated superior sensitivity compared to the chi-square test across all analyzed epidemic and forest sizes, making it the more robust method for distinguishing statistically significant differences between epidemic forests.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This framework will enable epidemiologists to formally compare and validate the inferred transmission dynamics from different models or surveillance data. This improved ability to rigorously assess the quality and consistency of 'who infected whom' inferences can lead to more reliable outbreak characterizations, better understanding of disease spread, and more evidence-based decisions regarding public health interventions like contact tracing, isolation, and vaccination strategies.</p>
+                <p>This framework offers a crucial tool for validating and refining epidemiological models of disease transmission. Clinically, it allows public health agencies and researchers to statistically compare insights derived from different outbreak reconstruction methods. This ensures that interventions, such as contact tracing, isolation strategies, or resource allocation, are based on robust, statistically verified understandings of transmission dynamics, leading to more effective and targeted public health responses during outbreaks.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Limitations of the proposed framework or its application were not explicitly detailed in the provided abstract.</p>
+                <p>The abstract does not explicitly state limitations of the proposed statistical framework itself. It does acknowledge the general challenges inherent in inferring transmission trees due to limited surveillance data and the complexity of immunological and social interactions, which is the problem this framework aims to mitigate.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Future research directions were not explicitly mentioned in the provided abstract, as the paper presents a robust solution to a identified gap.</p>
+                <p>While not explicitly detailed, the presentation of this as the "first statistical framework" in an R package `mixtree` implies significant future potential. This could include applying the framework to a wider range of real-world outbreak data, integrating it with evolving epidemic inference methodologies, and potentially developing more advanced comparison metrics or statistical models to further enhance its capabilities.</p>
             </section>
             
 
@@ -120,11 +120,13 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
+                    <span class="tag">Epidemiology</span>
+                    
                     <span class="tag">Infectious Disease Epidemiology</span>
                     
                     <span class="tag">Public Health</span>
                     
-                    <span class="tag">Outbreak Investigation</span>
+                    <span class="tag">Biostatistics</span>
                     
                     <span class="tag">Computational Epidemiology</span>
                     
@@ -135,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Epidemic forests</span>
+                    <span class="tag tag-keyword">epidemic forests</span>
                     
-                    <span class="tag tag-keyword">Transmission trees</span>
+                    <span class="tag tag-keyword">transmission trees</span>
                     
-                    <span class="tag tag-keyword">Statistical framework</span>
+                    <span class="tag tag-keyword">statistical comparison</span>
+                    
+                    <span class="tag tag-keyword">chi-square test</span>
                     
                     <span class="tag tag-keyword">PERMANOVA</span>
                     
-                    <span class="tag tag-keyword">Chi-square test</span>
+                    <span class="tag tag-keyword">outbreak analysis</span>
                     
-                    <span class="tag tag-keyword">Infectious disease epidemiology</span>
+                    <span class="tag tag-keyword">epidemiology</span>
                     
-                    <span class="tag tag-keyword">Outbreak analysis</span>
-                    
-                    <span class="tag tag-keyword">mixtree</span>
+                    <span class="tag tag-keyword">R package</span>
                     
                 </div>
             </section>
