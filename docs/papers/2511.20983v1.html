@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy-Preserving Federated Vision Transformer Learning Leveraging Lightweight Homomorphic Encryption in Medical AI - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a privacy-preserving federated learning framework that combines Vision Transformers (ViT) with lightweight homomorphic encryption (HE) for">
+    <meta name="description" content="This paper introduces a privacy-preserving federated learning framework that integrates Vision Transformers (ViT) with lightweight homomorphic encryption (HE) t">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CV, cs.CR
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a privacy-preserving federated learning framework that combines Vision Transformers (ViT) with lightweight homomorphic encryption (HE) for secure medical AI. It addresses the vulnerability of conventional federated learning to gradient reconstruction attacks by encrypting compact ViT CLS tokens, significantly reducing communication overhead while maintaining high diagnostic accuracy for multi-institutional histopathology classification.</p>
+                <p class="summary-text">This paper introduces a privacy-preserving federated learning framework that integrates Vision Transformers (ViT) with lightweight homomorphic encryption (HE) to enable secure multi-institutional medical image classification for histopathology. By encrypting compact ViT CLS tokens instead of full gradients, the proposed method significantly reduces communication overhead (30-fold) while effectively thwarting gradient-based reconstruction attacks that could expose sensitive patient data. The framework achieves high classification accuracy (96.12% unencrypted, 90.02% encrypted) on lung cancer histopathology data.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This framework is highly relevant for medical AI as it enables secure collaboration across healthcare institutions, facilitating the training of more robust and accurate diagnostic models on diverse, larger datasets without violating patient privacy regulations like HIPAA. This can lead to improved diagnostic accuracy and personalized medicine.</p>
+                <p>This research is crucial for advancing medical AI by enabling healthcare institutions to collaboratively train robust diagnostic models using diverse, sensitive patient data without violating privacy regulations like HIPAA, ultimately leading to improved diagnostic accuracy and more generalizable AI solutions in healthcare.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is a privacy-preserving federated learning framework that uses Vision Transformers (ViT) and homomorphic encryption (HE) to securely classify medical images (specifically histopathology slides for lung cancer) across multiple healthcare institutions. This enables collaborative AI model training for improved diagnostic accuracy without directly sharing sensitive patient data, thus addressing a critical privacy concern in medical AI.</p>
+                <p>A privacy-preserving AI system designed for secure, collaborative diagnostic image analysis across multiple healthcare institutions. Specifically, it enables federated learning for histopathology classification (e.g., lung cancer detection) using Vision Transformers and homomorphic encryption, ensuring patient data confidentiality and compliance with regulations like HIPAA.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical challenge of privacy-preserving collaborative machine learning in healthcare, bypassing HIPAA restrictions and mitigating gradient vulnerabilities in conventional federated learning (FL).</li>
+                    <li>Addresses the critical challenge of patient data privacy (HIPAA) in collaborative medical AI, enabling multi-institutional learning without direct data sharing.</li>
                     
-                    <li>Proposes a novel methodology leveraging Vision Transformers (ViT) by encrypting only the compact 768-dimensional CLS token using CKKS homomorphic encryption for secure aggregation, rather than full model gradients.</li>
+                    <li>Proposes a novel federated learning framework combining Vision Transformers (ViT) for feature extraction and CKKS Homomorphic Encryption (HE) for secure aggregation.</li>
                     
-                    <li>Demonstrates a significant 30-fold reduction in communication overhead compared to gradient encryption, requiring only 326 KB of encrypted data transmission per aggregation round.</li>
+                    <li>Utilizes the compact 768-dimensional CLS token from ViT as the secure, privacy-preserving representation for aggregation, encrypted before transmission.</li>
                     
-                    <li>Proves that conventional FL gradients are highly susceptible to model inversion attacks, enabling near-perfect image reconstruction (PSNR: 52.26 dB, SSIM: 0.999, NMI: 0.741).</li>
+                    <li>Demonstrates a 30-fold communication reduction when encrypting CLS tokens (326 KB per round) compared to encrypting full gradients.</li>
                     
-                    <li>The proposed CLS-protected HE approach effectively prevents these model inversion attacks and enables encrypted inference directly on ciphertexts.</li>
+                    <li>Proves the extreme vulnerability of conventional FL gradients to model inversion attacks, enabling near-perfect image reconstruction (PSNR: 52.26 dB, SSIM: 0.999, NMI: 0.741).</li>
                     
-                    <li>Achieves robust diagnostic performance in a three-client federated setup for lung cancer histopathology classification, with 96.12% global accuracy in the unencrypted domain and 90.02% in the encrypted domain.</li>
+                    <li>Confirms the proposed CLS-protected HE approach effectively prevents these reconstruction attacks, ensuring strong privacy guarantees.</li>
                     
-                    <li>Enables secure multi-institutional collaboration for AI model training without direct patient data sharing, adhering to stringent privacy regulations.</li>
+                    <li>Achieves high global classification accuracy for lung cancer histopathology: 96.12% in the unencrypted domain and 90.02% in the encrypted domain.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The framework integrates Federated Learning (FL) with Vision Transformers (ViT) for local client training. Instead of sending raw gradients, clients extract the compact 768-dimensional CLS token from their locally trained ViT models. These CLS tokens are then encrypted using the CKKS homomorphic encryption scheme and transmitted to a central server. The server performs secure aggregation and encrypted inference directly on these ciphertexts. The method's privacy and performance were evaluated on a three-client federated setup for lung cancer histopathology classification, comparing it against the vulnerability of conventional FL gradients to model inversion attacks.</p>
+                    <p>The framework integrates federated learning with Vision Transformers (ViT) and CKKS homomorphic encryption. Local clients train ViT models on their private datasets. Instead of sending raw gradients, clients extract the compact 768-dimensional CLS token from their ViT models, encrypt these tokens using CKKS homomorphic encryption, and send the ciphertexts to a central server. The server performs secure aggregation and encrypted inference directly on these ciphertexts, preventing any reconstruction attacks on sensitive input data.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>Conventional FL gradients are highly vulnerable to model inversion attacks, allowing near-perfect reconstruction of sensitive input images (PSNR: 52.26 dB, SSIM: 0.999, NMI: 0.741). In contrast, the proposed CLS-protected HE approach effectively prevents such attacks while enabling encrypted inference. This method achieves a 30-fold communication reduction (only 326 KB/round) and maintains high global classification accuracy (96.12% unencrypted, 90.02% encrypted) for lung cancer histopathology.</p>
+                    <p>Conventional federated learning gradients are highly susceptible to model inversion attacks, leading to near-perfect reconstruction of sensitive medical images (PSNR: 52.26 dB, SSIM: 0.999, NMI: 0.741). The proposed CLS-protected HE approach successfully prevents these attacks while reducing communication overhead by 30-fold (to 326 KB per round) compared to gradient encryption. The framework achieves 96.12% global classification accuracy in the unencrypted domain and 90.02% in the encrypted domain for lung cancer histopathology.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This technology can significantly impact clinical practice by enabling the development of more accurate and robust AI models for medical diagnostics, particularly in fields like histopathology. By facilitating secure, multi-institutional collaboration, it allows for training on larger, more diverse patient datasets, leading to AI tools that can assist pathologists in more precise and efficient disease diagnosis, ultimately improving patient outcomes without compromising sensitive medical data.</p>
+                <p>This framework has the potential to accelerate the development and deployment of highly accurate AI models for medical diagnosis by allowing secure collaboration among hospitals, overcoming critical privacy barriers. It could lead to more robust and generalizable diagnostic tools for diseases like cancer from histopathology images, without compromising patient confidentiality, thereby improving diagnostic precision and potentially reducing misdiagnosis rates in clinical settings.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the proposed framework itself. It primarily highlights the inherent vulnerabilities and limitations of conventional federated learning in terms of privacy.</p>
+                <p>The abstract highlights the vulnerability of conventional federated learning gradients to model inversion attacks as a significant limitation, which the proposed framework directly addresses. While not explicitly stated as a limitation of their own work, homomorphic encryption typically introduces computational overhead, though the abstract emphasizes communication efficiency gains.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention future research directions for this specific work.</p>
+                <p>Not explicitly mentioned in the abstract.</p>
             </section>
             
 
@@ -124,9 +124,9 @@
                     
                     <span class="tag">Oncology (Lung Cancer)</span>
                     
-                    <span class="tag">Medical Imaging Diagnostics</span>
+                    <span class="tag">Diagnostic Imaging</span>
                     
-                    <span class="tag">Pathology</span>
+                    <span class="tag">Digital Pathology</span>
                     
                 </div>
             </section>
@@ -141,13 +141,13 @@
                     
                     <span class="tag tag-keyword">Vision Transformer</span>
                     
-                    <span class="tag tag-keyword">Privacy-Preserving AI</span>
+                    <span class="tag tag-keyword">Medical AI</span>
                     
-                    <span class="tag tag-keyword">Medical Imaging</span>
+                    <span class="tag tag-keyword">Privacy-Preserving</span>
                     
                     <span class="tag tag-keyword">Histopathology</span>
                     
-                    <span class="tag tag-keyword">Gradient Reconstruction</span>
+                    <span class="tag tag-keyword">Lung Cancer</span>
                     
                     <span class="tag tag-keyword">CLS Token</span>
                     

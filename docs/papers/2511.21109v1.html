@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interpretable Fair Clustering - Health AI Hub</title>
-    <meta name="description" content="This paper introduces an interpretable and fair clustering framework that integrates fairness constraints into the structure of decision trees. It aims to addre">
+    <meta name="description" content="This paper introduces an interpretable and fair clustering framework that integrates fairness constraints directly into the structure of decision trees. It addr">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces an interpretable and fair clustering framework that integrates fairness constraints into the structure of decision trees. It aims to address the lack of interpretability in existing fair clustering methods, especially for high-stakes applications. The framework delivers competitive clustering performance, improved fairness, interpretability, and robust handling of multiple sensitive attributes, enabling more equitable and transparent data partitioning.</p>
+                <p class="summary-text">This paper introduces an interpretable and fair clustering framework that integrates fairness constraints directly into the structure of decision trees. It addresses the lack of interpretability in existing fair clustering methods, especially crucial for high-stakes applications. The proposed approach constructs decision trees that partition data fairly across protected groups, demonstrating competitive clustering performance, improved fairness, and interpretability, even with multiple sensitive attributes.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Fair and interpretable clustering is vital in medicine to prevent algorithmic bias in patient stratification, resource allocation, and treatment recommendations, particularly when dealing with sensitive demographic attributes. Understanding the basis of medical decisions is essential for trust, ethical practice, and ensuring equitable health outcomes for all patient populations.</p>
+                <p>Bias in healthcare data and algorithmic decisions can lead to inequitable patient care, resource allocation, or disease prediction across different demographic groups. An interpretable fair clustering method allows healthcare professionals to understand the rationale behind patient groupings, mitigate bias, and build trust in AI-driven medical tools.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This interpretable fair clustering framework could be applied to numerous health scenarios. For instance, it could cluster patient data (e.g., electronic health records, genomic data) to identify distinct patient subgroups for personalized treatment plans or risk stratification, ensuring that these groupings are fair across different demographic or social groups (e.g., race, gender, age). The interpretability allows clinicians to understand the rationale behind the identified patient clusters, fostering trust and enabling better clinical validation. It could also be used in public health to identify vulnerable populations for intervention programs, ensuring equitable distribution of resources without unintended bias.</p>
+                <p>Developing AI systems for healthcare that group patients, identify disease subtypes, stratify risk, or allocate resources while ensuring fairness across diverse patient populations (e.g., based on race, gender, age, socioeconomic status) and providing interpretable rationales for those groupings, which is critical for clinician trust and patient safety.</p>
             </section>
             
 
@@ -68,19 +68,17 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>The primary problem addressed is the lack of interpretability in existing fair clustering methods, hindering their use in critical applications.</li>
+                    <li>Addresses the critical limitation of existing fair clustering methods: their lack of interpretability in high-stakes scenarios.</li>
                     
-                    <li>A novel framework is proposed that constructs interpretable decision trees by embedding fairness constraints directly into the tree's partitioning structure.</li>
+                    <li>Proposes a novel framework that integrates fairness constraints directly into the structure of decision trees to achieve both interpretability and fairness.</li>
                     
-                    <li>A practical variant is introduced that eliminates the need for fairness hyperparameter tuning by using post-pruning on a tree initially built without explicit fairness constraints.</li>
+                    <li>The method constructs interpretable decision trees that partition data while ensuring fair treatment across specified protected groups.</li>
                     
-                    <li>The method demonstrates competitive clustering performance and significantly improved fairness across protected groups on both real-world and synthetic datasets.</li>
+                    <li>Introduces a practical variant that eliminates the need for fairness hyperparameter tuning, achieved through post-pruning a tree initially built without fairness constraints.</li>
                     
-                    <li>It offers inherent interpretability, allowing users to understand the rationale behind cluster assignments, which is crucial for transparency.</li>
+                    <li>Experimental results on real-world and synthetic datasets confirm competitive clustering performance and demonstrably improved fairness.</li>
                     
-                    <li>The framework is robust and capable of handling multiple sensitive attributes simultaneously and effectively under complex fairness constraints.</li>
-                    
-                    <li>The approach opens new avenues for equitable and transparent clustering by combining high performance with explainability and fairness.</li>
+                    <li>Offers additional advantages including inherent interpretability, the ability to handle multiple sensitive attributes simultaneously, and robust performance under complex fairness constraints.</li>
                     
                 </ul>
             </section>
@@ -88,31 +86,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The core methodology involves constructing decision trees where fairness constraints are integrated into the splitting criteria and structure building process. This ensures that data partitions created by the tree maintain fair treatment across defined protected groups. An advanced variant further enhances practicality by employing post-pruning on a decision tree built without initial fairness constraints, effectively achieving fairness without requiring manual hyperparameter tuning.</p>
+                    <p>The core methodology involves constructing decision trees where fairness constraints are explicitly integrated into the tree's splitting criteria during its growth. An additional variant is proposed where a decision tree is first built without explicit fairness constraints, and then fairness is introduced via a post-pruning process, effectively bypassing the need for fairness-specific hyperparameter tuning.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The method achieved competitive clustering performance while demonstrably improving fairness across protected groups. It provided inherent interpretability of clustering decisions and effectively handled scenarios with multiple sensitive attributes, exhibiting robustness under complex fairness constraints. This indicates a significant step towards more equitable and transparent data analysis in high-stakes fields.</p>
+                    <p>The proposed method delivers competitive clustering performance while significantly improving fairness. It inherently offers interpretability, effectively handles scenarios involving multiple sensitive attributes, and demonstrates robustness even under complex fairness constraints, leading to more equitable and transparent data partitioning.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This framework could profoundly impact clinical practice by fostering trust in AI-driven tools through its interpretability, allowing healthcare professionals to understand and validate clustering outcomes. It enables more equitable patient care by mitigating algorithmic bias in areas like diagnostic grouping, treatment pathway assignment, and resource distribution, ensuring that decisions are fair across diverse patient populations defined by sensitive attributes like race, gender, or socioeconomic status. This leads to more ethical and transparent deployment of machine learning in healthcare.</p>
+                <p>This framework could enable the development of more ethical and transparent AI applications in clinical settings. For example, it could facilitate fair patient stratification for targeted treatments, unbiased risk assessments for chronic diseases, or equitable distribution of limited medical resources, all with a clear, understandable rationale for how patient groups are formed.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations of the proposed method itself. It highlights the limitations of *existing* fair clustering methods (lack of interpretability) as the problem addressed by this work.</p>
+                <p>Not explicitly detailed in the abstract.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract states that the method opens 'new possibilities for equitable and transparent clustering,' implying broad future applications, but does not explicitly outline specific future research directions or extensions for the framework itself.</p>
+                <p>Not explicitly detailed as specific research directions in the abstract, beyond opening new possibilities for equitable and transparent clustering.</p>
             </section>
             
 
@@ -120,19 +118,19 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Public Health</span>
+                    <span class="tag">Patient Stratification</span>
                     
-                    <span class="tag">Clinical Decision Support</span>
+                    <span class="tag">Disease Risk Prediction</span>
                     
-                    <span class="tag">Health Equity Research</span>
+                    <span class="tag">Healthcare Resource Allocation</span>
                     
-                    <span class="tag">Precision Medicine</span>
+                    <span class="tag">Personalized Medicine</span>
                     
-                    <span class="tag">Epidemiology</span>
+                    <span class="tag">Clinical Trial Design</span>
                     
-                    <span class="tag">Medical Resource Allocation</span>
+                    <span class="tag">Public Health Surveillance</span>
                     
-                    <span class="tag">Patient Risk Stratification</span>
+                    <span class="tag">Medical Diagnosis Support</span>
                     
                 </div>
             </section>
@@ -147,13 +145,15 @@
                     
                     <span class="tag tag-keyword">Decision Trees</span>
                     
-                    <span class="tag tag-keyword">Algorithmic Fairness</span>
+                    <span class="tag tag-keyword">Fairness Constraints</span>
+                    
+                    <span class="tag tag-keyword">Protected Attributes</span>
                     
                     <span class="tag tag-keyword">Machine Learning</span>
                     
-                    <span class="tag tag-keyword">Sensitive Attributes</span>
+                    <span class="tag tag-keyword">Algorithmic Fairness</span>
                     
-                    <span class="tag tag-keyword">Healthcare Analytics</span>
+                    <span class="tag tag-keyword">Healthcare AI</span>
                     
                 </div>
             </section>
