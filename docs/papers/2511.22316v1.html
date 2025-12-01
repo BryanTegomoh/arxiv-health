@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SingleQuant: Efficient Quantization of Large Language Models in a Single Pass - Health AI Hub</title>
+    <meta name="description" content="This paper introduces SingleQuant, a novel single-pass quantization framework for Large Language Models (LLMs) that addresses convergence issues and performance">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>SingleQuant: Efficient Quantization of Large Language Models in a Single Pass</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.22316v1" target="_blank">2511.22316v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-27
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Jinying Xiao, Bin Ji, Shasha Li, Xiaodong Liu, Ma Jun, Ye Zhong, Wei Li, Xuan Xie, Qingbo Wu, Jie Yu
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.70 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.22316v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.22316v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces SingleQuant, a novel single-pass quantization framework for Large Language Models (LLMs) that addresses convergence issues and performance degradation in existing methods. By decoupling quantization truncation from gradient optimization and employing specialized rotation transformations (ART and URT), SingleQuant significantly improves quantization speed and task performance of LLMs. It achieves this by eliminating non-smoothness and gradient noise previously introduced by Straight-Through Estimators on Stiefel manifolds.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Efficient LLM quantization enables the deployment of powerful AI models on resource-constrained devices, which is critical for healthcare settings where quick, localized processing of medical data, such as clinical notes or patient records, can improve diagnostics, treatment planning, and personalized medicine, especially in remote or underserved areas.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research provides a more efficient and higher-performing method for quantizing Large Language Models (LLMs). This directly benefits medical AI applications by enabling faster, more cost-effective, and more performant deployment of LLMs in healthcare. This can accelerate the development and adoption of AI tools for tasks such as medical information extraction, summarization of patient records, clinical decision support, patient-facing chatbots, and analysis of scientific literature for drug discovery or biosecurity threats, particularly in resource-constrained or privacy-sensitive settings where efficient on-device processing is crucial.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Existing LLM quantization methods suffer from convergence pathologies, leading to prolonged quantization times and degraded task performance due to incompatible gradient optimization and quantization truncation.</li>
+                    
+                    <li>The authors identify that Straight-Through Estimators (STE) on Stiefel manifolds introduce non-smoothness and gradient noise, hindering optimization convergence and high-fidelity quantized LLM development.</li>
+                    
+                    <li>SingleQuant proposes a single-pass framework that decouples from quantization truncation, thereby eliminating the problematic non-smoothness and gradient noise factors.</li>
+                    
+                    <li>The framework includes Alignment Rotation Transformation (ART) for smoothing activation outlier values via closed-form optimal rotations, and Uniformity Rotation Transformation (URT) for reshaping distributions through geometric mapping.</li>
+                    
+                    <li>Both ART and URT utilize strictly formulated Givens rotations with predetermined dimensions and rotation angles, contributing to efficient and effective quantization.</li>
+                    
+                    <li>Experimental results show SingleQuant's superiority across diverse tasks on 7B-70B LLMs, achieving higher task performance with significantly less quantization time.</li>
+                    
+                    <li>For LLaMA-2-13B, SingleQuant demonstrates a 1,400$	imes$ quantization speedup and a +0.57% increase in average task performance compared to the best selected baseline.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>SingleQuant employs a single-pass quantization framework that decouples from quantization truncation. It addresses activation outliers and distribution reshaping using two novel components: Alignment Rotation Transformation (ART) and Uniformity Rotation Transformation (URT). ART achieves optimal smoothing of outlier values through closed-form optimal rotations, while URT reshapes distributions via geometric mapping. Both transformations are constructed from strictly formulated Givens rotations with predetermined dimensions and angles, designed to operate without introducing the non-smoothness or gradient noise issues found in existing STE-based methods.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>SingleQuant consistently outperforms selected baselines on 7B-70B LLMs across various tasks. It enables quantized LLMs to achieve higher task performance while dramatically reducing quantization time. Specifically, when quantizing LLaMA-2-13B, SingleQuant achieved a 1,400$	imes$ speedup in quantization time and improved average task performance by +0.57% compared to the best prior method.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This advancement allows for the deployment of sophisticated LLM-powered applications in clinical settings, even on devices with limited computational power (e.g., mobile medical devices, local hospital servers). This could facilitate faster, on-device analysis of patient data, support real-time clinical decision-making, enhance data privacy by reducing reliance on cloud computing for sensitive information, and broaden AI accessibility in resource-constrained healthcare environments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations or caveats specific to the SingleQuant method itself. It primarily highlights limitations of *existing* quantization methods that SingleQuant aims to overcome.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions for SingleQuant.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Medical Imaging Analysis</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                    <span class="tag">Health Informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">LLM quantization</span>
+                    
+                    <span class="tag tag-keyword">single-pass</span>
+                    
+                    <span class="tag tag-keyword">gradient noise</span>
+                    
+                    <span class="tag tag-keyword">Straight-Through Estimator</span>
+                    
+                    <span class="tag tag-keyword">Givens rotations</span>
+                    
+                    <span class="tag tag-keyword">Alignment Rotation Transformation</span>
+                    
+                    <span class="tag tag-keyword">Uniformity Rotation Transformation</span>
+                    
+                    <span class="tag tag-keyword">resource-limited deployment</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Large Language Models (LLMs) quantization facilitates deploying LLMs in resource-limited settings, but existing methods that combine incompatible gradient optimization and quantization truncation lead to serious convergence pathology. This prolongs quantization time and degrades LLMs' task performance. Our studies confirm that Straight-Through Estimator (STE) on Stiefel manifolds introduce non-smoothness and gradient noise, obstructing optimization convergence and blocking high-fidelity quantized LLM development despite extensive training. To tackle the above limitations, we propose SingleQuant, a single-pass quantization framework that decouples from quantization truncation, thereby eliminating the above non-smoothness and gradient noise factors. Specifically, SingleQuant constructs Alignment Rotation Transformation (ART) and Uniformity Rotation Transformation (URT) targeting distinct activation outliers, where ART achieves smoothing of outlier values via closed-form optimal rotations, and URT reshapes distributions through geometric mapping. Both matrices comprise strictly formulated Givens rotations with predetermined dimensions and rotation angles, enabling promising LLMs task performance within a short time. Experimental results demonstrate SingleQuant's superiority over the selected baselines across diverse tasks on 7B-70B LLMs. To be more precise, SingleQuant enables quantized LLMs to achieve higher task performance while necessitating less time for quantization. For example, when quantizing LLaMA-2-13B, SingleQuant achieves 1,400$\times$ quantization speedup and increases +0.57\% average task performance compared to the selected best baseline.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>9 pages, 4 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

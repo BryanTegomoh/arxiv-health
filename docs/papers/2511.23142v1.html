@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adapting Neural Audio Codecs to EEG - Health AI Hub</title>
+    <meta name="description" content="This paper demonstrates that pretrained neural audio codecs, specifically the state-of-the-art DAC, can be effectively adapted for EEG compression despite inher">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Adapting Neural Audio Codecs to EEG</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.23142v1" target="_blank">2511.23142v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-28
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Ard Kastrati, Luca Lanzendörfer, Riccardo Rigoni, John Staib Matilla, Roger Wattenhofer
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.SD
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.23142v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.23142v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper demonstrates that pretrained neural audio codecs, specifically the state-of-the-art DAC, can be effectively adapted for EEG compression despite inherent modality differences. By preprocessing raw EEG data to match the codec's input constraints and fine-tuning on EEG, stable and high-fidelity reconstructions are achieved. The approach, including a multi-channel extension (DAC-MC), is shown to preserve clinically relevant information on medical EEG datasets.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research provides a novel and efficient method for compressing Electroencephalography (EEG) data, which is crucial for reducing storage demands, facilitating faster data transfer for remote analysis, and potentially enabling real-time processing in neurological diagnostics and monitoring.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper describes an AI application for efficient compression of medical sensor data (EEG). This can facilitate the storage, transmission, and processing of large volumes of EEG data, which is crucial for remote diagnostics, telemedicine, and building large-scale datasets for training other medical AI models for the diagnosis and monitoring of neurological disorders like epilepsy and other brain abnormalities. By preserving 'clinically relevant information,' this work supports the development of robust AI systems for clinical decision support and analysis.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Pretrained neural audio codecs, particularly DAC, are shown to be effective starting points for EEG compression.</li>
+                    
+                    <li>Raw EEG data is preprocessed and mapped into the codec's stride-based framing, enabling direct reuse of the audio-pretrained encoder-decoder.</li>
+                    
+                    <li>Stable EEG reconstructions are achieved even without modification, and fine-tuning on EEG data significantly improves fidelity and generalization.</li>
+                    
+                    <li>The authors systematically explore compression-quality trade-offs by varying residual codebook depth, codebook size, and input sampling rate.</li>
+                    
+                    <li>A multi-channel extension, DAC-MC, is proposed to capture spatial dependencies across electrodes, incorporating attention-based cross-channel aggregation and channel-specific decoding while retaining audio-pretrained initialization.</li>
+                    
+                    <li>Evaluation on the TUH Abnormal and Epilepsy datasets confirms that the adapted codecs preserve clinically relevant information.</li>
+                    
+                    <li>Preservation of clinical information is measured through spectrogram-based reconstruction loss and downstream classification accuracy.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves adapting a state-of-the-art neural audio codec (DAC) by preprocessing raw EEG signals to conform to its stride-based framing input. The audio-pretrained encoder-decoder components of DAC are directly reused and then fine-tuned on EEG specific data. Compression-quality trade-offs are investigated by adjusting parameters such as residual codebook depth, codebook size, and input sampling rate. For multi-channel EEG, a novel extension named DAC-MC is introduced, which incorporates attention-based cross-channel aggregation and channel-specific decoding while maintaining the audio-pretrained initialization. Evaluation is performed on clinically relevant datasets, TUH Abnormal and Epilepsy, using spectrogram-based reconstruction loss and downstream classification accuracy as key metrics.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study's key findings are that pretrained neural audio codecs can be successfully adapted for stable and high-fidelity EEG reconstruction, with significant improvements from fine-tuning on EEG data. The proposed multi-channel extension, DAC-MC, effectively captures spatial dependencies inherent in multi-electrode EEG. Crucially, the adapted compression methods are demonstrated to preserve clinically relevant information, as evidenced by robust performance in reconstruction quality and downstream diagnostic classification tasks.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This work has the potential to significantly enhance the efficiency of EEG data management in clinical settings. By enabling high-fidelity compression, it could reduce the substantial storage costs associated with large EEG datasets, accelerate data transmission for remote diagnostic consultations or telemedicine, and facilitate the development of more accessible and real-time brain monitoring solutions. This could lead to more streamlined and cost-effective neurological diagnostics and continuous patient care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly detail the exact quantitative degree of compression achieved, nor does it define specific clinical thresholds for 'preserving clinically relevant information' beyond general metrics. The generalizability across all types of EEG pathologies or diverse acquisition protocols outside of the TUH datasets is also not explicitly discussed.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While explicit future directions are not mentioned in the abstract, implied directions could include further quantitative assessment of the clinical utility for specific diagnostic tasks, exploration of the maximum achievable compression ratios while guaranteeing diagnostic integrity, broader validation across a wider array of EEG datasets and clinical scenarios, and investigation into real-time implementation for continuous brain monitoring applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Clinical Neurophysiology</span>
+                    
+                    <span class="tag">Epilepsy Diagnostics</span>
+                    
+                    <span class="tag">Brain Monitoring</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">EEG compression</span>
+                    
+                    <span class="tag tag-keyword">neural audio codecs</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">electroencephalography</span>
+                    
+                    <span class="tag tag-keyword">signal processing</span>
+                    
+                    <span class="tag tag-keyword">DAC</span>
+                    
+                    <span class="tag tag-keyword">clinical neurophysiology</span>
+                    
+                    <span class="tag tag-keyword">data efficiency</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">EEG and audio are inherently distinct modalities, differing in sampling rate, channel structure, and scale. Yet, we show that pretrained neural audio codecs can serve as effective starting points for EEG compression, provided that the data are preprocessed to be suitable to the codec's input constraints. Using DAC, a state-of-the-art neural audio codec as our base, we demonstrate that raw EEG can be mapped into the codec's stride-based framing, enabling direct reuse of the audio-pretrained encoder-decoder. Even without modification, this setup yields stable EEG reconstructions, and fine-tuning on EEG data further improves fidelity and generalization compared to training from scratch. We systematically explore compression-quality trade-offs by varying residual codebook depth, codebook (vocabulary) size, and input sampling rate. To capture spatial dependencies across electrodes, we propose DAC-MC, a multi-channel extension with attention-based cross-channel aggregation and channel-specific decoding, while retaining the audio-pretrained initialization. Evaluations on the TUH Abnormal and Epilepsy datasets show that the adapted codecs preserve clinically relevant information, as reflected in spectrogram-based reconstruction loss and downstream classification accuracy.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Foundation Models for the Brain and Body (BrainBodyFM@NeurIPS)</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

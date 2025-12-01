@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous labeling of surgical resection margins using a foundation model - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a Virtual Inking Network (VIN), a deep learning model designed for autonomous and standardized localization of surgical resection margins ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Autonomous labeling of surgical resection margins using a foundation model</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.22131v1" target="_blank">2511.22131v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-27
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Xilin Yang, Musa Aydin, Yuhong Lu, Sahan Yoruc Selcuk, Bijie Bai, Yijie Zhang, Andrew Birkeland, Katjana Ehrlich, Julien Bec, Laura Marcu, Nir Pillar, Aydogan Ozcan
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.LG, physics.med-ph
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.22131v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.22131v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a Virtual Inking Network (VIN), a deep learning model designed for autonomous and standardized localization of surgical resection margins on whole-slide images (WSIs). VIN utilizes a frozen foundation model for feature extraction and a multilayer perceptron for classifying cautery-consistent features, demonstrating ~73.3% region-level accuracy on human tonsil tissue. This method offers a reproducible, ink-free alternative to traditional physical inking, enhancing digital pathology workflows.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate and consistent assessment of surgical resection margins is paramount in oncology and surgical pathology, directly influencing patient prognosis and recurrence rates. This technology offers a standardized, objective, and potentially more precise method for margin evaluation, which can significantly improve diagnostic reliability and guide subsequent patient management.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research describes an AI system (Virtual Inking Network - VIN) that utilizes a foundation model to autonomously identify and label surgical resection margins on whole-slide images. This application aims to standardize margin assessment in digital pathology, reduce the variability and artifacts associated with traditional physical inking, and provide a reproducible method for measuring margin distances, which is crucial for cancer diagnosis, staging, and treatment planning.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Problem Addressed**: Current surgical margin assessment using physical inking is variable and often obscured by cautery artifacts on histological sections, impacting patient outcomes.</li>
+                    
+                    <li>**Proposed Solution**: The Virtual Inking Network (VIN) autonomously localizes the surgical cut surface on whole-slide images, aiming to standardize margin review and reduce reliance on physical inks.</li>
+                    
+                    <li>**Technical Architecture**: VIN employs a frozen foundation model as a feature extractor, followed by a compact two-layer multilayer perceptron (MLP) trained for patch-level classification of cautery-consistent histomorphological features.</li>
+                    
+                    <li>**Dataset**: Training and validation used 120 H&E-stained slides from 12 human tonsil tissue blocks (~2 TB raw data), with expert boundary annotations provided by a board-certified pathologist.</li>
+                    
+                    <li>**Qualitative Results**: In blind testing on 20 unseen slides, VIN produced coherent margin overlays that qualitatively aligned well with expert annotations across serial sections.</li>
+                    
+                    <li>**Quantitative Results**: The system achieved a region-level accuracy of approximately 73.3% across the test set, with errors primarily confined to limited areas that did not disrupt the continuity of the overall margin map.</li>
+                    
+                    <li>**Clinical Implication**: VIN demonstrates the capability to provide reproducible, ink-free margin delineation, suitable for integration into routine digital pathology workflows and facilitating downstream objective measurement of margin distances.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The Virtual Inking Network (VIN) is a deep learning architecture that combines a pre-trained (frozen) foundation model for robust feature extraction from whole-slide image patches with a compact two-layer multilayer perceptron (MLP). This MLP is specifically trained for binary patch-level classification, identifying histological features indicative of cautery, which demarcate the surgical cut surface. The model was trained on a large dataset of pathologist-annotated hematoxylin and eosin (H&E) stained whole-slide images of human tonsil tissue.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>VIN successfully learned to identify cautery-related histomorphology, generating coherent and qualitatively accurate margin overlays on unseen test slides that aligned with expert annotations. Quantitatively, it achieved a region-level accuracy of ~73.3%, with errors largely localized and not compromising the integrity of the overall margin map, indicating its potential for automated, ink-free surgical margin delineation.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology holds significant clinical promise by standardizing and improving the reproducibility of surgical margin assessment, a critical factor in cancer surgery. It can eliminate the variability and potential artifacts associated with physical inking, streamline digital pathology workflows, and enable more precise, automated measurements of margin distances, which are crucial for prognostic evaluation and guiding adjuvant therapies.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract indicates a region-level accuracy of ~73.3%, suggesting room for improvement, although errors were described as localized and not disruptive to overall margin continuity. The study was conducted on a single tissue type (human tonsil), implying a need for further validation across a wider range of tissue types and pathologies to confirm generalizability.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly stated, the abstract implicitly suggests future work involving validation across diverse tissue types and different cautery patterns, as well as the full integration of VIN into routine digital pathology workflows to facilitate automated, objective margin distance measurements for various surgical specimens.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Surgical Oncology</span>
+                    
+                    <span class="tag">Anatomic Pathology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Surgical margins</span>
+                    
+                    <span class="tag tag-keyword">Digital pathology</span>
+                    
+                    <span class="tag tag-keyword">Whole-slide imaging (WSI)</span>
+                    
+                    <span class="tag tag-keyword">Foundation model</span>
+                    
+                    <span class="tag tag-keyword">Deep learning</span>
+                    
+                    <span class="tag tag-keyword">Cautery artifact</span>
+                    
+                    <span class="tag tag-keyword">Histopathology</span>
+                    
+                    <span class="tag tag-keyword">Image analysis</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Assessing resection margins is central to pathological specimen evaluation and has profound implications for patient outcomes. Current practice employs physical inking, which is applied variably, and cautery artifacts can obscure the true margin on histological sections. We present a virtual inking network (VIN) that autonomously localizes the surgical cut surface on whole-slide images, reducing reliance on inks and standardizing margin-focused review. VIN uses a frozen foundation model as the feature extractor and a compact two-layer multilayer perceptron trained for patch-level classification of cautery-consistent features. The dataset comprised 120 hematoxylin and eosin (H&E) stained slides from 12 human tonsil tissue blocks, resulting in ~2 TB of uncompressed raw image data, where a board-certified pathologist provided boundary annotations. In blind testing with 20 slides from previously unseen blocks, VIN produced coherent margin overlays that qualitatively aligned with expert annotations across serial sections. Quantitatively, region-level accuracy was ~73.3% across the test set, with errors largely confined to limited areas that did not disrupt continuity of the whole-slide margin map. These results indicate that VIN captures cautery-related histomorphology and can provide a reproducible, ink-free margin delineation suitable for integration into routine digital pathology workflows and for downstream measurement of margin distances.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>20 Pages, 5 Figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

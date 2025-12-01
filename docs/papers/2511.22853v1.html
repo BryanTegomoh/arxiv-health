@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARFVAE: Efficient One-Step Generative Time Series Forecasting via TARFLOW based VAE - Health AI Hub</title>
+    <meta name="description" content="This paper introduces TARFVAE, a novel generative framework for efficient one-step time series forecasting, combining a Transformer-based autoregressive flow (T">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>TARFVAE: Efficient One-Step Generative Time Series Forecasting via TARFLOW based VAE</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.22853v1" target="_blank">2511.22853v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-28
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Jiawen Wei, Lan Jiang, Pengbo Wei, Ziwen Ye, Teng Song, Chen Chen, Guangrui Ma
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.75 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.22853v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.22853v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces TARFVAE, a novel generative framework for efficient one-step time series forecasting, combining a Transformer-based autoregressive flow (TARFLOW) with a Variational Autoencoder (VAE). TARFVAE overcomes the limitations of existing generative models, which often suffer from laborious recurrent or denoising steps, especially in long-term forecasting, by enabling fast, full-horizon predictions directly from a learned latent space. It achieves superior performance over state-of-the-art deterministic and generative models on benchmark datasets while maintaining efficient prediction speed.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate and efficient probabilistic time series forecasting is critical in healthcare for patient monitoring, disease progression prediction, resource management, and treatment efficacy assessment. TARFVAE's ability to provide fast, long-term, and probabilistic forecasts offers a powerful tool for enhanced clinical decision-making and personalized medicine, especially in scenarios requiring real-time insights with uncertainty estimates.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The TARFVAE model, being an efficient generative time series forecasting method, could be applied in healthcare to predict future health states, disease trajectories, patient outcomes, or operational demands within healthcare systems. For instance, it could forecast the spread of infectious diseases, predict individual patient's physiological parameters (like blood pressure or glucose levels) over time, or anticipate hospital admissions and resource needs.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the inefficiency of existing generative time series models, which typically rely on recurrent operations or repeated denoising steps, making long-term forecasting computationally expensive.</li>
+                    
+                    <li>Introduces TARFVAE, a hybrid model combining a Variational Autoencoder (VAE) with a Transformer-based autoregressive flow (TARFLOW) for efficient one-step generative forecasting.</li>
+                    
+                    <li>TARFLOW is integrated to enhance VAE's posterior estimation by breaking the restrictive Gaussian assumption, leading to a more informative and expressive latent space for predictions.</li>
+                    
+                    <li>Achieves rapid generation by utilizing only the forward process of TARFLOW, avoiding complex autoregressive inverse operations, and directly generating full-horizon forecasts from the prior latent space via the VAE decoder.</li>
+                    
+                    <li>Demonstrates superior performance against both state-of-the-art deterministic and generative models across various forecast horizons on benchmark datasets, utilizing only simple MLP modules for representation extraction.</li>
+                    
+                    <li>Emphasizes the rethinking that overly complex architectures for time series representation might not be necessary, showcasing the effectiveness of simpler components augmented with advanced flow techniques.</li>
+                    
+                    <li>Provides probabilistic predictions, a key advantage of generative models, which is crucial for applications requiring uncertainty quantification.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>TARFVAE integrates a Transformer-based autoregressive flow (TARFLOW) module into a Variational Autoencoder (VAE). The TARFLOW component is used to enhance the VAE's posterior estimation by relaxing the typical Gaussian assumption, thus creating a more expressive latent space. For prediction, the model samples from this learned prior latent space, and the VAE decoder then directly generates a full-horizon forecast in a single step. The methodology leverages only the forward pass of TARFLOW to ensure computational efficiency, and notably employs simple MLP modules for feature extraction, challenging the need for more complex time series specific architectures.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>TARFVAE achieves superior forecasting performance compared to existing state-of-the-art deterministic and generative models across various forecast horizons on benchmark datasets. It demonstrates significant efficiency gains, enabling fast, one-step, full-horizon predictions. The paper highlights that sophisticated architectural designs for time series representations might not be as critical as initially thought, as TARFVAE achieves high performance with simple MLP modules combined with an effective flow-based VAE enhancement.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The ability of TARFVAE to deliver efficient, accurate, and probabilistic long-term forecasts has significant clinical impact. It can provide clinicians with faster, more reliable insights into patient trajectories (e.g., predicting deterioration, treatment response over extended periods), improving proactive intervention and personalized care. For instance, in ICU settings, it could forecast vital sign trends with uncertainty bounds hours or days in advance, aiding in risk assessment. In public health, it could rapidly model epidemic trajectories with probabilistic outcomes, informing resource allocation and policy decisions. The one-step generation is crucial for real-time decision support systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily focuses on the advantages of TARFVAE and the limitations of *existing* generative models. It does not explicitly detail specific limitations or potential drawbacks of the TARFVAE model itself within the provided text.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions for TARFVAE. However, potential future work could include exploring its robustness to noisy or incomplete real-world medical data, extending its application to multivariate time series with complex interdependencies, or integrating domain-specific knowledge to further enhance its predictive capabilities in specialized medical contexts.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Patient Monitoring (e.g., vital signs, continuous glucose levels)</span>
+                    
+                    <span class="tag">Disease Progression Modeling (e.g., chronic conditions, neurological disorders)</span>
+                    
+                    <span class="tag">Epidemiology (e.g., infectious disease spread forecasting)</span>
+                    
+                    <span class="tag">Clinical Trials (e.g., predicting drug response and adverse events)</span>
+                    
+                    <span class="tag">Healthcare Resource Management (e.g., hospital bed occupancy, staffing needs)</span>
+                    
+                    <span class="tag">Biomarker Prediction and Analysis</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Generative Time Series Forecasting</span>
+                    
+                    <span class="tag tag-keyword">Variational Autoencoder (VAE)</span>
+                    
+                    <span class="tag tag-keyword">TARFLOW</span>
+                    
+                    <span class="tag tag-keyword">Probabilistic Forecasting</span>
+                    
+                    <span class="tag tag-keyword">One-Step Generation</span>
+                    
+                    <span class="tag tag-keyword">Long-Term Forecasting</span>
+                    
+                    <span class="tag tag-keyword">Efficient Prediction</span>
+                    
+                    <span class="tag tag-keyword">Uncertainty Quantification</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Time series data is ubiquitous, with forecasting applications spanning from finance to healthcare. Beyond popular deterministic methods, generative models are gaining attention due to advancements in areas like image synthesis and video generation, as well as their inherent ability to provide probabilistic predictions. However, existing generative approaches mostly involve recurrent generative operations or repeated denoising steps, making the prediction laborious, particularly for long-term forecasting. Most of them only conduct experiments for relatively short-term forecasting, with limited comparison to deterministic methods in long-term forecasting, leaving their practical advantages unclear. This paper presents TARFVAE, a novel generative framework that combines the Transformer-based autoregressive flow (TARFLOW) and variational autoencoder (VAE) for efficient one-step generative time series forecasting. Inspired by the rethinking that complex architectures for extracting time series representations might not be necessary, we add a flow module, TARFLOW, to VAE to promote spontaneous learning of latent variables that benefit predictions. TARFLOW enhances VAE's posterior estimation by breaking the Gaussian assumption, thereby enabling a more informative latent space. TARFVAE uses only the forward process of TARFLOW, avoiding autoregressive inverse operations and thus ensuring fast generation. During generation, it samples from the prior latent space and directly generates full-horizon forecasts via the VAE decoder. With simple MLP modules, TARFVAE achieves superior performance over state-of-the-art deterministic and generative models across different forecast horizons on benchmark datasets while maintaining efficient prediction speed, demonstrating its effectiveness as an efficient and powerful solution for generative time series forecasting.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluating the Clinical Impact of Generative Inpainting on Bone Age Estimation - Health AI Hub</title>
+    <meta name="description" content="This paper investigated the clinical reliability of generative inpainting for removing non-anatomical artifacts from pediatric hand radiographs, evaluating its ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Evaluating the Clinical Impact of Generative Inpainting on Bone Age Estimation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.23066v1" target="_blank">2511.23066v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-28
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Felipe Akio Matsuoka, Eduardo Moreno J. M. Farina, Augusto Sarquis Serpa, Soraya Monteiro, Rodrigo Ragazzini, Nitamar Abdala, Marcelo Straus Takahashi, Felipe Campos Kitamura
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.23066v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.23066v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper investigated the clinical reliability of generative inpainting for removing non-anatomical artifacts from pediatric hand radiographs, evaluating its impact on bone age estimation and gender classification using deep learning models. Contrary to expectations, inpainting significantly degraded model performance, increasing bone age MAE from 6.26 to 30.11 months and decreasing gender AUC from 0.955 to 0.704. These findings highlight that visually realistic edits can obscure subtle but clinically relevant features and introduce latent bias, underscoring the need for rigorous, task-specific validation before integrating such generative tools into clinical AI workflows.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for understanding the safe and effective integration of generative AI in medical imaging. It demonstrates that seemingly beneficial image preprocessing steps, like artifact removal via inpainting, can inadvertently compromise the accuracy of downstream diagnostic AI models, posing significant risks to patient care if not thoroughly validated.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research evaluates the utility and safety of generative AI (specifically image inpainting) as a pre-processing step for medical images within clinical AI workflows. The generative AI is intended to remove non-anatomical artifacts from medical radiographs before these images are used by downstream deep learning models for diagnostic tasks like bone age estimation and gender classification. The paper assesses the impact of this generative AI on the accuracy and reliability of these medical AI applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The study aimed to evaluate the clinical reliability and impact of generative model-based inpainting for artifact removal in pediatric hand radiographs on downstream AI performance.</li>
+                    
+                    <li>Researchers utilized the RSNA Bone Age Challenge dataset, generating 600 inpainted versions from 200 original radiographs using gpt-image-1 with natural language prompts targeting non-anatomical artifacts.</li>
+                    
+                    <li>Downstream performance was assessed using deep learning ensembles for bone age estimation and gender classification, with Mean Absolute Error (MAE) and Area Under the ROC Curve (AUC) as primary metrics.</li>
+                    
+                    <li>Generative inpainting markedly degraded bone age estimation performance, increasing the MAE from 6.26 months in original images to 30.11 months in inpainted versions.</li>
+                    
+                    <li>Gender classification accuracy also significantly declined, with AUC decreasing from 0.955 for original images to 0.704 for inpainted images.</li>
+                    
+                    <li>Analysis of pixel intensity distributions revealed structural modifications and inconsistencies in the inpainted images, indicating alterations beyond simple visual realism.</li>
+                    
+                    <li>The study concludes that visually realistic inpainting, even when confined to non-diagnostic regions, can obscure subtle but clinically relevant features and introduce latent bias, necessitating rigorous, task-specific validation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study employed the RSNA Bone Age Challenge dataset, selecting 200 original pediatric hand radiographs. Generative inpainting was performed using gpt-image-1 to create 600 inpainted versions, targeting non-anatomical artifacts through natural language prompts. Downstream deep learning ensembles were then used for bone age estimation and gender classification. Performance was evaluated using Mean Absolute Error (MAE) for bone age, Area Under the ROC Curve (AUC) for gender, and pixel intensity distributions to detect structural alterations.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Generative inpainting using gpt-image-1 significantly degraded deep learning model performance for bone age estimation, with MAE increasing from 6.26 to 30.11 months. Gender classification AUC also markedly decreased from 0.955 to 0.704. Inpainted images exhibited pixel-intensity shifts and inconsistencies, indicating underlying structural modifications. These results suggest that visually realistic inpainting can obscure subtle but clinically relevant features and introduce latent bias, even when edits are confined to non-diagnostic regions.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This study provides a critical cautionary note for the medical AI community, emphasizing that generative inpainting tools, despite their visual appeal for artifact removal, can severely compromise the diagnostic accuracy of downstream AI models. It highlights the potential for misdiagnosis or suboptimal clinical decision-making if such tools are integrated into clinical workflows without rigorous, task-specific validation, even for seemingly benign preprocessing tasks.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily identifies the inherent limitations of current generative inpainting models for medical applications, specifically their tendency to introduce latent bias and obscure clinically relevant features, even when confined to non-diagnostic regions. It does not explicitly mention limitations of the study design itself but rather demonstrates the problematic nature of the technology in this context.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The findings underscore an urgent need for rigorous, task-specific validation of generative AI tools before their integration into clinical AI workflows. Future research should focus on developing generative models that can effectively remove artifacts without introducing structural modifications or latent bias, ensuring the preservation of subtle diagnostic features critical for medical AI performance.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Pediatrics</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Artificial Intelligence in Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Generative AI</span>
+                    
+                    <span class="tag tag-keyword">Inpainting</span>
+                    
+                    <span class="tag tag-keyword">Bone Age Estimation</span>
+                    
+                    <span class="tag tag-keyword">Pediatric Radiography</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Artifact Removal</span>
+                    
+                    <span class="tag tag-keyword">Clinical AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Generative foundation models can remove visual artifacts through realistic image inpainting, but their impact on medical AI performance remains uncertain. Pediatric hand radiographs often contain non-anatomical markers, and it is unclear whether inpainting these regions preserves features needed for bone age and gender prediction. To evaluate the clinical reliability of generative model-based inpainting for artifact removal, we used the RSNA Bone Age Challenge dataset, selecting 200 original radiographs and generating 600 inpainted versions with gpt-image-1 using natural language prompts to target non-anatomical artifacts. Downstream performance was assessed with deep learning ensembles for bone age estimation and gender classification, using mean absolute error (MAE) and area under the ROC curve (AUC) as metrics, and pixel intensity distributions to detect structural alterations. Inpainting markedly degraded model performance: bone age MAE increased from 6.26 to 30.11 months, and gender classification AUC decreased from 0.955 to 0.704. Inpainted images displayed pixel-intensity shifts and inconsistencies, indicating structural modifications not corrected by simple calibration. These findings show that, although visually realistic, foundation model-based inpainting can obscure subtle but clinically relevant features and introduce latent bias even when edits are confined to non-diagnostic regions, underscoring the need for rigorous, task-specific validation before integrating such generative tools into clinical AI workflows.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>8 pages, 4 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

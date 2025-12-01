@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure is Supervision: Multiview Masked Autoencoders for Radiology - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Multiview Masked Autoencoder (MVMAE), a self-supervised framework that leverages the natural multi-view organization of radiology studies ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Structure is Supervision: Multiview Masked Autoencoders for Radiology</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2511.22294v1" target="_blank">2511.22294v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-27
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Sonia Laguna, Andrea Agostini, Alain Ryser, Samuel Ruiperez-Campillo, Irene Cannistraci, Moritz Vandenhirtz, Stephan Mandt, Nicolas Deperrois, Farhad Nooralahzadeh, Michael Krauthammer, Thomas M. Sutter, Julia E. Vogt
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2511.22294v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2511.22294v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Multiview Masked Autoencoder (MVMAE), a self-supervised framework that leverages the natural multi-view organization of radiology studies to learn robust, view-invariant representations. MVMAE-V2T extends this by incorporating radiology reports as an auxiliary text-based signal for semantic grounding, demonstrating superior performance in disease classification on large public datasets, particularly in low-label regimes.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine as it offers a robust method for developing accurate and generalizable AI systems for medical image analysis, potentially improving diagnostic support and patient care. By efficiently leveraging inherent clinical data structures and existing reports, it significantly reduces the need for expensive and time-consuming manual annotations.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research develops an AI framework (Multiview Masked Autoencoder) designed to improve the analysis and interpretation of medical images, specifically radiology scans (e.g., Chest X-rays), for downstream disease classification tasks. This directly contributes to medical AI by creating more robust and accurate models for aiding diagnosis and clinical decision-making.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**MVMAE Framework**: A novel self-supervised learning (SSL) approach leveraging the intrinsic multi-view structure of radiology studies (e.g., different projections of an X-ray) as a self-supervisory signal.</li>
+                    
+                    <li>**Cross-View Alignment**: MVMAE combines masked image reconstruction with a cross-view alignment objective, transforming redundant information across different image projections into a powerful signal for learning view-invariant and disease-relevant representations.</li>
+                    
+                    <li>**MVMAE-V2T Extension**: This variant integrates radiology reports as an auxiliary text-based learning signal during pretraining to enhance the semantic grounding of visual features, while maintaining a fully vision-based inference during deployment.</li>
+                    
+                    <li>**Superior Performance**: MVMAE consistently outperforms traditional supervised learning models and existing vision-language baselines on downstream disease classification tasks across three large-scale chest X-ray datasets (MIMIC-CXR, CheXpert, PadChest).</li>
+                    
+                    <li>**Efficacy in Low-Label Regimes**: MVMAE-V2T provides additional performance gains, particularly beneficial in low-label scenarios, highlighting its potential to reduce the dependency on extensive expert annotations for medical AI.</li>
+                    
+                    <li>**Foundation for Medical AI**: The study establishes structural (multi-view consistency) and textual (radiology reports) supervision as complementary and crucial pathways toward developing scalable, clinically grounded medical foundation models.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core method involves Multiview Masked Autoencoder (MVMAE), a self-supervised framework. MVMAE processes multiple image views from a radiology study (e.g., AP/PA and lateral chest X-rays) by applying masking to portions of the images. It then learns to reconstruct the masked regions while simultaneously enforcing alignment between the representations learned from different views. This cross-view alignment serves as a self-supervisory signal, promoting the learning of view-invariant features. The MVMAE-V2T extension incorporates radiology reports as an auxiliary text-based learning signal during pretraining to enrich the semantic understanding of the visual features. Crucially, text is used only for pretraining, ensuring that downstream inference remains purely vision-based.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>MVMAE consistently achieved superior performance compared to both fully supervised baselines and existing vision-language models in downstream disease classification across MIMIC-CXR, CheXpert, and PadChest datasets. MVMAE-V2T further enhanced these results, demonstrating significant gains, especially in scenarios with limited labeled data (low-label regimes). This indicates that integrating structural multi-view information and textual reports leads to more robust and semantically grounded representations.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This work has a substantial potential clinical impact by enabling the creation of more accurate, robust, and generalizable AI models for radiology diagnostics. By efficiently utilizing readily available multi-view data and radiology reports, it can drastically reduce the reliance on costly manual annotations, accelerating the development and deployment of AI tools in clinical settings. The improved performance, particularly in data-scarce environments, suggests these models could be more effectively applied to rare diseases or settings with limited resources, ultimately enhancing diagnostic consistency and patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the proposed methods or their evaluation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper implies future research will focus on leveraging these complementary structural and textual supervision strategies to build more scalable and clinically grounded medical foundation models. This suggests expanding the approach to broader datasets, diverse imaging modalities, and more complex diagnostic tasks to create general-purpose AI models for medical imaging.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Cardiothoracic Imaging</span>
+                    
+                    <span class="tag">Medical Machine Learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">self-supervised learning</span>
+                    
+                    <span class="tag tag-keyword">multiview learning</span>
+                    
+                    <span class="tag tag-keyword">masked autoencoders</span>
+                    
+                    <span class="tag tag-keyword">radiology</span>
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">chest X-ray</span>
+                    
+                    <span class="tag tag-keyword">foundation models</span>
+                    
+                    <span class="tag tag-keyword">disease classification</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Building robust medical machine learning systems requires pretraining strategies that exploit the intrinsic structure present in clinical data. We introduce Multiview Masked Autoencoder (MVMAE), a self-supervised framework that leverages the natural multi-view organization of radiology studies to learn view-invariant and disease-relevant representations. MVMAE combines masked image reconstruction with cross-view alignment, transforming clinical redundancy across projections into a powerful self-supervisory signal. We further extend this approach with MVMAE-V2T, which incorporates radiology reports as an auxiliary text-based learning signal to enhance semantic grounding while preserving fully vision-based inference. Evaluated on a downstream disease classification task on three large-scale public datasets, MIMIC-CXR, CheXpert, and PadChest, MVMAE consistently outperforms supervised and vision-language baselines. Furthermore, MVMAE-V2T provides additional gains, particularly in low-label regimes where structured textual supervision is most beneficial. Together, these results establish the importance of structural and textual supervision as complementary paths toward scalable, clinically grounded medical foundation models.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
