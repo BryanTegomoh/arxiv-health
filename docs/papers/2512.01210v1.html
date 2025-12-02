@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Graph Augmented Large Language Models for Next-Visit Disease Prediction - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel knowledge graph (KG)-guided Chain-of-Thought (CoT) framework that augments Large Language Models (LLMs) to generate clinically gro">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Knowledge Graph Augmented Large Language Models for Next-Visit Disease Prediction</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.01210v1" target="_blank">2512.01210v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-01
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Ruiyu Wang, Tuan Vinh, Ran Xu, Yuyin Zhou, Jiaying Lu, Carl Yang, Francisco Pasquel
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.01210v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.01210v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel knowledge graph (KG)-guided Chain-of-Thought (CoT) framework that augments Large Language Models (LLMs) to generate clinically grounded and temporally consistent reasoning for next-visit disease prediction using Electronic Health Records (EHRs). By integrating PrimeKG with lightweight LLMs, the models not only achieve superior predictive performance compared to classical baselines but also provide interpretable explanations preferred by clinicians, enhancing the utility of AI in patient-level decision making.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for medicine as it bridges the gap between powerful predictive AI models and their clinical applicability by providing transparent, clinically understandable reasoning, fostering trust and enabling more informed, patient-level decision making.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application described is the use of Knowledge Graph (KG) augmented Large Language Models (LLMs) to predict a patient's future disease diagnosis (next-visit disease prediction) based on their past electronic health records. Crucially, it also aims to provide clinically grounded, interpretable explanations for these predictions, enhancing clinical decision support for healthcare providers and ultimately benefiting patient care.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The core problem addressed is the lack of clinically grounded, temporally consistent, and interpretable explanations from existing EHR-based clinical prediction models.</li>
+                    
+                    <li>A Knowledge Graph (PrimeKG)-guided Chain-of-Thought (CoT) framework is proposed, where ICD-9 codes are mapped to PrimeKG to extract disease-relevant nodes and multi-hop reasoning paths.</li>
+                    
+                    <li>These KG elements serve as scaffolds for CoT generation, with only explanations matching observed outcomes being retained for supervision.</li>
+                    
+                    <li>Lightweight LLMs (LLaMA-3.1-Instruct-8B and Gemma-7B) are fine-tuned on this generated supervision corpus for disease prediction.</li>
+                    
+                    <li>Evaluated on limited training cohorts (400 and 1000 cases) from MIMIC-III, KG-guided models outperformed classical baselines, achieving AUROC values of 0.66-0.70 and macro-AUPR of 0.40-0.47 across ten PrimeKG-mapped diseases.</li>
+                    
+                    <li>The models demonstrated strong zero-shot transferability to the CRADLE cohort, significantly improving accuracy from approximately 0.40-0.51 to 0.72-0.77.</li>
+                    
+                    <li>A blinded clinician evaluation confirmed a consistent preference for the KG-guided CoT explanations due to their clarity, clinical relevance, and correctness.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves mapping ICD-9 codes from EHRs to PrimeKG to identify disease-relevant nodes and multi-hop reasoning paths. These KG-derived paths are used to scaffold Chain-of-Thought (CoT) explanations for next-visit disease prediction. Only CoT explanations whose conclusions align with actual observed outcomes are selected to form a supervision corpus. Lightweight Large Language Models (LLaMA-3.1-Instruct-8B and Gemma-7B) are then fine-tuned on this corpus. Model performance is evaluated using AUROC and macro-AUPR on MIMIC-III data and tested for zero-shot transferability to the CRADLE cohort. Clinical utility of explanations is assessed via a blinded clinician evaluation.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The KG-guided LLM framework achieved superior predictive performance over classical baselines (AUROC 0.66-0.70, macro-AUPR 0.40-0.47) even with limited training data. It demonstrated robust zero-shot transferability to an external cohort (CRADLE), boosting prediction accuracy from 0.40-0.51 to 0.72-0.77. Critically, clinicians consistently preferred the KG-guided CoT explanations for their clarity, relevance, and clinical correctness, indicating high interpretability and trustworthiness.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This approach offers a significant advancement for clinical decision support systems by providing not just predictions, but also clinically interpretable, temporally consistent reasoning. This enhanced transparency can increase clinician trust in AI tools, facilitate better patient education, and support more precise, explainable patient management strategies, ultimately improving clinical outcomes and reducing medical errors.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The evaluation was conducted with relatively limited training cohorts (400 and 1000 cases) from MIMIC-III, although the models demonstrated strong performance despite this. The generalizability beyond the specific diseases and KGs used may require further validation.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract, but potential future directions could include scaling up to larger datasets, expanding the range of diseases and clinical events predicted, integrating real-time EHR data, and exploring the impact of these interpretable models on actual clinical workflows and patient outcomes.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Prediction</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Diagnostic Support</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Knowledge Graph</span>
+                    
+                    <span class="tag tag-keyword">Large Language Models</span>
+                    
+                    <span class="tag tag-keyword">Disease Prediction</span>
+                    
+                    <span class="tag tag-keyword">Chain-of-Thought</span>
+                    
+                    <span class="tag tag-keyword">Explainable AI</span>
+                    
+                    <span class="tag tag-keyword">Electronic Health Records</span>
+                    
+                    <span class="tag tag-keyword">Clinical Decision Support</span>
+                    
+                    <span class="tag tag-keyword">MIMIC-III</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Electronic health records (EHRs) support powerful clinical prediction models, but existing methods typically provide coarse, post hoc explanations that offer limited value for patient-level decision making. We introduce a knowledge graph (KG)-guided chain-of-thought (CoT) framework that generates clinically grounded and temporally consistent reasoning for visit-level disease prediction in MIMIC-III. ICD-9 codes are mapped to PrimeKG, from which disease-relevant nodes and multi-hop reasoning paths are extracted and used as scaffolds for CoT generation; only explanations whose conclusions match observed outcomes are retained. Lightweight LLaMA-3.1-Instruct-8B and Gemma-7B models are then fine-tuned on this supervision corpus. Across ten PrimeKG-mapped diseases and limited training cohorts (400 and 1000 cases), KG-guided models outperform strong classical baselines, achieving AUROC values of 0.66 to 0.70 and macro-AUPR values of 0.40 to 0.47. The models also transfer zero-shot to the CRADLE cohort, improving accuracy from approximately 0.40 to 0.51 up to 0.72 to 0.77. A blinded clinician evaluation shows consistent preference for KG-guided CoT explanations in clarity, relevance, and clinical correctness.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When Safety Blocks Sense: Measuring Semantic Confusion in LLM Refusals - Health AI Hub</title>
+    <meta name="description" content="This paper introduces the concept of "semantic confusion" to measure local inconsistency in safety-aligned LLM refusals, where models accept one phrasing of an ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>When Safety Blocks Sense: Measuring Semantic Confusion in LLM Refusals</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.01037v1" target="_blank">2512.01037v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-30
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Riad Ahmed Anonto, Md Labid Al Nahiyan, Md Tanvir Hassan, Ch. Md. Rakin Haider
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.75 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.01037v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.01037v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces the concept of "semantic confusion" to measure local inconsistency in safety-aligned LLM refusals, where models accept one phrasing of an intent but reject close paraphrases. It proposes a framework with novel token-level metrics and a 10k-prompt corpus, ParaGuard, to reveal hidden structures of inconsistency that global false-rejection rates often mask, offering a practical signal for developers to enhance LLM safety alignments.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>In healthcare, where LLMs are increasingly deployed for sensitive tasks like patient education, clinical decision support, or drug information, inconsistent refusals based on minor phrasing differences can hinder critical information access, misinform users, or erode trust in AI-driven health tools, directly impacting patient care and clinical workflows. Ensuring that an LLM's safety mechanisms are consistently applied and do not arbitrarily block medically sound queries is paramount for reliable and ethical AI adoption in medicine.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research provides a critical methodology for evaluating and improving the safety, consistency, and trustworthiness of Large Language Models intended for use in medical and healthcare applications. By measuring 'semantic confusion' and enabling 'confusion-aware auditing', it helps developers ensure that medical AI systems based on LLMs provide reliable and sensible responses, avoid inconsistent refusals to patient queries or clinical questions, and maintain appropriate safety boundaries without unnecessarily hindering beneficial interactions. This is essential for deploying LLMs in sensitive areas like clinical assistance, patient communication, and medical research where reliability is paramount.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Identifies "semantic confusion" as a novel failure mode where LLMs inconsistently refuse prompts that are close paraphrases but vary in surface form, despite fixed intent.</li>
+                    
+                    <li>Introduces a framework and three model-agnostic, token-level metrics (Confusion Index, Confusion Rate, Confusion Depth) to quantify semantic confusion, leveraging token embeddings, next-token probabilities, and perplexity.</li>
+                    
+                    <li>Develops ParaGuard, a 10k-prompt corpus consisting of controlled paraphrase clusters designed to evaluate consistency by maintaining intent while varying surface expression.</li>
+                    
+                    <li>Experiments reveal that global false-rejection rates obscure critical local inconsistency structures, showing globally unstable boundaries in some settings and localized pockets in others.</li>
+                    
+                    <li>Demonstrates that a stricter refusal policy does not necessarily correlate with an increase in semantic inconsistency, challenging common assumptions about safety trade-offs.</li>
+                    
+                    <li>Proposes confusion-aware auditing as a method to differentiate how often an LLM refuses from how logically and consistently it refuses, providing actionable insights for safety alignment refinement.</li>
+                    
+                    <li>Offers developers a practical signal to reduce unwarranted false refusals while meticulously preserving the intended safety boundaries of LLMs.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study defines "semantic confusion" as a failure mode and develops a framework to measure it. This involves creating ParaGuard, a 10k-prompt corpus of controlled paraphrase clusters with fixed intent but varied surface forms. Three token-level, model-agnostic metrics (Confusion Index, Confusion Rate, Confusion Depth) are proposed, which compare each refusal to its nearest accepted neighbors using token embeddings, next-token probabilities, and perplexity signals. These metrics were applied in experiments across diverse LLM families and deployment guards.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The research found that relying solely on global false-rejection rates obscures significant local inconsistencies in LLM safety refusals. The proposed metrics revealed settings with globally unstable refusal boundaries and others with localized pockets of inconsistency. Notably, stricter refusal policies were not always correlated with increased semantic inconsistency. The study also demonstrated that confusion-aware auditing provides a practical and actionable signal to separate the frequency of refusals from their logical consistency.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research can lead to the development of more reliable and trustworthy AI tools for healthcare by ensuring consistent and sensible responses to medically relevant queries, regardless of subtle phrasing variations. It can prevent situations where patients or clinicians receive inconsistent safety warnings or blocked access to crucial information, thereby improving user experience, enhancing safety adherence, and fostering greater trust in AI-powered clinical applications. Developers can use these metrics to fine-tune LLMs, balancing safety with legitimate information access in sensitive medical contexts.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly list specific limitations of the study.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions, but it implies the practical application of these metrics to reduce false refusals while preserving safety in LLM development.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Patient Education</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Pharmacovigilance</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                    <span class="tag">Mental Health Support</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">LLM safety</span>
+                    
+                    <span class="tag tag-keyword">semantic confusion</span>
+                    
+                    <span class="tag tag-keyword">paraphrase consistency</span>
+                    
+                    <span class="tag tag-keyword">false rejection</span>
+                    
+                    <span class="tag tag-keyword">AI in healthcare</span>
+                    
+                    <span class="tag tag-keyword">model auditing</span>
+                    
+                    <span class="tag tag-keyword">natural language processing</span>
+                    
+                    <span class="tag tag-keyword">refusal rates</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Safety-aligned language models often refuse prompts that are actually harmless. Current evaluations mostly report global rates such as false rejection or compliance. These scores treat each prompt alone and miss local inconsistency, where a model accepts one phrasing of an intent but rejects a close paraphrase. This gap limits diagnosis and tuning. We introduce "semantic confusion," a failure mode that captures such local inconsistency, and a framework to measure it. We build ParaGuard, a 10k-prompt corpus of controlled paraphrase clusters that hold intent fixed while varying surface form. We then propose three model-agnostic metrics at the token level: Confusion Index, Confusion Rate, and Confusion Depth. These metrics compare each refusal to its nearest accepted neighbors and use token embeddings, next-token probabilities, and perplexity signals. Experiments across diverse model families and deployment guards show that global false-rejection rate hides critical structure. Our metrics reveal globally unstable boundaries in some settings, localized pockets of inconsistency in others, and cases where stricter refusal does not increase inconsistency. We also show how confusion-aware auditing separates how often a system refuses from how sensibly it refuses. This gives developers a practical signal to reduce false refusals while preserving safety.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diffusion Model in Latent Space for Medical Image Segmentation Task - Health AI Hub</title>
+    <meta name="description" content="This paper introduces MedSegLatDiff, a novel diffusion-based framework that addresses the computational heaviness of generative models for medical image segment">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Diffusion Model in Latent Space for Medical Image Segmentation Task</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.01292v1" target="_blank">2512.01292v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-01
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Huynh Trinh Ngoc, Toan Nguyen Hai, Ba Luong Son, Long Tran Quoc
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.01292v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.01292v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces MedSegLatDiff, a novel diffusion-based framework that addresses the computational heaviness of generative models for medical image segmentation while enabling the generation of multiple plausible segmentation masks and capturing inherent uncertainty. By combining a Variational Autoencoder (VAE) with a latent diffusion model, the framework operates efficiently in a low-dimensional latent space and achieves state-of-the-art or highly competitive performance on diverse medical image datasets, providing enhanced interpretability and reliability for clinical use.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Capturing inherent uncertainty and providing multiple plausible segmentation masks, along with confidence maps, mirrors clinical practice and significantly improves the reliability and interpretability of AI-assisted diagnoses, which is crucial for sensitive medical decisions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research applies AI (specifically diffusion models and VAEs) to develop an advanced medical image segmentation tool. This tool can assist clinicians in accurately identifying and delineating structures in medical images (e.g., tumors, polyps, lesions), thereby improving diagnostic precision, facilitating treatment planning, and providing valuable uncertainty quantification and interpretability for clinical decision-making.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Traditional medical image segmentation methods produce single masks, failing to capture inherent diagnostic uncertainty.</li>
+                    
+                    <li>Recent generative models can produce multiple plausible masks but are computationally intensive.</li>
+                    
+                    <li>MedSegLatDiff proposes a VAE to compress input images into a low-dimensional latent space, reducing noise and accelerating training.</li>
+                    
+                    <li>A latent diffusion model operates directly within this compact latent space for efficient segmentation.</li>
+                    
+                    <li>The VAE's mask reconstruction path utilizes weighted cross-entropy loss instead of MSE to better preserve tiny structures like small nodules.</li>
+                    
+                    <li>Evaluated on ISIC-2018 (skin lesions), CVC-Clinic (polyps), and LIDC-IDRI (lung nodules), MedSegLatDiff achieves state-of-the-art or highly competitive Dice and IoU scores.</li>
+                    
+                    <li>The model simultaneously generates diverse segmentation hypotheses and confidence maps, offering enhanced interpretability and reliability compared to deterministic methods.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>MedSegLatDiff integrates a Variational Autoencoder (VAE) for encoding input medical images into a compact, low-dimensional latent space. This latent space representation is then used by a diffusion model to generate diverse segmentation masks. A key methodological improvement is replacing the standard Mean Squared Error (MSE) loss with weighted cross-entropy loss in the VAE's mask reconstruction path to enhance the preservation of small anatomical structures.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The MedSegLatDiff framework achieves state-of-the-art or highly competitive Dice and IoU scores across multiple medical image segmentation benchmarks (ISIC-2018, CVC-Clinic, LIDC-IDRI). Crucially, it demonstrates the ability to generate diverse segmentation hypotheses and corresponding confidence maps, providing quantitative and qualitative uncertainty estimates that are superior to deterministic baselines.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This model offers a significant advantage in clinical settings by providing not just a single best-guess segmentation, but a range of plausible segmentation masks and their associated confidence levels. This enhanced interpretability and reliability can aid clinicians in diagnosis and treatment planning by allowing for a more nuanced understanding of segmentation outcomes, mimicking the collaborative interpretation process among experts, and fostering greater trust in AI-driven tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the proposed MedSegLatDiff model, focusing instead on its strengths and contributions.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">dermatology (skin lesions)</span>
+                    
+                    <span class="tag">gastroenterology (polyps)</span>
+                    
+                    <span class="tag">pulmonology/radiology (lung nodules)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">medical image segmentation</span>
+                    
+                    <span class="tag tag-keyword">diffusion model</span>
+                    
+                    <span class="tag tag-keyword">latent space</span>
+                    
+                    <span class="tag tag-keyword">variational autoencoder (VAE)</span>
+                    
+                    <span class="tag tag-keyword">uncertainty quantification</span>
+                    
+                    <span class="tag tag-keyword">generative models</span>
+                    
+                    <span class="tag tag-keyword">skin lesions</span>
+                    
+                    <span class="tag tag-keyword">lung nodules</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical image segmentation is crucial for clinical diagnosis and treatment planning. Traditional methods typically produce a single segmentation mask, failing to capture inherent uncertainty. Recent generative models enable the creation of multiple plausible masks per image, mimicking the collaborative interpretation of several clinicians. However, these approaches remain computationally heavy. We propose MedSegLatDiff, a diffusion based framework that combines a variational autoencoder (VAE) with a latent diffusion model for efficient medical image segmentation. The VAE compresses the input into a low dimensional latent space, reducing noise and accelerating training, while the diffusion process operates directly in this compact representation. We further replace the conventional MSE loss with weighted cross entropy in the VAE mask reconstruction path to better preserve tiny structures such as small nodules. MedSegLatDiff is evaluated on ISIC-2018 (skin lesions), CVC-Clinic (polyps), and LIDC-IDRI (lung nodules). It achieves state of the art or highly competitive Dice and IoU scores while simultaneously generating diverse segmentation hypotheses and confidence maps. This provides enhanced interpretability and reliability compared to deterministic baselines, making the model particularly suitable for clinical deployment.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

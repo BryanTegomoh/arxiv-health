@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generalized Medical Phrase Grounding - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Generalized Medical Phrase Grounding (GMPG) to overcome limitations of traditional Medical Phrase Grounding (MPG) systems, which struggle ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Generalized Medical Phrase Grounding</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.01085v1" target="_blank">2512.01085v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-11-30
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Wenjun Zhang, Shekhar S. Chandra, Aaron Nicolson
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.01085v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.01085v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Generalized Medical Phrase Grounding (GMPG) to overcome limitations of traditional Medical Phrase Grounding (MPG) systems, which struggle with multi-region findings, non-diagnostic text, and non-groundable phrases in radiological reports. Their novel model, MedGrounder, maps report sentences to zero, one, or multiple scored image regions, demonstrating superior performance on complex phrases with significantly fewer human annotations.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research significantly improves the clarity and interpretability of radiological reports by precisely linking textual findings to their corresponding image regions, which is crucial for accurate diagnosis, clinician communication, and patient education, especially for non-experts.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is 'Generalized Medical Phrase Grounding' (GMPG). This involves developing an AI model (MedGrounder) that utilizes computer vision and natural language processing techniques to automatically link textual descriptions of findings within medical reports to specific anatomical regions or abnormalities in corresponding radiological images. This enhances the clarity and interpretability of medical reports, potentially aiding radiologists in generating more precise reports, assisting clinicians in understanding complex findings, and facilitating medical education by providing visual context for textual diagnoses.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The paper reformulates Medical Phrase Grounding (MPG) into Generalized Medical Phrase Grounding (GMPG) to handle real-world complexities such as multi-region findings, non-diagnostic text, and non-groundable phrases (e.g., negations, normal anatomy) that existing REC-paradigm systems fail to address.</li>
+                    
+                    <li>They introduce MedGrounder, the first dedicated model for GMPG, designed to map each medical report sentence to zero, one, or multiple scored image regions.</li>
+                    
+                    <li>MedGrounder utilizes a two-stage training regime: initial pre-training on report sentence-to-anatomy box alignment datasets, followed by fine-tuning on report sentence-to-human annotated box datasets.</li>
+                    
+                    <li>The model achieves strong zero-shot transfer capabilities across different datasets (PadChest-GR and MS-CXR), indicating robustness and generalization.</li>
+                    
+                    <li>MedGrounder significantly outperforms traditional REC-style and grounded report generation baselines, particularly in its ability to accurately ground multi-region and non-groundable phrases.</li>
+                    
+                    <li>A key advantage is its efficiency, as MedGrounder requires 'far fewer human box annotations' during fine-tuning compared to prior methods, reducing annotation burden.</li>
+                    
+                    <li>MedGrounder can be seamlessly composed with existing report generators to produce visually grounded reports without requiring retraining of the generator, enhancing its practical utility and integration possibilities.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The authors introduce MedGrounder, a deep learning model for Generalized Medical Phrase Grounding (GMPG). It's trained in two stages: first, pre-training on datasets aligning report sentences with anatomical bounding boxes, and second, fine-tuning on smaller datasets with human-annotated bounding boxes corresponding to specific medical findings. This two-stage approach allows the model to learn robust image-text representations efficiently by leveraging existing structured anatomical data, thereby minimizing the need for extensive, costly human-annotated ground truth bounding boxes.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>MedGrounder demonstrates strong zero-shot transfer performance and significantly outperforms both traditional Referring Expression Comprehension (REC)-style systems and grounded report generation baselines. It particularly excels in accurately grounding multi-region findings and non-groundable phrases, a common challenge in real-world radiological reports. These achievements are made while requiring substantially fewer human-annotated bounding boxes for fine-tuning.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>MedGrounder has the potential to generate more accurate, interpretable, and visually intuitive radiological reports, which can enhance diagnostic confidence, streamline communication between radiologists and referring clinicians, and improve patient understanding of their medical conditions. Its ability to handle complex and nuanced phrases, including negations or descriptions of normal anatomy, can reduce ambiguity and potentially minimize diagnostic errors, making it a valuable tool for clinical practice and medical training.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the MedGrounder system itself. The work is motivated by addressing the inherent limitations of *existing* REC-style Medical Phrase Grounding systems (e.g., their inability to handle multi-region, non-diagnostic, or non-groundable phrases).</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract highlights a key practical future direction: MedGrounder can be composed with existing report generators to produce grounded reports without requiring retraining of the generator. This suggests future work on broader system integration and deployment, enabling the creation of comprehensive grounded reports as part of a larger clinical workflow.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Medical Education</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Medical Phrase Grounding</span>
+                    
+                    <span class="tag tag-keyword">Radiological Reports</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Computer Vision</span>
+                    
+                    <span class="tag tag-keyword">Natural Language Processing</span>
+                    
+                    <span class="tag tag-keyword">Image-Text Alignment</span>
+                    
+                    <span class="tag tag-keyword">Multi-region Grounding</span>
+                    
+                    <span class="tag tag-keyword">Zero-shot Learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical phrase grounding (MPG) maps textual descriptions of radiological findings to corresponding image regions. These grounded reports are easier to interpret, especially for non-experts. Existing MPG systems mostly follow the referring expression comprehension (REC) paradigm and return exactly one bounding box per phrase. Real reports often violate this assumption. They contain multi-region findings, non-diagnostic text, and non-groundable phrases, such as negations or descriptions of normal anatomy. Motivated by this, we reformulate the task as generalised medical phrase grounding (GMPG), where each sentence is mapped to zero, one, or multiple scored regions. To realise this formulation, we introduce the first GMPG model: MedGrounder. We adopted a two-stage training regime: pre-training on report sentence--anatomy box alignment datasets and fine-tuning on report sentence--human annotated box datasets. Experiments on PadChest-GR and MS-CXR show that MedGrounder achieves strong zero-shot transfer and outperforms REC-style and grounded report generation baselines on multi-region and non-groundable phrases, while using far fewer human box annotations. Finally, we show that MedGrounder can be composed with existing report generators to produce grounded reports without retraining the generator.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
