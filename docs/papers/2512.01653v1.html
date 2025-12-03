@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuffless Blood Pressure Estimation from Six Wearable Sensor Modalities in Multi-Motion-State Scenarios - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a novel six-modal cuffless blood pressure (BP) estimation framework designed for robust accuracy across various motion states, addressing ">
+    <meta name="description" content="This paper introduces a novel six-modal framework for cuffless blood pressure (BP) estimation using wearable sensors, specifically designed to maintain accuracy">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a novel six-modal cuffless blood pressure (BP) estimation framework designed for robust accuracy across various motion states, addressing the limitations of existing PPG/ECG-based methods under dynamic conditions. By integrating diverse wearable sensor data and advanced machine learning techniques, the proposed system achieves high clinical-grade accuracy for SBP and DBP in multi-motion scenarios. This significantly advances continuous, non-invasive BP monitoring for early screening and long-term management of hypertension.</p>
+                <p class="summary-text">This paper introduces a novel six-modal framework for cuffless blood pressure (BP) estimation using wearable sensors, specifically designed to maintain accuracy across various motion states. By integrating diverse sensor data and employing advanced machine learning techniques, the method achieves clinically acceptable accuracy for systolic and diastolic BP, addressing a critical limitation of existing single or dual-modal approaches in dynamic scenarios.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is crucial for advancing the fight against cardiovascular disease by enabling accurate, continuous, and non-invasive blood pressure monitoring even during daily physical activities. It offers a powerful tool for early detection of hypertension and improved long-term management, potentially reducing morbidity and mortality associated with this silent risk factor.</p>
+                <p>Sustained hypertension is a silent yet critical risk factor for cardiovascular disease (CVD), a leading cause of global morbidity and mortality. This research offers a robust, cuffless, and continuous BP monitoring solution, crucial for early screening, long-term management, and reducing the burden of CVD.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The research develops an AI-powered framework for cuffless continuous blood pressure estimation using multi-modal wearable sensor data. This application enables real-time, non-invasive monitoring of a vital health parameter, which can be used for early detection of hypertension, chronic disease management, and personalized health insights, thereby enhancing preventive and therapeutic strategies in cardiology and general healthcare.</p>
+                <p>Development of AI models, specifically utilizing techniques like contrastive learning and mixture-of-experts, for real-time, continuous, and cuffless blood pressure estimation from multimodal wearable sensor data. This application aims to improve early detection, monitoring, and management of hypertension and cardiovascular diseases, moving beyond traditional clinical settings into everyday life.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical challenge of maintaining accurate cuffless BP estimation in multi-motion-state scenarios, a known weakness of traditional PPG/ECG-only methods.</li>
+                    <li>Addresses the challenge of robust cuffless BP estimation in multi-motion-state scenarios, a major limitation of traditional PPG/ECG-only methods.</li>
                     
-                    <li>Proposes a novel six-modal framework leveraging ECG, multi-channel PPG, attachment pressure, sensor temperature, and triaxial acceleration/angular velocity for comprehensive data capture.</li>
+                    <li>Proposes a six-modal sensing framework leveraging ECG, multi-channel PPG, attachment pressure, sensor temperature, triaxial acceleration, and angular velocity.</li>
                     
-                    <li>Employs a sophisticated methodology including lightweight branch encoders for individual modalities, contrastive learning for cross-modal semantic alignment, and a Mixture-of-Experts (MoE) regression head for adaptive BP mapping across different motion states.</li>
+                    <li>Employs a lightweight branch encoder for each modality, contrastive learning for cross-modal semantic alignment, and a Mixture-of-Experts (MoE) regression head for adaptive BP mapping across motion states.</li>
                     
-                    <li>Achieves mean absolute errors (MAE) of 3.60 mmHg for systolic BP (SBP) and 3.01 mmHg for diastolic BP (DBP) on the public Pulse Transit Time PPG Dataset, which includes running, walking, and sitting data.</li>
+                    <li>Evaluated on the public Pulse Transit Time PPG Dataset, which includes running, walking, and sitting data from 22 subjects, demonstrating real-world applicability beyond resting conditions.</li>
                     
-                    <li>Demonstrates high clinical validation by attaining Grade A for SBP, DBP, and mean arterial pressure (MAP) according to the British Hypertension Society (BHS) protocol.</li>
+                    <li>Achieves Mean Absolute Errors (MAE) of 3.60 mmHg for Systolic BP (SBP) and 3.01 mmHg for Diastolic BP (DBP).</li>
                     
-                    <li>Meets the numerical criteria of the Association for the Advancement of Medical Instrumentation (AAMI) standard for mean error (ME) and standard deviation of error (SDE).</li>
+                    <li>Meets stringent clinical validation criteria, attaining Grade A for SBP, DBP, and Mean Arterial Pressure (MAP) according to the British Hypertension Society (BHS) protocol.</li>
                     
-                    <li>The framework's robustness in dynamic environments makes it highly promising for real-world continuous hypertension monitoring and management.</li>
+                    <li>Complies with the numerical criteria of the Association for the Advancement of Medical Instrumentation (AAMI) standard for mean error (ME) and standard deviation of error (SDE).</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study proposes a six-modal BP estimation framework integrating data from ECG, multi-channel PPG, attachment pressure, sensor temperature, and triaxial acceleration and angular velocity sensors. Each modality is processed through a dedicated lightweight branch encoder. Contrastive learning is then applied to enforce cross-modal semantic alignment of the features. Finally, a Mixture-of-Experts (MoE) regression head adaptively fuses these aligned features and maps them to SBP and DBP, specifically designed to maintain robust accuracy across multi-motion-state scenarios like sitting, walking, and running.</p>
+                    <p>The study proposes a six-modal BP estimation framework integrating ECG, multi-channel PPG, attachment pressure, sensor temperature, triaxial acceleration, and angular velocity. Each sensor modality is processed by a dedicated lightweight branch encoder. Contrastive learning is utilized to ensure semantic alignment across these diverse modalities. A Mixture-of-Experts (MoE) regression head is then employed to adaptively fuse the learned features and map them to BP values, specifically designed to maintain accuracy across varying motion states (running, walking, sitting). The method was validated on a public dataset comprising data from 22 subjects.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The proposed method achieved a mean absolute error (MAE) of 3.60 mmHg for systolic BP (SBP) and 3.01 mmHg for diastolic BP (DBP) across multi-motion-state scenarios. Clinically, it met Grade A for SBP, DBP, and mean arterial pressure (MAP) according to the British Hypertension Society (BHS) protocol. Furthermore, it satisfied the numerical criteria of the Association for the Advancement of Medical Instrumentation (AAMI) standard for both mean error (ME) and standard deviation of error (SDE).</p>
+                    <p>The proposed method achieved a Mean Absolute Error (MAE) of 3.60 mmHg for Systolic BP (SBP) and 3.01 mmHg for Diastolic BP (DBP). Clinically, it attained Grade A for SBP, DBP, and Mean Arterial Pressure (MAP) according to the British Hypertension Society (BHS) protocol. Furthermore, it satisfied the numerical criteria of the Association for the Advancement of Medical Instrumentation (AAMI) standard for mean error (ME) and standard deviation of error (SDE), demonstrating high accuracy and reliability.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This technology has the potential to revolutionize hypertension management by providing accurate and continuous BP data outside of clinical settings, even during physical activity. It could facilitate earlier diagnosis, enable more personalized and timely treatment adjustments, improve patient adherence to monitoring, and potentially reduce healthcare costs by minimizing the need for traditional cuff-based measurements and clinic visits, thereby leading to better cardiovascular health outcomes.</p>
+                <p>This research has significant potential to revolutionize hypertension monitoring by enabling continuous, cuffless, and accurate BP measurement even during daily activities. Meeting both BHS Grade A and AAMI standards positions this technology for real-world clinical adoption, facilitating early detection, personalized treatment adjustments, and improved patient outcomes in CVD prevention and management.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations. However, common limitations for studies of this nature often include the relatively small sample size (22 subjects) from a specific public dataset, which may limit generalizability. Further validation in larger, more diverse populations and across a wider array of real-world activities and over longer monitoring durations would typically be required to fully establish its clinical utility.</p>
+                <p>The abstract does not explicitly state limitations of the proposed method or the study. Potential implicit limitations could include the relatively small number of subjects (22) and the specific dataset used, which may limit generalizability to broader populations or other motion types.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly state future research directions. However, potential future work could include validating the framework on significantly larger and more diverse cohorts, exploring its long-term performance and stability in free-living conditions, integrating it into a fully deployable wearable device, and investigating its potential to predict cardiovascular events or personalize therapeutic interventions based on continuous BP trends.</p>
+                <p>The abstract does not explicitly suggest future research directions. Potential future work could involve expanding the dataset to include a more diverse range of demographics and health conditions, exploring real-time implementation on wearable devices, and long-term validation in free-living conditions.</p>
             </section>
             
 
@@ -124,7 +124,7 @@
                     
                     <span class="tag">Preventive Medicine</span>
                     
-                    <span class="tag">Remote Patient Monitoring</span>
+                    <span class="tag">Telemedicine</span>
                     
                     <span class="tag">Digital Health</span>
                     
@@ -137,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Cuffless Blood Pressure</span>
+                    <span class="tag tag-keyword">cuffless blood pressure</span>
                     
-                    <span class="tag tag-keyword">Wearable Sensors</span>
+                    <span class="tag tag-keyword">wearable sensors</span>
                     
-                    <span class="tag tag-keyword">Multi-modal Sensing</span>
+                    <span class="tag tag-keyword">multi-motion-state</span>
                     
-                    <span class="tag tag-keyword">Photoplethysmography (PPG)</span>
+                    <span class="tag tag-keyword">photoplethysmography</span>
                     
-                    <span class="tag tag-keyword">Electrocardiography (ECG)</span>
+                    <span class="tag tag-keyword">electrocardiography</span>
                     
-                    <span class="tag tag-keyword">Motion Artifacts</span>
+                    <span class="tag tag-keyword">mixture-of-experts</span>
                     
-                    <span class="tag tag-keyword">Hypertension</span>
+                    <span class="tag tag-keyword">hypertension management</span>
                     
-                    <span class="tag tag-keyword">Mixture-of-Experts</span>
+                    <span class="tag tag-keyword">digital health</span>
                     
                 </div>
             </section>

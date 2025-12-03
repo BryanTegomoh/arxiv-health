@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A unified framework for geometry-independent operator learning in cardiac electrophysiology simulations - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a novel geometry-independent operator-learning framework that uses a neural operator with a vision-transformer backbone to predict local a">
+    <meta name="description" content="This paper introduces a novel geometry-independent operator-learning framework, utilizing a vision-transformer backbone, to predict local activation time (LAT) ">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.LG, eess.IV
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a novel geometry-independent operator-learning framework that uses a neural operator with a vision-transformer backbone to predict local activation time (LAT) fields in cardiac electrophysiology. It achieves a high accuracy (5.1 ms mean error) and near-instantaneous inference (0.12 ms/sample) across diverse left atrial anatomies, outperforming established methods. The framework decouples electrophysiological patterns from mesh topology using a Universal Atrium Coordinate system, enabling real-time and population-scale computational electrophysiology.</p>
+                <p class="summary-text">This paper introduces a novel geometry-independent operator-learning framework, utilizing a vision-transformer backbone, to predict local activation time (LAT) fields in the left atrium. The framework, trained on 308,700 simulations across 147 diverse patient-specific anatomies represented in a Universal Atrium Coordinate system, achieves highly accurate (5.1 ms error) and near-instantaneous (0.12 ms inference) predictions. This breakthrough enables real-time computational electrophysiology for personalized arrhythmia treatment and large-scale analyses, addressing a critical bottleneck in current clinical workflows.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate and rapid mapping of atrial electrical activation is critical for personalized treatment of cardiac arrhythmias like atrial fibrillation. This framework transforms computationally intensive simulations into a near-instantaneous process, making advanced electrophysiology models practical for real-time clinical decision support and large-scale patient studies.</p>
+                <p>Accurate and rapid mapping of atrial electrical activation is fundamental for personalized diagnosis and treatment of cardiac arrhythmias. This framework directly addresses the bottleneck of computationally intensive simulations, making advanced biophysical modeling practically applicable for real-time clinical decision-making and large-scale patient population studies, ultimately improving patient outcomes.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is a geometry-independent operator-learning framework (specifically, a neural operator with a vision-transformer backbone) designed to predict local activation time (LAT) fields in the heart. This allows for near-instantaneous simulation of cardiac electrophysiology, facilitating real-time personalized treatment planning for arrhythmias, accelerating clinical decision-making, and enabling population-scale analyses for cardiac research.</p>
+                <p>The AI application here is a geometry-independent operator-learning framework, specifically a neural operator with a vision-transformer backbone. This AI model learns to rapidly predict local activation time (LAT) fields in the heart, based on structural and electrophysiological inputs from patient-specific geometries. The goal is to provide near-instantaneous, accurate simulations of cardiac electrophysiology to assist clinicians in real-time for personalized treatment planning of arrhythmias, thereby improving diagnosis and treatment efficacy.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the computational intensity of biophysically detailed cardiac electrophysiology simulations, which hinder real-time clinical use and population-scale analyses for arrhythmia treatment.</li>
+                    <li>A novel geometry-independent operator-learning framework is developed to predict local activation time (LAT) fields, crucial for atrial arrhythmia treatment, overcoming the computational intensity of traditional simulations.</li>
                     
-                    <li>Proposes a geometry-independent operator-learning framework designed to predict Local Activation Time (LAT) fields across diverse left atrial anatomies.</li>
+                    <li>The framework utilizes a Universal Atrium Coordinate (UAC) system, providing a consistent representation that decouples electrophysiological patterns from specific mesh topologies, enabling geometry invariance.</li>
                     
-                    <li>Introduces a Universal Atrium Coordinate (UAC) system to provide a consistent representation of anatomical and functional data, decoupling electrophysiological patterns from mesh topology.</li>
+                    <li>A neural operator model, featuring a vision-transformer backbone, is designed to learn the complex mapping from structural and electrophysiological inputs to LAT fields within the UAC space.</li>
                     
-                    <li>Employs a neural operator with a vision-transformer backbone to learn the complex mapping from structural and electrophysiological inputs to LAT fields within the UAC space.</li>
+                    <li>A massive dataset comprising 308,700 GPU-accelerated simulations was generated, systematically varying pacing sites and conduction properties across 147 patient-specific left atrial geometries from two independent clinical cohorts.</li>
                     
-                    <li>Validated using a large dataset of 308,700 simulations derived from a GPU-accelerated solver, covering 147 patient-specific left atrial geometries with varied pacing sites and conduction properties.</li>
+                    <li>The model demonstrates high accuracy with a mean prediction error of only 5.1 ms over a 455 ms maximum simulation time, significantly outperforming established operator-learning approaches.</li>
                     
-                    <li>Achieves a low mean prediction error of 5.1 ms over a 455 ms maximum simulation time, demonstrating high accuracy.</li>
+                    <li>It achieves near-instantaneous inference speeds of 0.12 ms per sample, which is critical for real-time clinical application and large-scale population studies.</li>
                     
-                    <li>Performs inference in an exceptionally fast 0.12 ms per sample, significantly outperforming established operator-learning approaches.</li>
+                    <li>This approach provides a general strategy for learning domain-invariant biophysical mappings across variable anatomical domains, paving the way for advanced computational electrophysiology integration into clinical practice.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The researchers generated a massive dataset of 308,700 electrophysiology simulations using a GPU-accelerated solver, incorporating diverse pacing sites, varied conduction properties, and 147 patient-specific left atrial geometries from clinical cohorts. A core innovation is the Universal Atrium Coordinate (UAC) system, which provides a consistent, geometry-independent representation of both anatomical and functional data. Within this UAC space, a neural operator model with a vision-transformer backbone was designed and trained to learn the mapping from structural and electrophysiological inputs to LAT fields.</p>
+                    <p>The study generated a large dataset of 308,700 simulations using a GPU-accelerated electrophysiology solver on 147 patient-specific left atrial geometries, varying pacing sites and conduction properties. All anatomical and functional data were transformed into a Universal Atrium Coordinate (UAC) system for geometry-independent representation. A neural operator model, employing a vision-transformer backbone, was then trained within this UAC space to learn the mapping from structural and electrophysiological inputs to local activation time (LAT) fields. Model performance was benchmarked against established operator-learning approaches.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The developed framework predicts local activation time (LAT) fields with a mean error of 5.1 ms over a 455 ms maximum simulation time. Crucially, it achieves an inference time of just 0.12 ms per sample, which is near-instantaneous and significantly faster than established operator-learning approaches. This demonstrates robust, geometry-independent, and highly efficient prediction capabilities for cardiac electrophysiology.</p>
+                    <p>The developed geometry-independent operator-learning framework achieved a low mean prediction error of 5.1 ms for local activation time (LAT) fields over a 455 ms maximum simulation time. It demonstrated superior performance compared to established operator-learning approaches and crucially performed inference in an ultra-fast 0.12 ms per sample, validating its near-instantaneous prediction capability.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This framework enables the direct integration of computationally intensive electrophysiology simulations into real-time clinical workflows for arrhythmia management, such as pre-procedural planning or intraoperative guidance for ablation. It also facilitates large-scale patient population analyses to uncover disease mechanisms and develop new treatments, overcoming current computational bottlenecks and advancing personalized medicine in cardiac electrophysiology.</p>
+                <p>This framework has the potential to revolutionize clinical electrophysiology by enabling real-time, patient-specific computational simulations of atrial activation. This can significantly enhance pre-procedural planning for arrhythmia ablation, facilitate more accurate and personalized treatment strategies, and allow for efficient, large-scale population analyses that were previously infeasible, directly impacting diagnosis, prognosis, and therapeutic interventions for cardiac arrhythmias.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any specific limitations of the developed framework.</p>
+                <p>The abstract does not explicitly state any limitations of the presented framework.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>While not explicitly outlined as future research, the paper suggests that the framework establishes a 'general strategy for learning domain-invariant biophysical mappings across variable anatomical domains,' implying potential applicability and extension to other complex biophysical simulations or anatomical structures beyond the left atrium.</p>
+                <p>The framework establishes a general strategy for domain-invariant biophysical mappings, and the authors indicate it will enable the integration of computational electrophysiology into real-time and large-scale clinical workflows, suggesting future efforts will focus on its practical clinical deployment and expansion to broader applications.</p>
             </section>
             
 
@@ -124,11 +124,11 @@
                     
                     <span class="tag">Electrophysiology</span>
                     
-                    <span class="tag">Computational Medicine</span>
+                    <span class="tag">Cardiac Imaging</span>
                     
                     <span class="tag">Personalized Medicine</span>
                     
-                    <span class="tag">Medical Imaging</span>
+                    <span class="tag">Computational Medicine</span>
                     
                 </div>
             </section>
@@ -139,9 +139,9 @@
                     
                     <span class="tag tag-keyword">cardiac electrophysiology</span>
                     
-                    <span class="tag tag-keyword">arrhythmias</span>
+                    <span class="tag tag-keyword">arrhythmia</span>
                     
-                    <span class="tag tag-keyword">local activation time (LAT)</span>
+                    <span class="tag tag-keyword">local activation time</span>
                     
                     <span class="tag tag-keyword">operator learning</span>
                     
@@ -153,9 +153,9 @@
                     
                     <span class="tag tag-keyword">real-time simulation</span>
                     
-                    <span class="tag tag-keyword">atrial fibrillation</span>
-                    
                     <span class="tag tag-keyword">personalized medicine</span>
+                    
+                    <span class="tag tag-keyword">atrial fibrillation</span>
                     
                 </div>
             </section>

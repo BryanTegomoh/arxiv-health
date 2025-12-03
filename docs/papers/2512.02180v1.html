@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLEF: Clinically-Guided Contrastive Learning for Electrocardiogram Foundation Models - Health AI Hub</title>
+    <meta name="description" content="CLEF introduces a novel clinically-guided contrastive learning approach for single-lead ECG foundation models, leveraging established clinical risk scores from ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>CLEF: Clinically-Guided Contrastive Learning for Electrocardiogram Foundation Models</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.02180v1" target="_blank">2512.02180v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-01
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Yuxuan Shu, Peter H. Charlton, Fahim Kawsar, Jussi Hernesniemi, Mohammad Malekzadeh
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.02180v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.02180v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">CLEF introduces a novel clinically-guided contrastive learning approach for single-lead ECG foundation models, leveraging established clinical risk scores from routine metadata to improve diagnostic performance. Pretrained on a large dataset of 161K MIMIC-IV patients, CLEF significantly outperforms existing self-supervised baselines across 18 clinical tasks, demonstrating enhanced accuracy and scalability for remote health monitoring.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research significantly enhances the diagnostic capabilities of single-lead ECGs, which are widely utilized in consumer wearables and clinical-grade remote monitoring devices, leading to more accurate and accessible cardiovascular health assessment and early detection of conditions outside of traditional clinical settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>Developing clinically-guided AI foundation models for improved accuracy and scalability in single-lead ECG analysis, specifically for diagnostic support and remote health monitoring in cardiovascular health.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Novel Clinically-Guided Contrastive Learning (CLEF)**: Introduces a new self-supervised pretraining method that incorporates clinical domain knowledge by using an established clinical risk score to adaptively weight negative pairs.</li>
+                    
+                    <li>**Alignment with Clinical Meaning**: The method explicitly aligns the similarities of ECG embeddings with clinically meaningful differences between subjects, moving beyond purely data-driven self-supervision.</li>
+                    
+                    <li>**Handles Missing Metadata**: Includes an explicit mechanism to manage missing clinical metadata, increasing its robustness and real-world applicability.</li>
+                    
+                    <li>**Large-Scale Pretraining on Routine Data**: Foundation models were pretrained on 12-lead ECGs from 161K patients in the MIMIC-IV dataset using only routinely collected metadata, without requiring costly per-sample ECG annotations.</li>
+                    
+                    <li>**Superior Performance over Self-Supervised Baselines**: The medium-sized CLEF model achieved average AUROC improvements of at least 2.6% in classification and average reductions in MAEs of at least 3.2% in regression tasks, outperforming existing self-supervised foundation model baselines.</li>
+                    
+                    <li>**Comparable to State-of-the-Art Supervised Models**: When pretrained only on lead-I data for classification tasks, CLEF performed comparably to the state-of-the-art ECGFounder, which was trained in a supervised manner.</li>
+                    
+                    <li>**Advances Remote Health Monitoring**: The improved accuracy and scalability of single-lead ECG analysis directly contribute to more effective and accessible remote cardiovascular health assessment.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The authors developed a novel "clinically-guided contrastive learning" approach, CLEF, for pretraining single-lead ECG foundation models. This method utilizes an established clinical risk score, derived from routine metadata, to adaptively weight negative pairs during contrastive learning, thereby aligning ECG embedding similarities with clinically meaningful subject differences. The models were pretrained on 12-lead ECG data from 161K MIMIC-IV patients without requiring per-sample ECG annotations, and a mechanism to handle missing metadata was incorporated. Evaluation was conducted on 18 clinical classification and regression tasks across 7 held-out datasets, benchmarking against 5 foundation model baselines and 3 self-supervised algorithms.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>CLEF models consistently outperformed existing self-supervised foundation model baselines; the medium-sized CLEF achieved an average AUROC improvement of at least 2.6% in classification and an average reduction in MAEs of at least 3.2% in regression when pretrained on 12-lead and tested on lead-I data. Compared to existing self-supervised learning algorithms, CLEF improved the average AUROC by at least 1.8%. Notably, when pretrained solely on lead-I data for classification tasks, CLEF demonstrated comparable performance to the state-of-the-art, supervised ECGFounder model.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>CLEF's enhanced accuracy and scalability for single-lead ECG analysis will significantly improve the diagnostic utility of wearable devices and remote monitoring systems. This innovation can lead to earlier detection and better management of cardiovascular conditions, expanded access to cardiovascular health assessments, and more effective preventative care, particularly in remote or underserved populations.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the study.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Cardiology</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                    <span class="tag">Digital Health</span>
+                    
+                    <span class="tag">Preventive Medicine</span>
+                    
+                    <span class="tag">Diagnostic Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">ECG</span>
+                    
+                    <span class="tag tag-keyword">Foundation Models</span>
+                    
+                    <span class="tag tag-keyword">Contrastive Learning</span>
+                    
+                    <span class="tag tag-keyword">Self-Supervised Learning</span>
+                    
+                    <span class="tag tag-keyword">Cardiovascular Health</span>
+                    
+                    <span class="tag tag-keyword">Remote Monitoring</span>
+                    
+                    <span class="tag tag-keyword">Clinical Metadata</span>
+                    
+                    <span class="tag tag-keyword">Diagnostic Performance</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">The electrocardiogram (ECG) is a key diagnostic tool in cardiovascular health. Single-lead ECG recording is integrated into both clinical-grade and consumer wearables. While self-supervised pretraining of foundation models on unlabeled ECGs improves diagnostic performance, existing approaches do not incorporate domain knowledge from clinical metadata. We introduce a novel contrastive learning approach that utilizes an established clinical risk score to adaptively weight negative pairs: clinically-guided contrastive learning. It aligns the similarities of ECG embeddings with clinically meaningful differences between subjects, with an explicit mechanism to handle missing metadata. On 12-lead ECGs from 161K patients in the MIMIC-IV dataset, we pretrain single-lead ECG foundation models at three scales, collectively called CLEF, using only routinely collected metadata without requiring per-sample ECG annotations. We evaluate CLEF on 18 clinical classification and regression tasks across 7 held-out datasets, and benchmark against 5 foundation model baselines and 3 self-supervised algorithms. When pretrained on 12-lead ECG data and tested on lead-I data, CLEF outperforms self-supervised foundation model baselines: the medium-sized CLEF achieves average AUROC improvements of at least 2.6% in classification and average reductions in MAEs of at least 3.2% in regression. Comparing with existing self-supervised learning algorithms, CLEF improves the average AUROC by at least 1.8%. Moreover, when pretrained only on lead-I data for classification tasks, CLEF performs comparably to the state-of-the-art ECGFounder, which was trained in a supervised manner. Overall, CLEF enables more accurate and scalable single-lead ECG analysis, advancing remote health monitoring. Code and pretrained CLEF models are available at: github.com/Nokia-Bell-Labs/ecg-foundation-model.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>The code is available at https://github.com/Nokia-Bell-Labs/ecg-foundation-model</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
