@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lean Unet: A Compact Model for Image Segmentation - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Lean Unet (LUnet), a compact and efficient deep learning model for semantic image segmentation, specifically targeting the high memory foo">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Lean Unet: A Compact Model for Image Segmentation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.03834v1" target="_blank">2512.03834v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-03
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Ture Hassler, Ida Åkerholm, Marcus Nordström, Gabriele Balletti, Orcun Goksel
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.03834v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.03834v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Lean Unet (LUnet), a compact and efficient deep learning model for semantic image segmentation, specifically targeting the high memory footprint and latency issues of conventional Unet architectures used in computer-assisted radiology. LUnet proposes a flat hierarchy with constant channel counts across layers, demonstrating comparable segmentation performance to standard Unet and pruned networks while utilizing over 30 times fewer parameters.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medical imaging by addressing critical computational challenges in computer-assisted radiology. By developing a significantly more efficient segmentation model, it enables faster, more resource-friendly deployment of AI tools for diagnostics and analysis of MRI and CT scans.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research focuses on developing a more efficient and compact Unet architecture (LUnet) for image segmentation. This directly applies to improving AI models used in medical imaging for tasks like lesion detection, organ segmentation, and disease staging, by making them more memory-efficient and faster for clinical deployment in areas such as radiology and diagnostics.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Standard Unet architectures, prevalent in medical imaging, suffer from large memory footprints and high latency due to iterative downsampling and doubling of channel dimensions.</li>
+                    
+                    <li>Existing channel pruning techniques, while effective for compression, demand lengthy optimization processes and may lack generalization across different tasks and datasets.</li>
+                    
+                    <li>The authors hypothesize that the *final structural configuration* of a pruned Unet is more crucial for performance than the specific channel selection strategy during pruning.</li>
+                    
+                    <li>LUnet is a novel, lean architecture characterized by a compact, flat hierarchy where channel counts remain constant across layers, thus avoiding the exponential increase in channels seen in conventional Unet.</li>
+                    
+                    <li>Evaluation on a public MRI dataset and two internal CT datasets showed LUnet achieving segmentation performance comparable to both conventional Unet and state-of-the-art pruning solutions like STAMP.</li>
+                    
+                    <li>LUnet significantly reduces the parameter count, achieving over 30 times fewer parameters compared to conventional Unet while maintaining competitive performance.</li>
+                    
+                    <li>For an equivalent total number of parameters, the proposed LUnet architecture demonstrates superior performance compared to a standard Unet.</li>
+                    
+                    <li>The presence of skip connections in Unet architectures allows for a substantial reduction in the number of bottleneck channels, distinguishing it from standard encoder-decoder architectures that typically require more channels for effective information propagation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The authors first investigated Unet pruning to understand where existing methods reduce channels. Based on these observations, they proposed and designed LUnet, a novel, fixed Unet architecture featuring a compact, flat hierarchy with constant channel counts across layers. They empirically evaluated LUnet's performance, parameter efficiency, and computational characteristics against conventional Unet models and a state-of-the-art pruning solution (STAMP) using a public MRI dataset and two internal CT datasets.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study revealed that state-of-the-art pruning (STAMP) primarily targets layers with the highest channel counts. Interestingly, simply eliminating random channels from these largest layers yielded performance comparable to or better than STAMP. LUnet, with its intrinsically lean and fixed architecture (constant channel counts), achieved performance comparable to conventional Unet and data-adaptively pruned networks but with over 30 times fewer parameters. Furthermore, LUnet outperformed standard Unet when both were constrained to the same total parameter count. The research also highlighted that Unet's skip connections are crucial for allowing significant reduction in bottleneck channels.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>LUnet's dramatically reduced memory footprint and inference latency can significantly accelerate the processing and analysis of medical images in clinical settings, leading to quicker diagnostic support for radiologists. Its computational efficiency makes advanced AI segmentation models deployable on more constrained hardware, potentially expanding access to sophisticated diagnostic tools in a wider range of healthcare facilities and reducing operational costs associated with high-performance computing.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract points out that channel pruning, the technique LUnet seeks to improve upon, may require lengthy optimization and might not generalize across diverse tasks and datasets. The abstract does not explicitly state limitations inherent to the LUnet model itself.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Medical Image Analysis</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Unet</span>
+                    
+                    <span class="tag tag-keyword">Image Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Channel Pruning</span>
+                    
+                    <span class="tag tag-keyword">Lean Architecture</span>
+                    
+                    <span class="tag tag-keyword">MRI</span>
+                    
+                    <span class="tag tag-keyword">CT Scans</span>
+                    
+                    <span class="tag tag-keyword">Computational Efficiency</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Unet and its variations have been standard in semantic image segmentation, especially for computer assisted radiology. Current Unet architectures iteratively downsample spatial resolution while increasing channel dimensions to preserve information content. Such a structure demands a large memory footprint, limiting training batch sizes and increasing inference latency. Channel pruning compresses Unet architecture without accuracy loss, but requires lengthy optimization and may not generalize across tasks and datasets. By investigating Unet pruning, we hypothesize that the final structure is the crucial factor, not the channel selection strategy of pruning. Based on our observations, we propose a lean Unet architecture (LUnet) with a compact, flat hierarchy where channels are not doubled as resolution is halved. We evaluate on a public MRI dataset allowing comparable reporting, as well as on two internal CT datasets. We show that a state-of-the-art pruning solution (STAMP) mainly prunes from the layers with the highest number of channels. Comparatively, simply eliminating a random channel at the pruning-identified layer or at the largest layer achieves similar or better performance. Our proposed LUnet with fixed architectures and over 30 times fewer parameters achieves performance comparable to both conventional Unet counterparts and data-adaptively pruned networks. The proposed lean Unet with constant channel count across layers requires far fewer parameters while achieving performance superior to standard Unet for the same total number of parameters. Skip connections allow Unet bottleneck channels to be largely reduced, unlike standard encoder-decoder architectures requiring increased bottleneck channels for information propagation.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

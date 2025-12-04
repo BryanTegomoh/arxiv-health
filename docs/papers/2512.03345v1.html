@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HalluGen: Synthesizing Realistic and Controllable Hallucinations for Evaluating Image Restoration - Health AI Hub</title>
+    <meta name="description" content="This paper introduces HalluGen, a diffusion-based framework designed to synthesize realistic and controllable hallucinations in medical images, specifically for">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>HalluGen: Synthesizing Realistic and Controllable Hallucinations for Evaluating Image Restoration</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.03345v1" target="_blank">2512.03345v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-03
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Seunghoi Kim, Henry F. J. Tregidgo, Chen Jin, Matteo Figini, Daniel C. Alexander
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.03345v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.03345v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces HalluGen, a diffusion-based framework designed to synthesize realistic and controllable hallucinations in medical images, specifically for low-field MRI enhancement. It addresses the critical challenge of evaluating generative model hallucinations in safety-critical domains by creating the first large-scale, annotated hallucination dataset and demonstrating its utility in benchmarking image quality metrics and training robust hallucination detectors.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medical imaging, especially in resource-limited settings utilizing low-field MRI. By enabling the systematic evaluation and detection of AI-generated hallucinations in restored images, it directly addresses a major safety concern that could otherwise lead to critical misdiagnoses and undermine trust in AI-enhanced diagnostic tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research focuses on enhancing the safety and reliability of AI models used for medical image restoration, particularly in low-field MRI to prevent diagnostic errors caused by AI hallucinations. It introduces a framework (HalluGen) and tools (SHAFE, hallucination detectors) to synthesize, evaluate, and mitigate these errors, which is crucial for the trustworthy deployment of AI in medical diagnostics and healthcare settings, especially where access to high-quality imaging might be limited.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Generative models used in image restoration for safety-critical domains (e.g., low-field MRI) are prone to 'hallucinations' – plausible but incorrect structures – which can lead to serious diagnostic errors.</li>
+                    
+                    <li>Traditional evaluation of hallucinations is hindered by a circular dependency, requiring costly and subjective labeled data.</li>
+                    
+                    <li>HalluGen is a novel diffusion-based framework that synthesizes realistic hallucinations with controllable type, location, and severity, resulting in perceptually realistic but semantically incorrect outputs (segmentation IoU drops from 0.86 to 0.36).</li>
+                    
+                    <li>The framework was used to construct the first large-scale hallucination dataset, comprising 4,350 annotated images derived from 1,450 brain MR images, enabling systematic evaluation.</li>
+                    
+                    <li>HalluGen facilitates benchmarking image quality metrics and the development of SHAFE (Semantic Hallucination Assessment via Feature Evaluation), a new feature-based metric with improved hallucination sensitivity over traditional metrics.</li>
+                    
+                    <li>The synthetic data allows for training reference-free hallucination detectors that effectively generalize to real-world restoration failures, enhancing their practical applicability.</li>
+                    
+                    <li>HalluGen and its open dataset establish a scalable foundation for robust evaluation and mitigation of hallucinations in safety-critical image restoration, particularly relevant for medical imaging.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core methodology involves HalluGen, a diffusion-based generative framework, used to synthesize controllable and realistic hallucinations. This framework was then leveraged to create a large-scale dataset of 4,350 annotated brain MRI images with induced hallucinations. The utility was demonstrated through two main applications: (1) benchmarking existing image quality metrics and developing a novel feature-based metric called SHAFE with soft-attention pooling, and (2) training reference-free hallucination detectors that generalize to real restoration failures.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>HalluGen successfully synthesizes perceptually realistic but semantically incorrect hallucinations in brain MR images, significantly degrading segmentation IoU from 0.86 to 0.36. The generated dataset is the first large-scale resource for systematic hallucination evaluation. The developed SHAFE metric demonstrated improved sensitivity for detecting hallucinations. Crucially, hallucination detectors trained on HalluGen's synthetic data proved capable of generalizing to and identifying real restoration failures.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This work has significant potential clinical impact by improving the safety and reliability of AI models used for medical image restoration. It provides tools to better evaluate and detect potentially misleading AI-generated artifacts, thereby reducing the risk of diagnostic errors. This is particularly beneficial for low-field MRI, which is vital in resource-constrained environments, ensuring that AI enhancements do not inadvertently introduce harmful misinformation into clinical assessments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract. However, potential inherent limitations of synthetic data could include generalizability to all possible types of real-world hallucinations or imaging modalities beyond brain MRI.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper states that HalluGen and its dataset establish the first scalable foundation for evaluating hallucinations. This implies future directions could involve expanding the application of HalluGen to other safety-critical imaging domains, developing more advanced hallucination detection and mitigation strategies using the rich dataset, and potentially exploring how to integrate hallucination awareness directly into restoration model training.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Neuroradiology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Hallucinations</span>
+                    
+                    <span class="tag tag-keyword">Image Restoration</span>
+                    
+                    <span class="tag tag-keyword">Generative Models</span>
+                    
+                    <span class="tag tag-keyword">Diffusion Models</span>
+                    
+                    <span class="tag tag-keyword">Low-Field MRI</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Image Quality Metrics</span>
+                    
+                    <span class="tag tag-keyword">Safety-Critical AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Generative models are prone to hallucinations: plausible but incorrect structures absent in the ground truth. This issue is problematic in image restoration for safety-critical domains such as medical imaging, industrial inspection, and remote sensing, where such errors undermine reliability and trust. For example, in low-field MRI, widely used in resource-limited settings, restoration models are essential for enhancing low-quality scans, yet hallucinations can lead to serious diagnostic errors. Progress has been hindered by a circular dependency: evaluating hallucinations requires labeled data, yet such labels are costly and subjective. We introduce HalluGen, a diffusion-based framework that synthesizes realistic hallucinations with controllable type, location, and severity, producing perceptually realistic but semantically incorrect outputs (segmentation IoU drops from 0.86 to 0.36). Using HalluGen, we construct the first large-scale hallucination dataset comprising 4,350 annotated images derived from 1,450 brain MR images for low-field enhancement, enabling systematic evaluation of hallucination detection and mitigation. We demonstrate its utility in two applications: (1) benchmarking image quality metrics and developing Semantic Hallucination Assessment via Feature Evaluation (SHAFE), a feature-based metric with soft-attention pooling that improves hallucination sensitivity over traditional metrics; and (2) training reference-free hallucination detectors that generalize to real restoration failures. Together, HalluGen and its open dataset establish the first scalable foundation for evaluating hallucinations in safety-critical image restoration.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
