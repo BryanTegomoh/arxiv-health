@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malicious Image Analysis via Vision-Language Segmentation Fusion: Detection, Element, and Location in One-shot - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel zero-shot pipeline that simultaneously detects, identifies, and pixel-accurately localizes malicious content within images in a si">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Malicious Image Analysis via Vision-Language Segmentation Fusion: Detection, Element, and Location in One-shot</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.04599v1" target="_blank">2512.04599v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Sheng Hang, Chaoxiang He, Hongsheng Hu, Hanqing Hu, Bin Benjamin Zhu, Shi-Feng Sun, Dawu Gu, Shuo Wang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.75 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.04599v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.04599v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel zero-shot pipeline that simultaneously detects, identifies, and pixel-accurately localizes malicious content within images in a single pass. By fusing foundation segmentation models (SAM) with vision-language models (VLM) and incorporating an ensemble strategy, the method achieves high recall and precision on a new dataset, demonstrating robust performance against adversarial attacks and offering a practical, explainable solution for fine-grained content moderation.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This technology is highly relevant to medicine and public health by enabling automated, granular identification and localization of harmful visual content, such as images depicting drug abuse, self-harm, or sexual exploitation. This can support content moderation on health platforms, assist in monitoring public health trends related to illicit content, and protect vulnerable populations from exposure to dangerous materials.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>AI for content moderation and image analysis to detect and localize drug-related imagery. This could be used to support public health campaigns, identify and remove illicit drug content from online platforms, or assist law enforcement in combating illegal drug activities, all contributing to public health and safety.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The proposed pipeline offers a 'one-shot' capability, integrating detection of harmful content, identification of critical elements, and pixel-accurate localization of these elements.</li>
+                    
+                    <li>Methodology involves generating candidate object masks with SAM, refining them into independent regions, and scoring each region's malicious relevance using a VLM with open-vocabulary prompts.</li>
+                    
+                    <li>A key feature is a score-weighted fusion step that consolidates malicious object information, and an ensemble across multiple segmenters enhances robustness against adaptive attacks targeting specific segmentation methods.</li>
+                    
+                    <li>Evaluated on a newly-annotated 790-image dataset covering drug, sexual, violent, and extremist content, the method achieved 85.8% element-level recall, 78.1% precision, and a 92.1% segment-success rate.</li>
+                    
+                    <li>The system significantly outperforms direct zero-shot VLM localization, showing a 27.4% increase in recall at comparable precision.</li>
+                    
+                    <li>Demonstrates high robustness, with precision and recall decreasing by no more than 10% against PGD adversarial perturbations designed to challenge SAM and VLM.</li>
+                    
+                    <li>The full pipeline is practical, processing an image in seconds, seamlessly integrating into existing VLM workflows, and providing explainable, fine-grained malicious-image moderation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core pipeline first employs a foundation segmentation model (SAM) to generate initial object masks, which are then refined into distinct, larger regions. A vision-language model (VLM) is subsequently used to score the malicious relevance of each refined region via open-vocabulary prompts. These scores are weighted and fused to create a consolidated malicious object map. The entire process is hardened against attacks by ensembling predictions from multiple segmenters to improve reliability.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The method achieved 85.8% element-level recall, 78.1% precision, and a 92.1% segment-success rate on the custom dataset. It significantly outperformed direct zero-shot VLM localization, yielding a 27.4% higher recall with comparable precision. Crucially, the system demonstrated strong robustness, with precision and recall decreasing by no more than 10% when subjected to PGD adversarial perturbations designed to break SAM and VLM.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The ability to automatically detect, identify, and localize harmful content with high precision and explainability could significantly impact clinical and public health efforts. For instance, it could be deployed to moderate online patient forums, detect emerging trends of substance abuse or self-harm content on social media impacting youth mental health, assist forensic analysis of digital evidence in cases of child exploitation, or filter harmful content from educational health materials, thereby improving online safety and public health outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations or caveats of the proposed method.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly suggest future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Public Health</span>
+                    
+                    <span class="tag">Mental Health</span>
+                    
+                    <span class="tag">Digital Forensics</span>
+                    
+                    <span class="tag">Patient Safety (online platforms)</span>
+                    
+                    <span class="tag">Health Information Management</span>
+                    
+                    <span class="tag">Child Protection (online)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">malicious content</span>
+                    
+                    <span class="tag tag-keyword">image analysis</span>
+                    
+                    <span class="tag tag-keyword">vision-language models</span>
+                    
+                    <span class="tag tag-keyword">semantic segmentation</span>
+                    
+                    <span class="tag tag-keyword">zero-shot learning</span>
+                    
+                    <span class="tag tag-keyword">content moderation</span>
+                    
+                    <span class="tag tag-keyword">adversarial robustness</span>
+                    
+                    <span class="tag tag-keyword">explainable AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Detecting illicit visual content demands more than image-level NSFW flags; moderators must also know what objects make an image illegal and where those objects occur. We introduce a zero-shot pipeline that simultaneously (i) detects if an image contains harmful content, (ii) identifies each critical element involved, and (iii) localizes those elements with pixel-accurate masks - all in one pass. The system first applies foundation segmentation model (SAM) to generate candidate object masks and refines them into larger independent regions. Each region is scored for malicious relevance by a vision-language model using open-vocabulary prompts; these scores weight a fusion step that produces a consolidated malicious object map. An ensemble across multiple segmenters hardens the pipeline against adaptive attacks that target any single segmentation method. Evaluated on a newly-annotated 790-image dataset spanning drug, sexual, violent and extremist content, our method attains 85.8% element-level recall, 78.1% precision and a 92.1% segment-success rate - exceeding direct zero-shot VLM localization by 27.4% recall at comparable precision. Against PGD adversarial perturbations crafted to break SAM and VLM, our method's precision and recall decreased by no more than 10%, demonstrating high robustness against attacks. The full pipeline processes an image in seconds, plugs seamlessly into existing VLM workflows, and constitutes the first practical tool for fine-grained, explainable malicious-image moderation.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

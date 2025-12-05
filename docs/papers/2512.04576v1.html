@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARDis: Time Attenuated Representation Disentanglement for Incomplete Multi-Modal Tumor Segmentation and Classification - Health AI Hub</title>
+    <meta name="description" content="TARDis addresses the "missing modality" problem in multi-phase contrast-enhanced CT by modeling incomplete series as missing sample points on a continuous Time-">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>TARDis: Time Attenuated Representation Disentanglement for Incomplete Multi-Modal Tumor Segmentation and Classification</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.04576v1" target="_blank">2512.04576v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Zishuo Wan, Qinqin Kang, Yi Huang, Yun Bian, Dawei Ding, Ke Yan
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.04576v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.04576v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">TARDis addresses the "missing modality" problem in multi-phase contrast-enhanced CT by modeling incomplete series as missing sample points on a continuous Time-Attenuation Curve, rather than just absent channels. This physics-aware framework disentangles latent features into time-invariant static (anatomy) and time-dependent dynamic (perfusion) components, utilizing a dual-path architecture to robustly hallucinate missing hemodynamic information. The method significantly outperforms state-of-the-art approaches, demonstrating robust diagnostic performance even in extreme data-sparsity scenarios, thereby holding potential for reducing radiation exposure.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This work directly addresses a critical clinical trade-off between comprehensive diagnostic imaging (multi-phase CT) and patient radiation exposure. By enabling robust diagnosis from incomplete CT series, it offers a path to reduce radiation dose without compromising diagnostic accuracy for tumor segmentation and classification.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This AI application leverages deep learning (specifically, Time Attenuated Representation Disentanglement) to enhance medical image analysis for tumor segmentation and classification. It aims to overcome limitations of incomplete multi-phase CT scans, enabling accurate diagnosis with potentially fewer imaging phases. This contributes to improved diagnostic workflow, reduced patient radiation exposure, and maintaining high diagnostic precision in clinical settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Problem Addressed**: The clinical challenge of incomplete multi-phase contrast-enhanced CT series (the "missing modality" problem) for tumor segmentation and diagnosis, often due to radiation concerns or scanning limitations.</li>
+                    
+                    <li>**Novel Conceptualization**: Redefines missing modalities not as absent independent channels, but as missing sample points on an inherently continuous Time-Attenuation Curve, leveraging the temporal continuity of hemodynamics.</li>
+                    
+                    <li>**Core Methodology**: Proposes Time Attenuated Representation Disentanglement (TARDis), a physics-aware framework that explicitly disentangles the latent feature space into a time-invariant static component (anatomy) and a time-dependent dynamic component (perfusion).</li>
+                    
+                    <li>**Dual-Path Architecture**: Implements this disentanglement via two paths: a quantization-based path with a learnable embedding dictionary for consistent anatomical structures, and a probabilistic path using a Conditional Variational Autoencoder (CVAE) to model dynamic enhancement conditioned on estimated scan time.</li>
+                    
+                    <li>**Feature Hallucination**: The design allows TARDis to "hallucinate" missing hemodynamic features by sampling from the learned latent distribution of the dynamic component.</li>
+                    
+                    <li>**Superior Performance**: Demonstrated significant outperformance against state-of-the-art incomplete modality frameworks across a large private abdominal CT dataset (2,282 cases) and two public datasets.</li>
+                    
+                    <li>**Robustness in Sparsity**: Achieves robust diagnostic performance even in scenarios with extreme data sparsity, indicating its effectiveness when only minimal phases are available.</li>
+                    
+                    <li>**Clinical Potential**: Highlights the potential for substantially reducing radiation exposure in diagnostic imaging procedures while maintaining or even improving diagnostic precision.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>TARDis employs a novel physics-aware deep learning framework that conceptualizes missing CT phases as missing points on a continuous Time-Attenuation Curve. It uses a dual-path architecture to explicitly disentangle latent features into a time-invariant static component (anatomy) via a quantization-based path and a time-dependent dynamic component (perfusion) via a Conditional Variational Autoencoder (CVAE). The CVAE models dynamic enhancement conditioned on estimated scan time, allowing the network to hallucinate missing hemodynamic features by sampling from its learned latent distribution.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>TARDis significantly outperforms state-of-the-art incomplete modality frameworks in tumor segmentation and classification across diverse datasets. It demonstrates robust diagnostic performance even in extreme data-sparsity scenarios, effectively maintaining precision while potentially requiring fewer CT phases.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly reduce patient radiation exposure during contrast-enhanced CT scans for tumor diagnosis, particularly in oncology, without sacrificing diagnostic accuracy. It could allow for more frequent monitoring or reduce the burden on patients in scenarios where complete multi-phase series are difficult or undesirable to obtain, improving both patient safety and diagnostic efficiency.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state specific limitations of the proposed method or the study.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly suggest future research directions, beyond the implied broader adoption of reduced-dose imaging protocols.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Medical Physics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Tumor segmentation</span>
+                    
+                    <span class="tag tag-keyword">Multi-modal CT</span>
+                    
+                    <span class="tag tag-keyword">Missing modality</span>
+                    
+                    <span class="tag tag-keyword">Representation disentanglement</span>
+                    
+                    <span class="tag tag-keyword">Time-Attenuation Curve</span>
+                    
+                    <span class="tag tag-keyword">Deep learning</span>
+                    
+                    <span class="tag tag-keyword">Radiation reduction</span>
+                    
+                    <span class="tag tag-keyword">Hemodynamics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Tumor segmentation and diagnosis in contrast-enhanced Computed Tomography (CT) rely heavily on the physiological dynamics of contrast agents. However, obtaining a complete multi-phase series is often clinically unfeasible due to radiation concerns or scanning limitations, leading to the "missing modality" problem. Existing deep learning approaches typically treat missing phases as absent independent channels, ignoring the inherent temporal continuity of hemodynamics. In this work, we propose Time Attenuated Representation Disentanglement (TARDis), a novel physics-aware framework that redefines missing modalities as missing sample points on a continuous Time-Attenuation Curve. TARDis explicitly disentangles the latent feature space into a time-invariant static component (anatomy) and a time-dependent dynamic component (perfusion). We achieve this via a dual-path architecture: a quantization-based path using a learnable embedding dictionary to extract consistent anatomical structures, and a probabilistic path using a Conditional Variational Autoencoder to model dynamic enhancement conditioned on the estimated scan time. This design allows the network to hallucinate missing hemodynamic features by sampling from the learned latent distribution. Extensive experiments on a large-scale private abdominal CT dataset (2,282 cases) and two public datasets demonstrate that TARDis significantly outperforms state-of-the-art incomplete modality frameworks. Notably, our method maintains robust diagnostic performance even in extreme data-sparsity scenarios, highlighting its potential for reducing radiation exposure while maintaining diagnostic precision.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
