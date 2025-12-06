@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UW-BioNLP at ChemoTimelines 2025: Thinking, Fine-Tuning, and Dictionary-Enhanced LLM Systems for Chemotherapy Timeline Extraction - Health AI Hub</title>
-    <meta name="description" content="This paper details UW-BioNLP's approach to the ChemoTimelines 2025 shared task, focusing on automatically generating patient chemotherapy timelines from raw cli">
+    <meta name="description" content="This paper presents UW-BioNLP's participation in the ChemoTimelines 2025 shared task, focusing on generating patient chemotherapy timelines from raw clinical no">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CL, cs.AI
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper details UW-BioNLP's approach to the ChemoTimelines 2025 shared task, focusing on automatically generating patient chemotherapy timelines from raw clinical notes using advanced LLM systems. Their method employs a two-step workflow: LLMs extract chemotherapy events from individual notes, followed by algorithmic normalization and aggregation into patient-level timelines. A fine-tuned Qwen3-14B model achieved the best official score of 0.678, demonstrating the efficacy of combining thinking, fine-tuning, and dictionary-enhanced strategies.</p>
+                <p class="summary-text">This paper presents UW-BioNLP's participation in the ChemoTimelines 2025 shared task, focusing on generating patient chemotherapy timelines from raw clinical notes using advanced LLM-based systems. Their approach involved a two-step workflow combining LLM event extraction with algorithmic aggregation, evaluating strategies like fine-tuning, chain-of-thought, and dictionary lookups. A fine-tuned Qwen3-14B model achieved the best official score of 0.678, demonstrating effective LLM utilization for this critical clinical NLP task.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate and automated extraction of chemotherapy timelines from clinical notes is crucial for real-time treatment monitoring, clinical research, personalized patient management, and ultimately improving the quality and safety of cancer care.</p>
+                <p>Accurate and automated extraction of chemotherapy timelines from clinical notes is vital for cancer research, personalized treatment planning, monitoring treatment efficacy, identifying adverse events, and supporting clinical decision systems in oncology, significantly improving the utility of unstructured EHR data.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application involves utilizing Large Language Models (LLMs) and advanced NLP techniques (fine-tuning, DPO, chain-of-thought) to automatically process unstructured clinical notes within Electronic Health Records (EHRs). The goal is to accurately extract and structure chemotherapy treatment events into patient-level timelines, which can enhance data accessibility for clinicians, researchers, and potentially improve treatment planning and patient outcomes in oncology.</p>
+                <p>The AI application involves using Large Language Models (LLMs) and various NLP techniques (fine-tuning, chain-of-thought, dictionary-based lookup) to automatically extract and construct structured chemotherapy treatment timelines from unstructured clinical notes in electronic health records for cancer patients. This automates the process of summarizing critical treatment information, which is vital for clinical care, research, and potentially personalized medicine.</p>
             </section>
             
 
@@ -68,17 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses ChemoTimelines 2025 Subtask 2: automated extraction of systemic anticancer treatment timelines from electronic health records (EHRs).</li>
+                    <li>The research addresses Subtask 2 of the ChemoTimelines 2025 shared task, focused on extracting systemic anticancer treatment timelines from cancer patients' Electronic Health Records (EHRs).</li>
                     
-                    <li>Utilizes a two-step workflow: an LLM extracts chemotherapy events from individual clinical notes, and then an algorithm normalizes and aggregates these events into patient-level timelines.</li>
+                    <li>A consistent two-step workflow was employed: first, an LLM extracts chemotherapy events from individual clinical notes, followed by an algorithm normalizing and aggregating these into patient-level timelines.</li>
                     
-                    <li>Evaluated various LLM strategies including Chain-of-Thought (CoT) thinking, Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and dictionary-based lookup to improve event extraction.</li>
+                    <li>Evaluated LLM strategies included Chain-of-Thought (CoT) prompting, Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and dictionary-based lookup to enhance timeline extraction.</li>
                     
-                    <li>The fine-tuned Qwen3-14B model achieved the highest official score of 0.678 on the test set leaderboard.</li>
+                    <li>Multiple distinct approaches demonstrated competitive performance on the test set leaderboard.</li>
                     
-                    <li>The research indicates that sophisticated LLM approaches, particularly when fine-tuned, can yield competitive performances for complex clinical NLP tasks.</li>
+                    <li>The highest official score of 0.678 was achieved by a system utilizing a fine-tuned Qwen3-14B Large Language Model.</li>
                     
-                    <li>The findings aim to provide valuable insights for future attempts on chemotherapy timeline extraction and the design of similar clinical information extraction tasks.</li>
+                    <li>The findings aim to provide valuable insights for future research on the ChemoTimelines task and the broader design of similar medical information extraction challenges.</li>
+                    
+                    <li>The core innovation lies in applying and comparing various state-of-the-art LLM training and utilization techniques specifically tailored for complex temporal medical event extraction.</li>
                     
                 </ul>
             </section>
@@ -86,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The methodology follows a two-step process: (1) Large Language Models (LLMs) are used to extract specific chemotherapy events (e.g., drug, dosage, start/end dates) from unstructured individual clinical notes. The LLM's performance was optimized through strategies such as Chain-of-Thought prompting, supervised fine-tuning (SFT), direct preference optimization (DPO), and integrating dictionary-based lookups. (2) An algorithmic component then normalizes the extracted events for consistency (e.g., standardizing drug names, resolving temporal ambiguities) and aggregates them chronologically to construct comprehensive patient-level chemotherapy timelines.</p>
+                    <p>The study implemented a two-stage pipeline: (1) An LLM component was responsible for identifying and extracting chemotherapy events from individual raw clinical notes. Various LLM configurations were tested, including those employing Chain-of-Thought reasoning, Supervised Fine-Tuning, Direct Preference Optimization, and dictionary-based lookup mechanisms to guide extraction. (2) Subsequently, an algorithmic component processed these extracted events, performing normalization and aggregation to construct a coherent patient-level chemotherapy timeline.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The study demonstrated that fine-tuned LLMs are highly effective for extracting chemotherapy timelines, with the fine-tuned Qwen3-14B model achieving the top official score of 0.678. The evaluation of different LLM strategies confirmed that a combination of sophisticated prompting (CoT), task-specific fine-tuning (SFT, DPO), and knowledge-based enhancements (dictionary lookup) significantly improves the accuracy of event extraction from clinical text.</p>
+                    <p>The research successfully demonstrated that LLM-based systems, particularly when fine-tuned, are highly effective for extracting complex chemotherapy timelines from clinical notes. A fine-tuned Qwen3-14B model achieved the highest official score of 0.678, underscoring the competitive performance and potential of these advanced NLP techniques in a challenging real-world medical task.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>Automating chemotherapy timeline construction can drastically reduce manual data abstraction efforts for clinicians and researchers. This improves data consistency for clinical trials, facilitates real-world evidence generation, supports proactive treatment adjustments, enables personalized medicine by providing clear treatment histories, and enhances patient safety through readily accessible and accurate treatment overviews.</p>
+                <p>The ability to automatically and accurately synthesize complex chemotherapy histories can significantly reduce manual chart review time for clinicians and researchers. This can lead to more efficient cohort identification for clinical trials, improved precision in treatment planning, better tracking of patient progress and drug exposure, and enhanced support for clinical decision-making, ultimately improving patient outcomes and accelerating oncology research.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly detail the specific limitations of the proposed methods or their generalizability beyond the performance on the ChemoTimelines shared task benchmark.</p>
+                <p>The abstract does not explicitly state limitations of the UW-BioNLP team's specific methodologies. However, the inherent challenges of extracting nuanced, temporal medical information from raw, often ambiguous or incomplete clinical notes (e.g., handling negation, implicit timings, varying terminologies) are implicit within such a shared task.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The authors suggest that their results and analyses offer valuable insights for future development efforts in the ChemoTimelines task itself, as well as for the broader design and implementation of similar clinical information extraction and timeline construction tasks using LLMs.</p>
+                <p>The authors suggest that their results and analyses will provide valuable insights for future attempts on the ChemoTimelines task itself. This implies continued refinement of LLM-based approaches, potentially exploring hybrid models, more robust temporal reasoning, and extending these techniques to the design of similar complex medical timeline extraction tasks across various clinical domains.</p>
             </section>
             
 
@@ -120,11 +122,13 @@
                     
                     <span class="tag">Oncology</span>
                     
-                    <span class="tag">Clinical Informatics</span>
+                    <span class="tag">Medical Informatics</span>
                     
-                    <span class="tag">Medical AI</span>
+                    <span class="tag">Health AI</span>
                     
-                    <span class="tag">Health Data Science</span>
+                    <span class="tag">Clinical Research</span>
+                    
+                    <span class="tag">Natural Language Processing in Medicine</span>
                     
                 </div>
             </section>
@@ -133,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Chemotherapy</span>
+                    <span class="tag tag-keyword">Chemotherapy Timelines</span>
                     
-                    <span class="tag tag-keyword">Clinical Timelines</span>
+                    <span class="tag tag-keyword">LLM Systems</span>
                     
-                    <span class="tag tag-keyword">LLM</span>
+                    <span class="tag tag-keyword">Clinical NLP</span>
                     
-                    <span class="tag tag-keyword">EHR</span>
+                    <span class="tag tag-keyword">EHR Extraction</span>
                     
-                    <span class="tag tag-keyword">Natural Language Processing (NLP)</span>
+                    <span class="tag tag-keyword">Fine-Tuning</span>
                     
-                    <span class="tag tag-keyword">Fine-tuning</span>
+                    <span class="tag tag-keyword">Chain-of-Thought</span>
                     
-                    <span class="tag tag-keyword">Oncology</span>
+                    <span class="tag tag-keyword">Oncology Informatics</span>
                     
-                    <span class="tag tag-keyword">Information Extraction</span>
+                    <span class="tag tag-keyword">Medical Information Extraction</span>
                     
                 </div>
             </section>

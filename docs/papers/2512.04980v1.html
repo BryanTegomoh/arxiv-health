@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Causality for Longitudinal Data - Health AI Hub</title>
-    <meta name="description" content="This thesis presents three novel contributions in causal inference and causal representation learning (CRL) for high-dimensional, time-varying data. It introduc">
+    <meta name="description" content="This thesis presents advanced methods for causal inference and causal representation learning (CRL) specifically designed for high-dimensional, time-varying lon">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This thesis presents three novel contributions in causal inference and causal representation learning (CRL) for high-dimensional, time-varying data. It introduces the Causal Dynamic Variational Autoencoder (CDVAE) for improved Individual Treatment Effect (ITE) estimation by modeling unobserved heterogeneity, an efficient RNN-based framework utilizing Contrastive Predictive Coding (CPC) for long-term counterfactuals, and a model-agnostic interpretability layer to uncover how latent causes manifest in observed features.</p>
+                <p class="summary-text">This thesis presents advanced methods for causal inference and causal representation learning (CRL) specifically designed for high-dimensional, time-varying longitudinal data. It introduces the Causal Dynamic Variational Autoencoder (CDVAE) for robust Individual Treatment Effect (ITE) estimation under unobserved confounding, an efficient RNN-based framework for long-term counterfactual prediction, and a novel model-agnostic interpretability layer to elucidate how latent causes manifest in observed variables.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>These methods are vital for precision medicine, enabling more accurate individual treatment effect predictions, understanding long-term disease progression under different interventions, and deciphering underlying biological mechanisms from complex, longitudinal patient data.</p>
+                <p>These methods are profoundly relevant for personalized medicine and public health, enabling more accurate prediction of individual patient responses to treatments, understanding complex disease trajectories over time, and deciphering the latent biological mechanisms underlying observable health outcomes from high-dimensional patient data, even in the presence of unobserved confounding.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The methods developed could be applied to build advanced medical AI systems that: 1) Predict individual patient responses to various treatments (ITEs) to recommend personalized therapies. 2) Model long-term patient outcomes under different care pathways or lifestyle changes (counterfactuals) to guide clinical decision-making. 3) Uncover hidden biological mechanisms or patient subgroups (latent causes) from complex medical data like Electronic Health Records (EHRs), sensor data, or omics data, thereby improving diagnostic accuracy and target identification for new therapies. 4) Enhance the interpretability of AI models in healthcare by showing how latent factors influence observable patient features.</p>
+                <p>This research provides foundational AI methods for developing applications such as: predicting individual patient responses to therapies (personalized treatment recommendations), simulating long-term disease progression under various interventions, optimizing sequential treatment strategies for chronic conditions, identifying latent disease subtypes or risk factors from complex medical data, and creating more interpretable AI models for clinical decision support systems.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Introduces the Causal Dynamic Variational Autoencoder (CDVAE) for estimating Individual Treatment Effects (ITEs), specifically designed to capture unobserved heterogeneity driven by latent risk factors affecting only outcomes.</li>
+                    <li>**Causal Dynamic Variational Autoencoder (CDVAE):** A novel VAE-based model for estimating Individual Treatment Effects (ITEs) by effectively capturing unobserved heterogeneity through latent risk factors influencing outcomes, backed by theoretical guarantees for valid latent adjustment and generalization.</li>
                     
-                    <li>CDVAE provides theoretical guarantees for valid latent adjustment and generalization bounds for ITE error, demonstrating superior performance against baselines and enhancing state-of-the-art models to near oracle levels.</li>
+                    <li>**Enhanced ITE Estimation:** CDVAE significantly outperforms baselines and demonstrably improves state-of-the-art models by augmenting them with its learned latent substitutes, achieving near-oracle performance even without access to true adjustment variables.</li>
                     
-                    <li>Proposes an efficient RNN-based framework for long-term counterfactual regression, enhanced with Contrastive Predictive Coding (CPC) and InfoMax, which captures long-range dependencies under time-varying confounding while avoiding high computational costs of transformers.</li>
+                    <li>**Efficient Long-Term Counterfactual Regression:** An RNN-based framework, enhanced with Contrastive Predictive Coding (CPC) and InfoMax, is proposed for capturing long-range dependencies under time-varying confounding, achieving state-of-the-art results.</li>
                     
-                    <li>Achieves state-of-the-art results in long-term counterfactual regression and introduces Contrastive Predictive Coding (CPC) as a novel technique within causal inference.</li>
+                    <li>**Computational Efficiency:** The RNN-CPC/InfoMax approach provides a computationally efficient alternative to transformer-based models for long-term counterfactual prediction, crucial for large-scale longitudinal datasets.</li>
                     
-                    <li>Advances Causal Representation Learning (CRL) through a model-agnostic interpretability layer based on the geometry of the decoder Jacobian, addressing how latent causes manifest in observed variables.</li>
+                    <li>**Advanced Causal Representation Learning (CRL):** A model-agnostic interpretability layer is introduced to understand how latent causes manifest in observed variables, leveraging the geometry of the decoder Jacobian.</li>
                     
-                    <li>Employs a sparse self-expression prior to induce modular, potentially overlapping groups of observed features that align with shared latent influences, with provided recovery guarantees without strong assumptions.</li>
+                    <li>**Meaningful Latent-to-Observed Structure Recovery:** This interpretability layer, using a sparse self-expression prior, recovers modular (potentially overlapping) groups of observed features aligned with shared latent influences, with theoretical recovery guarantees and without requiring strong assumptions like anchor features or single-parent dependencies.</li>
                     
-                    <li>Develops scalable Jacobian-based regularization techniques to further enhance the interpretability and recovery of latent-to-observed structure.</li>
+                    <li>**Scalable Regularization:** Development of scalable Jacobian-based regularization techniques further supports the interpretability and recovery of latent-to-observed causal structures.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,36 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The paper utilizes a Causal Dynamic Variational Autoencoder (CDVAE) for ITE estimation with theoretical guarantees. For long-term counterfactuals, it employs Recurrent Neural Networks (RNNs) augmented with Contrastive Predictive Coding (CPC) and InfoMax. Causal Representation Learning is advanced through a model-agnostic interpretability layer based on decoder Jacobian geometry and a sparse self-expression prior, complemented by scalable Jacobian-based regularization.</p>
+                    <p>The paper introduces three distinct methodological contributions:
+1.  **Causal Dynamic Variational Autoencoder (CDVAE):** A VAE-based architecture designed to learn a disentangled representation of latent risk factors influencing outcomes, thereby enabling robust Individual Treatment Effect (ITE) estimation with theoretical guarantees for adjustment and generalization.
+2.  **RNN-based Counterfactual Regression Framework:** An efficient approach leveraging Recurrent Neural Networks (RNNs) augmented with Contrastive Predictive Coding (CPC) and InfoMax to model long-range temporal dependencies for predicting long-term counterfactual outcomes under time-varying confounding.
+3.  **Model-Agnostic Interpretability Layer for CRL:** A technique based on analyzing the geometry of the decoder Jacobian and applying a sparse self-expression prior. This allows for identifying modular, potentially overlapping, groups of observed features that are aligned with specific shared latent influences, supported by scalable Jacobian-based regularization.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>CDVAE significantly improves Individual Treatment Effect estimation by capturing unobserved heterogeneity, outperforming baselines and enabling near-oracle performance. The RNN-based framework with CPC and InfoMax achieves state-of-the-art results in efficient long-term counterfactual regression, effectively handling time-varying confounding. A novel interpretability layer allows for the recovery of meaningful, modular, and potentially overlapping latent-to-observed feature groups with theoretical guarantees, advancing the understanding of latent causal structures.</p>
+                    <p>1.  CDVAE significantly improves Individual Treatment Effect (ITE) estimation, outperforming existing baselines and allowing state-of-the-art models to achieve near-oracle performance by incorporating its learned latent substitutes, even without access to true confounders.
+2.  The RNNs enhanced with Contrastive Predictive Coding (CPC) and InfoMax provide a computationally efficient framework that achieves state-of-the-art results in long-term counterfactual regression, effectively capturing intricate temporal dependencies.
+3.  The proposed model-agnostic interpretability layer successfully recovers meaningful latent-to-observed causal structures, identifying modular and potentially overlapping groups of observed features influenced by shared latent causes, with theoretical guarantees for recovery in various settings and without strong prior assumptions.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research could lead to more precise and personalized treatment recommendations by accurately predicting individual patient responses. It enables better long-term forecasting of disease progression under various interventions, aiding in proactive care planning for chronic conditions. Furthermore, the interpretability methods can help identify novel biomarkers and elucidate the mechanistic links between latent biological processes and observable clinical manifestations, informing drug development and diagnostic strategies.</p>
+                <p>This research offers significant potential to improve clinical decision-making by providing more accurate predictions of individual patient responses to various treatments and interventions. It can guide the design of more effective long-term therapeutic strategies for chronic diseases, enable better patient stratification for clinical trials, and offer valuable, interpretable insights into the underlying mechanisms of disease and treatment efficacy, thereby fostering greater trust in AI-driven healthcare solutions.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Not explicitly mentioned in the abstract.</p>
+                <p>Not explicitly mentioned in the abstract. The abstract focuses on the contributions and achieved performance.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not explicitly mentioned in the abstract.</p>
+                <p>Not explicitly mentioned in the abstract, but implied by the advancement of Causal Representation Learning and the introduction of Contrastive Predictive Coding into causal inference, suggesting avenues for broader application and further theoretical development in these areas.</p>
             </section>
             
 
@@ -120,17 +125,17 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Precision Medicine</span>
+                    <span class="tag">Personalized Medicine</span>
                     
-                    <span class="tag">Personalized Treatment</span>
+                    <span class="tag">Pharmacovigilance</span>
                     
-                    <span class="tag">Chronic Disease Management</span>
+                    <span class="tag">Epidemiology</span>
                     
-                    <span class="tag">Drug Discovery and Development</span>
+                    <span class="tag">Clinical Trials</span>
                     
-                    <span class="tag">Prognostics</span>
+                    <span class="tag">Disease Progression Modeling</span>
                     
-                    <span class="tag">Biomarker Discovery</span>
+                    <span class="tag">Precision Diagnostics</span>
                     
                     <span class="tag">Public Health Interventions</span>
                     
@@ -143,23 +148,19 @@
                     
                     <span class="tag tag-keyword">Causal Inference</span>
                     
-                    <span class="tag tag-keyword">Causal Representation Learning</span>
-                    
                     <span class="tag tag-keyword">Longitudinal Data</span>
                     
-                    <span class="tag tag-keyword">Individual Treatment Effects</span>
+                    <span class="tag tag-keyword">Individual Treatment Effects (ITEs)</span>
                     
-                    <span class="tag tag-keyword">Counterfactuals</span>
+                    <span class="tag tag-keyword">Counterfactual Regression</span>
                     
-                    <span class="tag tag-keyword">Variational Autoencoder</span>
+                    <span class="tag tag-keyword">Causal Representation Learning</span>
+                    
+                    <span class="tag tag-keyword">Variational Autoencoders</span>
                     
                     <span class="tag tag-keyword">Recurrent Neural Networks</span>
                     
-                    <span class="tag tag-keyword">Contrastive Predictive Coding</span>
-                    
                     <span class="tag tag-keyword">Interpretability</span>
-                    
-                    <span class="tag tag-keyword">High-dimensional Data</span>
                     
                 </div>
             </section>
