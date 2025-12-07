@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Light-Weight Large Language Model File Format for Highly-Secure Model Distribution - Health AI Hub</title>
-    <meta name="description" content="This paper introduces CryptoTensors, a novel secure and format-compatible file structure designed to protect large language model (LLM) weights, especially when">
+    <meta name="description" content="This paper introduces CryptoTensors, a secure and format-compatible file structure designed for the confidential distribution of large language models (LLMs) fi">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces CryptoTensors, a novel secure and format-compatible file structure designed to protect large language model (LLM) weights, especially when customized with sensitive data from domains like healthcare. Built as an extension to Safetensors, CryptoTensors integrates tensor-level encryption and access control, enabling secure, efficient, and widespread distribution of confidential LLMs with minimal overhead.</p>
+                <p class="summary-text">This paper introduces CryptoTensors, a secure and format-compatible file structure designed for the confidential distribution of large language models (LLMs) fine-tuned with sensitive data. By extending the widely adopted Safetensors format, CryptoTensors integrates tensor-level encryption and embedded access control, addressing the critical lack of built-in confidentiality in current LLM deployment methods. The solution is validated as a light-weight, efficient, and developer-friendly approach for safeguarding LLM weights, demonstrated through performance benchmarking and compatibility with major inference frameworks.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to medicine as it directly addresses the critical need for secure handling and distribution of LLMs trained or fine-tuned with sensitive healthcare data, ensuring patient privacy and data confidentiality in AI-driven medical applications.</p>
+                <p>This technology is highly relevant for medicine as it provides a robust mechanism to secure LLMs trained or fine-tuned with sensitive healthcare data, such as electronic health records or patient genomics. It enables healthcare organizations to deploy advanced AI models while ensuring patient data privacy, adhering to regulatory compliance (e.g., HIPAA), and protecting proprietary clinical insights.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This paper is foundational for securing AI applications in health. It enables the secure distribution and deployment of custom-tuned LLMs that have been trained on sensitive healthcare data (e.g., patient records, clinical trial results). This security is crucial for medical AI applications such as clinical decision support systems, personalized medicine models, diagnostic tools, drug discovery platforms, and AI-driven patient communication, ensuring confidentiality and integrity of both the AI model and the data it processes.</p>
+                <p>This research is directly relevant to enabling the secure and trustworthy deployment of Large Language Models (LLMs) in various healthcare applications. If LLMs are to be used for tasks such as clinical documentation, patient assistance, medical diagnostics, drug discovery, or personalized medicine, they will inevitably be trained or fine-tuned on sensitive patient data. CryptoTensors provides a foundational security layer for these medical AI applications by ensuring the confidentiality and integrity of the models themselves during distribution and execution, thereby addressing critical concerns related to patient privacy (e.g., HIPAA compliance) and intellectual property in medical AI.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>LLMs fine-tuned with sensitive data (e.g., healthcare) necessitate robust protection for model weights due to privacy and intellectual property concerns.</li>
+                    <li>**Problem Identification:** Existing LLM formats and deployment frameworks lack built-in support for confidentiality, access control, and secure integration, especially for models fine-tuned with sensitive domain-specific data (e.g., healthcare).</li>
                     
-                    <li>Existing model formats and deployment frameworks lack built-in support for confidentiality, access control, or secure integration with trusted hardware.</li>
+                    <li>**Proposed Solution:** CryptoTensors is introduced as a secure, format-compatible file structure that extends the Safetensors format for confidential LLM distribution.</li>
                     
-                    <li>Current secure deployment methods, relying on expensive cryptography or private infrastructure, are challenging and costly for widespread adoption.</li>
+                    <li>**Core Security Features:** It incorporates tensor-level encryption and embedded access control policies directly into the model file structure, protecting model weights.</li>
                     
-                    <li>CryptoTensors is proposed as a secure, format-compatible extension to the widely adopted Safetensors format, facilitating confidential LLM distribution.</li>
+                    <li>**Operational Efficiency & Compatibility:** CryptoTensors preserves critical features like lazy loading and partial deserialization, enables transparent decryption, and offers automated key management with minimal overhead.</li>
                     
-                    <li>Key features include tensor-level encryption, embedded access control policies, preservation of lazy loading and partial deserialization, transparent decryption, and automated key management.</li>
+                    <li>**Validation Methodology:** A proof-of-concept library was implemented, and its performance was benchmarked across serialization and runtime scenarios.</li>
                     
-                    <li>A proof-of-concept library was implemented and benchmarked, demonstrating efficient performance across serialization and runtime scenarios.</li>
+                    <li>**Framework Integration:** Demonstrated compatibility with widely adopted LLM inference frameworks, including Hugging Face Transformers and vLLM.</li>
                     
-                    <li>CryptoTensors was validated for compatibility with major inference frameworks like Hugging Face Transformers and vLLM, proving to be a light-weight, efficient, and developer-friendly solution.</li>
+                    <li>**Overall Advantage:** Positions CryptoTensors as an efficient, light-weight, and developer-friendly solution for safeguarding LLM weights in real-world and widespread deployments.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The authors developed CryptoTensors as an extension to the Safetensors file format, incorporating tensor-level encryption and embedded access control policies. They implemented a proof-of-concept library for CryptoTensors, benchmarked its performance for serialization and runtime overhead, and validated its compatibility with existing LLM inference frameworks, specifically Hugging Face Transformers and vLLM.</p>
+                    <p>The authors developed CryptoTensors as an extension to the Safetensors format, incorporating tensor-level encryption and embedded access control policies. They implemented a proof-of-concept library, conducted performance benchmarks for both serialization and runtime, and validated its compatibility with existing LLM inference frameworks, specifically Hugging Face Transformers and vLLM.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>CryptoTensors provides a light-weight, efficient, and developer-friendly solution for safeguarding LLM weights through tensor-level encryption and embedded access control. It maintains critical features like lazy loading and partial deserialization, supports transparent decryption and automated key management, and demonstrates compatibility with industry-standard LLM inference frameworks with minimal performance overhead, enabling secure and widespread deployment.</p>
+                    <p>CryptoTensors is presented as a light-weight, efficient, and developer-friendly solution for securing LLM weights. It provides transparent decryption, automated key management, and robust access control with minimal performance overhead, while maintaining compatibility with the existing LLM deployment ecosystem.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>CryptoTensors would allow healthcare institutions to securely train, distribute, and deploy specialized LLMs using proprietary patient data (e.g., EHRs, genomic data) without compromising confidentiality. This facilitates the development of AI tools for personalized medicine, drug discovery, and clinical decision support, while adhering to strict privacy regulations like HIPAA and protecting valuable intellectual property, thereby accelerating AI adoption in sensitive medical contexts.</p>
+                <p>CryptoTensors has the potential to significantly enhance the clinical adoption of advanced LLMs by providing a secure and compliant framework for handling models trained on Protected Health Information (PHI). This will allow healthcare providers and researchers to leverage domain-specific LLMs for tasks such as personalized medicine, diagnostic assistance, treatment optimization, and administrative efficiency without compromising patient confidentiality or proprietary intellectual property, fostering greater trust and enabling wider deployment in clinical workflows.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations or caveats of the CryptoTensors approach or its current implementation. Further details on cryptographic strength, key management scalability for very large deployments, or potential performance impacts on extremely latency-sensitive applications are not provided in this abstract.</p>
+                <p>The abstract does not explicitly state any limitations of CryptoTensors.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly state future research directions. However, potential future work could include exploring integration with hardware-backed trusted execution environments (TEEs), formal security verification, or extending support for federated learning scenarios in healthcare.</p>
+                <p>The abstract does not explicitly state any future research directions.</p>
             </section>
             
 
@@ -120,17 +120,15 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
+                    <span class="tag">Healthcare AI</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Digital Health</span>
+                    
                     <span class="tag">Clinical Decision Support</span>
                     
-                    <span class="tag">Drug Discovery</span>
-                    
-                    <span class="tag">Personalized Medicine</span>
-                    
-                    <span class="tag">Medical Imaging Analysis</span>
-                    
-                    <span class="tag">Electronic Health Records (EHR) Processing</span>
-                    
-                    <span class="tag">Genomics and Proteomics</span>
+                    <span class="tag">Medical Research</span>
                     
                 </div>
             </section>
@@ -139,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">CryptoTensors</span>
-                    
-                    <span class="tag tag-keyword">LLMs</span>
-                    
-                    <span class="tag tag-keyword">Model Security</span>
+                    <span class="tag tag-keyword">Large Language Models (LLMs)</span>
                     
                     <span class="tag tag-keyword">Confidentiality</span>
                     
                     <span class="tag tag-keyword">Access Control</span>
                     
+                    <span class="tag tag-keyword">Secure Model Distribution</span>
+                    
+                    <span class="tag tag-keyword">Tensor-level Encryption</span>
+                    
                     <span class="tag tag-keyword">Safetensors</span>
                     
-                    <span class="tag tag-keyword">Healthcare Data</span>
+                    <span class="tag tag-keyword">Healthcare AI</span>
                     
-                    <span class="tag tag-keyword">Secure Distribution</span>
+                    <span class="tag tag-keyword">Data Privacy</span>
                     
                 </div>
             </section>

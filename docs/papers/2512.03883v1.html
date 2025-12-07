@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dual Cross-Attention Siamese Transformer for Rectal Tumor Regrowth Assessment in Watch-and-Wait Endoscopy - Health AI Hub</title>
-    <meta name="description" content="This paper introduces the Dual Cross-Attention Siamese Swin Transformer (SSDCA) for objective and early detection of local tumor regrowth in rectal cancer patie">
+    <meta name="description" content="This paper introduces the Dual Cross-Attention Siamese Transformer (SSDCA), a novel deep learning model designed for the early and objective detection of local ">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces the Dual Cross-Attention Siamese Swin Transformer (SSDCA) for objective and early detection of local tumor regrowth in rectal cancer patients undergoing watch-and-wait surveillance using longitudinal endoscopy images. SSDCA effectively distinguishes local regrowth from complete clinical response by leveraging pretrained Swin transformers and a novel dual cross-attention mechanism to fuse features from two endoscopic scans without spatial alignment, achieving high balanced accuracy, sensitivity, and robustness to image artifacts.</p>
+                <p class="summary-text">This paper introduces the Dual Cross-Attention Siamese Transformer (SSDCA), a novel deep learning model designed for the early and objective detection of local tumor regrowth in rectal cancer patients undergoing watch-and-wait surveillance. By analyzing longitudinal endoscopic images from restaging and follow-up, SSDCA accurately distinguishes clinical complete response from local regrowth, achieving high sensitivity and robustness to imaging variations.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research provides a vital non-invasive tool for the early and objective detection of rectal tumor regrowth, which is paramount for guiding treatment decisions in watch-and-wait patients. Early and accurate identification of regrowth can prevent distant metastases and allow timely intervention, improving patient outcomes and potentially avoiding unnecessary radical surgery for those with sustained complete responses.</p>
+                <p>This research is highly medically relevant as it provides an objectively accurate and robust method for the early detection of local tumor regrowth in rectal cancer patients undergoing watch-and-wait surveillance. This is critical for optimizing patient management, enabling timely intervention to prevent disease progression, and ultimately improving outcomes by averting distant metastases.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is a Dual Cross-Attention Siamese Transformer (SSDCA) designed to automatically assess rectal tumor regrowth from longitudinal endoscopic images. Its purpose is to assist clinicians in accurately distinguishing between a clinical complete response and local tumor regrowth in watch-and-wait rectal cancer patients, thereby improving surveillance strategies and patient management.</p>
+                <p>The AI system (SSDCA) is developed to serve as an objective, automated tool for assessing rectal tumor regrowth from follow-up endoscopic images. This application assists clinicians in the 'watch-and-wait' strategy for rectal cancer patients by providing an early and accurate method to detect local recurrence, thereby guiding clinical decisions, managing patient care, and potentially preventing distant metastases.</p>
             </section>
             
 
@@ -68,21 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical need for objectively accurate methods to early detect local regrowth (LR) in rectal cancer patients on a watch-and-wait (WW) protocol, distinguishing it from clinical complete response (cCR).</li>
+                    <li>The SSDCA model utilizes a Siamese Swin Transformer architecture enhanced with Dual Cross-Attention to process pairs of longitudinal endoscopic images.</li>
                     
-                    <li>Proposes a novel deep learning architecture: Siamese Swin Transformer with Dual Cross-Attention (SSDCA) for analyzing longitudinal endoscopic image pairs (restaging and follow-up).</li>
+                    <li>Its primary objective is to differentiate between clinical complete response (cCR) and local tumor regrowth (LR) in rectal cancer patients adhering to a watch-and-wait (WW) protocol after total neoadjuvant treatment (TNT).</li>
                     
-                    <li>SSDCA leverages pretrained Swin transformers for robust, domain-agnostic feature extraction, enhancing generalizability despite imaging variations.</li>
+                    <li>The model leverages pretrained Swin Transformers to extract robust, domain-agnostic features and employs dual cross-attention to emphasize relevant features from both scans without requiring explicit spatial alignment.</li>
                     
-                    <li>Employs a dual cross-attention mechanism to emphasize features from the two endoscopic scans, crucially without requiring any spatial alignment of images.</li>
+                    <li>SSDCA demonstrated superior performance, achieving the best balanced accuracy (81.76% ± 0.04), sensitivity (90.07% ± 0.08), and specificity (72.86% ± 0.05) compared to Swin-based baselines.</li>
                     
-                    <li>Trained on image pairs from 135 patients and evaluated on a held-out set of 62 patients, SSDCA outperformed Swin-based baselines.</li>
+                    <li>A robustness analysis confirmed the model's stable performance even in the presence of common endoscopic artifacts such as blood, stool, telangiectasia, and poor image quality.</li>
                     
-                    <li>Achieved a balanced accuracy of 81.76% ± 0.04, sensitivity of 90.07% ± 0.08 (for LR), and specificity of 72.86% ± 0.05 (for cCR).</li>
+                    <li>UMAP clustering of extracted features showed maximal inter-cluster separation (1.45 ± 0.18) and minimal intra-cluster dispersion (1.07 ± 0.19) with SSDCA, indicating highly discriminative representation learning.</li>
                     
-                    <li>Demonstrated robust performance against common endoscopic artifacts including blood, stool, telangiectasia, and poor image quality.</li>
-                    
-                    <li>UMAP clustering confirmed discriminative representation learning with maximal inter-cluster separation (1.45 ± 0.18) and minimal intra-cluster dispersion (1.07 ± 0.19).</li>
+                    <li>The model was trained on image pairs from 135 patients and rigorously evaluated on a held-out set of image pairs from 62 patients.</li>
                     
                 </ul>
             </section>
@@ -90,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study developed a Siamese Swin Transformer with Dual Cross-Attention (SSDCA). This model utilizes two branches, each with a pretrained Swin Transformer, to extract features from longitudinal endoscopic image pairs (restaging and follow-up). A dual cross-attention mechanism is then applied to integrate and emphasize features from both scans, specifically designed to function without requiring explicit spatial alignment of the images. The model was trained on image pairs from 135 patients and evaluated on a distinct held-out dataset comprising image pairs from 62 patients. Performance metrics included balanced accuracy, sensitivity, specificity, and robustness analysis against artifacts. UMAP clustering was used to assess the discriminative quality of the learned feature representations.</p>
+                    <p>The methodology involved developing a Siamese Swin Transformer with Dual Cross-Attention (SSDCA). This architecture uses pretrained Swin Transformers to extract robust, domain-agnostic features from longitudinal endoscopic image pairs (restaging and follow-up). Dual cross-attention then processes these features, emphasizing crucial information across the two scans without requiring explicit spatial alignment. The model was trained on image pairs from 135 patients and evaluated on a held-out set of 62 patients, comparing its performance against Swin-based baselines. Robustness to image artifacts and discriminative feature learning via UMAP clustering were also assessed.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>SSDCA achieved superior performance over baseline models with a balanced accuracy of 81.76% ± 0.04, sensitivity of 90.07% ± 0.08 (for local regrowth detection), and specificity of 72.86% ± 0.05 (for complete clinical response). The model exhibited strong robustness to various endoscopic artifacts. Furthermore, UMAP clustering of the extracted features confirmed highly discriminative representation learning, showing maximal inter-cluster separation (1.45 ± 0.18) and minimal intra-cluster dispersion (1.07 ± 0.19) for distinguishing between cCR and LR.</p>
+                    <p>The SSDCA model achieved superior performance metrics, including a balanced accuracy of 81.76% (± 0.04), sensitivity of 90.07% (± 0.08), and specificity of 72.86% (± 0.05). It demonstrated robust and stable performance across endoscopic images containing various artifacts like blood, stool, telangiectasia, and poor image quality. UMAP clustering analysis confirmed the model's ability to learn highly discriminative representations, showing optimal inter-cluster separation (1.45 ± 0.18) and minimal intra-cluster dispersion (1.07 ± 0.19) between response categories.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The SSDCA model has the potential to significantly improve the precision and timeliness of care for rectal cancer patients managed with a watch-and-wait approach. By providing an objective and highly accurate method for early detection of local regrowth from routine endoscopy, it can empower clinicians to make more informed decisions, prevent disease progression, tailor treatment strategies, and potentially spare patients from unnecessary invasive procedures, thereby enhancing patient safety and quality of life.</p>
+                <p>The SSDCA model has the potential to significantly improve clinical decision-making during rectal cancer watch-and-wait surveillance by providing an objective and accurate tool for early detection of local tumor regrowth. This can lead to more personalized treatment pathways, allowing for earlier and more targeted interventions for patients with recurrence, thereby potentially preventing metastatic disease and enhancing overall patient survival and quality of life.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations or caveats.</p>
+                <p>Limitations are not explicitly mentioned in the provided abstract.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly suggest future research directions.</p>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
             </section>
             
 
@@ -128,9 +126,9 @@
                     
                     <span class="tag">Colorectal Surgery</span>
                     
-                    <span class="tag">Diagnostic Imaging</span>
+                    <span class="tag">Medical Imaging</span>
                     
-                    <span class="tag">Medical Artificial Intelligence</span>
+                    <span class="tag">Artificial Intelligence in Medicine</span>
                     
                 </div>
             </section>
@@ -149,15 +147,11 @@
                     
                     <span class="tag tag-keyword">Deep Learning</span>
                     
-                    <span class="tag tag-keyword">Siamese Transformer</span>
+                    <span class="tag tag-keyword">Swin Transformer</span>
                     
                     <span class="tag tag-keyword">Cross-Attention</span>
                     
                     <span class="tag tag-keyword">Clinical Complete Response</span>
-                    
-                    <span class="tag tag-keyword">Medical Imaging</span>
-                    
-                    <span class="tag tag-keyword">Artificial Intelligence</span>
                     
                 </div>
             </section>

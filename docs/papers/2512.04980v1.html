@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Causality for Longitudinal Data - Health AI Hub</title>
-    <meta name="description" content="This thesis presents advanced methods for causal inference and causal representation learning (CRL) specifically designed for high-dimensional, time-varying lon">
+    <meta name="description" content="This thesis introduces novel methods for causal inference and causal representation learning (CRL) specifically designed for high-dimensional, time-varying data">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> stat.ML, cs.IT, cs.LG
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This thesis presents advanced methods for causal inference and causal representation learning (CRL) specifically designed for high-dimensional, time-varying longitudinal data. It introduces the Causal Dynamic Variational Autoencoder (CDVAE) for robust Individual Treatment Effect (ITE) estimation under unobserved confounding, an efficient RNN-based framework for long-term counterfactual prediction, and a novel model-agnostic interpretability layer to elucidate how latent causes manifest in observed variables.</p>
+                <p class="summary-text">This thesis introduces novel methods for causal inference and causal representation learning (CRL) specifically designed for high-dimensional, time-varying data. It proposes the Causal Dynamic Variational Autoencoder (CDVAE) for robust Individual Treatment Effect (ITE) estimation under unobserved confounding, develops an efficient RNN-based framework for long-term counterfactual regression, and advances CRL interpretability by revealing how latent causes map to observed variables. The work demonstrates state-of-the-art performance across various tasks and provides theoretical guarantees for its contributions.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>These methods are profoundly relevant for personalized medicine and public health, enabling more accurate prediction of individual patient responses to treatments, understanding complex disease trajectories over time, and deciphering the latent biological mechanisms underlying observable health outcomes from high-dimensional patient data, even in the presence of unobserved confounding.</p>
+                <p>This research is highly relevant to medicine by enabling more precise predictions of individual treatment responses, unraveling complex disease mechanisms influenced by hidden factors, and predicting long-term health trajectories, thereby informing personalized medicine and public health interventions.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This research provides foundational AI methods for developing applications such as: predicting individual patient responses to therapies (personalized treatment recommendations), simulating long-term disease progression under various interventions, optimizing sequential treatment strategies for chronic conditions, identifying latent disease subtypes or risk factors from complex medical data, and creating more interpretable AI models for clinical decision support systems.</p>
+                <p>The methods developed could be applied to create AI systems for personalized treatment recommendation (based on ITEs), predicting a patient's long-term health outcomes under different intervention scenarios (counterfactual regression), identifying hidden patient subgroups with unique disease mechanisms or treatment responses (latent risk factors), and providing interpretable insights into complex patient data to support clinical understanding and trust in AI-driven healthcare solutions. It could also aid in early detection of disease or risk factors by uncovering latent causes from observed clinical features.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>**Causal Dynamic Variational Autoencoder (CDVAE):** A novel VAE-based model for estimating Individual Treatment Effects (ITEs) by effectively capturing unobserved heterogeneity through latent risk factors influencing outcomes, backed by theoretical guarantees for valid latent adjustment and generalization.</li>
+                    <li>**Causal Dynamic Variational Autoencoder (CDVAE)**: A novel model designed to estimate Individual Treatment Effects (ITEs) by effectively capturing unobserved heterogeneity in treatment response, driven by latent risk factors that impact only outcomes.</li>
                     
-                    <li>**Enhanced ITE Estimation:** CDVAE significantly outperforms baselines and demonstrably improves state-of-the-art models by augmenting them with its learned latent substitutes, achieving near-oracle performance even without access to true adjustment variables.</li>
+                    <li>**Theoretical Guarantees for CDVAE**: The CDVAE framework comes with theoretical guarantees for valid latent adjustment and provides generalization bounds for ITE error, enhancing its reliability and trustworthiness.</li>
                     
-                    <li>**Efficient Long-Term Counterfactual Regression:** An RNN-based framework, enhanced with Contrastive Predictive Coding (CPC) and InfoMax, is proposed for capturing long-range dependencies under time-varying confounding, achieving state-of-the-art results.</li>
+                    <li>**Performance of CDVAE**: Experiments show CDVAE significantly outperforms existing baselines, and state-of-the-art models demonstrate considerable improvement when augmented with CDVAE's latent substitutes, closely approaching oracle performance without needing true adjustment variables.</li>
                     
-                    <li>**Computational Efficiency:** The RNN-CPC/InfoMax approach provides a computationally efficient alternative to transformer-based models for long-term counterfactual prediction, crucial for large-scale longitudinal datasets.</li>
+                    <li>**Efficient Long-Term Counterfactual Regression**: Introduces a new framework for long-term counterfactual regression based on RNNs, enhanced with Contrastive Predictive Coding (CPC) and InfoMax, which efficiently captures long-range dependencies under time-varying confounding.</li>
                     
-                    <li>**Advanced Causal Representation Learning (CRL):** A model-agnostic interpretability layer is introduced to understand how latent causes manifest in observed variables, leveraging the geometry of the decoder Jacobian.</li>
+                    <li>**Novel Application of CPC**: This research marks the introduction of Contrastive Predictive Coding (CPC) into the field of causal inference, offering a computationally efficient alternative to transformers for sequential causal modeling and achieving state-of-the-art results.</li>
                     
-                    <li>**Meaningful Latent-to-Observed Structure Recovery:** This interpretability layer, using a sparse self-expression prior, recovers modular (potentially overlapping) groups of observed features aligned with shared latent influences, with theoretical recovery guarantees and without requiring strong assumptions like anchor features or single-parent dependencies.</li>
+                    <li>**Interpretable Causal Representation Learning (CRL)**: Advances CRL by proposing a model-agnostic interpretability layer, grounded in the geometry of the decoder Jacobian, to elucidate how latent causes manifest in observed variables.</li>
                     
-                    <li>**Scalable Regularization:** Development of scalable Jacobian-based regularization techniques further supports the interpretability and recovery of latent-to-observed causal structures.</li>
+                    <li>**Latent-to-Observed Structure Recovery**: Utilizes a sparse self-expression prior to identify modular, potentially overlapping groups of observed features aligned with shared latent influences, providing recovery guarantees without relying on anchor features or single-parent assumptions, and developing scalable Jacobian-based regularization techniques.</li>
                     
                 </ul>
             </section>
@@ -88,36 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The paper introduces three distinct methodological contributions:
-1.  **Causal Dynamic Variational Autoencoder (CDVAE):** A VAE-based architecture designed to learn a disentangled representation of latent risk factors influencing outcomes, thereby enabling robust Individual Treatment Effect (ITE) estimation with theoretical guarantees for adjustment and generalization.
-2.  **RNN-based Counterfactual Regression Framework:** An efficient approach leveraging Recurrent Neural Networks (RNNs) augmented with Contrastive Predictive Coding (CPC) and InfoMax to model long-range temporal dependencies for predicting long-term counterfactual outcomes under time-varying confounding.
-3.  **Model-Agnostic Interpretability Layer for CRL:** A technique based on analyzing the geometry of the decoder Jacobian and applying a sparse self-expression prior. This allows for identifying modular, potentially overlapping, groups of observed features that are aligned with specific shared latent influences, supported by scalable Jacobian-based regularization.</p>
+                    <p>The paper leverages a combination of deep learning architectures and causal inference principles. It employs **Causal Dynamic Variational Autoencoders (CDVAE)** for latent variable modeling and ITE estimation. For long-term counterfactual regression, it uses **Recurrent Neural Networks (RNNs)** augmented with **Contrastive Predictive Coding (CPC)** and **InfoMax**. To enhance interpretability in Causal Representation Learning, it utilizes **decoder Jacobian geometry analysis** combined with **sparse self-expression priors** and **Jacobian-based regularization techniques**.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>1.  CDVAE significantly improves Individual Treatment Effect (ITE) estimation, outperforming existing baselines and allowing state-of-the-art models to achieve near-oracle performance by incorporating its learned latent substitutes, even without access to true confounders.
-2.  The RNNs enhanced with Contrastive Predictive Coding (CPC) and InfoMax provide a computationally efficient framework that achieves state-of-the-art results in long-term counterfactual regression, effectively capturing intricate temporal dependencies.
-3.  The proposed model-agnostic interpretability layer successfully recovers meaningful latent-to-observed causal structures, identifying modular and potentially overlapping groups of observed features influenced by shared latent causes, with theoretical guarantees for recovery in various settings and without strong prior assumptions.</p>
+                    <p>The CDVAE demonstrates superior performance in ITE estimation, significantly improving existing state-of-the-art models by effectively accounting for unobserved heterogeneity. The RNN-CPC-InfoMax framework achieves state-of-the-art results in long-term counterfactual regression with improved computational efficiency. Furthermore, a novel model-agnostic interpretability layer successfully recovers meaningful latent-to-observed causal structures, including modular and overlapping feature groups, without restrictive prior assumptions.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research offers significant potential to improve clinical decision-making by providing more accurate predictions of individual patient responses to various treatments and interventions. It can guide the design of more effective long-term therapeutic strategies for chronic diseases, enable better patient stratification for clinical trials, and offer valuable, interpretable insights into the underlying mechanisms of disease and treatment efficacy, thereby fostering greater trust in AI-driven healthcare solutions.</p>
+                <p>These advancements have the potential to significantly impact clinical practice by facilitating more accurate, personalized treatment decisions based on individual responses and hidden risk factors. They can enable clinicians to better predict long-term outcomes of interventions, optimize therapeutic strategies, and monitor disease progression with higher precision. The interpretability features can help uncover underlying biological mechanisms, potentially leading to the discovery of new biomarkers, drug targets, and a deeper mechanistic understanding of diseases.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Not explicitly mentioned in the abstract. The abstract focuses on the contributions and achieved performance.</p>
+                <p>The abstract does not explicitly state any limitations of the developed methods.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not explicitly mentioned in the abstract, but implied by the advancement of Causal Representation Learning and the introduction of Contrastive Predictive Coding into causal inference, suggesting avenues for broader application and further theoretical development in these areas.</p>
+                <p>The abstract does not explicitly state future research directions.</p>
             </section>
             
 
@@ -125,19 +120,19 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Personalized Medicine</span>
-                    
-                    <span class="tag">Pharmacovigilance</span>
+                    <span class="tag">Precision Medicine</span>
                     
                     <span class="tag">Epidemiology</span>
                     
+                    <span class="tag">Pharmacogenomics</span>
+                    
+                    <span class="tag">Chronic Disease Management</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
                     <span class="tag">Clinical Trials</span>
                     
-                    <span class="tag">Disease Progression Modeling</span>
-                    
-                    <span class="tag">Precision Diagnostics</span>
-                    
-                    <span class="tag">Public Health Interventions</span>
+                    <span class="tag">Digital Health</span>
                     
                 </div>
             </section>
@@ -150,15 +145,15 @@
                     
                     <span class="tag tag-keyword">Longitudinal Data</span>
                     
-                    <span class="tag tag-keyword">Individual Treatment Effects (ITEs)</span>
-                    
-                    <span class="tag tag-keyword">Counterfactual Regression</span>
+                    <span class="tag tag-keyword">Individual Treatment Effects</span>
                     
                     <span class="tag tag-keyword">Causal Representation Learning</span>
                     
-                    <span class="tag tag-keyword">Variational Autoencoders</span>
+                    <span class="tag tag-keyword">Variational Autoencoder</span>
                     
                     <span class="tag tag-keyword">Recurrent Neural Networks</span>
+                    
+                    <span class="tag tag-keyword">Contrastive Predictive Coding</span>
                     
                     <span class="tag tag-keyword">Interpretability</span>
                     

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Balanced Few-Shot Episodic Learning for Accurate Retinal Disease Diagnosis - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a balanced few-shot episodic learning framework designed for accurate retinal disease diagnosis, specifically addressing the challenge of ">
+    <meta name="description" content="This paper proposes a balanced few-shot episodic learning framework for accurate retinal disease diagnosis, addressing challenges of data scarcity and class imb">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a balanced few-shot episodic learning framework designed for accurate retinal disease diagnosis, specifically addressing the challenge of data imbalance and scarcity in medical imaging datasets like RFMiD. By integrating balanced sampling, targeted data augmentation (including CLAHE), and a ResNet-50 encoder, the method significantly enhances diagnostic accuracy and reduces bias for underrepresented retinal diseases even with limited labeled data.</p>
+                <p class="summary-text">This paper proposes a balanced few-shot episodic learning framework for accurate retinal disease diagnosis, addressing challenges of data scarcity and class imbalance inherent in medical imaging datasets. By integrating balanced sampling, targeted augmentation (including CLAHE), and a ResNet-50 encoder, the method significantly improves diagnostic accuracy and reduces bias towards majority classes, particularly benefiting underrepresented retinal conditions on the RFMiD dataset.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Automated and accurate diagnosis of retinal conditions such as diabetic retinopathy and macular degeneration is paramount for timely treatment and preventing irreversible vision loss, especially given their increasing prevalence. This research offers a practical solution to achieve reliable diagnoses even when large, balanced medical datasets are unavailable, a common challenge in ophthalmology and other medical imaging fields.</p>
+                <p>Automated retinal disease diagnosis is vital for managing widespread conditions like diabetic retinopathy and macular degeneration. This research provides a method to develop reliable AI diagnostic tools even when extensive, balanced datasets are unavailable, improving diagnostic accessibility and fairness in ophthalmology.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>Automated diagnosis of retinal diseases from fundus images using few-shot learning, aiming to provide more accurate and clinically fair diagnostic tools, especially under data-constrained conditions and for rare diseases, thereby supporting ophthalmologists and improving patient care.</p>
+                <p>The research proposes a balanced few-shot episodic learning framework to enable accurate and fair automated diagnosis of retinal diseases from fundus images, even with limited and imbalanced medical data. This application aims to assist clinicians in identifying conditions like diabetic retinopathy, macular degeneration, optic disc edema, and branch retinal vein occlusion, thereby improving healthcare delivery and patient outcomes, especially in settings with limited specialist access or data.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical challenge of diagnosing retinal diseases from imbalanced and data-scarce medical imaging datasets using Few-Shot Learning (FSL).</li>
+                    <li>Addresses the critical need for automated retinal disease diagnosis by overcoming limitations of conventional deep learning, namely large data requirements and class imbalance.</li>
                     
-                    <li>Proposes a novel balanced few-shot episodic learning framework specifically tailored for the Retinal Fundus Multi-Disease Image Dataset (RFMiD).</li>
+                    <li>Introduces a balanced few-shot episodic learning framework specifically tailored for the Retinal Fundus Multi-Disease Image Dataset (RFMiD), focusing on its ten most represented yet imbalanced classes.</li>
                     
-                    <li>Employs balanced episodic sampling to ensure equitable representation of all classes in each 5-way 5-shot episode, mitigating bias towards majority diseases.</li>
+                    <li>Incorporates three key methodological components: (i) balanced episodic sampling to ensure equal participation of all classes in 5-way 5-shot episodes; (ii) targeted augmentation using CLAHE and other transformations to enhance minority-class diversity; and (iii) a pre-trained ResNet-50 encoder for robust feature extraction.</li>
                     
-                    <li>Integrates targeted augmentation techniques, notably Contrast Limited Adaptive Histogram Equalization (CLAHE) and geometric/color transformations, to boost diversity and improve learning for minority classes.</li>
+                    <li>Utilizes prototype computation in the embedding space with cosine similarity for stable and effective classification.</li>
                     
-                    <li>Utilizes a pre-trained ResNet-50 encoder (ImageNet) for robust feature extraction and performs classification via cosine similarity with prototypes in the embedding space.</li>
+                    <li>Demonstrates substantial accuracy gains and a significant reduction in bias towards majority disease classes.</li>
                     
-                    <li>Achieves substantial accuracy gains and effectively reduces diagnostic bias against underrepresented diseases (e.g., Optic Disc Edema), demonstrating improved clinical fairness.</li>
+                    <li>Achieves notable diagnostic improvements specifically for underrepresented retinal diseases (e.g., Optic Disc Edema, Branch Retinal Vein Occlusion).</li>
                     
-                    <li>Highlights that a dataset-aware FSL pipeline, combined with strategic sampling and preprocessing (CLAHE), can deliver robust retinal disease diagnosis under data-constrained real-world conditions.</li>
+                    <li>Concludes that dataset-aware few-shot pipelines, combined with balanced sampling and CLAHE-enhanced preprocessing, can deliver more robust and clinically fair retinal disease diagnosis under data-constrained conditions.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study proposes a balanced few-shot episodic learning framework targeting ten imbalanced retinal disease classes in the RFMiD dataset. The methodology comprises three core components: (i) balanced episodic sampling, which guarantees equal participation of all classes in each 5-way 5-shot episode to counter class imbalance; (ii) targeted augmentation, including Contrast Limited Adaptive Histogram Equalization (CLAHE) and other color/geometry transformations, specifically applied to enhance the diversity and representation of minority classes; and (iii) a ResNet-50 encoder, pre-trained on ImageNet, selected for its capability to capture fine-grained retinal features. Classification is performed by computing prototypes in the embedding space and using cosine similarity for improved stability. The framework was trained over 100 episodes and rigorously evaluated on 1,000 test episodes.</p>
+                    <p>The study proposes a balanced few-shot episodic learning framework. It samples 5-way 5-shot episodes with balanced class participation. Targeted augmentation, including Contrast Limited Adaptive Histogram Equalization (CLAHE) and color/geometry transformations, is applied to minority classes. A ResNet-50 encoder, pre-trained on ImageNet, extracts features. Prototypes are computed in the embedding space, and classification is performed using cosine similarity. The framework was trained on 100 episodes and evaluated on 1,000 test episodes using the RFMiD dataset.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The proposed framework achieved substantial accuracy gains in retinal disease diagnosis, demonstrating a significant reduction in bias toward majority classes. Notably, the method yielded marked improvements for underrepresented diseases, such as Optic Disc Edema and Branch Retinal Vein Occlusion. These results indicate that a dataset-aware few-shot learning pipeline, when combined with balanced sampling and CLAHE-enhanced preprocessing, is highly effective in delivering more robust and clinically fair retinal disease diagnosis under conditions of limited labeled data.</p>
+                    <p>The framework achieved substantial accuracy gains and effectively reduced diagnostic bias toward majority classes, demonstrating notable improvements in identifying underrepresented retinal diseases. The combination of balanced sampling, CLAHE-enhanced preprocessing, and a dataset-aware few-shot pipeline proved crucial for robust and clinically fair diagnosis under limited data conditions.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research can significantly improve the clinical utility of automated retinal disease diagnosis, particularly in settings with limited data or for rare conditions. By enabling accurate and fair diagnosis of both common and underrepresented retinal diseases, it can facilitate earlier detection, more precise treatment planning, and ultimately prevent vision loss for a broader range of patients. This approach reduces dependency on extensive manual annotation, making advanced diagnostic tools more accessible and cost-effective in real-world clinical practice.</p>
+                <p>This research offers a significant step towards developing more reliable and equitable AI diagnostic tools for retinal diseases, particularly where data for rare or less common conditions is scarce. It can facilitate earlier and more accurate diagnosis for a broader spectrum of patients, potentially reducing diagnostic disparities and improving overall patient outcomes in ophthalmology, especially in resource-limited or specialized clinical settings.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state specific limitations of the proposed method or the study itself.</p>
+                <p>The abstract does not explicitly state any limitations of the proposed framework.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly state future research directions for this work.</p>
+                <p>The abstract does not explicitly state future research directions.</p>
             </section>
             
 
@@ -122,11 +122,11 @@
                     
                     <span class="tag">Ophthalmology</span>
                     
-                    <span class="tag">Retinal Imaging</span>
+                    <span class="tag">Medical Imaging</span>
                     
                     <span class="tag">Diagnostic Medicine</span>
                     
-                    <span class="tag">Medical Artificial Intelligence</span>
+                    <span class="tag">Artificial Intelligence in Medicine</span>
                     
                 </div>
             </section>
@@ -135,21 +135,23 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Few-shot learning</span>
+                    <span class="tag tag-keyword">Retinal Disease Diagnosis</span>
                     
-                    <span class="tag tag-keyword">Retinal disease diagnosis</span>
+                    <span class="tag tag-keyword">Few-Shot Learning</span>
                     
-                    <span class="tag tag-keyword">Data imbalance</span>
+                    <span class="tag tag-keyword">Episodic Learning</span>
                     
-                    <span class="tag tag-keyword">Episodic learning</span>
+                    <span class="tag tag-keyword">Class Imbalance</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Image Augmentation</span>
                     
                     <span class="tag tag-keyword">CLAHE</span>
                     
-                    <span class="tag tag-keyword">Diabetic retinopathy</span>
+                    <span class="tag tag-keyword">Diabetic Retinopathy</span>
                     
-                    <span class="tag tag-keyword">Macular degeneration</span>
-                    
-                    <span class="tag tag-keyword">Fundus imaging</span>
+                    <span class="tag tag-keyword">Macular Degeneration</span>
                     
                 </div>
             </section>
