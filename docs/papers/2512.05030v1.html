@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a Dual-Path Region-Guided Attention Network for accurate, insole-based estimation of three-dimensional ground reaction forces and moments (GRFs/GRMs). The proposed deep learning model integrates anatomy-inspired spatial and temporal priors with a region-level attention mechanism, complemented by a path capturing full sensor field context. It significantly outperforms traditional CNN and CNN-LSTM architectures on two datasets, demonstrating robust performance critical for biomechanics research and clinical rehabilitation.</p>
+                <p class="summary-text">This paper introduces a Dual-Path Region-Guided Attention Network for accurate, insole-based estimation of three-dimensional ground reaction forces and moments (GRFs/GRMs). The network integrates anatomy-inspired spatial and temporal priors with a region-level attention mechanism and a complementary path for full sensor context. It demonstrates superior performance over strong baselines, achieving significantly lower normalized root mean square errors on both an insole dataset and a public walking dataset, proving robust performance for GRF/GRM estimation.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate GRF/GRM estimation directly impacts clinical rehabilitation evaluation by providing objective measures of patient progress and enabling more precise, personalized interventions. It also serves as a fundamental tool in biomechanics research to understand human movement and pathology.</p>
+                <p>Accurate estimation of GRFs/GRMs is fundamental for assessing human movement, diagnosing gait abnormalities, evaluating rehabilitation progress, and designing assistive devices, making this work highly relevant for improving clinical diagnostic tools and patient care by providing objective, quantitative metrics.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This research develops an AI model (Dual-Path Region-Guided Attention Network) to accurately estimate ground reaction forces and moments from insole sensor data. This AI application can be used in healthcare to provide precise, non-invasive, and potentially continuous assessment of patient movement for clinical rehabilitation evaluation, monitoring recovery post-injury/surgery, designing personalized rehabilitation programs, and evaluating the effectiveness of interventions in various musculoskeletal and neurological conditions.</p>
+                <p>The AI model (Dual-Path Region-Guided Attention Network) is applied to objectively quantify patient movement and gait parameters (ground reaction forces and moments) using insole sensors. This can be used in healthcare for: 1) diagnosing gait abnormalities, 2) monitoring patient progress during rehabilitation, 3) evaluating the effectiveness of interventions (e.g., new prosthetics, surgical procedures, physical therapy), and 4) providing data for personalized rehabilitation plans.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Accurate estimation of three-dimensional ground reaction forces and moments (GRFs/GRMs) is crucial for biomechanics research and clinical rehabilitation evaluation.</li>
+                    <li>Addresses the crucial need for accurate estimation of three-dimensional ground reaction forces and moments (GRFs/GRMs) in biomechanics research and clinical rehabilitation evaluation.</li>
                     
-                    <li>The study focuses on insole-based GRF/GRM estimation, validating its approach on both a proprietary insole dataset and a public walking dataset.</li>
+                    <li>Focuses on insole-based GRF/GRM estimation, offering a potentially portable and less intrusive measurement approach.</li>
                     
-                    <li>A novel Dual-Path Region-Guided Attention Network is proposed, incorporating anatomy-inspired spatial and temporal priors into a region-level attention mechanism.</li>
+                    <li>Proposes a novel 'Dual-Path Region-Guided Attention Network' architecture to enhance estimation accuracy by integrating specialized processing streams.</li>
                     
-                    <li>The network features a complementary path that captures broader context from the full sensor field, with both paths trained jointly and their outputs combined.</li>
+                    <li>Incorporates anatomy-inspired spatial priors and temporal priors directly into a region-level attention mechanism, leveraging physiological knowledge to guide the network's focus.</li>
                     
-                    <li>The model's performance is evaluated using Normalized Root Mean Square Error (NRMSE), demonstrating superior accuracy compared to strong baseline models like CNN and CNN-LSTM.</li>
+                    <li>Features a complementary path that captures broader contextual information from the full sensor field, working in conjunction with the region-guided attention path, with combined outputs for final predictions.</li>
                     
-                    <li>Key results include an average NRMSE of 5.78% for all six GRF/GRM components on the insole dataset and a 1.42% NRMSE for the vertical ground reaction force on the public dataset.</li>
+                    <li>Demonstrates superior performance against strong baseline models, including traditional CNN and CNN-LSTM architectures, on two distinct datasets.</li>
                     
-                    <li>The robust performance indicates the model's potential for reliable GRF and GRM estimation in practical applications.</li>
+                    <li>Achieved a low six-component average Normalized Root Mean Square Error (NRMSE) of 5.78% on the insole dataset and an NRMSE of 1.42% for the vertical ground reaction force on a public walking dataset, indicating high accuracy and robustness.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study proposes a Dual-Path Region-Guided Attention Network. One path employs a region-level attention mechanism, integrating anatomy-inspired spatial and temporal priors to process sensor data from specific foot regions. A second, complementary path captures global context from the entire sensor field. Both paths are trained simultaneously, and their respective outputs are fused to generate the final GRF/GRM predictions. The method is applied to insole-based sensor data and validated on two distinct datasets.</p>
+                    <p>The study proposes a Dual-Path Region-Guided Attention Network. One path integrates anatomy-inspired spatial priors and temporal priors into a region-level attention mechanism, enabling the network to focus on biologically relevant areas. A complementary path concurrently captures context from the full sensor field, ensuring comprehensive data utilization. Both paths are trained jointly, and their outputs are combined to produce the final GRF/GRM predictions. The model's efficacy was validated by comparing its performance against strong CNN and CNN-LSTM baselines on an insole dataset and a public walking dataset.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The Dual-Path Region-Guided Attention Network significantly outperforms strong baseline models (CNN and CNN-LSTM) across two datasets. It achieved the lowest six-component average NRMSE of 5.78% on the insole dataset. For the vertical ground reaction force (a critical component), it achieved an NRMSE of 1.42% on a public walking dataset. These results demonstrate robust and superior accuracy for estimating GRFs and GRMs.</p>
+                    <p>The Dual-Path Region-Guided Attention Network consistently outperformed strong CNN and CNN-LSTM baseline models on both validation datasets. It achieved a six-component average Normalized Root Mean Square Error (NRMSE) of 5.78% on the insole dataset, and a significantly low NRMSE of 1.42% for the vertical ground reaction force on a public walking dataset, thereby demonstrating robust and superior accuracy for estimating ground reaction forces and moments.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This improved accuracy in GRF/GRM estimation using readily deployable insole sensors can revolutionize clinical rehabilitation. It allows for more objective and precise assessment of gait mechanics, functional recovery, and treatment efficacy. This enables clinicians to tailor rehabilitation protocols, monitor patient progress in real-world settings, and identify subtle deviations in movement patterns indicative of injury risk or pathology, leading to better patient outcomes and personalized care.</p>
+                <p>This technology holds significant potential to revolutionize clinical gait analysis by enabling more accurate, portable, and potentially real-time assessment of movement in diverse patient populations. It can aid in precise diagnosis of musculoskeletal and neurological movement disorders, objectively monitor rehabilitation progress, inform the design and optimization of prosthetics and orthotics, and provide quantitative feedback for physical therapy interventions, ultimately leading to personalized and more effective patient care strategies.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state specific limitations of the study. However, common limitations in this field often include the generalizability to diverse populations or pathologies, the computational cost for real-time applications, and the long-term durability or calibration stability of insole sensors.</p>
+                <p>The abstract does not explicitly state any limitations of the study or the proposed model.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Future directions are not explicitly mentioned in the abstract. However, based on the findings, potential avenues could include real-time application and validation in clinical settings, generalization to a wider range of activities and patient populations, integration with other sensor modalities, and exploration of model interpretability for clinical insights.</p>
+                <p>The abstract does not explicitly state any future research directions.</p>
             </section>
             
 
@@ -120,9 +120,9 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Rehabilitation Medicine</span>
-                    
                     <span class="tag">Biomechanics</span>
+                    
+                    <span class="tag">Rehabilitation Medicine</span>
                     
                     <span class="tag">Orthopedics</span>
                     
@@ -130,7 +130,9 @@
                     
                     <span class="tag">Physical Therapy</span>
                     
-                    <span class="tag">Gait Analysis</span>
+                    <span class="tag">Geriatrics</span>
+                    
+                    <span class="tag">Neurology</span>
                     
                 </div>
             </section>
@@ -139,21 +141,25 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Ground Reaction Force</span>
+                    <span class="tag tag-keyword">ground reaction forces</span>
                     
-                    <span class="tag tag-keyword">Ground Reaction Moment</span>
+                    <span class="tag tag-keyword">ground reaction moments</span>
                     
-                    <span class="tag tag-keyword">Insole Sensors</span>
+                    <span class="tag tag-keyword">insole sensors</span>
                     
-                    <span class="tag tag-keyword">Deep Learning</span>
+                    <span class="tag tag-keyword">deep learning</span>
                     
-                    <span class="tag tag-keyword">Attention Network</span>
+                    <span class="tag tag-keyword">attention network</span>
                     
-                    <span class="tag tag-keyword">Biomechanics</span>
+                    <span class="tag tag-keyword">biomechanics</span>
                     
-                    <span class="tag tag-keyword">Rehabilitation</span>
+                    <span class="tag tag-keyword">gait analysis</span>
                     
-                    <span class="tag tag-keyword">Activity Monitoring</span>
+                    <span class="tag tag-keyword">rehabilitation</span>
+                    
+                    <span class="tag tag-keyword">spatial priors</span>
+                    
+                    <span class="tag tag-keyword">temporal priors</span>
                     
                 </div>
             </section>

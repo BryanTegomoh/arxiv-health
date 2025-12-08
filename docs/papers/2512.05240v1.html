@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE2Video: Adapting Pretrained Diffusion Models for Event-Based Video Reconstruction - Health AI Hub</title>
+    <meta name="description" content="This paper introduces IE2Video, a novel task for reconstructing full RGB video sequences from a hybrid input of a single initial RGB keyframe and subsequent con">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>IE2Video: Adapting Pretrained Diffusion Models for Event-Based Video Reconstruction</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05240v1" target="_blank">2512.05240v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Dmitrii Torbunov, Onur Okuducu, Yi Huang, Odera Dim, Rebecca Coles, Yonggang Cui, Yihui Ren
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.75 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05240v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05240v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces IE2Video, a novel task for reconstructing full RGB video sequences from a hybrid input of a single initial RGB keyframe and subsequent continuous event camera data. The aim is to enable low-power, continuous video monitoring for systems like wearables by reducing conventional RGB camera capture, then reconstructing the standard video offline. The authors demonstrate that adapting pretrained text-to-video diffusion models, specifically LTX, with event data injection via learned encoders and low-rank adaptation significantly outperforms autoregressive baselines in perceptual quality.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This technology is highly relevant for continuous, long-term monitoring in healthcare, particularly for wearable devices and remote patient monitoring, where extended battery life and unobtrusive data capture are critical. It enables the collection of rich visual data without the high power demands of conventional video cameras.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The reconstructed RGB video streams, generated with significantly reduced power consumption, can serve as crucial input for various medical AI applications. Examples include AI models for fall detection in the elderly, continuous analysis of gait and tremors for neurological conditions like Parkinson's, monitoring patient activity and adherence in rehabilitation, detecting subtle visual changes indicative of disease (e.g., skin conditions), or providing visual feedback for AI-assisted surgical or diagnostic robots in power-constrained environments.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the fundamental power constraint of conventional RGB cameras in continuous monitoring systems by proposing a hybrid capture paradigm.</li>
+                    
+                    <li>Introduces the 'Image and Event to Video (IE2Video)' task, which focuses on reconstructing standard RGB video from an initial RGB frame and subsequent asynchronous event stream.</li>
+                    
+                    <li>Investigates two architectural strategies: adapting an autoregressive model (HyperE2VID) for RGB generation and adapting a pretrained text-to-video diffusion model (LTX).</li>
+                    
+                    <li>The diffusion-based approach integrates event representations into LTX via learned encoders and Low-Rank Adaptation (LoRA) for efficient fine-tuning.</li>
+                    
+                    <li>Experiments show the diffusion-based method achieves 33% better perceptual quality, measured by LPIPS (0.283), compared to the autoregressive baseline (0.422).</li>
+                    
+                    <li>The approach is validated across three diverse event camera datasets (BS-ERGB, HS-ERGB far/close) and varying sequence lengths (32-128 frames).</li>
+                    
+                    <li>Demonstrates robust cross-dataset generalization and strong performance on unseen capture configurations, indicating broad applicability.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study proposes a hybrid capture strategy using sparse RGB keyframes and continuous event streams. It defines the IE2Video task. Two main architectural approaches were explored: adapting an autoregressive model (HyperE2VID) for RGB generation, and adapting a pretrained text-to-video diffusion model (LTX). For the diffusion model, event representations were injected through learned encoders and fine-tuned using Low-Rank Adaptation (LoRA). Performance was evaluated using LPIPS (Learned Perceptual Image Patch Similarity) for perceptual quality and validated across multiple event camera datasets (BS-ERGB, HS-ERGB far/close) at various sequence lengths.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The diffusion-based model significantly outperformed the autoregressive baseline, achieving 33% better perceptual quality with an LPIPS score of 0.283 compared to 0.422. The method demonstrated robust generalization across different event camera datasets and varying video sequence lengths, indicating its effectiveness and adaptability to diverse capture scenarios.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research could revolutionize continuous patient monitoring by enabling truly long-duration, low-power video capture for medical wearables (e.g., fall detection, activity tracking, gait analysis). It facilitates unobtrusive monitoring in home or clinical settings, providing rich visual data for diagnostics and progress tracking in rehabilitation without frequent battery changes. For robotic systems in healthcare (e.g., assistive robots, surgical assistants), it offers a more power-efficient visual perception system, extending operational times or allowing for more compact designs.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, the 'offline' reconstruction implies that real-time applications requiring immediate feedback (e.g., certain surgical guidance systems) might have latency concerns. The computational demands of diffusion models for the reconstruction process, even if offline, could also be a practical consideration depending on deployment environment.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly suggest future research directions. However, potential future work could involve exploring real-time reconstruction capabilities, further optimizing the diffusion models for even higher fidelity or specific medical contexts, and integrating this technology with other physiological sensors in comprehensive medical monitoring platforms.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Remote Patient Monitoring</span>
+                    
+                    <span class="tag">Geriatrics</span>
+                    
+                    <span class="tag">Rehabilitation</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                    <span class="tag">Surgical Robotics (assistive/monitoring)</span>
+                    
+                    <span class="tag">Movement Disorder Diagnostics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Event cameras</span>
+                    
+                    <span class="tag tag-keyword">Video reconstruction</span>
+                    
+                    <span class="tag tag-keyword">Diffusion models</span>
+                    
+                    <span class="tag tag-keyword">Low power</span>
+                    
+                    <span class="tag tag-keyword">Continuous monitoring</span>
+                    
+                    <span class="tag tag-keyword">Wearable technology</span>
+                    
+                    <span class="tag tag-keyword">Hybrid sensing</span>
+                    
+                    <span class="tag tag-keyword">Computer vision</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Continuous video monitoring in surveillance, robotics, and wearable systems faces a fundamental power constraint: conventional RGB cameras consume substantial energy through fixed-rate capture. Event cameras offer sparse, motion-driven sensing with low power consumption, but produce asynchronous event streams rather than RGB video. We propose a hybrid capture paradigm that records sparse RGB keyframes alongside continuous event streams, then reconstructs full RGB video offline -- reducing capture power consumption while maintaining standard video output for downstream applications. We introduce the Image and Event to Video (IE2Video) task: reconstructing RGB video sequences from a single initial frame and subsequent event camera data. We investigate two architectural strategies: adapting an autoregressive model (HyperE2VID) for RGB generation, and injecting event representations into a pretrained text-to-video diffusion model (LTX) via learned encoders and low-rank adaptation. Our experiments demonstrate that the diffusion-based approach achieves 33\% better perceptual quality than the autoregressive baseline (0.283 vs 0.422 LPIPS). We validate our approach across three event camera datasets (BS-ERGB, HS-ERGB far/close) at varying sequence lengths (32-128 frames), demonstrating robust cross-dataset generalization with strong performance on unseen capture configurations.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

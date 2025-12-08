@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepsis Prediction Using Graph Convolutional Networks over Patient-Feature-Value Triplets - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Triplet-GCN, a novel single-branch graph convolutional network model designed for early sepsis prediction from complex, sparse, and hetero">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Sepsis Prediction Using Graph Convolutional Networks over Patient-Feature-Value Triplets</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05416v1" target="_blank">2512.05416v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-05
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Bozhi Dan, Di Wu, Ji Xu, Xiang Liu, Yiziting Zhu, Xin Shu, Yujie Li, Bin Yi
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05416v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05416v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Triplet-GCN, a novel single-branch graph convolutional network model designed for early sepsis prediction from complex, sparse, and heterogeneous Electronic Health Record (EHR) data. By representing EHR as patient-feature-value triplets and constructing a bipartite patient-feature graph, the model learns enriched patient embeddings, significantly outperforming traditional tabular machine learning baselines in discrimination and balanced error metrics for timely sepsis detection.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Timely sepsis prediction is critical for reducing patient illness and mortality in intensive care settings. This model offers a new, effective approach to overcome the data complexities of EHRs, potentially leading to earlier intervention and improved patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of an early warning system and risk stratification tool for sepsis in intensive care units. It leverages Graph Convolutional Networks (GCN) to process complex Electronic Health Record (EHR) data, representing patient information as feature-value triplets, to provide more informative patient representations for predicting sepsis onset.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Sepsis is a leading cause of mortality in intensive care, but its timely detection is hampered by the challenging nature of EHR data (complex, sparse, heterogeneous).</li>
+                    
+                    <li>Triplet-GCN is proposed as a single-branch Graph Convolutional Network (GCN) coupled with a lightweight Multilayer Perceptron (MLP) for sepsis prediction.</li>
+                    
+                    <li>EHR data is transformed into 'patient-feature-value' triplets, which are then used to construct a bipartite patient-feature graph.</li>
+                    
+                    <li>The model incorporates type-specific preprocessing, including median imputation and standardization for numeric variables, effect coding for binary features, and mode imputation with low-dimensional embeddings for rare categorical attributes.</li>
+                    
+                    <li>Patient nodes are initialized with summary statistics, while measurement values are retained on graph edges to preserve detailed 'who measured what and by how much' information.</li>
+                    
+                    <li>Evaluated on a retrospective, multi-center Chinese cohort (N=648), Triplet-GCN consistently outperformed strong tabular baselines (KNN, SVM, XGBoost, Random Forest) across discrimination and balanced error metrics.</li>
+                    
+                    <li>The model demonstrated a more favorable sensitivity-specificity trade-off and improved overall utility for early warning, indicating more informative patient representations are learned through graph propagation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The Triplet-GCN model processes EHR data by first converting patient encounters into 'patient-feature-value' triplets. These triplets are then used to construct a bipartite graph connecting patient nodes and feature nodes. Numeric features undergo median imputation and standardization, binary features are effect coded, and rare categorical features receive mode imputation with low-dimensional embeddings. Patient nodes are initialized using summary statistics derived from their features, while the specific measurement values are retained on the edges connecting patient and feature nodes. A Graph Convolutional Network (GCN) then propagates information across this graph to learn patient embeddings, which are subsequently fed into a lightweight Multilayer Perceptron (MLP) for final sepsis prediction. The model was trained and tested on a 70/30 split of a retrospective, multi-center Chinese cohort.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Triplet-GCN consistently outperformed strong traditional tabular machine learning models (KNN, SVM, XGBoost, Random Forest) in predicting sepsis. It achieved superior discrimination and balanced error metrics, demonstrating a better balance between sensitivity and specificity, thereby enhancing its overall utility as an early warning system. The findings suggest that representing EHR as triplets and leveraging graph-based information propagation yields more informative and robust patient representations than feature-independent models.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This model provides a simple, end-to-end blueprint for deployable sepsis risk stratification in intensive care units. Its ability to provide early warnings with improved accuracy and a better sensitivity-specificity trade-off can enable earlier clinical interventions, potentially leading to reduced morbidity, mortality, and healthcare costs associated with sepsis. The approach's robustness to sparse and heterogeneous EHR data makes it highly practical for real-world clinical deployment.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The study was conducted on a retrospective cohort, which inherently limits causal inferences and generalizability compared to prospective studies. The cohort size (N=648) from a specific demographic (Chinese population across three tertiary hospitals) may limit generalizability to broader, diverse patient populations or different healthcare systems. The abstract does not explicitly discuss model interpretability, which is often a crucial aspect for clinical adoption.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract frames the model as an 'end-to-end blueprint for deployable sepsis risk stratification,' implying future work on clinical deployment and real-world validation. Further research could involve prospective studies, validation on larger and more diverse international cohorts, exploration of model interpretability, and integration into existing clinical workflows for real-time risk assessment.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Critical Care Medicine</span>
+                    
+                    <span class="tag">Infectious Disease</span>
+                    
+                    <span class="tag">Clinical Informatics</span>
+                    
+                    <span class="tag">Healthcare AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Sepsis Prediction</span>
+                    
+                    <span class="tag tag-keyword">Graph Convolutional Networks</span>
+                    
+                    <span class="tag tag-keyword">Electronic Health Records</span>
+                    
+                    <span class="tag tag-keyword">Patient Embeddings</span>
+                    
+                    <span class="tag tag-keyword">Machine Learning</span>
+                    
+                    <span class="tag tag-keyword">Intensive Care</span>
+                    
+                    <span class="tag tag-keyword">Early Warning Systems</span>
+                    
+                    <span class="tag tag-keyword">Triplet Representation</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">In the intensive care setting, sepsis continues to be a major contributor to patient illness and death; however, its timely detection is hindered by the complex, sparse, and heterogeneous nature of electronic health record (EHR) data. We propose Triplet-GCN, a single-branch graph convolutional model that represents each encounter as patient-feature-value triplets, constructs a bipartite EHR graph, and learns patient embeddings via a Graph Convolutional Network (GCN) followed by a lightweight multilayer perceptron (MLP). The pipeline applies type-specific preprocessing -- median imputation and standardization for numeric variables, effect coding for binary features, and mode imputation with low-dimensional embeddings for rare categorical attributes -- and initializes patient nodes with summary statistics, while retaining measurement values on edges to preserve "who measured what and by how much". In a retrospective, multi-center Chinese cohort (N = 648; 70/30 train-test split) drawn from three tertiary hospitals, Triplet-GCN consistently outperforms strong tabular baselines (KNN, SVM, XGBoost, Random Forest) across discrimination and balanced error metrics, yielding a more favorable sensitivity-specificity trade-off and improved overall utility for early warning. These findings indicate that encoding EHR as triplets and propagating information over a patient-feature graph produce more informative patient representations than feature-independent models, offering a simple, end-to-end blueprint for deployable sepsis risk stratification.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

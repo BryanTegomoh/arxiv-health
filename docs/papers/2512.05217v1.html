@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rethinking Tokenization for Clinical Time Series: When Less is More - Health AI Hub</title>
+    <meta name="description" content="This paper systematically evaluates tokenization strategies for clinical time series modeling using transformer architectures on the MIMIC-IV dataset. It reveal">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Rethinking Tokenization for Clinical Time Series: When Less is More</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05217v1" target="_blank">2512.05217v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Rafi Al Attrach, Rajna Fani, David Restrepo, Yugang Jia, Peter Schüffler
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05217v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05217v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper systematically evaluates tokenization strategies for clinical time series modeling using transformer architectures on the MIMIC-IV dataset. It reveals that simpler, parameter-efficient approaches, particularly frozen pretrained code encoders, often achieve strong performance, while explicit time encodings provide no consistent statistically significant benefit across evaluated tasks. The study highlights that optimal tokenization is task-dependent, with value features showing varying importance for different clinical predictions.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research directly impacts the development of AI models for electronic health records by optimizing data preprocessing (tokenization), potentially leading to more efficient, robust, and deployable predictive tools in healthcare. Identifying that simpler feature sets or model components can perform as well as, or better than, complex ones can accelerate the adoption and reduce the computational burden of clinical AI applications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research aims to optimize AI models, specifically transformer-based architectures, for more efficient and accurate processing of Electronic Health Records (EHRs) and clinical time series data. This directly applies to developing advanced medical AI systems for clinical prediction tasks such as forecasting patient mortality and hospital readmission, which can support clinical decision-making, patient risk stratification, and healthcare resource management.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Conducted a systematic evaluation of diverse tokenization approaches for clinical time series within transformer-based models.</li>
+                    
+                    <li>Demonstrated that explicit time encodings provide no consistent statistically significant benefit for downstream clinical prediction tasks.</li>
+                    
+                    <li>Showed that value features exhibit task-dependent importance, being crucial for mortality prediction but less so for readmission, where code sequences alone can suffice.</li>
+                    
+                    <li>Revealed that frozen pretrained code encoders dramatically outperform their trainable counterparts while requiring significantly fewer parameters.</li>
+                    
+                    <li>Found that larger clinical encoders consistently improve performance across tasks, especially when leveraging frozen embeddings to eliminate computational overhead.</li>
+                    
+                    <li>Utilized controlled ablations across four clinical prediction tasks on the MIMIC-IV dataset to ensure fair tokenization comparisons.</li>
+                    
+                    <li>Concluded that simpler, parameter-efficient tokenization strategies can achieve strong performance, although the optimal strategy remains task-dependent.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study employed a systematic evaluation methodology involving controlled ablations of various tokenization approaches for clinical time series. These evaluations were conducted using transformer-based architectures on four distinct clinical prediction tasks sourced from the MIMIC-IV dataset. The methodology specifically compared the impact of explicit time encodings, the importance of value features, and the performance of frozen pretrained code encoders versus trainable ones, as well as different encoder sizes.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Explicit time encodings do not consistently provide statistically significant benefits for the evaluated clinical prediction tasks. The importance of value features is task-dependent, proving significant for mortality prediction but not necessarily for readmission, where medical code sequences alone carry sufficient predictive signal. Frozen pretrained code encoders dramatically outperform their trainable counterparts while requiring substantially fewer parameters. Larger clinical encoders generally lead to improved performance across tasks, particularly when using frozen embeddings to reduce computational overhead. Overall, simpler, parameter-efficient tokenization strategies can achieve strong performance, challenging the assumption that more complex feature engineering is always superior.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The findings can significantly streamline the development and deployment of clinical AI models by advocating for simpler, more parameter-efficient tokenization strategies. This reduction in model complexity and computational resources makes AI solutions more accessible, affordable, and sustainable for healthcare systems. It provides practical guidance for medical AI practitioners on optimal feature engineering, potentially reducing development time and improving the robustness and interpretability of predictive models for critical tasks like mortality and readmission prediction.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations, but implies that the 'optimal tokenization strategy remains task-dependent,' suggesting that findings may not generalize universally across all possible clinical tasks or datasets without further investigation. The evaluation is confined to transformer-based architectures and the MIMIC-IV dataset.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly stated, the conclusion that the 'optimal tokenization strategy remains task-dependent' implicitly suggests a future direction of further research into identifying optimal strategies for a wider range of clinical tasks, patient populations, and diverse EHR systems. Investigating the generalizability of these findings across different medical AI architectures beyond transformers could also be a logical next step.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Prediction</span>
+                    
+                    <span class="tag">Electronic Health Records (EHR) analysis</span>
+                    
+                    <span class="tag">Mortality Prediction</span>
+                    
+                    <span class="tag">Readmission Prediction</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Tokenization</span>
+                    
+                    <span class="tag tag-keyword">Clinical Time Series</span>
+                    
+                    <span class="tag tag-keyword">EHR</span>
+                    
+                    <span class="tag tag-keyword">Transformers</span>
+                    
+                    <span class="tag tag-keyword">MIMIC-IV</span>
+                    
+                    <span class="tag tag-keyword">Predictive Modeling</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Medical AI</span>
+                    
+                    <span class="tag tag-keyword">Parameter Efficiency</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Tokenization strategies shape how models process electronic health records, yet fair comparisons of their effectiveness remain limited. We present a systematic evaluation of tokenization approaches for clinical time series modeling using transformer-based architectures, revealing task-dependent and sometimes counterintuitive findings about temporal and value feature importance. Through controlled ablations across four clinical prediction tasks on MIMIC-IV, we demonstrate that explicit time encodings provide no consistent statistically significant benefit for the evaluated downstream tasks. Value features show task-dependent importance, affecting mortality prediction but not readmission, suggesting code sequences alone can carry sufficient predictive signal. We further show that frozen pretrained code encoders dramatically outperform their trainable counterparts while requiring dramatically fewer parameters. Larger clinical encoders provide consistent improvements across tasks, benefiting from frozen embeddings that eliminate computational overhead. Our controlled evaluation enables fairer tokenization comparisons and demonstrates that simpler, parameter-efficient approaches can, in many cases, achieve strong performance, though the optimal tokenization strategy remains task-dependent.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>9 pages, 2 figures, 4 tables. Machine Learning for Health (ML4H) 2025, Findings track</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

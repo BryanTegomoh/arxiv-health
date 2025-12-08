@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coefficient of Variation Masking: A Volatility-Aware Strategy for EHR Foundation Models - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Coefficient of Variation Masking (CV-Masking), a volatility-aware pretraining strategy for Masked Autoencoders (MAEs) applied to Electroni">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Coefficient of Variation Masking: A Volatility-Aware Strategy for EHR Foundation Models</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05216v1" target="_blank">2512.05216v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Rajna Fani, Rafi Al Attrach, David Restrepo, Yugang Jia, Leo Anthony Celi, Peter Schüffler
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05216v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05216v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Coefficient of Variation Masking (CV-Masking), a volatility-aware pretraining strategy for Masked Autoencoders (MAEs) applied to Electronic Health Records (EHRs). Unlike uniform masking, CV-Masking adaptively adjusts masking probabilities based on the intrinsic variability of each clinical feature, combined with a value-only masking objective. This novel approach systematically improves feature reconstruction, downstream predictive performance, and model convergence, leading to more robust and clinically meaningful EHR representations.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This work is crucial for developing more sophisticated and clinically relevant AI models for healthcare by acknowledging and leveraging the inherent biological and pathological variability of patient data. By creating more accurate and robust representations of complex patient states from EHRs, it can significantly improve diagnostic accuracy, prognostication, and the management of acute conditions where volatile biomarkers are key.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research improves the foundational AI models (Masked Autoencoders) used to process and understand complex Electronic Health Records (EHR) data. By creating 'volatility-aware' representations of patient laboratory tests, it enables these models to generate more robust and clinically meaningful insights. These enhanced representations can then be applied to various downstream clinical tasks, such as disease prediction, risk stratification, diagnosis support, treatment optimization, and overall patient management based on AI-driven analysis of their health records.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Existing MAE approaches for EHRs typically use uniform random masking, which erroneously assumes all clinical features are equally predictable.</li>
+                    
+                    <li>Clinical features, particularly laboratory tests, exhibit significant heterogeneity in volatility (e.g., stable sodium vs. fluctuating lactate), with volatile biomarkers often signaling acute pathophysiology.</li>
+                    
+                    <li>The proposed Coefficient of Variation Masking (CV-Masking) strategy adaptively adjusts masking probabilities for each feature based on its intrinsic variability, or volatility.</li>
+                    
+                    <li>CV-Masking incorporates a 'value-only masking objective' which is designed to be aligned with clinical workflows, focusing on predicting feature values rather than just their presence.</li>
+                    
+                    <li>Experiments on a large panel of laboratory tests demonstrated that CV-Masking systematically outperforms both uniform random and simple variance-based masking strategies.</li>
+                    
+                    <li>Key improvements include enhanced reconstruction accuracy of masked features, improved performance on diverse downstream predictive clinical tasks, and accelerated model convergence during pretraining.</li>
+                    
+                    <li>The method yields more robust and clinically meaningful general-purpose representations of EHR data, especially critical for understanding complex temporal patterns in biomarkers.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The paper proposes Coefficient of Variation Masking (CV-Masking), a volatility-aware pretraining strategy for Masked Autoencoders (MAEs). This method adaptively adjusts masking probabilities for individual EHR features (e.g., lab tests) based on their intrinsic variability, quantified by the Coefficient of Variation. It is combined with a 'value-only masking objective' to focus reconstruction on actual values. The strategy was empirically evaluated on a large panel of laboratory tests and compared against uniform random and variance-based masking approaches.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>CV-Masking systematically enhances reconstruction quality of masked features, significantly improves performance on downstream predictive clinical tasks, and accelerates the convergence rate of the pretraining process. This results in the generation of more robust and clinically meaningful general-purpose EHR representations.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This approach can lead to more accurate and reliable AI models that better understand complex patient dynamics, particularly in acute care settings where fluctuating biomarkers are critical. Improved EHR representations can enhance the detection of subtle clinical changes, refine risk stratification, support personalized treatment strategies, and ultimately contribute to better diagnostic capabilities and patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the proposed method or experiments.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Electronic Health Records (EHR)</span>
+                    
+                    <span class="tag">Laboratory Medicine</span>
+                    
+                    <span class="tag">Critical Care</span>
+                    
+                    <span class="tag">Clinical Informatics</span>
+                    
+                    <span class="tag">Predictive Analytics</span>
+                    
+                    <span class="tag">Pathophysiology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">EHR</span>
+                    
+                    <span class="tag tag-keyword">Masked Autoencoders</span>
+                    
+                    <span class="tag tag-keyword">Coefficient of Variation</span>
+                    
+                    <span class="tag tag-keyword">Volatility</span>
+                    
+                    <span class="tag tag-keyword">Biomarkers</span>
+                    
+                    <span class="tag tag-keyword">Laboratory Tests</span>
+                    
+                    <span class="tag tag-keyword">Pretraining</span>
+                    
+                    <span class="tag tag-keyword">Clinical Prediction</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Masked autoencoders (MAEs) are increasingly applied to electronic health records (EHR) for learning general-purpose representations that support diverse clinical tasks. However, existing approaches typically rely on uniform random masking, implicitly assuming all features are equally predictable. In reality, laboratory tests exhibit substantial heterogeneity in volatility: some biomarkers (e.g., sodium) remain stable, while others (e.g., lactate) fluctuate considerably and are more difficult to model. Clinically, volatile biomarkers often signal acute pathophysiology and require more sophisticated modeling to capture their complex temporal patterns. We propose a volatility-aware pretraining strategy, Coefficient of Variation Masking (CV-Masking), that adaptively adjusts masking probabilities according to the intrinsic variability of each feature. Combined with a value-only masking objective aligned with clinical workflows, CV-Masking yields systematic improvements over random and variance-based strategies. Experiments on a large panel of laboratory tests show that CV-Masking enhances reconstruction, improves downstream predictive performance, and accelerates convergence, producing more robust and clinically meaningful EHR representations.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>16 pages, 9 figures, 1 table, 1 algorithm. Accepted at Machine Learning for Health (ML4H) 2025, Proceedings of the Machine Learning Research (PMLR)</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

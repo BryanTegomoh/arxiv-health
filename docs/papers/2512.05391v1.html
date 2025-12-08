@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoC-Path: Learning to Compress for Pathology Multimodal Large Language Models - Health AI Hub</title>
+    <meta name="description" content="This paper introduces LoC-Path, an efficient multimodal large language model (MLLM) framework for pathology whole slide image (WSI) understanding, addressing th">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>LoC-Path: Learning to Compress for Pathology Multimodal Large Language Models</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05391v1" target="_blank">2512.05391v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-05
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Qingqiao Hu, Weimin Lyu, Meilong Xu, Kehan Qi, Xiaoling Hu, Saumya Gupta, Jiawei Zhou, Chao Chen
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05391v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05391v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces LoC-Path, an efficient multimodal large language model (MLLM) framework for pathology whole slide image (WSI) understanding, addressing the excessive computational cost of existing models. Motivated by the observation that WSI tile features exhibit significant redundancy, LoC-Path replaces heavy slide-level encoders with novel redundancy-reducing modules. The framework achieves performance comparable to state-of-the-art WSI MLLMs while significantly reducing computational and memory requirements.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Efficient and accurate AI models for whole slide image analysis are crucial for digital pathology, aiding pathologists in complex diagnoses, improving workflow, and making advanced AI tools more accessible for routine clinical practice and research.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of more efficient Multimodal Large Language Models (MLLMs) designed to analyze Whole Slide Images (WSIs) in pathology. These MLLMs aim to assist pathologists in medical diagnosis by quickly and accurately identifying diagnostically relevant areas, integrating visual and language information. Improved efficiency (lower computation and memory) facilitates the wider adoption and clinical deployment of AI-powered diagnostic tools in pathology, potentially leading to faster and more accurate diagnoses.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Whole Slide Image (WSI) understanding is fundamentally challenging due to gigapixel scale and the extreme sparsity of diagnostically relevant regions.</li>
+                    
+                    <li>Existing slide-level pathology MLLMs suffer from excessive computational cost due to brute-force processing of thousands of patch features via heavy slide-level encoders.</li>
+                    
+                    <li>The authors observe that WSI tile-level features contain strong global and local redundancy, and only a small subset of tiles are truly task-relevant, similar to how human experts approach diagnosis.</li>
+                    
+                    <li>LoC-Path proposes an efficient MLLM framework that replaces expensive slide-level encoders with specialized redundancy-reducing modules to compress visual information.</li>
+                    
+                    <li>The framework incorporates a Sparse Token Merger (STM) to remove local redundancy and an MAE-pretrained resampler to compress globally redundant tile tokens into a compact slide-level representation.</li>
+                    
+                    <li>A Cross-Attention Routing Adapter (CARA) and a Token Importance Scorer (TIS) are designed to integrate the compressed visual representation with the language model in a computation-efficient manner.</li>
+                    
+                    <li>Extensive experiments demonstrate that LoC-Path achieves performance comparable to existing state-of-the-art whole-slide MLLMs while requiring significantly lower computation and memory resources.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>LoC-Path employs a novel architecture comprising several modules: a Sparse Token Merger (STM) for local redundancy removal, an MAE-pretrained resampler for global redundancy compression, and a Cross-Attention Routing Adapter (CARA) coupled with a Token Importance Scorer (TIS) for efficient integration of compressed visual features into a language model. This approach replaces the traditional brute-force slide-level encoders used in prior MLLMs.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>LoC-Path successfully achieves performance levels comparable to existing state-of-the-art whole-slide MLLMs while concurrently demonstrating a significant reduction in both computational cost and memory footprint, addressing a major bottleneck in pathology AI deployment.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research could lead to more practical and deployable AI solutions in digital pathology by significantly lowering the hardware requirements for multimodal WSI analysis. Reduced computational burden enables faster processing, broader accessibility of advanced diagnostic tools in resource-constrained settings, and facilitates large-scale population studies or screening programs using AI, ultimately assisting pathologists in more efficient and potentially more accurate diagnoses.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Limitations are not explicitly detailed in the provided abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Digital Pathology</span>
+                    
+                    <span class="tag">Computational Pathology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Whole Slide Image</span>
+                    
+                    <span class="tag tag-keyword">Pathology</span>
+                    
+                    <span class="tag tag-keyword">Multimodal Large Language Models</span>
+                    
+                    <span class="tag tag-keyword">Computational Efficiency</span>
+                    
+                    <span class="tag tag-keyword">Redundancy Reduction</span>
+                    
+                    <span class="tag tag-keyword">Sparse Tokens</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Digital Pathology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Whole Slide Image (WSI) understanding is fundamentally challenging due to its gigapixel scale and the extreme sparsity of diagnostically relevant regions. Unlike human experts who primarily rely on key areas to arrive at a diagnosis, existing slide-level multimodal large language models (MLLMs) for pathology rely on heavy slide-level encoders that process thousands of patch features in a brute-force manner, resulting in excessive computational cost. In this work, we revisit the WSI-language modeling paradigm and show that tile-level features exhibit strong global and local redundancy, whereas only a small subset of tiles are truly task-relevant. Motivated by this observation, we introduce an efficient MLLM framework, called LoC-Path, that replaces the expensive slide-level encoder with redundancy-reducing modules. We first design a Sparse Token Merger (STM) and an MAE-pretrained resampler to remove local redundancy and compress globally redundant tile tokens into a compact slide-level representation set. We then propose a Cross-Attention Routing Adapter (CARA) and a Token Importance Scorer (TIS) to integrate the compressed visual representation with the language model in a computation-efficient manner. Extensive experiments demonstrate that our approach achieves performance comparable to existing state-of-the-art whole-slide MLLMs, while requiring significantly lower computation and memory.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>20 pages</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

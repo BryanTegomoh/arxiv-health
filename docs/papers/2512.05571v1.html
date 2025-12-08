@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedDIFT: Multi-Scale Diffusion-Based Correspondence in 3D Medical Imaging - Health AI Hub</title>
+    <meta name="description" content="MedDIFT introduces a novel, training-free 3D correspondence framework that leverages multi-scale features from a pretrained latent medical diffusion model to ge">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>MedDIFT: Multi-Scale Diffusion-Based Correspondence in 3D Medical Imaging</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05571v1" target="_blank">2512.05571v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-05
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Xingyu Zhang, Anna Reithmeir, Fryderyk Kögl, Rickmer Braren, Julia A. Schnabel, Daniel M. Lang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05571v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05571v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">MedDIFT introduces a novel, training-free 3D correspondence framework that leverages multi-scale features from a pretrained latent medical diffusion model to generate rich voxel descriptors. This method accurately matches images via cosine similarity, achieving performance comparable to state-of-the-art learning-based models and surpassing conventional registration techniques on lung CT data. Its key advantage is eliminating the need for task-specific training, simplifying deployment for critical medical imaging tasks.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate spatial correspondence between medical images is foundational for crucial clinical applications such as robust longitudinal analysis of disease progression, precise tracking of lesions over time, and guiding complex image-guided interventions and surgeries.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>MedDIFT is an AI-powered framework that leverages multi-scale features from a pretrained latent medical diffusion model to achieve accurate 3D medical image correspondence. This application directly supports crucial clinical tasks such as precise lesion tracking over time, enabling better disease monitoring and treatment assessment, and enhancing the accuracy of image-guided interventions like surgery or radiation therapy, thereby improving patient outcomes.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the limitations of traditional intensity-based medical image registration methods, which often fail in low-contrast or anatomically variable regions by lacking global semantic understanding.</li>
+                    
+                    <li>Introduces MedDIFT, a training-free 3D correspondence framework that exploits the rich geometric and semantic information encoded in the intermediate representations of a *pretrained* latent medical diffusion model.</li>
+                    
+                    <li>The framework generates robust voxel-wise descriptors by fusing multi-scale diffusion activations and establishes correspondence through cosine similarity matching, with an optional local-search prior for refinement.</li>
+                    
+                    <li>Evaluated on a publicly available lung CT dataset, MedDIFT demonstrated correspondence accuracy comparable to the leading learning-based model, UniGradICON, and significantly outperformed conventional B-spline-based registration.</li>
+                    
+                    <li>A major advantage of MedDIFT is its training-free nature, which eliminates the need for extensive task-specific model training, thus reducing computational demands and accelerating deployment.</li>
+                    
+                    <li>Ablation experiments confirmed that both multi-level feature fusion and the strategic application of modest diffusion noise are crucial components contributing to MedDIFT's enhanced performance.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>MedDIFT operates by extracting multi-scale features directly from a pretrained latent medical diffusion model. These intermediate diffusion activations are then fused to construct rich, voxel-wise descriptors that inherently capture both geometric and semantic information. Correspondence between medical images is subsequently established by computing the cosine similarity between these descriptors, optionally refined by a local-search prior. The framework's core innovation lies in its ability to achieve this without requiring any task-specific training for the correspondence task itself.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>MedDIFT achieved correspondence accuracy on a lung CT dataset that was comparable to the state-of-the-art learning-based UniGradICON model. Furthermore, it significantly surpassed the performance of conventional B-spline-based registration methods. Ablation studies indicated that the integration of multi-level feature fusion and the controlled application of modest diffusion noise were critical factors in improving MedDIFT's overall performance.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>MedDIFT has the potential to significantly enhance the precision and reliability of medical image analysis for clinical applications. By providing highly accurate and robust image registration without extensive training, it could improve the confidence in longitudinal disease monitoring, facilitate more accurate lesion tracking for cancer management, and lead to safer and more effective image-guided surgical procedures, particularly in anatomically challenging or low-contrast regions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, describing performance as 'comparable to' the state-of-the-art learning-based model suggests it matches, rather than universally exceeds, the best existing methods, albeit with the significant advantage of being training-free. Evaluation was specifically on a lung CT dataset.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Pulmonology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Image-Guided Surgery</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">medical image registration</span>
+                    
+                    <span class="tag tag-keyword">3D correspondence</span>
+                    
+                    <span class="tag tag-keyword">diffusion models</span>
+                    
+                    <span class="tag tag-keyword">voxel descriptors</span>
+                    
+                    <span class="tag tag-keyword">lung CT</span>
+                    
+                    <span class="tag tag-keyword">training-free</span>
+                    
+                    <span class="tag tag-keyword">semantic features</span>
+                    
+                    <span class="tag tag-keyword">spatial analysis</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate spatial correspondence between medical images is essential for longitudinal analysis, lesion tracking, and image-guided interventions. Medical image registration methods rely on local intensity-based similarity measures, which fail to capture global semantic structure and often yield mismatches in low-contrast or anatomically variable regions. Recent advances in diffusion models suggest that their intermediate representations encode rich geometric and semantic information. We present MedDIFT, a training-free 3D correspondence framework that leverages multi-scale features from a pretrained latent medical diffusion model as voxel descriptors. MedDIFT fuses diffusion activations into rich voxel-wise descriptors and matches them via cosine similarity, with an optional local-search prior. On a publicly available lung CT dataset, MedDIFT achieves correspondence accuracy comparable to the state-of-the-art learning-based UniGradICON model and surpasses conventional B-spline-based registration, without requiring any task-specific model training. Ablation experiments confirm that multi-level feature fusion and modest diffusion noise improve performance.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

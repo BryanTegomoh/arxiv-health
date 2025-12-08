@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DistillFSS: Synthesizing Few-Shot Knowledge into a Lightweight Segmentation Model - Health AI Hub</title>
+    <meta name="description" content="DistillFSS proposes a novel framework for Cross-Domain Few-Shot Semantic Segmentation (CD-FSS) that internalizes support-set knowledge into a lightweight studen">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>DistillFSS: Synthesizing Few-Shot Knowledge into a Lightweight Segmentation Model</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05613v1" target="_blank">2512.05613v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-05
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Pasquale De Marinis, Pieter M. Blok, Uzay Kaymak, Rogier Brussee, Gennaro Vessio, Giovanna Castellano
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05613v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05613v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">DistillFSS proposes a novel framework for Cross-Domain Few-Shot Semantic Segmentation (CD-FSS) that internalizes support-set knowledge into a lightweight student model via teacher-student distillation. This approach eliminates the need for support images at test time, enabling fast and efficient inference while allowing rapid adaptation to novel classes and unseen domains. Evaluated on a new benchmark including medical imaging, DistillFSS matches or surpasses state-of-the-art baselines, especially in multi-class and multi-shot scenarios, with significant efficiency gains.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant for medicine as it provides an efficient and adaptable method for semantic segmentation of medical images, particularly beneficial in scenarios with limited annotated data for rare diseases, novel pathologies, or specific anatomical structures, and across diverse imaging modalities or hospital settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research can enable AI models to rapidly adapt and perform semantic segmentation tasks in medical imaging, even for rare diseases or novel pathologies where annotated data is extremely scarce. For example, it could be used for segmenting tumors, lesions, organs, or anatomical structures from medical scans (MRI, CT, X-ray, microscopy) with minimal training data, facilitating faster diagnosis, surgical guidance, and personalized treatment planning. Its lightweight and fast inference capabilities are crucial for integrating such AI tools into clinical workflows without significant computational overhead.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the challenges of CD-FSS, including substantial domain shifts, disjoint label spaces, and scarce support images, which render standard episodic methods unreliable and computationally intensive.</li>
+                    
+                    <li>Introduces DistillFSS, a framework that embeds support-set knowledge directly into a student model's parameters through a teacher-student distillation process.</li>
+                    
+                    <li>Internalizes few-shot reasoning into a dedicated layer within the student network, making the model self-sufficient at inference time.</li>
+                    
+                    <li>Eliminates the requirement for support images during test time, leading to fast, lightweight inference and enabling efficient scaling to larger support sets with fine-tuning, significantly reducing computational overhead.</li>
+                    
+                    <li>Facilitates efficient extension to novel classes in unseen domains through rapid teacher-driven specialization.</li>
+                    
+                    <li>A new CD-FSS benchmark is introduced for evaluation, encompassing medical imaging, industrial inspection, and remote sensing, featuring disjoint label spaces and variable support sizes.</li>
+                    
+                    <li>Achieves performance matching or surpassing state-of-the-art baselines, particularly excelling in multi-class and multi-shot segmentation scenarios, while offering substantial efficiency improvements.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The core methodology involves a teacher-student knowledge distillation framework. A teacher model, presumably proficient in few-shot reasoning, distills its learned support-set knowledge into a lightweight student network. This process specifically internalizes the few-shot reasoning capabilities into a dedicated layer of the student model, allowing it to perform semantic segmentation effectively without requiring the actual support images during test-time inference. The framework also supports efficient scaling to larger support sets through combination with fine-tuning.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>DistillFSS successfully matches or surpasses existing state-of-the-art CD-FSS baselines, demonstrating superior performance especially in complex multi-class and multi-shot segmentation scenarios. A critical finding is the substantial efficiency gain achieved, characterized by fast, lightweight inference and significantly reduced computational overhead, attributable to the framework's ability to operate without requiring support images at test time.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework could profoundly impact clinical workflows by enabling rapid deployment and adaptation of AI-powered segmentation tools for new or rare medical conditions where annotated data is scarce. It can accelerate diagnosis, improve treatment planning, and enhance surgical guidance by quickly segmenting critical structures in various medical imaging modalities, even when domain shifts occur between different clinics or devices, all while minimizing computational resources and infrastructure requirements.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the DistillFSS method itself. However, it highlights the inherent challenges of Cross-Domain Few-Shot Semantic Segmentation (CD-FSS), such as substantial distribution shifts between domains, disjoint label spaces, and the scarcity of support images, which are complex problems that any method, including DistillFSS, must navigate.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Pathology Segmentation</span>
+                    
+                    <span class="tag">Diagnostics</span>
+                    
+                    <span class="tag">Surgical Planning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Few-Shot Learning</span>
+                    
+                    <span class="tag tag-keyword">Semantic Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Cross-Domain</span>
+                    
+                    <span class="tag tag-keyword">Knowledge Distillation</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Lightweight Models</span>
+                    
+                    <span class="tag tag-keyword">Computational Efficiency</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Cross-Domain Few-Shot Semantic Segmentation (CD-FSS) seeks to segment unknown classes in unseen domains using only a few annotated examples. This setting is inherently challenging: source and target domains exhibit substantial distribution shifts, label spaces are disjoint, and support images are scarce--making standard episodic methods unreliable and computationally demanding at test time. To address these constraints, we propose DistillFSS, a framework that embeds support-set knowledge directly into a model's parameters through a teacher--student distillation process. By internalizing few-shot reasoning into a dedicated layer within the student network, DistillFSS eliminates the need for support images at test time, enabling fast, lightweight inference, while allowing efficient extension to novel classes in unseen domains through rapid teacher-driven specialization. Combined with fine-tuning, the approach scales efficiently to large support sets and significantly reduces computational overhead. To evaluate the framework under realistic conditions, we introduce a new CD-FSS benchmark spanning medical imaging, industrial inspection, and remote sensing, with disjoint label spaces and variable support sizes. Experiments show that DistillFSS matches or surpasses state-of-the-art baselines, particularly in multi-class and multi-shot scenarios, while offering substantial efficiency gains. The code is available at https://github.com/pasqualedem/DistillFSS.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

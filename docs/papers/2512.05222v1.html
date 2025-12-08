@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitigating the Antigenic Data Bottleneck: Semi-supervised Learning with Protein Language Models for Influenza A Surveillance - Health AI Hub</title>
+    <meta name="description" content="This paper addresses the critical bottleneck of limited phenotypic labels for rapidly evolving Influenza A viruses (IAVs) by proposing a novel approach that com">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Mitigating the Antigenic Data Bottleneck: Semi-supervised Learning with Protein Language Models for Influenza A Surveillance</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.05222v1" target="_blank">2512.05222v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-04
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Yanhua Xu
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.05222v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.05222v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper addresses the critical bottleneck of limited phenotypic labels for rapidly evolving Influenza A viruses (IAVs) by proposing a novel approach that combines pre-trained Protein Language Models (PLMs) with Semi-Supervised Learning (SSL). The study demonstrates that SSL strategies, particularly Self-training, significantly improve predictive accuracy of antigenic evolution even with scarce labeled data (e.g., 25% availability). This methodology enables more effective use of abundant unlabeled genomic sequences for influenza surveillance and timely vaccine strain selection, offering a promising solution to a long-standing challenge in vaccinology.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to public health and vaccinology as it directly addresses a critical limitation in influenza surveillance and vaccine development. By enabling accurate prediction of viral antigenic drift with significantly less laboratory-intensive phenotypic data, it can accelerate vaccine strain selection and improve the effectiveness of annual influenza vaccines, thereby reducing global disease burden.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research applies Protein Language Models (PLMs) and Semi-Supervised Learning (SSL) to analyze influenza virus genomic sequences (specifically haemagglutinin) to predict their antigenic evolution. This AI application aims to overcome the labor-intensive and unscalable nature of traditional assays, allowing for more effective use of vast amounts of genomic surveillance data. The direct health application is to accelerate the identification of new influenza variants, inform vaccine strain selection, and enhance overall influenza surveillance and pandemic preparedness.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The current method of quantifying Influenza A antigenicity (HI assays) is labor-intensive and unscalable, resulting in an 'antigenic data bottleneck' where genomic data vastly outpaces available phenotypic labels.</li>
+                    
+                    <li>The research hypothesizes that combining pre-trained Protein Language Models (PLMs) with Semi-Supervised Learning (SSL) can maintain high predictive accuracy despite limited labeled data.</li>
+                    
+                    <li>Two SSL strategies (Self-training, Label Spreading) and four PLM-derived embeddings (ESM-2, ProtVec, ProtT5, ProtBert) were evaluated using haemagglutinin (HA) sequences across four IAV subtypes (H1N1, H3N2, H5N1, H9N2) in simulated low-label regimes (25%, 50%, 75%, 100%).</li>
+                    
+                    <li>SSL consistently improved performance under label scarcity, with Self-training paired with ProtVec showing the largest relative gains, demonstrating SSL's ability to compensate for lower-resolution protein representations.</li>
+                    
+                    <li>The ESM-2 PLM proved highly robust, achieving F1 scores above 0.82 even with only 25% labeled data, indicating its powerful ability to capture key antigenic determinants from HA sequences.</li>
+                    
+                    <li>While H1N1 and H9N2 subtypes were predicted with high accuracy, the hypervariable H3N2 subtype remained challenging, though SSL effectively mitigated its performance decline.</li>
+                    
+                    <li>The findings validate that integrating PLMs with SSL can address the antigenicity labeling bottleneck, facilitating more effective utilization of unlabeled surveillance sequences for rapid variant prioritization and timely vaccine strain selection.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study utilized a nested cross-validation framework to simulate varying degrees of label availability (25%, 50%, 75%, 100%). It evaluated two Semi-Supervised Learning (SSL) strategies—Self-training and Label Spreading—against fully supervised baselines. Four pre-trained Protein Language Models (PLMs) (ESM-2, ProtVec, ProtT5, ProtBert) were used to generate embeddings from haemagglutinin (HA) sequences. The experiments were conducted across four Influenza A virus (IAV) subtypes (H1N1, H3N2, H5N1, H9N2), with performance primarily assessed using F1 scores.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Semi-supervised Learning strategies consistently improved predictive accuracy for influenza antigenicity under conditions of limited labeled data. Self-training, particularly when paired with ProtVec, demonstrated the most substantial relative performance gains. The ESM-2 Protein Language Model proved exceptionally robust, maintaining F1 scores above 0.82 even with only 25% of the data labeled, indicating its strong capacity to capture crucial antigenic features. While highly accurate predictions were achieved for H1N1 and H9N2, SSL notably mitigated performance degradation for the more challenging, hypervariable H3N2 subtype.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This methodology holds significant potential for enhancing the speed and efficiency of influenza vaccine development. By accurately predicting antigenic evolution from abundant genomic data, without relying solely on time-consuming and labor-intensive traditional assays, it can enable faster identification and prioritization of emerging antigenic variants. This would lead to more timely and potentially more effective vaccine strain recommendations, ultimately improving influenza vaccine efficacy and reducing the public health impact of seasonal and pandemic influenza.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract highlights that despite the benefits of SSL, the prediction of antigenicity for the hypervariable H3N2 subtype remained challenging, suggesting that some intrinsic complexities of highly evolving strains are not yet fully overcome. The scope of this study is focused on Influenza A haemagglutinin sequences.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The findings imply a future direction towards integrating these PLM-SSL approaches into real-world influenza surveillance systems to enable more effective utilization of unlabeled genomic sequences. This would support rapid variant prioritization and more timely vaccine strain selection, ultimately leading to improved public health outcomes in response to evolving influenza viruses.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Virology</span>
+                    
+                    <span class="tag">Vaccinology</span>
+                    
+                    <span class="tag">Infectious Disease Epidemiology</span>
+                    
+                    <span class="tag">Public Health</span>
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Influenza A</span>
+                    
+                    <span class="tag tag-keyword">Antigenicity</span>
+                    
+                    <span class="tag tag-keyword">Semi-supervised Learning</span>
+                    
+                    <span class="tag tag-keyword">Protein Language Models</span>
+                    
+                    <span class="tag tag-keyword">Vaccine Strain Selection</span>
+                    
+                    <span class="tag tag-keyword">Haemagglutinin</span>
+                    
+                    <span class="tag tag-keyword">Genomic Surveillance</span>
+                    
+                    <span class="tag tag-keyword">Machine Learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Influenza A viruses (IAVs) evolve antigenically at a pace that requires frequent vaccine updates, yet the haemagglutination inhibition (HI) assays used to quantify antigenicity are labor-intensive and unscalable. As a result, genomic data vastly outpace available phenotypic labels, limiting the effectiveness of traditional supervised models. We hypothesize that combining pre-trained Protein Language Models (PLMs) with Semi-Supervised Learning (SSL) can retain high predictive accuracy even when labeled data are scarce. We evaluated two SSL strategies, Self-training and Label Spreading, against fully supervised baselines using four PLM-derived embeddings (ESM-2, ProtVec, ProtT5, ProtBert) applied to haemagglutinin (HA) sequences. A nested cross-validation framework simulated low-label regimes (25%, 50%, 75%, and 100% label availability) across four IAV subtypes (H1N1, H3N2, H5N1, H9N2). SSL consistently improved performance under label scarcity. Self-training with ProtVec produced the largest relative gains, showing that SSL can compensate for lower-resolution representations. ESM-2 remained highly robust, achieving F1 scores above 0.82 with only 25% labeled data, indicating that its embeddings capture key antigenic determinants. While H1N1 and H9N2 were predicted with high accuracy, the hypervariable H3N2 subtype remained challenging, although SSL mitigated the performance decline. These findings demonstrate that integrating PLMs with SSL can address the antigenicity labeling bottleneck and enable more effective use of unlabeled surveillance sequences, supporting rapid variant prioritization and timely vaccine strain selection.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>V0: initial draft uploaded</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
