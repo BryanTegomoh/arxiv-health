@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoLugano: A Deep Learning Framework for Fully Automated Lymphoma Segmentation and Lugano Staging on FDG-PET/CT - Health AI Hub</title>
+    <meta name="description" content="This paper introduces AutoLugano, a novel deep learning framework designed for fully automated, end-to-end lymphoma classification and Lugano staging directly f">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>AutoLugano: A Deep Learning Framework for Fully Automated Lymphoma Segmentation and Lugano Staging on FDG-PET/CT</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.07206v1" target="_blank">2512.07206v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-08
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Boyang Pan, Zeyu Zhang, Hongyu Meng, Bin Cui, Yingying Zhang, Wenli Hou, Junhao Li, Langdi Zhong, Xiaoxiao Chen, Xiaoyu Xu, Changjin Zuo, Chao Cheng, Nan-Jie Gong
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.07206v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.07206v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces AutoLugano, a novel deep learning framework designed for fully automated, end-to-end lymphoma classification and Lugano staging directly from baseline FDG-PET/CT scans. The system integrates lesion segmentation, anatomical localization, and automated staging, demonstrating robust performance in identifying regional involvement and accurately stratifying patients into therapeutic groups (Limited vs. Advanced Stage).</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate and timely Lugano staging is crucial for lymphoma treatment planning and prognosis. This automated system offers a standardized, efficient, and potentially more objective method for staging, reducing inter-reader variability and accelerating the clinical workflow for oncologists.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>AutoLugano is a fully automated, end-to-end deep learning pipeline that processes medical imaging (FDG-PET/CT scans) to perform lesion segmentation, anatomical localization, and ultimately, automated Lugano staging for lymphoma patients. This AI application directly supports clinical decision-making by providing automated therapeutic stratification (Limited vs. Advanced Stage), aiding in the initial staging process and treatment planning for lymphoma.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>AutoLugano is the first fully automated, end-to-end pipeline for Lugano staging of lymphoma using a single baseline FDG-PET/CT scan.</li>
+                    
+                    <li>The system comprises three sequential modules: (1) Anatomy-Informed Lesion Segmentation using a 3D nnU-Net model, (2) Atlas-based Anatomical Localization leveraging TotalSegmentator to map lesions to 21 lymph node regions, and (3) Automated Lugano Staging translating spatial involvement into stages and therapeutic groups.</li>
+                    
+                    <li>It was trained on the public autoPET dataset (n=1,007) and externally validated on an independent cohort of 67 patients.</li>
+                    
+                    <li>On external validation, the model achieved an overall accuracy of 88.31%, sensitivity of 74.47%, specificity of 94.21%, and F1-score of 80.80% for regional involvement detection.</li>
+                    
+                    <li>Critically, for therapeutic stratification (Limited vs. Advanced Stage), AutoLugano demonstrated high performance with an accuracy of 85.07%, specificity of 90.48%, and sensitivity of 82.61%.</li>
+                    
+                    <li>The framework outperforms baseline models in regional involvement detection.</li>
+                    
+                    <li>This system has strong potential to significantly assist in initial lymphoma staging, treatment stratification, and supporting clinical decision-making.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The AutoLugano system employs a three-module sequential pipeline. First, a 3D nnU-Net model, trained on multi-channel FDG-PET/CT inputs, performs Anatomy-Informed Lesion Segmentation for automated lesion detection. Second, an Atlas-based Anatomical Localization module uses the TotalSegmentator toolkit and deterministic anatomical rules to map segmented lesions to 21 predefined lymph node regions. Third, the Automated Lugano Staging module translates the spatial distribution of involved regions into Lugano stages and corresponding therapeutic groups (Limited vs. Advanced Stage). The system was developed using the autoPET dataset (n=1,007) and validated on an independent external cohort (n=67), with performance assessed via accuracy, sensitivity, specificity, and F1-score.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The AutoLugano model achieved robust performance on an external validation set, demonstrating 88.31% accuracy, 74.47% sensitivity, 94.21% specificity, and 80.80% F1-score for regional involvement detection. For the critical task of therapeutic stratification (Limited vs. Advanced Stage), the system reached an impressive 85.07% accuracy, with 90.48% specificity and 82.61% sensitivity. These results indicate superior performance compared to baseline models.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This fully automated deep learning system offers a significant advancement in lymphoma management by standardizing and streamlining the initial staging process. It can aid clinicians in rapidly and accurately determining Lugano stages and therapeutic groups, potentially improving treatment stratification, reducing diagnostic turnaround times, and supporting more consistent clinical decision-making for lymphoma patients.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract, but the conclusion implies immediate potential for clinical assistance and decision-making, suggesting future work would focus on broader clinical implementation and real-world impact validation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Nuclear Medicine</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Hematology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Lymphoma</span>
+                    
+                    <span class="tag tag-keyword">FDG-PET/CT</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Automated Staging</span>
+                    
+                    <span class="tag tag-keyword">Lugano Classification</span>
+                    
+                    <span class="tag tag-keyword">Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Treatment Stratification</span>
+                    
+                    <span class="tag tag-keyword">nnU-Net</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Purpose: To develop a fully automated deep learning system, AutoLugano, for end-to-end lymphoma classification by performing lesion segmentation, anatomical localization, and automated Lugano staging from baseline FDG-PET/CT scans. Methods: The AutoLugano system processes baseline FDG-PET/CT scans through three sequential modules:(1) Anatomy-Informed Lesion Segmentation, a 3D nnU-Net model, trained on multi-channel inputs, performs automated lesion detection (2) Atlas-based Anatomical Localization, which leverages the TotalSegmentator toolkit to map segmented lesions to 21 predefined lymph node regions using deterministic anatomical rules; and (3) Automated Lugano Staging, where the spatial distribution of involved regions is translated into Lugano stages and therapeutic groups (Limited vs. Advanced Stage).The system was trained on the public autoPET dataset (n=1,007) and externally validated on an independent cohort of 67 patients. Performance was assessed using accuracy, sensitivity, specificity, F1-scorefor regional involvement detection and staging agreement. Results: On the external validation set, the proposed model demonstrated robust performance, achieving an overall accuracy of 88.31%, sensitivity of 74.47%, Specificity of 94.21% and an F1-score of 80.80% for regional involvement detection,outperforming baseline models. Most notably, for the critical clinical task of therapeutic stratification (Limited vs. Advanced Stage), the system achieved a high accuracy of 85.07%, with a specificity of 90.48% and a sensitivity of 82.61%.Conclusion: AutoLugano represents the first fully automated, end-to-end pipeline that translates a single baseline FDG-PET/CT scan into a complete Lugano stage. This study demonstrates its strong potential to assist in initial staging, treatment stratification, and supporting clinical decision-making.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

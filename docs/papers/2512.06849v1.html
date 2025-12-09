@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide-and-Seek Attribution: Weakly Supervised Segmentation of Vertebral Metastases in CT - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel weakly supervised method for segmenting vertebral metastases (both lytic and blastic) in CT scans, trained exclusively on vertebra">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Hide-and-Seek Attribution: Weakly Supervised Segmentation of Vertebral Metastases in CT</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.06849v1" target="_blank">2512.06849v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-07
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Matan Atad, Alexander W. Marka, Lisa Steinhelfer, Anna Curto-Vilalta, Yannik Leonhardt, Sarah C. Foreman, Anna-Sophia Walburga Dietrich, Robert Graf, Alexandra S. Gersing, Bjoern Menze, Daniel Rueckert, Jan S. Kirschke, Hendrik Möller
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.06849v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.06849v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel weakly supervised method for segmenting vertebral metastases (both lytic and blastic) in CT scans, trained exclusively on vertebra-level healthy/malignant labels without requiring expensive voxel-level annotations. By combining a Diffusion Autoencoder for classifier-guided healthy edits with a unique "Hide-and-Seek Attribution" mechanism to identify truly malignant regions, the method achieves strong segmentation performance, significantly outperforming baselines and demonstrating the feasibility of generating reliable lesion masks from coarse labels.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This method dramatically reduces the annotation burden for vertebral metastasis segmentation, making it more scalable and accessible for clinical use. Accurate and efficient identification of metastases is crucial for cancer staging, guiding treatment decisions (e.g., radiation therapy), and monitoring disease progression or response to therapy.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application described is a weakly supervised segmentation method designed to accurately identify and delineate vertebral metastases in CT scans. This assists healthcare professionals, particularly radiologists and oncologists, by automating or semi-automating the detection of cancer spread to the spine, potentially improving diagnostic accuracy, efficiency, and aiding in treatment planning and monitoring. It specifically tackles the challenge of scarce voxel-level annotations in medical imaging.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical clinical need for accurate vertebral metastasis segmentation in CT, which is challenging due to scarce voxel-level annotations and visual similarities with benign degenerative changes.</li>
+                    
+                    <li>Proposes a weakly supervised segmentation approach that utilizes only vertebra-level healthy/malignant labels, eliminating the need for labor-intensive and costly pixel-level lesion masks.</li>
+                    
+                    <li>The core methodology involves a Diffusion Autoencoder (DAE) which generates a classifier-guided "healthy edit" of an input vertebra, and pixel-wise difference maps between the original and edited images to propose initial candidate lesion regions.</li>
+                    
+                    <li>Introduces a novel technique called "Hide-and-Seek Attribution": candidate regions are selectively revealed while others are hidden, projected back to the data manifold by the DAE, and a latent-space classifier quantifies the isolated malignant contribution of each component.</li>
+                    
+                    <li>Achieves strong segmentation performance on held-out radiologist annotations, with F1 scores of 0.91 for blastic lesions and 0.85 for lytic lesions, and Dice scores of 0.87 (blastic) and 0.78 (lytic).</li>
+                    
+                    <li>Significantly outperforms baseline methods, which yielded F1 scores of 0.79 (blastic) and 0.67 (lytic), and Dice scores of 0.74 (blastic) and 0.55 (lytic).</li>
+                    
+                    <li>Demonstrates that coarse vertebra-level labels can be effectively transformed into precise voxel-level lesion masks, showcasing the power of generative editing combined with selective occlusion for accurate weakly supervised segmentation in CT.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The method begins with a Diffusion Autoencoder (DAE) trained to produce a classifier-guided 'healthy edit' of each vertebra, effectively removing malignant features. Pixel-wise difference maps between the original and edited images generate initial candidate lesion regions. To confirm malignancy, a novel "Hide-and-Seek Attribution" technique is employed: each candidate region is revealed sequentially while others are hidden. The modified image is then projected back to the data manifold by the DAE, and a latent-space classifier quantifies the isolated malignant contribution of that specific component. High-scoring regions are aggregated to form the final lytic or blastic segmentation masks.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study's key finding is that its weakly supervised method successfully generated highly accurate segmentation masks for both blastic (F1: 0.91, Dice: 0.87) and lytic (F1: 0.85, Dice: 0.78) vertebral metastases, despite being trained solely on vertebra-level healthy/malignant labels. This performance significantly surpassed established baselines, validating that generative editing combined with selective occlusion can effectively transform coarse supervision into reliable pixel-level annotations.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly streamline and automate the process of vertebral metastasis detection and quantification in clinical practice. By reducing the reliance on laborious manual segmentation, it could enable faster diagnostic workflows, more consistent and objective assessment of tumor burden, precise planning for targeted therapies like radiation, and more efficient monitoring of treatment efficacy, ultimately improving patient care and outcomes in oncology.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations or caveats of the proposed method.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Orthopedics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Vertebral Metastasis</span>
+                    
+                    <span class="tag tag-keyword">Weakly Supervised Segmentation</span>
+                    
+                    <span class="tag tag-keyword">CT</span>
+                    
+                    <span class="tag tag-keyword">Diffusion Autoencoder</span>
+                    
+                    <span class="tag tag-keyword">Generative Editing</span>
+                    
+                    <span class="tag tag-keyword">Hide-and-Seek Attribution</span>
+                    
+                    <span class="tag tag-keyword">Oncology</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate segmentation of vertebral metastasis in CT is clinically important yet difficult to scale, as voxel-level annotations are scarce and both lytic and blastic lesions often resemble benign degenerative changes. We introduce a weakly supervised method trained solely on vertebra-level healthy/malignant labels, without any lesion masks. The method combines a Diffusion Autoencoder (DAE) that produces a classifier-guided healthy edit of each vertebra with pixel-wise difference maps that propose candidate lesion regions. To determine which regions truly reflect malignancy, we introduce Hide-and-Seek Attribution: each candidate is revealed in turn while all others are hidden, the edited image is projected back to the data manifold by the DAE, and a latent-space classifier quantifies the isolated malignant contribution of that component. High-scoring regions form the final lytic or blastic segmentation. On held-out radiologist annotations, we achieve strong blastic/lytic performance despite no mask supervision (F1: 0.91/0.85; Dice: 0.87/0.78), exceeding baselines (F1: 0.79/0.67; Dice: 0.74/0.55). These results show that vertebra-level labels can be transformed into reliable lesion masks, demonstrating that generative editing combined with selective occlusion supports accurate weakly supervised segmentation in CT.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>In submission</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
