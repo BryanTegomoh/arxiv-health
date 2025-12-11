@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masked Registration and Autoencoding of CT Images for Predictive Tibia Reconstruction - Health AI Hub</title>
+    <meta name="description" content="This research introduces a novel deep learning framework that combines neural registration and autoencoders to predict a patient-specific healthy tibia reconstr">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Masked Registration and Autoencoding of CT Images for Predictive Tibia Reconstruction</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.09525v1" target="_blank">2512.09525v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-10
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Hongyou Zhou, Cederic Aßmann, Alaa Bejaoui, Heiko Tzschätzsch, Mark Heyland, Julian Zierke, Niklas Tuttle, Sebastian Hölzl, Timo Auer, David A. Back, Marc Toussaint
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.09525v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.09525v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This research introduces a novel deep learning framework that combines neural registration and autoencoders to predict a patient-specific healthy tibia reconstruction from a fractured CT scan. The system assists surgical planning by transforming raw CTs to a standardized coordinate system and then generating a prediction of the intact bone, critically designed to be robust to masked (fractured) input.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This technology provides a crucial tool for surgeons planning complex tibial fracture repairs, offering a patient-specific 3D reconstruction target that can significantly improve the accuracy of alignment, potentially leading to better surgical outcomes and reduced operative time.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application involves using neural registration (a modified spatial transformer network) and autoencoder models to process CT images of fractured tibias. The AI system learns to register raw CTs to a standardized coordinate system and model healthy tibial variations. It can then take a fractured CT scan, handle masked input, and predict / decode a patient-specific healthy bone structure, which serves as a target for surgical reconstruction planning. This directly aids surgeons in visualizing and achieving optimal bone alignment.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the challenge of predicting the patient-specific 3D structure of a healthy tibia from a fractured CT scan to assist surgical planning.</li>
+                    
+                    <li>Utilizes a modified 3D Spatial Transformer Network (STN) for global spatial registration, mapping raw CT images to a standardized coordinate system based on a jointly trained tibia prototype.</li>
+                    
+                    <li>Employs various autoencoder (AE) architectures to model and capture the complex variations of healthy human tibial anatomy within the standardized coordinate system.</li>
+                    
+                    <li>A key innovation is the design of both the STN and AE models to be robust to masked input, enabling them to process partially visible or fractured bone structures.</li>
+                    
+                    <li>The system decodes the masked, fractured CT input into a prediction of the patient's specific healthy bone structure, presented in the standardized coordinates for clear visualization.</li>
+                    
+                    <li>Contributions include the 3D adaptation of STN for spatial registration, a comparative analysis of AEs for bone CT modeling, and the extension of both models to handle masked inputs for predictive reconstruction.</li>
+                    
+                    <li>The approach aims to provide surgeons with a concrete 3D target for desirable bone alignment, overcoming the difficulty of imagining such structures in complex fractures.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology combines two deep learning components: 1) A 3D-adapted Spatial Transformer Network (STN) is initially trained to perform global spatial registration, transforming raw CT images of tibiae into a standardized coordinate system aligned with a learned tibia prototype. This step standardizes the orientation and position of the bone. 2) Subsequently, various autoencoder (AE) architectures are trained to model the statistical variations of healthy tibial anatomy within this standardized coordinate space. Crucially, both the STN and AE models are explicitly designed to be robust to masked input, allowing them to effectively process CT scans where parts of the bone are missing or fractured. This enables the system to take a fractured tibia CT, register it, and then use the AE to generate a predictive 3D model of what the patient's healthy, intact tibia would look like in the standardized coordinates.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The key findings include the successful development and adaptation of a 3D Spatial Transformer Network for robust global spatial registration of bone CTs. Furthermore, the research demonstrates the efficacy of autoencoder architectures in modeling the complex variations of healthy tibial anatomy. A significant finding is the extension of both registration and generative models to handle masked inputs, which is essential for applying these methods to real-world fractured bone images, thus enabling the predictive generation of patient-specific healthy bone structures from damaged scans.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly impact clinical practice by providing orthopedic and trauma surgeons with an advanced computational tool for preoperative planning of complex tibial fractures. By offering a patient-specific 3D visualization of the desired healthy bone alignment, it can reduce the subjective challenges of imagining the optimal reconstruction. This could lead to more precise fracture reduction, improved implant placement, shorter surgical times, and ultimately, better functional outcomes and reduced complications for patients undergoing tibial fracture repair.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the proposed method or the study.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Orthopedic surgery</span>
+                    
+                    <span class="tag">Musculoskeletal radiology</span>
+                    
+                    <span class="tag">Trauma surgery</span>
+                    
+                    <span class="tag">Medical imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">CT imaging</span>
+                    
+                    <span class="tag tag-keyword">Tibia fracture</span>
+                    
+                    <span class="tag tag-keyword">Surgical planning</span>
+                    
+                    <span class="tag tag-keyword">Neural registration</span>
+                    
+                    <span class="tag tag-keyword">Autoencoder</span>
+                    
+                    <span class="tag tag-keyword">Spatial Transformer Network</span>
+                    
+                    <span class="tag tag-keyword">Bone reconstruction</span>
+                    
+                    <span class="tag tag-keyword">Medical imaging</span>
+                    
+                    <span class="tag tag-keyword">Deep learning</span>
+                    
+                    <span class="tag tag-keyword">Masked input</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Surgical planning for complex tibial fractures can be challenging for surgeons, as the 3D structure of the later desirable bone alignment may be diffi- cult to imagine. To assist in such planning, we address the challenge of predicting a patient-specific reconstruction target from a CT of the fractured tibia. Our ap- proach combines neural registration and autoencoder models. Specifically, we first train a modified spatial transformer network (STN) to register a raw CT to a standardized coordinate system of a jointly trained tibia prototype. Subsequently, various autoencoder (AE) architectures are trained to model healthy tibial varia- tions. Both the STN and AE models are further designed to be robust to masked input, allowing us to apply them to fractured CTs and decode to a prediction of the patient-specific healthy bone in standard coordinates. Our contributions include: i) a 3D-adapted STN for global spatial registration, ii) a comparative analysis of AEs for bone CT modeling, and iii) the extension of both to handle masked inputs for predictive generation of healthy bone structures. Project page: https://github.com/HongyouZhou/repair</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>DGM4MICCAI</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

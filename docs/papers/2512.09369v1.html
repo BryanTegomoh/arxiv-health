@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are Hypervectors Enough? Single-Call LLM Reasoning over Knowledge Graphs - Health AI Hub</title>
+    <meta name="description" content="PathHD introduces a lightweight, encoder-free framework for LLM reasoning over Knowledge Graphs, replacing computationally expensive neural path scoring and mul">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Are Hypervectors Enough? Single-Call LLM Reasoning over Knowledge Graphs</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.09369v1" target="_blank">2512.09369v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-10
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Yezi Liu, William Youngwoo Chung, Hanning Chen, Calvin Yeung, Mohsen Imani
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.85 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.09369v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.09369v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">PathHD introduces a lightweight, encoder-free framework for LLM reasoning over Knowledge Graphs, replacing computationally expensive neural path scoring and multiple LLM calls with Hyperdimensional Computing (HDC). By encoding relation paths into block-diagonal hypervectors and using a single LLM adjudication, PathHD achieves comparable accuracy to neural baselines while significantly reducing latency and GPU memory. This approach offers improved interpretability, presenting a favorable accuracy-efficiency-interpretability trade-off.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This work is highly relevant to medicine and health because it provides a more efficient, scalable, and interpretable method for LLMs to reason over complex medical knowledge graphs. The reduced computational cost and improved transparency directly address major barriers to the clinical adoption of advanced AI in healthcare, enabling more practical and trustworthy applications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper describes an improved methodology for LLM reasoning over KGs, making such systems more efficient, cost-effective, and interpretable. This directly enables and enhances various health AI applications that rely on structured medical knowledge, such as: (1) powering LLM-based clinical decision support systems that can provide explainable recommendations grounded in medical KGs; (2) facilitating drug discovery and repurposing by efficiently reasoning over complex biological and pharmacological KGs; (3) improving diagnostic aids by offering traceable rationales for suggested diagnoses; (4) developing more robust and trustworthy AI systems for personalized treatment planning; and (5) creating more efficient tools for biomedical research that synthesize information from vast medical literature and databases.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**PathHD Framework:** A novel, encoder-free knowledge graph (KG) reasoning framework that uses a single Large Language Model (LLM) call per query, eliminating the need for heavy neural encoders in path scoring.</li>
+                    
+                    <li>**HDC for Path Encoding:** KG relation paths are encoded into block-diagonal GHRR hypervectors using an order-aware, non-commutative binding operator for robust and compositional representation of paths.</li>
+                    
+                    <li>**Efficient Retrieval:** Candidate paths are ranked based on blockwise cosine similarity and Top-K pruning, directly leveraging HDC representations to efficiently identify relevant paths without complex neural network computations.</li>
+                    
+                    <li>**One-Shot LLM Adjudication:** A single LLM call is utilized for final answer generation, which performs a one-shot adjudication step grounded by the supporting paths identified by HDC, ensuring interpretability and avoiding repeated per-path LLM scoring.</li>
+                    
+                    <li>**Significant Performance Gains:** PathHD attains comparable or better Hits@1 accuracy than strong neural baselines on benchmarks like WebQSP, CWQ, and the GrailQA split.</li>
+                    
+                    <li>**Resource Efficiency:** It dramatically reduces end-to-end latency by 40-60% and GPU memory consumption by 3-5x compared to encoder-based methods, owing to its encoder-free retrieval design.</li>
+                    
+                    <li>**Enhanced Interpretability:** The framework delivers faithful, path-grounded rationales alongside its answers, which significantly improves error diagnosis and system controllability, a critical aspect for high-stakes applications.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>PathHD operates by encoding knowledge graph relation paths into block-diagonal GHRR hypervectors using a specialized order-aware, non-commutative binding operator for compositional representation. It then ranks candidate paths via blockwise cosine similarity and Top-K pruning. Finally, it employs a single LLM call for a one-shot adjudication step to generate the final answer, explicitly citing the supporting paths retrieved by the HDC component.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>PathHD demonstrates that carefully designed Hyperdimensional Computing (HDC) representations can serve as a practical substrate for efficient and interpretable KG-LLM reasoning. It achieved comparable or superior Hits@1 accuracy to strong neural baselines across multiple datasets (WebQSP, CWQ, GrailQA). Crucially, it significantly reduced end-to-end latency by 40-60% and GPU memory by 3-5x. Moreover, it provided faithful, path-grounded rationales, enhancing interpretability and controllability of the reasoning process.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The enhanced efficiency and interpretability of PathHD could enable the broader and more trusted adoption of LLM-based systems in clinical settings. This translates to faster and more transparent insights from vast medical KGs for tasks such as identifying optimal treatment pathways, predicting adverse drug events, aiding in rare disease diagnosis, or facilitating evidence-based medicine, ultimately leading to improved patient care, reduced operational costs, and greater clinician trust in AI-driven tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While the abstract does not explicitly state limitations, potential considerations for this approach might include the scalability of HDC to extremely large or highly dynamic knowledge graphs with billions of entities/relations, the optimal design and tuning of hypervector dimensions and binding operators for highly diverse and nuanced medical ontologies, and potential challenges in handling highly abstract or ambiguous medical queries that might require deeper semantic understanding beyond structured path-based reasoning.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Although not explicitly stated, future research directions could involve exploring the application of PathHD to more complex multi-hop and inferential reasoning tasks, integrating it with dynamic or evolving medical knowledge graphs, investigating alternative HDC architectures or advanced binding operators for even greater expressive power and robustness, and rigorously evaluating its performance and robustness on real-world clinical datasets with varying levels of data quality and noise.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Decision Support Systems</span>
+                    
+                    <span class="tag">Drug Discovery and Repurposing</span>
+                    
+                    <span class="tag">Biomedical Informatics</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Electronic Health Record (EHR) Analysis</span>
+                    
+                    <span class="tag">Genomics and Proteomics</span>
+                    
+                    <span class="tag">Medical Research and Literature Analysis</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Hyperdimensional Computing</span>
+                    
+                    <span class="tag tag-keyword">Knowledge Graphs</span>
+                    
+                    <span class="tag tag-keyword">Large Language Models</span>
+                    
+                    <span class="tag tag-keyword">Medical Reasoning</span>
+                    
+                    <span class="tag tag-keyword">Computational Efficiency</span>
+                    
+                    <span class="tag tag-keyword">Interpretability</span>
+                    
+                    <span class="tag tag-keyword">Biomedical Informatics</span>
+                    
+                    <span class="tag tag-keyword">Path-based Reasoning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Recent advances in large language models (LLMs) have enabled strong reasoning over both structured and unstructured knowledge. When grounded on knowledge graphs (KGs), however, prevailing pipelines rely on heavy neural encoders to embed and score symbolic paths or on repeated LLM calls to rank candidates, leading to high latency, GPU cost, and opaque decisions that hinder faithful, scalable deployment. We propose PathHD, a lightweight and encoder-free KG reasoning framework that replaces neural path scoring with hyperdimensional computing (HDC) and uses only a single LLM call per query. PathHD encodes relation paths into block-diagonal GHRR hypervectors, ranks candidates with blockwise cosine similarity and Top-K pruning, and then performs a one-shot LLM adjudication to produce the final answer together with cited supporting paths. Technically, PathHD is built on three ingredients: (i) an order-aware, non-commutative binding operator for path composition, (ii) a calibrated similarity for robust hypervector-based retrieval, and (iii) a one-shot adjudication step that preserves interpretability while eliminating per-path LLM scoring. On WebQSP, CWQ, and the GrailQA split, PathHD (i) attains comparable or better Hits@1 than strong neural baselines while using one LLM call per query; (ii) reduces end-to-end latency by $40-60\%$ and GPU memory by $3-5\times$ thanks to encoder-free retrieval; and (iii) delivers faithful, path-grounded rationales that improve error diagnosis and controllability. These results indicate that carefully designed HDC representations provide a practical substrate for efficient KG-LLM reasoning, offering a favorable accuracy-efficiency-interpretability trade-off.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identifying counterfactual probabilities using bivariate distributions and uplift modeling - Health AI Hub</title>
+    <meta name="description" content="This paper introduces a novel method for identifying counterfactual probabilities, which represent the joint distribution of potential outcomes under both treat">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Identifying counterfactual probabilities using bivariate distributions and uplift modeling</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.08805v1" target="_blank">2512.08805v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-09
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Théo Verhelst, Gianluca Bontempi
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.08805v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.08805v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces a novel method for identifying counterfactual probabilities, which represent the joint distribution of potential outcomes under both treatment and control conditions. Building upon uplift modeling, the approach fits a bivariate beta distribution to predicted uplift scores to generate posterior distributions over individual-level counterfactual outcomes, offering richer causal insights than traditional uplift or machine learning models.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>While the paper illustrates its concept with customer churn, the capability to estimate individual-level joint counterfactual probabilities is profoundly relevant in medicine. It allows clinicians to probabilistically answer questions like: 'Would this specific patient have responded positively to treatment A AND avoided an adverse event B, had they received it, versus if they had received standard care?' This is fundamental for truly personalized medicine, precise risk-benefit assessments, and optimizing individual patient management.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This AI/ML methodology can be applied to develop sophisticated medical AI applications that move beyond simple predictions to provide causal insights. For instance, it can power AI systems for personalized treatment recommendations by estimating the full spectrum of potential outcomes for an individual patient under different treatment regimens. It can also be used in clinical trial analysis to better understand heterogeneous treatment effects, inform the design of targeted therapies, and build AI tools for proactive risk management by modeling the impact of various health interventions or lifestyle changes on specific patient cohorts.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Uplift modeling estimates the average causal effect of an intervention as the difference between potential outcomes, while counterfactual identification aims to recover the joint distribution of these potential outcomes (e.g., P(Y(1), Y(0))).</li>
+                    
+                    <li>The joint counterfactual distribution provides richer, individual-level information but is inherently harder to estimate than average uplift.</li>
+                    
+                    <li>The proposed method establishes a synergy, leveraging predicted uplift scores from existing uplift models for counterfactual estimation.</li>
+                    
+                    <li>The core methodology involves fitting a bivariate beta distribution to these predicted uplift scores.</li>
+                    
+                    <li>This process yields posterior distributions over counterfactual outcomes for individual units, offering probabilistic insights into 'what-if' scenarios.</li>
+                    
+                    <li>The approach maintains the same causal assumptions as standard uplift modeling, making it robust within that established framework.</li>
+                    
+                    <li>Simulations demonstrate the efficacy of the proposed estimator, highlighting its ability to uncover insights unavailable to standard ML or uplift models alone, such as in customer churn analysis.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The method involves a two-stage approach: initially, an uplift model is used to predict the individual treatment effect (uplift score) for each subject. Subsequently, a bivariate beta distribution is fitted to these predicted uplift scores. This fitted bivariate distribution then allows for the estimation of posterior distributions for the joint potential outcomes (Y(1), Y(0)) for each individual, thereby identifying individual-specific counterfactual probabilities.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary finding is the successful development and simulation-based validation of a novel counterfactual estimator. This estimator effectively translates predicted uplift scores into posterior distributions of joint counterfactual outcomes using a bivariate beta distribution. The paper demonstrates that this approach provides richer, more granular, and individual-level causal insights into intervention effects than traditional uplift modeling or standard machine learning techniques alone.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This methodology has the potential to significantly advance precision medicine by providing clinicians with a more comprehensive, probabilistic understanding of individual patient responses to interventions. It could enable more informed shared decision-making by quantifying the joint likelihood of specific beneficial outcomes and adverse events for a given patient under different treatment scenarios. This capability is crucial for tailoring therapeutic strategies, optimizing drug prescriptions based on individual risk profiles, and improving the design of targeted clinical trials.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, the method implicitly relies on the causal assumptions inherent to uplift modeling (e.g., strong ignorability, consistency, SUTVA), which may require careful validation in complex real-world medical datasets. The efficacy is demonstrated through simulations, implying that real-world application with its associated data challenges (missing data, confounding) would require further investigation. The computational demands for very large-scale clinical datasets are not discussed.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Although not explicitly mentioned in the abstract, logical future directions include applying this counterfactual estimator to diverse real-world medical datasets (e.g., electronic health records, clinical trial data) to assess its generalizability and practical utility. Further research could explore extensions to handle more complex intervention structures, time-varying treatments, or multi-variate outcome spaces beyond the bivariate context implied, and investigate its robustness to violations of underlying causal assumptions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Pharmacogenomics</span>
+                    
+                    <span class="tag">Public Health Interventions</span>
+                    
+                    <span class="tag">Risk Stratification</span>
+                    
+                    <span class="tag">Prognostic Modeling</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Causal Inference</span>
+                    
+                    <span class="tag tag-keyword">Uplift Modeling</span>
+                    
+                    <span class="tag tag-keyword">Counterfactuals</span>
+                    
+                    <span class="tag tag-keyword">Bivariate Beta Distribution</span>
+                    
+                    <span class="tag tag-keyword">Personalized Medicine</span>
+                    
+                    <span class="tag tag-keyword">Potential Outcomes</span>
+                    
+                    <span class="tag tag-keyword">Treatment Effects</span>
+                    
+                    <span class="tag tag-keyword">Precision Health</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Uplift modeling estimates the causal effect of an intervention as the difference between potential outcomes under treatment and control, whereas counterfactual identification aims to recover the joint distribution of these potential outcomes (e.g., "Would this customer still have churned had we given them a marketing offer?"). This joint counterfactual distribution provides richer information than the uplift but is harder to estimate. However, the two approaches are synergistic: uplift models can be leveraged for counterfactual estimation. We propose a counterfactual estimator that fits a bivariate beta distribution to predicted uplift scores, yielding posterior distributions over counterfactual outcomes. Our approach requires no causal assumptions beyond those of uplift modeling. Simulations show the efficacy of the approach, which can be applied, for example, to the problem of customer churn in telecom, where it reveals insights unavailable to standard ML or uplift models alone.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>7 pages. Submitted to the 34th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

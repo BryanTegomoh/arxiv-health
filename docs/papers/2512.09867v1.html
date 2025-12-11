@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedForget: Hierarchy-Aware Multimodal Unlearning Testbed for Medical AI - Health AI Hub</title>
+    <meta name="description" content="MedForget is a novel hierarchy-aware multimodal unlearning testbed designed to address critical privacy and compliance challenges, such as the "right to be forg">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>MedForget: Hierarchy-Aware Multimodal Unlearning Testbed for Medical AI</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.09867v1" target="_blank">2512.09867v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-10
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Fengli Wu, Vaidehi Patil, Jaehong Yoon, Yue Zhang, Mohit Bansal
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI, cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.09867v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.09867v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">MedForget is a novel hierarchy-aware multimodal unlearning testbed designed to address critical privacy and compliance challenges, such as the "right to be forgotten," in medical AI systems. It models hospital data hierarchically and uses multimodal instances with specific unlearning targets, revealing that current state-of-the-art unlearning methods struggle to achieve complete, hierarchy-aware forgetting without compromising diagnostic performance. Furthermore, it demonstrates that fine-grained unlearning leaves models vulnerable to reconstruction attacks, while coarse-grained unlearning offers more resistance.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is critical for ensuring that advanced AI systems used in healthcare (e.g., for diagnosis, clinical reasoning) can comply with stringent patient data privacy regulations like HIPAA and GDPR. By systematically evaluating and improving unlearning mechanisms, MedForget enables the development of medical AI that respects the 'right to be forgotten,' thereby building trust and facilitating ethical, compliant deployment of AI in sensitive clinical environments.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application to health is to develop privacy-preserving and compliant medical AI systems capable of unlearning specific patient data. This is crucial for applications like clinical reasoning, diagnostic support, and medical report generation, ensuring that these systems adhere to regulations such as HIPAA and GDPR while maintaining diagnostic performance.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Pretrained Multimodal Large Language Models (MLLMs) in medical AI face significant privacy and compliance issues (HIPAA, GDPR) due to their training on sensitive patient data.</li>
+                    
+                    <li>MedForget is introduced as a Hierarchy-Aware Multimodal Unlearning Testbed, featuring explicit retain/forget splits and evaluation sets with rephrased variants.</li>
+                    
+                    <li>The testbed models hospital data with a nested hierarchy (Institution -> Patient -> Study -> Section) across eight organizational levels, enabling fine-grained assessment of unlearning.</li>
+                    
+                    <li>It contains 3840 multimodal instances (image, question, answer), with each hierarchy level having a dedicated unlearning target to reflect diverse challenges.</li>
+                    
+                    <li>Experiments with four SOTA unlearning methods on generation, classification, and cloze tasks show that existing approaches struggle to achieve complete, hierarchy-aware forgetting without reducing diagnostic performance.</li>
+                    
+                    <li>A novel reconstruction attack, which progressively adds hierarchical context to prompts, reveals that models unlearned at a coarse granularity resist reconstruction, but fine-grained unlearning leaves models vulnerable.</li>
+                    
+                    <li>MedForget provides a practical and HIPAA-aligned benchmark for developing compliant and privacy-preserving medical AI systems.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>MedForget is a testbed that models hospital data as a nested hierarchy (Institution -> Patient -> Study -> Section) across eight levels. It includes a benchmark of 3840 multimodal (image, question, answer) instances with explicit retain and forget data splits, and rephrased variants for robust evaluation. The study evaluates four state-of-the-art unlearning methods across three tasks: generation, classification, and cloze. A novel 'reconstruction attack' methodology is introduced, which progressively adds hierarchical level context to prompts, to test the completeness and robustness of unlearning.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Existing state-of-the-art unlearning methods face significant challenges in achieving complete, hierarchy-aware forgetting in medical AI without concurrently degrading diagnostic performance on retained data. The effectiveness of unlearning is highly dependent on its granularity: models unlearned at a coarse hierarchical level exhibit strong resistance to reconstruction attacks, suggesting better overall forgetting. Conversely, models subjected to fine-grained unlearning are shown to remain vulnerable to such reconstruction attacks, indicating that specific, detailed hierarchical information may not be fully erased.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>MedForget directly contributes to the creation of more trustworthy and legally compliant medical AI systems. By highlighting the limitations of current unlearning techniques and providing a rigorous testing environment, it guides researchers and developers towards building AI models that can genuinely forget sensitive patient data when required, fulfilling regulatory mandates like HIPAA and GDPR. This will enable broader and safer adoption of MLLMs in clinical settings, ensuring patient privacy without sacrificing diagnostic utility.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily highlights the limitations of *existing SOTA unlearning methods*, rather than MedForget itself. Specifically, current methods struggle to achieve complete, hierarchy-aware forgetting without performance reduction. Furthermore, fine-grained unlearning at present leaves models vulnerable to reconstruction attacks, indicating insufficient data removal at detailed hierarchical levels.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper implicitly suggests that MedForget serves as a foundational testbed for future research aimed at developing more robust and effective unlearning methods. This includes creating novel algorithms that can achieve complete, hierarchy-aware forgetting without compromising diagnostic performance, particularly addressing the vulnerability of fine-grained unlearning to reconstruction attacks, to build truly compliant medical AI systems.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical reasoning</span>
+                    
+                    <span class="tag">Diagnosis support</span>
+                    
+                    <span class="tag">Medical report generation</span>
+                    
+                    <span class="tag">Medical imaging analysis</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">medical AI</span>
+                    
+                    <span class="tag tag-keyword">multimodal unlearning</span>
+                    
+                    <span class="tag tag-keyword">HIPAA compliance</span>
+                    
+                    <span class="tag tag-keyword">GDPR</span>
+                    
+                    <span class="tag tag-keyword">machine unlearning</span>
+                    
+                    <span class="tag tag-keyword">data privacy</span>
+                    
+                    <span class="tag tag-keyword">hierarchical data</span>
+                    
+                    <span class="tag tag-keyword">MLLM</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Pretrained Multimodal Large Language Models (MLLMs) are increasingly deployed in medical AI systems for clinical reasoning, diagnosis support, and report generation. However, their training on sensitive patient data raises critical privacy and compliance challenges under regulations such as HIPAA and GDPR, which enforce the "right to be forgotten". Unlearning, the process of tuning models to selectively remove the influence of specific training data points, offers a potential solution, yet its effectiveness in complex medical settings remains underexplored. To systematically study this, we introduce MedForget, a Hierarchy-Aware Multimodal Unlearning Testbed with explicit retain and forget splits and evaluation sets containing rephrased variants. MedForget models hospital data as a nested hierarchy (Institution -> Patient -> Study -> Section), enabling fine-grained assessment across eight organizational levels. The benchmark contains 3840 multimodal (image, question, answer) instances, each hierarchy level having a dedicated unlearning target, reflecting distinct unlearning challenges. Experiments with four SOTA unlearning methods on three tasks (generation, classification, cloze) show that existing methods struggle to achieve complete, hierarchy-aware forgetting without reducing diagnostic performance. To test whether unlearning truly deletes hierarchical pathways, we introduce a reconstruction attack that progressively adds hierarchical level context to prompts. Models unlearned at a coarse granularity show strong resistance, while fine-grained unlearning leaves models vulnerable to such reconstruction. MedForget provides a practical, HIPAA-aligned testbed for building compliant medical AI systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Dataset and Code: https://github.com/fengli-wu/MedForget</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PathCo-LatticE: Pathology-Constrained Lattice-Of Experts Framework for Fully-supervised Few-Shot Cardiac MRI Segmentation - Health AI Hub</title>
+    <meta name="description" content="PathCo-LatticE is a novel fully supervised few-shot learning framework for cardiac MRI segmentation that overcomes data scarcity and domain shift limitations by">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>PathCo-LatticE: Pathology-Constrained Lattice-Of Experts Framework for Fully-supervised Few-Shot Cardiac MRI Segmentation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.09779v1" target="_blank">2512.09779v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-10
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Mohamed Elbayumi, Mohammed S. M. Elbaz
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> eess.IV, cs.AI, cs.CV, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.09779v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.09779v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">PathCo-LatticE is a novel fully supervised few-shot learning framework for cardiac MRI segmentation that overcomes data scarcity and domain shift limitations by generating pathology-guided synthetic supervision. It employs a Virtual Patient Engine for synthetic data generation, Self-Reinforcing Interleaved Validation for robust evaluation, and a dynamic Lattice-of-Experts for zero-shot generalization. The framework significantly outperforms state-of-the-art FSL methods in out-of-distribution settings, achieving near fully supervised performance with minimal labeled real data.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This framework addresses the critical challenge of data scarcity in medical image analysis, particularly for complex tasks like cardiac MRI segmentation, making advanced AI models more accessible and reliable for clinical use by reducing reliance on extensive real-world annotated datasets. It enhances generalizability across diverse patient populations and imaging protocols, which is vital for robust clinical deployment.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is to improve medical image analysis and segmentation, specifically for cardiac MRI. It uses few-shot learning, generative modeling for synthetic medical data generation, and a lattice-of-experts approach to enable robust, zero-shot generalization of AI models for identifying and segmenting cardiac pathologies. This aims to enhance diagnostic accuracy, reduce the need for extensive real-world labeled data (which is often scarce and expensive in medicine), and improve the efficiency of cardiac disease assessment.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Fully Supervised FSL:** Proposes PathCo-LatticE, a novel fully supervised few-shot learning (FSL) approach that replaces unlabeled data with pathology-guided synthetic supervision to address limitations of semi-supervised FSL in cardiac MRI segmentation.</li>
+                    
+                    <li>**Virtual Patient Engine (VPE):** Utilizes a generative modeling component to synthesize physiologically plausible, fully labeled 3D cardiac MRI cohorts by modeling continuous latent disease trajectories derived from sparse real clinical anchors.</li>
+                    
+                    <li>**Self-Reinforcing Interleaved Validation (SIV):** Introduces a leakage-free online validation protocol that evaluates models with progressively challenging synthetic samples, thereby eliminating the need for real-world validation data and enhancing evaluation robustness.</li>
+                    
+                    <li>**Dynamic Lattice-of-Experts (LoE):** Employs a pathology-aware topological structure to organize and dynamically activate specialized segmentation networks (experts), enabling robust zero-shot generalization to unseen data and pathologies.</li>
+                    
+                    <li>**Strict Out-of-Distribution (OOD) Evaluation:** The framework was rigorously evaluated in an OOD setting, where anchors and severity statistics were derived from a single-source domain (ACDC dataset), and zero-shot testing was performed on the multi-center, multi-vendor M&Ms dataset.</li>
+                    
+                    <li>**Superior Performance with Few Anchors:** PathCo-LatticE significantly outperforms four state-of-the-art FSL methods by 4.2-11% Dice score starting with only 7 labeled anchors, and approaches fully supervised performance (within 1% Dice) using just 19 labeled anchors.</li>
+                    
+                    <li>**Enhanced Generalization and Harmonization:** Demonstrates superior harmonization capabilities across four different imaging vendors and robust generalization to previously unseen pathologies, crucial for real-world clinical application.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>PathCo-LatticE integrates three core components: a Virtual Patient Engine (VPE) which employs generative modeling to synthesize physiologically plausible, fully labeled 3D cardiac MRI data from sparse clinical anchors; a Self-Reinforcing Interleaved Validation (SIV) protocol for robust, leakage-free online model evaluation using these synthesized samples; and a dynamic Lattice-of-Experts (LoE) that organizes and adaptively activates specialized segmentation networks within a pathology-aware topology, ensuring robust generalization.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The method substantially outperforms existing state-of-the-art few-shot learning approaches by 4.2-11% Dice score, requiring only 7 labeled real-world anchors for superior performance. With merely 19 labeled anchors, PathCo-LatticE achieves segmentation performance within 1% Dice of models trained with full supervision. It demonstrates strong harmonization capabilities across four different imaging vendors and maintains high generalization to previously unseen pathologies.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>PathCo-LatticE can significantly accelerate the development and deployment of robust, automated cardiac MRI segmentation tools, even in scenarios with limited expert-annotated data. This enables more consistent and efficient disease assessment, improves diagnostic accuracy, and facilitates large-scale studies by reducing the manual labor of annotation, ultimately leading to better patient management and cardiovascular research.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any specific limitations or caveats of the PathCo-LatticE framework itself, focusing on its strengths and how it mitigates known challenges in few-shot learning.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly suggest future research directions, beyond stating that the "Code will be made publicly available."</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Cardiology</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Computational Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Few-shot learning</span>
+                    
+                    <span class="tag tag-keyword">Cardiac MRI segmentation</span>
+                    
+                    <span class="tag tag-keyword">Synthetic data generation</span>
+                    
+                    <span class="tag tag-keyword">Lattice-of-Experts</span>
+                    
+                    <span class="tag tag-keyword">Pathology-constrained</span>
+                    
+                    <span class="tag tag-keyword">Zero-shot generalization</span>
+                    
+                    <span class="tag tag-keyword">Medical image analysis</span>
+                    
+                    <span class="tag tag-keyword">Deep learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Few-shot learning (FSL) mitigates data scarcity in cardiac MRI segmentation but typically relies on semi-supervised techniques sensitive to domain shifts and validation bias, restricting zero-shot generalizability. We propose PathCo-LatticE, a fully supervised FSL framework that replaces unlabeled data with pathology-guided synthetic supervision. First, our Virtual Patient Engine models continuous latent disease trajectories from sparse clinical anchors, using generative modeling to synthesize physiologically plausible, fully labeled 3D cohorts. Second, Self-Reinforcing Interleaved Validation (SIV) provides a leakage-free protocol that evaluates models online with progressively challenging synthetic samples, eliminating the need for real validation data. Finally, a dynamic Lattice-of-Experts (LoE) organizes specialized networks within a pathology-aware topology and activates the most relevant experts per input, enabling robust zero-shot generalization to unseen data without target-domain fine-tuning. We evaluated PathCo-LatticE in a strict out-of-distribution (OOD) setting, deriving all anchors and severity statistics from a single-source domain (ACDC) and performing zero-shot testing on the multi-center, multi-vendor M&Ms dataset. PathCo-LatticE outperforms four state-of-the-art FSL methods by 4.2-11% Dice starting from only 7 labeled anchors, and approaches fully supervised performance (within 1% Dice) with only 19 labeled anchors. The method shows superior harmonization across four vendors and generalization to unseen pathologies. [Code will be made publicly available].</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black-Box Behavioral Distillation Breaks Safety Alignment in Medical LLMs - Health AI Hub</title>
+    <meta name="description" content="This paper reveals a significant vulnerability in safety-aligned medical large language models (LLMs) through a black-box behavioral distillation attack. Advers">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Black-Box Behavioral Distillation Breaks Safety Alignment in Medical LLMs</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.09403v1" target="_blank">2512.09403v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-10
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Sohely Jahan, Ruimin Sun
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.09403v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.09403v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper reveals a significant vulnerability in safety-aligned medical large language models (LLMs) through a black-box behavioral distillation attack. Adversaries can cheaply replicate a medical LLM's domain-specific reasoning while critically stripping its safety mechanisms, leading to a substantial increase in unsafe completions by the distilled surrogate model.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is critically important for the safe integration of medical LLMs into healthcare, as it demonstrates a severe vulnerability where essential safety features designed to prevent harmful or incorrect medical advice can be easily stripped, posing significant risks to patient safety and trust in AI-driven medical tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research is critical for understanding and mitigating risks in medical AI applications, particularly large language models used for clinical decision support, medical information retrieval, diagnosis assistance, and patient communication. It addresses the security and safety of these AI tools, ensuring their responsible and ethical deployment in healthcare.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>A novel black-box behavioral distillation attack replicates the domain-specific reasoning of safety-aligned medical LLMs (Meditron-7B) using only output-level access.</li>
+                    
+                    <li>The attack fine-tuned a LLaMA3 8B surrogate using LoRA, leveraging 25,000 benign instruction-response pairs collected from 48,000 queries to Meditron-7B, at a minimal cost of $12.</li>
+                    
+                    <li>The distilled surrogate model achieved strong fidelity on benign inputs but produced unsafe completions for 86% of adversarial prompts, significantly higher than Meditron-7B (66%) and the untuned base model (46%).</li>
+                    
+                    <li>This outcome highlights a 'functional-ethical gap,' where task utility successfully transfers during distillation, but safety alignment mechanisms collapse.</li>
+                    
+                    <li>A dynamic adversarial evaluation framework, incorporating Generative Query (GQ)-based harmful prompt generation and adaptive Random Search (RS) jailbreak attacks, was developed to analyze the safety collapse.</li>
+                    
+                    <li>The research exposes a practical and under-recognized threat: adversaries can cheaply obtain medical LLM capabilities while bypassing essential safety filters.</li>
+                    
+                    <li>A prototype layered defense system is proposed to detect real-time alignment drift in black-box LLM deployments, underscoring the need for extraction-aware safety monitoring.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study performed a black-box behavioral distillation attack by issuing 48,000 instruction queries to Meditron-7B and collecting 25,000 benign instruction-response pairs. These pairs were then used to fine-tune a LLaMA3 8B surrogate model via parameter-efficient LoRA under a zero-alignment supervision setting, without access to Meditron-7B's weights or safety filters. Model safety was evaluated using a dynamic adversarial framework combining Generative Query (GQ)-based harmful prompt generation, verifier filtering, category-wise failure analysis, and adaptive Random Search (RS) jailbreak attacks.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The distilled surrogate LLaMA3 8B model maintained strong fidelity on benign medical tasks. However, it exhibited a dramatic increase in unsafe outputs, generating unsafe completions for 86% of adversarial prompts, considerably surpassing the original Meditron-7B (66%) and the untuned LLaMA3 base (46%). This indicates a pronounced 'functional-ethical gap' where task performance is retained, but safety alignment catastrophically fails during distillation.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The potential clinical impact is profound and alarming. If such safety-stripped medical LLMs are deployed, they could generate dangerous medical misinformation, provide incorrect diagnoses, recommend harmful treatments, or compromise patient data privacy, leading to severe clinical errors and erosion of trust in AI. This necessitates immediate attention to securing medical LLMs against such extraction attacks to ensure patient safety and ethical AI deployment in healthcare.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, the study focuses on a specific attack vector (black-box behavioral distillation) and specific models (Meditron-7B, LLaMA3 8B), suggesting that generalizability across all LLM architectures or attack types may require further investigation. The proposed defense is described as a 'prototype detector,' implying it is an initial step and may require further development for robust real-world deployment.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper explicitly calls for the need for extraction-aware safety monitoring. Future directions include further developing and deploying layered defense systems capable of real-time alignment drift detection in black-box LLM deployments, as well as researching more robust safety alignment techniques that are inherently resistant to such distillation attacks.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Medical Information Systems</span>
+                    
+                    <span class="tag">Patient Education</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Medical LLMs</span>
+                    
+                    <span class="tag tag-keyword">Black-box distillation</span>
+                    
+                    <span class="tag tag-keyword">Safety alignment</span>
+                    
+                    <span class="tag tag-keyword">Model extraction</span>
+                    
+                    <span class="tag tag-keyword">Jailbreaking</span>
+                    
+                    <span class="tag tag-keyword">Adversarial attacks</span>
+                    
+                    <span class="tag tag-keyword">Meditron</span>
+                    
+                    <span class="tag tag-keyword">LLaMA3</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">As medical large language models (LLMs) become increasingly integrated into clinical workflows, concerns around alignment robustness, and safety are escalating. Prior work on model extraction has focused on classification models or memorization leakage, leaving the vulnerability of safety-aligned generative medical LLMs underexplored.
+  We present a black-box distillation attack that replicates the domain-specific reasoning of safety-aligned medical LLMs using only output-level access. By issuing 48,000 instruction queries to Meditron-7B and collecting 25,000 benign instruction response pairs, we fine-tune a LLaMA3 8B surrogate via parameter efficient LoRA under a zero-alignment supervision setting, requiring no access to model weights, safety filters, or training data. With a cost of $12, the surrogate achieves strong fidelity on benign inputs while producing unsafe completions for 86% of adversarial prompts, far exceeding both Meditron-7B (66%) and the untuned base model (46%). This reveals a pronounced functional-ethical gap, task utility transfers, while alignment collapses. To analyze this collapse, we develop a dynamic adversarial evaluation framework combining Generative Query (GQ)-based harmful prompt generation, verifier filtering, category-wise failure analysis, and adaptive Random Search (RS) jailbreak attacks. We also propose a layered defense system, as a prototype detector for real-time alignment drift in black-box deployments.
+  Our findings show that benign-only black-box distillation exposes a practical and under-recognized threat: adversaries can cheaply replicate medical LLM capabilities while stripping safety mechanisms, underscoring the need for extraction-aware safety monitoring.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

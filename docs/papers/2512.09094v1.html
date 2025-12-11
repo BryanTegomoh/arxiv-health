@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal Attribution of Model Performance Gaps in Medical Imaging Under Distribution Shifts - Health AI Hub</title>
+    <meta name="description" content="This paper extends causal attribution frameworks to high-dimensional medical image segmentation, quantifying how acquisition protocols and annotation variabilit">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Causal Attribution of Model Performance Gaps in Medical Imaging Under Distribution Shifts</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.09094v1" target="_blank">2512.09094v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-09
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Pedro M. Gordaliza, Nataliia Molchanova, Jaume Banus, Thomas Sanchez, Meritxell Bach Cuadra
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> eess.IV, cs.CV, cs.LG, stat.ME
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.09094v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.09094v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper extends causal attribution frameworks to high-dimensional medical image segmentation, quantifying how acquisition protocols and annotation variability independently contribute to deep learning model performance degradation under distribution shifts. By modeling the data-generating process with a causal graph and employing Shapley values, the authors reveal that annotation shifts are the dominant cause of performance drops when models cross annotators, while acquisition shifts dominate when crossing imaging centers. This mechanism-specific quantification allows for targeted intervention strategies to improve model robustness.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for deploying reliable and robust AI in clinical settings by providing a principled way to understand *why* medical imaging models fail under real-world variability. It enables healthcare practitioners and AI developers to prioritize effective interventions, ultimately leading to safer and more trustworthy diagnostic and segmentation tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research aims to improve the robustness, interpretability, and reliability of deep learning models used for medical image segmentation. Specifically, it attributes performance gaps in medical AI models (e.g., for MS lesion segmentation) to causal factors like acquisition protocols and annotation variability. This understanding allows for targeted interventions to make medical AI models more dependable for diagnosis, monitoring, and treatment planning in clinical settings, thereby directly impacting patient care and healthcare efficiency.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Deep learning models for medical image segmentation suffer significant performance drops due to distribution shifts, with poorly understood causal mechanisms.</li>
+                    
+                    <li>The authors propose extending causal attribution frameworks to high-dimensional segmentation tasks to quantify independent contributions of acquisition protocols and annotation variability.</li>
+                    
+                    <li>A causal graph models the data-generating process, and Shapley values are employed to fairly attribute performance changes to individual causal mechanisms.</li>
+                    
+                    <li>The framework addresses specific challenges in medical imaging: high-dimensional outputs, limited sample sizes, and complex interactions between mechanisms.</li>
+                    
+                    <li>Validation on Multiple Sclerosis (MS) lesion segmentation across 4 centers and 7 annotators demonstrated context-dependent failure modes.</li>
+                    
+                    <li>Annotation protocol shifts were found to be the dominant factor contributing to performance degradation (7.4% ± 8.9% DSC attribution) when models were deployed across different annotators.</li>
+                    
+                    <li>Acquisition shifts were identified as the dominant factor (6.5% ± 9.1% DSC attribution) when models were deployed across different imaging centers, highlighting the need for context-specific interventions.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves extending existing causal attribution frameworks to handle high-dimensional segmentation outputs. It models the data-generating process using a causal graph to represent dependencies between acquisition protocols, annotation variability, and model performance. Shapley values are then applied to quantitatively attribute performance changes (e.g., Dice Similarity Coefficient - DSC) to these individual causal mechanisms, addressing challenges like limited samples and complex interactions. The framework was validated using MS lesion segmentation data from multiple imaging centers and annotators.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The paper's key findings reveal that the causal mechanisms behind deep learning model performance drops in medical imaging under distribution shifts are context-dependent. Specifically, when a model's performance degrades due to encountering different annotators, annotation protocol shifts are the primary cause, accounting for a mean DSC attribution of 7.4% ± 8.9%. Conversely, when performance drops are observed across different imaging centers, shifts in acquisition protocols are the dominant factor, with a mean DSC attribution of 6.5% ± 9.1%. This indicates that the largest performance gaps are driven by distinct factors depending on the type of shift encountered.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The clinical impact is significant as it provides a data-driven approach for identifying and addressing the root causes of AI model failures in medical imaging. Clinicians and developers can use this mechanism-specific quantification to prioritize interventions, such as investing in better annotation standardization training when annotator variability is the main issue, or focusing on image harmonization techniques when acquisition shifts dominate. This leads to more efficient resource allocation and the development of more robust, generalizable, and clinically reliable AI systems for tasks like disease segmentation and diagnosis.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract implies future work in applying this framework to guide targeted interventions for improving model robustness, by enabling practitioners to prioritize efforts based on the identified dominant causal factors in specific deployment contexts.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Causal Attribution</span>
+                    
+                    <span class="tag tag-keyword">Distribution Shift</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">Image Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Multiple Sclerosis</span>
+                    
+                    <span class="tag tag-keyword">Shapley Values</span>
+                    
+                    <span class="tag tag-keyword">Performance Gaps</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Deep learning models for medical image segmentation suffer significant performance drops due to distribution shifts, but the causal mechanisms behind these drops remain poorly understood. We extend causal attribution frameworks to high-dimensional segmentation tasks, quantifying how acquisition protocols and annotation variability independently contribute to performance degradation. We model the data-generating process through a causal graph and employ Shapley values to fairly attribute performance changes to individual mechanisms. Our framework addresses unique challenges in medical imaging: high-dimensional outputs, limited samples, and complex mechanism interactions. Validation on multiple sclerosis (MS) lesion segmentation across 4 centers and 7 annotators reveals context-dependent failure modes: annotation protocol shifts dominate when crossing annotators (7.4% $\pm$ 8.9% DSC attribution), while acquisition shifts dominate when crossing imaging centers (6.5% $\pm$ 9.1%). This mechanism-specific quantification enables practitioners to prioritize targeted interventions based on deployment context.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Medical Imaging meets EurIPS Workshop: MedEurIPS 2025</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
