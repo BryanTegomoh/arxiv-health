@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheXmask-U: Quantifying uncertainty in landmark-based anatomical segmentation for X-ray images - Health AI Hub</title>
+    <meta name="description" content="This paper addresses the critical need for uncertainty quantification in medical image segmentation, specifically for landmark-based anatomical segmentation in ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>CheXmask-U: Quantifying uncertainty in landmark-based anatomical segmentation for X-ray images</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.10715v1" target="_blank">2512.10715v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-11
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Matias Cosarinsky, Nicolas Gaggion, Rodrigo Echeveste, Enzo Ferrante
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.10715v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.10715v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper addresses the critical need for uncertainty quantification in medical image segmentation, specifically for landmark-based anatomical segmentation in chest X-rays, which offers inherent topological guarantees but has been underexplored from an uncertainty perspective. Leveraging hybrid neural networks with variational latent spaces, the authors derive two complementary uncertainty measures (latent and predictive) and demonstrate their effectiveness in identifying unreliable predictions, reflecting perturbation severity, and supporting out-of-distribution detection. A significant contribution is the release of CheXmask-U, a large-scale dataset of chest X-ray landmark segmentations with per-node uncertainty estimates to facilitate further research and safer clinical deployment.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Uncertainty estimation is paramount for the safe and ethical deployment of AI in clinical settings, enabling medical professionals to identify potentially erroneous or unreliable predictions from segmentation systems, thereby supporting informed decision-making and human oversight in critical diagnostic tasks.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is to develop and improve robust and safe automated anatomical segmentation systems for medical images (specifically chest X-rays). By quantifying and providing uncertainty estimates, the AI system aims to assist clinicians in diagnosis and treatment planning by flagging potentially unreliable predictions, thereby reducing errors and enhancing human oversight and trust in AI-driven medical tools in a clinical setting.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Focuses on quantifying uncertainty in landmark-based anatomical segmentation for chest X-rays, an area previously underexplored compared to pixel-level uncertainty methods.</li>
+                    
+                    <li>Employs hybrid neural network architectures combining convolutional encoders with graph-based generative decoders, utilizing their variational latent space for uncertainty estimation.</li>
+                    
+                    <li>Introduces two complementary uncertainty measures: 'latent uncertainty' (derived from learned distribution parameters) and 'predictive uncertainty' (obtained via stochastic sampling from the latent space).</li>
+                    
+                    <li>Validates the uncertainty measures through controlled corruption experiments, showing that both increase with perturbation severity and effectively identify globally and locally degraded predictions.</li>
+                    
+                    <li>Demonstrates the utility of these uncertainty signals in identifying unreliable anatomical segmentations by comparison with ground truth, and for detecting out-of-distribution inputs on the CheXmask dataset.</li>
+                    
+                    <li>Releases CheXmask-U (657,566 chest X-ray landmark segmentations with per-node uncertainty estimates), a large-scale dataset aimed at enabling research into spatial variations of segmentation quality.</li>
+                    
+                    <li>Establishes uncertainty estimation as a promising direction for enhancing the robustness, reliability, and safe clinical deployment of landmark-based anatomical segmentation methods in radiology.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology is based on hybrid neural network architectures that integrate standard image convolutional encoders with graph-based generative decoders. By leveraging the variational latent space of these networks, two distinct uncertainty measures are derived: (i) latent uncertainty, captured directly from the learned distributional parameters of the latent space, and (ii) predictive uncertainty, generated by sampling multiple stochastic outputs from the latent space. These measures were validated using controlled corruption experiments to assess their response to perturbations and their ability to detect unreliable or out-of-distribution predictions.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The study demonstrates that both derived latent and predictive uncertainty measures reliably increase with perturbation severity, indicating both global and local degradations in segmentation quality. These uncertainty signals effectively identify unreliable anatomical predictions when compared against manual ground-truth and prove useful for out-of-distribution detection within the CheXmask dataset. Crucially, the research culminates in the release of CheXmask-U, a substantial dataset comprising 657,566 chest X-ray landmark segmentations, each augmented with per-node uncertainty estimates, thus providing a valuable resource for future research into spatial segmentation quality variations.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This work has significant clinical impact by enhancing the trustworthiness and safety of AI-driven anatomical segmentation in radiology. Clinicians can utilize these uncertainty estimates to identify and triage X-ray images where the AI's segmentation might be less reliable, prompting closer human inspection and reducing the risk of misdiagnosis. This capability fosters greater confidence in AI tools, facilitates human oversight, and supports the responsible integration of AI into diagnostic workflows, particularly for chest X-ray analysis.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Limitations are not explicitly detailed within the provided abstract. However, common limitations for such models might include generalizability to diverse patient populations or different X-ray acquisition protocols not represented in the training data, and computational overhead associated with generating multiple stochastic predictions for predictive uncertainty.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The primary future direction highlighted by the authors is enabling researchers to account for spatial variations in segmentation quality through the released CheXmask-U dataset. This dataset, with its per-node uncertainty estimates, encourages further exploration into how uncertainty signals can be utilized to improve segmentation robustness, evaluate model confidence at a fine-grained level, and develop more sophisticated methods for quality assessment and safe clinical deployment of landmark-based anatomical segmentation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Artificial Intelligence in Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Uncertainty Estimation</span>
+                    
+                    <span class="tag tag-keyword">Landmark Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Chest X-ray</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Variational Autoencoders</span>
+                    
+                    <span class="tag tag-keyword">Anatomical Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                    <span class="tag tag-keyword">CheXmask-U</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Uncertainty estimation is essential for the safe clinical deployment of medical image segmentation systems, enabling the identification of unreliable predictions and supporting human oversight. While prior work has largely focused on pixel-level uncertainty, landmark-based segmentation offers inherent topological guarantees yet remains underexplored from an uncertainty perspective. In this work, we study uncertainty estimation for anatomical landmark-based segmentation on chest X-rays. Inspired by hybrid neural network architectures that combine standard image convolutional encoders with graph-based generative decoders, and leveraging their variational latent space, we derive two complementary measures: (i) latent uncertainty, captured directly from the learned distribution parameters, and (ii) predictive uncertainty, obtained by generating multiple stochastic output predictions from latent samples. Through controlled corruption experiments we show that both uncertainty measures increase with perturbation severity, reflecting both global and local degradation. We demonstrate that these uncertainty signals can identify unreliable predictions by comparing with manual ground-truth, and support out-of-distribution detection on the CheXmask dataset. More importantly, we release CheXmask-U (huggingface.co/datasets/mcosarinsky/CheXmask-U), a large scale dataset of 657,566 chest X-ray landmark segmentations with per-node uncertainty estimates, enabling researchers to account for spatial variations in segmentation quality when using these anatomical masks. Our findings establish uncertainty estimation as a promising direction to enhance robustness and safe deployment of landmark-based anatomical segmentation methods in chest X-ray. A fully working interactive demo of the method is available at huggingface.co/spaces/matiasky/CheXmask-U and the source code at github.com/mcosarinsky/CheXmask-U.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

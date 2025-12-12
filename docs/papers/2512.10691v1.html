@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhancing Radiology Report Generation and Visual Grounding using Reinforcement Learning - Health AI Hub</title>
+    <meta name="description" content="This paper demonstrates that reinforcement learning (RL) with clinically grounded rewards significantly enhances the performance of medical Vision-Language Mode">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Enhancing Radiology Report Generation and Visual Grounding using Reinforcement Learning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.10691v1" target="_blank">2512.10691v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-11
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Benjamin Gundersen, Nicolas Deperrois, Samuel Ruiperez-Campillo, Thomas M. Sutter, Julia E. Vogt, Michael Moor, Farhad Nooralahzadeh, Michael Krauthammer
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.AI, cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.10691v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.10691v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper demonstrates that reinforcement learning (RL) with clinically grounded rewards significantly enhances the performance of medical Vision-Language Models (VLMs) for Chest X-ray (CXR) report generation and visual grounding. By combining strong supervised fine-tuning (SFT) with Group Relative Policy Optimization (GRPO), the RL-optimized RadVLM achieves state-of-the-art results. This positions clinically aligned RL as a powerful complement to SFT for medical VLMs, even though explicit intermediate reasoning ("thinking") did not provide further improvements in this context.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for advancing automated diagnostic tools in radiology, as it directly improves the accuracy and clinical relevance of AI-generated Chest X-ray reports and the precise localization of medical findings within images, thereby supporting more efficient and reliable clinical decision-making.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application described is an advanced Vision-Language Model (RadVLM) optimized with Reinforcement Learning. This model aims to automatically generate more accurate, clinically aligned radiology reports from Chest X-rays and improve visual grounding, thereby assisting radiologists in diagnostics, enhancing diagnostic efficiency, and potentially improving patient care.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Traditional medical VLMs often rely solely on Supervised Fine-Tuning (SFT), which optimizes next-token prediction but doesn't directly evaluate the quality or clinical accuracy of the generated output.</li>
+                    
+                    <li>The study investigates the benefits of Reinforcement Learning (RL) with task-specific feedback and explicit intermediate reasoning ("thinking") in a CXR VLM framework.</li>
+                    
+                    <li>A RadVLM was developed based on Qwen3-VL, first undergoing large-scale SFT on CXR data, followed by a cold-start SFT stage to instill basic thinking abilities.</li>
+                    
+                    <li>Group Relative Policy Optimization (GRPO) was applied with clinically grounded, task-specific rewards to optimize the model for report generation and visual grounding.</li>
+                    
+                    <li>Experiments revealed that while strong SFT is fundamental for high base performance, RL consistently provides additional gains in performance on both report generation and visual grounding tasks.</li>
+                    
+                    <li>Notably, the explicit intermediate reasoning or "thinking" ability, which has shown benefits in other domains, did not further improve results in this medical imaging VLM context.</li>
+                    
+                    <li>The RL-optimized RadVLM models surpassed their SFT-only baselines and achieved state-of-the-art performance on both CXR report generation and visual grounding tasks.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involved three main phases: (1) Initial model development through large-scale Supervised Fine-tuning (SFT) of a Qwen3-VL base model on Chest X-ray (CXR) data to create an updated RadVLM. (2) A subsequent cold-start SFT stage to imbue the model with basic explicit intermediate reasoning ("thinking") capabilities. (3) The application of Group Relative Policy Optimization (GRPO) using carefully designed, clinically grounded, task-specific rewards to further optimize the model for report generation and visual grounding tasks. Comparative experiments were run on both domain-specific and general-domain Qwen3-VL variants, with and without the "thinking" component, under a unified evaluation pipeline.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Strong supervised fine-tuning is indispensable for establishing a high baseline performance in medical Vision-Language Models. Reinforcement Learning (RL), specifically using Group Relative Policy Optimization (GRPO) with clinically aligned rewards, provides substantial additional performance gains for both Chest X-ray report generation and visual grounding. Conversely, the incorporation of explicit intermediate reasoning or "thinking" did not yield further improvements in this specific medical VLM setting. The RL-optimized RadVLM models achieved state-of-the-art performance on both tasks, outperforming their SFT-only baseline counterparts.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly enhance the clinical workflow in radiology. More accurate and clinically aligned AI-generated radiology reports can reduce the workload for radiologists, improve reporting consistency, and minimize errors. Furthermore, superior visual grounding can lead to more precise identification and localization of pathologies on Chest X-rays, potentially improving diagnostic accuracy, reducing missed findings, and facilitating earlier intervention, ultimately benefiting patient outcomes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Limitations are not explicitly mentioned in the provided abstract. One might infer that the lack of benefit from 'thinking' could be considered a limitation of the current approach or the specific tasks, but it's presented as a finding.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Pulmonology</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Reinforcement Learning</span>
+                    
+                    <span class="tag tag-keyword">Vision-Language Models</span>
+                    
+                    <span class="tag tag-keyword">Chest X-ray</span>
+                    
+                    <span class="tag tag-keyword">Radiology Report Generation</span>
+                    
+                    <span class="tag tag-keyword">Visual Grounding</span>
+                    
+                    <span class="tag tag-keyword">Supervised Fine-tuning</span>
+                    
+                    <span class="tag tag-keyword">GRPO</span>
+                    
+                    <span class="tag tag-keyword">Qwen3-VL</span>
+                    
+                    <span class="tag tag-keyword">Medical AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Recent advances in vision-language models (VLMs) have improved Chest X-ray (CXR) interpretation in multiple aspects. However, many medical VLMs rely solely on supervised fine-tuning (SFT), which optimizes next-token prediction without evaluating answer quality. In contrast, reinforcement learning (RL) can incorporate task-specific feedback, and its combination with explicit intermediate reasoning ("thinking") has demonstrated substantial gains on verifiable math and coding tasks. To investigate the effects of RL and thinking in a CXR VLM, we perform large-scale SFT on CXR data to build an updated RadVLM based on Qwen3-VL, followed by a cold-start SFT stage that equips the model with basic thinking ability. We then apply Group Relative Policy Optimization (GRPO) with clinically grounded, task-specific rewards for report generation and visual grounding, and run matched RL experiments on both domain-specific and general-domain Qwen3-VL variants, with and without thinking. Across these settings, we find that while strong SFT remains crucial for high base performance, RL provides additional gains on both tasks, whereas explicit thinking does not appear to further improve results. Under a unified evaluation pipeline, the RL-optimized RadVLM models outperform their baseline counterparts and reach state-of-the-art performance on both report generation and grounding, highlighting clinically aligned RL as a powerful complement to SFT for medical VLMs.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>10 pages main text (3 figures, 3 tables), 31 pages in total</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

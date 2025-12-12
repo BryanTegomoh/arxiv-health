@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guided Transfer Learning for Discrete Diffusion Models - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Guided Transfer Learning (GTL) for discrete diffusion models, enabling adaptation to new domains without computationally expensive fine-tu">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Guided Transfer Learning for Discrete Diffusion Models</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.10877v1" target="_blank">2512.10877v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-11
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Julian Kleutgens, Claudio Battiloro, Lingkai Kong, Benjamin Grewe, Francesca Dominici, Mauricio Tec
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.70 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.10877v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.10877v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Guided Transfer Learning (GTL) for discrete diffusion models, enabling adaptation to new domains without computationally expensive fine-tuning of large pretrained denoisers. GTL allows sampling from a target distribution via a ratio-based guidance mechanism, leaving the original denoiser untouched. Furthermore, an efficient guided sampler is presented to overcome the high computational cost of GTL, making it practical for large vocabularies and long sequences in applications like language modeling.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research provides a highly efficient method for adapting powerful generative AI (discrete diffusion models) to specific medical data contexts, which often involve sensitive, proprietary, or smaller datasets. It enables advanced AI models, capable of processing sequential data like clinical text, genomic sequences, or molecular structures, to be rapidly and affordably deployed for specialized healthcare tasks without requiring massive retraining costs or data volumes.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This AI method could enable more efficient and ethical development of AI models for healthcare. For instance, it could allow pre-trained generative AI models to be adapted to specific clinical datasets (e.g., rare disease narratives, electronic health records) without requiring the creation of new, large, and sensitive domain-specific training sets from scratch. It could also facilitate the generative design of novel drug candidates or therapeutic proteins by efficiently learning from limited biological sequence data. By improving the practicality of generative models for large vocabularies and long sequences, it directly supports advanced medical text analysis and bioinformatics applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Problem Addressed:** Existing transfer learning methods for discrete diffusion models necessitate computationally expensive fine-tuning of large pretrained denoisers, hindering their practical application in new or specialized domains.</li>
+                    
+                    <li>**Core Innovation (GTL):** Proposes Guided Transfer Learning for discrete diffusion models (GTL), which facilitates sampling from a target distribution without any modification to the pretrained denoiser.</li>
+                    
+                    <li>**Mechanism:** GTL employs a ratio-based guidance formulation, adapting principles from continuous diffusion to the discrete domain for conditional generation or transfer.</li>
+                    
+                    <li>**Unified Treatment:** The developed guidance formulation is broadly applicable to both discrete-time diffusion and continuous-time score-based discrete diffusion models, offering a cohesive framework.</li>
+                    
+                    <li>**Efficiency Challenge Identified:** Naive guided discrete diffusion requires numerous forward passes of the guidance network, rendering it impractical for tasks involving large vocabularies and long sequences.</li>
+                    
+                    <li>**Efficiency Solution:** Introduces an efficient guided sampler that reduces computational load by concentrating evaluations only on planner-selected positions and the top candidate tokens, thereby accelerating sampling.</li>
+                    
+                    <li>**Validation:** GTL's efficacy and behavior are empirically analyzed on sequential data, including synthetic Markov chains and practical language modeling tasks, demonstrating its utility and performance.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology centers on developing Guided Transfer Learning (GTL) by extending ratio-based guidance, previously used in continuous diffusion, to the discrete domain. This allows a pretrained discrete denoiser to generate samples guided by an external target distribution without modifying the denoiser's weights. To address the computational demands of such guidance, the authors engineered an efficient guided sampler that selectively evaluates guidance network passes, focusing on planner-selected positions and only the most probable candidate tokens, thereby reducing overall sampling time and computation.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary finding is the successful development and empirical validation of Guided Transfer Learning (GTL) for discrete diffusion models, which effectively enables transfer learning without the need for expensive fine-tuning of large pretrained models. A critical accompanying finding is the creation of an efficient guided sampler that significantly mitigates the high computational cost associated with GTL, making it practically feasible for large vocabularies and long sequences in real-world applications such as language modeling, as demonstrated through empirical analyses on synthetic Markov chains and language tasks.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology holds significant clinical impact by lowering the computational barrier for applying state-of-the-art generative AI in healthcare. It would allow healthcare institutions and researchers to leverage large, general-purpose discrete diffusion models (e.g., for language or sequences) for highly specialized medical tasks—such as generating realistic synthetic patient records for privacy-preserving research, customizing AI assistants for specific clinical workflows, accelerating drug discovery by designing novel molecular sequences, or analyzing complex genomic variations—using only smaller, domain-specific datasets and less computational power for adaptation. This could accelerate personalized medicine, improve diagnostic tools, and enhance the efficiency of biomedical research and development.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The primary limitation identified and addressed within the paper is the inherent computational inefficiency of naive guided discrete diffusion, which requires many forward passes of the guidance network. This makes it impractical for large vocabularies and long sequences, thus necessitating the development of the efficient guided sampler to overcome this hurdle.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly detailed as 'future directions' in the abstract, the successful development of GTL and its efficient sampling method implicitly opens avenues for: 1) Applying GTL to a broader range of complex discrete domains in medicine, such as RNA/DNA sequence generation for gene therapy, novel protein sequence design, or the discovery of new therapeutic compounds. 2) Exploring multimodal medical applications, combining textual guidance with other data types (e.g., medical images). 3) Further optimizing the efficient sampler for even longer sequences or higher-dimensional discrete spaces. 4) Investigating rigorous methods to quantify the trade-off between guidance strength, sample quality, and computational cost in sensitive clinical contexts.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">medical natural language processing</span>
+                    
+                    <span class="tag">genomics</span>
+                    
+                    <span class="tag">drug discovery</span>
+                    
+                    <span class="tag">proteomics</span>
+                    
+                    <span class="tag">clinical decision support</span>
+                    
+                    <span class="tag">biomarker discovery</span>
+                    
+                    <span class="tag">synthetic data generation (healthcare)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">discrete diffusion models</span>
+                    
+                    <span class="tag tag-keyword">transfer learning</span>
+                    
+                    <span class="tag tag-keyword">guided sampling</span>
+                    
+                    <span class="tag tag-keyword">language modeling</span>
+                    
+                    <span class="tag tag-keyword">sequential data</span>
+                    
+                    <span class="tag tag-keyword">computational efficiency</span>
+                    
+                    <span class="tag tag-keyword">generative AI</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Discrete diffusion models achieve strong performance across language and other discrete domains, providing a powerful alternative to autoregressive models. However, their strong performance relies on large training datasets, which are costly or risky to obtain, especially when adapting to new domains. Transfer learning is the natural way to adapt pretrained discrete diffusion models, but current methods require fine-tuning large diffusion models, which is computationally expensive and often impractical. Building on ratio-based transfer learning for continuous diffusion, we provide Guided Transfer Learning for discrete diffusion models (GTL). This enables sampling from a target distribution without modifying the pretrained denoiser. The same guidance formulation applies to both discrete-time diffusion and continuous-time score-based discrete diffusion, yielding a unified treatment. Guided discrete diffusion often requires many forward passes of the guidance network, which becomes impractical for large vocabularies and long sequences. To address this, we further present an efficient guided sampler that concentrates evaluations on planner-selected positions and top candidate tokens, thus lowering sampling time and computation. This makes guided language modeling practical at scale for large vocabularies and long sequences. We evaluate GTL on sequential data, including synthetic Markov chains and language modeling, and provide empirical analyses of its behavior.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>7 pages (main text) + appendix</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
