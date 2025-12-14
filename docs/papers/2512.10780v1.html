@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Script Gap: Evaluating LLM Triage on Indian Languages in Native vs Roman Scripts in a Real World Setting - Health AI Hub</title>
-    <meta name="description" content="This paper investigates the impact of romanized text input on Large Language Model (LLM) performance in maternal and newborn healthcare triage for Indian langua">
+    <meta name="description" content="This paper evaluates the performance of Large Language Models (LLMs) in maternal and newborn healthcare triage when processing Indian languages, specifically co">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper investigates the impact of romanized text input on Large Language Model (LLM) performance in maternal and newborn healthcare triage for Indian languages. It reveals a consistent and significant degradation in LLM accuracy (5-12 points F1 score) when processing romanized messages compared to native scripts, leading to a projected 2 million excess errors at a partner organization. The study highlights that this performance gap stems from the brittleness of LLM classification outputs to orthographic noise, even when the models correctly infer the semantic intent of the romanized queries.</p>
+                <p class="summary-text">This paper evaluates the performance of Large Language Models (LLMs) in maternal and newborn healthcare triage when processing Indian languages, specifically comparing native scripts to romanized text. It reveals a consistent and significant degradation in LLM performance (5-12 F1 points lower) for romanized inputs, which could lead to millions of excess triage errors in real-world clinical settings. Crucially, the study finds that LLMs often correctly infer the semantic intent of romanized queries but fail to reliably act on it in final classification due to orthographic noise.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research identifies a critical safety blind spot in LLM-based health systems, directly impacting the reliability of clinical triage in high-stakes domains like maternal and newborn healthcare. Failure to address this can lead to millions of preventable errors, posing significant risks to patient safety and care quality, especially in diverse linguistic contexts like India.</p>
+                <p>This research is critically important for patient safety in digital health initiatives, especially in multilingual regions like India, as it uncovers a significant reliability gap in LLM-based triage systems when patients communicate using common romanized scripts, potentially leading to misdiagnosis or delayed care in maternal and newborn health.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is the use of Large Language Models (LLMs) for automated or semi-automated triage of patient queries, particularly in maternal and newborn healthcare settings. This involves processing user-generated text (potentially in diverse languages and scripts) to provide critical health guidance and determine urgency, thereby impacting healthcare access, efficiency, and safety for patients.</p>
+                <p>The research evaluates the performance and safety of Large Language Models (LLMs) when used for clinical triage in maternal and newborn healthcare settings. It specifically examines how language script variations (native vs. romanized text) affect the accuracy and reliability of these AI models, highlighting potential risks to patient care and health outcomes in real-world clinical deployments.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>LLMs are increasingly used in high-stakes clinical applications in India, including triage.</li>
+                    <li>LLMs are increasingly deployed in high-stakes clinical applications in India, but their performance with orthographic variation (native vs. roman scripts) is rarely evaluated using real-world data.</li>
                     
-                    <li>Speakers of Indian languages frequently use romanized text, but this orthographic variation is rarely evaluated with real-world data.</li>
+                    <li>The study benchmarks leading LLMs on a real-world dataset of user-generated queries related to maternal and newborn healthcare triage.</li>
                     
-                    <li>The study benchmarks leading LLMs on a real-world dataset of user-generated queries in five Indian languages and Nepali, focusing on maternal and newborn healthcare triage.</li>
+                    <li>The dataset spans five Indian languages and Nepali, comparing LLM performance on native scripts versus romanized text.</li>
                     
-                    <li>Results show a consistent degradation in LLM performance for romanized messages, with F1 scores 5-12 points lower than those for native scripts.</li>
+                    <li>Results show a consistent degradation in performance for romanized messages, with F1 scores trailing those of native scripts by 5-12 points.</li>
                     
-                    <li>This performance gap could translate to approximately 2 million excess errors in triage at a partner maternal health organization in India.</li>
+                    <li>This performance gap is significant, potentially causing nearly 2 million excess errors in triage annually at a partner maternal health organization in India.</li>
                     
-                    <li>Crucially, the performance gap is not due to a failure in clinical reasoning; LLMs often correctly infer the semantic intent of romanized queries.</li>
+                    <li>The performance gap is not due to a failure in clinical reasoning; LLMs often correctly infer the semantic intent of romanized queries.</li>
                     
-                    <li>The final classification outputs of LLMs are brittle and susceptible to orthographic noise present in romanized inputs.</li>
+                    <li>The issue lies in the brittleness of LLMs' final classification outputs in the presence of orthographic noise in romanized inputs, highlighting a critical safety blind spot.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study involved benchmarking leading Large Language Models (LLMs) on a real-world dataset of user-generated queries. This dataset covered five Indian languages and Nepali, presented in both native scripts and romanized forms. The evaluation focused on the task of maternal and newborn healthcare triage, comparing the F1 scores between native script and romanized inputs. Additionally, the methodology involved analyzing whether LLMs correctly inferred semantic intent even when final classification outputs were brittle.</p>
+                    <p>The study employed a benchmarking approach, evaluating leading LLMs on a real-world dataset of user-generated queries. This dataset comprised inputs in five Indian languages and Nepali, presented in both native and romanized scripts. The specific task was maternal and newborn healthcare triage. Performance was measured using F1 scores to compare the reliability of LLM classification outputs across the two script types.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The primary finding is a consistent and significant degradation in LLM performance for romanized messages, with F1 scores trailing native scripts by 5-12 points. This performance gap is projected to cause nearly 2 million excess triage errors at a partner organization. While LLMs often correctly infer the semantic intent of romanized queries, their final classification outputs demonstrate brittleness due to orthographic noise in the romanized inputs, indicating a failure in reliable action rather than understanding.</p>
+                    <p>The primary finding is a consistent and significant performance degradation of LLMs when processing romanized messages, with F1 scores 5-12 points lower compared to native scripts. This gap translates to a potential for millions of excess triage errors in a real-world clinical setting. A crucial insight is that while LLMs often correctly infer the semantic intent of romanized queries, their final classification outputs remain brittle and unreliable due to orthographic noise.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The findings highlight a critical safety concern for LLM deployment in clinical settings, particularly in multilingual regions where romanization is common. It implies that current LLM-based triage systems for maternal and newborn health in India may be significantly less reliable for users communicating in romanized scripts, potentially leading to misclassification of urgency, delayed care, or incorrect medical advice. This necessitates a re-evaluation of LLM safety and efficacy for real-world clinical applications and calls for robust solutions to handle orthographic variations.</p>
+                <p>The findings highlight a critical safety vulnerability in deploying LLM-based health systems in multilingual, digitally evolving contexts. Inaccurate triage due to romanization could lead to inappropriate or delayed medical advice for pregnant women and newborns, potentially resulting in adverse health outcomes. It necessitates a re-evaluation of current LLM deployment strategies and emphasizes the urgent need for models robust to orthographic variations to ensure equitable and safe healthcare access.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the study. However, it implicitly points to the limitation of current LLMs in handling orthographic variation reliably in real-world clinical settings.</p>
+                <p>The abstract does not explicitly state limitations of the study itself. However, it implicitly points to a critical limitation of current LLMs: their brittleness in converting correctly inferred semantic intent from noisy romanized inputs into reliable final classification outputs, representing a 'safety blind spot' in their clinical application.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly suggest future research directions. However, the findings strongly imply the need for future work to develop and evaluate LLMs that are more robust to orthographic noise in romanized inputs, ensuring reliable classification even when semantic intent is correctly inferred, especially for high-stakes clinical applications.</p>
+                <p>While not explicitly stated, the findings strongly imply future research should focus on improving the robustness of LLMs to orthographic noise and romanization. This includes developing techniques for more reliable classification outputs even when semantic intent is correctly inferred from noisy inputs, and potentially pre-processing or fine-tuning strategies tailored for diverse orthographic variations in clinical language processing.</p>
             </section>
             
 
@@ -120,15 +120,17 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Maternal Healthcare</span>
+                    <span class="tag">Maternal Health</span>
                     
-                    <span class="tag">Newborn Healthcare</span>
+                    <span class="tag">Newborn Health</span>
+                    
+                    <span class="tag">Public Health</span>
+                    
+                    <span class="tag">Digital Health</span>
                     
                     <span class="tag">Telemedicine</span>
                     
                     <span class="tag">Clinical Decision Support</span>
-                    
-                    <span class="tag">Public Health (Digital Health Systems)</span>
                     
                 </div>
             </section>
@@ -137,7 +139,7 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">LLM</span>
+                    <span class="tag tag-keyword">LLMs</span>
                     
                     <span class="tag tag-keyword">Triage</span>
                     
@@ -147,15 +149,15 @@
                     
                     <span class="tag tag-keyword">Native Scripts</span>
                     
-                    <span class="tag tag-keyword">Maternal Health</span>
+                    <span class="tag tag-keyword">Maternal Healthcare</span>
                     
-                    <span class="tag tag-keyword">Newborn Health</span>
+                    <span class="tag tag-keyword">Newborn Healthcare</span>
                     
-                    <span class="tag tag-keyword">Clinical Applications</span>
+                    <span class="tag tag-keyword">Orthographic Variation</span>
                     
-                    <span class="tag tag-keyword">Orthography</span>
+                    <span class="tag tag-keyword">Clinical Safety</span>
                     
-                    <span class="tag tag-keyword">Performance Degradation</span>
+                    <span class="tag tag-keyword">Natural Language Processing</span>
                     
                 </div>
             </section>

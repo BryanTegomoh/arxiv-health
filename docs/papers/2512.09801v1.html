@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modality-Specific Enhancement and Complementary Fusion for Semi-Supervised Multi-Modal Brain Tumor Segmentation - Health AI Hub</title>
-    <meta name="description" content="This paper introduces a novel semi-supervised multi-modal framework for brain tumor segmentation, designed to effectively leverage complementary information acr">
+    <meta name="description" content="This paper introduces a novel semi-supervised multi-modal framework designed to enhance brain tumor segmentation by effectively leveraging complementary informa">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.CV
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces a novel semi-supervised multi-modal framework for brain tumor segmentation, designed to effectively leverage complementary information across MRI modalities despite inherent semantic discrepancies. It proposes a Modality-specific Enhancing Module (MEM) and a Complementary Information Fusion (CIF) module, optimized with a hybrid loss, to improve segmentation performance under limited labeled data. Extensive experiments on the BraTS 2019 dataset demonstrate superior performance over strong baselines, confirming the modules' effectiveness in enhancing robustness.</p>
+                <p class="summary-text">This paper introduces a novel semi-supervised multi-modal framework designed to enhance brain tumor segmentation by effectively leveraging complementary information across different MRI sequences. It addresses limitations in existing methods by proposing a Modality-specific Enhancing Module (MEM) and a Complementary Information Fusion (CIF) module. The framework significantly outperforms strong baselines on the BraTS 2019 dataset, especially under very limited labeled data conditions, demonstrating improved Dice and Sensitivity scores.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate automated brain tumor segmentation is crucial for diagnosis, treatment planning, and monitoring. This research provides a method to achieve high segmentation accuracy even with limited expert-annotated medical images, which is a common and costly bottleneck in clinical practice, thereby making advanced AI tools more practical and accessible.</p>
+                <p>This research is crucial for advancing automated brain tumor segmentation, which directly impacts diagnostic accuracy, surgical planning, and radiation therapy in oncology. By enabling high performance with limited labeled data, it addresses a major bottleneck in medical AI deployment, making advanced tools more accessible and practical in clinical settings.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is semi-supervised multi-modal brain tumor segmentation. This allows for automated or semi-automated identification and delineation of brain tumors from MRI scans, aiding clinicians in diagnosis, surgical planning, radiation therapy planning, and monitoring disease progression, especially in situations with limited labeled training data.</p>
+                <p>The AI application is the development of a semi-supervised multi-modal deep learning framework for robust and accurate automated segmentation of brain tumors from MRI scans. This technology aims to assist clinicians in precise diagnosis, surgical planning, radiation therapy planning, and monitoring treatment response, especially in scenarios with limited labeled medical data.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical challenge of exploiting complementary information in multi-modal medical imaging due to semantic discrepancies and misalignment, which hinders effective fusion in existing SSL methods.</li>
+                    <li>Addresses the challenge of semantic discrepancies and misalignment in existing semi-supervised multi-modal medical image segmentation approaches.</li>
                     
-                    <li>Proposes a Modality-specific Enhancing Module (MEM) that strengthens unique semantic cues within each modality by employing channel-wise attention mechanisms.</li>
+                    <li>Proposes a Modality-specific Enhancing Module (MEM) that strengthens unique semantic cues for each MRI modality using channel-wise attention.</li>
                     
-                    <li>Introduces a learnable Complementary Information Fusion (CIF) module designed for adaptive exchange and fusion of complementary knowledge between different MRI modalities.</li>
+                    <li>Introduces a learnable Complementary Information Fusion (CIF) module to adaptively exchange and fuse complementary knowledge between different modalities.</li>
                     
-                    <li>The overall framework is optimized using a hybrid objective function, combining a supervised segmentation loss for limited labeled data with a cross-modal consistency regularization loss for abundant unlabeled data.</li>
+                    <li>Optimizes the framework using a hybrid objective combining supervised segmentation loss on labeled data and cross-modal consistency regularization on unlabeled data.</li>
                     
-                    <li>Evaluated on the BraTS 2019 HGG subset, demonstrating consistent and significant improvements over strong semi-supervised and multi-modal baselines.</li>
+                    <li>Evaluated on the BraTS 2019 (HGG subset) dataset, demonstrating consistent and significant outperformance against strong semi-supervised and multi-modal baselines.</li>
                     
-                    <li>Achieves superior performance in scenarios with extremely scarce labeled data, specifically under 1%, 5%, and 10% labeled data settings, reflected in higher Dice and Sensitivity scores.</li>
+                    <li>Achieves notable improvements in both Dice and Sensitivity scores, particularly under scarce supervision settings (1%, 5%, and 10% labeled data).</li>
                     
-                    <li>Ablation studies confirm that both the MEM and CIF modules contribute complementarily to bridge cross-modality discrepancies and significantly enhance segmentation robustness under limited supervision.</li>
+                    <li>Ablation studies confirm the individual and complementary contributions of MEM and CIF in bridging cross-modality discrepancies and improving segmentation robustness.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The proposed framework integrates a Modality-specific Enhancing Module (MEM), which uses channel-wise attention to strengthen semantic cues unique to each MRI sequence, and a learnable Complementary Information Fusion (CIF) module, which adaptively exchanges and fuses complementary knowledge across modalities. The training utilizes a semi-supervised approach, combining a supervised segmentation loss on labeled data with a cross-modal consistency regularization loss on unlabeled data to leverage both limited annotations and abundant unannotated samples.</p>
+                    <p>The proposed framework integrates a Modality-specific Enhancing Module (MEM) that employs channel-wise attention to strengthen unique semantic representations within each modality, and a Complementary Information Fusion (CIF) module designed for adaptive cross-modal knowledge exchange. The entire system is trained using a hybrid objective function, which combines a standard supervised segmentation loss for labeled data with a cross-modal consistency regularization term applied to unlabeled data.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The method consistently and significantly outperforms strong semi-supervised and multi-modal baselines on the BraTS 2019 (HGG subset), achieving marked improvements in Dice and Sensitivity scores, particularly under very low labeled data percentages (1%, 5%, 10%). Ablation studies confirmed the complementary effects of the MEM and CIF modules in effectively bridging cross-modality discrepancies and enhancing segmentation robustness, validating their individual and combined contributions.</p>
+                    <p>The method consistently surpasses strong semi-supervised and multi-modal baselines across 1%, 5%, and 10% labeled data settings on the BraTS 2019 HGG subset. It achieves significant improvements in both Dice and Sensitivity scores. Ablation studies confirmed that both MEM and CIF modules are critical, working complementarily to address cross-modality discrepancies and enhance segmentation robustness under limited supervision.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This research has the potential to significantly improve the efficiency and accuracy of brain tumor segmentation in clinical settings. By reducing the dependency on extensive manual annotations, it can accelerate the development and deployment of automated segmentation tools, aiding radiologists in faster diagnosis, more precise tumor volume quantification, optimized surgical and radiation therapy planning, and more consistent monitoring of treatment response, especially in resource-constrained environments or for rare pathologies.</p>
+                <p>This approach has the potential to significantly improve the efficiency and accuracy of brain tumor segmentation in clinical practice. By reducing the reliance on extensive, costly, and time-consuming manual expert annotations, it can accelerate the development and deployment of robust AI-powered tools for diagnosis, treatment planning (e.g., surgical resection margins, radiation dose planning), and monitoring of treatment response, ultimately leading to better patient outcomes.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations of the proposed method or experimental setup.</p>
+                <p>The abstract does not explicitly state any specific limitations of the proposed method or its evaluation.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention any future research directions.</p>
+                <p>The abstract does not explicitly state future research directions.</p>
             </section>
             
 
@@ -120,13 +120,15 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Neuroradiology</span>
+                    <span class="tag">Neuro-oncology</span>
                     
-                    <span class="tag">Oncology</span>
+                    <span class="tag">Diagnostic Radiology</span>
                     
                     <span class="tag">Medical Imaging</span>
                     
-                    <span class="tag">Diagnostic Imaging</span>
+                    <span class="tag">Neurosurgery</span>
+                    
+                    <span class="tag">Radiation Oncology</span>
                     
                 </div>
             </section>
@@ -135,21 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Semi-supervised learning</span>
+                    <span class="tag tag-keyword">semi-supervised learning</span>
                     
-                    <span class="tag tag-keyword">Multi-modal segmentation</span>
+                    <span class="tag tag-keyword">multi-modal imaging</span>
                     
-                    <span class="tag tag-keyword">Brain tumor</span>
+                    <span class="tag tag-keyword">brain tumor segmentation</span>
                     
                     <span class="tag tag-keyword">MRI</span>
                     
-                    <span class="tag tag-keyword">Channel attention</span>
+                    <span class="tag tag-keyword">channel-wise attention</span>
                     
-                    <span class="tag tag-keyword">Information fusion</span>
+                    <span class="tag tag-keyword">cross-modal consistency</span>
                     
                     <span class="tag tag-keyword">BraTS</span>
                     
-                    <span class="tag tag-keyword">Medical imaging</span>
+                    <span class="tag tag-keyword">deep learning</span>
                     
                 </div>
             </section>
