@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBT-DINO: Towards Foundation model based analysis of Digital Breast Tomosynthesis - Health AI Hub</title>
+    <meta name="description" content="This paper introduces DBT-DINO, the first foundation model for Digital Breast Tomosynthesis (DBT), developed using self-supervised pre-training on an unpreceden">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>DBT-DINO: Towards Foundation model based analysis of Digital Breast Tomosynthesis</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.13608v1" target="_blank">2512.13608v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-15
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Felix J. Dorfner, Manon A. Dorster, Ryan Connolly, Oscar Gentilhomme, Edward Gibbs, Steven Graham, Seth Wander, Thomas Schultz, Manisha Bahl, Dania Daye, Albert E. Kim, Christopher P. Bridge
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.13608v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.13608v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces DBT-DINO, the first foundation model for Digital Breast Tomosynthesis (DBT), developed using self-supervised pre-training on an unprecedented dataset of over 25 million DBT slices. The model demonstrated strong performance in breast density classification and 5-year breast cancer risk prediction, showcasing the value of domain-specific pre-training for these tasks. However, its performance on general lesion detection showed variable benefits compared to an ImageNet-pretrained baseline, suggesting areas for further methodological development.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research significantly advances the application of AI in breast cancer screening by providing a robust, specialized foundation model for DBT. It has the potential to enhance automated breast density assessment and improve the accuracy of personalized breast cancer risk prediction, thereby facilitating earlier and more targeted interventions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the development of DBT-DINO, a foundation model designed for automated analysis of Digital Breast Tomosynthesis (DBT) images. This AI model aims to assist clinicians in critical tasks such as classifying breast density, predicting a patient's 5-year risk of developing breast cancer, and detecting lesions (potentially cancerous) in breast tissue, thereby enhancing the accuracy and efficiency of breast cancer screening and diagnosis.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>DBT-DINO is the first foundation model developed specifically for Digital Breast Tomosynthesis (DBT), addressing a gap in foundation models for 3D medical imaging.</li>
+                    
+                    <li>The model was self-supervised pre-trained using the DINOv2 methodology on an extensive dataset comprising over 25 million 2D slices from 487,975 DBT volumes from 27,990 patients.</li>
+                    
+                    <li>For breast density classification, DBT-DINO achieved an accuracy of 0.79 (95% CI: 0.76–0.81), significantly outperforming both the MetaAI DINOv2 baseline (0.73, p<.001) and DenseNet-121 (0.74, p<.001).</li>
+                    
+                    <li>In 5-year breast cancer risk prediction, DBT-DINO achieved an AUROC of 0.78 (95% CI: 0.76–0.80), which was comparable to the DINOv2 baseline (0.76, p=.57).</li>
+                    
+                    <li>For general lesion detection, the ImageNet-pretrained DINOv2 baseline achieved a higher average sensitivity (0.67) than DBT-DINO (0.62).</li>
+                    
+                    <li>Notably, DBT-DINO showed a slightly better detection rate for specifically *cancerous* lesions at 78.8% compared to DINOv2's 77.3%.</li>
+                    
+                    <li>The study concludes that while domain-specific pre-training is beneficial for tasks like classification and risk prediction, its impact on localized detection tasks requires further methodological refinement.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study involved self-supervised pre-training of the DBT-DINO model using the DINOv2 methodology on an exceptionally large dataset of over 25 million 2D slices derived from DBT volumes. The pre-trained model was then fine-tuned and evaluated on three downstream clinical tasks: breast density classification (using 5,000 exams), 5-year breast cancer risk prediction (using 106,417 exams), and lesion detection (using 393 annotated volumes). Performance was compared against a MetaAI DINOv2 baseline (pre-trained on ImageNet) and DenseNet-121.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>DBT-DINO achieved superior performance in breast density classification (0.79 accuracy) over baselines. For 5-year breast cancer risk prediction, it showed strong performance (0.78 AUROC), comparable to the DINOv2 baseline. In lesion detection, while DINOv2 demonstrated higher average sensitivity (0.67), DBT-DINO exhibited a slightly better detection rate for cancerous lesions specifically (78.8%). The domain-specific pre-training benefits varied, being pronounced for classification tasks but less consistent for general localized detection.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>DBT-DINO could enable more accurate and automated assessment of breast density, a critical factor in breast cancer risk and screening recommendations. Its ability to predict 5-year breast cancer risk with high accuracy could facilitate earlier identification of high-risk individuals, allowing for personalized screening strategies or preventive measures. While lesion detection requires further improvement, its potential for better identifying cancerous lesions could assist radiologists in clinical decision-making.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The study found that the domain-specific pre-training of DBT-DINO did not consistently outperform the ImageNet-pretrained DINOv2 baseline for general lesion detection. For both 5-year risk prediction and lesion detection, the p-values (p=.57 and p=.60 respectively) suggest no statistically significant difference between DBT-DINO and DINOv2, indicating that the advantage of domain-specific pre-training is not universal across all tasks or for all types of lesions.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The authors suggest that localized detection tasks, particularly in the context of foundation models for 3D medical imaging, require further methodological development. This implies future research should focus on optimizing architectures or fine-tuning strategies to better leverage domain-specific pre-training for precise object detection.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Preventive Medicine</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Public Health</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">DBT-DINO</span>
+                    
+                    <span class="tag tag-keyword">Foundation Models</span>
+                    
+                    <span class="tag tag-keyword">Digital Breast Tomosynthesis</span>
+                    
+                    <span class="tag tag-keyword">Breast Cancer Screening</span>
+                    
+                    <span class="tag tag-keyword">Self-supervised Learning</span>
+                    
+                    <span class="tag tag-keyword">Breast Density Classification</span>
+                    
+                    <span class="tag tag-keyword">Cancer Risk Prediction</span>
+                    
+                    <span class="tag tag-keyword">Lesion Detection</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Foundation models have shown promise in medical imaging but remain underexplored for three-dimensional imaging modalities. No foundation model currently exists for Digital Breast Tomosynthesis (DBT), despite its use for breast cancer screening.
+  To develop and evaluate a foundation model for DBT (DBT-DINO) across multiple clinical tasks and assess the impact of domain-specific pre-training.
+  Self-supervised pre-training was performed using the DINOv2 methodology on over 25 million 2D slices from 487,975 DBT volumes from 27,990 patients. Three downstream tasks were evaluated: (1) breast density classification using 5,000 screening exams; (2) 5-year risk of developing breast cancer using 106,417 screening exams; and (3) lesion detection using 393 annotated volumes.
+  For breast density classification, DBT-DINO achieved an accuracy of 0.79 (95\% CI: 0.76--0.81), outperforming both the MetaAI DINOv2 baseline (0.73, 95\% CI: 0.70--0.76, p<.001) and DenseNet-121 (0.74, 95\% CI: 0.71--0.76, p<.001). For 5-year breast cancer risk prediction, DBT-DINO achieved an AUROC of 0.78 (95\% CI: 0.76--0.80) compared to DINOv2's 0.76 (95\% CI: 0.74--0.78, p=.57). For lesion detection, DINOv2 achieved a higher average sensitivity of 0.67 (95\% CI: 0.60--0.74) compared to DBT-DINO with 0.62 (95\% CI: 0.53--0.71, p=.60). DBT-DINO demonstrated better performance on cancerous lesions specifically with a detection rate of 78.8\% compared to Dinov2's 77.3\%.
+  Using a dataset of unprecedented size, we developed DBT-DINO, the first foundation model for DBT. DBT-DINO demonstrated strong performance on breast density classification and cancer risk prediction. However, domain-specific pre-training showed variable benefits on the detection task, with ImageNet baseline outperforming DBT-DINO on general lesion detection, indicating that localized detection tasks require further methodological development.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
