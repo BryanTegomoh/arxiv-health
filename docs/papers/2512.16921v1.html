@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification - Health AI Hub</title>
+    <meta name="description" content="AuditDM introduces an automated framework that leverages reinforcement learning to train an MLLM as an auditor, generating challenging questions and counterfact">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Differences That Matter: Auditing Models for Capability Gap Discovery and Rectification</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.16921v1" target="_blank">2512.16921v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-18
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Qihao Liu, Chengzhi Mao, Yaojie Liu, Alan Yuille, Wen-Sheng Chu
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.75 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.16921v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.16921v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">AuditDM introduces an automated framework that leverages reinforcement learning to train an MLLM as an auditor, generating challenging questions and counterfactual images designed to maximize disagreement among target models. This process effectively discovers significant, interpretable capability gaps and failure modes, which are then used as annotation-free data to rectify the models, leading to substantial performance improvements and enabling smaller models to outperform larger ones.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This framework is highly relevant for medical/health AI, as it provides a systematic, automated method to discover and rectify subtle yet critical capability gaps and failure modes in MLLMs intended for clinical use, ensuring higher reliability and safety in sensitive diagnostic and decision-making applications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AuditDM framework can be applied to audit and improve MLLMs specifically trained for medical applications. For example, it could be used to: 1) Identify and rectify failure modes in MLLMs designed for interpreting medical images (e.g., X-rays, MRIs, CT scans) in conjunction with patient history or reports, thus improving diagnostic accuracy and reducing misinterpretations. 2) Enhance the robustness of MLLMs used in multimodal diagnostic support systems that integrate diverse data types like imaging, lab results, and clinical notes. 3) Provide insights into *why* a medical AI model makes errors, which is essential for clinician trust and responsible AI deployment in healthcare settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>AuditDM is an automated framework designed to actively discover and rectify Multimodal LLM (MLLM) failure modes by auditing their divergence.</li>
+                    
+                    <li>It fine-tunes an MLLM as an 'auditor' using reinforcement learning, enabling it to generate challenging questions and counterfactual images.</li>
+                    
+                    <li>The auditor's primary objective is to maximize disagreement among target MLLMs, thereby effectively uncovering diverse and interpretable exemplars of model weaknesses.</li>
+                    
+                    <li>These discovered failure exemplars serve as annotation-free data for subsequent fine-tuning and rectification of the target models.</li>
+                    
+                    <li>When applied to state-of-the-art models like Gemma-3 and PaliGemma-2, AuditDM successfully identified more than 20 distinct types of failure.</li>
+                    
+                    <li>Fine-tuning models based on these AuditDM-discovered failures consistently improved their performance across 16 benchmarks.</li>
+                    
+                    <li>Remarkably, this rectification process enabled a 3B parameter model to surpass the performance of its 28B parameter counterpart.</li>
+                    
+                    <li>The research suggests that targeted model auditing offers a more effective path to MLLM diagnosis and improvement as data scaling approaches diminishing returns.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>AuditDM employs reinforcement learning to fine-tune an MLLM, transforming it into an 'auditor'. This auditor is trained to generate specific, challenging questions and synthetically modified 'counterfactual images'. The generation process is guided by an objective to maximize disagreement or divergence in responses among multiple target MLLMs. The resulting divergent exemplars, which highlight specific model weaknesses, are then collected and utilized as annotation-free data to fine-tune and rectify the identified shortcomings of the target models.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>AuditDM demonstrated its efficacy by discovering over 20 distinct failure types in state-of-the-art MLLMs (Gemma-3, PaliGemma-2). Fine-tuning based on these discovered failures consistently improved all audited models across 16 diverse benchmarks. A particularly striking finding was the ability of a 3B parameter model, after rectification with AuditDM's discoveries, to achieve performance superior to its significantly larger 28B parameter counterpart, highlighting the power of targeted auditing over sheer model scale.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>Applying AuditDM in the medical field could significantly enhance the trustworthiness and robustness of MLLMs used for clinical applications. By proactively identifying and correcting subtle biases, misinterpretations, or knowledge gaps, it can reduce the risk of diagnostic errors, improve the accuracy of treatment recommendations, and ensure patient safety. Furthermore, enabling smaller models to achieve high performance through targeted auditing has practical implications for deploying efficient and resource-friendly AI solutions in healthcare settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations. However, potential implicit limitations could include the significant computational resources required for training the reinforcement learning-based auditor, the generalizability of discovered failure modes across highly diverse or domain-specific medical MLLM architectures, and the potential need for a sufficiently diverse set of 'target models' to effectively maximize disagreement.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper suggests a future direction focused on targeted model auditing as a primary strategy for MLLM improvement, especially as data scaling reaches diminishing returns. Future research could explore optimizing the efficiency of the RL-based auditing process, adapting AuditDM to uncover specific types of medically critical errors (e.g., subtle imaging misinterpretations), and investigating the transferability of discovered failure modes to enhance robustness across various medical sub-specialties and clinical applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Imaging Analysis</span>
+                    
+                    <span class="tag">Diagnostic Support Systems</span>
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Pathology Analysis</span>
+                    
+                    <span class="tag">Radiology Reporting</span>
+                    
+                    <span class="tag">Medical Education</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">MLLM auditing</span>
+                    
+                    <span class="tag tag-keyword">reinforcement learning</span>
+                    
+                    <span class="tag tag-keyword">capability gaps</span>
+                    
+                    <span class="tag tag-keyword">failure modes</span>
+                    
+                    <span class="tag tag-keyword">model rectification</span>
+                    
+                    <span class="tag tag-keyword">counterfactual images</span>
+                    
+                    <span class="tag tag-keyword">multimodal AI</span>
+                    
+                    <span class="tag tag-keyword">model diagnosis</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Conventional evaluation methods for multimodal LLMs (MLLMs) lack interpretability and are often insufficient to fully disclose significant capability gaps across models. To address this, we introduce AuditDM, an automated framework that actively discovers and rectifies MLLM failure modes by auditing their divergence. AuditDM fine-tunes an MLLM as an auditor via reinforcement learning to generate challenging questions and counterfactual images that maximize disagreement among target models. Once trained, the auditor uncovers diverse, interpretable exemplars that reveal model weaknesses and serve as annotation-free data for rectification. When applied to SoTA models like Gemma-3 and PaliGemma-2, AuditDM discovers more than 20 distinct failure types. Fine-tuning on these discoveries consistently improves all models across 16 benchmarks, and enables a 3B model to surpass its 28B counterpart. Our results suggest that as data scaling hits diminishing returns, targeted model auditing offers an effective path to model diagnosis and improvement.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>project page: https://auditdm.github.io/</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
