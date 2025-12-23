@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efficient Vision Mamba for MRI Super-Resolution via Hybrid Selective Scanning - Health AI Hub</title>
+    <meta name="description" content="This paper introduces an efficient Vision Mamba-based super-resolution (SR) framework for MRI, addressing the trade-off between fidelity and computational cost ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Efficient Vision Mamba for MRI Super-Resolution via Hybrid Selective Scanning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.19676v1" target="_blank">2512.19676v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-22
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Mojtaba Safari, Shansong Wang, Vanessa L Wildman, Mingzhe Hu, Zach Eidex, Chih-Wei Chang, Erik H Middlebrooks, Richard L. J Qiu, Pretesh Patel, Ashesh B. Jania, Hui Mao, Zhen Tian, Xiaofeng Yang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, physics.med-ph
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.19676v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.19676v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces an efficient Vision Mamba-based super-resolution (SR) framework for MRI, addressing the trade-off between fidelity and computational cost in existing deep learning methods. By utilizing multi-head selective state-space models and hybrid scanning, the proposed framework significantly enhances MRI resolution and anatomical detail while demonstrating state-of-the-art accuracy and exceptional efficiency across brain and prostate MRI datasets.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>High-resolution MRI is fundamental for precise diagnosis in various medical conditions. This SR framework offers a means to achieve enhanced image quality and anatomical detail post-acquisition, potentially reducing scan times or improving diagnostic confidence without requiring expensive hardware upgrades, making advanced MRI more accessible and efficient in clinical settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This AI framework applies deep learning (specifically Vision Mamba and state-space models) to perform super-resolution on Magnetic Resonance Imaging (MRI) scans. Its application in health is to improve the quality and detail of MRI images, which are crucial for medical diagnosis, while simultaneously reducing the computational burden and acquisition time. This leads to more efficient and potentially more accurate diagnoses for conditions affecting the brain (e.g., neurological disorders) and prostate (e.g., prostate cancer detection).</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical need for high-resolution MRI, overcoming limitations of long acquisition times and the fidelity-efficiency trade-off of current deep learning SR methods.</li>
+                    
+                    <li>Proposes a novel SR framework based on multi-head selective state-space models (MHSSM) combined with a lightweight channel MLP.</li>
+                    
+                    <li>Employs 2D patch extraction with hybrid scanning within 'MambaFormer blocks' to effectively capture long-range dependencies in MRI data.</li>
+                    
+                    <li>Evaluated on diverse clinical datasets: 7T brain T1 MP2RAGE (n=142) and 1.5T prostate T2w MRI (n=334).</li>
+                    
+                    <li>Achieved superior quantitative performance (e.g., SSIM=0.951 for brain, PSNR=27.15 for prostate) compared to various baselines including GANs, Transformers (SwinIR, MambaIR), and Diffusion models.</li>
+                    
+                    <li>Demonstrated exceptional computational efficiency, utilizing only 0.9M parameters and 57 GFLOPs, representing a 99.8% parameter reduction and 97.5% computation reduction compared to Res-SRDiff.</li>
+                    
+                    <li>The framework's high accuracy, detailed anatomical preservation, and low computational demand highlight its strong potential for practical clinical translation.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed super-resolution framework combines multi-head selective state-space models (MHSSM) with a lightweight channel MLP for efficient long-range dependency capture. It uses 2D patch extraction alongside hybrid scanning within novel 'MambaFormer' blocks. Each MambaFormer block integrates MHSSM, depthwise convolutions, and gated channel mixing to effectively process image features. The model was trained and evaluated on 7T brain T1 MP2RAGE maps (n=142) and 1.5T prostate T2w MRI (n=334) and compared against a comprehensive suite of baseline SR methods including Bicubic, GANs, Transformers, and Diffusion models.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The framework achieved state-of-the-art accuracy and exceptional computational efficiency. For 7T brain data, it reported SSIM=0.951+-0.021, PSNR=26.90+-1.41 dB, LPIPS=0.076+-0.022, and GMSD=0.083+-0.017, significantly outperforming all baselines (p<0.001). For 1.5T prostate data, it achieved SSIM=0.770+-0.049, PSNR=27.15+-2.19 dB, LPIPS=0.190+-0.095, and GMSD=0.087+-0.013. Critically, the model utilized only 0.9M parameters and 57 GFLOPs, demonstrating a 99.8% reduction in parameters and 97.5% reduction in computation compared to the Res-SRDiff model, while also surpassing SwinIR and MambaIR in both accuracy and efficiency.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This framework enables the acquisition of high-resolution MRI images with shorter scan times or from lower-resolution inputs, directly addressing a major bottleneck in clinical MRI workflows. Its ability to preserve anatomical detail while being highly efficient computationally allows for faster post-processing and easier integration into existing clinical diagnostic pipelines, potentially leading to quicker diagnoses, reduced patient discomfort, and improved diagnostic confidence across a range of medical conditions, particularly in neuroradiology and urology.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The provided abstract does not explicitly state any limitations of the proposed framework.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The provided abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neuroradiology</span>
+                    
+                    <span class="tag">Urology</span>
+                    
+                    <span class="tag">Diagnostic Imaging</span>
+                    
+                    <span class="tag">Medical Physics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">MRI super-resolution</span>
+                    
+                    <span class="tag tag-keyword">Vision Mamba</span>
+                    
+                    <span class="tag tag-keyword">selective state-space models</span>
+                    
+                    <span class="tag tag-keyword">computational efficiency</span>
+                    
+                    <span class="tag tag-keyword">anatomical detail</span>
+                    
+                    <span class="tag tag-keyword">7T MRI</span>
+                    
+                    <span class="tag tag-keyword">prostate MRI</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Background: High-resolution MRI is critical for diagnosis, but long acquisition times limit clinical use. Super-resolution (SR) can enhance resolution post-scan, yet existing deep learning methods face fidelity-efficiency trade-offs. Purpose: To develop a computationally efficient and accurate deep learning framework for MRI SR that preserves anatomical detail for clinical integration. Materials and Methods: We propose a novel SR framework combining multi-head selective state-space models (MHSSM) with a lightweight channel MLP. The model uses 2D patch extraction with hybrid scanning to capture long-range dependencies. Each MambaFormer block integrates MHSSM, depthwise convolutions, and gated channel mixing. Evaluation used 7T brain T1 MP2RAGE maps (n=142) and 1.5T prostate T2w MRI (n=334). Comparisons included Bicubic interpolation, GANs (CycleGAN, Pix2pix, SPSR), transformers (SwinIR), Mamba (MambaIR), and diffusion models (I2SB, Res-SRDiff). Results: Our model achieved superior performance with exceptional efficiency. For 7T brain data: SSIM=0.951+-0.021, PSNR=26.90+-1.41 dB, LPIPS=0.076+-0.022, GMSD=0.083+-0.017, significantly outperforming all baselines (p<0.001). For prostate data: SSIM=0.770+-0.049, PSNR=27.15+-2.19 dB, LPIPS=0.190+-0.095, GMSD=0.087+-0.013. The framework used only 0.9M parameters and 57 GFLOPs, reducing parameters by 99.8% and computation by 97.5% versus Res-SRDiff, while outperforming SwinIR and MambaIR in accuracy and efficiency. Conclusion: The proposed framework provides an efficient, accurate MRI SR solution, delivering enhanced anatomical detail across datasets. Its low computational demand and state-of-the-art performance show strong potential for clinical translation.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

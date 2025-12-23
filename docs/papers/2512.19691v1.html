@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalably Enhancing the Clinical Validity of a Task Benchmark with Physician Oversight - Health AI Hub</title>
+    <meta name="description" content="This paper addresses the critical issue of label noise in AI benchmarks for clinical risk score calculation, specifically MedCalc-Bench, which is prone to error">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Scalably Enhancing the Clinical Validity of a Task Benchmark with Physician Oversight</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.19691v1" target="_blank">2512.19691v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-22
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Junze Ye, Daniel Tawfik, Alex J. Goodell, Nikhil V. Kotha, Mark K. Buyyounouski, Mohsen Bayati
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.AI, stat.AP
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.19691v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.19691v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper addresses the critical issue of label noise in AI benchmarks for clinical risk score calculation, specifically MedCalc-Bench, which is prone to errors from LLM-based generation. It introduces a systematic physician-in-the-loop pipeline with agentic verifiers and automated triage to audit and correct these benchmarks. The study demonstrates that training a Qwen3-8B model on these corrected labels significantly improves accuracy by 8.7% compared to training on the original noisy data, underscoring the necessity of rigorous benchmark maintenance for model alignment in safety-critical domains.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Automating clinical risk score calculation reduces physician administrative burden and enhances patient care. Accurate benchmarks are vital for developing and evaluating reliable AI models in this safety-critical domain, directly impacting diagnostic support, treatment planning, and overall healthcare efficiency.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application described involves using LLMs and Reinforcement Learning to automate the calculation of clinical risk scores. The research focuses on enhancing the accuracy and clinical validity of these AI models by improving their training benchmarks with physician oversight, ultimately aiming to reduce administrative burden on physicians and improve patient care through more reliable AI assistance.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>MedCalc-Bench, an LLM-generated dataset for clinical risk scores, is identified as containing significant label noise due to extraction errors, logic mismatches, and clinical ambiguity.</li>
+                    
+                    <li>Treating such model-generated benchmarks as static 'oracles' risks enshrining historical errors, particularly problematic when used as reward signals for Reinforcement Learning (RL).</li>
+                    
+                    <li>A novel, physician-in-the-loop pipeline is proposed, leveraging advanced agentic verifiers and automated triage to efficiently audit and relabel contentious instances in the benchmark.</li>
+                    
+                    <li>The audit revealed a notable fraction of original labels diverged from medical ground truth, validating the presence of substantial label noise.</li>
+                    
+                    <li>Fine-tuning a Qwen3-8B model using Group Relative Policy Optimization (GRPO) on the corrected labels resulted in an 8.7% absolute improvement in accuracy compared to training on the original, noisy labels.</li>
+                    
+                    <li>This improvement validates that label noise in benchmarks materially impacts downstream RL training and model evaluation.</li>
+                    
+                    <li>The work emphasizes that rigorous and continuous benchmark maintenance is a prerequisite for achieving genuine model alignment in safety-critical applications like clinical risk assessment.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study employed a systematic physician-in-the-loop pipeline, integrating advanced agentic verifiers for initial auditing and automated triage to direct clinician attention to the most contentious instances requiring manual review and relabeling. The impact of corrected labels was assessed by fine-tuning a Qwen3-8B language model via Group Relative Policy Optimization (GRPO) on both the original and the corrected versions of MedCalc-Bench, and comparing the resulting model accuracies.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>A significant portion of original MedCalc-Bench labels contained errors attributed to extraction inaccuracies, calculator logic mismatches, and inherent clinical ambiguities. Training a Qwen3-8B model on the corrected benchmark labels achieved an 8.7% absolute improvement in accuracy over training on the uncorrected baseline, confirming the detrimental impact of label noise on model performance.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides a framework for building more reliable AI systems for clinical risk score automation, leading to more accurate administrative burden reduction for physicians and improved, data-driven decisions for patient care. It ensures that AI tools integrated into clinical workflows are rigorously validated against medical ground truth, enhancing trust and utility in safety-critical medical contexts.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the proposed method or findings, but rather highlights the problem it addresses (inherent errors in existing LLM-generated benchmarks like MedCalc-Bench and the challenge of scaling physician oversight).</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper implies a future direction for the broader AI in medicine community: the continuous, rigorous maintenance and re-evaluation of benchmarks as 'in-progress living documents' is essential for achieving genuine and robust model alignment in safety-critical domains.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical risk assessment</span>
+                    
+                    <span class="tag">Healthcare administration</span>
+                    
+                    <span class="tag">Diagnostic support</span>
+                    
+                    <span class="tag">Patient care enhancement</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">clinical risk scores</span>
+                    
+                    <span class="tag tag-keyword">medical benchmarks</span>
+                    
+                    <span class="tag tag-keyword">label noise</span>
+                    
+                    <span class="tag tag-keyword">physician-in-the-loop</span>
+                    
+                    <span class="tag tag-keyword">reinforcement learning</span>
+                    
+                    <span class="tag tag-keyword">agentic verifiers</span>
+                    
+                    <span class="tag tag-keyword">MedCalc-Bench</span>
+                    
+                    <span class="tag tag-keyword">model alignment</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Automating the calculation of clinical risk scores offers a significant opportunity to reduce physician administrative burden and enhance patient care. The current standard for evaluating this capability is MedCalc-Bench, a large-scale dataset constructed using LLM-based feature extraction and rule-based aggregation. However, treating such model-generated benchmarks as static oracles risks enshrining historical model errors as evaluation gold standards, a problem dangerously amplified when these datasets serve as reward signals for Reinforcement Learning (RL). In this work, we propose viewing benchmarks for complex tasks such as clinical score computation as ''in-progress living documents'' that should be periodically re-evaluated as the processes for creating them improve. We introduce a systematic, physician-in-the-loop pipeline that leverages advanced agentic verifiers to audit and relabel MedCalc-Bench, utilizing automated triage to reserve scarce clinician attention for the most contentious instances. Our audit reveals that a notable fraction of original labels diverge from medical ground truth due to extraction errors, calculator logic mismatches, and clinical ambiguity. To study whether this label noise meaningfully impacts downstream RL training, we fine-tune a Qwen3-8B model via Group Relative Policy Optimization (GRPO) and demonstrate that training on corrected labels yields an 8.7% absolute improvement in accuracy over the original baseline -- validating that label noise materially affects model evaluation. These findings underscore that in safety-critical domains, rigorous benchmark maintenance is a prerequisite for genuine model alignment.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
