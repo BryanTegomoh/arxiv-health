@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reason2Decide: Rationale-Driven Multi-Task Learning - Health AI Hub</title>
+    <meta name="description" content="Reason2Decide is a novel two-stage training framework designed for clinical decision support systems to simultaneously achieve high predictive accuracy and gene">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Reason2Decide: Rationale-Driven Multi-Task Learning</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.20074v1" target="_blank">2512.20074v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-23
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> H M Quamran Hasan, Housam Khalifa Bashier, Jiayi Dai, Mi-Young Kim, Randy Goebel
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.AI, cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.20074v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.20074v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">Reason2Decide is a novel two-stage training framework designed for clinical decision support systems to simultaneously achieve high predictive accuracy and generate explanations aligned with those predictions. By addressing exposure bias through scheduled sampling and efficient multi-task learning, it outperforms existing fine-tuning baselines and some zero-shot LLMs. Importantly, it achieves these gains with models 40x smaller, making explainable clinical reasoning more accessible for resource-constrained deployments.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine as it directly tackles the critical need for trustworthy and explainable AI in clinical decision support, enabling healthcare professionals to understand *why* a system makes a particular recommendation. Its resource efficiency makes advanced AI accessible for hospitals and clinics with limited computational infrastructure, improving patient care through accurate and transparent decision aids in vital areas like triage.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>Reason2Decide is an AI model (a two-stage multi-task learning framework) designed to improve clinical decision support by generating accurate predictions with aligned, explainable rationales. It is specifically applied and evaluated in medical contexts such as triage and biomedical QA, aiming to provide more accessible and explainable AI for clinical reasoning in healthcare settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Reason2Decide utilizes a two-stage training framework: Stage-1 focuses on rationale generation, and Stage-2 jointly trains for label prediction and rationale generation.</li>
+                    
+                    <li>It employs scheduled sampling in Stage-2, gradually transitioning from conditioning on gold labels to model predictions, effectively mitigating exposure bias common in self-rationalization approaches.</li>
+                    
+                    <li>The framework demonstrates superior performance in both prediction accuracy (F1 score) and rationale fidelity (BERTScore, BLEU, LLM-as-a-Judge) compared to other fine-tuning baselines and certain zero-shot LLMs.</li>
+                    
+                    <li>On a proprietary triage dataset, Reason2Decide proved robust to the source of rationales, performing well with LLM-generated, nurse-authored, and nurse-post-processed explanations.</li>
+                    
+                    <li>A key finding is that using only LLM-generated rationales in Stage-1 is sufficient for pretraining models to achieve high performance, significantly reducing reliance on costly human annotations.</li>
+                    
+                    <li>Reason2Decide achieves its performance gains with models approximately 40 times smaller than contemporary foundation models, which is crucial for resource-constrained clinical deployments.</li>
+                    
+                    <li>The core contribution addresses the critical challenge of ensuring explanations are accurately aligned with the model's predictions, thereby increasing trust and utility in clinical decision support systems.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>Reason2Decide implements a two-stage training paradigm. Stage-1 focuses on fine-tuning the model for rationale generation. Stage-2 then jointly optimizes for both label prediction and rationale generation, incorporating scheduled sampling. Scheduled sampling is a technique where the model's input during training progressively transitions from using gold-standard (true) labels to using its own predicted labels, thereby mitigating exposure bias. The evaluation was conducted on three medical datasets: a proprietary triage dataset and two public biomedical question-answering datasets, measuring F1 score for prediction and BERTScore, BLEU, and LLM-as-a-Judge for rationale fidelity.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>Reason2Decide consistently outperforms fine-tuning baselines and some zero-shot LLMs in both predictive accuracy (F1) and the quality of generated rationales across diverse medical datasets. It demonstrates significant robustness to the source of rationales (human vs. LLM-generated). Remarkably, LLM-generated rationales alone in Stage-1 proved effective for pretraining, reducing annotation dependence. These performance benefits are achieved with models that are 40 times smaller than leading foundation models.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The ability of Reason2Decide to provide highly accurate and aligned explanations using significantly smaller models has a profound clinical impact. It enables the deployment of explainable AI in resource-constrained healthcare settings, democratizing access to advanced decision support. Clinicians can benefit from transparent recommendations in critical areas like patient triage, enhancing trust, reducing cognitive load, and potentially leading to more consistent and effective patient management and improved outcomes. The reduced reliance on human annotation for training also makes such systems more scalable and cost-effective to develop.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily highlights the strengths and problem-solving capabilities of Reason2Decide. It identifies that "current approaches suffer from exposure bias leading to misaligned explanations" as a problem addressed by Reason2Decide, rather than an inherent limitation of Reason2Decide itself. No explicit limitations or caveats regarding Reason2Decide's methodology or generalizability were stated within the provided abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions for Reason2Decide. However, implied areas for future work based on the paper's contribution could include exploring its application to a wider range of clinical tasks, investigating different scheduled sampling schedules, or further optimizing model size and efficiency for mobile or edge deployment in healthcare.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Patient Triage</span>
+                    
+                    <span class="tag">Biomedical Question Answering</span>
+                    
+                    <span class="tag">Clinical Informatics</span>
+                    
+                    <span class="tag">Diagnostic Support</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Clinical Decision Support</span>
+                    
+                    <span class="tag tag-keyword">Explainable AI</span>
+                    
+                    <span class="tag tag-keyword">Multi-Task Learning</span>
+                    
+                    <span class="tag tag-keyword">Rationale Generation</span>
+                    
+                    <span class="tag tag-keyword">Scheduled Sampling</span>
+                    
+                    <span class="tag tag-keyword">Exposure Bias</span>
+                    
+                    <span class="tag tag-keyword">Resource-Constrained AI</span>
+                    
+                    <span class="tag tag-keyword">Medical LLMs</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Despite the wide adoption of Large Language Models (LLM)s, clinical decision support systems face a critical challenge: achieving high predictive accuracy while generating explanations aligned with the predictions. Current approaches suffer from exposure bias leading to misaligned explanations. We propose Reason2Decide, a two-stage training framework that addresses key challenges in self-rationalization, including exposure bias and task separation. In Stage-1, our model is trained on rationale generation, while in Stage-2, we jointly train on label prediction and rationale generation, applying scheduled sampling to gradually transition from conditioning on gold labels to model predictions. We evaluate Reason2Decide on three medical datasets, including a proprietary triage dataset and public biomedical QA datasets. Across model sizes, Reason2Decide outperforms other fine-tuning baselines and some zero-shot LLMs in prediction (F1) and rationale fidelity (BERTScore, BLEU, LLM-as-a-Judge). In triage, Reason2Decide is rationale source-robust across LLM-generated, nurse-authored, and nurse-post-processed rationales. In our experiments, while using only LLM-generated rationales in Stage-1, Reason2Decide outperforms other fine-tuning variants. This indicates that LLM-generated rationales are suitable for pretraining models, reducing reliance on human annotations. Remarkably, Reason2Decide achieves these gains with models 40x smaller than contemporary foundation models, making clinical reasoning more accessible for resource-constrained deployments while still providing explainable decision support.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
