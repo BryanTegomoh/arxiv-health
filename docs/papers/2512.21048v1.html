@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zkFL-Health: Blockchain-Enabled Zero-Knowledge Federated Learning for Medical AI Privacy - Health AI Hub</title>
+    <meta name="description" content="zkFL-Health introduces a novel architecture that integrates Federated Learning (FL) with Zero-Knowledge Proofs (ZKPs) and Trusted Execution Environments (TEEs) ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>zkFL-Health: Blockchain-Enabled Zero-Knowledge Federated Learning for Medical AI Privacy</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.21048v1" target="_blank">2512.21048v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-24
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Savvy Sharma, George Petrovic, Sarthak Kaushik
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CR, cs.DC, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.21048v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.21048v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">zkFL-Health introduces a novel architecture that integrates Federated Learning (FL) with Zero-Knowledge Proofs (ZKPs) and Trusted Execution Environments (TEEs) to overcome privacy and trust limitations in medical AI training. This framework enables verifiable, privacy-preserving collaborative AI development across multiple healthcare institutions by ensuring accurate model aggregation from committed client updates without revealing sensitive data. The system aims to provide robust confidentiality, integrity, and auditability crucial for clinical adoption and regulatory compliance.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research directly addresses the paramount challenge of developing powerful AI models for healthcare that require vast, diverse datasets, while strictly upholding patient privacy and complying with stringent medical regulations. By enabling secure and verifiable collaboration, it facilitates the creation of more accurate and generalizable medical AI tools essential for diagnostics, treatment planning, and personalized medicine.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>Enabling the secure, private, and auditable collaborative training of AI models using sensitive medical data across multiple healthcare institutions. This facilitates the development of more robust and generalizable medical AI applications (e.g., for diagnostics, prognostics, personalized medicine) while strictly adhering to patient privacy regulations and clinical governance requirements.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Healthcare AI's development is hampered by the inability to share large, diverse datasets across institutions due to strict privacy and governance regulations.</li>
+                    
+                    <li>Existing Federated Learning (FL) mitigates data sharing, but remains vulnerable to privacy breaches (e.g., membership inference, gradient inversion) and relies on a single, untrusted aggregator prone to manipulation.</li>
+                    
+                    <li>zkFL-Health combines FL with Zero-Knowledge Proofs (ZKPs) and Trusted Execution Environments (TEEs) to establish a privacy-preserving and verifiably correct collaborative training framework for medical AI.</li>
+                    
+                    <li>Clients locally train models and cryptographically commit their updates; an aggregator operates within a TEE to compute the global model update.</li>
+                    
+                    <li>The TEE-based aggregator generates a succinct ZKP (using schemes like Halo2/Nova) proving that it used exactly the committed inputs and the correct aggregation rule, crucially without revealing any client update to the host.</li>
+                    
+                    <li>Verifier nodes validate these ZKPs and record cryptographic commitments on-chain, thereby creating an immutable audit trail and eliminating the need to trust any single central party.</li>
+                    
+                    <li>The proposed system delivers strong confidentiality, integrity, and auditability, which are identified as key properties for the successful clinical adoption and regulatory compliance of multi-institutional medical AI solutions.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>zkFL-Health is an architectural protocol that enhances Federated Learning (FL) by integrating Trusted Execution Environments (TEEs) and Zero-Knowledge Proofs (ZKPs). Clients train models locally and commit their updates. An aggregator processes these updates within a TEE to ensure confidentiality during the global update computation. The TEE then generates a succinct ZKP (using Halo2/Nova) that cryptographically proves the correctness of the aggregation logic and the use of committed inputs, without exposing the raw client updates. Verifier nodes validate these proofs, and cryptographic commitments are recorded on a blockchain, establishing an immutable audit trail and distributed trust.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The paper outlines the design and theoretical guarantees of zkFL-Health, demonstrating its capacity to enable privacy-preserving, verifiably correct collaborative training for medical AI. It finds that the architecture can prevent privacy leakage from model updates and eliminate the need to trust a central aggregator, ensuring aggregation integrity through ZKPs. The system is designed to provide strong confidentiality, integrity, and auditability, addressing critical barriers to multi-institutional medical AI adoption and regulatory compliance. Performance evaluation plans for accuracy, privacy risk, latency, and cost are outlined.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>zkFL-Health has the potential to revolutionize medical AI development by allowing healthcare institutions to securely pool their data's 'knowledge' without ever sharing raw patient information. This will lead to the creation of more robust, accurate, and generalizable AI models for diagnostics, treatment optimization, and patient care. The built-in auditability and privacy guarantees are crucial for satisfying regulatory bodies and fostering trust among clinicians and patients, accelerating the integration of AI into clinical workflows.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>While addressing critical limitations of prior FL approaches, the abstract describes a proposed architecture and its guarantees rather than empirical results. The mention of a 'performance evaluation plan spanning accuracy, privacy risk, latency, and cost' suggests that the practical overheads (computational cost of ZKPs, latency of TEEs and blockchain interactions) are yet to be fully quantified and optimized for real-world medical AI deployments.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The authors plan a comprehensive performance evaluation to empirically assess the system's accuracy, privacy risk, latency, and cost implications. Future work also involves refining the system and threat models tailored to evolving healthcare scenarios and advancing the framework towards practical implementation for achieving widespread clinical adoption and regulatory compliance.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">General Medical AI</span>
+                    
+                    <span class="tag">Multi-institutional Healthcare</span>
+                    
+                    <span class="tag">Clinical Research</span>
+                    
+                    <span class="tag">Health Data Science</span>
+                    
+                    <span class="tag">Diagnostic AI</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Federated Learning</span>
+                    
+                    <span class="tag tag-keyword">Zero-Knowledge Proofs</span>
+                    
+                    <span class="tag tag-keyword">Trusted Execution Environments</span>
+                    
+                    <span class="tag tag-keyword">Medical AI</span>
+                    
+                    <span class="tag tag-keyword">Healthcare Privacy</span>
+                    
+                    <span class="tag tag-keyword">Blockchain</span>
+                    
+                    <span class="tag tag-keyword">Confidentiality</span>
+                    
+                    <span class="tag tag-keyword">Auditability</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Healthcare AI needs large, diverse datasets, yet strict privacy and governance constraints prevent raw data sharing across institutions. Federated learning (FL) mitigates this by training where data reside and exchanging only model updates, but practical deployments still face two core risks: (1) privacy leakage via gradients or updates (membership inference, gradient inversion) and (2) trust in the aggregator, a single point of failure that can drop, alter, or inject contributions undetected. We present zkFL-Health, an architecture that combines FL with zero-knowledge proofs (ZKPs) and Trusted Execution Environments (TEEs) to deliver privacy-preserving, verifiably correct collaborative training for medical AI. Clients locally train and commit their updates; the aggregator operates within a TEE to compute the global update and produces a succinct ZK proof (via Halo2/Nova) that it used exactly the committed inputs and the correct aggregation rule, without revealing any client update to the host. Verifier nodes validate the proof and record cryptographic commitments on-chain, providing an immutable audit trail and removing the need to trust any single party. We outline system and threat models tailored to healthcare, the zkFL-Health protocol, security/privacy guarantees, and a performance evaluation plan spanning accuracy, privacy risk, latency, and cost. This framework enables multi-institutional medical AI with strong confidentiality, integrity, and auditability, key properties for clinical adoption and regulatory compliance.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>10 pages, 1 figure, 5 tables</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
