@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backdoor Attacks on Prompt-Driven Video Segmentation Foundation Models - Health AI Hub</title>
+    <meta name="description" content="This paper introduces BadVSFM, the first backdoor attack framework specifically designed for prompt-driven Video Segmentation Foundation Models (VSFMs), which a">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Backdoor Attacks on Prompt-Driven Video Segmentation Foundation Models</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.22046v1" target="_blank">2512.22046v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-26
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Zongmin Zhang, Zhen Sun, Yifan Liao, Wenhan Dong, Xinlei He, Xingshuo Han, Shengmin Xu, Xinyi Huang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV, cs.CR
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.22046v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.22046v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces BadVSFM, the first backdoor attack framework specifically designed for prompt-driven Video Segmentation Foundation Models (VSFMs), which are increasingly used in critical applications like digital pathology. It demonstrates that classic backdoor attacks are ineffective, but BadVSFM successfully injects controllable backdoors by manipulating both the encoder and decoder through a novel two-stage process, leading to missegmentation under specific triggers while bypassing existing defenses. The research reveals an underexplored vulnerability in VSFMs, necessitating urgent development of tailored defense mechanisms.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>VSFMs are increasingly deployed in digital pathology for segmenting critical structures (e.g., tumors, lesions, cells); this attack could lead to missegmentation of pathological features under specific triggers, potentially resulting in severe diagnostic errors or inappropriate treatment in clinical settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research investigates security vulnerabilities (backdoor attacks) in AI segmentation models (VSFMs) used within healthcare, specifically highlighting their application in digital pathology. In this context, AI models are used to segment structures within microscope slides (e.g., cells, tissues, lesions) to assist pathologists in diagnosing diseases. A successful backdoor attack could compromise the integrity of these diagnostic AI tools, leading to biased or manipulated segmentation results when a specific trigger is present, thereby affecting patient diagnosis and treatment decisions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Classic backdoor attacks (e.g., BadNet) are largely ineffective against Prompt-driven Video Segmentation Foundation Models (VSFMs), achieving an Attack Success Rate (ASR) below 5%.</li>
+                    
+                    <li>The ineffectiveness of traditional attacks stems from conventional VSFM training, which aligns encoder gradients for clean and triggered inputs and maintains attention on the true object, preventing distinct trigger representation learning.</li>
+                    
+                    <li>BadVSFM proposes a novel two-stage backdoor framework: Stage 1 steers the image encoder to map triggered frames to a specific target embedding, while Stage 2 trains the mask decoder to produce a shared target mask for triggered inputs across prompts.</li>
+                    
+                    <li>Extensive experiments on two datasets and five VSFMs confirm that BadVSFM achieves strong, controllable backdoor effects across diverse triggers and prompts, without compromising clean segmentation quality.</li>
+                    
+                    <li>Gradient-conflict analysis and attention visualizations show that BadVSFM effectively separates triggered and clean representations and successfully shifts model attention towards the trigger regions.</li>
+                    
+                    <li>Four representative backdoor defenses were largely ineffective against BadVSFM, highlighting a significant and underexplored vulnerability in current VSFMs.</li>
+                    
+                    <li>The research emphasizes the critical need for developing robust defense mechanisms specifically tailored to the unique architecture and prompt-driven nature of VSFMs, particularly in high-stakes applications like digital pathology.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed BadVSFM framework utilizes a two-stage training strategy. Stage 1 focuses on steering the image encoder, using a poisoned dataset to force triggered frames' embeddings towards a designated target while maintaining clean frames' embeddings. Stage 2 trains the mask decoder to produce a shared target mask for triggered frame-prompt pairs, ensuring consistent malicious output, while clean outputs adhere to a reference decoder. Experiments involved evaluating Attack Success Rate (ASR) and clean segmentation quality on two datasets and five VSFMs, complemented by gradient-conflict analysis, attention map visualizations, and ablation studies over various hyper-parameters and settings.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>['Existing backdoor attacks are largely ineffective against prompt-driven VSFMs due to challenges in learning distinct trigger representations.', 'BadVSFM successfully injects strong and controllable backdoors into VSFMs, achieving high ASR while preserving clean segmentation performance.', 'The two-stage design of BadVSFM is critical for its effectiveness, enabling the separation of triggered and clean representations and shifting model attention to trigger regions.', "BadVSFM's backdoor effects are robust across diverse triggers, prompts, and reasonable hyperparameter changes.", 'Current state-of-the-art backdoor defenses are largely ineffective against BadVSFM, revealing a novel and significant vulnerability in VSFMs.']</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The findings expose a critical security vulnerability in advanced AI models being adopted in medical applications. If exploited, BadVSFM-type attacks could lead to subtle, conditional errors in the segmentation of medical images (e.g., misidentifying healthy tissue as cancerous or missing a critical lesion when a specific trigger is present), potentially causing misdiagnosis, delayed or inappropriate treatment, and eroding trust in AI-powered diagnostic tools within clinical settings. This necessitates urgent development of VSFM-specific defense mechanisms to safeguard patient care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations of the BadVSFM method or the study itself, but rather highlights the limitations of existing backdoor attacks and defenses against VSFMs.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The research strongly implies the need for future work focused on developing robust and VSFM-specific defense mechanisms to mitigate these newly identified backdoor threats and enhance the security and trustworthiness of AI models in critical applications like digital pathology.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Digital Pathology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Histopathology</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Backdoor Attack</span>
+                    
+                    <span class="tag tag-keyword">Video Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Foundation Models</span>
+                    
+                    <span class="tag tag-keyword">Digital Pathology</span>
+                    
+                    <span class="tag tag-keyword">Prompt-driven</span>
+                    
+                    <span class="tag tag-keyword">Adversarial Machine Learning</span>
+                    
+                    <span class="tag tag-keyword">Computer Vision</span>
+                    
+                    <span class="tag tag-keyword">AI Security</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Prompt-driven Video Segmentation Foundation Models (VSFMs) such as SAM2 are increasingly deployed in applications like autonomous driving and digital pathology, raising concerns about backdoor threats. Surprisingly, we find that directly transferring classic backdoor attacks (e.g., BadNet) to VSFMs is almost ineffective, with ASR below 5\%. To understand this, we study encoder gradients and attention maps and observe that conventional training keeps gradients for clean and triggered samples largely aligned, while attention still focuses on the true object, preventing the encoder from learning a distinct trigger-related representation. To address this challenge, we propose BadVSFM, the first backdoor framework tailored to prompt-driven VSFMs. BadVSFM uses a two-stage strategy: (1) steer the image encoder so triggered frames map to a designated target embedding while clean frames remain aligned with a clean reference encoder; (2) train the mask decoder so that, across prompt types, triggered frame-prompt pairs produce a shared target mask, while clean outputs stay close to a reference decoder. Extensive experiments on two datasets and five VSFMs show that BadVSFM achieves strong, controllable backdoor effects under diverse triggers and prompts while preserving clean segmentation quality. Ablations over losses, stages, targets, trigger settings, and poisoning rates demonstrate robustness to reasonable hyperparameter changes and confirm the necessity of the two-stage design. Finally, gradient-conflict analysis and attention visualizations show that BadVSFM separates triggered and clean representations and shifts attention to trigger regions, while four representative defenses remain largely ineffective, revealing an underexplored vulnerability in current VSFMs.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

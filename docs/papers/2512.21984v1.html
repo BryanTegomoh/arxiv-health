@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Lightweight Multi-Scale Attention Framework for Real-Time Spinal Endoscopic Instance Segmentation - Health AI Hub</title>
+    <meta name="description" content="This paper introduces LMSF-A, a lightweight multi-scale attention framework designed for real-time instance segmentation in spinal endoscopy, addressing challen">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>A Lightweight Multi-Scale Attention Framework for Real-Time Spinal Endoscopic Instance Segmentation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.21984v1" target="_blank">2512.21984v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-26
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Qi Lai, JunYan Li, Qiang Cai, Lei Wang, Tao Yan, XiaoKun Liang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.21984v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.21984v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces LMSF-A, a lightweight multi-scale attention framework designed for real-time instance segmentation in spinal endoscopy, addressing challenges like limited visibility and hardware constraints. By co-designing the backbone, neck, and head for efficiency and accuracy, the framework achieves competitive performance with minimal computational cost. The authors also release a new clinically reviewed PELD dataset and demonstrate the model's exceptional lightness, stability under small-batch training, and strong generalization capabilities.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Real-time instance segmentation in spinal endoscopy is paramount for improving surgical safety and precision. By accurately identifying and delineating critical anatomical structures like nerves and ligaments during surgery, this technology directly helps prevent iatrogenic injuries, leading to better patient outcomes and reduced complications in minimally invasive spinal procedures.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is a real-time assistive system for spinal endoscopic surgery. It uses instance segmentation to automatically detect and delineate vital anatomical structures, enabling surgeons to protect them and navigate more safely during the procedure, thereby reducing complications and improving patient outcomes.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the critical need for real-time instance segmentation in spinal endoscopy to identify and protect vital anatomy, overcoming challenges such as narrow fields of view, poor visibility, and limited surgical hardware.</li>
+                    
+                    <li>Proposes LMSF-A, a novel lightweight multi-scale attention framework meticulously co-designed across its backbone, neck, and head for optimal performance and resource efficiency.</li>
+                    
+                    <li>The backbone integrates a C2f-Pro module combining RepViT-style re-parameterized convolution (RVB) with Efficient Multi-scale Attention (EMA), enabling multi-branch training for robustness and collapsing into a single fast path for inference.</li>
+                    
+                    <li>The neck module enhances cross-scale consistency and boundary detail through Scale-Sequence Feature Fusion (SSFF) and Triple Feature Encoding (TFE), which specifically strengthens high-resolution features.</li>
+                    
+                    <li>A Lightweight Multi-task Shared Head (LMSH) is adopted, utilizing shared convolutions and GroupNorm to significantly reduce parameters and ensure stability during small-batch (including batch-1) training, crucial for surgical deployment.</li>
+                    
+                    <li>The authors release a new, clinically reviewed PELD dataset (61 patients, 610 images) featuring instance masks for critical spinal structures: adipose tissue, bone, ligamentum flavum, and nerve.</li>
+                    
+                    <li>LMSF-A demonstrates highly competitive or superior performance across all evaluation metrics, achieving extreme lightness with only 1.8M parameters and 8.8 GFLOPs, and proving generalizability on a public teeth benchmark.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology revolves around the LMSF-A framework, consisting of a C2f-Pro backbone that combines RepViT-style re-parameterized convolution (RVB) with Efficient Multi-scale Attention (EMA). The neck features Scale-Sequence Feature Fusion (SSFF) and Triple Feature Encoding (TFE) to refine feature representation and boundary details. The head is a Lightweight Multi-task Shared Head (LMSH) employing shared convolutions and GroupNorm for parameter efficiency and batch-1 stability. The model was trained and evaluated on a newly curated, clinically reviewed PELD dataset specifically for spinal endoscopic imagery.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>LMSF-A achieves highly competitive or superior performance compared to existing instance segmentation methods across all evaluation metrics. A primary finding is its exceptional lightness, requiring only 1.8 million parameters and 8.8 GFLOPs, making it suitable for resource-constrained surgical hardware. The framework also demonstrates robust stability during batch-1 training and exhibits strong generalization capabilities when tested on an independent teeth benchmark.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology has the potential to significantly enhance the safety and efficacy of spinal endoscopic surgeries. By providing surgeons with real-time, precise visual guidance on critical anatomical structures, it can help prevent inadvertent damage to nerves and other vital tissues, optimize surgical trajectory, and improve overall procedural success rates, ultimately benefiting patient recovery and reducing post-operative complications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state specific limitations or caveats pertaining to the LMSF-A model itself, beyond the general challenges inherent in spinal endoscopy such as smoke/bleeding and unclear boundaries, which the framework aims to mitigate.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention future research directions for the LMSF-A framework or its applications.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Spine Surgery</span>
+                    
+                    <span class="tag">Neurosurgery</span>
+                    
+                    <span class="tag">Orthopedic Surgery</span>
+                    
+                    <span class="tag">Minimally Invasive Surgery</span>
+                    
+                    <span class="tag">Endoscopy</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">instance segmentation</span>
+                    
+                    <span class="tag tag-keyword">spinal endoscopy</span>
+                    
+                    <span class="tag tag-keyword">real-time AI</span>
+                    
+                    <span class="tag tag-keyword">lightweight deep learning</span>
+                    
+                    <span class="tag tag-keyword">multi-scale attention</span>
+                    
+                    <span class="tag tag-keyword">surgical navigation</span>
+                    
+                    <span class="tag tag-keyword">PELD dataset</span>
+                    
+                    <span class="tag tag-keyword">medical image analysis</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Real-time instance segmentation for spinal endoscopy is important for identifying and protecting critical anatomy during surgery, but it is difficult because of the narrow field of view, specular highlights, smoke/bleeding, unclear boundaries, and large scale changes. Deployment is also constrained by limited surgical hardware, so the model must balance accuracy and speed and remain stable under small-batch (even batch-1) training. We propose LMSF-A, a lightweight multi-scale attention framework co-designed across backbone, neck, and head. The backbone uses a C2f-Pro module that combines RepViT-style re-parameterized convolution (RVB) with efficient multi-scale attention (EMA), enabling multi-branch training while collapsing into a single fast path for inference. The neck improves cross-scale consistency and boundary detail using Scale-Sequence Feature Fusion (SSFF) and Triple Feature Encoding (TFE), which strengthens high-resolution features. The head adopts a Lightweight Multi-task Shared Head (LMSH) with shared convolutions and GroupNorm to reduce parameters and support batch-1 stability. We also release the clinically reviewed PELD dataset (61 patients, 610 images) with instance masks for adipose tissue, bone, ligamentum flavum, and nerve. Experiments show that LMSF-A is highly competitive (or even better than) in all evaluation metrics and much lighter than most instance segmentation methods requiring only 1.8M parameters and 8.8 GFLOPs, and it generalizes well to a public teeth benchmark. Code and dataset: https://github.com/hhwmortal/PELD-Instance-segmentation.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
