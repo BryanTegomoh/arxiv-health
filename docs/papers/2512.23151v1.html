@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-stage Respiratory Motion-resolved Radial MR Image Reconstruction Using an Interpretable Deep Unrolled Network - Health AI Hub</title>
+    <meta name="description" content="This paper introduces MoraNet, a two-stage deep unrolled network for respiratory motion-resolved radial MR image reconstruction, addressing motion artifacts pre">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Two-stage Respiratory Motion-resolved Radial MR Image Reconstruction Using an Interpretable Deep Unrolled Network</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.23151v1" target="_blank">2512.23151v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-29
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Shanshan Shan, Hongli Chen, Yuhan Wei, Peng Wu, Yang Gao, Tess Reynolds, Paul Liu, Jialiang Zhang, Qidi Luo, Chunyi Liu, Paul Keall, Feng Liu, Yaqin Zhang, David E. J. Waddington, Mingyuan Gao
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> physics.med-ph
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.23151v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.23151v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces MoraNet, a two-stage deep unrolled network for respiratory motion-resolved radial MR image reconstruction, addressing motion artifacts prevalent in abdominal and pulmonary imaging. The method accurately extracts respiratory signals and reconstructs high-quality, motion-corrected images for specific motion states, demonstrating superior image quality and significantly faster processing compared to conventional compressed sensing techniques.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Respiratory motion is a significant source of artifacts in MRI scans of the chest and abdomen, compromising diagnostic image quality and often requiring challenging breath-holds from patients. This research offers a solution that enables high-quality, motion-corrected imaging under free-breathing, which could vastly improve patient comfort, compliance, and the diagnostic utility of MRI in these critical areas.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application involves using an 'interpretable deep unrolled network' (MoraNet) with CNN modules for two-stage respiratory motion-resolved radial MR image reconstruction. This AI system processes raw k-space data to estimate respiratory motion signals and then reconstructs high-resolution images for each motion state, thereby correcting for motion artifacts. The ultimate health application is to provide clearer, higher-quality MRI scans for improved diagnosis in abdominal and pulmonary conditions, especially under free-breathing conditions, enhancing patient comfort and diagnostic accuracy.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the problem of respiratory motion artifacts and image blurring in prolonged MRI encoding, particularly for abdominal and pulmonary imaging.</li>
+                    
+                    <li>Proposes a two-stage pipeline using an interpretable deep unrolled network (MoraNet) to achieve respiratory motion-resolved radial MR image reconstruction under free-breathing conditions.</li>
+                    
+                    <li>Stage 1 involves reconstructing low-resolution images from central golden-angle radial k-space data to extract respiratory motion signals.</li>
+                    
+                    <li>Stage 2 utilizes binned k-space data, based on the extracted respiratory signal, to reconstruct high-resolution, motion-resolved images for each motion state using MoraNet.</li>
+                    
+                    <li>MoraNet integrates Nonuniform Fast Fourier Transform (NUFFT) for efficient radial encoding and Convolutional Neural Network (CNN) modules for robust image regularizations.</li>
+                    
+                    <li>The method was trained on retrospectively acquired lung MRI data and evaluated on digital phantoms (CoMBAT, QUASAR) and volunteer chest data, comparing against motion-averaged and conventional Compressed Sensing (CS) methods.</li>
+                    
+                    <li>Results show MoraNet provides accurate respiratory signal estimation, effective motion correction, better structural details with lower RMSE and higher SSIM at an acceleration factor of 4, and a ten-fold faster inference time compared to the CS method.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology employs a two-stage pipeline. In the first stage, respiratory motion signals are extracted from low-resolution images reconstructed from the central region of successive golden-angle radial k-space data. The extracted signals are then used to bin the full k-space data according to different respiratory states. The second stage utilizes the interpretable deep unrolled network, MoraNet, which integrates NUFFT for radial encoding operations and CNN modules for image regularization, to reconstruct high-resolution, motion-resolved images for each binned motion state. The network was trained on retrospective lung MRI data (fully and undersampled) and validated on phantom and volunteer chest data.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The MoraNet pipeline demonstrated accurate estimation of respiratory signals and effective correction of motion artifacts. Compared to conventional Compressed Sensing (CS) methods, MoraNet produced images with superior structural details, lower Root Mean Square Error (RMSE), and higher Structural Similarity Index Measure (SSIM) values, particularly at an acceleration factor of 4. A significant finding was the substantial improvement in computational efficiency, with MoraNet achieving a ten-fold faster inference time than the CS method.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This technology has the potential to significantly enhance the diagnostic quality of MRI scans in the abdomen and lungs by effectively mitigating respiratory motion artifacts, even during free-breathing. This would reduce the need for patient breath-holds, improving comfort and scan completion rates, especially in pediatric, critically ill, or uncooperative patients. The improved image quality could lead to more accurate detection and characterization of pathologies, while the faster reconstruction time can streamline clinical workflow.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the proposed method.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state any future research directions.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Pulmonary imaging</span>
+                    
+                    <span class="tag">Abdominal imaging</span>
+                    
+                    <span class="tag">Diagnostic radiology</span>
+                    
+                    <span class="tag">Medical physics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">MRI</span>
+                    
+                    <span class="tag tag-keyword">respiratory motion correction</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">unrolled network</span>
+                    
+                    <span class="tag tag-keyword">radial k-space</span>
+                    
+                    <span class="tag tag-keyword">image reconstruction</span>
+                    
+                    <span class="tag tag-keyword">NUFFT</span>
+                    
+                    <span class="tag tag-keyword">CNN</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Due to the prolonged MRI encoding process, respiratory motion can cause undesired artifacts and image blurring, degrading image quality and limiting clinical applications in abdominal and pulmonary imaging. In this work, we develop a two-stage respiratory motion-resolved radial MR image reconstruction pipeline using an interpretable deep unrolled network (MoraNet), enabling high-quality imaging under free-breathing conditions. Firstly, low-resolution images are reconstructed from the central region of successive golden-angle radial k-space to extract respiratory motion signals. The binned k-space data based on the respiratory signal are then used to reconstruct the motion-resolved high-resolution image for each motion state. The MoraNet applies nonuniform fast Fourier transform (NUFFT) to operate radial encoding and convolutional neural network (CNN) modules to conduct image regularizations. The MoraNet was trained on retrospectively acquired lung MRI images for both fully sampled and undersampled acquisitions. The performance of the proposed method was evaluated on digital CT/MRI breathing XCAT (CoMBAT) phantom data, QUASAR motion phantom data acquired from a 1.0T MRI scanner and volunteer chest data acquired from a 1.5T MRI scanner. The MoraNet pipeline was compared with motion-averaged reconstruction and a conventional compressed sensing (CS)-based method in terms of SSIM, RMSE and computation time. Simulation and experimental results demonstrated that the proposed network could provide accurate respiratory signal estimation and enable effective motion correction. Compared with the CS method, the MoraNet preserved better structural details with lower RMSE and higher SSIM values at acceleration factor of 4, and meanwhile took ten-fold faster inference time.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

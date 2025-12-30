@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROFASR-BENCH: A Benchmark for Context-Conditioned ASR in High-Stakes Professional Speech - Health AI Hub</title>
+    <meta name="description" content="ProfASR-Bench addresses the limitations of current ASR benchmarks for high-stakes professional speech, particularly in medical settings, by introducing a contex">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>PROFASR-BENCH: A Benchmark for Context-Conditioned ASR in High-Stakes Professional Speech</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.23686v1" target="_blank">2512.23686v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-29
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Deepak Babu Piskala
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL, cs.SD
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.23686v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.23686v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">ProfASR-Bench addresses the limitations of current ASR benchmarks for high-stakes professional speech, particularly in medical settings, by introducing a context-conditioned evaluation suite with entity-aware metrics. The study reveals a "context-utilization gap" (CUG), demonstrating that state-of-the-art ASR models largely fail to leverage even oracle textual context to improve recognition accuracy. This benchmark provides a critical tool for developing ASR systems that can effectively utilize side information in domains with dense terminology and low error tolerance.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is critically important for medicine as it directly addresses the inherent challenges of ASR in clinical environments, where dense medical terminology and near-zero tolerance for errors in critical entities (e.g., patient names, drug dosages, diagnoses) are paramount. Improving context utilization can significantly enhance the accuracy and reliability of ASR systems for medical dictation, clinical documentation, and telehealth applications.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research directly contributes to improving AI applications in health, specifically those relying on Automatic Speech Recognition (ASR). This includes automating the transcription of medical consultations, physician dictations for clinical notes, generating summaries from patient-provider interactions, voice control for medical devices, and enhancing AI-driven diagnostic tools that process spoken input. The focus on context-conditioned recognition and entity-aware scoring is crucial for the accuracy and reliability of AI in medical settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Current ASR benchmarks inadequately address challenges in professional, high-stakes domains like medicine, which require handling dense terminology and having near-zero tolerance for critical entity errors.</li>
+                    
+                    <li>ProfASR-Bench is introduced as a new evaluation suite specifically designed for context-conditioned ASR in professional settings, covering finance, medicine, legal, and technology sectors.</li>
+                    
+                    <li>The benchmark features natural-language prompts (domain cues and speaker profiles) paired with entity-rich target utterances, enabling controlled measurement of context utilization in ASR.</li>
+                    
+                    <li>It supports not only conventional ASR metrics (e.g., WER) but also crucial entity-aware scores and provides slice-wise reporting by accent and gender for granular performance analysis.</li>
+                    
+                    <li>Testing with representative ASR models (Whisper, Qwen-Omni) under various context conditions (no-context, profile, domain+profile, oracle, adversarial) revealed a consistent "context-utilization gap" (CUG).</li>
+                    
+                    <li>The CUG signifies that current ASR systems, despite being nominally promptable, exhibit little to no improvement in average Word Error Rate (WER) from lightweight textual context, even with perfectly curated "oracle" prompts, and do not reliably degrade with adversarial prompts.</li>
+                    
+                    <li>ProfASR-Bench offers a standardized context ladder and a reproducible testbed for comparing different context fusion strategies, aiming to stimulate research into closing the observed CUG.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>ProfASR-Bench was developed as an evaluation suite comprising natural-language prompts (domain cues, speaker profiles) paired with entity-rich target utterances. It supports conventional ASR metrics, entity-aware scores, and slice-wise reporting by accent and gender. The benchmark was utilized to evaluate Whisper (encoder-decoder ASR) and Qwen-Omni (audio language models) across five distinct context conditions: no-context, speaker profile only, domain cue plus speaker profile, oracle (perfect) context, and adversarial prompts.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary finding is the identification of a "context-utilization gap" (CUG). It was consistently observed that current state-of-the-art ASR systems, even when provided with optimal "oracle" textual context prompts, demonstrate negligible improvement in average Word Error Rate (WER). Furthermore, adversarial prompts failed to reliably degrade performance, indicating a fundamental inability of these systems to robustly integrate and leverage readily available side information for improved recognition.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The findings highlight a significant barrier to the robust deployment of ASR in high-stakes clinical settings. Successfully closing the context-utilization gap could lead to dramatically more accurate medical dictation and automated clinical note generation, reducing critical entity errors and minimizing the need for extensive human review. This would enhance clinician efficiency, alleviate documentation burden, and potentially improve patient safety by ensuring higher fidelity in capturing medical information.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The study primarily reveals limitations inherent in current state-of-the-art ASR systems themselves, rather than the benchmark. Specifically, current ASR models were found to be nominally promptable but largely underutilize readily available side information, even when that information is perfectly provided (oracle prompts). This suggests a core architectural or training limitation in how these systems integrate and leverage external context.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>ProfASR-Bench is intended to serve as a reproducible testbed for comparing various context fusion strategies across different ASR model families. Future research should concentrate on developing novel architectures and training methodologies that can effectively integrate and leverage contextual cues (such as domain-specific knowledge and speaker profiles) to significantly improve recognition accuracy, especially for critical entities in demanding professional domains like medicine.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Documentation</span>
+                    
+                    <span class="tag">Medical Dictation</span>
+                    
+                    <span class="tag">Telemedicine</span>
+                    
+                    <span class="tag">Health Informatics</span>
+                    
+                    <span class="tag">Diagnostic Reporting</span>
+                    
+                    <span class="tag">Surgical Notes</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Automatic Speech Recognition (ASR)</span>
+                    
+                    <span class="tag tag-keyword">Context-Conditioned ASR</span>
+                    
+                    <span class="tag tag-keyword">Medical Speech</span>
+                    
+                    <span class="tag tag-keyword">Benchmark</span>
+                    
+                    <span class="tag tag-keyword">Professional Speech</span>
+                    
+                    <span class="tag tag-keyword">Word Error Rate (WER)</span>
+                    
+                    <span class="tag tag-keyword">Entity Recognition</span>
+                    
+                    <span class="tag tag-keyword">Context-Utilization Gap (CUG)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Automatic Speech Recognition (ASR) in professional settings faces challenges that existing benchmarks underplay: dense domain terminology, formal register variation, and near-zero tolerance for critical entity errors. We present ProfASR-Bench, a professional-talk evaluation suite for high-stakes applications across finance, medicine, legal, and technology. Each example pairs a natural-language prompt (domain cue and/or speaker profile) with an entity-rich target utterance, enabling controlled measurement of context-conditioned recognition. The corpus supports conventional ASR metrics alongside entity-aware scores and slice-wise reporting by accent and gender. Using representative families Whisper (encoder-decoder ASR) and Qwen-Omni (audio language models) under matched no-context, profile, domain+profile, oracle, and adversarial conditions, we find a consistent pattern: lightweight textual context produces little to no change in average word error rate (WER), even with oracle prompts, and adversarial prompts do not reliably degrade performance. We term this the context-utilization gap (CUG): current systems are nominally promptable yet underuse readily available side information. ProfASR-Bench provides a standardized context ladder, entity- and slice-aware reporting with confidence intervals, and a reproducible testbed for comparing fusion strategies across model families.
+  Dataset: https://huggingface.co/datasets/prdeepakbabu/ProfASR-Bench
+  Code: https://github.com/prdeepakbabu/ProfASR-Bench</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Benchmark dataset and evaluation suite. Data and code available at: https://huggingface.co/datasets/prdeepakbabu/ProfASR-Bench https://github.com/prdeepakbabu/ProfASR-Bench</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
