@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calibrated Multi-Level Quantile Forecasting - Health AI Hub</title>
-    <meta name="description" content="This paper introduces Multi-Level Quantile Tracker (MultiQT), an online method that guarantees simultaneous calibration of multi-level quantile forecasts from a">
+    <meta name="description" content="This paper introduces Multi-Level Quantile Tracker (MultiQT), an online method designed to guarantee calibrated quantile forecasts simultaneously across multipl">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces Multi-Level Quantile Tracker (MultiQT), an online method that guarantees simultaneous calibration of multi-level quantile forecasts from any existing forecaster. MultiQT corrects forecasts to ensure they are ordered and calibrated, even under adversarial distribution shifts, and comes with a no-regret guarantee. The method significantly improves forecast calibration in real-world applications, notably in epidemic and energy forecasting.</p>
+                <p class="summary-text">This paper introduces Multi-Level Quantile Tracker (MultiQT), an online method designed to guarantee calibrated quantile forecasts simultaneously across multiple levels. MultiQT wraps existing forecasters to produce corrected, ordered forecasts that maintain calibration even under adversarial distribution shifts, while also offering a no-regret guarantee against quantile loss. The method significantly improves calibration in real-world applications like epidemic forecasting.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Accurate, calibrated, and ordered multi-level quantile forecasts are critical for robust public health decision-making, enabling better risk assessment, resource allocation (e.g., hospital beds, vaccines), and policy interventions during public health crises like epidemics.</p>
+                <p>Accurate, calibrated, and ordered multi-level quantile forecasts are critical for robust public health decision-making, enabling reliable risk assessment, resource allocation, and policy interventions during dynamic events like epidemic outbreaks.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The research provides a method (MultiQT) to improve the calibration and reliability of AI/machine learning models used for forecasting, specifically in the context of epidemic forecasting. This enhances the trustworthiness and utility of AI systems deployed for public health decision-making and preparedness.</p>
+                <p>The method enhances the reliability and trustworthiness of AI/ML models used for forecasting health-related events, such as disease incidence, mortality rates, or healthcare demand during epidemics. By guaranteeing calibrated multi-level quantile forecasts, it provides more accurate and robust probabilistic predictions, which are crucial for public health interventions, resource allocation in hospitals, and biosecurity preparedness.</p>
             </section>
             
 
@@ -68,17 +68,17 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>MultiQT is an online, lightweight wrapper method designed to correct and calibrate multi-level quantile forecasts from any existing point or quantile forecaster.</li>
+                    <li>**Problem Addressed:** Solves the challenge of simultaneously guaranteeing calibration and proper ordering of multi-level quantile forecasts in an online setting.</li>
                     
-                    <li>It guarantees simultaneous calibration, meaning $α$-level forecasts are larger than the true value an $α$ fraction of the time, across multiple quantile levels.</li>
+                    <li>**Methodology:** MultiQT is a lightweight, wrapper-based algorithm that can be applied to any existing point or quantile forecaster to improve its outputs.</li>
                     
-                    <li>The method ensures that corrected quantile forecasts are consistently ordered (e.g., the 0.5-level forecast is never larger than the 0.6-level forecast).</li>
+                    <li>**Calibration Guarantee:** Provides a robust guarantee that $\alpha$-level quantile forecasts will be larger than the target value at an $\alpha$-fraction of time steps, even when facing adversarial distribution shifts.</li>
                     
-                    <li>MultiQT is robust against adversarial distribution shifts, ensuring its calibration guarantees remain valid even in dynamic and unpredictable environments.</li>
+                    <li>**Ordering Guarantee:** Ensures monotonicity across different quantile levels, meaning, for instance, the 0.5-level forecast will never be greater than the 0.6-level forecast.</li>
                     
-                    <li>It offers a no-regret guarantee, implying that asymptotically, it will not worsen the performance of the underlying forecaster with respect to the quantile loss.</li>
+                    <li>**Performance Guarantee:** Offers a no-regret guarantee, ensuring that the method will not asymptotically worsen the underlying forecaster's performance with respect to the quantile loss.</li>
                     
-                    <li>Empirical results demonstrate MultiQT's significant improvement in the calibration of real-world forecasters, specifically in epidemic and energy forecasting problems.</li>
+                    <li>**Empirical Validation:** Demonstrated significant improvement in calibration performance when applied to real forecasters in critical domains such as epidemic and energy forecasting.</li>
                     
                 </ul>
             </section>
@@ -86,31 +86,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>MultiQT is an online, adaptive algorithm that functions as a wrapper around any pre-existing point or quantile forecaster. It continuously monitors the calibration of the input forecasts across multiple quantile levels and applies real-time corrections to ensure that the output forecasts are both calibrated and monotonically ordered (e.g., higher quantiles predict higher values). The method is designed to be robust against dynamic, even adversarial, changes in data distribution.</p>
+                    <p>The paper proposes Multi-Level Quantile Tracker (MultiQT), an online, wrapper-based algorithm. MultiQT operates by taking the output of any base point or quantile forecaster and adaptively adjusting it. This adjustment process ensures that the resulting multi-level quantile forecasts are both properly calibrated (meaning the forecasts' coverage matches the nominal quantile level) and correctly ordered (monotonic across quantiles), even when the underlying data distribution changes adversarially. The method is designed with an online learning framework, continuously correcting forecasts, and is theoretically backed by a no-regret guarantee for quantile loss.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The paper introduces MultiQT, an online method that guarantees simultaneous calibration of multi-level quantile forecasts while preserving their ordering. It demonstrates that MultiQT offers robustness against adversarial distribution shifts and comes with a no-regret guarantee, ensuring asymptotic performance parity or improvement in terms of quantile loss. Crucially, empirical evaluations show MultiQT significantly enhances the calibration of real forecasters, particularly in critical domains like epidemic forecasting.</p>
+                    <p>MultiQT significantly enhances the calibration of existing forecasters, as empirically shown in real-world epidemic and energy forecasting applications. It effectively produces quantile forecasts that are both properly calibrated (i.e., forecasts are larger than the target at the specified $\alpha$-fraction of time) and correctly ordered across multiple quantile levels, without asymptotically degrading the underlying forecaster's performance relative to the quantile loss.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This method can significantly improve the trustworthiness and actionable insights derived from predictive models used in public health. By providing reliably calibrated and ordered quantile forecasts, it enhances the ability of healthcare systems and policymakers to accurately communicate risks, allocate critical resources (like hospital capacity, medical supplies, and vaccination efforts) more effectively, and make timely, evidence-based decisions during disease outbreaks or other health emergencies.</p>
+                <p>This method can lead to more reliable and trustworthy forecasts for critical medical and public health scenarios. For instance, in epidemic forecasting, it could provide significantly better and more robust estimates of future case counts, hospitalization rates, or intensive care unit (ICU) bed needs, including their associated uncertainty ranges. This allows public health officials and healthcare administrators to make more informed decisions regarding interventions, vaccine distribution, healthcare staffing, and resource allocation, ultimately improving patient outcomes, reducing disease spread, and optimizing public health response strategies.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Limitations are not explicitly stated in the abstract. As a wrapper, MultiQT's primary role is calibration correction rather than improving the raw predictive accuracy (sharpness) of the underlying forecaster.</p>
+                <p>The abstract does not explicitly state limitations of the MultiQT method itself, instead focusing on its guarantees and improvements.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Future research directions are not explicitly mentioned in the abstract.</p>
+                <p>The abstract does not explicitly state future research directions.</p>
             </section>
             
 
@@ -120,11 +120,13 @@
                     
                     <span class="tag">Epidemiology</span>
                     
-                    <span class="tag">Public health</span>
+                    <span class="tag">Public Health</span>
                     
-                    <span class="tag">Infectious disease modeling</span>
+                    <span class="tag">Infectious Disease Modeling</span>
                     
-                    <span class="tag">Medical resource planning</span>
+                    <span class="tag">Emergency Preparedness</span>
+                    
+                    <span class="tag">Healthcare Operations</span>
                     
                 </div>
             </section>
@@ -145,9 +147,9 @@
                     
                     <span class="tag tag-keyword">No-regret</span>
                     
-                    <span class="tag tag-keyword">Adversarial robustness</span>
+                    <span class="tag tag-keyword">Uncertainty quantification</span>
                     
-                    <span class="tag tag-keyword">Statistical machine learning</span>
+                    <span class="tag tag-keyword">Machine learning</span>
                     
                 </div>
             </section>
