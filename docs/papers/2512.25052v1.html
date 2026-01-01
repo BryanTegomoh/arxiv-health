@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdaGReS:Adaptive Greedy Context Selection via Redundancy-Aware Scoring for Token-Budgeted RAG - Health AI Hub</title>
+    <meta name="description" content="AdaGReS is a novel framework for token-budgeted Retrieval-Augmented Generation (RAG) that addresses the issue of redundant context selection by optimizing a set">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>AdaGReS:Adaptive Greedy Context Selection via Redundancy-Aware Scoring for Token-Budgeted RAG</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2512.25052v1" target="_blank">2512.25052v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2025-12-31
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Chao Peng, Bin Wang, Zhilei Long, Jinfang Sheng
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL, cs.AI, cs.IR
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.85 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2512.25052v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2512.25052v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">AdaGReS is a novel framework for token-budgeted Retrieval-Augmented Generation (RAG) that addresses the issue of redundant context selection by optimizing a set-level objective combining query relevance and intra-set redundancy penalties. It employs greedy selection with an adaptively calibrated trade-off parameter, theoretically guaranteeing near-optimal context selection, which translates to improved answer quality and robustness across various domains, including biomedical. This framework significantly enhances the efficiency and reliability of RAG by ensuring high-quality, non-redundant contextual information.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>In medical and health contexts, the accuracy and reliability of information retrieved by RAG systems are paramount. AdaGReS ensures that critical medical queries receive highly relevant and non-redundant context, preventing misinformation and improving the precision of generated responses, which is vital for clinical decision support, drug information, and biomedical research.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>AdaGReS can significantly enhance medical AI applications built on Retrieval-Augmented Generation (RAG). This includes systems for answering complex medical questions from clinical guidelines or research papers, improving the accuracy and relevance of information retrieved for clinical decision support, summarizing patient records or biomedical literature more efficiently, and optimizing drug discovery platforms by providing high-quality, non-redundant context from vast drug-related databases to generative AI models.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Redundancy Problem Solved**: Addresses the critical issue in RAG where standard top-k retrieval often returns redundant or near-duplicate chunks, wasting token budget and degrading generation quality.</li>
+                    
+                    <li>**Set-Level Optimization**: Introduces a set-level objective function that explicitly balances query-chunk relevance with an intra-set redundancy penalty, moving beyond individual chunk scoring.</li>
+                    
+                    <li>**Adaptive Greedy Selection**: Utilizes a greedy selection approach based on marginal gains from the novel objective, ensuring context selection is optimal given the budget constraint.</li>
+                    
+                    <li>**Instance-Adaptive Calibration**: Implements a closed-form, instance-adaptive calibration mechanism for the relevance-redundancy trade-off parameter, eliminating the need for manual tuning and adapting to candidate-pool statistics and budget limits.</li>
+                    
+                    <li>**Theoretical Guarantees**: Provides theoretical analysis demonstrating that the proposed objective exhibits epsilon-approximate submodularity under practical conditions, offering near-optimality guarantees for the greedy selection.</li>
+                    
+                    <li>**Improved Context Quality & Robustness**: Experiments show consistent improvements in redundancy control and overall context quality, leading to better end-to-end answer quality and increased robustness of the RAG system.</li>
+                    
+                    <li>**Applicability to Biomedical Data**: Demonstrated effectiveness on a high-redundancy biomedical (drug) corpus, highlighting its relevance for specialized medical information retrieval.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>AdaGReS operates by performing a greedy selection of context chunks under a token budget. This selection is guided by a novel set-level objective function that simultaneously considers the relevance of each candidate chunk to the query and penalizes redundancy within the already selected context set. A key methodological contribution is a closed-form, instance-adaptive calibration method for the relevance-redundancy trade-off parameter, which automatically adjusts based on the statistical properties of the candidate pool and the token budget, removing the need for manual hyperparameter tuning. The method's effectiveness is further supported by a theoretical analysis demonstrating epsilon-approximate submodularity of its objective, ensuring near-optimal performance of the greedy selection.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary findings indicate that AdaGReS significantly outperforms baseline methods in controlling redundancy within the retrieved context, leading to a substantial improvement in the overall quality of the selected context. This enhanced context quality directly translates to superior end-to-end answer quality and increased robustness of the RAG system. These improvements were consistently observed across diverse datasets, including a high-redundancy biomedical (drug) corpus, underscoring its broad applicability and effectiveness in specialized domains.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>AdaGReS has the potential to profoundly impact clinical practice and medical research by making RAG systems more reliable and efficient. By ensuring that medical professionals receive precise, non-redundant, and high-quality information for queries related to diagnoses, treatment plans, drug interactions, or patient management, it can enhance diagnostic accuracy, optimize therapeutic decisions, and improve patient safety. The reduction in redundant information also saves valuable computational resources, making advanced RAG applications more practical for real-time clinical use and accelerating drug discovery and biomedical research by providing cleaner, more focused contextual data.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the AdaGReS framework. Common considerations for such methods, like computational overhead for the adaptive calibration or scalability challenges with extremely large document corpora, are not mentioned.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions. However, potential avenues could include exploring AdaGReS's application in multimodal RAG, investigating its performance on even larger and more complex medical datasets, or integrating it with active learning strategies for continuous improvement in real-world clinical settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Biomedical Research</span>
+                    
+                    <span class="tag">Pharmacology</span>
+                    
+                    <span class="tag">Drug Information Systems</span>
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Precision Medicine</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Retrieval-Augmented Generation (RAG)</span>
+                    
+                    <span class="tag tag-keyword">Context Selection</span>
+                    
+                    <span class="tag tag-keyword">Redundancy Control</span>
+                    
+                    <span class="tag tag-keyword">Token Budget</span>
+                    
+                    <span class="tag tag-keyword">Greedy Algorithm</span>
+                    
+                    <span class="tag tag-keyword">Submodularity</span>
+                    
+                    <span class="tag tag-keyword">Biomedical Information</span>
+                    
+                    <span class="tag tag-keyword">Natural Language Processing</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Retrieval-augmented generation (RAG) is highly sensitive to the quality of selected context, yet standard top-k retrieval often returns redundant or near-duplicate chunks that waste token budget and degrade downstream generation. We present AdaGReS, a redundancy-aware context selection framework for token-budgeted RAG that optimizes a set-level objective combining query-chunk relevance and intra-set redundancy penalties. AdaGReS performs greedy selection under a token-budget constraint using marginal gains derived from the objective, and introduces a closed-form, instance-adaptive calibration of the relevance-redundancy trade-off parameter to eliminate manual tuning and adapt to candidate-pool statistics and budget limits. We further provide a theoretical analysis showing that the proposed objective exhibits epsilon-approximate submodularity under practical embedding similarity conditions, yielding near-optimality guarantees for greedy selection. Experiments on open-domain question answering (Natural Questions) and a high-redundancy biomedical (drug) corpus demonstrate consistent improvements in redundancy control and context quality, translating to better end-to-end answer quality and robustness across settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>Preprint. Under review</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
