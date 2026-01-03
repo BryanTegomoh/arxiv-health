@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AdaGReS:Adaptive Greedy Context Selection via Redundancy-Aware Scoring for Token-Budgeted RAG - Health AI Hub</title>
-    <meta name="description" content="Retrieval-augmented generation (RAG) is highly sensitive to the quality of selected context, yet standard top-k retrieval often returns redundant or near-duplic">
+    <meta name="description" content="AdaGReS introduces a novel redundancy-aware framework for token-budgeted Retrieval-augmented Generation (RAG) that optimizes context selection by balancing quer">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">Retrieval-augmented generation (RAG) is highly sensitive to the quality of selected context, yet standard top-k retrieval often returns redundant or near-duplicate chunks that waste token budget and degrade downstream generation. We present AdaGReS, a redundancy-aware context selection framework for...</p>
+                <p class="summary-text">AdaGReS introduces a novel redundancy-aware framework for token-budgeted Retrieval-augmented Generation (RAG) that optimizes context selection by balancing query-chunk relevance with intra-set redundancy penalties. It employs greedy selection with an adaptively calibrated trade-off parameter, providing theoretical guarantees and significantly improving context quality, answer accuracy, and robustness, particularly for high-redundancy biomedical information.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Medical/health related research</p>
+                <p>This research is highly relevant to medicine as it addresses the critical need to efficiently and accurately distill non-redundant information from vast, often repetitive, medical literature, clinical notes, and drug databases. By improving context selection in RAG, AdaGReS can enhance the reliability of AI-generated responses to complex medical queries and support informed decision-making in healthcare.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>AdaGReS can be applied to enhance AI systems that use RAG to extract and synthesize information from vast and often redundant medical databases, scientific literature, or electronic health records. By providing more relevant and less redundant context within token budget limits, it can improve the accuracy and efficiency of medical AI applications like clinical decision support, drug information systems, and automated medical question answering, ultimately supporting healthcare professionals and researchers in making more informed decisions.</p>
+                <p>AdaGReS can be applied to enhance medical AI applications that rely on Retrieval-Augmented Generation (RAG) systems. Specifically, it can improve the quality and efficiency of retrieving and synthesizing information from large biomedical datasets, drug databases, or electronic health records. This can aid in tasks such as generating summaries of drug properties, answering complex clinical questions, identifying drug interactions, or extracting relevant information from scientific literature, by ensuring that the limited context budget is used for diverse, non-redundant, and highly relevant information.</p>
             </section>
             
 
@@ -68,7 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>See abstract for details</li>
+                    <li>Standard top-k RAG retrieval often yields redundant chunks, wasting token budget and degrading downstream generation quality.</li>
+                    
+                    <li>AdaGReS proposes a redundancy-aware context selection framework that optimizes a set-level objective combining query-chunk relevance and intra-set redundancy penalties.</li>
+                    
+                    <li>It uses a greedy selection process under a token-budget constraint, leveraging marginal gains derived from its objective function.</li>
+                    
+                    <li>A key innovation is a closed-form, instance-adaptive calibration mechanism for the relevance-redundancy trade-off parameter, eliminating manual tuning and adapting to specific data and budget limits.</li>
+                    
+                    <li>The proposed objective function exhibits epsilon-approximate submodularity under practical conditions, providing near-optimality guarantees for the greedy selection method.</li>
+                    
+                    <li>Experimental results demonstrate consistent improvements in redundancy control, context quality, and end-to-end answer quality on open-domain QA (Natural Questions).</li>
+                    
+                    <li>The framework showed particular effectiveness and robustness when applied to a high-redundancy biomedical (drug) corpus, highlighting its applicability in specialized medical domains.</li>
                     
                 </ul>
             </section>
@@ -76,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>See paper for methodology</p>
+                    <p>AdaGReS employs a set-level objective function designed to maximize query-chunk relevance while penalizing intra-set redundancy. Context chunks are greedily selected under a token-budget constraint based on their marginal gains from this objective. A unique aspect is the instance-adaptive, closed-form calibration of the relevance-redundancy trade-off parameter, eliminating the need for manual tuning. The methodology also includes a theoretical analysis proving the epsilon-approximate submodularity of the objective, thus guaranteeing near-optimality for the greedy selection.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>See abstract</p>
+                    <p>The study found that AdaGReS consistently improved redundancy control and context quality, leading to superior end-to-end answer quality and increased robustness compared to standard RAG approaches. These benefits were observed across general open-domain question answering tasks and were particularly pronounced on a high-redundancy biomedical (drug) corpus, indicating its strong performance in specialized, information-dense domains.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>Potential clinical applications</p>
+                <p>AdaGReS has the potential to significantly enhance AI applications in clinical settings by providing more precise, concise, and accurate information from medical knowledge bases. This could lead to improved AI-powered diagnostic tools, more reliable summaries of patient records, optimized drug information retrieval, and better support for clinical guidelines and research, ultimately aiding healthcare professionals in making more efficient and evidence-based decisions.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Not analyzed</p>
+                <p>The abstract does not explicitly state specific limitations of the AdaGReS framework. Common considerations for RAG systems, such as reliance on the quality of underlying embeddings or scalability to extremely esoteric or nuanced medical queries, might apply but are not addressed here.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not analyzed</p>
+                <p>The abstract does not explicitly mention future research directions for AdaGReS.</p>
             </section>
             
 
@@ -108,7 +120,17 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">cs.CL</span>
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Pharmacology</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Medical Information Retrieval</span>
+                    
+                    <span class="tag">Health Informatics</span>
+                    
+                    <span class="tag">Biomedical Research</span>
                     
                 </div>
             </section>
@@ -117,11 +139,23 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">cs.CL</span>
+                    <span class="tag tag-keyword">RAG</span>
                     
-                    <span class="tag tag-keyword">cs.AI</span>
+                    <span class="tag tag-keyword">context selection</span>
                     
-                    <span class="tag tag-keyword">cs.IR</span>
+                    <span class="tag tag-keyword">redundancy</span>
+                    
+                    <span class="tag tag-keyword">token budget</span>
+                    
+                    <span class="tag tag-keyword">greedy algorithm</span>
+                    
+                    <span class="tag tag-keyword">submodularity</span>
+                    
+                    <span class="tag tag-keyword">biomedical</span>
+                    
+                    <span class="tag tag-keyword">drug discovery</span>
+                    
+                    <span class="tag tag-keyword">question answering</span>
                     
                 </div>
             </section>
