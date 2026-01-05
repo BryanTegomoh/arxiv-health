@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adapting Natural Language Processing Models Across Jurisdictions: A pilot Study in Canadian Cancer Registries - Health AI Hub</title>
+    <meta name="description" content="This pilot study demonstrates the successful adaptation of transformer-based NLP models across Canadian provincial cancer registries, specifically for classifyi">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Adapting Natural Language Processing Models Across Jurisdictions: A pilot Study in Canadian Cancer Registries</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.00787v1" target="_blank">2601.00787v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-02
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Jonathan Simkin, Lovedeep Gondara, Zeeshan Rizvi, Gregory Doyle, Jeff Dowden, Dan Bond, Desmond Martin, Raymond Ng
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.00787v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.00787v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This pilot study demonstrates the successful adaptation of transformer-based NLP models across Canadian provincial cancer registries, specifically for classifying pathology reports into cancer/non-cancer and reportable/non-reportable categories. It shows that models pretrained in one jurisdiction can be effectively localized to another with modest fine-tuning, and a novel ensemble approach significantly reduces missed cancers, paving the way for a privacy-preserving, interoperable NLP infrastructure for pan-Canadian cancer surveillance.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for improving the efficiency and timeliness of cancer data collection and surveillance, which directly impacts public health. By automating the classification of pathology reports, it can reduce the burden on manual abstractors, accelerate the availability of crucial cancer statistics, and enable more timely epidemiological studies and resource allocation for cancer control programs.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper uses transformer-based Natural Language Processing (NLP) models (e.g., BCCRTron, GatorTron) to automate the classification of de-identified pathology reports for population-based cancer registries. Specifically, it performs 'cancer vs. non-cancer' and 'reportable vs. non-reportable' tasks, aiming to reduce manual abstraction efforts, improve data accuracy (e.g., reducing missed cancers), and enhance the timeliness of cancer data for surveillance and research. It also proposes a privacy-preserving workflow for sharing model weights to facilitate a pan-Canadian foundation model for cancer pathology.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Manual abstraction of pathology reports is resource-intensive and delays cancer data, highlighting the need for automated solutions in cancer registries.</li>
+                    
+                    <li>The study conducts the first cross-provincial evaluation of adapting transformer models (BCCRTron and GatorTron) for cancer surveillance in Canada, addressing the challenge of differing reporting conventions.</li>
+                    
+                    <li>Models were fine-tuned using approximately 104,000 (Tier 1: cancer vs. non-cancer) and 22,000 (Tier 2: reportable vs. non-reportable) de-identified pathology reports from the Newfoundland & Labrador Cancer Registry (NLCR).</li>
+                    
+                    <li>Adapted models maintained high performance on NLCR test sets, demonstrating that transformers pretrained in one jurisdiction can be localized to another with modest fine-tuning.</li>
+                    
+                    <li>A conservative OR-ensemble combining BCCRTron and GatorTron significantly improved sensitivity, achieving 0.99 recall for both Tier 1 and Tier 2 tasks.</li>
+                    
+                    <li>The ensemble substantially reduced missed cancers to 24 for Tier 1 and missed reportable cancers to 33 for Tier 2, outperforming individual standalone models (e.g., 48 and 54 missed cancers for standalone models in Tier 1).</li>
+                    
+                    <li>A privacy-preserving workflow, involving only the sharing of model weights between provinces, supports the development of interoperable NLP infrastructure and a future pan-Canadian foundation model for cancer pathology.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study fine-tuned two pre-trained transformer models, BCCRTron (a domain-adapted model) and GatorTron (a biomedical transformer), using de-identified pathology reports from the Newfoundland & Labrador Cancer Registry (NLCR). Training involved two tasks: Tier 1 (cancer vs. non-cancer) and Tier 2 (reportable vs. non-reportable), utilizing complementary synoptic and diagnosis-focused report section input pipelines. Model performance was evaluated on NLCR test sets, and the models were then combined using a conservative OR-ensemble to enhance sensitivity. A privacy-preserving workflow for sharing model weights was also implemented.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The adapted transformer models demonstrated high performance in classifying pathology reports for cancer surveillance across jurisdictions, proving that modest fine-tuning can localize models effectively. The conservative OR-ensemble approach significantly improved sensitivity, achieving 0.99 recall for both Tier 1 (cancer vs. non-cancer) and Tier 2 (reportable vs. non-reportable) tasks, and substantially reducing missed cancers to 24 (Tier 1) and missed reportable cancers to 33 (Tier 2). This confirms that combining complementary text representations in an ensemble dramatically improves error coverage. A privacy-preserving workflow enabling model weight sharing fosters interoperable NLP infrastructure.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides a robust and scalable solution to automate a critical, labor-intensive process in cancer registries, directly accelerating the availability of accurate cancer data. It can lead to more efficient public health reporting, faster identification of cancer trends, and improved resource allocation for cancer prevention and treatment initiatives across Canadian provinces. The privacy-preserving workflow sets a precedent for secure collaboration and shared AI solutions in national health systems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>As described in the title, this is a 'pilot study', implying a preliminary scope which may be limited in the number of jurisdictions involved or the generalizability across a broader range of cancer types and pathology report complexities. Specific limitations beyond this are not detailed in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The study suggests establishing interoperable NLP infrastructure across provinces and developing a 'future pan-Canadian foundation model for cancer pathology and registry workflows.' This implies expanding the model adaptation and ensemble approach to encompass more Canadian provinces and creating a unified, robust NLP system for national cancer surveillance and research.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Pathology</span>
+                    
+                    <span class="tag">Public Health</span>
+                    
+                    <span class="tag">Epidemiology</span>
+                    
+                    <span class="tag">Health Informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">NLP</span>
+                    
+                    <span class="tag tag-keyword">Cancer Registry</span>
+                    
+                    <span class="tag tag-keyword">Transformer Models</span>
+                    
+                    <span class="tag tag-keyword">Pathology Reports</span>
+                    
+                    <span class="tag tag-keyword">Ensemble Learning</span>
+                    
+                    <span class="tag tag-keyword">Cross-Jurisdictional Adaptation</span>
+                    
+                    <span class="tag tag-keyword">Cancer Surveillance</span>
+                    
+                    <span class="tag tag-keyword">Interoperability</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Population-based cancer registries depend on pathology reports as their primary diagnostic source, yet manual abstraction is resource-intensive and contributes to delays in cancer data. While transformer-based NLP systems have improved registry workflows, their ability to generalize across jurisdictions with differing reporting conventions remains poorly understood. We present the first cross-provincial evaluation of adapting BCCRTron, a domain-adapted transformer model developed at the British Columbia Cancer Registry, alongside GatorTron, a biomedical transformer model, for cancer surveillance in Canada. Our training dataset consisted of approximately 104,000 and 22,000 de-identified pathology reports from the Newfoundland & Labrador Cancer Registry (NLCR) for Tier 1 (cancer vs. non-cancer) and Tier 2 (reportable vs. non-reportable) tasks, respectively. Both models were fine-tuned using complementary synoptic and diagnosis focused report section input pipelines. Across NLCR test sets, the adapted models maintained high performance, demonstrating transformers pretrained in one jurisdiction can be localized to another with modest fine-tuning. To improve sensitivity, we combined the two models using a conservative OR-ensemble achieving a Tier 1 recall of 0.99 and reduced missed cancers to 24, compared with 48 and 54 for the standalone models. For Tier 2, the ensemble achieved 0.99 recall and reduced missed reportable cancers to 33, compared with 54 and 46 for the individual models. These findings demonstrate that an ensemble combining complementary text representations substantially reduce missed cancers and improve error coverage in cancer-registry NLP. We implement a privacy-preserving workflow in which only model weights are shared between provinces, supporting interoperable NLP infrastructure and a future pan-Canadian foundation model for cancer pathology and registry workflows.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
