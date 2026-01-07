@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-RADS Synthetic Radiology Report Dataset and Head-to-Head Benchmarking of 41 Open-Weight and Proprietary Language Models - Health AI Hub</title>
+    <meta name="description" content="This paper introduces RXL-RADSet, a radiologist-verified synthetic dataset of 1,600 multi-RADS radiology reports, designed to benchmark language models for auto">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Multi-RADS Synthetic Radiology Report Dataset and Head-to-Head Benchmarking of 41 Open-Weight and Proprietary Language Models</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.03232v1" target="_blank">2601.03232v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-06
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Kartik Bose, Abhinandan Kumar, Raghuraman Soundararajan, Priya Mudgil, Samonee Ralmilay, Niharika Dutta, Manphool Singhal, Arun Kumar, Saugata Sen, Anurima Patra, Priya Ghosh, Abanti Das, Amit Gupta, Ashish Verma, Dipin Sudhakaran, Ekta Dhamija, Himangi Unde, Ishan Kumar, Krithika Rangarajan, Prerna Garg, Rachel Sequeira, Sudhin Shylendran, Taruna Yadav, Tej Pal, Pankaj Gupta
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.03232v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.03232v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces RXL-RADSet, a radiologist-verified synthetic dataset of 1,600 multi-RADS radiology reports, designed to benchmark language models for automated RADS assignment. It demonstrates that large open-weight small language models (20-32B parameters) can achieve validity and accuracy approaching proprietary models like GPT-5.2, especially under guided prompting, though challenges persist for highly complex RADS schemes.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Standardized Reporting and Data Systems (RADS) are crucial for consistent risk communication and patient management in radiology. Automating RADS assignment from narrative reports can significantly enhance reporting efficiency, reduce human error, ensure consistency in diagnoses, and streamline data analysis for clinical research and quality improvement initiatives.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the automated assignment of standardized risk communication scores (RADS categories) from free-text radiology reports using language models. This aims to enhance consistency, efficiency, and clarity in medical reporting, ultimately aiding diagnosis, treatment planning, and communication between healthcare providers and patients.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Creation of RXL-RADSet, a novel 1,600-report radiologist-verified synthetic benchmark covering 10 diverse RADS frameworks (BI-RADS, CAD-RADS, GB-RADS, LI-RADS, Lung-RADS, NI-RADS, O-RADS, PI-RADS, TI-RADS, VI-RADS) across multiple modalities.</li>
+                    
+                    <li>Benchmarking of 41 open-weight Small Language Models (SLMs) ranging from 0.135B to 32B parameters, alongside a proprietary model (GPT-5.2), for automated RADS assignment.</li>
+                    
+                    <li>GPT-5.2 achieved a high 99.8% validity and 81.1% accuracy under guided prompting on the RXL-RADSet.</li>
+                    
+                    <li>Top-performing large SLMs (20-32B parameters) demonstrated comparable validity (~99%) and mid-to-high 70% accuracy, nearing GPT-5.2's performance.</li>
+                    
+                    <li>Model performance significantly scaled with size, showing an inflection point between <1B and >=10B parameters, indicating the importance of model capacity.</li>
+                    
+                    <li>Guided prompting substantially improved both validity (99.2% vs 96.7%) and accuracy (78.5% vs 69.6%) compared to zero-shot prompting, highlighting the importance of prompt engineering.</li>
+                    
+                    <li>Performance decline with increased RADS complexity was primarily due to classification difficulty rather than the generation of invalid outputs.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study involved creating RXL-RADSet, a dataset of 1,600 synthetic radiology reports across 10 RADS frameworks and multiple modalities. Reports were generated by LLMs using scenario plans and simulated radiologist styles, then underwent a two-stage radiologist verification. Forty-one quantized open-weight SLMs (0.135B-32B parameters) and GPT-5.2 were evaluated for automated RADS assignment. Performance was assessed based on primary endpoints of validity (well-formed, interpretable output) and accuracy (correct RADS classification) using a fixed guided prompt, with a secondary analysis comparing guided versus zero-shot prompting.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>GPT-5.2 achieved 99.8% validity and 81.1% accuracy with guided prompting. Pooled SLMs averaged 96.8% validity and 61.1% accuracy, but top-performing large SLMs (20-32B) reached approximately 99% validity and mid-to-high 70% accuracy, demonstrating performance comparable to the proprietary model. Performance consistently scaled with model size, showing a marked improvement for models >=10B parameters. Guided prompting significantly improved both validity (99.2% vs 96.7%) and accuracy (78.5% vs 69.6%) over zero-shot prompting. The study also found that performance degradation for more complex RADS schemes was due to classification difficulty, not the generation of invalid outputs.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research provides a foundational benchmark and demonstrates the significant potential for large open-weight language models to automate or assist with RADS assignment in clinical radiology. By improving the efficiency and consistency of radiology reporting, these models could reduce radiologist workload, enhance the standardization of risk communication, and enable more robust data extraction for clinical research and quality assurance. The findings suggest that with careful prompting, open-weight models could become valuable tools to support diagnostic processes and patient management in healthcare.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The primary limitation noted is that the RXL-RADSet is comprised of synthetic radiology reports, which may not fully replicate the intricate variability and real-world complexities found in authentic clinical documentation. Additionally, while performance was strong, the abstract indicates that "gaps remain for higher-complexity schemes," suggesting that current models still face challenges in accurately classifying the most nuanced or intricate RADS categories.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future research should focus on bridging the performance gaps identified in higher-complexity RADS schemes, potentially through specialized model fine-tuning or more sophisticated prompting strategies. Further validation using real-world clinical datasets would be crucial to assess the generalizability and robustness of these models. Exploring the development of domain-specific, smaller models that maintain high performance for efficient clinical deployment could also be a valuable direction.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Hepatology</span>
+                    
+                    <span class="tag">Urology</span>
+                    
+                    <span class="tag">Gynecology</span>
+                    
+                    <span class="tag">Pulmonology</span>
+                    
+                    <span class="tag">Cardiology</span>
+                    
+                    <span class="tag">Endocrinology</span>
+                    
+                    <span class="tag">Neurology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Radiology</span>
+                    
+                    <span class="tag tag-keyword">RADS</span>
+                    
+                    <span class="tag tag-keyword">Language Models</span>
+                    
+                    <span class="tag tag-keyword">Benchmarking</span>
+                    
+                    <span class="tag tag-keyword">Synthetic Data</span>
+                    
+                    <span class="tag tag-keyword">AI in Medicine</span>
+                    
+                    <span class="tag tag-keyword">Automated Reporting</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Background: Reporting and Data Systems (RADS) standardize radiology risk communication but automated RADS assignment from narrative reports is challenging because of guideline complexity, output-format constraints, and limited benchmarking across RADS frameworks and model sizes. Purpose: To create RXL-RADSet, a radiologist-verified synthetic multi-RADS benchmark, and compare validity and accuracy of open-weight small language models (SLMs) with a proprietary model for RADS assignment. Materials and Methods: RXL-RADSet contains 1,600 synthetic radiology reports across 10 RADS (BI-RADS, CAD-RADS, GB-RADS, LI-RADS, Lung-RADS, NI-RADS, O-RADS, PI-RADS, TI-RADS, VI-RADS) and multiple modalities. Reports were generated by LLMs using scenario plans and simulated radiologist styles and underwent two-stage radiologist verification. We evaluated 41 quantized SLMs (12 families, 0.135-32B parameters) and GPT-5.2 under a fixed guided prompt. Primary endpoints were validity and accuracy; a secondary analysis compared guided versus zero-shot prompting. Results: Under guided prompting GPT-5.2 achieved 99.8% validity and 81.1% accuracy (1,600 predictions). Pooled SLMs (65,600 predictions) achieved 96.8% validity and 61.1% accuracy; top SLMs in the 20-32B range reached ~99% validity and mid-to-high 70% accuracy. Performance scaled with model size (inflection between <1B and >=10B) and declined with RADS complexity primarily due to classification difficulty rather than invalid outputs. Guided prompting improved validity (99.2% vs 96.7%) and accuracy (78.5% vs 69.6%) compared with zero-shot. Conclusion: RXL-RADSet provides a radiologist-verified multi-RADS benchmark; large SLMs (20-32B) can approach proprietary-model performance under guided prompting, but gaps remain for higher-complexity schemes.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
