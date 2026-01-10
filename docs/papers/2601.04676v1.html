@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DB-MSMUNet:Dual Branch Multi-scale Mamba UNet for Pancreatic CT Scans Segmentation - Health AI Hub</title>
+    <meta name="description" content="This paper introduces DB-MSMUNet, a novel dual-branch multi-scale Mamba UNet architecture, for accurate segmentation of the pancreas and its lesions in CT scans">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>DB-MSMUNet:Dual Branch Multi-scale Mamba UNet for Pancreatic CT Scans Segmentation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.04676v1" target="_blank">2601.04676v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-08
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Qiu Guan, Zhiqiang Yang, Dezhang Ye, Yang Chen, Xinli Xu, Ying Tang
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.04676v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.04676v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces DB-MSMUNet, a novel dual-branch multi-scale Mamba UNet architecture, for accurate segmentation of the pancreas and its lesions in CT scans. The model effectively addresses challenges like low contrast and blurry boundaries by integrating multi-scale state space modeling, deformable convolutions, a dual-decoder with edge and area enhancement paths, and auxiliary deep supervision. Experiments on three datasets demonstrate that DB-MSMUNet achieves state-of-the-art Dice Similarity Coefficients, enhancing segmentation accuracy, edge preservation, and robustness for pancreatic cancer diagnosis and treatment.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Accurate segmentation of the pancreas and its lesions in CT scans is critical for the precise diagnosis, staging, and treatment planning of pancreatic cancer. This research offers a highly robust and accurate tool that can assist clinicians in these crucial tasks, potentially leading to earlier and more effective interventions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The paper describes an AI application designed to automatically or semi-automatically segment the pancreas and its lesions from CT scans. This AI tool aims to improve the accuracy and efficiency of diagnosing pancreatic cancer and planning its treatment by providing more precise anatomical and pathological segmentation information to clinicians.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>DB-MSMUNet is a novel encoder-decoder architecture designed for robust segmentation of the pancreas and its lesions in CT scans, addressing challenges such as low tissue contrast, blurry boundaries, and irregular shapes.</li>
+                    
+                    <li>The encoder incorporates a Multi-scale Mamba Module (MSMM) combining deformable convolutions and multi-scale state space modeling to improve global context understanding and local deformation adaptation.</li>
+                    
+                    <li>A dual-decoder design is employed: an Edge Enhancement Path (EEP) in the edge decoder explicitly captures boundary cues, while a Multi-layer Decoder (MLD) in the area decoder preserves fine-grained details and reconstructs small lesions using multi-scale semantic features.</li>
+                    
+                    <li>Auxiliary Deep Supervision (ADS) heads are integrated at multiple scales into both decoders to provide more accurate gradient feedback and enhance the discriminative capability of multi-scale features.</li>
+                    
+                    <li>The model was evaluated on three distinct datasets: NIH Pancreas, MSD, and a clinical pancreatic tumor dataset, demonstrating strong generalizability.</li>
+                    
+                    <li>DB-MSMUNet achieved Dice Similarity Coefficients of 89.47% (NIH), 87.59% (MSD), and 89.02% (clinical), consistently outperforming most existing state-of-the-art methods.</li>
+                    
+                    <li>The proposed method shows significant improvements in segmentation accuracy, edge preservation, and overall robustness, making it suitable for real-world clinical applications.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The proposed DB-MSMUNet is an encoder-decoder architecture. The encoder utilizes a Multi-scale Mamba Module (MSMM) combining deformable convolutions for local deformation adaptation and multi-scale state space modeling for global context. It features a dual-decoder design: an edge decoder with an Edge Enhancement Path (EEP) for boundary refinement and an area decoder with a Multi-layer Decoder (MLD) for fine-grained detail and small lesion reconstruction using multi-scale deep semantic features. Auxiliary Deep Supervision (ADS) heads are applied at multiple scales to both decoders to enhance feature learning and gradient feedback. The network was trained and tested on three public and clinical CT datasets.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>DB-MSMUNet achieved Dice Similarity Coefficients (DSC) of 89.47% on the NIH Pancreas dataset, 87.59% on the MSD dataset, and 89.02% on a clinical pancreatic tumor dataset. These results consistently surpass most existing state-of-the-art methods in terms of segmentation accuracy, edge preservation, and robustness, demonstrating the model's effectiveness and generalizability across diverse data.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This method has the potential to significantly improve the precision of pancreatic cancer diagnosis, staging, and treatment planning by providing highly accurate and robust automated segmentation of the pancreas and its lesions from CT scans. This can reduce inter-observer variability, streamline clinical workflows, and ultimately contribute to better patient outcomes by facilitating more informed clinical decisions.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Gastroenterology</span>
+                    
+                    <span class="tag">Medical Imaging Analysis</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Pancreas Segmentation</span>
+                    
+                    <span class="tag tag-keyword">CT Scans</span>
+                    
+                    <span class="tag tag-keyword">Deep Learning</span>
+                    
+                    <span class="tag tag-keyword">Mamba</span>
+                    
+                    <span class="tag tag-keyword">UNet</span>
+                    
+                    <span class="tag tag-keyword">State Space Models</span>
+                    
+                    <span class="tag tag-keyword">Dual-Decoder</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Accurate segmentation of the pancreas and its lesions in CT scans is crucial for the precise diagnosis and treatment of pancreatic cancer. However, it remains a highly challenging task due to several factors such as low tissue contrast with surrounding organs, blurry anatomical boundaries, irregular organ shapes, and the small size of lesions. To tackle these issues, we propose DB-MSMUNet (Dual-Branch Multi-scale Mamba UNet), a novel encoder-decoder architecture designed specifically for robust pancreatic segmentation. The encoder is constructed using a Multi-scale Mamba Module (MSMM), which combines deformable convolutions and multi-scale state space modeling to enhance both global context modeling and local deformation adaptation. The network employs a dual-decoder design: the edge decoder introduces an Edge Enhancement Path (EEP) to explicitly capture boundary cues and refine fuzzy contours, while the area decoder incorporates a Multi-layer Decoder (MLD) to preserve fine-grained details and accurately reconstruct small lesions by leveraging multi-scale deep semantic features. Furthermore, Auxiliary Deep Supervision (ADS) heads are added at multiple scales to both decoders, providing more accurate gradient feedback and further enhancing the discriminative capability of multi-scale features. We conduct extensive experiments on three datasets: the NIH Pancreas dataset, the MSD dataset, and a clinical pancreatic tumor dataset provided by collaborating hospitals. DB-MSMUNet achieves Dice Similarity Coefficients of 89.47%, 87.59%, and 89.02%, respectively, outperforming most existing state-of-the-art methods in terms of segmentation accuracy, edge preservation, and robustness across different datasets. These results demonstrate the effectiveness and generalizability of the proposed method for real-world pancreatic CT segmentation tasks.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
