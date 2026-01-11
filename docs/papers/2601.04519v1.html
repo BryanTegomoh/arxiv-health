@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokenSeg: Efficient 3D Medical Image Segmentation via Hierarchical Visual Token Compression - Health AI Hub</title>
+    <meta name="description" content="TokenSeg introduces a novel boundary-aware sparse token representation framework designed for efficient and accurate 3D medical image segmentation. It achieves ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>TokenSeg: Efficient 3D Medical Image Segmentation via Hierarchical Visual Token Compression</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.04519v1" target="_blank">2601.04519v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-08
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Sen Zeng, Hong Zhou, Zheng Zhu, Yang Liu
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.04519v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.04519v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">TokenSeg introduces a novel boundary-aware sparse token representation framework designed for efficient and accurate 3D medical image segmentation. It achieves state-of-the-art performance on diverse MRI datasets (breast, cardiac, brain) while substantially reducing computational demands in terms of GPU memory and inference latency. This highlights the effectiveness of anatomically informed sparse representations for practical clinical applications.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine as it significantly improves the efficiency and accuracy of 3D medical image segmentation, a cornerstone for precise diagnosis, treatment planning, and monitoring of diseases like cancer, cardiac conditions, and neurological disorders, making advanced AI tools more practical and accessible in clinical settings.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>Efficient and accurate AI-powered 3D medical image segmentation for automated diagnosis, treatment planning, and disease monitoring (e.g., tumor detection and progression, cardiac function analysis, brain lesion identification) to improve clinical workflows and patient outcomes.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the computational burden of 3D medical image segmentation by utilizing a sparse, boundary-aware token representation to reduce redundant voxel processing.</li>
+                    
+                    <li>Features a multi-scale hierarchical encoder that extracts 400 candidate tokens across four resolution levels to capture both global anatomical context and fine boundary details.</li>
+                    
+                    <li>Incorporates a boundary-aware tokenizer that combines VQ-VAE quantization with importance scoring to select 100 salient tokens, with over 60% located near tumor boundaries, prioritizing critical anatomical regions.</li>
+                    
+                    <li>Employs a sparse-to-dense decoder responsible for reconstructing full-resolution segmentation masks through token reprojection, progressive upsampling, and skip connections.</li>
+                    
+                    <li>Achieves state-of-the-art segmentation accuracy, reporting 94.49% Dice score and 89.61% IoU on a 3D breast DCE-MRI dataset.</li>
+                    
+                    <li>Demonstrates significant computational efficiency, reducing GPU memory usage by 64% and inference latency by 68% compared to traditional methods.</li>
+                    
+                    <li>Verifies strong generalization capabilities by delivering optimal performance on diverse anatomical structures across the MSD cardiac and brain MRI benchmark datasets.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>TokenSeg is a deep learning framework designed for 3D medical image segmentation using sparse token representation. Its methodology involves three key components: (1) a multi-scale hierarchical encoder that extracts 400 candidate tokens from different resolution levels to capture varied contextual information; (2) a boundary-aware tokenizer that utilizes VQ-VAE quantization and an importance scoring mechanism to select a sparse set of 100 salient tokens, specifically prioritizing those near anatomical boundaries; and (3) a sparse-to-dense decoder that reconstructs the full-resolution segmentation masks from these selected tokens via token reprojection, progressive upsampling, and skip connections, enabling accurate dense predictions from a sparse input.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>TokenSeg achieved state-of-the-art segmentation performance, with a Dice score of 94.49% and an IoU of 89.61% on a 3D breast DCE-MRI dataset. Crucially, it demonstrated significant computational efficiency gains, reducing GPU memory consumption by 64% and inference latency by 68%. Furthermore, the framework exhibited robust generalization, consistently delivering optimal performance when evaluated on heterogeneous anatomical structures from the MSD cardiac and brain MRI benchmark datasets, validating its broad applicability.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The clinical impact of TokenSeg is substantial, as it offers a faster, more accurate, and less resource-intensive method for 3D medical image segmentation. This could lead to quicker turnaround times for diagnostic imaging reports, more precise tumor delineation for radiation therapy planning, improved monitoring of disease progression in conditions like breast cancer or cardiac diseases, and a reduction in the computational infrastructure needed for AI deployment in hospitals, ultimately enhancing patient care and operational efficiency.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations of the proposed TokenSeg framework.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention specific future research directions, but the demonstrated generalization suggests potential for application across an even wider range of medical imaging tasks and modalities.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Cardiology</span>
+                    
+                    <span class="tag">Neurology</span>
+                    
+                    <span class="tag">Diagnostic Radiology</span>
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">3D medical image segmentation</span>
+                    
+                    <span class="tag tag-keyword">sparse representation</span>
+                    
+                    <span class="tag tag-keyword">token compression</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">MRI</span>
+                    
+                    <span class="tag tag-keyword">breast cancer</span>
+                    
+                    <span class="tag tag-keyword">computational efficiency</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Three-dimensional medical image segmentation is a fundamental yet computationally demanding task due to the cubic growth of voxel processing and the redundant computation on homogeneous regions. To address these limitations, we propose \textbf{TokenSeg}, a boundary-aware sparse token representation framework for efficient 3D medical volume segmentation. Specifically, (1) we design a \emph{multi-scale hierarchical encoder} that extracts 400 candidate tokens across four resolution levels to capture both global anatomical context and fine boundary details; (2) we introduce a \emph{boundary-aware tokenizer} that combines VQ-VAE quantization with importance scoring to select 100 salient tokens, over 60\% of which lie near tumor boundaries; and (3) we develop a \emph{sparse-to-dense decoder} that reconstructs full-resolution masks through token reprojection, progressive upsampling, and skip connections. Extensive experiments on a 3D breast DCE-MRI dataset comprising 960 cases demonstrate that TokenSeg achieves state-of-the-art performance with 94.49\% Dice and 89.61\% IoU, while reducing GPU memory and inference latency by 64\% and 68\%, respectively. To verify the generalization capability, our evaluations on MSD cardiac and brain MRI benchmark datasets demonstrate that TokenSeg consistently delivers optimal performance across heterogeneous anatomical structures. These results highlight the effectiveness of anatomically informed sparse representation for accurate and efficient 3D medical image segmentation.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

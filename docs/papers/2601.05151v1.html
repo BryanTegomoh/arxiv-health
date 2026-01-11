@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROOFS: RObust biOmarker Feature Selection - Health AI Hub</title>
+    <meta name="description" content="ROOFS is a Python package designed to assist researchers in selecting optimal feature selection (FS) methods for biomarker discovery in complex biomedical datas">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>ROOFS: RObust biOmarker Feature Selection</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.05151v1" target="_blank">2601.05151v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-08
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Anastasiia Bakhmach, Paul Dufossé, Andrea Vaglio, Florence Monville, Laurent Greillier, Fabrice Barlési, Sébastien Benzekry
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> stat.ML, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.98 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.05151v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.05151v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">ROOFS is a Python package designed to assist researchers in selecting optimal feature selection (FS) methods for biomarker discovery in complex biomedical datasets. It benchmarks various FS approaches using comprehensive metrics like predictive performance (with optimism correction), stability, and reliability. Applied to a lung cancer immunotherapy resistance dataset, ROOFS identified a specific p-value based filter as superior, demonstrating its capacity to enhance the robustness and translational value of clinical predictive models.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This tool directly tackles a major hurdle in precision medicine and clinical research by providing a robust framework to identify reliable biomarkers from complex patient data, crucial for developing effective diagnostic, prognostic, and predictive models, particularly in areas like cancer immunotherapy.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>ROOFS is a Python package that enables researchers to robustly apply and benchmark machine learning (specifically, feature selection) methods to high-dimensional biomedical datasets. This directly supports the development of AI-driven predictive models for clinical applications, such as identifying biomarkers for disease prognosis, treatment response prediction (e.g., resistance to immunotherapy in lung cancer), and ultimately enhancing precision medicine. It acts as a meta-tool for optimizing the machine learning pipeline in medical research.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses critical challenges in feature selection for biomarker discovery, including high dimensionality, low sample size, multicollinearity, and missing values in biomedical datasets.</li>
+                    
+                    <li>Introduces `roofs`, a Python package that systematically benchmarks multiple feature selection methods and provides detailed evaluation reports.</li>
+                    
+                    <li>Evaluates FS methods using a comprehensive set of metrics: downstream predictive performance (optimism-corrected), feature stability, individual feature reliability, and true/false positive rates assessed on semi-synthetic data.</li>
+                    
+                    <li>Demonstrated utility on the PIONeeR clinical trial data (435 patients, 374 multi-source blood/tumor biomarkers) aimed at predicting anti-PD-(L)1 immunotherapy resistance in lung cancer.</li>
+                    
+                    <li>After iterative VIF pre-filtering reduced features to 214, `roofs` evaluated 23 FS methods combined with 11 classifiers (253 models).</li>
+                    
+                    <li>Identified an optimal FS approach for the PIONeeR dataset: a filter based on the union of Benjamini-Hochberg FDR-adjusted p-values from t-test and logistic regression, significantly outperforming methods like LASSO.</li>
+                    
+                    <li>Concludes that comprehensive benchmarking with `roofs` can significantly improve the robustness and reproducibility of FS discoveries, enhancing the translational value of clinical models.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>ROOFS provides a Python package for benchmarking diverse feature selection (FS) methods. It systematically evaluates up to 34 FS algorithms in combination with various classifiers, generating detailed reports based on multiple metrics. These metrics include downstream predictive performance (estimated with optimism correction), feature stability, reliability of individual features, and true/false positive rates assessed on semi-synthetic data with a simulated outcome. The PIONeeR clinical trial application involved an initial iterative Variance Inflation Factor (VIF) pre-filtering step, followed by the evaluation of 23 FS methods with 11 classifiers (253 models) on a dataset of 214 features.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>For the PIONeeR clinical trial dataset, which sought predictors for anti-PD-(L)1 immunotherapy resistance in lung cancer, `roofs` identified a specific filter-based approach as optimal. This method involved taking the union of Benjamini-Hochberg False Discovery Rate (FDR)-adjusted p-values derived from t-tests and logistic regression. This combination demonstrated superior predictive performance and robustness, notably outperforming other widely used methods, including LASSO.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>`roofs` has the potential to significantly enhance the reliability and reproducibility of biomarker identification in clinical studies. By enabling researchers to systematically select the most appropriate feature selection method, it can lead to more robust and accurate predictive models for patient stratification, prognosis, and treatment response (e.g., predicting immunotherapy resistance), thereby accelerating the translation of research findings into improved clinical practice and personalized healthcare.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state specific limitations of the `roofs` package itself. However, it implicitly acknowledges the general inherent challenges in feature selection (high-dimensionality, low sample size, multicollinearity, missing values) that `roofs` aims to navigate through comprehensive benchmarking.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly detailing future technical developments, the paper concludes by emphasizing the potential of `roofs` to broadly improve the robustness and reproducibility of feature selection discoveries. This suggests its wider application and integration into diverse clinical research workflows to increase the translational value of various clinical predictive models.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Oncology</span>
+                    
+                    <span class="tag">Immunology</span>
+                    
+                    <span class="tag">Precision Medicine</span>
+                    
+                    <span class="tag">Biomarker Research</span>
+                    
+                    <span class="tag">Clinical Trial Design</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Feature Selection</span>
+                    
+                    <span class="tag tag-keyword">Biomarker Discovery</span>
+                    
+                    <span class="tag tag-keyword">Machine Learning</span>
+                    
+                    <span class="tag tag-keyword">Clinical Trials</span>
+                    
+                    <span class="tag tag-keyword">Immunotherapy</span>
+                    
+                    <span class="tag tag-keyword">Lung Cancer</span>
+                    
+                    <span class="tag tag-keyword">Predictive Modeling</span>
+                    
+                    <span class="tag tag-keyword">Reproducibility</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Feature selection (FS) is essential for biomarker discovery and in the analysis of biomedical datasets. However, challenges such as high-dimensional feature space, low sample size, multicollinearity, and missing values make FS non-trivial. Moreover, FS performances vary across datasets and predictive tasks. We propose roofs, a Python package available at https://gitlab.inria.fr/compo/roofs, designed to help researchers in the choice of FS method adapted to their problem. Roofs benchmarks multiple FS methods on the user's data and generates reports that summarize a comprehensive set of evaluation metrics, including downstream predictive performance estimated using optimism correction, stability, reliability of individual features, and true positive and false positive rates assessed on semi-synthetic data with a simulated outcome. We demonstrate the utility of roofs on data from the PIONeeR clinical trial, aimed at identifying predictors of resistance to anti-PD-(L)1 immunotherapy in lung cancer. The PIONeeR dataset contained 374 multi-source blood and tumor biomarkers from 435 patients. A reduced subset of 214 features was obtained through iterative variance inflation factor pre-filtering. Of the 34 FS methods gathered in roofs, we evaluated 23 in combination with 11 classifiers (253 models in total) and identified a filter based on the union of Benjamini-Hochberg false discovery rate-adjusted p-values from t-test and logistic regression as the optimal approach, outperforming other methods including the widely used LASSO. We conclude that comprehensive benchmarking with roofs has the potential to improve the robustness and reproducibility of FS discoveries and increase the translational value of clinical models.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
