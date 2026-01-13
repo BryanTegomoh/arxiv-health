@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stable On-Policy Distillation through Adaptive Target Reformulation - Health AI Hub</title>
+    <meta name="description" content="This paper introduces Veto, a novel objective-level reformulation for stable on-policy knowledge distillation (KD) that addresses the training instability and d">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Stable On-Policy Distillation through Adaptive Target Reformulation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.07155v1" target="_blank">2601.07155v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-12
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Ijun Jang, Jewon Yeom, Juan Yeo, Hyunggu Lim, Taesup Kim
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.70 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.07155v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.07155v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces Veto, a novel objective-level reformulation for stable on-policy knowledge distillation (KD) that addresses the training instability and distributional gaps inherent in current methods. Veto constructs a geometric bridge in the logit space using an intermediate target distribution, effectively stabilizing optimization by adaptively suppressing harmful gradients and balancing output diversity with performance. Experiments show Veto consistently outperforms supervised fine-tuning and other on-policy baselines across various reasoning and generation tasks.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medicine as it enables the creation of smaller, more efficient, and specialized AI models from large foundational models for healthcare applications. By stabilizing knowledge distillation, Veto makes it feasible to deploy high-performing language models on resource-constrained devices or in sensitive environments, improving accessibility and privacy in medical AI tools.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The proposed Veto method, by creating more stable and efficient knowledge distillation for LLMs, enables the development of smaller, more performant, and reliable language models for healthcare. These improved LLMs can be applied to tasks such as accurate summarization of electronic health records, robust medical question-answering systems for clinicians and patients, efficient analysis of vast biomedical literature for drug discovery or disease surveillance, and dependable AI assistants for clinical decision support or patient engagement. The stability and performance improvements directly contribute to safer and more effective AI solutions in medicine.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Traditional supervised Knowledge Distillation (KD) suffers from distribution mismatch between training and inference, limiting student model performance.</li>
+                    
+                    <li>Existing on-policy KD methods, while attempting to mitigate mismatch, often face training instabilities due to the wide distributional gap between novice student and expert teacher, leading to pathological gradients or diversity collapse.</li>
+                    
+                    <li>Veto proposes an objective-level reformulation that creates a 'geometric bridge' in the logit space by constructing an intermediate target distribution.</li>
+                    
+                    <li>This intermediate target distribution is designed to promote better alignment between the student and teacher outputs, stabilizing the learning process.</li>
+                    
+                    <li>Veto incorporates a tunable parameter, beta, which functions as an 'Adaptive Gradient Veto' to suppress harmful gradients associated with low-confidence tokens.</li>
+                    
+                    <li>The beta parameter also acts as a 'Decisiveness Knob,' allowing for a controllable balance between reward-driven performance (accuracy) and the diversity of the student model's outputs.</li>
+                    
+                    <li>Extensive experiments across multiple reasoning and generation tasks demonstrate that Veto consistently achieves superior performance compared to conventional supervised fine-tuning and existing on-policy KD baselines.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>Veto introduces an objective-level reformulation for on-policy knowledge distillation. It constructs an 'intermediate target distribution' in the logit space to bridge the gap between student and teacher, promoting alignment. A tunable parameter 'beta' is integrated to serve a dual role: as an Adaptive Gradient Veto, suppressing harmful gradients from low-confidence tokens to stabilize optimization, and as a Decisiveness Knob, to balance output diversity and reward-driven performance.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The proposed Veto method consistently outperforms both supervised fine-tuning and established on-policy knowledge distillation baselines across various reasoning and generation tasks. It achieves this by significantly improving training stability and effectively managing the trade-off between model performance and output diversity, resolving common issues of pathological gradients and diversity collapse.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>Veto can facilitate the development and deployment of specialized medical AI tools by allowing the distillation of complex medical knowledge from large models into smaller, more efficient, and secure student models. This enables faster inference, lower computational costs, and potential for on-device or local processing in clinical settings, thereby enhancing patient care, supporting diagnostic processes, and improving privacy by reducing reliance on large, remotely hosted models.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily focuses on the limitations of *prior* knowledge distillation methods that Veto aims to solve (e.g., distribution mismatch, training instability, pathological gradients, diversity collapse). Specific limitations of the Veto method itself are not detailed within the provided abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Future directions are not explicitly mentioned in the provided abstract, but implied areas could include exploring Veto's applicability to even broader ranges of tasks and model architectures, further optimizing the 'beta' parameter's adaptation strategy, or investigating its robustness in extremely data-scarce medical contexts.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Medical Imaging Analysis (report generation)</span>
+                    
+                    <span class="tag">Biomedical Research</span>
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Public Health Informatics</span>
+                    
+                    <span class="tag">Electronic Health Record (EHR) processing</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Knowledge Distillation</span>
+                    
+                    <span class="tag tag-keyword">On-Policy Learning</span>
+                    
+                    <span class="tag tag-keyword">Large Language Models</span>
+                    
+                    <span class="tag tag-keyword">Training Stability</span>
+                    
+                    <span class="tag tag-keyword">Logit Space</span>
+                    
+                    <span class="tag tag-keyword">Gradient Control</span>
+                    
+                    <span class="tag tag-keyword">Model Compression</span>
+                    
+                    <span class="tag tag-keyword">AI in Healthcare</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Knowledge distillation (KD) is a widely adopted technique for transferring knowledge from large language models to smaller student models; however, conventional supervised KD often suffers from a distribution mismatch between training and inference. While on-policy KD approaches attempt to mitigate this issue by learning directly from student-generated outputs, they frequently encounter training instabilities because the distributional gap between the novice student and the expert teacher is often too wide to bridge directly. These challenges manifest as pathological gradients in forward KL objectives or diversity collapse in reverse KL regimes. To address these limitations, we propose Veto, an objective-level reformulation that constructs a geometric bridge in the logit space. Unlike prior methods that mix data samples, Veto creates an intermediate target distribution that promotes alignment between the teacher and the student. By introducing a tunable parameter beta, Veto serves as an Adaptive Gradient Veto that stabilizes optimization by suppressing harmful gradients on low-confidence tokens, while simultaneously acting as a Decisiveness Knob to balance reward-driven performance with output diversity. Extensive experiments across various reasoning and generation tasks demonstrate that Veto consistently outperforms supervised fine-tuning and existing on-policy baselines.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>10 pages, 5 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
