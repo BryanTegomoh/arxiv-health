@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route, Retrieve, Reflect, Repair: Self-Improving Agentic Framework for Visual Detection and Linguistic Reasoning in Medical Imaging - Health AI Hub</title>
+    <meta name="description" content="This paper introduces R^4, an agentic framework designed to enhance medical image analysis by overcoming the limitations of single-pass, black-box Vision-Langua">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Route, Retrieve, Reflect, Repair: Self-Improving Agentic Framework for Visual Detection and Linguistic Reasoning in Medical Imaging</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.08192v1" target="_blank">2601.08192v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-13
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Md. Faiyaz Abdullah Sayeedi, Rashedur Rahman, Siam Tahsin Bhuiyan, Sefatul Wasi, Ashraful Islam, Saadia Binte Alam, AKM Mahbubur Rahman
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.08192v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.08192v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces R^4, an agentic framework designed to enhance medical image analysis by overcoming the limitations of single-pass, black-box Vision-Language Models (VLMs) in reasoning, safety, and spatial grounding. R^4 decomposes the medical imaging workflow into four coordinated agents—Router, Retriever, Reflector, and Repairer—that iteratively refine free-text reports and bounding box detections. Evaluated on chest X-ray analysis, the framework significantly boosts performance in report generation and weakly supervised detection without requiring gradient-based fine-tuning, making VLMs more reliable for clinical interpretation.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medical imaging as it improves the reliability, accuracy, and interpretability of AI-generated medical reports and detections, which are critical for diagnostic confidence, reducing medical errors, and ultimately enhancing patient safety and care. By explicitly addressing common clinical error modes, it makes VLM outputs more clinically actionable and trustworthy for healthcare professionals.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research provides a self-improving agentic AI framework (R^4) that enhances the accuracy, reliability, and safety of large vision-language models (VLMs) for interpreting medical images (e.g., chest X-rays) and generating associated diagnostic reports. By critiquing and repairing outputs based on key clinical error modes, it aims to develop a more robust and trustworthy AI assistant for radiologists and clinicians, supporting improved patient diagnostics and care.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses critical limitations of current VLMs in medical imaging, specifically their single-pass, black-box nature, and lack of control over reasoning, safety, and spatial grounding.</li>
+                    
+                    <li>Proposes R^4, an agentic framework featuring four coordinated agents: Router (task/specialization-aware prompting), Retriever (report and bounding box generation using exemplar memory), Reflector (critiques outputs for clinical error modes), and Repairer (iterative revision and exemplar curation).</li>
+                    
+                    <li>The Reflector agent specifically targets key clinical error modes: negation, laterality, unsupported claims, contradictions, missing findings, and localization errors, which are crucial for medical accuracy.</li>
+                    
+                    <li>Achieves substantial performance improvements over strong single-VLM baselines, boosting LLM-as-a-Judge scores by approximately +1.7 to +2.5 points and mAP50 by +2.5 to +3.5 absolute points.</li>
+                    
+                    <li>Significantly, these performance gains are attained without any gradient-based fine-tuning of the underlying VLM backbones, demonstrating efficient utilization of existing models.</li>
+                    
+                    <li>The framework enhances the reliability and spatial grounding of VLMs, transforming them into more robust and trustworthy tools for complex clinical image interpretation.</li>
+                    
+                    <li>The R^4 framework was instantiated and evaluated on chest X-ray analysis for both free-text report generation and weakly supervised detection tasks.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The R^4 framework is an agentic system composed of four interacting modules. The Router configures task- and specialization-aware prompts using image, patient history, and metadata. The Retriever generates initial free-text reports and bounding boxes using exemplar memory and pass@k sampling. The Reflector critiques these outputs for six key clinical error modes (negation, laterality, unsupported claims, contradictions, missing findings, localization errors). Finally, the Repairer iteratively revises the narrative and spatial outputs based on the Reflector's feedback, curating high-quality exemplars in the process. This system was instantiated on chest X-ray analysis using multiple modern VLM backbones and evaluated on report generation and weakly supervised detection.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The R^4 framework consistently demonstrated significant performance improvements over strong single-VLM baselines. It boosted LLM-as-a-Judge scores for report quality by approximately +1.7 to +2.5 points and increased the mean Average Precision at 50% IoU (mAP50) for weakly supervised detection by +2.5 to +3.5 absolute points. These gains were achieved without requiring any gradient-based fine-tuning of the underlying VLM models.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The R^4 framework has the potential to significantly improve the accuracy and safety of AI-assisted medical diagnosis and reporting. By explicitly correcting common clinical error modes like negation or laterality errors, it can lead to more reliable diagnostic reports, reduce misinterpretations, and provide better spatial grounding for identified findings. This can aid radiologists in generating more precise reports, streamline workflows, enhance diagnostic confidence, and ultimately contribute to better patient care outcomes and reduced adverse events stemming from AI-generated inaccuracies.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Not explicitly mentioned in the abstract.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Pulmonology</span>
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">medical imaging</span>
+                    
+                    <span class="tag tag-keyword">vision-language models</span>
+                    
+                    <span class="tag tag-keyword">agentic AI</span>
+                    
+                    <span class="tag tag-keyword">chest X-ray</span>
+                    
+                    <span class="tag tag-keyword">report generation</span>
+                    
+                    <span class="tag tag-keyword">object detection</span>
+                    
+                    <span class="tag tag-keyword">clinical error correction</span>
+                    
+                    <span class="tag tag-keyword">spatial grounding</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical image analysis increasingly relies on large vision-language models (VLMs), yet most systems remain single-pass black boxes that offer limited control over reasoning, safety, and spatial grounding. We propose R^4, an agentic framework that decomposes medical imaging workflows into four coordinated agents: a Router that configures task- and specialization-aware prompts from the image, patient history, and metadata; a Retriever that uses exemplar memory and pass@k sampling to jointly generate free-text reports and bounding boxes; a Reflector that critiques each draft-box pair for key clinical error modes (negation, laterality, unsupported claims, contradictions, missing findings, and localization errors); and a Repairer that iteratively revises both narrative and spatial outputs under targeted constraints while curating high-quality exemplars for future cases. Instantiated on chest X-ray analysis with multiple modern VLM backbones and evaluated on report generation and weakly supervised detection, R^4 consistently boosts LLM-as-a-Judge scores by roughly +1.7-+2.5 points and mAP50 by +2.5-+3.5 absolute points over strong single-VLM baselines, without any gradient-based fine-tuning. These results show that agentic routing, reflection, and repair can turn strong but brittle VLMs into more reliable and better grounded tools for clinical image interpretation. Our code can be found at: https://github.com/faiyazabdullah/MultimodalMedAgent</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
