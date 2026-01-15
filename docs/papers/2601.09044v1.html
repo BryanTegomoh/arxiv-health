@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POWDR: Pathology-preserving Outpainting with Wavelet Diffusion for 3D MRI - Health AI Hub</title>
+    <meta name="description" content="POWDR introduces a novel pathology-preserving outpainting framework for 3D MRI, leveraging a conditioned wavelet diffusion model to address data scarcity and cl">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>POWDR: Pathology-preserving Outpainting with Wavelet Diffusion for 3D MRI</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.09044v1" target="_blank">2601.09044v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-14
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Fei Tan, Ashok Vardhan Addala, Bruno Astuto Arouche Nunes, Xucheng Zhu, Ravi Soni
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> eess.IV, cs.CV
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.09044v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.09044v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">POWDR introduces a novel pathology-preserving outpainting framework for 3D MRI, leveraging a conditioned wavelet diffusion model to address data scarcity and class imbalance in medical imaging. It effectively retains real pathological regions while generating diverse, anatomically plausible surrounding tissue, thereby enhancing machine learning model performance for tasks like tumor segmentation without fabricating lesions.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This method is crucial for overcoming the limitations of small, imbalanced medical imaging datasets, enabling the development of more robust, generalizable, and clinically reliable AI models for tasks such as automated disease detection, segmentation, classification, and vision-language applications in healthcare.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The AI application is the creation of a generative model (wavelet diffusion) for synthetic medical image data augmentation. This directly supports the development and training of more robust and accurate machine learning models for medical image analysis tasks such as segmentation and classification of pathologies (e.g., tumors), especially when real pathological data is scarce. This enhances diagnostic capabilities and aids in treatment planning by improving the performance of AI tools used in clinical settings.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses critical issues of data scarcity, class imbalance, and limited availability of pathology-rich cases in medical imaging datasets.</li>
+                    
+                    <li>Proposes POWDR, a conditioned wavelet diffusion model for 3D MRI outpainting, designed to preserve real pathological regions while synthesizing anatomically plausible surrounding tissue.</li>
+                    
+                    <li>Employs wavelet-domain conditioning to enhance high-frequency detail and mitigate blurring, a common drawback in latent diffusion models.</li>
+                    
+                    <li>Introduces a random connected mask training strategy crucial for overcoming conditioning-induced collapse and significantly improving the diversity of generated contexts outside the lesion.</li>
+                    
+                    <li>Validated on brain MRI (BraTS) and extended to knee MRI, demonstrating its tissue-agnostic applicability and image realism (confirmed by FID, SSIM, LPIPS).</li>
+                    
+                    <li>Achieved significant improvements in diversity with random-mask training (cosine similarity reduced from 0.9947 to 0.9580; KL divergence increased from 0.00026 to 0.01494).</li>
+                    
+                    <li>Clinically relevant assessments showed that adding just 50 synthetic POWDR cases improved nnU-Net tumor segmentation Dice scores from 0.6992 to 0.7137, with no significant differences in CSF and GM tissue volumes compared to real images.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>POWDR utilizes a conditioned wavelet diffusion model for 3D MRI outpainting. The core methodology involves preserving a specified pathological region within an image while generating the surrounding anatomical context. This is achieved by conditioning the diffusion process in the wavelet domain to maintain high-frequency details and avoid blurring. A random connected mask strategy is employed during training to prevent mode collapse and enhance the diversity of the generated regions. The method was evaluated quantitatively using metrics like FID, SSIM, LPIPS for realism, and cosine similarity, KL divergence for diversity, alongside a clinical task of tumor segmentation using nnU-Net.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>POWDR successfully generates realistic and diverse pathology-preserving 3D MRI data for both brain and knee anatomies. The random connected mask training strategy proved vital, significantly enhancing diversity (cosine similarity reduced from 0.9947 to 0.9580; KL divergence increased from 0.00026 to 0.01494). Crucially, supplementing training datasets with only 50 synthetic POWDR cases improved tumor segmentation Dice scores using nnU-Net from 0.6992 to 0.7137. Furthermore, the generated images maintained anatomical plausibility, with no significant differences observed in CSF and GM tissue volumes compared to real images.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>POWDR offers a practical and effective solution to address data scarcity and class imbalance in medical imaging, which are major bottlenecks for AI development. By providing diverse, pathology-preserving synthetic data, it can significantly improve the robustness and generalization capabilities of machine learning models for critical tasks like segmentation, classification, and vision-language processing. This directly translates to more accurate diagnostic tools, better treatment planning, and enhanced clinical decision support, with broad applicability across various anatomies due to its tissue-agnostic nature.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state any limitations or caveats of the proposed POWDR method.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention specific future research directions, but it implies the method's extensibility to multiple anatomies and its utility for supporting robust model development across various medical imaging tasks, suggesting broader applications could be explored.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Neuroimaging</span>
+                    
+                    <span class="tag">Orthopedics</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">Oncology</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Pathology-preserving</span>
+                    
+                    <span class="tag tag-keyword">Outpainting</span>
+                    
+                    <span class="tag tag-keyword">Wavelet Diffusion</span>
+                    
+                    <span class="tag tag-keyword">3D MRI</span>
+                    
+                    <span class="tag tag-keyword">Data Augmentation</span>
+                    
+                    <span class="tag tag-keyword">Class Imbalance</span>
+                    
+                    <span class="tag tag-keyword">Tumor Segmentation</span>
+                    
+                    <span class="tag tag-keyword">Medical Imaging</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Medical imaging datasets often suffer from class imbalance and limited availability of pathology-rich cases, which constrains the performance of machine learning models for segmentation, classification, and vision-language tasks. To address this challenge, we propose POWDR, a pathology-preserving outpainting framework for 3D MRI based on a conditioned wavelet diffusion model. Unlike conventional augmentation or unconditional synthesis, POWDR retains real pathological regions while generating anatomically plausible surrounding tissue, enabling diversity without fabricating lesions.
+  Our approach leverages wavelet-domain conditioning to enhance high-frequency detail and mitigate blurring common in latent diffusion models. We introduce a random connected mask training strategy to overcome conditioning-induced collapse and improve diversity outside the lesion. POWDR is evaluated on brain MRI using BraTS datasets and extended to knee MRI to demonstrate tissue-agnostic applicability. Quantitative metrics (FID, SSIM, LPIPS) confirm image realism, while diversity analysis shows significant improvement with random-mask training (cosine similarity reduced from 0.9947 to 0.9580; KL divergence increased from 0.00026 to 0.01494). Clinically relevant assessments reveal gains in tumor segmentation performance using nnU-Net, with Dice scores improving from 0.6992 to 0.7137 when adding 50 synthetic cases. Tissue volume analysis indicates no significant differences for CSF and GM compared to real images.
+  These findings highlight POWDR as a practical solution for addressing data scarcity and class imbalance in medical imaging. The method is extensible to multiple anatomies and offers a controllable framework for generating diverse, pathology-preserving synthetic data to support robust model development.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
