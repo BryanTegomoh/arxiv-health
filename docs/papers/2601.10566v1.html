@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Representation-Aware Unlearning via Activation Signatures: From Suppression to Knowledge-Signature Erasure - Health AI Hub</title>
+    <meta name="description" content="This paper introduces the Knowledge Immunization Framework (KIF), a representation-aware unlearning method for LLMs that targets internal activation signatures ">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Representation-Aware Unlearning via Activation Signatures: From Suppression to Knowledge-Signature Erasure</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.10566v1" target="_blank">2601.10566v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-15
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Syed Naveed Mahmood, Md. Rezaur Rahman Bhuiyan, Tasfia Zaman, Jareen Tasneem Khondaker, Md. Sameer Sakib, Nazia Tasnim, Farig Sadeque
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.CL, cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.70 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.10566v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.10566v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper introduces the Knowledge Immunization Framework (KIF), a representation-aware unlearning method for LLMs that targets internal activation signatures to achieve true knowledge erasure, differentiating it from mere behavioral suppression. KIF successfully breaks the stability-erasure tradeoff seen in prior work, demonstrating near-oracle erasure (FQ ~0.99) while preserving model utility (MU = 0.62) across various LLMs from 3B to 14B parameters. The framework provides the first systematic diagnosis of mechanism-level forgetting behavior.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is crucial for the safe and ethical deployment of large language models (LLMs) in healthcare, ensuring compliance with strict patient data privacy regulations like GDPR and HIPAA. By enabling true knowledge erasure of sensitive patient information, it builds trust and prevents the inadvertent recall or misuse of private health data, even after attempts to "unlearn" it.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research provides a fundamental technique for building more trustworthy, compliant, and safer AI systems for healthcare and biosecurity. Specifically, it enables: 
+1.  **Patient Data Privacy**: Robustly erasing identifiable patient information or sensitive health records from LLMs used in clinical settings or research, fulfilling data protection regulations like GDPR's 'right to be forgotten'.
+2.  **Medical AI Safety**: Mitigating risks by allowing the removal of incorrect, harmful, or outdated medical advice/information that an LLM might have learned, thereby enhancing patient safety.
+3.  **Biosecurity Risk Management**: Preventing the misuse or accidental dissemination of sensitive biosecurity-related knowledge by ensuring its complete erasure from LLMs trained on relevant datasets.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>**Problem Addressed:** Current LLM unlearning methods fail to truly erase knowledge, merely suppressing output behaviors while allowing latent capabilities to persist, posing risks for compliance (e.g., GDPR) and safety.</li>
+                    
+                    <li>**Proposed Solution:** Introduction of the Knowledge Immunization Framework (KIF), a novel representation-aware architecture designed for genuine knowledge erasure by targeting internal activation signatures rather than surface outputs.</li>
+                    
+                    <li>**Methodology:** KIF combines dynamic suppression of subject-specific internal representations with parameter-efficient adaptation, enabling durable unlearning without requiring full model retraining.</li>
+                    
+                    <li>**Performance Metrics:** Achieves near-oracle erasure (Forgetting Quality, FQ ≈ 0.99 vs. 1.00 for oracle) while maintaining high model utility (MU = 0.62 at oracle levels), effectively breaking the stability-erasure tradeoff.</li>
+                    
+                    <li>**Model Evaluation:** Tested on both standard foundation models (Llama, Mistral) and reasoning-prior models (Qwen, DeepSeek) ranging from 3B to 14B parameters.</li>
+                    
+                    <li>**Architectural Insights:** Standard models exhibit scale-independent true erasure with minimal utility drift (<3%), whereas reasoning-prior models show fundamental architectural divergences in unlearning behavior.</li>
+                    
+                    <li>**Evaluation Protocol:** Utilizes a comprehensive dual-metric evaluation protocol that assesses both surface-level leakage and latent trace persistence, operationalizing the distinction between obfuscation and genuine erasure.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The Knowledge Immunization Framework (KIF) employs a representation-aware architecture that specifically targets and dynamically suppresses internal activation signatures associated with specific knowledge. This is combined with parameter-efficient adaptation to achieve durable unlearning without full model retraining. The framework utilizes a comprehensive dual-metric evaluation protocol to distinguish between mere surface-level output suppression (obfuscation) and genuine latent knowledge erasure, assessing both forgetting quality (FQ) and utility preservation (MU).</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>KIF achieved near-oracle knowledge erasure (FQ ≈ 0.99) while preserving foundational model utility at oracle levels (MU = 0.62), effectively resolving the stability-erasure tradeoff. It demonstrated that standard LLMs exhibit scale-independent true erasure with minimal utility degradation (<3%), unlike reasoning-prior models which revealed distinct architectural unlearning behaviors. The work successfully operationalized the distinction between obfuscation and true erasure, enabling systematic diagnosis of forgetting mechanisms.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>The ability to genuinely erase sensitive patient data (e.g., Protected Health Information - PHI) or outdated medical guidelines from LLMs is paramount for clinical applications. This technology could lead to more trustworthy and compliant AI assistants, diagnostic tools, and clinical decision support systems, mitigating risks of privacy breaches (e.g., unintended recall of PHI) and ensuring the delivery of accurate, current medical information. It facilitates regulatory compliance for healthcare AI, paving the way for wider and safer adoption in patient care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract primarily highlights the limitations of prior unlearning work that KIF aims to overcome, specifically the conflation of behavioral suppression with true knowledge removal. Specific limitations or caveats of the KIF methodology itself are not detailed in the provided abstract.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>While not explicitly stated as 'future directions', the paper's emphasis on enabling the first systematic diagnosis of mechanism-level forgetting behavior across model families and scales implies avenues for deeper architectural analysis to understand the fundamental divergences observed, especially in reasoning-prior models. Further research could explore the application of KIF to more complex, multi-modal medical AI systems and its scalability to extremely large models.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Informatics</span>
+                    
+                    <span class="tag">Health Data Privacy and Security</span>
+                    
+                    <span class="tag">Clinical Decision Support Systems</span>
+                    
+                    <span class="tag">AI in Healthcare</span>
+                    
+                    <span class="tag">Bioethics</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">LLM unlearning</span>
+                    
+                    <span class="tag tag-keyword">knowledge erasure</span>
+                    
+                    <span class="tag tag-keyword">activation signatures</span>
+                    
+                    <span class="tag tag-keyword">representation-aware AI</span>
+                    
+                    <span class="tag tag-keyword">GDPR compliance</span>
+                    
+                    <span class="tag tag-keyword">patient privacy</span>
+                    
+                    <span class="tag tag-keyword">AI safety</span>
+                    
+                    <span class="tag tag-keyword">medical LLMs</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Selective knowledge erasure from LLMs is critical for GDPR compliance and model safety, yet current unlearning methods conflate behavioral suppression with true knowledge removal, allowing latent capabilities to persist beneath surface-level refusals. In this work, we address this challenge by introducing Knowledge Immunization Framework (KIF), a representation-aware architecture that distinguishes genuine erasure from obfuscation by targeting internal activation signatures rather than surface outputs. Our approach combines dynamic suppression of subject-specific representations with parameter-efficient adaptation, enabling durable unlearning without full model retraining. KIF achieves near-oracle erasure (FQ approx 0.99 vs. 1.00) while preserving utility at oracle levels (MU = 0.62), effectively breaking the stability-erasure tradeoff that has constrained all prior work. We evaluate both standard foundation models (Llama and Mistral) and reasoning-prior models (Qwen and DeepSeek) across 3B to 14B parameters. Our observation shows that standard models exhibit scale-independent true erasure (<3% utility drift), while reasoning-prior models reveal fundamental architectural divergence. Our comprehensive dual-metric evaluation protocol, combining surface-level leakage with latent trace persistence, operationalizes the obfuscation - erasure distinction and enables the first systematic diagnosis of mechanism-level forgetting behavior across model families and scales.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Comments</h2>
+                <p>16 pages, 4 figures</p>
+            </section>
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
