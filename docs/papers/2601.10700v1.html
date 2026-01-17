@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIBERTy: A Causal Framework for Benchmarking Concept-Based Explanations of LLMs with Structural Counterfactuals - Health AI Hub</title>
-    <meta name="description" content="Concept-based explanations quantify how high-level concepts (e.g., gender or experience) influence model behavior, which is crucial for decision-makers in high-">
+    <meta name="description" content="LIBERTy is a novel framework that uses explicitly defined Structured Causal Models (SCMs) and Large Language Models (LLMs) to generate structural counterfactual">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">Concept-based explanations quantify how high-level concepts (e.g., gender or experience) influence model behavior, which is crucial for decision-makers in high-stakes domains. Recent work evaluates the faithfulness of such explanations by comparing them to reference causal effects estimated from cou...</p>
+                <p class="summary-text">LIBERTy is a novel framework that uses explicitly defined Structured Causal Models (SCMs) and Large Language Models (LLMs) to generate structural counterfactuals, creating robust benchmarks for evaluating concept-based explanations of LLMs. This addresses the limitations of costly and imperfect human-written counterfactuals, providing new datasets (including for disease detection) and a metric for faithful evaluation. The framework reveals substantial headroom for improving current explanation methods and identifies reduced sensitivity to demographic concepts in proprietary LLMs, likely due to post-training mitigation.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Medical/health related research</p>
+                <p>In high-stakes medical domains, understanding the causal influence of specific concepts (e.g., patient demographics, medical history, symptom severity) on an LLM's predictive behavior is paramount for trust, fairness, and accountability. This framework offers a rigorous method to benchmark and improve these concept-based explanations, which is crucial for the safe and ethical deployment of AI in healthcare decision-making.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This research provides a novel causal framework and benchmark (LIBERTy) for evaluating the faithfulness of concept-based explanations from Large Language Models (LLMs). When applied to medical contexts, such as disease detection, this framework helps ensure that LLMs used for diagnosis or patient care provide transparent and reliable explanations for their decisions. It also enables the systematic analysis of an LLM's sensitivity to critical demographic concepts, which is vital for identifying and mitigating bias in medical AI applications, thereby promoting more equitable and trustworthy healthcare AI.</p>
+                <p>This research provides a benchmark for developing more faithful and understandable concept-based explanations for LLMs used in medical applications, such as disease detection and diagnosis. By improving explainability and analyzing sensitivity to demographic factors, it helps ensure that medical AI systems are transparent, unbiased, and trustworthy, which is critical for their responsible deployment in clinical settings and for decision-makers in healthcare.</p>
             </section>
             
 
@@ -68,7 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>See abstract for details</li>
+                    <li>Addresses the limitation of current concept-based explanation benchmarks that rely on expensive and imperfect human-written counterfactuals.</li>
+                    
+                    <li>Introduces LIBERTy, an LLM-based framework for constructing datasets containing *structural counterfactual pairs* grounded in explicitly defined Structured Causal Models (SCMs).</li>
+                    
+                    <li>SCMs model text generation, allowing interventions on concepts to propagate, with LLMs then generating the counterfactual text.</li>
+                    
+                    <li>Presents three new datasets, including one for *disease detection*, and a novel evaluation metric called "order-faithfulness."</li>
+                    
+                    <li>Evaluates a wide range of explanation methods across five LLMs, identifying significant room for improvement in concept-based explanations' faithfulness.</li>
+                    
+                    <li>Enables systematic analysis of model sensitivity to interventions, revealing that proprietary LLMs exhibit markedly reduced sensitivity to demographic concepts, likely due to post-training mitigation strategies.</li>
+                    
+                    <li>LIBERTy provides a much-needed robust benchmark to foster the development of more faithful and reliable explainability methods.</li>
                     
                 </ul>
             </section>
@@ -76,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>See paper for methodology</p>
+                    <p>The LIBERTy framework is built upon explicitly defined Structured Causal Models (SCMs) that describe the data generation process for text. Interventions are simulated on high-level concepts within these SCMs. The effects of these interventions propagate through the causal model, and Large Language Models (LLMs) are then used to generate the corresponding structural counterfactual texts. These generated counterfactual pairs serve as ground truth for evaluating the faithfulness of concept-based explanations. A new metric, "order-faithfulness," is introduced for this evaluation. The framework was applied to create datasets for specific tasks, including disease detection.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>See abstract</p>
+                    <p>The study found substantial headroom for improving the faithfulness of existing concept-based explanation methods across various LLMs. Additionally, it revealed a significant difference in model sensitivity to interventions: proprietary LLMs showed markedly reduced sensitivity to demographic concepts compared to other models, which is attributed to post-training mitigation efforts.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>Potential clinical applications</p>
+                <p>By providing a robust benchmark for evaluating concept-based explanations, LIBERTy can significantly enhance the trustworthiness and transparency of AI systems in clinical settings. This will enable the development of more reliable medical AI that can explain *why* a diagnosis or treatment recommendation is made based on specific clinical factors, facilitating better physician-AI collaboration and patient communication. Furthermore, by rigorously testing for concept sensitivity, it can help identify and mitigate biases related to sensitive demographic concepts in medical AI, fostering more equitable healthcare outcomes.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>Not analyzed</p>
+                <p>While the abstract frames LIBERTy as a solution to prior limitations, implicit limitations could include: the quality of the generated structural counterfactuals being dependent on the LLM's capabilities and potential biases; the complexity of accurately defining exhaustive SCMs for highly intricate real-world medical scenarios; and the framework's effectiveness being tied to the ability to explicitly define and intervene on specific high-level concepts, which may not always be straightforward for all medical contexts.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not analyzed</p>
+                <p>LIBERTy is positioned as a benchmark crucial for the future development of faithful explainability methods. This implies ongoing research to: develop more accurate and robust concept-based explanation techniques utilizing this benchmark; further investigate the causal mechanisms and sensitivities of various LLMs, particularly concerning critical medical and demographic concepts; and potentially expand the framework to cover a broader array of complex clinical scenarios and high-level medical concepts.</p>
             </section>
             
 
@@ -108,7 +120,15 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">cs.CL</span>
+                    <span class="tag">Disease detection</span>
+                    
+                    <span class="tag">Medical diagnosis support</span>
+                    
+                    <span class="tag">Clinical decision support systems</span>
+                    
+                    <span class="tag">Healthcare equity analysis</span>
+                    
+                    <span class="tag">Pharmacovigilance (implied by concept sensitivity)</span>
                     
                 </div>
             </section>
@@ -117,9 +137,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">cs.CL</span>
+                    <span class="tag tag-keyword">Concept-based explanations</span>
                     
-                    <span class="tag tag-keyword">cs.AI</span>
+                    <span class="tag tag-keyword">Causal inference</span>
+                    
+                    <span class="tag tag-keyword">Counterfactuals</span>
+                    
+                    <span class="tag tag-keyword">LLMs</span>
+                    
+                    <span class="tag tag-keyword">Structured Causal Models</span>
+                    
+                    <span class="tag tag-keyword">Explainable AI</span>
+                    
+                    <span class="tag tag-keyword">Benchmarking</span>
+                    
+                    <span class="tag tag-keyword">Model faithfulness</span>
                     
                 </div>
             </section>
