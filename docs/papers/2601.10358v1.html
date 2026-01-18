@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLGC: Pseudo-Labeled Graph Condensation - Health AI Hub</title>
+    <meta name="description" content="PLGC introduces a self-supervised graph condensation method that addresses the computational cost of training Graph Neural Networks (GNNs) on large, potentially">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>PLGC: Pseudo-Labeled Graph Condensation</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.10358v1" target="_blank">2601.10358v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-15
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Jay Nandy, Arnab Kumar Mondal, Anuj Rathore, Mahesh Chandran
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.75 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.10358v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.10358v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">PLGC introduces a self-supervised graph condensation method that addresses the computational cost of training Graph Neural Networks (GNNs) on large, potentially noisy datasets by generating small synthetic graphs. Unlike existing approaches, PLGC operates without ground-truth labels, constructing latent pseudo-labels from node embeddings to optimize condensed graphs that preserve the original graph's structural and feature statistics. It achieves competitive performance on clean data and demonstrates substantial robustness, often outperforming supervised baselines under label noise and distribution shift.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>Many medical datasets, such as patient similarity networks, drug interaction graphs, disease progression models, and electronic health records (EHRs), are vast, complex, and inherently noisy or sparsely labeled. PLGC offers a robust method to efficiently analyze these large graphs using GNNs, enabling more reliable insights and predictions despite common data quality challenges in healthcare.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>This research would enable more robust and efficient training of GNN models for tasks such as identifying novel drug candidates by analyzing molecular graphs, predicting disease progression based on patient networks from electronic health records, analyzing complex gene regulatory pathways from genomic data, or classifying protein functions from interaction networks. Its 'label-free' and 'robust to noise' properties are particularly valuable in medical research where high-quality labeled datasets are often limited, expensive to generate, or inherently noisy.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Addresses the computational burden of GNNs on large graphs and the unreliability of existing supervised graph condensation methods due to their dependence on clean ground-truth labels.</li>
+                    
+                    <li>Proposes Pseudo-Labeled Graph Condensation (PLGC), a novel self-supervised framework that bypasses the need for explicit ground-truth labels.</li>
+                    
+                    <li>PLGC constructs latent pseudo-labels by analyzing node embeddings and jointly learns latent prototypes and node assignments to guide condensation.</li>
+                    
+                    <li>The method optimizes the condensed graph to accurately match the original graph's structural and feature statistics, ensuring representation fidelity.</li>
+                    
+                    <li>Provides theoretical guarantees confirming that the generated pseudo-labels effectively preserve latent structural statistics and ensure accurate embedding alignment of the condensed graph.</li>
+                    
+                    <li>Empirically, PLGC achieves competitive performance with state-of-the-art supervised condensation methods on clean datasets for tasks like node classification and link prediction.</li>
+                    
+                    <li>Crucially, it exhibits substantial robustness and often significantly outperforms all baselines under conditions of label noise and distribution shift, highlighting its practical utility in real-world, weakly-labeled environments.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>PLGC is a self-supervised framework that first learns node embeddings from the original large graph. From these embeddings, it constructs latent pseudo-labels, which are used to jointly learn latent prototypes and node assignments. The core optimization process then generates a smaller, synthetic condensed graph that matches the structural and feature statistics of the original graph, guided by these pseudo-labels, entirely without requiring any ground-truth labels. Theoretical analyses support the pseudo-labeling strategy and embedding alignment.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>PLGC achieves performance competitive with state-of-the-art supervised condensation methods on clean datasets. Its most significant finding is its substantial robustness and superior performance, often outperforming all baselines by a significant margin, when faced with label noise and distribution shift. Theoretical guarantees validate that its pseudo-labels preserve latent structural statistics and ensure accurate embedding alignment.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This method could significantly accelerate and enhance the reliability of GNN-based analyses in clinical and research settings where perfect labeling of large medical graph data is impractical or impossible. It enables the creation of more efficient and robust predictive models for patient stratification, disease diagnosis, drug target identification, or treatment response prediction, ultimately supporting more effective and data-driven clinical decision-making.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly state limitations or caveats regarding the PLGC method itself. Its primary focus is on addressing the limitations of existing supervised graph condensation techniques (e.g., sensitivity to label noise, reliance on clean labels) that PLGC aims to overcome.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly mention specific future research directions for PLGC.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                    <span class="tag">Computational Biology</span>
+                    
+                    <span class="tag">Drug Discovery and Repurposing</span>
+                    
+                    <span class="tag">Precision Medicine</span>
+                    
+                    <span class="tag">Epidemiology</span>
+                    
+                    <span class="tag">Electronic Health Records (EHR) Analysis</span>
+                    
+                    <span class="tag">Medical Imaging (e.g., brain connectomics)</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Graph condensation</span>
+                    
+                    <span class="tag tag-keyword">Graph Neural Networks (GNNs)</span>
+                    
+                    <span class="tag tag-keyword">Self-supervised learning</span>
+                    
+                    <span class="tag tag-keyword">Pseudo-labeling</span>
+                    
+                    <span class="tag tag-keyword">Label noise</span>
+                    
+                    <span class="tag tag-keyword">Medical informatics</span>
+                    
+                    <span class="tag tag-keyword">Large graph datasets</span>
+                    
+                    <span class="tag tag-keyword">Robustness</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Large graph datasets make training graph neural networks (GNNs) computationally costly. Graph condensation methods address this by generating small synthetic graphs that approximate the original data. However, existing approaches rely on clean, supervised labels, which limits their reliability when labels are scarce, noisy, or inconsistent. We propose Pseudo-Labeled Graph Condensation (PLGC), a self-supervised framework that constructs latent pseudo-labels from node embeddings and optimizes condensed graphs to match the original graph's structural and feature statistics -- without requiring ground-truth labels. PLGC offers three key contributions: (1) A diagnosis of why supervised condensation fails under label noise and distribution shift. (2) A label-free condensation method that jointly learns latent prototypes and node assignments. (3) Theoretical guarantees showing that pseudo-labels preserve latent structural statistics of the original graph and ensure accurate embedding alignment. Empirically, across node classification and link prediction tasks, PLGC achieves competitive performance with state-of-the-art supervised condensation methods on clean datasets and exhibits substantial robustness under label noise, often outperforming all baselines by a significant margin. Our findings highlight the practical and theoretical advantages of self-supervised graph condensation in noisy or weakly-labeled environments.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

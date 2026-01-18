@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ErrEval: Error-Aware Evaluation for Question Generation through Explicit Diagnostics - Health AI Hub</title>
-    <meta name="description" content="This paper introduces ErrEval, an Error-aware Evaluation framework designed to address critical defects like factual hallucinations and answer mismatches in aut">
+    <meta name="description" content="ErrEval proposes an innovative Error-aware Evaluation framework for Automatic Question Generation (QG) to address critical defects like factual hallucinations a">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces ErrEval, an Error-aware Evaluation framework designed to address critical defects like factual hallucinations and answer mismatches in automatic Question Generation (QG) outputs, which are often overlooked by existing black-box evaluation methods. ErrEval reformulates evaluation as a two-stage process: explicit error diagnosis by a lightweight identifier, followed by informed scoring using LLM evaluators guided by these diagnostic signals. Experiments show ErrEval significantly improves alignment with human judgments and effectively mitigates the overestimation of low-quality generated questions.</p>
+                <p class="summary-text">ErrEval proposes an innovative Error-aware Evaluation framework for Automatic Question Generation (QG) to address critical defects like factual hallucinations and answer mismatches, which are often overlooked by existing holistic evaluation methods. It reformulates evaluation as a two-stage process involving explicit error diagnosis followed by informed LLM scoring. Experiments confirm ErrEval's effectiveness in improving alignment with human judgments and mitigating the overestimation of low-quality questions.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>Question Generation models have significant potential in medicine for applications like medical education (generating quiz questions), clinical decision support (formulating diagnostic queries from patient data), and patient information systems. The accuracy and reliability of these generated questions are paramount in healthcare, as defects like factual hallucinations or answer mismatches could lead to severe consequences, including misdiagnosis, inappropriate treatment, or patient misinformation.</p>
+                <p>In medical and health contexts, accurate and reliable information is paramount, making robust quality control for automatically generated content critical. ErrEval can significantly improve the quality assurance of AI-generated medical questions for applications like patient education, clinical decision support systems, or medical chatbot interactions, directly addressing potential factual inaccuracies and preventing misinformation or misguidance.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This research provides a more robust evaluation framework for AI systems that generate questions or information in healthcare settings. It enhances the reliability and safety of medical AI applications by ensuring that generated content, crucial for tasks like medical training or patient information, is factually accurate and free from critical defects. This is vital for AI-powered medical tutors, patient information chatbots, AI assistants for clinicians, and systems generating explanations or summaries of medical data.</p>
+                <p>ErrEval provides a critical tool for evaluating the quality and safety of AI systems that generate questions for medical and healthcare contexts. By explicitly diagnosing and categorizing errors like factual hallucinations and answer mismatches, it enables the development of more reliable medical AI applications used in areas such as creating medical exam questions, generating patient-friendly health FAQs, formulating clinical queries, or powering health information chatbots.</p>
             </section>
             
 
@@ -68,17 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Current QG evaluation methods, including LLM-based ones, are black-box and holistic, leading to the neglect of critical defects (e.g., factual hallucinations, answer mismatches) and overestimation of question quality.</li>
+                    <li>Existing QG evaluation methods, including LLM-based ones, predominantly use a black-box, holistic paradigm, leading to the neglect of critical defects like factual hallucinations and answer mismatches.</li>
                     
-                    <li>ErrEval proposes a flexible, Error-aware Evaluation framework that incorporates explicit error diagnostics to enhance QG evaluation.</li>
+                    <li>This oversight results in an overestimation of the quality of generated questions, failing to accurately reflect their real utility and reliability.</li>
                     
-                    <li>The framework operates in two stages: first, a lightweight, plug-and-play Error Identifier detects and categorizes common structural, linguistic, and content-related errors.</li>
+                    <li>ErrEval is introduced as a flexible, Error-aware Evaluation framework designed to enhance QG evaluation through explicit error diagnostics.</li>
                     
-                    <li>Second, these explicit diagnostic signals serve as evidence to guide LLM evaluators, enabling more fine-grained and grounded judgments of question quality.</li>
+                    <li>The framework operates in a two-stage process: first, a lightweight, plug-and-play Error Identifier detects and categorizes common errors across structural, linguistic, and content-related aspects.</li>
                     
-                    <li>Extensive experiments on three benchmarks demonstrate that ErrEval significantly improves alignment between automatic evaluations and human judgments.</li>
+                    <li>Second, these diagnostic error signals are explicitly incorporated as evidence to guide LLM evaluators, enabling them to make more fine-grained and grounded quality judgments.</li>
                     
-                    <li>A key finding is that ErrEval effectively mitigates the overestimation of low-quality questions, providing a more realistic assessment of QG model performance.</li>
+                    <li>Extensive experiments across three benchmarks demonstrated that the incorporation of explicit diagnostics significantly improves the alignment of automatic evaluations with human judgments.</li>
+                    
+                    <li>ErrEval effectively mitigates the common problem of overestimating the quality of low-quality questions, providing a more accurate and reliable assessment of QG system outputs.</li>
                     
                 </ul>
             </section>
@@ -86,24 +88,24 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>ErrEval employs a two-stage evaluation process: an initial error diagnosis stage utilizing a lightweight, plug-and-play Error Identifier to detect and categorize common errors across structural, linguistic, and content-related aspects of generated questions. This is followed by an informed scoring stage, where the identified diagnostic signals are explicitly incorporated to guide Large Language Model (LLM) evaluators, enabling them to make more fine-grained and grounded judgments of question quality.</p>
+                    <p>ErrEval employs a two-stage evaluation process. The first stage utilizes a lightweight, plug-and-play Error Identifier to detect and categorize common errors in generated questions, spanning structural, linguistic, and content-related aspects. In the second stage, these explicit diagnostic error signals are provided as evidence to guide LLM evaluators, enabling them to produce more fine-grained and grounded quality judgments.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The primary findings are that ErrEval significantly improves the alignment of automatic QG evaluations with human judgments. It effectively mitigates the common problem of overestimating the quality of low-quality questions, providing a more accurate and critical assessment of QG model outputs through explicit error diagnostics.</p>
+                    <p>The primary findings demonstrate that ErrEval significantly improves the alignment of automatic Question Generation (QG) evaluations with human judgments. A crucial finding is its effectiveness in mitigating the overestimation of low-quality questions, leading to more accurate and reliable assessments of QG system performance.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>ErrEval's ability to explicitly identify and account for critical errors such as factual hallucinations and answer mismatches is vital for enhancing the trustworthiness and safety of AI-generated content in healthcare. This framework enables the development and deployment of more reliable QG systems for medical training, patient education materials, and tools that extract knowledge from complex clinical texts, thereby reducing the risk of medical errors stemming from inaccurate or misleading AI output.</p>
+                <p>This framework has the potential to enhance the trustworthiness and utility of AI-powered tools in healthcare by ensuring the high quality and accuracy of automatically generated medical questions. It can improve patient safety and outcomes by reducing the risk of misinformation from generative AI systems used in patient education, symptom checkers, clinical guidelines, or AI-assisted diagnostic tools.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the ErrEval framework itself, but rather frames ErrEval as a solution to the limitations of existing QG evaluation methods.</p>
+                <p>The abstract does not explicitly mention specific limitations of the ErrEval framework itself.</p>
             </section>
             
 
@@ -118,15 +120,17 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Medical Education</span>
+                    <span class="tag">Medical education</span>
                     
-                    <span class="tag">Clinical Decision Support</span>
+                    <span class="tag">Clinical informatics</span>
                     
-                    <span class="tag">Patient Information Systems</span>
+                    <span class="tag">Patient engagement</span>
                     
-                    <span class="tag">Biomedical Natural Language Processing</span>
+                    <span class="tag">Diagnostic support systems</span>
                     
-                    <span class="tag">Healthcare AI Safety</span>
+                    <span class="tag">Medical natural language processing (NLP)</span>
+                    
+                    <span class="tag">Telemedicine</span>
                     
                 </div>
             </section>
@@ -137,19 +141,19 @@
                     
                     <span class="tag tag-keyword">Question Generation (QG)</span>
                     
-                    <span class="tag tag-keyword">AI Evaluation</span>
+                    <span class="tag tag-keyword">LLM evaluation</span>
                     
-                    <span class="tag tag-keyword">Error Diagnosis</span>
+                    <span class="tag tag-keyword">Error detection</span>
                     
-                    <span class="tag tag-keyword">LLM Evaluation</span>
+                    <span class="tag tag-keyword">Factual hallucination</span>
                     
-                    <span class="tag tag-keyword">Factual Hallucination</span>
+                    <span class="tag tag-keyword">Answer mismatch</span>
                     
-                    <span class="tag tag-keyword">Answer Mismatch</span>
+                    <span class="tag tag-keyword">Evaluation metrics</span>
                     
-                    <span class="tag tag-keyword">Human Alignment</span>
+                    <span class="tag tag-keyword">Error diagnostics</span>
                     
-                    <span class="tag tag-keyword">AI Reliability</span>
+                    <span class="tag tag-keyword">AI in healthcare</span>
                     
                 </div>
             </section>
