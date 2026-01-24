@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DuFal: Dual-Frequency-Aware Learning for High-Fidelity Extremely Sparse-view CBCT Reconstruction - Health AI Hub</title>
-    <meta name="description" content="DuFal (Dual-Frequency-Aware Learning) is a novel deep learning framework designed for high-fidelity Cone-Beam Computed Tomography (CBCT) reconstruction from ext">
+    <meta name="description" content="DuFal introduces a novel dual-path framework for high-fidelity sparse-view Cone-Beam Computed Tomography (CBCT) reconstruction, specifically addressing the chal">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">DuFal (Dual-Frequency-Aware Learning) is a novel deep learning framework designed for high-fidelity Cone-Beam Computed Tomography (CBCT) reconstruction from extremely sparse-view projections. It tackles the challenge of recovering fine-grained, high-frequency anatomical details, which are often lost in conventional methods, by integrating frequency-domain and spatial-domain processing through a unique dual-path architecture. Experimental results demonstrate DuFal significantly outperforms state-of-the-art methods in preserving these critical high-frequency features under severe undersampling conditions.</p>
+                <p class="summary-text">DuFal introduces a novel dual-path framework for high-fidelity sparse-view Cone-Beam Computed Tomography (CBCT) reconstruction, specifically addressing the challenge of recovering fine-grained anatomical details (high-frequency components) often lost in undersampled data. By integrating frequency-domain and spatial-domain processing through a High-Local Factorized Fourier Neural Operator and efficient feature fusion, DuFal significantly outperforms existing state-of-the-art methods. This leads to superior preservation of high-frequency anatomical features, especially in extremely sparse-view settings, as demonstrated on LUNA16 and ToothFairy datasets.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is highly relevant to medical imaging by enabling high-quality CT reconstructions from significantly fewer X-ray projections, thereby substantially reducing patient radiation exposure without compromising the integrity of crucial fine anatomical details essential for accurate diagnosis.</p>
+                <p>This research is crucial for medical imaging as it enables high-quality CBCT reconstruction from fewer X-ray projections, thereby reducing patient radiation exposure and scan times. The improved recovery of fine anatomical details enhances diagnostic accuracy for conditions requiring precise structural evaluation, even with limited input data.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This research applies advanced AI/machine learning techniques (specifically deep learning with Fourier Neural Operators) to enhance the quality and fidelity of Cone-Beam Computed Tomography (CBCT) image reconstruction. By improving reconstruction from extremely sparse-view data, it can potentially lead to reduced radiation exposure for patients during medical scans, enable faster scans, and provide clearer diagnostic images of anatomical structures, thereby improving diagnostic accuracy and patient care within healthcare settings.</p>
+                <p>This research applies AI (specifically deep learning with a novel dual-frequency-aware learning framework) to improve the quality of medical images obtained from Cone-Beam Computed Tomography (CBCT). By enabling high-fidelity reconstruction from 'extremely sparse-view' settings, it can lead to reduced radiation exposure for patients, faster scan times, and more accurate diagnoses by preserving crucial anatomical details that might otherwise be lost. This directly impacts patient care and diagnostic efficacy.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Addresses the critical problem of recovering high-frequency anatomical details in sparse-view CBCT, where traditional CNNs are biased towards low-frequency information.</li>
+                    <li>Addresses the critical problem of recovering high-frequency anatomical details in sparse-view CBCT reconstruction, a common failing of conventional CNNs which bias towards low-frequency information.</li>
                     
-                    <li>Introduces DuFal, a novel dual-path architecture that concurrently processes information in both frequency and spatial domains.</li>
+                    <li>Proposes DuFal, a novel dual-path framework that synergistically integrates frequency-domain and spatial-domain processing to capture comprehensive image information.</li>
                     
-                    <li>Proposes the High-Local Factorized Fourier Neural Operator (HLF-FNO), comprising a Global High-Frequency Enhanced FNO and a Local High-Frequency Enhanced FNO, to capture global frequency patterns while preserving spatial locality.</li>
+                    <li>Introduces the High-Local Factorized Fourier Neural Operator (HL-FFNO), comprising two complementary branches: a Global High-Frequency Enhanced Fourier Neural Operator for global patterns and a Local High-Frequency Enhanced Fourier Neural Operator for spatially localized details.</li>
                     
-                    <li>Improves computational efficiency of the Fourier Neural Operator through a novel Spectral-Channel Factorization scheme.</li>
+                    <li>Incorporates a Spectral-Channel Factorization scheme to enhance computational efficiency by significantly reducing the parameter count of the Fourier Neural Operator.</li>
                     
-                    <li>Incorporates a Cross-Attention Frequency Fusion module designed to effectively integrate features derived from both spatial and frequency processing pathways.</li>
+                    <li>Designs a Cross-Attention Frequency Fusion module to effectively integrate the diverse features extracted from both spatial and frequency domains.</li>
                     
-                    <li>Utilizes an Intensity Field Decoding pipeline to reconstruct the final Computed Tomography volume from generated projection representations.</li>
+                    <li>Features a comprehensive decoding pipeline from fused features to projection representations and finally to the reconstructed CT volume via Intensity Field Decoding.</li>
                     
-                    <li>Achieves state-of-the-art performance on LUNA16 and ToothFairy datasets, demonstrating superior preservation of high-frequency anatomical features, especially in extremely sparse-view scenarios.</li>
+                    <li>Achieves superior performance on the LUNA16 (lung nodule detection) and ToothFairy (dental structures) datasets, demonstrating significant outperformance over SOTA methods in preserving high-frequency anatomical features, particularly under extremely sparse-view conditions.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>DuFal employs a dual-path architecture that leverages both frequency-domain and spatial-domain processing. Its core is the High-Local Factorized Fourier Neural Operator (HLF-FNO), which includes a Global High-Frequency Enhanced Fourier Neural Operator for global frequency patterns and a Local High-Frequency Enhanced Fourier Neural Operator for spatially partitioned patches. Efficiency is boosted by a Spectral-Channel Factorization scheme applied to the FNO. A Cross-Attention Frequency Fusion module integrates the resulting spatial and frequency features. These fused features are then processed by a Feature Decoder to generate projection representations, subsequently fed into an Intensity Field Decoding pipeline for final CT volume reconstruction. Evaluation was conducted on the LUNA16 and ToothFairy datasets.</p>
+                    <p>DuFal employs a dual-path architecture that concurrently processes spatial and frequency domain information. Its core innovation is the High-Local Factorized Fourier Neural Operator (HL-FFNO), which includes a Global High-Frequency Enhanced FNO for capturing overall frequency patterns and a Local High-Frequency Enhanced FNO that operates on partitioned patches to preserve spatial locality. Efficiency is improved through a Spectral-Channel Factorization scheme for parameter reduction. Features from both paths are integrated using a Cross-Attention Frequency Fusion module, then decoded via a Feature Decoder to projection representations, and finally converted into a 3D CT volume using an Intensity Field Decoding pipeline.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The DuFal framework significantly outperforms existing state-of-the-art methods in sparse-view CBCT reconstruction, particularly in its ability to preserve high-frequency anatomical features and fine details. This superior performance is consistent across the LUNA16 and ToothFairy datasets, especially under extremely sparse-view conditions, demonstrating its robustness and efficacy.</p>
+                    <p>The DuFal framework significantly outperforms existing state-of-the-art methods in sparse-view CBCT reconstruction. Its primary strength lies in its ability to robustly preserve high-frequency anatomical features, which are critical for diagnostic accuracy. This superior performance was consistently demonstrated on both the LUNA16 and ToothFairy datasets, especially under extremely sparse-view acquisition settings.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>The potential clinical impact is substantial: it could lead to a dramatic reduction in patient radiation dose during CT scans, making diagnostic imaging safer and more accessible for repeated examinations or sensitive populations. The enhanced recovery of high-frequency details promises improved diagnostic accuracy for subtle pathologies, micro-fractures, or small anatomical structures, potentially expanding the clinical utility of CBCT in scenarios where projection limitations or dose constraints are critical.</p>
+                <p>This technology has the potential to significantly reduce the radiation dose administered to patients during CBCT scans without compromising image quality, making medical imaging safer and more accessible. Clinically, it could lead to more accurate diagnosis and treatment planning by providing clearer and more detailed visualizations of subtle anatomical structures, such as small lung nodules or intricate dental roots, even when using faster or low-dose imaging protocols.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state any limitations of the proposed DuFal framework or its experimental validation.</p>
+                <p>The abstract does not explicitly mention any limitations or caveats of the DuFal framework.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>The abstract does not explicitly mention specific future research directions.</p>
+                <p>The abstract does not explicitly mention future research directions.</p>
             </section>
             
 
@@ -122,13 +122,11 @@
                     
                     <span class="tag">Radiology</span>
                     
+                    <span class="tag">Oncology (specifically lung nodule screening/diagnosis)</span>
+                    
+                    <span class="tag">Dentistry (orthodontics, implant planning, endodontics)</span>
+                    
                     <span class="tag">Diagnostic Imaging</span>
-                    
-                    <span class="tag">Medical Physics</span>
-                    
-                    <span class="tag">Oncology (for treatment planning)</span>
-                    
-                    <span class="tag">Dentistry</span>
                     
                 </div>
             </section>
@@ -137,21 +135,21 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">sparse-view CBCT</span>
+                    <span class="tag tag-keyword">CBCT reconstruction</span>
+                    
+                    <span class="tag tag-keyword">sparse-view</span>
                     
                     <span class="tag tag-keyword">deep learning</span>
                     
                     <span class="tag tag-keyword">Fourier Neural Operator</span>
                     
-                    <span class="tag tag-keyword">high-frequency reconstruction</span>
+                    <span class="tag tag-keyword">high-frequency features</span>
                     
                     <span class="tag tag-keyword">medical imaging</span>
                     
-                    <span class="tag tag-keyword">radiation dose reduction</span>
+                    <span class="tag tag-keyword">low-dose CT</span>
                     
-                    <span class="tag tag-keyword">anatomical detail</span>
-                    
-                    <span class="tag tag-keyword">cone-beam CT</span>
+                    <span class="tag tag-keyword">anatomical details</span>
                     
                 </div>
             </section>
