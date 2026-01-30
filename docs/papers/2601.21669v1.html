@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expected Return Causes Outcome-Level Mode Collapse in Reinforcement Learning and How to Fix It with Inverse Probability Scaling - Health AI Hub</title>
+    <meta name="description" content="This paper identifies outcome-level mode collapse in reinforcement learning (RL), where policies converge to a narrow subset of high-quality solutions, as a str">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Expected Return Causes Outcome-Level Mode Collapse in Reinforcement Learning and How to Fix It with Inverse Probability Scaling</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.21669v1" target="_blank">2601.21669v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-29
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Abhijeet Sinha, Sundari Elango, Dianbo Liu
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG, cs.AI
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.85 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.21669v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.21669v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper identifies outcome-level mode collapse in reinforcement learning (RL), where policies converge to a narrow subset of high-quality solutions, as a structural consequence of the expected-return objective itself, rather than solely exploration issues. It proposes Inverse Probability Scaling (IPS) as a minimal correction that fundamentally alters learning dynamics to yield reward-proportional terminal distributions, preventing collapse, and demonstrates its effectiveness in tasks including molecular generation.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>For medical applications, particularly in drug discovery and personalized medicine, the ability of AI to reliably generate a diverse set of high-quality solutions (e.g., novel drug candidates with varied scaffolds, multiple individualized treatment plan options) is critical. This work provides a fundamental algorithmic solution to a significant limitation of current RL, enabling AI to propose a broader, more robust range of options for complex medical problems.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research improves the ability of Reinforcement Learning models to generate a diverse range of high-quality solutions in multimodal settings. Specifically, its application to 'molecular generation tasks' directly translates to enhancing AI systems used for discovering new drug candidates or compounds with desired therapeutic properties. By mitigating mode collapse, AI models can explore a wider chemical space, leading to more innovative and effective drug development pipelines.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>Standard expected-return maximization in reinforcement learning (RL) inherently leads to outcome-level mode collapse, causing policies to converge onto a small, non-diverse subset of high-quality solutions even when many exist.</li>
+                    
+                    <li>The authors theoretically demonstrate that this collapse is a structural consequence of the expected-return objective, where log-probability ratios between outcomes diverge exponentially, independent of exploration or regularization strategies.</li>
+                    
+                    <li>The root cause of this pathology is identified as the probability multiplier within the expectation, which undesirably amplifies outcome frequencies in the learning signal.</li>
+                    
+                    <li>Inverse Probability Scaling (IPS) is introduced as a minimal correction that removes this outcome-frequency amplification from the learning signal.</li>
+                    
+                    <li>IPS fundamentally changes the learning dynamics and is provably shown to yield reward-proportional terminal distributions, effectively preventing mode collapse in multimodal settings.</li>
+                    
+                    <li>The principle is instantiated as IPS-GRPO (Inverse Probability Scaling - Group Relative Policy Optimization), implemented as a drop-in modification requiring no auxiliary models or architectural changes.</li>
+                    
+                    <li>Empirical validation across different reasoning and molecular generation tasks shows that IPS-GRPO consistently reduces outcome-level mode collapse while matching or exceeding baseline performance.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The methodology involves a theoretical analysis of existing reinforcement learning objective functions to diagnose the structural cause of mode collapse. Based on this diagnosis, a novel algorithmic correction, Inverse Probability Scaling (IPS), is proposed and mathematically derived to provably achieve reward-proportional terminal distributions. This principle is then instantiated as a practical, drop-in modification, IPS-GRPO, to an existing policy optimization algorithm and empirically validated on various tasks, including molecular generation, to assess its performance in reducing mode collapse and maintaining overall reward.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The primary key finding is that the expected-return objective in standard RL inherently leads to outcome-level mode collapse due to its structural properties. The paper's main contribution is the development of Inverse Probability Scaling (IPS), which fundamentally rectifies this issue by ensuring learned policies yield terminal distributions that are proportional to their rewards, thus preventing collapse and promoting solution diversity. IPS-GRPO demonstrated superior performance in achieving diversity without compromising reward on relevant tasks.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This research has the potential to significantly enhance AI's capabilities in designing novel therapeutics by enabling the generation of a diverse array of potential drug candidates, each with distinct chemical properties but comparable efficacy, thereby increasing the chances of finding viable and optimized treatments. It could also empower AI systems to propose multiple, equally valid, yet distinct treatment strategies for individual patients, allowing clinicians to make more nuanced and personalized decisions considering patient-specific preferences, comorbidities, and potential side effects.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract does not explicitly detail specific limitations of IPS or IPS-GRPO. While it suggests the method is a 'drop-in modification,' potential computational overheads on very large-scale or high-dimensional medical RL problems, the range of applicability across all types of multimodal RL tasks, or the precise empirical limits of its diversity-promoting effects are not discussed.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The paper implies that future research should prioritize fundamental objective corrections over heuristic exploration strategies for reliable multimodal policy optimization. This suggests directions such as extending Inverse Probability Scaling to other RL paradigms (e.g., off-policy learning, multi-agent systems), investigating its computational efficiency and scalability in real-world medical applications, and applying it to a broader spectrum of complex medical RL problems beyond molecular generation, such as optimizing intricate clinical pathways or diagnostic workflows.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Drug Discovery</span>
+                    
+                    <span class="tag">Computational Chemistry</span>
+                    
+                    <span class="tag">Bioinformatics</span>
+                    
+                    <span class="tag">Personalized Medicine</span>
+                    
+                    <span class="tag">Precision Oncology (for diverse treatment strategies)</span>
+                    
+                    <span class="tag">Medical AI/ML Research</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Reinforcement Learning</span>
+                    
+                    <span class="tag tag-keyword">Mode Collapse</span>
+                    
+                    <span class="tag tag-keyword">Inverse Probability Scaling</span>
+                    
+                    <span class="tag tag-keyword">Multimodal Optimization</span>
+                    
+                    <span class="tag tag-keyword">Molecular Generation</span>
+                    
+                    <span class="tag tag-keyword">Drug Discovery</span>
+                    
+                    <span class="tag tag-keyword">Policy Optimization</span>
+                    
+                    <span class="tag tag-keyword">Diversity</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Many reinforcement learning (RL) problems admit multiple terminal solutions of comparable quality, where the goal is not to identify a single optimum but to represent a diverse set of high-quality outcomes. Nevertheless, policies trained by standard expected return maximization routinely collapse onto a small subset of outcomes, a phenomenon commonly attributed to insufficient exploration or weak regularization. We show that this explanation is incomplete: outcome level mode collapse is a structural consequence of the expected-return objective itself. Under idealized learning dynamics, the log-probability ratio between any two outcomes evolves linearly in their reward difference, implying exponential ratio divergence and inevitable collapse independent of the exploration strategy, entropy regularization, or optimization algorithm. We identify the source of this pathology as the probability multiplier inside the expectation and propose a minimal correction: inverse probability scaling, which removes outcome-frequency amplification from the learning signal, fundamentally changes the learning dynamics, and provably yields reward-proportional terminal distributions, preventing collapse in multimodal settings. We instantiate this principle in Group Relative Policy Optimization (GRPO) as a drop-in modification, IPS-GRPO, requiring no auxiliary models or architectural changes. Across different reasoning and molecular generation tasks, IPS-GRPO consistently reduces outcome-level mode collapse while matching or exceeding baseline performance, suggesting that correcting the objective rather than adding exploration heuristics is key to reliable multimodal policy optimization.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>
