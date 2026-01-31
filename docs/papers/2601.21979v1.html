@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigation into using stochastic embedding representations for evaluating the trustworthiness of the Fréchet Inception Distance - Health AI Hub</title>
+    <meta name="description" content="This paper investigates the trustworthiness of the Fréchet Inception Distance (FID) for evaluating the quality of synthetic medical images, a metric often consi">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">← Back to all papers</a>
+                <a href="../index.html" class="home-btn">🏠 Home</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container paper-detail">
+        <article>
+            <h1>Investigation into using stochastic embedding representations for evaluating the trustworthiness of the Fréchet Inception Distance</h1>
+
+            <div class="paper-metadata">
+                <div class="meta-row">
+                    <strong>arXiv ID:</strong> <a href="http://arxiv.org/abs/2601.21979v1" target="_blank">2601.21979v1</a>
+                </div>
+                <div class="meta-row">
+                    <strong>Published:</strong> 2026-01-29
+                </div>
+                <div class="meta-row">
+                    <strong>Authors:</strong> Ciaran Bench, Vivek Desai, Carlijn Roozemond, Ruben van Engen, Spencer A. Thomas
+                </div>
+                <div class="meta-row">
+                    <strong>Categories:</strong> cs.LG
+                </div>
+                <div class="meta-row">
+                    <strong>Relevance Score:</strong> 0.90 / 1.00
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="http://arxiv.org/abs/2601.21979v1" target="_blank" class="btn btn-primary">View on arXiv</a>
+                <a href="https://arxiv.org/pdf/2601.21979v1" target="_blank" class="btn btn-primary">Download PDF</a>
+            </div>
+
+            <section class="paper-section">
+                <h2>Summary</h2>
+                <p class="summary-text">This paper investigates the trustworthiness of the Fréchet Inception Distance (FID) for evaluating the quality of synthetic medical images, a metric often considered less effective for this domain due to its reliance on models trained on natural images. The authors utilize Monte Carlo dropout to compute predictive variances in both FID and the underlying feature embeddings, demonstrating a correlation between these variances and the 'out-of-distribution' nature of test inputs. This correlation provides a means to assess the reliability of FID scores in contexts where the feature extractor is mismatched with the data.</p>
+            </section>
+
+            <section class="paper-section">
+                <h2>Medical Relevance</h2>
+                <p>This research is highly relevant to medical applications of deep learning, especially concerning the generation and evaluation of synthetic medical images. By offering a method to gauge the trustworthiness of metrics like FID, it helps ensure that the quality assessments of AI-generated medical data are reliable, which is crucial for training and validating safe and effective clinical AI models.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>AI Health Application</h2>
+                <p>The research directly contributes to understanding and improving the reliability of metrics (like FID) used to evaluate the quality and trustworthiness of AI models, particularly generative models that produce synthetic medical images. This is crucial for developing robust and trustworthy AI applications in healthcare, such as those involving medical image analysis, diagnostics, data augmentation, or privacy-preserving sharing of medical data.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Key Points</h2>
+                <ul class="key-points">
+                    
+                    <li>The Fréchet Inception Distance (FID) is a widely used metric for synthetic image quality, but its efficacy for medical images is limited due to its dependency on an InceptionV3 model pretrained on ImageNet1K (natural images).</li>
+                    
+                    <li>The extent to which FID fails to capture meaningful differences in medical image characteristics is often unclear, prompting the need for trustworthiness evaluation.</li>
+                    
+                    <li>The study employs Monte Carlo dropout (MCDO) to quantify uncertainty, estimating predictive variance in both the FID score and the latent feature representations generated by the InceptionV3 model.</li>
+                    
+                    <li>Test inputs included ImageNet1K validation sets augmented at various strengths, as well as other external datasets, to simulate varying degrees of out-of-distribution (OOD) input relative to the InceptionV3's training data.</li>
+                    
+                    <li>A key finding is that the magnitudes of the computed predictive variances correlate with how out-of-distribution the test inputs are.</li>
+                    
+                    <li>This correlation provides valuable insight into the effectiveness of these variances as indicators of the trustworthiness and reliability of the FID score.</li>
+                    
+                    <li>The research offers a novel approach to assess the confidence in FID scores, particularly in challenging domains like medical imaging where the underlying feature extractor may not be optimally suited.</li>
+                    
+                </ul>
+            </section>
+
+            <div class="two-column">
+                <section class="paper-section">
+                    <h2>Methodology</h2>
+                    <p>The study's methodology centers on using Monte Carlo dropout (MCDO) during inference to generate multiple stochastic latent representations from the InceptionV3 feature extractor. From these representations, the predictive variance of both the Fréchet Inception Distance (FID) and the latent embeddings themselves is computed. These variance estimates are then correlated with the 'out-of-distribution' (OOD) nature of various test datasets, including augmented ImageNet1K validation sets and external datasets, to determine their utility as indicators of FID's trustworthiness relative to the InceptionV3 model's original training data.</p>
+                </section>
+
+                <section class="paper-section">
+                    <h2>Key Findings</h2>
+                    <p>The main finding is that the magnitudes of the predictive variances, both for the FID score and the underlying feature embedding model's latent representations, exhibit varying degrees of correlation with the extent to which test inputs are out-of-distribution relative to the InceptionV3 model's training data. This indicates that these variance measures can effectively serve as indicators of the trustworthiness and reliability of the FID metric, especially when applied to data domains (like medical images) that differ significantly from the feature extractor's training set.</p>
+                </section>
+            </div>
+
+            <section class="paper-section">
+                <h2>Clinical Impact</h2>
+                <p>This work has significant potential clinical impact by enabling more robust and reliable evaluation of synthetic medical images. Clinicians and AI developers can use these variance-based trustworthiness indicators to better interpret FID scores, identifying when the metric might be misleading due to domain mismatch. This improved understanding can lead to the development of higher-quality synthetic medical datasets for training diagnostic AI, reducing the risks associated with deploying models validated on untrustworthy quality metrics and ultimately enhancing patient care.</p>
+            </section>
+
+            
+            <section class="paper-section">
+                <h2>Limitations</h2>
+                <p>The abstract highlights the inherent limitation that the Fréchet Inception Distance (FID) is less effective for medical images due to its reliance on an InceptionV3 model pretrained on natural images (ImageNet1K). The extent of this failure to capture meaningful differences in medical image characteristics is not easily quantifiable. While the paper proposes a method to evaluate the trustworthiness *of* FID, it does not inherently resolve this fundamental domain mismatch.</p>
+            </section>
+            
+
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>Although not explicitly detailed in the abstract, this research suggests several future directions: developing more robust, uncertainty-aware quality metrics specifically tailored for medical image generation; investigating the generalizability of these variance-based trustworthiness indicators to other medical AI evaluation tasks; and exploring methods to integrate these indicators directly into clinical AI development pipelines to ensure more transparent and reliable model validation.</p>
+            </section>
+            
+
+            <section class="paper-section">
+                <h2>Medical Domains</h2>
+                <div class="tags">
+                    
+                    <span class="tag">Medical Imaging</span>
+                    
+                    <span class="tag">Computational Pathology</span>
+                    
+                    <span class="tag">Radiology</span>
+                    
+                    <span class="tag">AI in Healthcare</span>
+                    
+                    <span class="tag">Medical Generative Models</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Keywords</h2>
+                <div class="tags">
+                    
+                    <span class="tag tag-keyword">Fréchet Inception Distance (FID)</span>
+                    
+                    <span class="tag tag-keyword">Monte Carlo dropout</span>
+                    
+                    <span class="tag tag-keyword">predictive variance</span>
+                    
+                    <span class="tag tag-keyword">stochastic embedding</span>
+                    
+                    <span class="tag tag-keyword">synthetic medical images</span>
+                    
+                    <span class="tag tag-keyword">out-of-distribution detection</span>
+                    
+                    <span class="tag tag-keyword">deep learning</span>
+                    
+                    <span class="tag tag-keyword">InceptionV3</span>
+                    
+                </div>
+            </section>
+
+            <section class="paper-section">
+                <h2>Abstract</h2>
+                <p class="abstract">Feature embeddings acquired from pretrained models are widely used in medical applications of deep learning to assess the characteristics of datasets; e.g. to determine the quality of synthetic, generated medical images. The Fréchet Inception Distance (FID) is one popular synthetic image quality metric that relies on the assumption that the characteristic features of the data can be detected and encoded by an InceptionV3 model pretrained on ImageNet1K (natural images). While it is widely known that this makes it less effective for applications involving medical images, the extent to which the metric fails to capture meaningful differences in image characteristics is not obviously known. Here, we use Monte Carlo dropout to compute the predictive variance in the FID as well as a supplemental estimate of the predictive variance in the feature embedding model's latent representations. We show that the magnitudes of the predictive variances considered exhibit varying degrees of correlation with the extent to which test inputs (ImageNet1K validation set augmented at various strengths, and other external datasets) are out-of-distribution relative to its training data, providing some insight into the effectiveness of their use as indicators of the trustworthiness of the FID.</p>
+            </section>
+
+            
+
+            
+        </article>
+    </main>
+
+    <footer class="container">
+        <p><a href="../index.html">← Back to all papers</a></p>
+    </footer>
+</body>
+</html>

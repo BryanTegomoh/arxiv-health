@@ -7,23 +7,25 @@
       "Alberto Presta",
       "Michal Byra"
     ],
-    "summary": "This paper introduces Routing the Lottery (RTL), an adaptive pruning framework that generates multiple specialized subnetworks, or 'adaptive tickets', tailored to specific classes, semantic clusters, or conditions within heterogeneous datasets. RTL consistently outperforms traditional single and multi-model baselines in accuracy and recall, while drastically reducing parameter count, offering a novel approach to align model structure with inherent data diversity.",
+    "summary": "Routing the Lottery (RTL) is an adaptive pruning framework that addresses the limitation of the Lottery Ticket Hypothesis by discovering multiple specialized subnetworks, called \"adaptive tickets,\" tailored to heterogeneous data characteristics. This approach consistently outperforms traditional single- and multi-model baselines in accuracy and recall while significantly reducing parameter count and revealing semantically aligned model structures. The work introduces new concepts like subnetwork collapse and a similarity score for diagnosing oversparsification.",
     "keywords": [
-      "Neural Network Pruning",
+      "Pruning",
       "Lottery Ticket Hypothesis",
       "Adaptive Subnetworks",
       "Heterogeneous Data",
-      "Model Compression",
       "Deep Learning",
-      "Context-Aware AI",
-      "Machine Learning"
+      "Model Compression",
+      "Medical AI",
+      "Context-Aware AI"
     ],
     "domains": [
-      "Medical Imaging Analysis",
+      "Medical Imaging (e.g., interpreting scans from various machines or differentiating subtle lesion types)",
+      "Genomics and Proteomics (e.g., identifying disease subtypes within heterogeneous patient cohorts)",
+      "Electronic Health Records (EHR) Analysis (e.g., predicting outcomes for specific patient groups or care settings)",
       "Personalized Medicine",
-      "Clinical Decision Support",
-      "Computational Pathology",
-      "Genomics and Proteomics"
+      "Diagnostic AI",
+      "Prognostic AI",
+      "Precision Health"
     ],
     "url": "papers/2601.22141v1.html"
   },
@@ -69,21 +71,22 @@
       "Alan L. Yuille",
       "Zongwei Zhou"
     ],
-    "summary": "This paper introduces ePAI, an artificial intelligence system designed for the early and prediagnostic detection of pancreatic ductal adenocarcinoma (PDAC) from computed tomography (CT) scans. ePAI demonstrated high accuracy and sensitivity in both internal and external validations, crucially detecting lesions up to 36 months before clinical diagnosis, often overlooked by radiologists. A multi-reader study confirmed ePAI's significant outperformance of board-certified radiologists in sensitivity for early PDAC detection.",
+    "summary": "This paper introduces ePAI, an Artificial Intelligence system designed for early and prediagnostic detection of pancreatic ductal adenocarcinoma (PDAC) from computed tomography (CT) scans. The system demonstrated high accuracy in both internal and external validation sets, detecting subtle, overlooked lesions up to 36 months before clinical diagnosis. Notably, ePAI significantly outperformed expert radiologists in sensitivity for identifying early PDACs.",
     "keywords": [
       "Pancreatic Cancer",
       "PDAC",
-      "Artificial Intelligence",
-      "Computed Tomography",
       "Early Detection",
+      "Artificial Intelligence",
+      "CT Scan",
       "Prediagnostic",
-      "Machine Learning",
-      "Radiology"
+      "Deep Learning",
+      "Computer-Aided Detection"
     ],
     "domains": [
       "Oncology",
       "Radiology",
-      "Gastroenterology"
+      "Gastroenterology",
+      "Diagnostic Imaging"
     ],
     "url": "papers/2601.22134v1.html"
   },
@@ -100,82 +103,282 @@
       "Arda Pekis",
       "Kevin Brown"
     ],
-    "summary": "This paper introduces SMB-Structure, a novel 'world model' paradigm for structured Electronic Health Records (EHR) that simulates patient dynamics rather than merely predicting next tokens. By integrating a Joint-Embedding Prediction Architecture (JEPA) with next-token prediction (SFT), the model learns embeddings that capture disease trajectories, outperforming autoregressive baselines and achieving competitive performance on complex tasks in large oncology and pulmonary embolism cohorts.",
+    "summary": "This paper introduces SMB-Structure, a novel 'world model' paradigm for structured Electronic Health Records (EHR) designed to simulate patient dynamics rather than merely summarizing them as static documents. It combines a Joint-Embedding Prediction Architecture (JEPA) with next-token prediction (SFT) to learn embeddings that capture complex disease trajectories. Validated across oncology and pulmonary embolism cohorts, the model demonstrates superior capture of disease dynamics compared to autoregressive baselines, achieving competitive performance on heterogeneous patient tasks.",
     "keywords": [
-      "EHR",
+      "Longitudinal EHR",
       "World Model",
-      "Patient Trajectory",
-      "Joint-Embedding Prediction Architecture",
-      "JEPA",
-      "Longitudinal Data",
+      "Disease Dynamics",
+      "Joint-Embedding Prediction Architecture (JEPA)",
+      "Next-token prediction",
       "Clinical Foundation Models",
-      "Disease Dynamics"
+      "Structured EHR",
+      "Patient Trajectory"
     ],
     "domains": [
       "Oncology",
       "Pulmonary Embolism",
-      "Clinical Informatics",
-      "Personalized Medicine"
+      "Computational Medicine",
+      "Precision Medicine",
+      "Predictive Analytics"
     ],
     "url": "papers/2601.22128v1.html"
   },
   {
-    "id": "2601.21800v1",
-    "title": "BioAgent Bench: An AI Agent Evaluation Suite for Bioinformatics",
+    "id": "2601.22124v1",
+    "title": "A Federated and Parameter-Efficient Framework for Large Language Model Training in Medicine",
     "authors": [
-      "Dionizije Fa",
-      "Marko \u010culjak",
-      "Bruno Pand\u017ea",
-      "Mateo \u010cupi\u0107"
+      "Anran Li",
+      "Yuanyuan Chen",
+      "Wenjun Long",
+      "Yu Yin",
+      "Yan Hu",
+      "Hyunjae Kim",
+      "Weipeng Zhou",
+      "Yujia Zhou",
+      "Hongyi Peng",
+      "Yang Ren",
+      "Xuguang Ai",
+      "Zhenyue Qin",
+      "Ming Hu",
+      "Xiaoxiao Li",
+      "Han Yu",
+      "Yih-Chung Tham",
+      "Lucila Ohno-Machado",
+      "Hua Xu",
+      "Qingyu Chen"
     ],
-    "summary": "This paper introduces BioAgent Bench, a novel evaluation suite and benchmark dataset for systematically measuring the performance and robustness of AI agents in complex, end-to-end bioinformatics tasks. It evaluates both closed-source and open-weight models, revealing that while agents can construct high-level pipelines, they often fail under controlled perturbations, underscoring critical weaknesses in step-level reasoning. The research also highlights the crucial trade-off between model performance and data privacy, advocating for open-weight models in sensitive clinical contexts despite lower completion rates.",
+    "summary": "This paper introduces Fed-MedLoRA and Fed-MedLoRA+, a novel federated learning framework designed for parameter-efficient and robust adaptation of large language models (LLMs) in medical applications. It addresses key challenges in applying FL to LLMs, namely the high communication and computation overhead of multi-billion parameter models and the inherent heterogeneity of real-world clinical data, by transmitting only low-rank adapter parameters and utilizing data-aware aggregation. The framework's effectiveness is demonstrated for clinical information extraction across diverse patient cohorts and under various real-world evaluation scenarios.",
     "keywords": [
-      "AI Agents",
-      "Bioinformatics",
-      "Benchmark",
-      "RNA-seq",
-      "Variant Calling",
-      "Metagenomics",
-      "Robustness",
-      "LLM Evaluation"
+      "Federated Learning",
+      "Large Language Models",
+      "Medical AI",
+      "Parameter-Efficient Training",
+      "Clinical Information Extraction",
+      "Data Heterogeneity",
+      "LoRA",
+      "Healthcare"
     ],
     "domains": [
-      "Genomics",
-      "Transcriptomics",
-      "Microbiology",
-      "Precision Medicine",
-      "Clinical Diagnostics",
-      "Pathogen Surveillance"
+      "Clinical Information Extraction",
+      "Medical Informatics",
+      "Digital Health",
+      "AI in Healthcare"
     ],
-    "url": "papers/2601.21800v1.html"
+    "url": "papers/2601.22124v1.html"
   },
   {
-    "id": "2601.21747v1",
-    "title": "Temporal Sepsis Modeling: a Fully Interpretable Relational Way",
+    "id": "2601.22093v1",
+    "title": "Investigating Associational Biases in Inter-Model Communication of Large Generative Models",
     "authors": [
-      "Vincent Lemaire",
-      "N\u00e9dra Meloulli",
-      "Pierre Jaquet"
+      "Fethiye Irmak Dogan",
+      "Yuval Weiss",
+      "Kajal Patel",
+      "Jiaee Cheong",
+      "Hatice Gunes"
     ],
-    "summary": "This paper introduces a novel machine learning framework for temporal sepsis modeling that prioritizes extreme interpretability, addressing the limitations of existing deep learning models which often lack transparency. It proposes a relational approach to process temporal electronic medical record (EMR) data, constructing interpretable features via a propositionalisation technique, and classifying them using a selective Naive Bayesian classifier. The framework's relevance and comprehensive fourfold interpretability (univariate, global, local, and counterfactual) are demonstrated through experimental validation.",
+    "summary": "This paper investigates how social associational biases propagate and amplify in inter-model communication pipelines of large generative AI, focusing on human activity recognition and affective expression. It reveals systematic demographic drifts towards younger representations for both actions and emotions, and more female-presenting representations primarily for emotions, often supported by spurious visual cues. The study highlights the critical need for safeguards and mitigation strategies in human-centered AI systems to prevent unequal treatment stemming from these biases.",
     "keywords": [
-      "Sepsis",
-      "Interpretability",
-      "Relational Machine Learning",
-      "Temporal Modeling",
-      "Electronic Medical Records",
-      "Propositionalisation",
-      "Naive Bayesian",
-      "Critical Care"
+      "Generative AI",
+      "Associational Bias",
+      "Inter-Model Communication",
+      "Demographic Drift",
+      "Human Activity Recognition",
+      "Affect Prediction",
+      "Explainable AI",
+      "Social Bias"
     ],
     "domains": [
-      "Intensive Care Unit (ICU)",
-      "Critical Care Medicine",
-      "Sepsis Management",
-      "Clinical Decision Support",
-      "Health Informatics"
+      "Digital Health",
+      "Remote Patient Monitoring",
+      "Geriatrics",
+      "Mental Health",
+      "Assistive Technology",
+      "Diagnostic Bias"
     ],
-    "url": "papers/2601.21747v1.html"
+    "url": "papers/2601.22093v1.html"
+  },
+  {
+    "id": "2601.22059v1",
+    "title": "AIRPET: Virtual Positron Emission Tomography",
+    "authors": [
+      "J. Renner",
+      "J. J. G\u00f3mez-Cadenas",
+      "R. Soleti"
+    ],
+    "summary": "AIRPET is a novel web-based platform designed to integrate the complex, multi-stage process of Positron Emission Tomography (PET) scanner design into a single, accessible, and AI-assisted workflow. It addresses the challenge of requiring diverse expertise by providing tools for assisted geometry creation via Large Language Models (LLMs) and basic PET image reconstruction. The paper introduces AIRPET, outlining its current functionality and proposed future additions.",
+    "keywords": [
+      "PET",
+      "Positron Emission Tomography",
+      "medical imaging",
+      "scanner design",
+      "AI-assisted design",
+      "web-based platform",
+      "image reconstruction",
+      "detector design",
+      "LLMs"
+    ],
+    "domains": [
+      "Oncology",
+      "Neurology",
+      "Cardiology",
+      "Radiology",
+      "Nuclear Medicine",
+      "Medical Physics Research",
+      "Biomedical Engineering"
+    ],
+    "url": "papers/2601.22059v1.html"
+  },
+  {
+    "id": "2601.22026v1",
+    "title": "Hybrid Foveated Path Tracing with Peripheral Gaussians for Immersive Anatomy",
+    "authors": [
+      "Constantin Kleinbeck",
+      "Luisa Theelke",
+      "Hannah Schieber",
+      "Ulrich Eck",
+      "R\u00fcdiger von Eisenhart-Rothe",
+      "Daniel Roth"
+    ],
+    "summary": "This paper introduces a novel hybrid rendering method for high-quality, interactive, and immersive visualization of volumetric medical data. It combines streamed foveated path tracing for high-fidelity central vision with a dynamically generated and refined Gaussian Splatting model for the periphery, enabling rapid updates without extensive preprocessing. The approach improves spatial understanding of complex anatomies for applications like diagnosis and surgical planning.",
+    "keywords": [
+      "Hybrid rendering",
+      "Foveated rendering",
+      "Path tracing",
+      "Gaussian Splatting",
+      "Volumetric medical imaging",
+      "Immersive visualization",
+      "Anatomy",
+      "Virtual reality"
+    ],
+    "domains": [
+      "Radiology",
+      "Diagnostic Imaging",
+      "Surgical Planning",
+      "Medical Education",
+      "Anatomy",
+      "Pathology"
+    ],
+    "url": "papers/2601.22026v1.html"
+  },
+  {
+    "id": "2601.21979v1",
+    "title": "Investigation into using stochastic embedding representations for evaluating the trustworthiness of the Fr\u00e9chet Inception Distance",
+    "authors": [
+      "Ciaran Bench",
+      "Vivek Desai",
+      "Carlijn Roozemond",
+      "Ruben van Engen",
+      "Spencer A. Thomas"
+    ],
+    "summary": "This paper investigates the trustworthiness of the Fr\u00e9chet Inception Distance (FID) for evaluating the quality of synthetic medical images, a metric often considered less effective for this domain due to its reliance on models trained on natural images. The authors utilize Monte Carlo dropout to compute predictive variances in both FID and the underlying feature embeddings, demonstrating a correlation between these variances and the 'out-of-distribution' nature of test inputs. This correlation provides a means to assess the reliability of FID scores in contexts where the feature extractor is mismatched with the data.",
+    "keywords": [
+      "Fr\u00e9chet Inception Distance (FID)",
+      "Monte Carlo dropout",
+      "predictive variance",
+      "stochastic embedding",
+      "synthetic medical images",
+      "out-of-distribution detection",
+      "deep learning",
+      "InceptionV3"
+    ],
+    "domains": [
+      "Medical Imaging",
+      "Computational Pathology",
+      "Radiology",
+      "AI in Healthcare",
+      "Medical Generative Models"
+    ],
+    "url": "papers/2601.21979v1.html"
+  },
+  {
+    "id": "2601.21964v1",
+    "title": "From Tokens to Blocks: A Block-Diffusion Perspective on Molecular Generation",
+    "authors": [
+      "Qianwei Yang",
+      "Dong Xu",
+      "Zhangfan Yang",
+      "Sisi Yuan",
+      "Zexuan Zhu",
+      "Jianqiang Li",
+      "Junkai Ji"
+    ],
+    "summary": "This paper introduces SoftMol, a novel unified framework designed to overcome limitations in existing GPT-based molecular language models (MLMs) for *de novo* molecular design. SoftMol addresses the inadequate capture of graph-structured molecules and the lack of target-aware generation by proposing a block-diffusion model, SoftBD, using 'soft fragments' and a gated Monte Carlo tree search. The framework achieves superior chemical validity, improved binding affinity, higher molecular diversity, and significantly faster inference compared to state-of-the-art models.",
+    "keywords": [
+      "molecular generation",
+      "deep generative models",
+      "molecular language models",
+      "block-diffusion",
+      "drug discovery",
+      "de novo design",
+      "SMILES",
+      "target-aware generation",
+      "Monte Carlo tree search"
+    ],
+    "domains": [
+      "Drug discovery",
+      "Medicinal chemistry",
+      "Computational pharmacology",
+      "Pharmaceutical research",
+      "Biotechnology"
+    ],
+    "url": "papers/2601.21964v1.html"
+  },
+  {
+    "id": "2601.21955v1",
+    "title": "From Generative Modeling to Clinical Classification: A GPT-Based Architecture for EHR Notes",
+    "authors": [
+      "Fariba Afrin Irany"
+    ],
+    "summary": "This study introduces a GPT-based architecture for clinical text classification that addresses challenges in modeling long EHR notes by employing a selective fine-tuning strategy on a pretrained decoder-only Transformer. By freezing most of the GPT-2 backbone and training only specific final layers and a lightweight classification head, the method achieves strong and efficient performance on radiology reports, particularly adept at handling complex findings like non-mentions and negations.",
+    "keywords": [
+      "GPT-based architecture",
+      "clinical text classification",
+      "EHR notes",
+      "selective fine-tuning",
+      "Transformer",
+      "MIMIC-IV-Note",
+      "radiology reports",
+      "generative modeling"
+    ],
+    "domains": [
+      "Radiology",
+      "Clinical Informatics",
+      "Diagnostic Medicine",
+      "Public Health (Cohort Identification)",
+      "Disease Epidemiology"
+    ],
+    "url": "papers/2601.21955v1.html"
+  },
+  {
+    "id": "2601.21941v1",
+    "title": "Robust Multimodal Representation Learning in Healthcare",
+    "authors": [
+      "Xiaoguang Zhu",
+      "Linxiao Gong",
+      "Lianlong Sun",
+      "Yang Liu",
+      "Haoyu Wang",
+      "Jing Liu"
+    ],
+    "summary": "This paper introduces a Dual-Stream Feature Decorrelation Framework to address systematic biases in real-world medical multimodal datasets, which typically hinder the generalization ability of patient representations. By employing structural causal analysis and dual-stream neural networks, the framework disentangles causal features from spurious correlations, leading to more robust patient representations for clinical outcome prediction. Experiments on MIMIC-IV, eICU, and ADNI datasets demonstrate consistent performance improvements.",
+    "keywords": [
+      "Multimodal Learning",
+      "Representation Learning",
+      "Causal Inference",
+      "Bias Mitigation",
+      "Healthcare AI",
+      "Clinical Outcome Prediction",
+      "Feature Decorrelation",
+      "Deep Learning"
+    ],
+    "domains": [
+      "Clinical Decision Support",
+      "Critical Care Medicine",
+      "Neurodegenerative Diseases",
+      "Diagnostic Imaging",
+      "Prognostics"
+    ],
+    "url": "papers/2601.21941v1.html"
   },
   {
     "id": "2601.21743v1",
@@ -197,171 +400,5 @@
       "physics.soc-ph"
     ],
     "url": "papers/2601.21743v1.html"
-  },
-  {
-    "id": "2601.21696v1",
-    "title": "Independent Component Discovery in Temporal Count Data",
-    "authors": [
-      "Alexandre Chaussard",
-      "Anna Bonnet",
-      "Sylvain Le Corff"
-    ],
-    "summary": "Advances in data collection are producing growing volumes of temporal count observations, making adapted modeling increasingly necessary. In this work, we introduce a generative framework for independent component analysis of temporal count data, combining regime-adaptive dynamics with Poisson log-n...",
-    "keywords": [
-      "stat.ME",
-      "stat.ML"
-    ],
-    "domains": [
-      "stat.ME"
-    ],
-    "url": "papers/2601.21696v1.html"
-  },
-  {
-    "id": "2601.21673v1",
-    "title": "Multimodal Visual Surrogate Compression for Alzheimer's Disease Classification",
-    "authors": [
-      "Dexuan Ding",
-      "Ciyuan Peng",
-      "Endrowednes Kuantama",
-      "Jingcai Guo",
-      "Jia Wu",
-      "Jian Yang",
-      "Amin Beheshti",
-      "Ming-Hsuan Yang",
-      "Yuankai Qi"
-    ],
-    "summary": "This paper introduces Multimodal Visual Surrogate Compression (MVSC), a novel method for Alzheimer's Disease (AD) classification using structural MRI (sMRI) images. MVSC compresses high-dimensional 3D sMRI volumes into compact 2D features, termed visual surrogates, which are then optimally processed by frozen 2D foundation models to extract powerful representations. The method addresses existing challenges in AD diagnosis by enhancing computational efficiency, preserving cross-slice context, and improving feature discriminability, demonstrating favorable performance on multiple large-scale AD benchmarks.",
-    "keywords": [
-      "Alzheimer's Disease",
-      "sMRI",
-      "Classification",
-      "Deep Learning",
-      "Foundation Models",
-      "Visual Surrogates",
-      "Multimodal",
-      "Neuroimaging"
-    ],
-    "domains": [
-      "Neurology",
-      "Radiology",
-      "Neuroimaging",
-      "Geriatrics",
-      "Computational Neuroscience"
-    ],
-    "url": "papers/2601.21673v1.html"
-  },
-  {
-    "id": "2601.21670v1",
-    "title": "When Gradient Optimization Is Not Enough: $\\dagger$ Dispersive and Anchoring Geometric Regularizer for Multimodal Learning",
-    "authors": [
-      "Zixuan Xia",
-      "Hao Wang",
-      "Pengcheng Weng",
-      "Yanyu Qian",
-      "Yangxin Xu",
-      "William Dan",
-      "Fei Wang"
-    ],
-    "summary": "Multimodal learning often struggles with 'geometric pathologies' like intra-modal representation collapse and sample-level cross-modal inconsistency, even with advanced optimization, hindering robust fusion. This paper introduces \\regName, a lightweight, plug-and-play geometric regularization framework, which enforces intra-modal dispersive regularization for diversity and inter-modal anchoring regularization to bound cross-modal drift. Extensive experiments demonstrate consistent improvements in both multimodal and unimodal performance, effectively mitigating modality trade-offs by explicitly structuring representation geometry.",
-    "keywords": [
-      "Multimodal learning",
-      "Representation regularization",
-      "Geometric pathologies",
-      "Cross-modal fusion",
-      "Deep learning",
-      "Healthcare AI",
-      "Data integration"
-    ],
-    "domains": [
-      "Medical imaging (radiomics, pathology)",
-      "Genomics and Proteomics",
-      "Clinical decision support systems",
-      "Personalized medicine",
-      "Digital phenotyping"
-    ],
-    "url": "papers/2601.21670v1.html"
-  },
-  {
-    "id": "2601.21669v1",
-    "title": "Expected Return Causes Outcome-Level Mode Collapse in Reinforcement Learning and How to Fix It with Inverse Probability Scaling",
-    "authors": [
-      "Abhijeet Sinha",
-      "Sundari Elango",
-      "Dianbo Liu"
-    ],
-    "summary": "This paper identifies outcome-level mode collapse in reinforcement learning (RL), where policies converge to a narrow subset of high-quality solutions, as a structural consequence of the expected-return objective itself, rather than solely exploration issues. It proposes Inverse Probability Scaling (IPS) as a minimal correction that fundamentally alters learning dynamics to yield reward-proportional terminal distributions, preventing collapse, and demonstrates its effectiveness in tasks including molecular generation.",
-    "keywords": [
-      "Reinforcement Learning",
-      "Mode Collapse",
-      "Inverse Probability Scaling",
-      "Multimodal Optimization",
-      "Molecular Generation",
-      "Drug Discovery",
-      "Policy Optimization",
-      "Diversity"
-    ],
-    "domains": [
-      "Drug Discovery",
-      "Computational Chemistry",
-      "Bioinformatics",
-      "Personalized Medicine",
-      "Precision Oncology (for diverse treatment strategies)",
-      "Medical AI/ML Research"
-    ],
-    "url": "papers/2601.21669v1.html"
-  },
-  {
-    "id": "2601.21643v1",
-    "title": "Computational investigation of single herbal drugs in Ayurveda for diabetes and obesity using knowledge graph and network pharmacology",
-    "authors": [
-      "Priyotosh Sil",
-      "Rahul Tiwari",
-      "Vasavi Garisetti",
-      "Shanmuga Priya Baskaran",
-      "Fenita Hephzibah Dhanaseelan",
-      "Smita Srivastava",
-      "Areejit Samal"
-    ],
-    "summary": "This paper presents an integrated computational pipeline leveraging knowledge graphs, pathway analysis, and network pharmacology to elucidate the multi-target mechanisms of Ayurvedic Single Herbal Drugs (SHDs) for type 2 diabetes and obesity. It successfully identified key disease-relevant targets, synergistic phytochemical interactions, and putative lead compounds, thereby providing a scientific basis for the multi-faceted action of these traditional medicines.",
-    "keywords": [
-      "Ayurveda",
-      "Single Herbal Drugs",
-      "Diabetes",
-      "Obesity",
-      "Knowledge Graph",
-      "Network Pharmacology",
-      "Multi-target",
-      "Phytochemicals",
-      "Drug Discovery",
-      "Metabolic Diseases"
-    ],
-    "domains": [
-      "Pharmacology",
-      "Endocrinology",
-      "Metabolism",
-      "Integrative Medicine",
-      "Drug Discovery",
-      "Computational Biology"
-    ],
-    "url": "papers/2601.21643v1.html"
-  },
-  {
-    "id": "2601.21617v1",
-    "title": "PathReasoner-R1: Instilling Structured Reasoning into Pathology Vision-Language Model via Knowledge-Guided Policy Optimization",
-    "authors": [
-      "Songhan Jiang",
-      "Fengchun Liu",
-      "Ziyue Wang",
-      "Linghan Cai",
-      "Yongbing Zhang"
-    ],
-    "summary": "Vision-Language Models (VLMs) are advancing computational pathology with superior visual understanding capabilities. However, current systems often reduce diagnosis to directly output conclusions without verifiable evidence-linked reasoning, which severely limits clinical trust and hinders expert er...",
-    "keywords": [
-      "cs.CV"
-    ],
-    "domains": [
-      "cs.CV"
-    ],
-    "url": "papers/2601.21617v1.html"
   }
 ]
