@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Federated and Parameter-Efficient Framework for Large Language Model Training in Medicine - Health AI Hub</title>
-    <meta name="description" content="This paper introduces Fed-MedLoRA and Fed-MedLoRA+, a novel federated learning framework designed for parameter-efficient and robust adaptation of large languag">
+    <meta name="description" content="This paper addresses critical limitations in adapting large language models (LLMs) for medical applications, specifically the challenges of single-institution t">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces Fed-MedLoRA and Fed-MedLoRA+, a novel federated learning framework designed for parameter-efficient and robust adaptation of large language models (LLMs) in medical applications. It addresses key challenges in applying FL to LLMs, namely the high communication and computation overhead of multi-billion parameter models and the inherent heterogeneity of real-world clinical data, by transmitting only low-rank adapter parameters and utilizing data-aware aggregation. The framework's effectiveness is demonstrated for clinical information extraction across diverse patient cohorts and under various real-world evaluation scenarios.</p>
+                <p class="summary-text">This paper addresses critical limitations in adapting large language models (LLMs) for medical applications, specifically the challenges of single-institution training (limited generalizability) and conventional federated learning (FL) due to LLM size and data heterogeneity. It introduces Fed-MedLoRA, a parameter-efficient federated learning framework that transmits only low-rank adapter parameters, and Fed-MedLoRA+, which enhances this with adaptive, data-aware aggregation. The framework was successfully applied to clinical information extraction, demonstrating its effectiveness across diverse patient cohorts and real-world clinical notes, enabling collaborative and generalizable LLM adaptation in medicine.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is critically important for advancing AI in healthcare by enabling the secure and collaborative training of powerful large language models on diverse, real-world clinical data. This leads to more generalized, robust, and ethical AI tools capable of assisting with vital clinical tasks like understanding patient records and supporting diagnoses across various healthcare systems.</p>
+                <p>This research is highly relevant to medicine as it provides a robust solution for adapting powerful large language models using diverse, real-world clinical data from multiple healthcare institutions without compromising patient privacy or requiring extensive computational resources at each site. This directly addresses the critical need for generalizable, safe, and effective AI tools that can perform reliably across varied patient populations and healthcare systems.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>This paper develops a novel federated learning framework (Fed-MedLoRA) for training and adapting Large Language Models (LLMs) using distributed clinical data across multiple healthcare institutions. The primary AI application is to enable more robust, generalizable, and privacy-preserving medical LLMs for tasks such as clinical information extraction from patient narratives, medical diagnosis support, and clinical question answering, thereby enhancing the utility and safety of AI in clinical settings.</p>
+                <p>This paper introduces a federated learning framework (Fed-MedLoRA/Fed-MedLoRA+) to enable the collaborative, parameter-efficient training and adaptation of large language models (LLMs) for medical applications across multiple healthcare institutions. Its primary application demonstrated is clinical information extraction, converting unstructured patient narratives into structured medical entities and relations. This technology is crucial for improving medical diagnostic tools, supporting clinical decision-making, and enhancing medical research by leveraging AI while maintaining data privacy and addressing real-world data heterogeneity in healthcare.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>**Addressing FL Limitations for LLMs**: The framework tackles two major hurdles for applying federated learning (FL) to medical LLMs: the impracticality of transmitting full multi-billion parameter models and the failure of conventional FL algorithms under high clinical data heterogeneity.</li>
+                    <li>Highlights two major limitations for medical LLM adaptation: lack of generalizability from single-institution training and impracticality of conventional FL for large models due to full model transmission and implicit assumption of data homogeneity.</li>
                     
-                    <li>**Parameter-Efficient Training (Fed-MedLoRA)**: It proposes a model-agnostic FL framework that utilizes low-rank adaptation (LoRA) to transmit only a small set of adapter parameters during communication rounds, drastically reducing communication and computation overhead.</li>
+                    <li>Introduces Fed-MedLoRA, a model-agnostic and parameter-efficient federated learning framework that minimizes communication and computation by transmitting only low-rank adapter (LoRA) parameters.</li>
                     
-                    <li>**Adaptive Data-Aware Aggregation (Fed-MedLoRA+)**: Enhances the framework by incorporating adaptive, data-aware aggregation strategies. This improves model convergence and robustness specifically when faced with highly heterogeneous clinical data across different institutions.</li>
+                    <li>Presents Fed-MedLoRA+, an enhanced version that incorporates adaptive, data-aware aggregation strategies to specifically improve convergence and performance under cross-site data heterogeneity inherent in clinical datasets.</li>
                     
-                    <li>**Clinical Information Extraction (IE) Application**: The framework is applied and evaluated in the critical medical task of clinical information extraction, which involves converting unstructured patient narratives into structured medical entities and relations.</li>
+                    <li>The framework is applied to clinical information extraction (IE), a task critical for transforming unstructured patient narratives into structured medical entities and relations.</li>
                     
-                    <li>**Comprehensive Evaluation Settings**: Accuracy was assessed across five distinct patient cohorts using three realistic scenarios: in-domain training/testing, external validation on independent cohorts, and a low-resource new-site adaptation scenario leveraging real clinical notes from Yale New Haven Health System.</li>
+                    <li>Evaluated across three rigorous settings: in-domain training/testing, external validation on independent cohorts, and a challenging low-resource new-site adaptation scenario using real-world clinical notes from the Yale New Haven Health System.</li>
                     
-                    <li>**Benchmarking Against SOTA Models**: The framework's performance was compared against several established models, including BERT, LLaMA-3, DeepSeek-R1, and GPT-4o, indicating a rigorous evaluation.</li>
+                    <li>Accuracy was assessed through comparisons with established models including BERT, LLaMA-3, DeepSeek-R1, and GPT-4o across five diverse patient cohorts.</li>
                     
-                    <li>**Enabling Generalizable and Safe Medical LLMs**: By allowing collaborative model development across healthcare institutions without centralizing sensitive patient data, the framework aims to improve the generalizability, safety, and real-world applicability of LLMs in medicine.</li>
+                    <li>The work demonstrates a practical solution for enabling collaborative, privacy-preserving, and resource-efficient development of generalizable medical LLMs.</li>
                     
                 </ul>
             </section>
@@ -88,31 +88,31 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The paper introduces Fed-MedLoRA, a model-agnostic federated learning framework that employs low-rank adaptation (LoRA) to enable parameter-efficient training of LLMs by transmitting only low-rank adapter parameters. Fed-MedLoRA+ extends this by integrating adaptive, data-aware aggregation techniques to improve convergence under cross-site data heterogeneity. The framework was applied to clinical information extraction and evaluated for accuracy across five patient cohorts under three settings: in-domain training/testing, external validation, and low-resource new-site adaptation using real-world clinical notes. Comparisons were made against BERT, LLaMA-3, DeepSeek-R1, and GPT-4o models.</p>
+                    <p>The paper proposes Fed-MedLoRA, a federated learning framework designed to be model-agnostic and parameter-efficient by only transmitting low-rank adapter (LoRA) parameters, significantly reducing communication and computation overhead. An extension, Fed-MedLoRA+, integrates adaptive, data-aware aggregation to handle clinical data heterogeneity across sites. The framework was applied to clinical information extraction (IE) and its accuracy was evaluated across five diverse patient cohorts. Evaluation included in-domain validation, external validation, and a low-resource adaptation to a new site (Yale New Haven Health System), with performance benchmarked against BERT models, LLaMA-3, DeepSeek-R1, and GPT-4o.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>The framework successfully addresses the fundamental limitations of applying conventional federated learning to large language models in medicine, significantly reducing communication and computation overhead through parameter-efficient adaptation. Fed-MedLoRA+ notably improves model convergence and performance when dealing with highly heterogeneous clinical data across different sites. While specific quantitative results are not detailed in the abstract, the comprehensive evaluation against state-of-the-art models in diverse clinical scenarios suggests its effectiveness in enabling practical and robust medical LLM training.</p>
+                    <p>The Fed-MedLoRA and Fed-MedLoRA+ frameworks successfully enable the adaptation of large language models for medical applications while significantly reducing communication and computation overhead during federated training. Fed-MedLoRA+ particularly improves convergence and performance under real-world cross-site data heterogeneity. The framework demonstrated effectiveness in clinical information extraction across diverse patient populations and in challenging low-resource, new-site adaptation scenarios using authentic clinical notes.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This framework holds substantial clinical impact by enabling the development of more generalizable, privacy-preserving, and powerful medical LLMs that can learn from the collective data of multiple healthcare institutions without direct data sharing. This can lead to improved accuracy in tasks such as clinical information extraction, better support for diagnosis, personalized treatment recommendations, and enhanced operational efficiency within healthcare systems, ultimately improving patient outcomes.</p>
+                <p>This framework offers a transformative approach to developing and deploying advanced medical LLMs by enabling secure, collaborative training across healthcare institutions using their distributed clinical data. It promises to improve the generalizability, safety, and fairness of AI in healthcare, accelerating the development of tools for automated information extraction from patient notes, supporting more accurate diagnoses, streamlining clinical workflows, and enhancing medical research, all while preserving patient privacy and optimizing resource utilization.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The paper addresses two core limitations of existing federated learning approaches when applied to large language models in medicine: 1) the impracticality of transmitting multi-billion parameter models due to limited computational resources and 2) the implicit assumption of data homogeneity in many FL algorithms, which is not met by the highly heterogeneous nature of real-world clinical data across institutions, patients, and diseases.</p>
+                <p>The abstract highlights the fundamental limitations of existing approaches that the proposed framework addresses: 1) conventional federated learning is impractical for multi-billion-parameter LLMs due to the prohibitive cost of transmitting the full model during each communication round. 2) Many FL algorithms implicitly assume data homogeneity, which is unrealistic given the high heterogeneity of real-world clinical data across patients, diseases, and institutional practices.</p>
             </section>
             
 
             
             <section class="paper-section">
                 <h2>Future Directions</h2>
-                <p>Not explicitly mentioned in the abstract, but typical future work for such a framework would involve expanding its application to a wider range of medical LLM tasks, exploring more advanced and secure aggregation mechanisms, and further validating its long-term impact on model fairness and robustness across even larger and more diverse healthcare networks.</p>
+                <p>Future research directions are not explicitly mentioned in the provided abstract.</p>
             </section>
             
 
@@ -120,13 +120,17 @@
                 <h2>Medical Domains</h2>
                 <div class="tags">
                     
-                    <span class="tag">Clinical Information Extraction</span>
+                    <span class="tag">Clinical Informatics</span>
                     
-                    <span class="tag">Medical Informatics</span>
+                    <span class="tag">Medical Natural Language Processing (NLP)</span>
                     
-                    <span class="tag">Digital Health</span>
+                    <span class="tag">Electronic Health Record (EHR) Analysis</span>
                     
-                    <span class="tag">AI in Healthcare</span>
+                    <span class="tag">Clinical Decision Support</span>
+                    
+                    <span class="tag">Diagnosis</span>
+                    
+                    <span class="tag">Question Answering</span>
                     
                 </div>
             </section>
@@ -139,17 +143,17 @@
                     
                     <span class="tag tag-keyword">Large Language Models</span>
                     
-                    <span class="tag tag-keyword">Medical AI</span>
-                    
                     <span class="tag tag-keyword">Parameter-Efficient Training</span>
+                    
+                    <span class="tag tag-keyword">Low-Rank Adaptation (LoRA)</span>
                     
                     <span class="tag tag-keyword">Clinical Information Extraction</span>
                     
+                    <span class="tag tag-keyword">Medical NLP</span>
+                    
                     <span class="tag tag-keyword">Data Heterogeneity</span>
                     
-                    <span class="tag tag-keyword">LoRA</span>
-                    
-                    <span class="tag tag-keyword">Healthcare</span>
+                    <span class="tag tag-keyword">Collaborative AI</span>
                     
                 </div>
             </section>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Patient is not a Moving Document: A World Model Training Paradigm for Longitudinal EHR - Health AI Hub</title>
-    <meta name="description" content="This paper introduces SMB-Structure, a novel 'world model' paradigm for structured Electronic Health Records (EHR) designed to simulate patient dynamics rather ">
+    <meta name="description" content="This paper introduces SMB-Structure, a novel 'world model' paradigm for longitudinal EHR that addresses the limitations of next-word-prediction LLMs in capturin">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -38,7 +38,7 @@
                     <strong>Categories:</strong> cs.AI, cs.CE, q-bio.QM
                 </div>
                 <div class="meta-row">
-                    <strong>Relevance Score:</strong> 1.00 / 1.00
+                    <strong>Relevance Score:</strong> 0.95 / 1.00
                 </div>
             </div>
 
@@ -49,18 +49,18 @@
 
             <section class="paper-section">
                 <h2>Summary</h2>
-                <p class="summary-text">This paper introduces SMB-Structure, a novel 'world model' paradigm for structured Electronic Health Records (EHR) designed to simulate patient dynamics rather than merely summarizing them as static documents. It combines a Joint-Embedding Prediction Architecture (JEPA) with next-token prediction (SFT) to learn embeddings that capture complex disease trajectories. Validated across oncology and pulmonary embolism cohorts, the model demonstrates superior capture of disease dynamics compared to autoregressive baselines, achieving competitive performance on heterogeneous patient tasks.</p>
+                <p class="summary-text">This paper introduces SMB-Structure, a novel 'world model' paradigm for longitudinal EHR that addresses the limitations of next-word-prediction LLMs in capturing dynamic patient trajectories. By integrating a Joint-Embedding Prediction Architecture (JEPA) with next-token prediction (SFT), SMB-Structure learns embeddings that explicitly encode future patient states and disease dynamics from initial representations. Validated on large oncology and pulmonary embolism cohorts, the model demonstrates superior capture of disease dynamics and competitive performance on complex tasks characterized by high patient heterogeneity.</p>
             </section>
 
             <section class="paper-section">
                 <h2>Medical Relevance</h2>
-                <p>This research is crucial for advancing clinical AI by developing models that understand and predict the dynamic evolution of patient health, rather than just summarizing static data. It enables more accurate forecasting of disease progression, personalized risk assessment, and proactive intervention strategies.</p>
+                <p>This approach is crucial for precision medicine as it enables more accurate prediction of disease progression, patient response to interventions, and personalized risk assessment by truly understanding the dynamic nature of health trajectories rather than merely summarizing past events.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>AI Health Application</h2>
-                <p>The AI application is the development of advanced models (SMB-Structure, a world model) that can learn and simulate complex patient trajectories and disease dynamics from structured EHR data. This can lead to improved predictive analytics for patient outcomes, personalized treatment recommendations, early detection of adverse events, and more robust clinical decision support by understanding how a patient's state evolves over time.</p>
+                <p>The paper describes a novel AI paradigm for training 'world models' on structured EHR data to simulate patient dynamics rather than just predict tokens. This aims to create more accurate and dynamic representations of patient health trajectories, enabling better prediction of future patient states, understanding of disease progression, and ultimately enhancing clinical decision-making, risk stratification, and personalized treatment planning by providing deeper insights into how patient conditions evolve over time and under interventions.</p>
             </section>
             
 
@@ -68,19 +68,19 @@
                 <h2>Key Points</h2>
                 <ul class="key-points">
                     
-                    <li>Critiques existing Large Language Models (LLMs) in clinical settings for treating patients as static documents via next-word-prediction, failing to model them as dynamical systems evolving under interventions and time.</li>
+                    <li>Critiques existing LLMs for EHR, stating they treat patients as static documents rather than dynamic systems whose trajectories evolve over time and interventions.</li>
                     
-                    <li>Introduces SMB-Structure, a 'world model' specifically designed for structured EHR data, aiming to simulate patient trajectories and dynamics.</li>
+                    <li>Introduces SMB-Structure, a novel 'world model' paradigm specifically designed for longitudinal structured Electronic Health Records (EHR).</li>
                     
-                    <li>Proposes a novel training paradigm that grounds a Joint-Embedding Prediction Architecture (JEPA) with next-token prediction (SFT).</li>
+                    <li>The model architecture combines a Joint-Embedding Prediction Architecture (JEPA) with next-token prediction (SFT) to simulate patient dynamics.</li>
                     
-                    <li>JEPA component predicts future patient states in a latent space solely from the initial patient representation, forcing the model to encode entire disease dynamics proactively.</li>
+                    <li>JEPA is designed to predict future patient states in latent space based solely on the initial patient representation, forcing the model to proactively encode trajectory dynamics before future states are observed.</li>
                     
-                    <li>SFT component grounds the model by reconstructing future patient states in the token space, linking latent predictions to concrete EHR data.</li>
+                    <li>Validated across two large-scale clinical cohorts: 23,319 oncology patients from Memorial Sloan Kettering (323,000+ patient-years) and 19,402 pulmonary embolism patients from INSPECT.</li>
                     
-                    <li>Validated across two large-scale real-world cohorts: Memorial Sloan Kettering (23,319 oncology patients) and INSPECT (19,402 pulmonary embolism patients).</li>
+                    <li>Evaluation utilized a linear probe applied at multiple points along the disease trajectory to assess the learned embeddings' ability to capture evolving disease states.</li>
                     
-                    <li>Demonstrates that SMB-Structure learns embeddings that capture disease dynamics not recoverable by traditional autoregressive baselines, achieving competitive performance on complex tasks characterized by high patient heterogeneity.</li>
+                    <li>Key finding: SMB-Structure learns embeddings that significantly better capture disease dynamics compared to traditional autoregressive next-token prediction baselines, achieving competitive performance on complex tasks with high patient heterogeneity.</li>
                     
                 </ul>
             </section>
@@ -88,27 +88,32 @@
             <div class="two-column">
                 <section class="paper-section">
                     <h2>Methodology</h2>
-                    <p>The study develops SMB-Structure, a world model for structured EHR data. Its training paradigm integrates two components: a Joint-Embedding Prediction Architecture (JEPA), which predicts future patient states in a latent embedding space from an initial patient representation, and next-token prediction (Supervised Fine-Tuning - SFT), which reconstructs future patient states in the token space. Model performance was evaluated using linear probes on the learned embeddings at various points along disease trajectories and compared against autoregressive baselines across large oncology and pulmonary embolism patient cohorts.</p>
+                    <p>SMB-Structure utilizes a novel world model training paradigm combining a Joint-Embedding Prediction Architecture (JEPA) with next-token prediction (SFT). SFT reconstructs future patient states in token space, while JEPA predicts these futures in a latent space using only the initial patient representation, thereby enforcing the encoding of trajectory dynamics. The model was trained and validated on large-scale structured EHR datasets from Memorial Sloan Kettering (oncology) and INSPECT (pulmonary embolism), with evaluation performed via linear probes at multiple points along disease trajectories.</p>
                 </section>
 
                 <section class="paper-section">
                     <h2>Key Findings</h2>
-                    <p>SMB-Structure's novel training paradigm successfully learns embeddings that capture intricate disease dynamics, a capability notably absent in traditional autoregressive baselines. The model achieved competitive performance on complex tasks even with high patient heterogeneity, effectively modeling patients as dynamic systems evolving over time and interventions.</p>
+                    <p>The model successfully learns embeddings that capture intricate disease dynamics, outperforming autoregressive baselines in this aspect. It achieves competitive performance on complex clinical tasks, particularly those involving high patient heterogeneity, by encoding future patient states and trajectories preemptively.</p>
                 </section>
             </div>
 
             <section class="paper-section">
                 <h2>Clinical Impact</h2>
-                <p>This paradigm offers a significant step towards developing more robust and clinically useful AI models capable of simulating patient health trajectories. It has the potential to improve prognostication, enable more personalized treatment planning, facilitate early identification of adverse events, and support proactive clinical decision-making, particularly in managing complex, chronic, or rapidly evolving conditions like cancer and pulmonary embolism.</p>
+                <p>This model could significantly advance precision medicine by enabling earlier and more accurate prediction of disease progression, personalized risk stratification, and optimized timing of interventions. By simulating dynamic patient trajectories, it provides a more robust foundation for clinical decision support systems and the development of tailored treatment plans, especially for complex and heterogeneous diseases.</p>
             </section>
 
             
             <section class="paper-section">
                 <h2>Limitations</h2>
-                <p>The abstract does not explicitly state limitations of the proposed SMB-Structure model itself. However, it implicitly highlights the limitations of prior work, specifically that current LLMs (even clinical foundation models) treat patients as static documents through next-word-prediction, failing to model their true dynamical nature.</p>
+                <p>The abstract does not explicitly state any limitations of the proposed model or methodology.</p>
             </section>
             
 
+            
+            <section class="paper-section">
+                <h2>Future Directions</h2>
+                <p>The abstract does not explicitly state future research directions.</p>
+            </section>
             
 
             <section class="paper-section">
@@ -119,11 +124,9 @@
                     
                     <span class="tag">Pulmonary Embolism</span>
                     
-                    <span class="tag">Computational Medicine</span>
+                    <span class="tag">Clinical Decision Support</span>
                     
                     <span class="tag">Precision Medicine</span>
-                    
-                    <span class="tag">Predictive Analytics</span>
                     
                 </div>
             </section>
@@ -132,21 +135,23 @@
                 <h2>Keywords</h2>
                 <div class="tags">
                     
-                    <span class="tag tag-keyword">Longitudinal EHR</span>
+                    <span class="tag tag-keyword">longitudinal EHR</span>
                     
-                    <span class="tag tag-keyword">World Model</span>
+                    <span class="tag tag-keyword">world model</span>
                     
-                    <span class="tag tag-keyword">Disease Dynamics</span>
+                    <span class="tag tag-keyword">patient trajectory</span>
                     
-                    <span class="tag tag-keyword">Joint-Embedding Prediction Architecture (JEPA)</span>
+                    <span class="tag tag-keyword">disease dynamics</span>
                     
-                    <span class="tag tag-keyword">Next-token prediction</span>
+                    <span class="tag tag-keyword">JEPA</span>
                     
-                    <span class="tag tag-keyword">Clinical Foundation Models</span>
+                    <span class="tag tag-keyword">SFT</span>
                     
-                    <span class="tag tag-keyword">Structured EHR</span>
+                    <span class="tag tag-keyword">clinical foundation models</span>
                     
-                    <span class="tag tag-keyword">Patient Trajectory</span>
+                    <span class="tag tag-keyword">oncology</span>
+                    
+                    <span class="tag tag-keyword">pulmonary embolism</span>
                     
                 </div>
             </section>
